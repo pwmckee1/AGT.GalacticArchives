@@ -1,6 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGT.GalacticArchives", "AGT.GalacticArchives\AGT.GalacticArchives.csproj", "{937D1489-BDF6-437B-80E0-1AA9E151F242}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGT.GalacticArchives.Api", "AGT.GalacticArchives.Api\AGT.GalacticArchives.Api.csproj", "{937D1489-BDF6-437B-80E0-1AA9E151F242}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGT.GalacticArchives.Services", "AGT.GalacticArchives.Services\AGT.GalacticArchives.Services.csproj", "{D18EE593-4E1B-4532-B7FA-47C856DC4741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGT.GalacticArchives.Core", "AGT.GalacticArchives.Core\AGT.GalacticArchives.Core.csproj", "{8A1CCFA8-1FD4-40ED-92CB-F8B46139A9FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGT.GalacticArchives.Globalization", "AGT.GalacticArchives.Globalization\AGT.GalacticArchives.Globalization.csproj", "{E6C561CD-1B83-4D43-90C7-12CF426E9B6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +18,17 @@ Global
 		{937D1489-BDF6-437B-80E0-1AA9E151F242}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{937D1489-BDF6-437B-80E0-1AA9E151F242}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{937D1489-BDF6-437B-80E0-1AA9E151F242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18EE593-4E1B-4532-B7FA-47C856DC4741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18EE593-4E1B-4532-B7FA-47C856DC4741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18EE593-4E1B-4532-B7FA-47C856DC4741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18EE593-4E1B-4532-B7FA-47C856DC4741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1CCFA8-1FD4-40ED-92CB-F8B46139A9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1CCFA8-1FD4-40ED-92CB-F8B46139A9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1CCFA8-1FD4-40ED-92CB-F8B46139A9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1CCFA8-1FD4-40ED-92CB-F8B46139A9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C561CD-1B83-4D43-90C7-12CF426E9B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C561CD-1B83-4D43-90C7-12CF426E9B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C561CD-1B83-4D43-90C7-12CF426E9B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C561CD-1B83-4D43-90C7-12CF426E9B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -4,3 +4,5 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 firebase-credentials.json
+.vs
+.idea
