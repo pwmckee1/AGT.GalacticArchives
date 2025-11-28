@@ -61,7 +61,12 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
 
     public async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
     {
-        return await target.UpsertAsync(entity, collectionName);
+        var response = await target.UpsertAsync(entity, collectionName);
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Galaxy)}:{nameof(GetGalaxiesAsync)}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Galaxy)}:{nameof(GetGalaxyByIdAsync)}:{entity.EntityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Galaxy)}:{nameof(GetAllAsync)}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Galaxy)}:{nameof(GetByIdAsync)}:{entity.EntityId}:{collectionName}");
+        return response;
     }
 
     public async Task DeleteAsync(Guid entityId, string collectionName)

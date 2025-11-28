@@ -11,7 +11,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task<Region?> GetRegionByIdAsync(Guid regionId)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Region)}:{nameof(GetRegionByIdAsync)}",
+            $"{nameof(Region)}:{nameof(GetRegionByIdAsync)}:{regionId}",
             async () => await target.GetRegionByIdAsync(regionId),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -27,13 +27,11 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         await target.DeleteRegionAsync(regionId);
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
+    // This is not being used by the Region service but is part if the interface contract.
+    // The idea being that we probably don't want to implement a "Get All" when it comes to regions
+    public Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
     {
-        var result = await cacheManager.GetAsync(
-            $"{nameof(Region)}:{nameof(GetAllAsync)}:{collectionName}",
-            async () => await target.GetAllAsync(collectionName),
-            BusinessRuleConstants.DayInMinutes);
-        return result!;
+        throw new NotImplementedException();
     }
 
     public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
@@ -52,7 +50,10 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
 
     public async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
     {
-        return await target.UpsertAsync(entity, collectionName);
+        var response = await target.UpsertAsync(entity, collectionName);
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{nameof(GetRegionByIdAsync)}:{entity.EntityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{nameof(GetByIdAsync)}:{entity.EntityId}:{collectionName}");
+        return response;
     }
 
     public async Task DeleteAsync(Guid entityId, string collectionName)

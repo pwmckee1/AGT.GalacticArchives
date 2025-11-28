@@ -72,7 +72,10 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
 
     public async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
     {
-        return await target.UpsertAsync(entity, collectionName);
+        var response = await target.UpsertAsync(entity, collectionName);
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{nameof(GetStarSystemByIdAsync)}:{entity.EntityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{nameof(GetByIdAsync)}:{entity.EntityId}:{collectionName}");
+        return response;
     }
 
     public async Task DeleteAsync(Guid entityId, string collectionName)
