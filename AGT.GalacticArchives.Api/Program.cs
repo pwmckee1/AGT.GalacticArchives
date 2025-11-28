@@ -1,32 +1,38 @@
+using AGT.GalacticArchives.Configuration;
+using AGT.GalacticArchives.Core.Models.AppSettings;
+using AutoMapper.EquivalencyExpression;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var environment = builder.Environment;
+var applicationSettings = new ApplicationSettings();
+builder.Configuration.GetSection("ApplicationSettings").Bind(applicationSettings);
+
+builder.ConfigureDependencyInjection(applicationSettings, environment);
+
+builder.Services.AddAutoMapper(cfg => cfg.AddCollectionMappers(), AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
 
 builder.Services.AddSingleton(sp =>
 {
-    var configuration = sp.GetRequiredService<IConfiguration>();
     var logger = sp.GetRequiredService<ILogger<Program>>();
-    var env = sp.GetRequiredService<IWebHostEnvironment>();
 
     ServiceAccountCredential credentials;
-    var projectId = configuration["Firebase:ProjectId"];
 
-    if (env.IsDevelopment())
+    if (environment.IsDevelopment())
     {
-        var credentialsPath = configuration["Firebase:CredentialsPath"];
+        string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
 
         if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
         {
             throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
         }
-        
+
         logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
 
         var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
@@ -46,7 +52,7 @@ builder.Services.AddSingleton(sp =>
 
     return new FirestoreDbBuilder
     {
-        ProjectId = projectId,
+        ProjectId = applicationSettings.Firebase.ProjectId,
         Credential = credentials,
     }.Build();
 });
@@ -58,7 +64,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<FirestoreDb>();
     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-    
+
     try
     {
         // Simple connection test

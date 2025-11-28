@@ -1,0 +1,31 @@
+﻿namespace AGT.GalacticArchives.Core.Enums;
+
+public enum WealthTypes
+{
+    Declining = 1,
+    Destitute,
+    Failing,
+    Fledgling,
+    LowSupply,
+    Struggling,
+    Unsuccessful,
+    Unpromising,
+    Adequate,
+    Balanced,
+    BlackMarket,
+    Comfortable,
+    Developing,
+    MediumSupply,
+    Promising,
+    Satisfactory,
+    Sustainable,
+    Advanced,
+    Affluent,
+    Booming,
+    Flourishing,
+    HighSupply,
+    Opulent,
+    Prosperous,
+    Wealthy,
+    DataUnavailable,
+}
