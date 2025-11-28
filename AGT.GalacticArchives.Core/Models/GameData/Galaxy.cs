@@ -6,11 +6,7 @@ public class Galaxy : IGameData
 {
     public Guid EntityId => GalaxyId;
 
-    public required Guid GalaxyId
-    {
-        get => field == Guid.Empty ? Guid.NewGuid() : field;
-        set;
-    }
+    public Guid GalaxyId { get; set; } = Guid.NewGuid();
 
     public required int Sequence { get; set; }
 
@@ -22,7 +18,7 @@ public class Galaxy : IGameData
     {
         return new Dictionary<string, object?>
         {
-            { nameof(GalaxyId), GalaxyId },
+            { nameof(GalaxyId), GalaxyId.ToString() },
             { nameof(Sequence), Sequence },
             { nameof(Name), Name },
         };

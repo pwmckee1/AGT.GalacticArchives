@@ -72,9 +72,9 @@ public class StarSystem : IGameData
 
     public string? GameRelease { get; set; }
 
-    public Guid? RegionId { get; set; }
+    public Guid RegionId { get; set; }
 
-    public Region? Region { get; set; }
+    public Region Region { get; set; } = null!;
 
     public Dictionary<string, object?> ToDictionary()
     {

@@ -1,4 +1,4 @@
-﻿namespace AGT.GalacticArchives.DependencyResolution;
+﻿namespace AGT.GalacticArchives.Extensions;
 
 public static class ContainerExtensions
 {

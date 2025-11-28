@@ -8,14 +8,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Autofac" Version="9.0.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
         <PackageReference Include="Google.Apis.Auth" Version="1.73.0" />
         <PackageReference Include="Google.Cloud.Firestore" Version="3.13.0" />
+        <PackageReference Include="HtmlSanitizer" Version="9.1.891-beta" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0"/>
         <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.0" />
+        <PackageReference Include="NLog" Version="6.0.6" />
+        <PackageReference Include="NLog.Web.AspNetCore" Version="6.1.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AGT.GalacticArchives.Core\AGT.GalacticArchives.Core.csproj" />
+      <ProjectReference Include="..\AGT.GalacticArchives.Globalization\AGT.GalacticArchives.Globalization.csproj" />
       <ProjectReference Include="..\AGT.GalacticArchives.Services\AGT.GalacticArchives.Services.csproj" />
     </ItemGroup>
 

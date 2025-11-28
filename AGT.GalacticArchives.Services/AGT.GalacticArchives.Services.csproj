@@ -14,15 +14,12 @@
       <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.3.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+      <PackageReference Include="NLog" Version="6.0.6" />
+      <PackageReference Include="NLog.Web.AspNetCore" Version="6.1.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AGT.GalacticArchives.Core\AGT.GalacticArchives.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Interfaces\" />
-      <Folder Include="Services\" />
     </ItemGroup>
 
 </Project>

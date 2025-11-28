@@ -27,14 +27,14 @@ public abstract class CacheManagerBase : ICacheManager
     // This is used for when there's no backing class so you can still use cache only storage.
     public async Task<T?> GetNoClassAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
     {
-        byte[]? data = await _distributedCache.GetAsync(key);
+        byte[]? data = await DistributedCache.GetAsync(key);
         return data == null ? default : JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(data));
     }
 
     public virtual async Task<T?> GetAsync<T>(string key)
         where T : class?
     {
-        byte[]? data = await _distributedCache.GetAsync(key);
+        byte[]? data = await DistributedCache.GetAsync(key);
         return data == null ? null : JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(data));
     }
 
@@ -54,7 +54,7 @@ public abstract class CacheManagerBase : ICacheManager
     {
         T? result = default;
 
-        byte[]? cachedData = await _distributedCache.GetAsync(key);
+        byte[]? cachedData = await DistributedCache.GetAsync(key);
         if (cachedData != null)
         {
             result = JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(cachedData))!;
@@ -88,7 +88,7 @@ public abstract class CacheManagerBase : ICacheManager
         };
 
         string json = JsonConvert.SerializeObject(value, settings);
-        await _distributedCache.SetAsync(key, System.Text.Encoding.UTF8.GetBytes(json), cacheOptions);
+        await DistributedCache.SetAsync(key, System.Text.Encoding.UTF8.GetBytes(json), cacheOptions);
         Keys[key] = true;
     }
 
@@ -101,7 +101,7 @@ public abstract class CacheManagerBase : ICacheManager
             AbsoluteExpirationRelativeToNow = new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
         };
 
-        byte[]? cachedData = await _distributedCache.GetAsync(key);
+        byte[]? cachedData = await DistributedCache.GetAsync(key);
         if (cachedData != null)
         {
             result = JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(cachedData))!;
@@ -128,14 +128,14 @@ public abstract class CacheManagerBase : ICacheManager
         {
             foreach (var key in Keys.Keys)
             {
-                await _distributedCache.RemoveAsync(key);
+                await DistributedCache.RemoveAsync(key);
             }
 
             Keys = new ConcurrentDictionary<string, bool>();
         }
         else
         {
-            await _distributedCache.RemoveAsync(cacheKey);
+            await DistributedCache.RemoveAsync(cacheKey);
             Keys.TryRemove(cacheKey, out _);
         }
     }

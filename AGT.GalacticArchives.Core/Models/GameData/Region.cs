@@ -11,15 +11,11 @@ public partial class Region : IGameData
 
     public Guid EntityId => RegionId;
 
-    public required Guid RegionId
-    {
-        get => field == Guid.Empty ? Guid.NewGuid() : field;
-        set;
-    }
+    public Guid RegionId => Guid.NewGuid();
 
     public required string Name { get; set; }
 
-    public Guid? GalaxyId { get; set; }
+    public Guid GalaxyId { get; set; }
 
     public string? CivilizedBy { get; set; }
 
@@ -77,7 +73,7 @@ public partial class Region : IGameData
 
     public HashSet<StarSystem> Systems { get; set; } = [];
 
-    public Galaxy? Galaxy { get; set; }
+    public Galaxy Galaxy { get; set; } = null!;
 
     public Dictionary<string, object?> ToDictionary()
     {

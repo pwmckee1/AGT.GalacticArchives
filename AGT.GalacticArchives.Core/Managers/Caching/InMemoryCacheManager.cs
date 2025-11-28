@@ -4,9 +4,9 @@ using Microsoft.Extensions.Caching.Distributed;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
-public class InMemory : CacheManagerBase
+public class InMemoryCacheManager : CacheManagerBase
 {
-    public InMemory(IDistributedCache distributedCache) : base(distributedCache)
+    public InMemoryCacheManager(IDistributedCache distributedCache) : base(distributedCache)
     {
     }
 
