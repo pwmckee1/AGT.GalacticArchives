@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.GameData;
+﻿using AGT.GalacticArchives.Core.Interfaces.GameData;
+using AGT.GalacticArchives.Core.Models.GameData;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
@@ -9,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 /// This class integrates with Firestore for persistence and retrieval of region data.
 /// It also uses AutoMapper to handle data transformation.
 /// </remarks>
-public interface IRegionManager
+public interface IRegionManager : IGameDataManager<IGameData>
 {
     /// <summary>
     /// Retrieves a region by its unique identifier, including associated galaxy data.

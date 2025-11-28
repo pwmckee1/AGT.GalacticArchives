@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.GameData;
+﻿using AGT.GalacticArchives.Core.Interfaces.GameData;
+using AGT.GalacticArchives.Core.Models.GameData;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
@@ -9,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 /// This class integrates with Firestore for persistence and retrieval of star system data.
 /// It also uses AutoMapper to handle data transformation.
 /// </remarks>
-public interface IStarSystemManager
+public interface IStarSystemManager : IGameDataManager<IGameData>
 {
     /// <summary>
     /// Retrieves a star system by its unique identifier, including associated region and galaxy data.

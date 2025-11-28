@@ -51,19 +51,6 @@ public class StarSystemManager(FirestoreDb firestoreDb, IMapper mapper) : GameDa
     /// <returns>The upserted star system with updated information.</returns>
     public async Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem)
     {
-        // Check if there are any changes to the Galaxy before
-        var galaxyData = await GetByIdAsync(starSystem.Region.GalaxyId, DatabaseConstants.GalaxyCollection);
-        if (galaxyData.HasAnyChanges(starSystem.Region.Galaxy.ToDictionary()))
-        {
-            await UpsertAsync(starSystem.Region.Galaxy, DatabaseConstants.GalaxyCollection);
-        }
-
-        var regionData = await GetByIdAsync(starSystem.RegionId, DatabaseConstants.RegionCollection);
-        if (regionData.HasAnyChanges(starSystem.Region.ToDictionary()))
-        {
-            await UpsertAsync(starSystem.Region, DatabaseConstants.RegionCollection);
-        }
-
         await UpsertAsync(starSystem, DatabaseConstants.StarSystemCollection);
 
         return starSystem;
