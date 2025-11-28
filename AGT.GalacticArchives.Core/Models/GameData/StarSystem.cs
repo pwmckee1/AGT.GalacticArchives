@@ -1,5 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Enums;
-using AGT.GalacticArchives.Core.Interfaces.GameData;
+﻿using AGT.GalacticArchives.Core.Interfaces.GameData;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
@@ -7,13 +6,11 @@ public class StarSystem : IGameData
 {
     public Guid EntityId => StarSystemId;
 
-    public required Guid StarSystemId
-    {
-        get => field == Guid.Empty ? Guid.NewGuid() : field;
-        set;
-    }
+    public Guid StarSystemId { get; set; } = Guid.NewGuid();
 
     public required string Name { get; set; }
+
+    public string NormalizedName => Name.ToUpperInvariant();
 
     public string? AdminNotes { get; set; }
 
@@ -24,7 +21,7 @@ public class StarSystem : IGameData
     public required string GalacticCoordinates { get; set; }
 
     // TODO Get with Caleb about calculation
-    public required string GlyphCode { get; set; }
+    public string? GlyphCode { get; set; }
 
     public Guid? PlanetOfInterestId { get; set; }
 
@@ -34,15 +31,19 @@ public class StarSystem : IGameData
 
     public bool IsGiantSystem { get; set; }
 
+    public DateTime? DiscoveryDate { get; set; }
+
+    public DateTime? SurveyDate { get; set; }
+
     public string? SpecialInterest { get; set; }
 
     public bool IsDissonant { get; set; }
 
     public string? CivilizedBy { get; set; }
 
-    public PlatformTypes? PlatformType { get; set; }
+    public string? PlatformType { get; set; }
 
-    public GameModeTypes? GameModeType { get; set; }
+    public string? GameModeType { get; set; }
 
     public int? StarCount { get; set; }
 
@@ -54,62 +55,64 @@ public class StarSystem : IGameData
 
     public int? NumberOfMoons { get; set; }
 
-    public FactionTypes? Faction { get; set; }
+    public string? Faction { get; set; }
 
     public int? LightYearsFromCenter { get; set; }
 
     public bool HasWater { get; set; }
 
-    public EconomyTypes? EconomyType { get; set; }
+    public string? EconomyType { get; set; }
 
-    public WealthTypes? WealthType { get; set; }
+    public string? WealthType { get; set; }
 
     public float? Buy { get; set; }
 
     public float? Sell { get; set; }
 
-    public ConflictTypes? ConflictType { get; set; }
+    public string? ConflictType { get; set; }
 
     public string? GameRelease { get; set; }
 
-    public Guid RegionId { get; set; }
+    public Guid? RegionId { get; set; }
 
-    public Region Region { get; set; } = null!;
+    public Region? Region { get; set; }
 
     public Dictionary<string, object?> ToDictionary()
     {
         return new Dictionary<string, object?>
         {
-            { nameof(StarSystemId), StarSystemId },
+            { nameof(StarSystemId), StarSystemId.ToString() },
             { nameof(Name), Name },
+            { nameof(NormalizedName), NormalizedName },
             { nameof(AdminNotes), AdminNotes },
             { nameof(DataQualityCheck), DataQualityCheck },
             { nameof(OriginalSystemName), OriginalSystemName },
             { nameof(GalacticCoordinates), GalacticCoordinates },
             { nameof(GlyphCode), GlyphCode },
-            { nameof(PlanetOfInterestId), PlanetOfInterestId },
+            { nameof(PlanetOfInterestId), PlanetOfInterestId.ToString() },
             { nameof(SurveyorName), SurveyorName },
             { nameof(DiscoveredBy), DiscoveredBy },
             { nameof(IsGiantSystem), IsGiantSystem },
             { nameof(SpecialInterest), SpecialInterest },
             { nameof(IsDissonant), IsDissonant },
             { nameof(CivilizedBy), CivilizedBy },
-            { nameof(PlatformType), PlatformType.ToString() },
-            { nameof(GameModeType), GameModeType.ToString() },
+            { nameof(PlatformType), PlatformType },
+            { nameof(GameModeType), GameModeType },
             { nameof(StarCount), StarCount },
             { nameof(StarCategory), StarCategory },
             { nameof(Color), Color },
             { nameof(NumberOfPlanets), NumberOfPlanets },
             { nameof(NumberOfMoons), NumberOfMoons },
-            { nameof(Faction), Faction.ToString() },
+            { nameof(Faction), Faction },
             { nameof(LightYearsFromCenter), LightYearsFromCenter },
             { nameof(HasWater), HasWater },
-            { nameof(EconomyType), EconomyType.ToString() },
-            { nameof(WealthType), WealthType.ToString() },
+            { nameof(EconomyType), EconomyType },
+            { nameof(WealthType), WealthType },
             { nameof(Buy), Buy },
             { nameof(Sell), Sell },
-            { nameof(ConflictType), ConflictType.ToString() },
+            { nameof(ConflictType), ConflictType },
             { nameof(GameRelease), GameRelease },
+            { nameof(RegionId), RegionId.ToString() },
         };
     }
 }

@@ -25,7 +25,7 @@ public class RegionManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataMa
 
         var region = Mapper.Map<Region>(regiondata);
 
-        var galaxyData = await GetByIdAsync(region.GalaxyId, DatabaseConstants.RegionCollection);
+        var galaxyData = await GetByIdAsync(region.GalaxyId!.Value, DatabaseConstants.RegionCollection);
         region.Galaxy = Mapper.Map<Galaxy>(galaxyData);
 
         return region;
@@ -38,7 +38,7 @@ public class RegionManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataMa
     /// <returns>The upserted region with updated information.</returns>
     public async Task<Region> UpsertRegionAsync(Region region)
     {
-        await UpsertAsync(region.Galaxy, DatabaseConstants.GalaxyCollection);
+        await UpsertAsync(region.Galaxy!, DatabaseConstants.GalaxyCollection);
 
         await UpsertAsync(region, DatabaseConstants.RegionCollection);
 

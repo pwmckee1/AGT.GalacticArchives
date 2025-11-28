@@ -19,5 +19,25 @@ public class ManagerModule : Module
                 c.ResolveNamed<IGalaxyManager>(nameof(GalaxyManager))))
             .As<IGalaxyManager>()
             .InstancePerLifetimeScope();
+
+        builder.RegisterType<RegionManager>()
+            .Named<IRegionManager>(nameof(RegionManager))
+            .InstancePerLifetimeScope();
+
+        builder.Register((c, parameters) => new CachedRegionManager(
+                c.Resolve<ICacheManager>(),
+                c.ResolveNamed<IRegionManager>(nameof(RegionManager))))
+            .As<IRegionManager>()
+            .InstancePerLifetimeScope();
+
+        builder.RegisterType<StarSystemManager>()
+            .Named<IStarSystemManager>(nameof(StarSystemManager))
+            .InstancePerLifetimeScope();
+
+        builder.Register((c, parameters) => new CachedStarSystemManager(
+                c.Resolve<ICacheManager>(),
+                c.ResolveNamed<IStarSystemManager>(nameof(StarSystemManager))))
+            .As<IStarSystemManager>()
+            .InstancePerLifetimeScope();
     }
 }

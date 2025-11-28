@@ -18,17 +18,17 @@ namespace AGT.GalacticArchives.Globalization {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GeneralErrorResource {
+    public class WealthTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GeneralErrorResource() {
+        internal WealthTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.GeneralErrorResource", typeof(GeneralErrorResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.WealthTypeResource", typeof(WealthTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,29 +60,47 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error has occurred processing your request.
+        ///   Looks up a localized string similar to Black Market.
         /// </summary>
-        public static string BasicError {
+        public static string BlackMarket {
             get {
-                return ResourceManager.GetString("BasicError", resourceCulture);
+                return ResourceManager.GetString("BlackMarket", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The username or password entered is incorrect.
+        ///   Looks up a localized string similar to Data Unavailable.
         /// </summary>
-        public static string InvalidLogin {
+        public static string DataUnavailable {
             get {
-                return ResourceManager.GetString("InvalidLogin", resourceCulture);
+                return ResourceManager.GetString("DataUnavailable", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is required to be specified to complete the request.
+        ///   Looks up a localized string similar to High Supply.
         /// </summary>
-        public static string PropertyMissing {
+        public static string HighSupply {
             get {
-                return ResourceManager.GetString("PropertyMissing", resourceCulture);
+                return ResourceManager.GetString("HighSupply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Supply.
+        /// </summary>
+        public static string LowSupply {
+            get {
+                return ResourceManager.GetString("LowSupply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium Supply.
+        /// </summary>
+        public static string MediumSupply {
+            get {
+                return ResourceManager.GetString("MediumSupply", resourceCulture);
             }
         }
     }

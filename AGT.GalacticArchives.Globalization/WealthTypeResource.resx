@@ -120,13 +120,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BasicError" xml:space="preserve">
-        <value>An error has occurred processing your request</value>
-    </data>
-  <data name="InvalidLogin" xml:space="preserve">
-        <value>The username or password entered is incorrect</value>
-    </data>
-  <data name="PropertyMissing" xml:space="preserve">
-    <value>{0} is required to be specified to complete the request</value>
+  <data name="BlackMarket" xml:space="preserve">
+    <value>Black Market</value>
+  </data>
+  <data name="DataUnavailable" xml:space="preserve">
+    <value>Data Unavailable</value>
+  </data>
+  <data name="HighSupply" xml:space="preserve">
+    <value>High Supply</value>
+  </data>
+  <data name="LowSupply" xml:space="preserve">
+    <value>Low Supply</value>
+  </data>
+  <data name="MediumSupply" xml:space="preserve">
+    <value>Medium Supply</value>
   </data>
 </root>

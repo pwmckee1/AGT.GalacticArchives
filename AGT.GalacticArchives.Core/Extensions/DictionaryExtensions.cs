@@ -7,10 +7,10 @@ public static class DictionaryExtensions
     public static bool HasAnyChanges(this Dictionary<string, object> first, Dictionary<string, object?> second)
     {
         if (first.Count == 0 && second.Count == 0)
-            return true;
+            return false;
 
         if (first.Count == 0 || second.Count == 0)
-            return false;
+            return true;
 
         var firstJson = JsonConvert.SerializeObject(first, new JsonSerializerSettings
         {
@@ -24,6 +24,6 @@ public static class DictionaryExtensions
             NullValueHandling = NullValueHandling.Ignore
         });
 
-        return firstJson == secondJson;
+        return firstJson != secondJson;
     }
 }

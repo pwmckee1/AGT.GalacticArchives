@@ -6,11 +6,7 @@ public class Release : IGameData
 {
     public Guid EntityId => ReleaseId;
 
-    public required Guid ReleaseId
-    {
-        get => field == Guid.Empty ? Guid.NewGuid() : field;
-        set;
-    }
+    public Guid ReleaseId { get; set; } = Guid.NewGuid();
 
     public required string Name { get; set; }
 

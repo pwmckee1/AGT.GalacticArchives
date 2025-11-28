@@ -26,20 +26,33 @@ public class StarSystemService(IStarSystemManager starSystemManager) : IStarSyst
     /// </returns>
     public async Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem)
     {
-        var galaxyData = await starSystemManager.GetByIdAsync(starSystem.Region.GalaxyId, DatabaseConstants.GalaxyCollection);
-        if (galaxyData.HasAnyChanges(starSystem.Region.Galaxy.ToDictionary()))
+        if (!starSystem.RegionId.HasValue && starSystem.Region == null)
         {
-            await starSystemManager.UpsertAsync(starSystem.Region.Galaxy, DatabaseConstants.GalaxyCollection);
+            throw new ArgumentException("Star System must have either a new Region or an existing Region");
         }
 
-        var regionData = await starSystemManager.GetByIdAsync(starSystem.RegionId, DatabaseConstants.RegionCollection);
-        if (regionData.HasAnyChanges(starSystem.Region.ToDictionary()))
+        if (starSystem.Region != null)
+        {
+            if (!starSystem.Region.GalaxyId.HasValue)
+            {
+                throw new ArgumentException("Regions must have a Galaxy");
+            }
+
+            var galaxyData = await starSystemManager.GetByIdAsync(starSystem.Region.GalaxyId.GetValueOrDefault(), DatabaseConstants.GalaxyCollection);
+            if (starSystem.Region.Galaxy != null && (galaxyData.Count == 0 || galaxyData.HasAnyChanges(starSystem.Region.Galaxy.ToDictionary())))
+            {
+                await starSystemManager.UpsertAsync(starSystem.Region.Galaxy, DatabaseConstants.GalaxyCollection);
+            }
+        }
+
+        var regionData = await starSystemManager.GetByIdAsync(starSystem.RegionId.GetValueOrDefault(), DatabaseConstants.RegionCollection);
+        if (starSystem.Region != null && (regionData.Count == 0 || regionData.HasAnyChanges(starSystem.Region.ToDictionary())))
         {
             await starSystemManager.UpsertAsync(starSystem.Region, DatabaseConstants.RegionCollection);
         }
 
         var starSystemData = await starSystemManager.GetByIdAsync(starSystem.StarSystemId, DatabaseConstants.StarSystemCollection);
-        if (starSystemData.HasAnyChanges(starSystem.ToDictionary()))
+        if (starSystemData.Count == 0 || starSystemData.HasAnyChanges(starSystem.ToDictionary()))
         {
             starSystem = await starSystemManager.UpsertStarSystemAsync(starSystem);
         }

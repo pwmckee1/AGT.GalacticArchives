@@ -11,11 +11,13 @@ public partial class Region : IGameData
 
     public Guid EntityId => RegionId;
 
-    public Guid RegionId => Guid.NewGuid();
+    public Guid RegionId { get; set; } = Guid.NewGuid();
 
     public required string Name { get; set; }
 
-    public Guid GalaxyId { get; set; }
+    public string NormalizedName => Name.ToUpperInvariant();
+
+    public Guid? GalaxyId { get; set; }
 
     public string? CivilizedBy { get; set; }
 
@@ -24,6 +26,7 @@ public partial class Region : IGameData
         get => _coordinates;
         set
         {
+            value = value != null ? value.ToUpperInvariant() : value;
             if (!string.IsNullOrEmpty(value) && !CoordinatesPattern.IsMatch(value))
             {
                 throw new ArgumentException(
@@ -71,17 +74,20 @@ public partial class Region : IGameData
 
     public string? VideoLink1 { get; set; }
 
+    public int? LightYearsFromCenter { get; set; }
+
     public HashSet<StarSystem> Systems { get; set; } = [];
 
-    public Galaxy Galaxy { get; set; } = null!;
+    public Galaxy? Galaxy { get; set; }
 
     public Dictionary<string, object?> ToDictionary()
     {
         return new Dictionary<string, object?>
         {
-            { nameof(RegionId), RegionId },
+            { nameof(RegionId), RegionId.ToString() },
             { nameof(Name), Name },
-            { nameof(GalaxyId), GalaxyId },
+            { nameof(NormalizedName), NormalizedName },
+            { nameof(GalaxyId), GalaxyId.ToString() },
             { nameof(CivilizedBy), CivilizedBy },
             { nameof(Coordinates), Coordinates },
             { nameof(Quadrant), Quadrant.ToString() },
@@ -105,6 +111,6 @@ public partial class Region : IGameData
         };
     }
 
-    [GeneratedRegex(@"^[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F]{4}$", RegexOptions.IgnoreCase, "en-US")]
+    [GeneratedRegex(@"^[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F|XXXX]{4}$", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex CoordinateRegexPattern();
 }

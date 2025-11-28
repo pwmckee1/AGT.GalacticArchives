@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Configuration;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.AppSettings;
 using AGT.GalacticArchives.Extensions;
@@ -14,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 var environment = builder.Environment;
 var applicationSettings = new ApplicationSettings();
 builder.Configuration.GetSection("ApplicationSettings").Bind(applicationSettings);
+builder.Services.AddSingleton(applicationSettings);
+ControllerConfiguration.AddControllers(builder.Services);
 
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<IDistributedCache, InMemoryDistributedCacheAdapter>();

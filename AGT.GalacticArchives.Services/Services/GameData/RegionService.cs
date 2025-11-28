@@ -26,8 +26,13 @@ public class RegionService(IRegionManager regionManager) : IRegionService
     /// </returns>
     public async Task<Region> UpsertRegionAsync(Region region)
     {
-        var galaxyData = await regionManager.GetByIdAsync(region.GalaxyId, DatabaseConstants.GalaxyCollection);
-        if (galaxyData.HasAnyChanges(region.Galaxy.ToDictionary()))
+        if (!region.GalaxyId.HasValue && region.Galaxy == null)
+        {
+            throw new ArgumentException("Regions must have either a new Galaxy or an existing Galaxy");
+        }
+
+        var galaxyData = await regionManager.GetByIdAsync(region.GalaxyId.GetValueOrDefault(), DatabaseConstants.GalaxyCollection);
+        if (region.Galaxy != null && galaxyData.HasAnyChanges(region.Galaxy.ToDictionary()))
         {
             await regionManager.UpsertAsync(region.Galaxy, DatabaseConstants.GalaxyCollection);
         }
