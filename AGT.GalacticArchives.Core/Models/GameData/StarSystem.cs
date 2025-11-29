@@ -23,7 +23,7 @@ public class StarSystem : IGameData
     // TODO Get with Caleb about calculation
     public string? GlyphCode { get; set; }
 
-    public Guid? PlanetOfInterestId { get; set; }
+    public string? PlanetOfInterestId { get; set; }
 
     public string? SurveyorName { get; set; }
 

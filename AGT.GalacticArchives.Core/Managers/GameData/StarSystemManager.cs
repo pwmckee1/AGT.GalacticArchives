@@ -36,7 +36,7 @@ public class StarSystemManager(FirestoreDb firestoreDb, IMapper mapper) : GameDa
         var regionData = await GetByIdAsync(starSystem.RegionId.GetValueOrDefault(), DatabaseConstants.RegionCollection);
         var region = Mapper.Map<Region>(regionData);
 
-        var galaxyData = await GetByIdAsync(starSystem.Region!.GalaxyId!.Value, DatabaseConstants.RegionCollection);
+        var galaxyData = await GetByIdAsync(region.GalaxyId!.Value, DatabaseConstants.RegionCollection);
         region.Galaxy = Mapper.Map<Galaxy>(galaxyData);
 
         starSystem.Region = region;

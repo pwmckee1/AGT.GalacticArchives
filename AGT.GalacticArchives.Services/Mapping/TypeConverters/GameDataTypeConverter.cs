@@ -16,11 +16,11 @@ public class GameDataTypeConverter :
             StarSystemId = (Guid)source[nameof(StarSystem.StarSystemId)],
             Name = (string)source[nameof(StarSystem.Name)],
             AdminNotes = (string?)source[nameof(StarSystem.AdminNotes)],
+            PlanetOfInterestId = (string?)source[nameof(StarSystem.PlanetOfInterestId)],
             DataQualityCheck = (string?)source[nameof(StarSystem.DataQualityCheck)],
             OriginalSystemName = (string?)source[nameof(StarSystem.OriginalSystemName)],
             GalacticCoordinates = (string)source[nameof(StarSystem.GalacticCoordinates)],
-            GlyphCode = (string)source[nameof(StarSystem.GlyphCode)]!,
-            PlanetOfInterestId = (Guid?)source[nameof(StarSystem.PlanetOfInterestId)],
+            GlyphCode = (string)source[nameof(StarSystem.GlyphCode)],
             RegionId = (Guid)source[nameof(StarSystem.RegionId)],
             SurveyorName = (string?)source[nameof(StarSystem.SurveyorName)],
             DiscoveredBy = (string?)source[nameof(StarSystem.DiscoveredBy)],
@@ -53,9 +53,9 @@ public class GameDataTypeConverter :
     {
         return new Galaxy
         {
-            GalaxyId = (Guid)source[nameof(Galaxy.GalaxyId)]!,
-            Sequence = (int)source[nameof(Galaxy.Sequence)]!,
-            Name = (string)source[nameof(Galaxy.Name)]!,
+            GalaxyId = (Guid)source[nameof(Galaxy.GalaxyId)],
+            Sequence = (int)source[nameof(Galaxy.Sequence)],
+            Name = (string)source[nameof(Galaxy.Name)],
         };
     }
 
@@ -65,8 +65,8 @@ public class GameDataTypeConverter :
         {
             RegionId = (Guid)source[nameof(Region.RegionId)],
             GalaxyId = (Guid)source[nameof(Region.GalaxyId)],
-            Quadrant = (GalaxyQuadrants?)source[nameof(Region.Quadrant)],
-            AutoLatestSurvey = (DateTime?)source[nameof(Region.AutoLatestSurvey)],
+            Quadrant = (string?)source[nameof(Region.Quadrant)],
+            AutoLatestSurvey = (string?)source[nameof(Region.AutoLatestSurvey)],
             DocSequence = (int)source[nameof(Region.DocSequence)],
             RegionAge = (float?)source[nameof(Region.CivilizedSpaceNotes)],
             Name = (string)source[nameof(Region.Name)]!,

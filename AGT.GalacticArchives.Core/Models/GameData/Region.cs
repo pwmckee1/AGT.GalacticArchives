@@ -38,7 +38,7 @@ public partial class Region : IGameData
         }
     }
 
-    public GalaxyQuadrants? Quadrant { get; set; }
+    public string? Quadrant { get; set; }
 
     public string XX => !string.IsNullOrEmpty(_coordinates) ? _coordinates.Split(':')[0] : string.Empty;
 
@@ -54,7 +54,7 @@ public partial class Region : IGameData
 
     public string? LatestKnownSurveyorId { get; set; }
 
-    public DateTime? AutoLatestSurvey { get; set; }
+    public string? AutoLatestSurvey { get; set; }
 
     public string? SummaryNotes { get; set; }
 
