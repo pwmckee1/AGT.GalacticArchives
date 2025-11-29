@@ -76,6 +76,30 @@ public partial class Region : IGameData
 
     public int? LightYearsFromCenter { get; set; }
 
+    public DateTimeOffset? EarliestSystemDiscovery { get; set; }
+
+    public string? BaseCoord { get; set; }
+
+    public string? EarliestSurveyorWikiUser { get; set; }
+
+    public string? LatestSurveyorWikiUser { get; set; }
+
+    public string? AdminNotes { get; set; }
+
+    public string? LegacyName { get; set; }
+
+    public string? LegacyWikilink { get; set; }
+
+    public string? XXdec { get; set; }
+
+    public string? YYdec { get; set; }
+
+    public string? ZZdec { get; set; }
+
+    public string? Glylphs { get; set; }
+
+    public string? Version { get; set; }
+
     public HashSet<StarSystem> Systems { get; set; } = [];
 
     public Galaxy? Galaxy { get; set; }
