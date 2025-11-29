@@ -10,7 +10,7 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS aspnet
 WORKDIR /app
 
 COPY --from=build /app/out ./
-COPY --from=build /app/Docker/api/cert-aspnetcore.pfx ./
+COPY --from=build /app/Docker/dev/cert-aspnetcore.pfx ./
 
 EXPOSE 80
 EXPOSE 443

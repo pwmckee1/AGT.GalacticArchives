@@ -89,7 +89,7 @@ public class StarSystem : IGameData
             { nameof(OriginalSystemName), OriginalSystemName },
             { nameof(GalacticCoordinates), GalacticCoordinates },
             { nameof(GlyphCode), GlyphCode },
-            { nameof(PlanetOfInterestId), PlanetOfInterestId.ToString() },
+            { nameof(PlanetOfInterestId), PlanetOfInterestId },
             { nameof(SurveyorName), SurveyorName },
             { nameof(DiscoveredBy), DiscoveredBy },
             { nameof(IsGiantSystem), IsGiantSystem },
