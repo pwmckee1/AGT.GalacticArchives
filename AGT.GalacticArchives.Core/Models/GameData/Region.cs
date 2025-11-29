@@ -90,7 +90,7 @@ public partial class Region : IGameData
             { nameof(GalaxyId), GalaxyId.ToString() },
             { nameof(CivilizedBy), CivilizedBy },
             { nameof(Coordinates), Coordinates },
-            { nameof(Quadrant), Quadrant.ToString() },
+            { nameof(Quadrant), Quadrant },
             { nameof(XX), XX },
             { nameof(YY), YY },
             { nameof(ZZ), ZZ },

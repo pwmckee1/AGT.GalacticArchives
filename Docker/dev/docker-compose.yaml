@@ -1,10 +1,10 @@
 ﻿services:
   api:
-    container_name: agt_api
-    image: agt_api
+    container_name: galactic-archives-api-dev
+    image: galactic-archives-api-dev
     build:
-      context: ../
-      dockerfile: ./Docker/api/Dockerfile
+      context: ../../
+      dockerfile: ./Docker/dev/Dockerfile
     environment:
       - ENVIRONMENT=Development
       - ASPNETCORE_ENVIRONMENT=Development

@@ -40,42 +40,32 @@ builder.Services.AddSingleton(sp =>
 
     ServiceAccountCredential credentials;
 
-    var secret =
-        GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
-
-    if (string.IsNullOrEmpty(secret))
+    if (environment.IsDevelopment())
     {
-        throw new InvalidOperationException("Unable to retrieve firebase credentials");
+        string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
+
+        if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
+        {
+            throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
+        }
+
+        logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
+
+        var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
+        credentials = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
     }
+    else
+    {
+        var secret =
+            GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
 
-    credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
+        if (string.IsNullOrEmpty(secret))
+        {
+            throw new InvalidOperationException("Unable to retrieve firebase credentials");
+        }
 
-    // if (environment.IsDevelopment())
-    // {
-    //     string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
-    //
-    //     if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
-    //     {
-    //         throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
-    //     }
-    //
-    //     logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
-    //
-    //     var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
-    //     credentials = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
-    // }
-    // else
-    // {
-    //     var secret =
-    //         GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
-    //
-    //     if (string.IsNullOrEmpty(secret))
-    //     {
-    //         throw new InvalidOperationException("Unable to retrieve firebase credentials");
-    //     }
-    //
-    //     credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
-    // }
+        credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
+    }
 
     return new FirestoreDbBuilder
     {
@@ -85,30 +75,6 @@ builder.Services.AddSingleton(sp =>
 });
 
 var app = builder.Build();
-
-// Test connection on startup (optional but useful)
-// using (var scope = app.Services.CreateScope())
-// {
-//     var db = scope.ServiceProvider.GetRequiredService<FirestoreDb>();
-//     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-//
-//     try
-//     {
-//         // Simple connection test
-//         var testRef = db.Collection("_connection_test").Document("test");
-//         await testRef.SetAsync(new Dictionary<string, object>
-//         {
-//             {"timestamp", FieldValue.ServerTimestamp},
-//             {"message", "API started successfully"}
-//         });
-//         logger.LogInformation("✓ Firebase connection successful");
-//     }
-//     catch (Exception ex)
-//     {
-//         logger.LogError(ex, "✗ Firebase connection failed");
-//         throw;
-//     }
-// }
 
 // Configure the HTTP request pipeline.
 app.UseMessageResponseMiddleware();
