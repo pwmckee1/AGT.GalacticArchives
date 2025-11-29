@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using AGT.GalacticArchives.Core.Attributes;
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Application.Exceptions;
 using AGT.GalacticArchives.Filters;
@@ -37,11 +36,7 @@ public static class ControllerConfiguration
                 };
             })
             .AddControllersAsServices()
-            .AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                options.JsonSerializerOptions.Converters.Add(new DisplayAttributeEnumConverter());
-            })
+            .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()))
             .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.Converters.Add(new StringEnumConverter());
