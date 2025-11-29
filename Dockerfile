@@ -11,7 +11,6 @@ COPY ["AGT.GalacticArchives.sln", "."]
 COPY ["AGT.GalacticArchives.Api/AGT.GalacticArchives.Api.csproj", "AGT.GalacticArchives.Api/"]
 COPY ["AGT.GalacticArchives.Core/AGT.GalacticArchives.Core.csproj", "AGT.GalacticArchives.Core/"]
 COPY ["AGT.GalacticArchives.Services/AGT.GalacticArchives.Services.csproj", "AGT.GalacticArchives.Services/"]
-COPY ["AGT.GalacticArchives.Managers/AGT.GalacticArchives.Managers.csproj", "AGT.GalacticArchives.Managers/"]
 COPY ["AGT.GalacticArchives.Globalization/AGT.GalacticArchives.Globalization.csproj", "AGT.GalacticArchives.Globalization/"]
 
 # Restore dependencies
