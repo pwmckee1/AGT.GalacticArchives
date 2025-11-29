@@ -6,6 +6,7 @@ using AGT.GalacticArchives.Middleware;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper.EquivalencyExpression;
+using Google.Api.Gax;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
 using Microsoft.Extensions.Caching.Distributed;
@@ -38,47 +39,56 @@ builder.Services.AddSingleton(sp =>
 {
     var logger = sp.GetRequiredService<ILogger<Program>>();
 
-    ServiceAccountCredential credentials;
+    var firestoreBuilder = new FirestoreDbBuilder
+    {
+        ProjectId = applicationSettings.Firebase.ProjectId,
+    };
 
     if (environment.IsDevelopment())
     {
-        string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
+        // Check for emulator configuration
+        var emulatorHost = Environment.GetEnvironmentVariable("FIRESTORE_EMULATOR_HOST");
 
-        if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
+        if (!string.IsNullOrEmpty(emulatorHost))
         {
-            throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
+            logger.LogInformation($"Using Firestore emulator at {emulatorHost}");
+            firestoreBuilder.EmulatorDetection = EmulatorDetection.EmulatorOnly;
         }
+        else
+        {
+            string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
+            if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
+            {
+                throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
+            }
 
-        logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
+            logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
 
-        var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
-        credentials = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
+            var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
+            firestoreBuilder.Credential = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
+        }
     }
     else
     {
         var secret =
-            GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
+            GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId!, "firebase-credentials");
 
         if (string.IsNullOrEmpty(secret))
         {
             throw new InvalidOperationException("Unable to retrieve firebase credentials");
         }
 
-        credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
+        firestoreBuilder.Credential = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
     }
 
-    return new FirestoreDbBuilder
-    {
-        ProjectId = applicationSettings.Firebase.ProjectId,
-        Credential = credentials,
-    }.Build();
+    return firestoreBuilder.Build();
 });
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseMessageResponseMiddleware();
-app.UseMiddleware<RequestRewindMiddleware>();
+// app.UseMiddleware<RequestRewindMiddleware>();
 app.UseExceptionHandler(options => { options.UseMiddleware<ErrorHandlingMiddleware>(); });
 app.UseOptions();
 

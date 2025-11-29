@@ -7,3 +7,4 @@ firebase-credentials.json
 .vs
 .idea
 *.pfx
+*.log
