@@ -6,3 +6,4 @@ riderModule.iml
 firebase-credentials.json
 .vs
 .idea
+*.pfx

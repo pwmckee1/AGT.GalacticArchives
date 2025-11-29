@@ -1,6 +1,10 @@
-﻿# Build stage
+﻿
+# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
+
+# Accept build configuration argument
+ARG BUILD_CONFIGURATION=Release
 
 # Copy solution and project files
 COPY ["AGT.GalacticArchives.sln", "."]
@@ -17,11 +21,12 @@ RUN dotnet restore "AGT.GalacticArchives.Api/AGT.GalacticArchives.Api.csproj"
 COPY . .
 
 # Build the application
-RUN dotnet build "AGT.GalacticArchives.Api/AGT.GalacticArchives.Api.csproj" -c Release -o /app/build
+RUN dotnet build "AGT.GalacticArchives.Api/AGT.GalacticArchives.Api.csproj" -c ${BUILD_CONFIGURATION} -o /app/build
 
 # Publish stage
 FROM build AS publish
-RUN dotnet publish "AGT.GalacticArchives.Api/AGT.GalacticArchives.Api.csproj" -c Release -o /app/publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "AGT.GalacticArchives.Api/AGT.GalacticArchives.Api.csproj" -c ${BUILD_CONFIGURATION} -o /app/publish
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
@@ -36,6 +41,6 @@ ENV ASPNETCORE_ENVIRONMENT=Production
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD wget --no-verbose --tries=1 --spider http://localhost:8080/health || exit 1
+    CMD curl -f http://localhost:8080/health || exit 1
 
 ENTRYPOINT ["dotnet", "AGT.GalacticArchives.Api.dll"]
