@@ -5,6 +5,8 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>AGT.GalacticArchives</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>63610807-7b92-4765-bbc3-5adda6b35b7d</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,6 +26,12 @@
       <ProjectReference Include="..\AGT.GalacticArchives.Core\AGT.GalacticArchives.Core.csproj" />
       <ProjectReference Include="..\AGT.GalacticArchives.Globalization\AGT.GalacticArchives.Globalization.csproj" />
       <ProjectReference Include="..\AGT.GalacticArchives.Services\AGT.GalacticArchives.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
