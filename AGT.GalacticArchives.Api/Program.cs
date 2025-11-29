@@ -1,6 +1,6 @@
 using AGT.GalacticArchives.Configuration;
 using AGT.GalacticArchives.Core.Managers.Caching;
-using AGT.GalacticArchives.Core.Models.AppSettings;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Extensions;
 using AGT.GalacticArchives.Middleware;
 using Autofac;
@@ -40,31 +40,42 @@ builder.Services.AddSingleton(sp =>
 
     ServiceAccountCredential credentials;
 
-    if (environment.IsDevelopment())
+    var secret =
+        GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
+
+    if (string.IsNullOrEmpty(secret))
     {
-        string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
-
-        if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
-        {
-            throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
-        }
-
-        logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
-
-        var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
-        credentials = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
+        throw new InvalidOperationException("Unable to retrieve firebase credentials");
     }
-    else
-    {
-        var credentialsJson = Environment.GetEnvironmentVariable("FIREBASE_CREDENTIALS");
 
-        if (string.IsNullOrEmpty(credentialsJson))
-        {
-            throw new InvalidOperationException("FIREBASE_CREDENTIALS environment variable not set");
-        }
+    credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
 
-        credentials = CredentialFactory.FromJson<ServiceAccountCredential>(credentialsJson);
-    }
+    // if (environment.IsDevelopment())
+    // {
+    //     string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
+    //
+    //     if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
+    //     {
+    //         throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
+    //     }
+    //
+    //     logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
+    //
+    //     var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
+    //     credentials = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
+    // }
+    // else
+    // {
+    //     var secret =
+    //         GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
+    //
+    //     if (string.IsNullOrEmpty(secret))
+    //     {
+    //         throw new InvalidOperationException("Unable to retrieve firebase credentials");
+    //     }
+    //
+    //     credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
+    // }
 
     return new FirestoreDbBuilder
     {
