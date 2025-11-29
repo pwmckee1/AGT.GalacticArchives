@@ -1,6 +1,6 @@
 using AGT.GalacticArchives.Configuration;
 using AGT.GalacticArchives.Core.Managers.Caching;
-using AGT.GalacticArchives.Core.Models.AppSettings;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Extensions;
 using AGT.GalacticArchives.Middleware;
 using Autofac;
@@ -56,14 +56,15 @@ builder.Services.AddSingleton(sp =>
     }
     else
     {
-        var credentialsJson = Environment.GetEnvironmentVariable("FIREBASE_CREDENTIALS");
+        var secret =
+            GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId, "firebase-credentials");
 
-        if (string.IsNullOrEmpty(credentialsJson))
+        if (string.IsNullOrEmpty(secret))
         {
-            throw new InvalidOperationException("FIREBASE_CREDENTIALS environment variable not set");
+            throw new InvalidOperationException("Unable to retrieve firebase credentials");
         }
 
-        credentials = CredentialFactory.FromJson<ServiceAccountCredential>(credentialsJson);
+        credentials = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
     }
 
     return new FirestoreDbBuilder
@@ -74,30 +75,6 @@ builder.Services.AddSingleton(sp =>
 });
 
 var app = builder.Build();
-
-// Test connection on startup (optional but useful)
-// using (var scope = app.Services.CreateScope())
-// {
-//     var db = scope.ServiceProvider.GetRequiredService<FirestoreDb>();
-//     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-//
-//     try
-//     {
-//         // Simple connection test
-//         var testRef = db.Collection("_connection_test").Document("test");
-//         await testRef.SetAsync(new Dictionary<string, object>
-//         {
-//             {"timestamp", FieldValue.ServerTimestamp},
-//             {"message", "API started successfully"}
-//         });
-//         logger.LogInformation("✓ Firebase connection successful");
-//     }
-//     catch (Exception ex)
-//     {
-//         logger.LogError(ex, "✗ Firebase connection failed");
-//         throw;
-//     }
-// }
 
 // Configure the HTTP request pipeline.
 app.UseMessageResponseMiddleware();

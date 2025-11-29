@@ -48,7 +48,7 @@ namespace AGT.GalacticArchives.Middleware;
 
                     var error = new MessageResponse<MiddlewareException>
                     {
-                        Messages = new HashSet<object> { ObfuscateMiddlewareException(context.HandleException(ex.Error, Logger)) },
+                        Messages = new HashSet<object> { context.HandleException(ex.Error, Logger) },
                     };
 
                     await context.Response.WriteAsync(error.SerializeResponse()).ConfigureAwait(false);
