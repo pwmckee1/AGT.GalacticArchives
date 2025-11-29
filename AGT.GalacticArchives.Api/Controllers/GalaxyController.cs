@@ -23,7 +23,7 @@ public class GalaxyController(IGalaxyService galaxyService): ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> PostAsync(Galaxy galaxy)
+    public async Task<IActionResult> PostAsync([FromBody] Galaxy galaxy)
     {
         var response = await galaxyService.UpsertGalaxyAsync(galaxy);
         return Ok(response);

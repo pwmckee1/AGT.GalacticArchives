@@ -17,7 +17,7 @@ public class RegionController(IRegionService regionService): ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> PostAsync(Region region)
+    public async Task<IActionResult> PostAsync([FromBody] Region region)
     {
         var response = await regionService.UpsertRegionAsync(region);
         return Ok(response);
