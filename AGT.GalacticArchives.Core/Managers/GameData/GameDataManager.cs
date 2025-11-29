@@ -100,11 +100,10 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
             .Document(entity.EntityId.ToString());
 
         var snapshot = await docRef.GetSnapshotAsync();
-        WriteResult test;
 
         if (!snapshot.Exists)
         {
-            test = await docRef.SetAsync(entity.ToDictionary());
+            await docRef.SetAsync(entity.ToDictionary());
         }
         else
         {
