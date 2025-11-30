@@ -14,9 +14,13 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FGalaxyResource/@EntryIndexRemoved">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FGeneralErrorResource/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FGeneralErrorResource/@EntryIndexRemoved">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FPlanetResource/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FPlanetResrouce/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FPlanetResrouce/@EntryIndexRemoved">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FPlatformTypeResource/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FPlatformTypeResource/@EntryIndexRemoved">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FRegionResource/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FRegionResource/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FStarSystemResource/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FWealthTypeResource/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AGT_002EGalacticArchives_002EGlobalization_002FWealthTypeResource/@EntryIndexRemoved">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
