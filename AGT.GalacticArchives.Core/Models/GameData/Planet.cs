@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
@@ -8,9 +10,8 @@ public class Planet : GameData
 
     public Guid PlanetId { get; set; } = Guid.NewGuid();
 
-    public required string Name { get; set; }
-
-    public string NormalizedName => Name.ToUpperInvariant();
+    [Display(ResourceType = typeof(PlanetResource), Description = nameof(PlanetResource.Name))]
+    public override required string Name { get; set; }
 
     public string? PlanetNameAllPlatforms { get; set; }
 
@@ -234,16 +235,19 @@ public class Planet : GameData
 
     public StarSystem? StarSystem { get; set; }
 
+    public HashSet<Starship> Starships { get; set; } = [];
+
     public override Dictionary<string, object?> ToDictionary(
         GameData gameData = null!,
-        PropertyInfo[] properties1 = null!,
+        PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
-        var properties = typeof(Planet).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        properties = typeof(Planet).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         excludedProperties =
         [
             nameof(EntityId),
             nameof(StarSystem),
+            nameof(Starships),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

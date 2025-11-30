@@ -11,7 +11,7 @@ public class StarSystem : GameData
 
     public Guid StarSystemId { get; set; } = Guid.NewGuid();
 
-    public required string Name { get; set; }
+    public override required string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 
@@ -166,10 +166,10 @@ public class StarSystem : GameData
 
     public override Dictionary<string, object?> ToDictionary(
         GameData gameData = null!,
-        PropertyInfo[] properties1 = null!,
+        PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
-        var properties = typeof(StarSystem).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        properties = typeof(StarSystem).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         excludedProperties =
         [
             nameof(EntityId),

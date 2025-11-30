@@ -1,5 +1,7 @@
-﻿using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
@@ -11,9 +13,8 @@ public class Region : GameData
 
     public Guid RegionId { get; set; } = Guid.NewGuid();
 
-    public required string Name { get; set; }
-
-    public string NormalizedName => Name.ToUpperInvariant();
+    [Display(ResourceType = typeof(RegionResource), Description = nameof(RegionResource.Name))]
+    public override required string Name { get; set; }
 
     public Guid? GalaxyId { get; set; }
 
@@ -93,10 +94,10 @@ public class Region : GameData
 
     public override Dictionary<string, object?> ToDictionary(
         GameData gameData = null!,
-        PropertyInfo[] properties1 = null!,
+        PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
-        var properties = typeof(Region).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        properties = typeof(Region).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         excludedProperties =
         [
             nameof(EntityId),

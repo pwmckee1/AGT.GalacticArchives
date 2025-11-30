@@ -10,18 +10,14 @@ public class Galaxy : GameData
 
     public required int Sequence { get; set; }
 
-    public required string Name { get; set; }
-
-    public string NormalizedName => Name.ToUpperInvariant();
-
     public HashSet<Region> Regions { get; set; } = [];
 
     public override Dictionary<string, object?> ToDictionary(
         GameData gameData = null!,
-        PropertyInfo[] properties1 = null!,
+        PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
-        var properties = typeof(Galaxy).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        properties = typeof(Galaxy).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         excludedProperties =
         [
             nameof(EntityId),

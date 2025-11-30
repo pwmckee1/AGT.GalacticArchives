@@ -6,6 +6,10 @@ namespace AGT.GalacticArchives.Core.Models.GameData;
 public abstract class GameData : IGameData
 {
     public abstract Guid EntityId { get; }
+
+    public virtual required string Name { get; set; }
+
+    public string NormalizedName => Name.ToUpperInvariant();
     public virtual Dictionary<string, object?> ToDictionary(
         GameData gameData = null!,
         PropertyInfo[] properties = null!,
