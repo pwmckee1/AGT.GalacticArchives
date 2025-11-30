@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.GameData;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Models.GameData;

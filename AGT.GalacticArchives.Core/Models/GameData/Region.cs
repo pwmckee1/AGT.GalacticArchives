@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using AGT.GalacticArchives.Core.Enums;
 using AGT.GalacticArchives.Core.Interfaces.GameData;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
@@ -76,7 +75,7 @@ public partial class Region : IGameData
 
     public int? LightYearsFromCenter { get; set; }
 
-    public DateTimeOffset? EarliestSystemDiscovery { get; set; }
+    public string? EarliestSystemDiscovery { get; set; }
 
     public string? BaseCoord { get; set; }
 
@@ -104,6 +103,7 @@ public partial class Region : IGameData
 
     public Galaxy? Galaxy { get; set; }
 
+    // TODO Replace this with Reflection
     public Dictionary<string, object?> ToDictionary()
     {
         return new Dictionary<string, object?>
@@ -132,6 +132,18 @@ public partial class Region : IGameData
             { nameof(WikiLink), WikiLink },
             { nameof(ExternalLink1), ExternalLink1 },
             { nameof(VideoLink1), VideoLink1 },
+            { nameof(EarliestSystemDiscovery), EarliestSystemDiscovery },
+            { nameof(BaseCoord), BaseCoord },
+            { nameof(EarliestSurveyorWikiUser), EarliestSurveyorWikiUser },
+            { nameof(LatestSurveyorWikiUser), LatestSurveyorWikiUser },
+            { nameof(AdminNotes), AdminNotes },
+            { nameof(LegacyName), LegacyName },
+            { nameof(LegacyWikilink), LegacyWikilink },
+            { nameof(XXdec), XXdec },
+            { nameof(YYdec), YYdec },
+            { nameof(ZZdec), ZZdec },
+            { nameof(Glylphs), Glylphs },
+            { nameof(Version), Version },
         };
     }
 

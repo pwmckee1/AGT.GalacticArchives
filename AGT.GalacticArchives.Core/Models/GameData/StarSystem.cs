@@ -35,9 +35,9 @@ public class StarSystem : IGameData
 
     public bool IsGiantSystem { get; set; }
 
-    public DateTimeOffset? DiscoveryDate { get; set; }
+    public string? DiscoveryDate { get; set; }
 
-    public DateTimeOffset? SurveyDate { get; set; }
+    public string? SurveyDate { get; set; }
 
     public string? SpecialInterest { get; set; }
 
@@ -82,10 +82,6 @@ public class StarSystem : IGameData
     public string? GameRelease { get; set; }
 
     public string? KeySystemIndicator { get; set; }
-
-    public Guid? RegionId { get; set; }
-
-    public Region? Region { get; set; }
 
     public HashSet<string?> SpaceStationTradeItems { get; set; } = [];
 
@@ -155,6 +151,13 @@ public class StarSystem : IGameData
 
     public string? SystemMisc { get; set; }
 
+    public Guid? RegionId { get; set; }
+
+    public Region? Region { get; set; }
+
+    public HashSet<Planet> Planets { get; set; } = [];
+
+    // TODO Replace this with Reflection
     public Dictionary<string, object?> ToDictionary()
     {
         return new Dictionary<string, object?>
@@ -190,7 +193,46 @@ public class StarSystem : IGameData
             { nameof(Sell), Sell },
             { nameof(ConflictType), ConflictType },
             { nameof(GameRelease), GameRelease },
+            { nameof(SystemNameAllPlatforms), SystemNameAllPlatforms },
             { nameof(RegionId), RegionId.ToString() },
+            { nameof(DiscoveredLinkOnWiki), DiscoveredLinkOnWiki },
+            { nameof(Bases), Bases },
+            { nameof(LightYearsFromCenterAutoEstimate), LightYearsFromCenterAutoEstimate },
+            { nameof(KeySystemIndicator), KeySystemIndicator },
+            { nameof(SpaceStationTradeItems), SpaceStationTradeItems },
+            { nameof(ExoSuitSClassUpgradeModules), ExoSuitSClassUpgradeModules },
+            { nameof(SpaceShipSClassUpgradeModules), SpaceShipSClassUpgradeModules },
+            { nameof(MultiToolSClassUpgradeModules), MultiToolSClassUpgradeModules },
+            { nameof(XCoordDec), XCoordDec },
+            { nameof(YCoordDec), YCoordDec },
+            { nameof(ZCoordDec), ZCoordDec },
+            { nameof(Hex2DecSystemId), Hex2DecSystemId },
+            { nameof(SummaryAdditions), SummaryAdditions },
+            { nameof(DiscoveredNotes), DiscoveredNotes },
+            { nameof(PlanetsTextNotes), PlanetsTextNotes },
+            { nameof(StarshipsTextNotes), StarshipsTextNotes },
+            { nameof(MTTextNotes), MTTextNotes },
+            { nameof(LocInfoNotes), LocInfoNotes },
+            { nameof(SpaceStationNotes), SpaceStationNotes },
+            { nameof(AdditionalNotes), AdditionalNotes },
+            { nameof(GalleryTextNotes), GalleryTextNotes },
+            { nameof(IsPhantomSystem), IsPhantomSystem },
+            { nameof(HasCenterAccess), HasCenterAccess },
+            { nameof(BlackHoleDestination), BlackHoleDestination },
+            { nameof(NMSWikiLink), NMSWikiLink },
+            { nameof(PortalRepository), PortalRepository },
+            { nameof(ExternalLink1), ExternalLink1 },
+            { nameof(ExternalLink2), ExternalLink2 },
+            { nameof(ExternalLink3), ExternalLink3 },
+            { nameof(VideoLink), VideoLink },
+            { nameof(LegacyPCSystemName), LegacyPCSystemName },
+            { nameof(LegacyPSSystemName), LegacyPSSystemName },
+            { nameof(LegacyXboxSystemName), LegacyXboxSystemName },
+            { nameof(LegacyPCDiscoverersGamerTagName), LegacyPCDiscoverersGamerTagName },
+            { nameof(LegacyPSDiscoverersGamerTagName), LegacyPSDiscoverersGamerTagName },
+            { nameof(LegacyXboxDiscoverersGamerTagName), LegacyXboxDiscoverersGamerTagName },
+            { nameof(Evolution), Evolution },
+            { nameof(SystemMisc), SystemMisc },
         };
     }
 }
