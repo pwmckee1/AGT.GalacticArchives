@@ -23,6 +23,18 @@
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>WealthTypeResource.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="RegionResource.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>RegionResource.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="StarSystemResource.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>StarSystemResource.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="PlanetResource.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>PlanetResrouce.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -40,6 +52,21 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>WealthTypeResource.resx</DependentUpon>
+      </Compile>
+      <Compile Update="RegionResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>RegionResource.resx</DependentUpon>
+      </Compile>
+      <Compile Update="StarSystemResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>StarSystemResource.resx</DependentUpon>
+      </Compile>
+      <Compile Update="PlanetResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>PlanetResource.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

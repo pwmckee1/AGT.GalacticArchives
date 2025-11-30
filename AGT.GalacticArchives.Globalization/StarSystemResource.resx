@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditionalNotes" xml:space="preserve">
+    <value>Additional Notes</value>
+  </data>
+  <data name="AdminNotes" xml:space="preserve">
+    <value>Editor and admin notes on data quality</value>
+  </data>
+  <data name="BlackHoleDestination" xml:space="preserve">
+    <value>Black Hole Destination</value>
+  </data>
+  <data name="Buy" xml:space="preserve">
+    <value>e-buy</value>
+  </data>
+  <data name="CivilizedBy" xml:space="preserve">
+    <value>Civilized?</value>
+  </data>
+  <data name="ConflictType" xml:space="preserve">
+    <value>Conflict</value>
+  </data>
+  <data name="DataQualityCheck" xml:space="preserve">
+    <value>Data Quality Check</value>
+  </data>
+  <data name="DiscoveredBy" xml:space="preserve">
+    <value>Discovered by</value>
+  </data>
+  <data name="DiscoveredLinkOnWiki" xml:space="preserve">
+    <value>Discovered Link on Wiki</value>
+  </data>
+  <data name="DiscoveredNotes" xml:space="preserve">
+    <value>Discovered Notes</value>
+  </data>
+  <data name="DiscoveryDate" xml:space="preserve">
+    <value>Discovery Date</value>
+  </data>
+  <data name="EconomyType" xml:space="preserve">
+    <value>Economy</value>
+  </data>
+  <data name="ExoSuitSClassUpgradeModules" xml:space="preserve">
+    <value>ExoSuit S-Class Upgrade Modules</value>
+  </data>
+  <data name="ExternalLink1" xml:space="preserve">
+    <value>External Link 1</value>
+  </data>
+  <data name="ExternalLink2" xml:space="preserve">
+    <value>External Link 2</value>
+  </data>
+  <data name="ExternalLink3" xml:space="preserve">
+    <value>External Link 3</value>
+  </data>
+  <data name="GalacticCoordinates" xml:space="preserve">
+    <value>Galactic Coordinates</value>
+  </data>
+  <data name="GalleryTextNotes" xml:space="preserve">
+    <value>Gallery Text Notes</value>
+  </data>
+  <data name="GameModeType" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="GameRelease" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="GlyphCode" xml:space="preserve">
+    <value>Glyph Code</value>
+  </data>
+  <data name="HasCenterAccess" xml:space="preserve">
+    <value>Center Access? (Y/blank)</value>
+  </data>
+  <data name="HasWater" xml:space="preserve">
+    <value>Water (Y/N)</value>
+  </data>
+  <data name="Hex2DecSystemId" xml:space="preserve">
+    <value>System ID</value>
+  </data>
+  <data name="IsDissonant" xml:space="preserve">
+    <value>Dissonant?</value>
+  </data>
+  <data name="IsGiantSystem" xml:space="preserve">
+    <value>Giant System, (Y/N)</value>
+  </data>
+  <data name="IsPhantomSystem" xml:space="preserve">
+    <value>Phantom System?</value>
+  </data>
+  <data name="KeySystemIndicator" xml:space="preserve">
+    <value>Key System Indicator</value>
+  </data>
+  <data name="LegacyPCDiscoverersGamerTagName" xml:space="preserve">
+    <value>LEGACY PC Discoverers GamerTag Name</value>
+  </data>
+  <data name="LegacyPCSystemName" xml:space="preserve">
+    <value>LEGACY PC system name</value>
+  </data>
+  <data name="LegacyPSDiscoverersGamerTagName" xml:space="preserve">
+    <value>LEGACY PS Discoverers GamerTag Name</value>
+  </data>
+  <data name="LegacyPSSystemName" xml:space="preserve">
+    <value>LEGACY PS system name</value>
+  </data>
+  <data name="LegacyXboxDiscoverersGamerTagName" xml:space="preserve">
+    <value>LEGACY Xbox Discoverers GamerTag Name</value>
+  </data>
+  <data name="LegacyXboxSystemName" xml:space="preserve">
+    <value>LEGACY Xbox system name</value>
+  </data>
+  <data name="LightYearsFromCenter" xml:space="preserve">
+    <value>LY from center (manual observation)</value>
+  </data>
+  <data name="LightYearsFromCenterAutoEstimate" xml:space="preserve">
+    <value>LY from center (auto estimate)</value>
+  </data>
+  <data name="LocInfoNotes" xml:space="preserve">
+    <value>Loc Info Notes</value>
+  </data>
+  <data name="MTTextNotes" xml:space="preserve">
+    <value>MT Text Notes</value>
+  </data>
+  <data name="MultiToolSClassUpgradeModules" xml:space="preserve">
+    <value>Multi-Tool S-Class Upgrade Modules</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>System Name (Unique entry search key)</value>
+  </data>
+  <data name="NMSWikiLink" xml:space="preserve">
+    <value>NMS wiki Link</value>
+  </data>
+  <data name="NumberOfMoons" xml:space="preserve">
+    <value># of moons</value>
+  </data>
+  <data name="NumberOfPlanets" xml:space="preserve">
+    <value># of planets</value>
+  </data>
+  <data name="OriginalSystemName" xml:space="preserve">
+    <value>Original Sys Name</value>
+  </data>
+  <data name="PlanetsTextNotes" xml:space="preserve">
+    <value>Planets Text Notes</value>
+  </data>
+  <data name="PlatformType" xml:space="preserve">
+    <value>Discovery Platform</value>
+  </data>
+  <data name="PortalRepository" xml:space="preserve">
+    <value>Portal Repository</value>
+  </data>
+  <data name="Sell" xml:space="preserve">
+    <value>E-Sell</value>
+  </data>
+  <data name="SpaceShipSClassUpgradeModules" xml:space="preserve">
+    <value>SpaceShip S-Class Upgrade Modules</value>
+  </data>
+  <data name="SpaceStationNotes" xml:space="preserve">
+    <value>Space Station Notes</value>
+  </data>
+  <data name="SpaceStationTradeItems" xml:space="preserve">
+    <value>Space Station Trade Item</value>
+  </data>
+  <data name="SpecialInterest" xml:space="preserve">
+    <value>Special Interest</value>
+  </data>
+  <data name="StarCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="StarCount" xml:space="preserve">
+    <value>Multiple stars?</value>
+  </data>
+  <data name="StarshipsTextNotes" xml:space="preserve">
+    <value>Starships Text Notes</value>
+  </data>
+  <data name="SummaryAdditions" xml:space="preserve">
+    <value>Summary Additions</value>
+  </data>
+  <data name="SurveyDate" xml:space="preserve">
+    <value>Survey Date</value>
+  </data>
+  <data name="SurveyorName" xml:space="preserve">
+    <value>Source/Surveyor Name</value>
+  </data>
+  <data name="SystemMisc" xml:space="preserve">
+    <value>System Misc</value>
+  </data>
+  <data name="SystemNameAllPlatforms" xml:space="preserve">
+    <value>System Name (All platforms)</value>
+  </data>
+  <data name="VideoLink" xml:space="preserve">
+    <value>Video Link</value>
+  </data>
+  <data name="WealthType" xml:space="preserve">
+    <value>Wealth</value>
+  </data>
+  <data name="XCoordDec" xml:space="preserve">
+    <value>X coord DEC</value>
+  </data>
+  <data name="YCoordDec" xml:space="preserve">
+    <value>Y coord DEC</value>
+  </data>
+  <data name="ZCoordDec" xml:space="preserve">
+    <value>Z coord DEC</value>
+  </data>
+</root>

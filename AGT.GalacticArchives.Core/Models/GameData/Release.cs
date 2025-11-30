@@ -10,9 +10,10 @@ public class Release : IGameData
 
     public required string Name { get; set; }
 
-    public required string ReleaseNumber { get; set; }
+    public required string? ReleaseNumber { get; set; }
 
-    public required DateTime ReleaseDate { get; set; }
+    public required string? ReleaseDate { get; set; }
+
     public Dictionary<string, object?> ToDictionary()
     {
         return new Dictionary<string, object?>

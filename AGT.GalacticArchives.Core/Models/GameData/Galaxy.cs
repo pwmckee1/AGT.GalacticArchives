@@ -14,6 +14,7 @@ public class Galaxy : IGameData
 
     public HashSet<Region> Regions { get; set; } = [];
 
+    // TODO Replace this with Reflection
     public Dictionary<string, object?> ToDictionary()
     {
         return new Dictionary<string, object?>
