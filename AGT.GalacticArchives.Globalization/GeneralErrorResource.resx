@@ -123,6 +123,15 @@
   <data name="BasicError" xml:space="preserve">
         <value>An error has occurred processing your request</value>
     </data>
+  <data name="CannotConvertValue" xml:space="preserve">
+    <value>Cannot convert value of type '{0}' to '{1}'</value>
+  </data>
+  <data name="CoordinatesMustMatchPattern" xml:space="preserve">
+    <value>Coordinates must match pattern 'XXXX:XXXX:XXXX' where X is a hexadecimal digit</value>
+  </data>
+  <data name="FailedToConvertProperty" xml:space="preserve">
+    <value>Failed to convert property '{0}' of type '{1}' from value '{2}' (type: {3}) to target type '{4}'.</value>
+  </data>
   <data name="InvalidLogin" xml:space="preserve">
         <value>The username or password entered is incorrect</value>
     </data>

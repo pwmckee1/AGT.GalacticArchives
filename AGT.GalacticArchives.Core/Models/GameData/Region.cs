@@ -1,14 +1,13 @@
-﻿using System.Text.RegularExpressions;
-using AGT.GalacticArchives.Core.Interfaces.GameData;
+﻿using System.Reflection;
+using AGT.GalacticArchives.Core.Extensions;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
-public partial class Region : IGameData
+public class Region : GameData
 {
     private string? _coordinates;
-    private static readonly Regex CoordinatesPattern = CoordinateRegexPattern();
 
-    public Guid EntityId => RegionId;
+    public override Guid EntityId => RegionId;
 
     public Guid RegionId { get; set; } = Guid.NewGuid();
 
@@ -23,18 +22,7 @@ public partial class Region : IGameData
     public string? Coordinates
     {
         get => _coordinates;
-        set
-        {
-            value = value != null ? value.ToUpperInvariant() : value;
-            if (!string.IsNullOrEmpty(value) && !CoordinatesPattern.IsMatch(value))
-            {
-                throw new ArgumentException(
-                    "Coordinates must match pattern 'XXXX:XXXX:XXXX' where X is a hexadecimal digit",
-                    nameof(value));
-            }
-
-            _coordinates = value;
-        }
+        set => _coordinates = value.GetValidatedCoordinates();
     }
 
     public string? Quadrant { get; set; }
@@ -103,50 +91,19 @@ public partial class Region : IGameData
 
     public Galaxy? Galaxy { get; set; }
 
-    // TODO Replace this with Reflection
-    public Dictionary<string, object?> ToDictionary()
+    public override Dictionary<string, object?> ToDictionary(
+        GameData gameData = null!,
+        PropertyInfo[] properties1 = null!,
+        HashSet<string> excludedProperties = null!)
     {
-        return new Dictionary<string, object?>
-        {
-            { nameof(RegionId), RegionId.ToString() },
-            { nameof(Name), Name },
-            { nameof(NormalizedName), NormalizedName },
-            { nameof(GalaxyId), GalaxyId.ToString() },
-            { nameof(CivilizedBy), CivilizedBy },
-            { nameof(Coordinates), Coordinates },
-            { nameof(Quadrant), Quadrant },
-            { nameof(XX), XX },
-            { nameof(YY), YY },
-            { nameof(ZZ), ZZ },
-            { nameof(DocSequence), DocSequence },
-            { nameof(GameRelease), GameRelease },
-            { nameof(EarliestKnownSurveyorId), EarliestKnownSurveyorId },
-            { nameof(LatestKnownSurveyorId), LatestKnownSurveyorId },
-            { nameof(AutoLatestSurvey), AutoLatestSurvey },
-            { nameof(SummaryNotes), SummaryNotes },
-            { nameof(LocationNotes), LocationNotes },
-            { nameof(AdditionalNotes), AdditionalNotes },
-            { nameof(CivilizedSpaceNotes), CivilizedSpaceNotes },
-            { nameof(RegionAge), RegionAge },
-            { nameof(LowestKnownPhantomSystem), LowestKnownPhantomSystem },
-            { nameof(WikiLink), WikiLink },
-            { nameof(ExternalLink1), ExternalLink1 },
-            { nameof(VideoLink1), VideoLink1 },
-            { nameof(EarliestSystemDiscovery), EarliestSystemDiscovery },
-            { nameof(BaseCoord), BaseCoord },
-            { nameof(EarliestSurveyorWikiUser), EarliestSurveyorWikiUser },
-            { nameof(LatestSurveyorWikiUser), LatestSurveyorWikiUser },
-            { nameof(AdminNotes), AdminNotes },
-            { nameof(LegacyName), LegacyName },
-            { nameof(LegacyWikilink), LegacyWikilink },
-            { nameof(XXdec), XXdec },
-            { nameof(YYdec), YYdec },
-            { nameof(ZZdec), ZZdec },
-            { nameof(Glylphs), Glylphs },
-            { nameof(Version), Version },
-        };
-    }
+        var properties = typeof(Region).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        excludedProperties =
+        [
+            nameof(EntityId),
+            nameof(Systems),
+            nameof(Galaxy),
+        ];
 
-    [GeneratedRegex(@"^[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F|XXXX]{4}$", RegexOptions.IgnoreCase, "en-US")]
-    private static partial Regex CoordinateRegexPattern();
+        return base.ToDictionary(this, properties, excludedProperties);
+    }
 }

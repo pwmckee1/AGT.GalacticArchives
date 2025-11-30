@@ -1,10 +1,10 @@
-﻿using AGT.GalacticArchives.Core.Interfaces.GameData;
+﻿using System.Reflection;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
-public class Galaxy : IGameData
+public class Galaxy : GameData
 {
-    public Guid EntityId => GalaxyId;
+    public override Guid EntityId => GalaxyId;
 
     public Guid GalaxyId { get; set; } = Guid.NewGuid();
 
@@ -12,16 +12,22 @@ public class Galaxy : IGameData
 
     public required string Name { get; set; }
 
+    public string NormalizedName => Name.ToUpperInvariant();
+
     public HashSet<Region> Regions { get; set; } = [];
 
-    // TODO Replace this with Reflection
-    public Dictionary<string, object?> ToDictionary()
+    public override Dictionary<string, object?> ToDictionary(
+        GameData gameData = null!,
+        PropertyInfo[] properties1 = null!,
+        HashSet<string> excludedProperties = null!)
     {
-        return new Dictionary<string, object?>
-        {
-            { nameof(GalaxyId), GalaxyId.ToString() },
-            { nameof(Sequence), Sequence },
-            { nameof(Name), Name },
-        };
+        var properties = typeof(Galaxy).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        excludedProperties =
+        [
+            nameof(EntityId),
+            nameof(Regions),
+        ];
+
+        return base.ToDictionary(this, properties, excludedProperties);
     }
 }
