@@ -1,10 +1,13 @@
-﻿using AGT.GalacticArchives.Core.Interfaces.GameData;
+﻿using System.Reflection;
+using AGT.GalacticArchives.Core.Extensions;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
-public class StarSystem : IGameData
+public class StarSystem : GameData
 {
-    public Guid EntityId => StarSystemId;
+    private string? _galacticCoordinates;
+
+    public override Guid EntityId => StarSystemId;
 
     public Guid StarSystemId { get; set; } = Guid.NewGuid();
 
@@ -20,7 +23,11 @@ public class StarSystem : IGameData
 
     public string? OriginalSystemName { get; set; }
 
-    public required string GalacticCoordinates { get; set; }
+    public string? GalacticCoordinates
+    {
+        get => _galacticCoordinates;
+        set => _galacticCoordinates = value.GetValidatedCoordinates();
+    }
 
     // TODO Get with Caleb about calculation
     public string? GlyphCode { get; set; }
@@ -157,82 +164,19 @@ public class StarSystem : IGameData
 
     public HashSet<Planet> Planets { get; set; } = [];
 
-    // TODO Replace this with Reflection
-    public Dictionary<string, object?> ToDictionary()
+    public override Dictionary<string, object?> ToDictionary(
+        GameData gameData = null!,
+        PropertyInfo[] properties1 = null!,
+        HashSet<string> excludedProperties = null!)
     {
-        return new Dictionary<string, object?>
-        {
-            { nameof(StarSystemId), StarSystemId.ToString() },
-            { nameof(Name), Name },
-            { nameof(NormalizedName), NormalizedName },
-            { nameof(AdminNotes), AdminNotes },
-            { nameof(DataQualityCheck), DataQualityCheck },
-            { nameof(OriginalSystemName), OriginalSystemName },
-            { nameof(GalacticCoordinates), GalacticCoordinates },
-            { nameof(GlyphCode), GlyphCode },
-            { nameof(PlanetOfInterestId), PlanetOfInterestId },
-            { nameof(SurveyorName), SurveyorName },
-            { nameof(DiscoveredBy), DiscoveredBy },
-            { nameof(IsGiantSystem), IsGiantSystem },
-            { nameof(SpecialInterest), SpecialInterest },
-            { nameof(IsDissonant), IsDissonant },
-            { nameof(CivilizedBy), CivilizedBy },
-            { nameof(PlatformType), PlatformType },
-            { nameof(GameModeType), GameModeType },
-            { nameof(StarCount), StarCount },
-            { nameof(StarCategory), StarCategory },
-            { nameof(Color), Color },
-            { nameof(NumberOfPlanets), NumberOfPlanets },
-            { nameof(NumberOfMoons), NumberOfMoons },
-            { nameof(Faction), Faction },
-            { nameof(LightYearsFromCenter), LightYearsFromCenter },
-            { nameof(HasWater), HasWater },
-            { nameof(EconomyType), EconomyType },
-            { nameof(WealthType), WealthType },
-            { nameof(Buy), Buy },
-            { nameof(Sell), Sell },
-            { nameof(ConflictType), ConflictType },
-            { nameof(GameRelease), GameRelease },
-            { nameof(SystemNameAllPlatforms), SystemNameAllPlatforms },
-            { nameof(RegionId), RegionId.ToString() },
-            { nameof(DiscoveredLinkOnWiki), DiscoveredLinkOnWiki },
-            { nameof(Bases), Bases },
-            { nameof(LightYearsFromCenterAutoEstimate), LightYearsFromCenterAutoEstimate },
-            { nameof(KeySystemIndicator), KeySystemIndicator },
-            { nameof(SpaceStationTradeItems), SpaceStationTradeItems },
-            { nameof(ExoSuitSClassUpgradeModules), ExoSuitSClassUpgradeModules },
-            { nameof(SpaceShipSClassUpgradeModules), SpaceShipSClassUpgradeModules },
-            { nameof(MultiToolSClassUpgradeModules), MultiToolSClassUpgradeModules },
-            { nameof(XCoordDec), XCoordDec },
-            { nameof(YCoordDec), YCoordDec },
-            { nameof(ZCoordDec), ZCoordDec },
-            { nameof(Hex2DecSystemId), Hex2DecSystemId },
-            { nameof(SummaryAdditions), SummaryAdditions },
-            { nameof(DiscoveredNotes), DiscoveredNotes },
-            { nameof(PlanetsTextNotes), PlanetsTextNotes },
-            { nameof(StarshipsTextNotes), StarshipsTextNotes },
-            { nameof(MTTextNotes), MTTextNotes },
-            { nameof(LocInfoNotes), LocInfoNotes },
-            { nameof(SpaceStationNotes), SpaceStationNotes },
-            { nameof(AdditionalNotes), AdditionalNotes },
-            { nameof(GalleryTextNotes), GalleryTextNotes },
-            { nameof(IsPhantomSystem), IsPhantomSystem },
-            { nameof(HasCenterAccess), HasCenterAccess },
-            { nameof(BlackHoleDestination), BlackHoleDestination },
-            { nameof(NMSWikiLink), NMSWikiLink },
-            { nameof(PortalRepository), PortalRepository },
-            { nameof(ExternalLink1), ExternalLink1 },
-            { nameof(ExternalLink2), ExternalLink2 },
-            { nameof(ExternalLink3), ExternalLink3 },
-            { nameof(VideoLink), VideoLink },
-            { nameof(LegacyPCSystemName), LegacyPCSystemName },
-            { nameof(LegacyPSSystemName), LegacyPSSystemName },
-            { nameof(LegacyXboxSystemName), LegacyXboxSystemName },
-            { nameof(LegacyPCDiscoverersGamerTagName), LegacyPCDiscoverersGamerTagName },
-            { nameof(LegacyPSDiscoverersGamerTagName), LegacyPSDiscoverersGamerTagName },
-            { nameof(LegacyXboxDiscoverersGamerTagName), LegacyXboxDiscoverersGamerTagName },
-            { nameof(Evolution), Evolution },
-            { nameof(SystemMisc), SystemMisc },
-        };
+        var properties = typeof(StarSystem).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        excludedProperties =
+        [
+            nameof(EntityId),
+            nameof(Planets),
+            nameof(Region),
+        ];
+
+        return base.ToDictionary(this, properties, excludedProperties);
     }
 }

@@ -8,3 +8,4 @@ firebase-credentials.json
 .idea
 *.pfx
 *.log
+*.user

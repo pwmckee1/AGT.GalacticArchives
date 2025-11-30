@@ -8,15 +8,15 @@ public class GameDataMaps : Profile
 {
     public GameDataMaps()
     {
-        CreateMap<Dictionary<string, object>, Galaxy>()
+        CreateMap<Dictionary<string, object?>, Galaxy>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
-        CreateMap<Dictionary<string, object>, Region>()
+        CreateMap<Dictionary<string, object?>, Region>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
-        CreateMap<Dictionary<string, object>, StarSystem>()
+        CreateMap<Dictionary<string, object?>, StarSystem>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
     }

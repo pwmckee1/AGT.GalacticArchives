@@ -1,8 +1,10 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+﻿using System.Reflection;
 
-public class Planet
+namespace AGT.GalacticArchives.Core.Models.GameData;
+
+public class Planet : GameData
 {
-    public Guid EntityId => PlanetId;
+    public override Guid EntityId => PlanetId;
 
     public Guid PlanetId { get; set; } = Guid.NewGuid();
 
@@ -232,123 +234,18 @@ public class Planet
 
     public StarSystem? StarSystem { get; set; }
 
-    // TODO Replace this with Reflection
-    public Dictionary<string, object?> ToDictionary()
+    public override Dictionary<string, object?> ToDictionary(
+        GameData gameData = null!,
+        PropertyInfo[] properties1 = null!,
+        HashSet<string> excludedProperties = null!)
     {
-        return new Dictionary<string, object?>
-        {
-            { nameof(PlanetId), PlanetId.ToString() },
-            { nameof(Name), Name },
-            { nameof(NormalizedName), NormalizedName },
-            { nameof(PlanetNameAllPlatforms), PlanetNameAllPlatforms },
-            { nameof(AdminNotes), AdminNotes },
-            { nameof(DataQualityCheck), DataQualityCheck },
-            { nameof(OriginalPlanetName), OriginalPlanetName },
-            { nameof(PlanetMoonMatch), PlanetMoonMatch },
-            { nameof(PlanetOrMoon), PlanetOrMoon },
-            { nameof(RingsOrGiant), RingsOrGiant },
-            { nameof(PlanetIdInSystem), PlanetIdInSystem },
-            { nameof(BiomeType), BiomeType },
-            { nameof(BiomeDescription), BiomeDescription },
-            { nameof(IsInfected), IsInfected },
-            { nameof(Terrain), Terrain },
-            { nameof(TypeOfLand), TypeOfLand },
-            { nameof(ArchetypeOfLand), ArchetypeOfLand },
-            { nameof(Weather), Weather },
-            { nameof(ExtremeWeatherExcludingMegaExotic), ExtremeWeatherExcludingMegaExotic },
-            { nameof(ExtremeWeatherInludingMegaExotic), ExtremeWeatherInludingMegaExotic },
-            { nameof(PrimaryResource1), PrimaryResource1 },
-            { nameof(PrimaryResource2), PrimaryResource2 },
-            { nameof(PrimaryResource3), PrimaryResource3 },
-            { nameof(BiomeResource), BiomeResource },
-            { nameof(AtmosphereResource), AtmosphereResource },
-            { nameof(AtmosphereDaytimeColor), AtmosphereDaytimeColor },
-            { nameof(SpecialA), SpecialA },
-            { nameof(ExtrasA), ExtrasA },
-            { nameof(ExtrasB), ExtrasB },
-            { nameof(ExtrasC), ExtrasC },
-            { nameof(Glitches), Glitches },
-            { nameof(AssignedRawIngredient), AssignedRawIngredient },
-            { nameof(RawIngredients), RawIngredients },
-            { nameof(Sentinel), Sentinel },
-            { nameof(Flora), Flora },
-            { nameof(Fauna), Fauna },
-            { nameof(NumberOfFauna), NumberOfFauna },
-            { nameof(Mode), Mode },
-            { nameof(CivilizedBy), CivilizedBy },
-            { nameof(DiscovererGamertag), DiscovererGamertag },
-            { nameof(DiscoveredLinkOnWiki), DiscoveredLinkOnWiki },
-            { nameof(DiscoveryDate), DiscoveryDate },
-            { nameof(SurveyorGamertag), SurveyorGamertag },
-            { nameof(SurveyDate), SurveyDate },
-            { nameof(DiscoveryPlatform), DiscoveryPlatform },
-            { nameof(SurveyReleaseEra), SurveyReleaseEra },
-            { nameof(SummaryInfo), SummaryInfo },
-            { nameof(AdditionalNotes), AdditionalNotes },
-            { nameof(DayTemp), DayTemp },
-            { nameof(DayRadiation), DayRadiation },
-            { nameof(DayToxic), DayToxic },
-            { nameof(NightTemp), NightTemp },
-            { nameof(DayStormTemp), DayStormTemp },
-            { nameof(DayStormRadiation), DayStormRadiation },
-            { nameof(DayStormToxic), DayStormToxic },
-            { nameof(NightStormTemp), NightStormTemp },
-            { nameof(UndergroundDayTemp), UndergroundDayTemp },
-            { nameof(UndergroundDayRadiation), UndergroundDayRadiation },
-            { nameof(UndergroundDayToxic), UndergroundDayToxic },
-            { nameof(UndergroundNightTemp), UndergroundNightTemp },
-            { nameof(UnderwaterDayTemp), UnderwaterDayTemp },
-            { nameof(UnderwaterDayRadiation), UnderwaterDayRadiation },
-            { nameof(UnderwaterDayToxic), UnderwaterDayToxic },
-            { nameof(UnderwaterNightTemp), UnderwaterNightTemp },
-            { nameof(UnderwaterDayStormTemp), UnderwaterDayStormTemp },
-            { nameof(UnderwaterDayStormRadiation), UnderwaterDayStormRadiation },
-            { nameof(UnderwaterDayStormToxic), UnderwaterDayStormToxic },
-            { nameof(UnderwaterNightStormTemp), UnderwaterNightStormTemp },
-            { nameof(UndergroundDayStormTemp), UndergroundDayStormTemp },
-            { nameof(UndergroundDayStormRadiation), UndergroundDayStormRadiation },
-            { nameof(UndergroundDayStormToxic), UndergroundDayStormToxic },
-            { nameof(UndergroundNightStormTemp), UndergroundNightStormTemp },
-            { nameof(AgeOfPlanetInBillionsOfYears), AgeOfPlanetInBillionsOfYears },
-            { nameof(AtmosphereGas1), AtmosphereGas1 },
-            { nameof(AtmosphereGasPercentage1), AtmosphereGasPercentage1 },
-            { nameof(AtmosphereGas2), AtmosphereGas2 },
-            { nameof(AtmosphereGasPercentage2), AtmosphereGasPercentage2 },
-            { nameof(PrimaryCoreElement), PrimaryCoreElement },
-            { nameof(Geology), Geology },
-            { nameof(OtherNotes), OtherNotes },
-            { nameof(HasSandworms), HasSandworms },
-            { nameof(WikiLink), WikiLink },
-            { nameof(PortalRepository), PortalRepository },
-            { nameof(ExternalLink1), ExternalLink1 },
-            { nameof(ExternalLink2), ExternalLink2 },
-            { nameof(Garden), Garden },
-            { nameof(DocumentSequence), DocumentSequence },
-            { nameof(PlanetGlyphs), PlanetGlyphs },
-            { nameof(ResearchTeam), ResearchTeam },
-            { nameof(PlanetOrMoonAddedInOrigins), PlanetOrMoonAddedInOrigins },
-            { nameof(LegacyPCPlanetName), LegacyPCPlanetName },
-            { nameof(LegacyPCDiscoveryEra), LegacyPCDiscoveryEra },
-            { nameof(LegacyPCDiscoverersGamerTagName), LegacyPCDiscoverersGamerTagName },
-            { nameof(LegacyPCDiscoveryDate), LegacyPCDiscoveryDate },
-            { nameof(LegacyPSPlanetName), LegacyPSPlanetName },
-            { nameof(LegacyPSDiscoveryEra), LegacyPSDiscoveryEra },
-            { nameof(LegacyPSDiscoverersGamerTagName), LegacyPSDiscoverersGamerTagName },
-            { nameof(LegacyPSDiscoveryDate), LegacyPSDiscoveryDate },
-            { nameof(LegacyXboxPlanetName), LegacyXboxPlanetName },
-            { nameof(LegacyXboxDiscoveryEra), LegacyXboxDiscoveryEra },
-            { nameof(LegacyXboxDiscoverersGamerTagName), LegacyXboxDiscoverersGamerTagName },
-            { nameof(LegacyXboxDiscoveryDate), LegacyXboxDiscoveryDate },
-            { nameof(HistoricalPlanetNameReset), HistoricalPlanetNameReset },
-            { nameof(HistoricalPlanetNamePlatform), HistoricalPlanetNamePlatform },
-            { nameof(HistoricalPlanetNameLastKnownEra), HistoricalPlanetNameLastKnownEra },
-            { nameof(HistoricalPlanetDiscoverCreditBeforeReset), HistoricalPlanetDiscoverCreditBeforeReset },
-            { nameof(LegacyWikiLinkPC), LegacyWikiLinkPC },
-            { nameof(LegacyWikiLinkPS), LegacyWikiLinkPS },
-            { nameof(LegacyWikiLinkXbox), LegacyWikiLinkXbox },
-            { nameof(LegacyWikiLinkOther), LegacyWikiLinkOther },
-            { nameof(GameVersionNumberForPage), GameVersionNumberForPage },
-            { nameof(DocSeqCheck), DocSeqCheck },
-        };
+        var properties = typeof(Planet).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        excludedProperties =
+        [
+            nameof(EntityId),
+            nameof(StarSystem),
+        ];
+
+        return base.ToDictionary(this, properties, excludedProperties);
     }
 }

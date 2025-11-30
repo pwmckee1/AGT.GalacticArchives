@@ -69,6 +69,33 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot convert value of type &apos;{0}&apos; to &apos;{1}&apos;.
+        /// </summary>
+        public static string CannotConvertValue {
+            get {
+                return ResourceManager.GetString("CannotConvertValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coordinates must match pattern &apos;XXXX:XXXX:XXXX&apos; where X is a hexadecimal digit.
+        /// </summary>
+        public static string CoordinatesMustMatchPattern {
+            get {
+                return ResourceManager.GetString("CoordinatesMustMatchPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to convert property &apos;{0}&apos; of type &apos;{1}&apos; from value &apos;{2}&apos; (type: {3}) to target type &apos;{4}&apos;..
+        /// </summary>
+        public static string FailedToConvertProperty {
+            get {
+                return ResourceManager.GetString("FailedToConvertProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The username or password entered is incorrect.
         /// </summary>
         public static string InvalidLogin {

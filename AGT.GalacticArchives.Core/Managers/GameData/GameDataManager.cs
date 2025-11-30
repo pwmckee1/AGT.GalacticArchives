@@ -2,7 +2,6 @@
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AutoMapper;
 using Google.Cloud.Firestore;
-using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
@@ -22,12 +21,12 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
     /// Retrieves all documents from a specified Firestore collection and converts them to a set of dictionaries.
     /// </summary>
     /// <param name="collectionName">
-    /// The name of the Firestore collection from which documents should be retrieved.
+    ///     The name of the Firestore collection from which documents should be retrieved.
     /// </param>
     /// <returns>
     /// A set of dictionaries, each representing a firestore db document
     /// </returns>
-    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object?>>> GetAllAsync(string collectionName)
     {
         var snapshot = await FirestoreDb.Collection(collectionName)
             .GetSnapshotAsync();
@@ -41,45 +40,27 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
     /// Retrieves a specific document from a Firestore collection based on the entity ID and converts it to a dictionary
     /// </summary>
     /// <param name="entityId">
-    /// The unique identifier of the entity to be retrieved.
+    ///     The unique identifier of the entity to be retrieved.
     /// </param>
     /// <param name="collectionName">
-    /// The Firestore collection name that contains the desired document.
+    ///     The Firestore collection name that contains the desired document.
     /// </param>
     /// <returns>
     /// A dictionary representing the Firestore document. Returns an empty dictionary if the document is not found.
     /// </returns>
-    public virtual async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public virtual async Task<Dictionary<string, object?>> GetByIdAsync(Guid entityId, string collectionName)
     {
         var docRef = FirestoreDb.Collection(collectionName)
             .Document(entityId.ToString());
 
         if (docRef == null)
         {
-            return new Dictionary<string, object>();
+            return new Dictionary<string, object?>();
         }
 
         var snapshot = await docRef.GetSnapshotAsync();
 
-        return snapshot == null || !snapshot.Exists ? new Dictionary<string, object>() : snapshot.ToDictionary();
-    }
-
-    /// <summary>
-    /// Retrieves a specific document from a Firestore collection based on the entity ID and converts it to a dictionary
-    /// </summary>
-    /// <param name="entity">
-    /// The entity containing the unique identifier to retrieve from the Firestore collection.
-    /// </param>
-    /// <param name="collectionName">
-    /// The Firestore collection name that contains the desired document.
-    /// </param>
-    /// <returns>
-    /// A dictionary representing the Firestore document. Returns an empty dictionary if the document is not found.
-    /// </returns>
-    ///
-    public virtual async Task<Dictionary<string, object>> GetByIdAsync(T entity, string collectionName)
-    {
-        return await GetByIdAsync(entity.EntityId, collectionName);
+        return snapshot == null || !snapshot.Exists ? new Dictionary<string, object?>() : snapshot.ToDictionary();
     }
 
     /// <summary>
