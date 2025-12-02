@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class StarshipManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<Starship>(firestoreDb, mapper), IStarshipManager
+public class StarshipManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<Starship>(firestoreDb, mapper), IStarshipManager
 {
     public async Task<Starship?> GetStarshipByIdAsync(Guid starshipId)
     {
@@ -36,16 +37,10 @@ public class StarshipManager(FirestoreDb firestoreDb, IMapper mapper) : GameData
 
             var starshipSet = Mapper.Map<HashSet<Starship>>(snapshots);
             foreach (var starship in starshipSet)
-            {
                 if (starship.PlanetId.HasValue)
-                {
                     starship.Planet = await GetPlanetWithHierarchyAsync(starship.PlanetId!.Value);
-                }
                 else
-                {
                     starship.StarSystem = await GetStarSystemWithHierarchyAsync(starship.StarSystemId);
-                }
-            }
 
             return starshipSet;
         }

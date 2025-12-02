@@ -36,7 +36,7 @@ public class Planet : GameData
 
     public string? PlanetOrMoon { get; set; }
 
-    public string? RingsOrGiant  { get; set; }
+    public string? RingsOrGiant { get; set; }
 
     public int? PlanetIdInSystem { get; set; }
 

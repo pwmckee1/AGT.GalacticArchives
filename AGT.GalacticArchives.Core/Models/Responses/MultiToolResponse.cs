@@ -1,20 +1,8 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class MultiToolResponse
+public class MultiToolResponse : ResponseStarSystemEntity
 {
-    public Guid MultiToolId { get; set; }
-
-    public string Name { get; set; } = null!;
-
-    public Guid? StarSystemId { get; set; }
-
-    public StarSystem? StarSystem { get; set; }
-
-    public Guid? PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
+    public PlanetResponse? Planet { get; set; }
 
     public string? Location { get; set; }
 

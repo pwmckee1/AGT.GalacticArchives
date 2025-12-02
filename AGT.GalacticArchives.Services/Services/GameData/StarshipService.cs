@@ -30,9 +30,7 @@ public class StarshipService(IStarshipManager starshipManager, IMapper mapper) :
             var existingStarship = await starshipManager.GetStarshipByIdAsync(request.StarshipId.Value);
 
             if (existingStarship!.ToDictionary().HasAnyChanges(starship.ToDictionary()))
-            {
                 starship = await starshipManager.UpsertStarshipAsync(starship);
-            }
         }
         else
         {

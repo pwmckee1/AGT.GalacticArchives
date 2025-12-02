@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class FaunaManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<Fauna>(firestoreDb, mapper), IFaunaManager
+public class FaunaManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<Fauna>(firestoreDb, mapper), IFaunaManager
 {
     public async Task<Fauna?> GetFaunaByIdAsync(Guid faunaId)
     {
@@ -22,25 +23,21 @@ public class FaunaManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataMan
 
     public async Task<HashSet<Fauna>> GetFaunaAsync(FaunaRequest request)
     {
-        if (request.FaunaId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var fauna = await GetFaunaByIdAsync(request.FaunaId!.Value);
+            var fauna = await GetFaunaByIdAsync(request.EntityId!.Value);
 
             return fauna != null ? [fauna] : [];
         }
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots =  request.ParentId.HasValue
+            var snapshots = request.ParentId.HasValue
                 ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.FaunaCollection)
                 : GetByNameAsync(request.Name!, DatabaseConstants.FaunaCollection);
 
             var faunaSet = Mapper.Map<HashSet<Fauna>>(snapshots);
-            foreach (var fauna in faunaSet)
-            {
-                fauna.Planet = await GetPlanetWithHierarchyAsync(fauna.PlanetId);
-
-            }
+            foreach (var fauna in faunaSet) fauna.Planet = await GetPlanetWithHierarchyAsync(fauna.PlanetId);
 
             return faunaSet;
         }

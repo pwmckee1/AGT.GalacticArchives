@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("multiTool")]
-public class MultiToolController(IMultiToolService multiToolService): ControllerBase
+public class MultiToolController(IMultiToolService multiToolService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<MultiToolResponse>>), StatusCodes.Status200OK)]

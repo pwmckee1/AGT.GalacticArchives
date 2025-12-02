@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedSettlementManager(ICacheManager cacheManager, ISettlementManager target) : ISettlementManager, ICachedGameDataManager
+public class CachedSettlementManager(ICacheManager cacheManager, ISettlementManager target)
+    : ISettlementManager, ICachedGameDataManager
 {
     public async Task<Settlement?> GetSettlementByIdAsync(Guid settlementId)
     {
@@ -56,7 +57,10 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Settlement)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -89,7 +93,9 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
 
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Settlement)}:{nameof(GetSettlementByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Settlement)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(Settlement)}:{nameof(GetSettlementByIdAsync)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(Settlement)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

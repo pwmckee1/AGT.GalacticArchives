@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("galaxy")]
-public class GalaxyController(IGalaxyService galaxyService): ControllerBase
+public class GalaxyController(IGalaxyService galaxyService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<GalaxyResponse>>), StatusCodes.Status200OK)]

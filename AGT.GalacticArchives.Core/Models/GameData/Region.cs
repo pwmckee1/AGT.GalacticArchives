@@ -27,11 +27,13 @@ public class Region : GameData
 
     public string? CivilizedBy { get; set; }
 
+
     public string? Coordinates
     {
         get => _coordinates;
         set => _coordinates = value.GetValidatedCoordinates();
     }
+
 
     public string? Quadrant { get; set; }
 
@@ -45,11 +47,11 @@ public class Region : GameData
 
     public string? GameRelease { get; set; }
 
-    public string? EarliestKnownSurveyorId { get; set; }
+    public string? EarliestKnownSurveyor { get; set; }
 
-    public string? LatestKnownSurveyorId { get; set; }
+    public string? LatestKnownSurveyor { get; set; }
 
-    public string? AutoLatestSurvey { get; set; }
+    public string? SurveyDate { get; set; }
 
     public string? SummaryNotes { get; set; }
 
@@ -65,7 +67,7 @@ public class Region : GameData
 
     public string? WikiLink { get; set; }
 
-    public string?  ExternalLink1 { get; set; }
+    public string? ExternalLink1 { get; set; }
 
     public string? VideoLink1 { get; set; }
 
@@ -85,11 +87,11 @@ public class Region : GameData
 
     public string? LegacyWikilink { get; set; }
 
-    public string? XXdec { get; set; }
+    public float? XXdec { get; set; }
 
-    public string? YYdec { get; set; }
+    public float? YYdec { get; set; }
 
-    public string? ZZdec { get; set; }
+    public float? ZZdec { get; set; }
 
     public string? Glylphs { get; set; }
 

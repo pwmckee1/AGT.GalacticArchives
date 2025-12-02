@@ -30,9 +30,7 @@ public class PlayerBaseService(IPlayerBaseManager playerBaseManager, IMapper map
             var existingPlayerBase = await playerBaseManager.GetPlayerBaseByIdAsync(request.PlayerBaseId.Value);
 
             if (existingPlayerBase!.ToDictionary().HasAnyChanges(playerBase.ToDictionary()))
-            {
                 playerBase = await playerBaseManager.UpsertPlayerBaseAsync(playerBase);
-            }
         }
         else
         {

@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class PlanetManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<Planet>(firestoreDb, mapper), IPlanetManager
+public class PlanetManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<Planet>(firestoreDb, mapper), IPlanetManager
 {
     public async Task<Planet?> GetPlanetByIdAsync(Guid planetId)
     {
@@ -30,9 +31,7 @@ public class PlanetManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataMa
 
             var planetSet = Mapper.Map<HashSet<Planet>>(snapshots);
             foreach (var planet in planetSet)
-            {
                 planet.StarSystem = await GetStarSystemWithHierarchyAsync(planet.StarSystemId);
-            }
 
             return planetSet;
         }

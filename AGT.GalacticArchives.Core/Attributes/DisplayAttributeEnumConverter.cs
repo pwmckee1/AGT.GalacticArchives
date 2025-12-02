@@ -21,13 +21,13 @@ public class DisplayAttributeEnumConverter : JsonConverterFactory
     {
         public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var value = reader.GetString();
+            string? value = reader.GetString();
 
             if (string.IsNullOrEmpty(value))
                 throw new JsonException($"Empty string is not a valid value for {typeToConvert.Name}");
 
             // Try exact enum name match first
-            if (Enum.TryParse<T>(value, ignoreCase: true, out var result))
+            if (Enum.TryParse<T>(value, true, out var result))
                 return result;
 
             // Try Display attribute description match using your extension

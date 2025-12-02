@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseManager target) : IPlayerBaseManager, ICachedGameDataManager
+public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseManager target)
+    : IPlayerBaseManager, ICachedGameDataManager
 {
     public async Task<PlayerBase?> GetPlayerBaseByIdAsync(Guid playerBaseId)
     {
@@ -56,7 +57,10 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(PlayerBase)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -89,7 +93,9 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
 
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(PlayerBase)}:{nameof(GetPlayerBaseByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(PlayerBase)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(PlayerBase)}:{nameof(GetPlayerBaseByIdAsync)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(PlayerBase)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

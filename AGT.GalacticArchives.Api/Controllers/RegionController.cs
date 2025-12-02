@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("region")]
-public class RegionController(IRegionService regionService): ControllerBase
+public class RegionController(IRegionService regionService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<RegionResponse>>), StatusCodes.Status200OK)]

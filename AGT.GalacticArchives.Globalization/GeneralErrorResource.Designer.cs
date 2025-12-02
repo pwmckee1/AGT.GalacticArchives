@@ -96,6 +96,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The ID value {0} for {1} does not exist..
+        /// </summary>
+        public static string InvalidGameDataId {
+            get {
+                return ResourceManager.GetString("InvalidGameDataId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The username or password entered is incorrect.
         /// </summary>
         public static string InvalidLogin {
@@ -105,7 +114,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is required to be specified to complete the request.
+        ///   Looks up a localized string similar to {0} is required to complete the request.
         /// </summary>
         public static string PropertyMissing {
             get {

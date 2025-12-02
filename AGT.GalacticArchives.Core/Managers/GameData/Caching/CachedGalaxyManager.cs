@@ -6,7 +6,8 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager target) : IGalaxyManager, ICachedGameDataManager
+public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager target)
+    : IGalaxyManager, ICachedGameDataManager
 {
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync()
     {
@@ -20,7 +21,7 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync(GalaxyRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Galaxy)}:{nameof(GetGalaxiesAsync)}:{request.GalaxyId}:{request.Name}:{request.ParentId}",
+            $"{nameof(Galaxy)}:{nameof(GetGalaxiesAsync)}:{request.EntityId}:{request.Name}",
             async () => await target.GetGalaxiesAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -64,7 +65,10 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Galaxy)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",

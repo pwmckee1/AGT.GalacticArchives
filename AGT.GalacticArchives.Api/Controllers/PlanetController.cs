@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("planet")]
-public class PlanetController(IPlanetService planetService): ControllerBase
+public class PlanetController(IPlanetService planetService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<PlanetResponse>>), StatusCodes.Status200OK)]

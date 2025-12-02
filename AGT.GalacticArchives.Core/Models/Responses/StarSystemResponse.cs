@@ -1,18 +1,8 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class StarSystemResponse
+public class StarSystemResponse : ResponseRegionEntity
 {
-    public Guid StarSystemId { get; set; }
-
-    public string Name { get; set; } = null!;
-
-    public Guid RegionId { get; set; }
-
-    public Region? Region { get; set; }
-
-    public HashSet<Planet> Planets { get; set; } = [];
+    public HashSet<PlanetResponse> Planets { get; set; } = [];
 
     public string? SystemNameAllPlatforms { get; set; }
 

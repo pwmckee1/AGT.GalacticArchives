@@ -47,7 +47,7 @@ builder.Services.AddSingleton(sp =>
     if (environment.IsDevelopment())
     {
         // Check for emulator configuration
-        var emulatorHost = Environment.GetEnvironmentVariable("FIRESTORE_EMULATOR_HOST");
+        string? emulatorHost = Environment.GetEnvironmentVariable("FIRESTORE_EMULATOR_HOST");
 
         if (!string.IsNullOrEmpty(emulatorHost))
         {
@@ -58,9 +58,7 @@ builder.Services.AddSingleton(sp =>
         {
             string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
             if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
-            {
                 throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
-            }
 
             logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
 
@@ -70,13 +68,11 @@ builder.Services.AddSingleton(sp =>
     }
     else
     {
-        var secret =
+        string secret =
             GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId!, "firebase-credentials");
 
         if (string.IsNullOrEmpty(secret))
-        {
             throw new InvalidOperationException("Unable to retrieve firebase credentials");
-        }
 
         firestoreBuilder.Credential = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
     }
@@ -92,10 +88,7 @@ app.UseMessageResponseMiddleware();
 app.UseExceptionHandler(options => { options.UseMiddleware<ErrorHandlingMiddleware>(); });
 app.UseOptions();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+if (app.Environment.IsDevelopment()) app.MapOpenApi();
 
 app.UseHttpsRedirection();
 

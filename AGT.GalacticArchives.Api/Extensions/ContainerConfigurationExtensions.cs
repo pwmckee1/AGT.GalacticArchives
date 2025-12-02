@@ -21,8 +21,8 @@ public static class ContainerConfigurationExtensions
         IHostEnvironment environment)
     {
         // Load assemblies from the application's bin directory
-        var binPath = AppContext.BaseDirectory;
-        var assemblyFiles = Directory.GetFiles(binPath, "AGT.*.dll");
+        string binPath = AppContext.BaseDirectory;
+        string[] assemblyFiles = Directory.GetFiles(binPath, "AGT.*.dll");
         var assemblies = assemblyFiles
             .Select(f => Assembly.LoadFrom(f))
             .Concat(AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName!.StartsWith("AGT")))

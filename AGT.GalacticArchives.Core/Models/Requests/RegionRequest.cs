@@ -26,11 +26,11 @@ public class RegionRequest : GameDataRequest
 
     public string? GameRelease { get; set; }
 
-    public string? EarliestKnownSurveyorId { get; set; }
+    public string? EarliestKnownSurveyor { get; set; }
 
-    public string? LatestKnownSurveyorId { get; set; }
+    public string? LatestKnownSurveyor { get; set; }
 
-    public string? AutoLatestSurvey { get; set; }
+    public string? SurveyDate { get; set; }
 
     public string? SummaryNotes { get; set; }
 
@@ -46,7 +46,7 @@ public class RegionRequest : GameDataRequest
 
     public string? WikiLink { get; set; }
 
-    public string?  ExternalLink1 { get; set; }
+    public string? ExternalLink1 { get; set; }
 
     public string? VideoLink1 { get; set; }
 
@@ -66,17 +66,17 @@ public class RegionRequest : GameDataRequest
 
     public string? LegacyWikilink { get; set; }
 
-    public string? XXdec { get; set; }
+    public float? XXdec { get; set; }
 
-    public string? YYdec { get; set; }
+    public float? YYdec { get; set; }
 
-    public string? ZZdec { get; set; }
+    public float? ZZdec { get; set; }
 
     public string? Glylphs { get; set; }
 
     public string? Version { get; set; }
 
-    public HashSet<StarSystem> Systems { get; set; } = [];
+    public HashSet<StarSystemRequest> Systems { get; set; } = [];
 
-    public Galaxy? Galaxy { get; set; }
+    public GalaxyRequest? Galaxy { get; set; }
 }

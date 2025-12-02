@@ -3,11 +3,11 @@ using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target) : IFaunaManager, ICachedGameDataManager
+public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target)
+    : IFaunaManager, ICachedGameDataManager
 {
     public async Task<Fauna?> GetFaunaByIdAsync(Guid faunaId)
     {
@@ -21,7 +21,7 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
     public async Task<HashSet<Fauna>> GetFaunaAsync(FaunaRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetFaunaAsync)}:{request.FaunaId}:{request.Name}:{request.ParentId}",
+            $"{nameof(Fauna)}:{nameof(GetFaunaAsync)}:{request.EntityId}:{request.Name}:{request.ParentId}",
             async () => await target.GetFaunaAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -51,7 +51,10 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Fauna)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -90,6 +93,7 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Fauna)}:{nameof(GetFaunaByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Fauna)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(Fauna)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

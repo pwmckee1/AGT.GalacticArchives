@@ -1,28 +1,18 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class PlanetResponse
+public class PlanetResponse : ResponseStarSystemEntity
 {
-    public Guid PlanetId { get; set; }
+    public HashSet<FaunaResponse> Fauna { get; set; } = [];
 
-    public string PlanetName { get; set; } = null!;
+    public HashSet<MultiToolResponse> MultiTools { get; set; } = [];
 
-    public Guid StarSystemId { get; set; }
+    public HashSet<PlayerBaseResponse> PlayerBases { get; set; } = [];
 
-    public StarSystem? StarSystem { get; set; }
+    public HashSet<PointOfInterestResponse> PointOfInterests { get; set; } = [];
 
-    public HashSet<Fauna> Fauna { get; set; } = [];
+    public HashSet<SettlementResponse> Settlements { get; set; } = [];
 
-    public HashSet<MultiTool> MultiTools { get; set; } = [];
-
-    public HashSet<PlayerBase> PlayerBases { get; set; } = [];
-
-    public HashSet<PointOfInterest> PointOfInterests { get; set; } = [];
-
-    public HashSet<Settlement> Settlements { get; set; } = [];
-
-    public HashSet<Starship> Starships { get; set; } = [];
+    public HashSet<StarshipResponse> Starships { get; set; } = [];
 
     public string? PlanetNameAllPlatforms { get; set; }
 
@@ -36,7 +26,7 @@ public class PlanetResponse
 
     public string? PlanetOrMoon { get; set; }
 
-    public string? RingsOrGiant  { get; set; }
+    public string? RingsOrGiant { get; set; }
 
     public int? PlanetIdInSystem { get; set; }
 

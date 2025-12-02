@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager target) : IPlanetManager, ICachedGameDataManager
+public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager target)
+    : IPlanetManager, ICachedGameDataManager
 {
     public async Task<Planet?> GetPlanetByIdAsync(Guid planetId)
     {
@@ -51,7 +52,10 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Planet)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -90,6 +94,7 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Planet)}:{nameof(GetPlanetByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Planet)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(Planet)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

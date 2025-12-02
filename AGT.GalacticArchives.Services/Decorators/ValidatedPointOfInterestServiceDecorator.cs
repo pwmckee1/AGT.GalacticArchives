@@ -4,7 +4,8 @@ using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 
-public class ValidatedPointOfInterestServiceDecorator(IPointOfInterestService pointOfInterestService) : IPointOfInterestService
+public class ValidatedPointOfInterestServiceDecorator(IPointOfInterestService pointOfInterestService)
+    : IPointOfInterestService
 {
     public async Task<PointOfInterestResponse?> GetPointOfInterestByIdAsync(Guid pointOfInterestId)
     {

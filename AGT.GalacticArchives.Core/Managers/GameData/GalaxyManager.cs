@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class GalaxyManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<Galaxy>(firestoreDb, mapper), IGalaxyManager
+public class GalaxyManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<Galaxy>(firestoreDb, mapper), IGalaxyManager
 {
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync()
     {
@@ -23,9 +24,9 @@ public class GalaxyManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataMa
 
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync(GalaxyRequest request)
     {
-        if (request.GalaxyId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var galaxy = await GetGalaxyByIdAsync(request.GalaxyId!.Value);
+            var galaxy = await GetGalaxyByIdAsync(request.EntityId!.Value);
             return galaxy != null ? [galaxy] : [];
         }
 

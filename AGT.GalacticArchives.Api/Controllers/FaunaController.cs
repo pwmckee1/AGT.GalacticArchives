@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("fauna")]
-public class FaunaController(IFaunaService faunaService): ControllerBase
+public class FaunaController(IFaunaService faunaService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<FaunaResponse>>), StatusCodes.Status200OK)]

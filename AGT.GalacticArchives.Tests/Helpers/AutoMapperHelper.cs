@@ -33,7 +33,9 @@ public static class AutoMapperHelper
         };
 
         containerBuilder.RegisterAssemblyTypes(assemblies)
-            .Where(t => t.IsClass && !t.IsAbstract && (ImplementsAutoMapperTypes(t) || t.GetTypeInfo().ImplementedInterfaces.Any(ImplementsAutoMapperTypes)))
+            .Where(t => t.IsClass && !t.IsAbstract && (ImplementsAutoMapperTypes(t) ||
+                                                       t.GetTypeInfo().ImplementedInterfaces
+                                                           .Any(ImplementsAutoMapperTypes)))
             .InstancePerDependency();
 
         bool ImplementsAutoMapperTypes(Type type)

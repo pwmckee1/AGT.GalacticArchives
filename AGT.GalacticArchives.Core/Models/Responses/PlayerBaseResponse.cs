@@ -1,17 +1,7 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class PlayerBaseResponse
+public class PlayerBaseResponse : ResponsePlanetEntity
 {
-    public Guid PlayerBaseId { get; set; }
-
-    public string Name { get; set; } = null!;
-
-    public Guid PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
-
     public string? CivilizedBy { get; set; }
 
     public string? Builder { get; set; }

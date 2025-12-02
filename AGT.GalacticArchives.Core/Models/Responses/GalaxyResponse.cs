@@ -1,18 +1,6 @@
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class GalaxyResponse
+public class GalaxyResponse : ResponseGameDataEntity
 {
-    public Guid GalaxyId { get; set; }
-
-    public Guid EntityId { get; set; }
-
-    public Guid ParentId { get; set; }
-
-    public string CollectionName { get; set; } = null!;
-
-    public string ParentCollectionName  { get; set; } = null!;
-
-    public string Name { get; set; } = null!;
-
-    public string NormalizedName { get; set; } = null!;
+    public required int Sequence { get; set; }
 }

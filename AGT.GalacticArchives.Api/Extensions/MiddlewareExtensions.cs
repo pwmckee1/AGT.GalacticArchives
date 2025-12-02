@@ -36,9 +36,8 @@ public static class MiddlewareExtensions
 
         var middlewareException = new ExceptionDetail(exception.Message, exception.StackTrace);
         if (exception.InnerException != null && exception.Message.Length > 0)
-        {
-            middlewareException.InnerException = new ExceptionDetail(exception.InnerException.Message, exception.InnerException.StackTrace);
-        }
+            middlewareException.InnerException =
+                new ExceptionDetail(exception.InnerException.Message, exception.InnerException.StackTrace);
 
         var errorDetail = new MiddlewareException(
             $"{context.Request.Method} {context.Request.GetDisplayUrl().Replace($"/{Assembly.GetExecutingAssembly().GetName().Name}", null)}",
@@ -47,7 +46,8 @@ public static class MiddlewareExtensions
             context.Request.Headers["User-Agent"],
             middlewareException);
 
-        logEvent.Properties["detail"] = JsonConvert.SerializeObject(errorDetail, new JsonSerializerSettings { Formatting = Formatting.Indented });
+        logEvent.Properties["detail"] = JsonConvert.SerializeObject(errorDetail,
+            new JsonSerializerSettings { Formatting = Formatting.Indented });
 
         logger.Log(logEvent);
 
@@ -59,13 +59,15 @@ public static class MiddlewareExtensions
         builder.UseWhen(
             httpContext => !httpContext.IsHealthCheckRequest() &&
                            !httpContext.IsSwaggerRequest() &&
-                           BusinessRuleConstants.SanitizerRouteWhiteList.Any(r => httpContext.Request.Path.ContainsRoute(r)),
+                           BusinessRuleConstants.SanitizerRouteWhiteList.Any(r =>
+                               httpContext.Request.Path.ContainsRoute(r)),
             app => app.UseMiddleware<MessageResponseMiddleware>());
 
         builder.UseWhen(
             httpContext => !httpContext.IsHealthCheckRequest() &&
                            !httpContext.IsSwaggerRequest() &&
-                           BusinessRuleConstants.SanitizerRouteWhiteList.All(r => !httpContext.Request.Path.ContainsRoute(r)),
+                           BusinessRuleConstants.SanitizerRouteWhiteList.All(r =>
+                               !httpContext.Request.Path.ContainsRoute(r)),
             app => app.UseMiddleware<SanitizedMessageResponseMiddleware>());
 
         return builder;
@@ -84,10 +86,7 @@ public static class MiddlewareExtensions
 
     private static object? RenderRequestBody(HttpRequest request, string? requestBody)
     {
-        if (string.IsNullOrEmpty(requestBody))
-        {
-            return null;
-        }
+        if (string.IsNullOrEmpty(requestBody)) return null;
 
         return request.ContentType == MediaTypeNames.Application.Json
             ? new JRaw(JToken.Parse(requestBody).ObfuscateFields(BusinessRuleConstants.ObfuscateFieldList))

@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfInterestManager target) : IPointOfInterestManager, ICachedGameDataManager
+public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfInterestManager target)
+    : IPointOfInterestManager, ICachedGameDataManager
 {
     public async Task<PointOfInterest?> GetPointOfInterestByIdAsync(Guid pointOfInterestId)
     {
@@ -56,7 +57,10 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(PointOfInterest)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -89,7 +93,9 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
 
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(PointOfInterest)}:{nameof(GetPointOfInterestByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(PointOfInterest)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(PointOfInterest)}:{nameof(GetPointOfInterestByIdAsync)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(PointOfInterest)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

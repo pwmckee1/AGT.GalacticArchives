@@ -10,12 +10,8 @@ public class ModelStatePropertyValidationFilter : IActionFilter
         if (!context.ModelState.IsValid)
         {
             foreach (var value in context.ModelState.Values.Where(v => v.Errors.Any()))
-            {
-                foreach (var valueError in value.Errors)
-                {
-                    errorMessages.Add(valueError.ErrorMessage);
-                }
-            }
+            foreach (var valueError in value.Errors)
+                errorMessages.Add(valueError.ErrorMessage);
 
             throw new Exception(string.Join(Environment.NewLine, errorMessages));
         }

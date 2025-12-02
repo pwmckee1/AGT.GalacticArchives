@@ -28,7 +28,7 @@ public class PlanetRequest : GameDataRequest
 
     public string? PlanetOrMoon { get; set; }
 
-    public string? RingsOrGiant  { get; set; }
+    public string? RingsOrGiant { get; set; }
 
     public int? PlanetIdInSystem { get; set; }
 

@@ -14,7 +14,7 @@ public class HttpVerbOptionsMiddleware
     public async Task Invoke(HttpContext context)
     {
         var origin = context.Request.Headers.Origin;
-        var requestHeader = origin.Any() ? origin.First() : string.Empty;
+        string? requestHeader = origin.Any() ? origin.First() : string.Empty;
         var sanitizer = new HtmlSanitizer();
         requestHeader = sanitizer.Sanitize(requestHeader!);
         context.Response.Headers.Append("Access-Control-Allow-Origin", new[] { requestHeader });
@@ -24,8 +24,12 @@ public class HttpVerbOptionsMiddleware
         {
             context.Response.Headers.Append(
                 "Access-Control-Allow-Headers",
-                new[] { "Origin, X-Requested-With, Content-Type, Accept, Authorization, x-http-method-override, zbportal-long-polling" });
-            context.Response.Headers.Append("Access-Control-Allow-Methods", new[] { "GET, PATCH, POST, PUT, DELETE, OPTIONS" });
+                new[]
+                {
+                    "Origin, X-Requested-With, Content-Type, Accept, Authorization, x-http-method-override, zbportal-long-polling",
+                });
+            context.Response.Headers.Append("Access-Control-Allow-Methods",
+                new[] { "GET, PATCH, POST, PUT, DELETE, OPTIONS" });
             context.Response.Headers.Append("Access-Control-Allow-Credentials", new[] { "true" });
             context.Response.StatusCode = 200;
             await context.Response.WriteAsync("OK");

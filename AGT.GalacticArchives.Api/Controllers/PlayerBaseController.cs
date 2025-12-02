@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("playerBase")]
-public class PlayerBaseController(IPlayerBaseService playerBaseService): ControllerBase
+public class PlayerBaseController(IPlayerBaseService playerBaseService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<PlayerBaseResponse>>), StatusCodes.Status200OK)]

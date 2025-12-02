@@ -56,7 +56,10 @@ public class GameDataTypeConverter :
         return source.ConvertDictionaryToObject<MultiTool>();
     }
 
-    public PointOfInterest Convert(Dictionary<string, object> source, PointOfInterest destination, ResolutionContext context)
+    public PointOfInterest Convert(
+        Dictionary<string, object> source,
+        PointOfInterest destination,
+        ResolutionContext context)
     {
         return source.ConvertDictionaryToObject<PointOfInterest>();
     }

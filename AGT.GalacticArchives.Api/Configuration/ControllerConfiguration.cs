@@ -11,10 +11,7 @@ public static class ControllerConfiguration
 {
     public static void AddControllers(IServiceCollection services)
     {
-        services.AddControllers(options =>
-            {
-                options.Filters.Add<ModelStatePropertyValidationFilter>();
-            })
+        services.AddControllers(options => { options.Filters.Add<ModelStatePropertyValidationFilter>(); })
             .ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressModelStateInvalidFilter = false;
@@ -24,13 +21,9 @@ public static class ControllerConfiguration
                 options.InvalidModelStateResponseFactory = context =>
                 {
                     var response = new MessageResponse<string>();
-                    foreach (var (key, value) in context.ModelState)
-                    {
-                        foreach (var error in value.Errors)
-                        {
-                            response.Messages.Add($"{error.ErrorMessage}");
-                        }
-                    }
+                    foreach ((string key, var value) in context.ModelState)
+                    foreach (var error in value.Errors)
+                        response.Messages.Add($"{error.ErrorMessage}");
 
                     throw new HttpBadRequestException(string.Join(Environment.NewLine, response.Messages));
                 };

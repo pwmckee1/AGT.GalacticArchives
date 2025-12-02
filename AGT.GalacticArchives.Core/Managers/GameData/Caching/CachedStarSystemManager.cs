@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemManager target) : IStarSystemManager, ICachedGameDataManager
+public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemManager target)
+    : IStarSystemManager, ICachedGameDataManager
 {
     public async Task<StarSystem?> GetStarSystemByIdAsync(Guid starSystemId)
     {
@@ -59,7 +60,10 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(StarSystem)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -92,7 +96,9 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
 
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{nameof(GetStarSystemByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(StarSystem)}:{nameof(GetStarSystemByIdAsync)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(StarSystem)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

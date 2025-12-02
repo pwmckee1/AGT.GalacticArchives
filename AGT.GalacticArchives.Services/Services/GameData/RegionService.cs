@@ -24,22 +24,18 @@ public class RegionService(IRegionManager regionManager, IMapper mapper) : IRegi
 
     public async Task<RegionResponse> UpsertRegionAsync(RegionRequest request)
     {
-        var region = mapper.Map<Region>(request);
         if (request.RegionId.HasValue)
         {
+            var requestedRegion = mapper.Map<Region>(request);
             var existingRegion = await regionManager.GetRegionByIdAsync(request.RegionId.Value);
 
-            if (existingRegion!.ToDictionary().HasAnyChanges(region.ToDictionary()))
-            {
-                region = await regionManager.UpsertRegionAsync(region);
-            }
-        }
-        else
-        {
-            region = await regionManager.UpsertRegionAsync(region);
+            if (existingRegion!.ToDictionary().HasAnyChanges(requestedRegion.ToDictionary()))
+                requestedRegion = await regionManager.UpsertRegionAsync(requestedRegion);
         }
 
-        return mapper.Map<RegionResponse>(region);
+        var newRegion = mapper.Map<Region>(request);
+        newRegion = await regionManager.UpsertRegionAsync(newRegion);
+        return mapper.Map<RegionResponse>(newRegion);
     }
 
     public async Task DeleteRegionAsync(Guid regionId)

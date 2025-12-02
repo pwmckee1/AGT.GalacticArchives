@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager target) : IStarshipManager, ICachedGameDataManager
+public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager target)
+    : IStarshipManager, ICachedGameDataManager
 {
     public async Task<Starship?> GetStarshipByIdAsync(Guid starshipId)
     {
@@ -56,7 +57,10 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Starship)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -90,6 +94,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Starship)}:{nameof(GetStarshipByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Starship)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(Starship)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

@@ -32,11 +32,13 @@ public class StarSystem : GameData
 
     public string? OriginalSystemName { get; set; }
 
+
     public string? GalacticCoordinates
     {
         get => _galacticCoordinates;
         set => _galacticCoordinates = value.GetValidatedCoordinates();
     }
+
 
     // TODO Get with Caleb about calculation
     public string? GlyphCode { get; set; }

@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class RegionManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<Region>(firestoreDb, mapper), IRegionManager
+public class RegionManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<Region>(firestoreDb, mapper), IRegionManager
 {
     public async Task<Region?> GetRegionByIdAsync(Guid regionId)
     {
@@ -24,7 +25,7 @@ public class RegionManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataMa
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots =  request.ParentId.HasValue
+            var snapshots = request.ParentId.HasValue
                 ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.RegionCollection)
                 : GetByNameAsync(request.Name!, DatabaseConstants.RegionCollection);
 

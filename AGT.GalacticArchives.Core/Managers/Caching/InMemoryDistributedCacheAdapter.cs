@@ -36,7 +36,11 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
         _memoryCache.Set(key, value, cacheEntryOptions);
     }
 
-    public Task SetAsync(string key, byte[] value, DistributedCacheEntryOptions options, CancellationToken token = default)
+    public Task SetAsync(
+        string key,
+        byte[] value,
+        DistributedCacheEntryOptions options,
+        CancellationToken token = default)
     {
         var cacheEntryOptions = new MemoryCacheEntryOptions
         {
@@ -50,7 +54,9 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
     }
 
     // Not supported by In Memory Cache
-    public void Refresh(string key) { }
+    public void Refresh(string key)
+    {
+    }
 
     // Not supported by In Memory Cache
     public Task RefreshAsync(string key, CancellationToken token = default)

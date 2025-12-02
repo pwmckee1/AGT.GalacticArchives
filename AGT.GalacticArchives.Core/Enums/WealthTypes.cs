@@ -9,6 +9,7 @@ public enum WealthTypes
     Destitute,
     Failing,
     Fledgling,
+
     [Display(ResourceType = typeof(WealthTypeResource), Description = nameof(WealthTypeResource.LowSupply))]
     LowSupply,
     Struggling,
@@ -16,10 +17,12 @@ public enum WealthTypes
     Unpromising,
     Adequate,
     Balanced,
+
     [Display(ResourceType = typeof(WealthTypeResource), Description = nameof(WealthTypeResource.BlackMarket))]
     BlackMarket,
     Comfortable,
     Developing,
+
     [Display(ResourceType = typeof(WealthTypeResource), Description = nameof(WealthTypeResource.MediumSupply))]
     MediumSupply,
     Promising,
@@ -29,11 +32,13 @@ public enum WealthTypes
     Affluent,
     Booming,
     Flourishing,
+
     [Display(ResourceType = typeof(WealthTypeResource), Description = nameof(WealthTypeResource.HighSupply))]
     HighSupply,
     Opulent,
     Prosperous,
     Wealthy,
+
     [Display(ResourceType = typeof(WealthTypeResource), Description = nameof(WealthTypeResource.DataUnavailable))]
     DataUnavailable,
 }

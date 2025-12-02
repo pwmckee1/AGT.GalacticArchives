@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManager target) : IMultiToolManager, ICachedGameDataManager
+public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManager target)
+    : IMultiToolManager, ICachedGameDataManager
 {
     public async Task<MultiTool?> GetMultiToolByIdAsync(Guid multiToolId)
     {
@@ -21,7 +22,7 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
     public async Task<HashSet<MultiTool>> GetMultiToolsAsync(MultiToolRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(MultiTool)}:{nameof(GetMultiToolsAsync)}:{request.MultiToolId}:{request.Name}:{request.ParentId}",
+            $"{nameof(MultiTool)}:{nameof(GetMultiToolsAsync)}:{request.EntityId}:{request.Name}:{request.ParentId}",
             async () => await target.GetMultiToolsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -56,7 +57,10 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(MultiTool)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -90,6 +94,7 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(MultiTool)}:{nameof(GetMultiToolByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(MultiTool)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(MultiTool)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

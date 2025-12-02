@@ -2,7 +2,12 @@
 
 public class MiddlewareException : Exception
 {
-    public MiddlewareException(object url, object userId, object? requestBody, object userAgent, ExceptionDetail? exceptionDetail)
+    public MiddlewareException(
+        object url,
+        object userId,
+        object? requestBody,
+        object userAgent,
+        ExceptionDetail? exceptionDetail)
     {
         Url = url;
         UserId = userId;

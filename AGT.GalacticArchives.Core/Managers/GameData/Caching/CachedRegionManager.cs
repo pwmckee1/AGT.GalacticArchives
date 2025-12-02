@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedRegionManager(ICacheManager cacheManager, IRegionManager target) : IRegionManager, ICachedGameDataManager
+public class CachedRegionManager(ICacheManager cacheManager, IRegionManager target)
+    : IRegionManager, ICachedGameDataManager
 {
     public async Task<Region?> GetRegionByIdAsync(Guid regionId)
     {
@@ -56,7 +57,10 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result!;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Region)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -90,6 +94,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task ClearCacheAsync(Guid entityId, string collectionName)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{nameof(GetRegionByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync(
+            $"{nameof(Region)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
     }
 }

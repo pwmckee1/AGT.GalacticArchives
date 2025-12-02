@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class StarSystemManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<StarSystem>(firestoreDb, mapper), IStarSystemManager
+public class StarSystemManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<StarSystem>(firestoreDb, mapper), IStarSystemManager
 {
     public async Task<StarSystem?> GetStarSystemByIdAsync(Guid starSystemId)
     {
@@ -24,15 +25,13 @@ public class StarSystemManager(FirestoreDb firestoreDb, IMapper mapper) : GameDa
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots =  request.ParentId.HasValue
+            var snapshots = request.ParentId.HasValue
                 ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.StarSystemCollection)
                 : GetByNameAsync(request.Name!, DatabaseConstants.StarSystemCollection);
 
             var starSystems = Mapper.Map<HashSet<StarSystem>>(snapshots);
             foreach (var starSystem in starSystems)
-            {
                 starSystem.Region = await GetRegionWithHierarchyAsync(starSystem.RegionId);
-            }
 
             return starSystems;
         }

@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper) : IGameDataManager<T> where T : IGameData
+public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper)
+    : IGameDataManager<T> where T : IGameData
 {
     protected readonly FirestoreDb FirestoreDb = firestoreDb;
     protected readonly IMapper Mapper = mapper;
@@ -17,7 +18,7 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
         var snapshot = await FirestoreDb.Collection(collectionName)
             .GetSnapshotAsync();
 
-        return  snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
+        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
     public virtual async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
@@ -30,7 +31,10 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
         return snapshot != null && snapshot.Exists ? snapshot.ToDictionary() : null;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        Guid parentId,
+        string collectionName)
     {
         var query = FirestoreDb
             .Collection(collectionName)
@@ -61,13 +65,9 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
         var snapshot = await docRef.GetSnapshotAsync();
 
         if (!snapshot.Exists)
-        {
             await docRef.SetAsync(entity.ToDictionary());
-        }
         else
-        {
             await docRef.UpdateAsync(entity.ToDictionary());
-        }
 
         return entity;
     }

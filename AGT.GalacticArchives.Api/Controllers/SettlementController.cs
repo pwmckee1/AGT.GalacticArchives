@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("settlement")]
-public class SettlementController(ISettlementService settlementService): ControllerBase
+public class SettlementController(ISettlementService settlementService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<SettlementResponse>>), StatusCodes.Status200OK)]

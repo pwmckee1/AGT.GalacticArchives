@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("star-system")]
-public class StarSystemController(IStarSystemService starSystemService): ControllerBase
+public class StarSystemController(IStarSystemService starSystemService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<StarSystemResponse>>), StatusCodes.Status200OK)]

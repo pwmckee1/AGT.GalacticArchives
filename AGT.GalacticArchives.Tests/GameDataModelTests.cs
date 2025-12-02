@@ -108,7 +108,7 @@ public class GameDataModelTests
                     .For<Planet>()
                     .With(p => p.Name, "Planet Name")
                     .With(p => p.StarSystem, null)
-                    .With(p => p.RawIngredients, ["bread" , "milk"])
+                    .With(p => p.RawIngredients, ["bread", "milk"])
                     .Create();
             }
 
@@ -133,7 +133,6 @@ public class GameDataModelTests
 
         public class WhenConvertingGalaxy : WhenConvertingToGameDataFromDictionary
         {
-
             [SetUp]
             public void Setup()
             {
@@ -192,7 +191,7 @@ public class GameDataModelTests
                 _dictionary[nameof(StarSystem.SpaceStationTradeItems)] = new HashSet<string?>
                 {
                     "Labooboo dolls",
-                    "Funko pops"
+                    "Funko pops",
                 };
                 _dictionary[nameof(StarSystem.HasCenterAccess)] = false;
             }
@@ -204,7 +203,8 @@ public class GameDataModelTests
                 starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]!);
                 starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]!);
                 starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]!);
-                starSystem.GalacticCoordinates.ShouldEqual(((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]!).ToUpperInvariant());
+                starSystem.GalacticCoordinates.ShouldEqual(
+                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]!).ToUpperInvariant());
                 starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]!);
                 starSystem.Buy.ShouldEqual((float?)_dictionary[nameof(StarSystem.Buy)]);
                 starSystem.HasCenterAccess.ShouldEqual((bool?)_dictionary[nameof(StarSystem.HasCenterAccess)]!);

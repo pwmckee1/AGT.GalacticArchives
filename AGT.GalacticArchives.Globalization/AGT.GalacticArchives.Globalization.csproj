@@ -7,121 +7,130 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="9.0.0" />
+        <PackageReference Include="Autofac" Version="9.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="GeneralErrorResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="PlatformTypeResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="WealthTypeResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>WealthTypeResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="RegionResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>RegionResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="StarSystemResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>StarSystemResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="PlanetResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>PlanetResrouce.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="StarshipResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>StarshipResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="PointOfInterestResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>PointOfInterestResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="MultiToolResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>MultiToolResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="PlayerBaseResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>BaseResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="FaunaResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>FaunaResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="SettlementResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>SettlementResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
+        <EmbeddedResource Update="GeneralErrorResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlatformTypeResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="WealthTypeResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>WealthTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="RegionResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>RegionResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystemResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>StarSystemResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlanetResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>PlanetResrouce.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarshipResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>StarshipResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PointOfInterestResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>PointOfInterestResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="MultiToolResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>MultiToolResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerBaseResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>BaseResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>FaunaResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="SettlementResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>SettlementResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GalaxyResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>GalaxyResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="GeneralErrorResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>GeneralErrorResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="PlatformTypeResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PlatformTypeResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="WealthTypeResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>WealthTypeResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="RegionResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>RegionResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="StarSystemResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>StarSystemResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="PlanetResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PlanetResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="StarshipResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>StarshipResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="PointOfInterestResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PointOfInterestResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="MultiToolResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>MultiToolResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="PlayerBaseResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PlayerBaseResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="FaunaResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>FaunaResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="SettlementResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>SettlementResource.resx</DependentUpon>
-      </Compile>
+        <Compile Update="GeneralErrorResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>GeneralErrorResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlatformTypeResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PlatformTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="WealthTypeResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>WealthTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="RegionResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>RegionResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystemResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>StarSystemResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlanetResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PlanetResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarshipResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>StarshipResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PointOfInterestResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PointOfInterestResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="MultiToolResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>MultiToolResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerBaseResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PlayerBaseResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>FaunaResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="SettlementResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>SettlementResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="GalaxyResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>GalaxyResource.resx</DependentUpon>
+        </Compile>
     </ItemGroup>
 
 </Project>

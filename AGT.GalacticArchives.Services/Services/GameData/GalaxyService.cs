@@ -18,10 +18,7 @@ public class GalaxyService(IGalaxyManager galaxyManager, IMapper mapper) : IGala
 
     public async Task<HashSet<GalaxyResponse>> GetGalaxiesAsync(GalaxyRequest request)
     {
-        if (!request.GalaxyId.HasValue && string.IsNullOrEmpty(request.Name))
-        {
-            return await GetGalaxiesAsync();
-        }
+        if (!request.EntityId.HasValue && string.IsNullOrEmpty(request.Name)) return await GetGalaxiesAsync();
 
         var galaxies = await galaxyManager.GetGalaxiesAsync(request);
         return mapper.Map<HashSet<GalaxyResponse>>(galaxies);
@@ -30,27 +27,26 @@ public class GalaxyService(IGalaxyManager galaxyManager, IMapper mapper) : IGala
     public async Task<GalaxyResponse?> GetGalaxyByIdAsync(Guid galaxyId)
     {
         var galaxy = await galaxyManager.GetGalaxyByIdAsync(galaxyId);
-        return galaxy != null ? mapper.Map<GalaxyResponse>(galaxy) : new GalaxyResponse();
+        return galaxy != null ? mapper.Map<GalaxyResponse>(galaxy) : null;
     }
 
     public async Task<GalaxyResponse> UpsertGalaxyAsync(GalaxyRequest request)
     {
-        var galaxy = mapper.Map<Galaxy>(request);
-        if (request.GalaxyId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var existingGalaxy = await galaxyManager.GetGalaxyByIdAsync(request.GalaxyId.Value);
+            var requestedGalaxy = mapper.Map<Galaxy>(request);
+            var existingGalaxy = await galaxyManager.GetGalaxyByIdAsync(request.EntityId.Value);
 
-            if (existingGalaxy!.ToDictionary().HasAnyChanges(galaxy.ToDictionary()))
+            if (existingGalaxy!.ToDictionary().HasAnyChanges(requestedGalaxy.ToDictionary()))
             {
-                galaxy = await galaxyManager.UpsertGalaxyAsync(galaxy);
+                var updatedGalaxy = await galaxyManager.UpsertGalaxyAsync(requestedGalaxy);
+                return mapper.Map<GalaxyResponse>(updatedGalaxy);
             }
         }
-        else
-        {
-            galaxy =  await galaxyManager.UpsertGalaxyAsync(galaxy);
-        }
 
-        return mapper.Map<GalaxyResponse>(galaxy);
+        var newGalaxy = mapper.Map<Galaxy>(request);
+        newGalaxy = await galaxyManager.UpsertGalaxyAsync(newGalaxy);
+        return mapper.Map<GalaxyResponse>(newGalaxy);
     }
 
     public async Task DeleteGalaxyAsync(Guid galaxyId)

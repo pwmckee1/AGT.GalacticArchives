@@ -1,11 +1,7 @@
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class FaunaRequest : GameDataRequest
+public class FaunaRequest : RequestPlanetEntity
 {
-    public Guid? FaunaId { get; set; }
-
-    public string? Name { get; set; }
-
     public string? NameAfterExpeditions { get; set; }
 
     public string? OriginalName { get; set; }

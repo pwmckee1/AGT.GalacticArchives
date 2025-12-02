@@ -8,7 +8,8 @@ using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.GameData;
 
-public class PointOfInterestService(IPointOfInterestManager pointOfInterestManager, IMapper mapper) : IPointOfInterestService
+public class PointOfInterestService(IPointOfInterestManager pointOfInterestManager, IMapper mapper)
+    : IPointOfInterestService
 {
     public async Task<PointOfInterestResponse?> GetPointOfInterestByIdAsync(Guid pointOfInterestId)
     {
@@ -27,12 +28,11 @@ public class PointOfInterestService(IPointOfInterestManager pointOfInterestManag
         var pointOfInterest = mapper.Map<PointOfInterest>(request);
         if (request.PointOfInterestId.HasValue)
         {
-            var existingPointOfInterest = await pointOfInterestManager.GetPointOfInterestByIdAsync(request.PointOfInterestId.Value);
+            var existingPointOfInterest =
+                await pointOfInterestManager.GetPointOfInterestByIdAsync(request.PointOfInterestId.Value);
 
             if (existingPointOfInterest!.ToDictionary().HasAnyChanges(pointOfInterest.ToDictionary()))
-            {
                 pointOfInterest = await pointOfInterestManager.UpsertPointOfInterestAsync(pointOfInterest);
-            }
         }
         else
         {

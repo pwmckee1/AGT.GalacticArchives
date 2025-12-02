@@ -15,16 +15,16 @@ public static class DictionaryExtensions
         if (first.Count == 0 || second.Count == 0)
             return true;
 
-        var firstJson = JsonConvert.SerializeObject(first, new JsonSerializerSettings
+        string firstJson = JsonConvert.SerializeObject(first, new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore
+            NullValueHandling = NullValueHandling.Ignore,
         });
 
-        var secondJson = JsonConvert.SerializeObject(second, new JsonSerializerSettings
+        string secondJson = JsonConvert.SerializeObject(second, new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore
+            NullValueHandling = NullValueHandling.Ignore,
         });
 
         return firstJson != secondJson;
@@ -37,21 +37,15 @@ public static class DictionaryExtensions
 
         foreach (var property in properties)
         {
-            if (!property.CanWrite)
-            {
-                continue;
-            }
+            if (!property.CanWrite) continue;
 
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-            if (!source.TryGetValue(property.Name, out var value) || value == null)
-            {
-                continue;
-            }
+            if (!source.TryGetValue(property.Name, out object? value) || value == null) continue;
 
             try
             {
                 // Handle type conversions
-                var convertedValue = ConvertValue(value, property.PropertyType);
+                object? convertedValue = ConvertValue(value, property.PropertyType);
                 property.SetValue(instance, convertedValue);
             }
             catch (Exception ex)
@@ -71,40 +65,25 @@ public static class DictionaryExtensions
 
     private static object? ConvertValue(object? value, Type targetType)
     {
-        if (value == null)
-        {
-            return null;
-        }
+        if (value == null) return null;
 
         // If types match, return it
-        if (targetType.IsInstanceOfType(value))
-        {
-            return value;
-        }
+        if (targetType.IsInstanceOfType(value)) return value;
 
         // Handle nullable types
         var underlyingType = Nullable.GetUnderlyingType(targetType) ?? targetType;
 
         // Handle string conversions (from/to Guid, etc.)
         if (value is string stringValue)
-        {
             if (underlyingType == typeof(Guid))
-            {
-                return Guid.Parse((stringValue));
-            }
-        }
+                return Guid.Parse(stringValue);
 
         // Handle explicit conversions
-        if (underlyingType.IsAssignableFrom(value.GetType()))
-        {
-            return value;
-        }
+        if (underlyingType.IsAssignableFrom(value.GetType())) return value;
 
         // Convert.ChangeType for primitives
         if (underlyingType.IsPrimitive || underlyingType == typeof(decimal))
-        {
             return Convert.ChangeType(value, underlyingType);
-        }
 
         throw new InvalidCastException(
             string.Format(GeneralErrorResource.CannotConvertValue, value.GetType().Name, targetType.Name));

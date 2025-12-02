@@ -30,9 +30,7 @@ public class StarSystemService(IStarSystemManager starSystemManager, IMapper map
             var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(request.StarSystemId.Value);
 
             if (existingStarSystem!.ToDictionary().HasAnyChanges(starSystem.ToDictionary()))
-            {
                 starSystem = await starSystemManager.UpsertStarSystemAsync(starSystem);
-            }
         }
         else
         {

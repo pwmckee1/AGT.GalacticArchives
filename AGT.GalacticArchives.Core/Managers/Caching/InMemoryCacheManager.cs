@@ -16,7 +16,10 @@ public class InMemoryCacheManager : CacheManagerBase
         return await base.GetAsync<T>(key);
     }
 
-    public override async Task<T?> GetAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public override async Task<T?> GetAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
         where T : class
     {
         return await GetAsync(
@@ -27,7 +30,10 @@ public class InMemoryCacheManager : CacheManagerBase
                     new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0)));
     }
 
-    public override async Task<T?> GetAsync<T>(string key, Func<Task<T>>? targetMethod, DistributedCacheEntryOptions cacheOptions)
+    public override async Task<T?> GetAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        DistributedCacheEntryOptions cacheOptions)
         where T : class
     {
         return await base.GetAsync(key, targetMethod, cacheOptions);
@@ -38,7 +44,10 @@ public class InMemoryCacheManager : CacheManagerBase
         return base.SetAsync(key, value, cacheDurationInMinutes);
     }
 
-    public override Task<T?> GetEnumAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public override Task<T?> GetEnumAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
         where T : default
     {
         return base.GetEnumAsync(key, targetMethod, cacheDurationInMinutes);
@@ -46,7 +55,7 @@ public class InMemoryCacheManager : CacheManagerBase
 
     public override async Task ClearCacheBySuffixAsync(string cacheKeySuffix)
     {
-        foreach (var key in Keys.Keys.Where(k => k.EndsWith(cacheKeySuffix)))
+        foreach (string key in Keys.Keys.Where(k => k.EndsWith(cacheKeySuffix)))
         {
             await DistributedCache.RemoveAsync(key);
             Keys.TryRemove(key, out _);
@@ -55,7 +64,7 @@ public class InMemoryCacheManager : CacheManagerBase
 
     public override async Task ClearCacheByPrefixAsync(string cacheKeyPrefix)
     {
-        foreach (var key in Keys.Keys.Where(k => k.StartsWith(cacheKeyPrefix)))
+        foreach (string key in Keys.Keys.Where(k => k.StartsWith(cacheKeyPrefix)))
         {
             await DistributedCache.RemoveAsync(key);
             Keys.TryRemove(key, out _);
@@ -64,7 +73,7 @@ public class InMemoryCacheManager : CacheManagerBase
 
     public override async Task ClearCacheByPartialAsync(string partialCacheKey)
     {
-        foreach (var key in Keys.Keys.Where(k => k.Contains(partialCacheKey)))
+        foreach (string key in Keys.Keys.Where(k => k.Contains(partialCacheKey)))
         {
             await DistributedCache.RemoveAsync(key);
             Keys.TryRemove(key, out _);
@@ -73,22 +82,17 @@ public class InMemoryCacheManager : CacheManagerBase
 
     public override async Task ClearCacheByPatternAsync(string pattern)
     {
-        foreach (var key in Keys.Keys)
-        {
+        foreach (string key in Keys.Keys)
             if (Regex.IsMatch(key, pattern))
             {
                 await DistributedCache.RemoveAsync(key);
                 Keys.TryRemove(key, out _);
             }
-        }
     }
 
     public override async Task ClearAllCacheAsync()
     {
-        foreach (var key in Keys.Keys)
-        {
-            await DistributedCache.RemoveAsync(key);
-        }
+        foreach (string key in Keys.Keys) await DistributedCache.RemoveAsync(key);
 
         Keys.Clear();
     }

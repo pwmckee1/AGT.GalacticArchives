@@ -19,10 +19,7 @@ public static class AssemblyHelpers
             .Where(an => !targetAssemblies.Select(a => a.FullName).Contains(an.FullName))
             .ToHashSet();
 
-        foreach (var missingAssembly in missingAssemblies)
-        {
-            targetAssemblies.Add(Assembly.Load(missingAssembly));
-        }
+        foreach (var missingAssembly in missingAssemblies) targetAssemblies.Add(Assembly.Load(missingAssembly));
 
         return targetAssemblies.ToArray();
     }

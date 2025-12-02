@@ -16,6 +16,7 @@ public abstract class GameData : IGameData
     public virtual required string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
+
     public virtual Dictionary<string, object?> ToDictionary(
         GameData? gameData = null,
         PropertyInfo[] properties = null!,
@@ -24,19 +25,15 @@ public abstract class GameData : IGameData
         var result = new Dictionary<string, object?>();
 
         if (gameData != null)
-        {
             foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
             {
-                var value = property.GetValue(gameData);
+                object? value = property.GetValue(gameData);
 
                 if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
-                {
                     value = value?.ToString();
-                }
 
                 result[property.Name] = value;
             }
-        }
 
         return result;
     }

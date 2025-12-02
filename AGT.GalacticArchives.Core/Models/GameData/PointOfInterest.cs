@@ -37,6 +37,7 @@ public class PointOfInterest : GameData
     public string? Surveyor { get; set; }
 
     public string? Release { get; set; }
+
     public override Dictionary<string, object?> ToDictionary(
         GameData? gameData = null,
         PropertyInfo[] properties = null!,

@@ -12,18 +12,13 @@ public static partial class StringExtensions
 
     public static string GetValidatedCoordinates(this string? coordinates)
     {
-        if (string.IsNullOrEmpty(coordinates))
-        {
-            return coordinates ?? string.Empty;
-        }
+        if (string.IsNullOrEmpty(coordinates)) return coordinates ?? string.Empty;
 
-        var normalizedCoordinates = coordinates.ToUpperInvariant();
+        string normalizedCoordinates = coordinates.ToUpperInvariant();
         if (!CoordinatesPattern.IsMatch(normalizedCoordinates))
-        {
             throw new ArgumentException(
                 GeneralErrorResource.CoordinatesMustMatchPattern,
                 nameof(coordinates));
-        }
 
         return normalizedCoordinates;
     }

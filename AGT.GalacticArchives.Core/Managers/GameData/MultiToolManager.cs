@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<MultiTool>(firestoreDb, mapper), IMultiToolManager
+public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<MultiTool>(firestoreDb, mapper), IMultiToolManager
 {
     public async Task<MultiTool?> GetMultiToolByIdAsync(Guid multiToolId)
     {
@@ -22,9 +23,9 @@ public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper) : GameDat
 
     public async Task<HashSet<MultiTool>> GetMultiToolsAsync(MultiToolRequest request)
     {
-        if (request.MultiToolId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var multiTool = await GetMultiToolByIdAsync(request.MultiToolId!.Value);
+            var multiTool = await GetMultiToolByIdAsync(request.EntityId!.Value);
             return multiTool != null ? [multiTool] : [];
         }
 
@@ -36,16 +37,10 @@ public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper) : GameDat
 
             var multiToolSet = Mapper.Map<HashSet<MultiTool>>(snapshots);
             foreach (var multiTool in multiToolSet)
-            {
                 if (multiTool.PlanetId.HasValue)
-                {
                     multiTool.Planet = await GetPlanetWithHierarchyAsync(multiTool.PlanetId!.Value);
-                }
                 else
-                {
                     multiTool.StarSystem = await GetStarSystemWithHierarchyAsync(multiTool.StarSystemId);
-                }
-            }
 
             return multiToolSet;
         }

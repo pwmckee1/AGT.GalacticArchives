@@ -30,9 +30,7 @@ public class SettlementService(ISettlementManager settlementManager, IMapper map
             var existingSettlement = await settlementManager.GetSettlementByIdAsync(request.SettlementId.Value);
 
             if (existingSettlement!.ToDictionary().HasAnyChanges(settlement.ToDictionary()))
-            {
                 settlement = await settlementManager.UpsertSettlementAsync(settlement);
-            }
         }
         else
         {

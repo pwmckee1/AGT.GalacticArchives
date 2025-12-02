@@ -25,7 +25,10 @@ public abstract class CacheManagerBase : ICacheManager
 
     // This implements the same as GetAsync<T/> without the T : Class requirement.
     // This is used for when there's no backing class so you can still use cache only storage.
-    public async Task<T?> GetNoClassAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public async Task<T?> GetNoClassAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
     {
         byte[]? data = await DistributedCache.GetAsync(key);
         return data == null ? default : JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(data));
@@ -38,7 +41,10 @@ public abstract class CacheManagerBase : ICacheManager
         return data == null ? null : JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(data));
     }
 
-    public virtual async Task<T?> GetAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public virtual async Task<T?> GetAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
         where T : class?
     {
         return await GetAsync(
@@ -49,7 +55,10 @@ public abstract class CacheManagerBase : ICacheManager
                     new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0)));
     }
 
-    public virtual async Task<T?> GetAsync<T>(string key, Func<Task<T>>? targetMethod, DistributedCacheEntryOptions cacheOptions)
+    public virtual async Task<T?> GetAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        DistributedCacheEntryOptions cacheOptions)
         where T : class?
     {
         T? result = default;
@@ -73,7 +82,8 @@ public abstract class CacheManagerBase : ICacheManager
     {
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
+            AbsoluteExpirationRelativeToNow = new TimeSpan(0,
+                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
         };
 
         await SetAsync(key, value, cacheOptions);
@@ -92,13 +102,17 @@ public abstract class CacheManagerBase : ICacheManager
         Keys[key] = true;
     }
 
-    public virtual async Task<T?> GetEnumAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public virtual async Task<T?> GetEnumAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
         where T : Enum
     {
         T? result = default;
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
+            AbsoluteExpirationRelativeToNow = new TimeSpan(0,
+                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
         };
 
         byte[]? cachedData = await DistributedCache.GetAsync(key);
@@ -126,10 +140,7 @@ public abstract class CacheManagerBase : ICacheManager
     {
         if (string.IsNullOrEmpty(cacheKey))
         {
-            foreach (var key in Keys.Keys)
-            {
-                await DistributedCache.RemoveAsync(key);
-            }
+            foreach (string key in Keys.Keys) await DistributedCache.RemoveAsync(key);
 
             Keys = new ConcurrentDictionary<string, bool>();
         }
@@ -142,10 +153,7 @@ public abstract class CacheManagerBase : ICacheManager
 
     public virtual async Task ClearCacheByKeyAsync(HashSet<string> cacheKeys)
     {
-        foreach (string cacheKey in cacheKeys)
-        {
-            await ClearCacheByKeyAsync(cacheKey);
-        }
+        foreach (string cacheKey in cacheKeys) await ClearCacheByKeyAsync(cacheKey);
     }
 
     public virtual async Task ClearAllCacheAsync()
@@ -155,4 +163,3 @@ public abstract class CacheManagerBase : ICacheManager
 
     public abstract Task ClearCacheByPatternAsync(string pattern);
 }
-

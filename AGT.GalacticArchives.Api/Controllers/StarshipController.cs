@@ -9,7 +9,7 @@ namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("starship")]
-public class StarshipController(IStarshipService starshipService): ControllerBase
+public class StarshipController(IStarshipService starshipService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<StarshipResponse>>), StatusCodes.Status200OK)]

@@ -116,9 +116,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Earliest Known Surveyor ID.
         /// </summary>
-        public static string EarliestKnownSurveyorId {
+        public static string EarliestKnownSurveyor {
             get {
-                return ResourceManager.GetString("EarliestKnownSurveyorId", resourceCulture);
+                return ResourceManager.GetString("EarliestKnownSurveyor", resourceCulture);
             }
         }
         
@@ -161,9 +161,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Latest Surveyor ID.
         /// </summary>
-        public static string LatestKnownSurveyorId {
+        public static string LatestKnownSurveyor {
             get {
-                return ResourceManager.GetString("LatestKnownSurveyorId", resourceCulture);
+                return ResourceManager.GetString("LatestKnownSurveyor", resourceCulture);
             }
         }
         

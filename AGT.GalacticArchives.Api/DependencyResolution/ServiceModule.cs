@@ -16,7 +16,7 @@ public class ServiceModule : Module
             .InstancePerLifetimeScope();
 
         builder.Register((c, _) => new ValidatedGalaxyServiceDecorator(
-                    c.ResolveNamed<IGalaxyService>(NamedKeys.Services.GalaxyService)))
+                c.ResolveNamed<IGalaxyService>(NamedKeys.Services.GalaxyService)))
             .As<IGalaxyService>()
             .InstancePerLifetimeScope();
 
@@ -25,8 +25,8 @@ public class ServiceModule : Module
             .InstancePerLifetimeScope();
 
         builder.Register((c, _) => new ValidatedRegionServiceDecorator(
-                    c.ResolveNamed<IRegionService>(NamedKeys.Services.RegionService),
-                    c.ResolveNamed<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)))
+                c.ResolveNamed<IRegionService>(NamedKeys.Services.RegionService),
+                c.ResolveNamed<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)))
             .As<IRegionService>()
             .InstancePerLifetimeScope();
     }

@@ -7,7 +7,8 @@ using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class SettlementManager(FirestoreDb firestoreDb, IMapper mapper) : GameDataManager<Settlement>(firestoreDb, mapper), ISettlementManager
+public class SettlementManager(FirestoreDb firestoreDb, IMapper mapper)
+    : GameDataManager<Settlement>(firestoreDb, mapper), ISettlementManager
 {
     public async Task<Settlement?> GetSettlementByIdAsync(Guid settlementId)
     {
@@ -31,16 +32,13 @@ public class SettlementManager(FirestoreDb firestoreDb, IMapper mapper) : GameDa
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots =  request.ParentId.HasValue
+            var snapshots = request.ParentId.HasValue
                 ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.SettlementCollection)
                 : GetByNameAsync(request.Name!, DatabaseConstants.SettlementCollection);
 
             var settlementSet = Mapper.Map<HashSet<Settlement>>(snapshots);
             foreach (var settlement in settlementSet)
-            {
                 settlement.Planet = await GetPlanetWithHierarchyAsync(settlement.PlanetId);
-
-            }
 
             return settlementSet;
         }

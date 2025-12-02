@@ -7,7 +7,8 @@ using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 
-public class ValidatedRegionServiceDecorator(IRegionService regionService, IGalaxyManager galaxyManager) : IRegionService
+public class ValidatedRegionServiceDecorator(IRegionService regionService, IGalaxyManager galaxyManager)
+    : IRegionService
 {
     public async Task<RegionResponse?> GetRegionByIdAsync(Guid regionId)
     {
@@ -22,46 +23,32 @@ public class ValidatedRegionServiceDecorator(IRegionService regionService, IGala
     public async Task<RegionResponse> UpsertRegionAsync(RegionRequest request)
     {
         if (!request.GalaxyId.HasValue)
-        {
             throw new ArgumentNullException(string.Format(RegionResource.MustHaveGalaxy, request.Name));
-        }
 
         var galaxy = await galaxyManager.GetGalaxyByIdAsync(request.GalaxyId.Value);
         if (galaxy == null)
-        {
             throw new ArgumentException(string.Format(GeneralErrorResource.InvalidGameDataId, request.GalaxyId.Value,
                 $"{nameof(Region)} => {nameof(Region.GalaxyId)}"));
-        }
 
         if (string.IsNullOrEmpty(request.Name))
-        {
             throw new ArgumentNullException(string.Format(
                 GeneralErrorResource.PropertyMissing, $"{nameof(Region)} => {nameof(Region.Name)}"));
-        }
 
         if (string.IsNullOrEmpty(request.Coordinates))
-        {
             throw new ArgumentNullException(string.Format(
                 GeneralErrorResource.PropertyMissing, $"{nameof(Region)} => {nameof(Region.Coordinates)}"));
-        }
 
         if (string.IsNullOrEmpty(request.SurveyDate))
-        {
             throw new ArgumentNullException(string.Format(
                 GeneralErrorResource.PropertyMissing, $"{nameof(Region)} => {nameof(Region.SurveyDate)}"));
-        }
 
         if (string.IsNullOrEmpty(request.EarliestKnownSurveyor))
-        {
             throw new ArgumentNullException(string.Format(
                 GeneralErrorResource.PropertyMissing, $"{nameof(Region)} => {nameof(Region.EarliestKnownSurveyor)}"));
-        }
 
         if (string.IsNullOrEmpty(request.GameRelease))
-        {
             throw new ArgumentNullException(string.Format(
                 GeneralErrorResource.PropertyMissing, $"{nameof(Region)} => {nameof(Region.GameRelease)}"));
-        }
 
         return await regionService.UpsertRegionAsync(request);
     }

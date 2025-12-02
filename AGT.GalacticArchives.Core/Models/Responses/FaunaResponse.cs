@@ -1,17 +1,7 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class FaunaResponse
+public class FaunaResponse : ResponsePlanetEntity
 {
-    public Guid FaunaId { get; set; }
-
-    public string Name { get; set; } = null!;
-
-    public Guid? PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
-
     public string? NameAfterExpeditions { get; set; }
 
     public string? OriginalName { get; set; }
