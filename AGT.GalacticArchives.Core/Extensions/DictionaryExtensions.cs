@@ -30,7 +30,7 @@ public static class DictionaryExtensions
         return firstJson != secondJson;
     }
 
-    public static T ConvertDictionaryToObject<T>(this Dictionary<string, object?> source) where T : class
+    public static T ConvertDictionaryToObject<T>(this Dictionary<string, object> source) where T : class
     {
         var instance = (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
         var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);

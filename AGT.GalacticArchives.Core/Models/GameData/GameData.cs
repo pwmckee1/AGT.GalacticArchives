@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using AGT.GalacticArchives.Core.Interfaces.GameData;
+using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
@@ -7,26 +7,35 @@ public abstract class GameData : IGameData
 {
     public abstract Guid EntityId { get; }
 
+    public abstract Guid ParentId { get; }
+
+    public abstract string CollectionName { get; }
+
+    public abstract string ParentCollectionName { get; }
+
     public virtual required string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
     public virtual Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
         var result = new Dictionary<string, object?>();
 
-        foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
+        if (gameData != null)
         {
-            var value = property.GetValue(gameData);
-
-            if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
+            foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
             {
-                value = value?.ToString();
-            }
+                var value = property.GetValue(gameData);
 
-            result[property.Name] = value;
+                if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
+                {
+                    value = value?.ToString();
+                }
+
+                result[property.Name] = value;
+            }
         }
 
         return result;

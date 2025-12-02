@@ -1,6 +1,9 @@
-﻿using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Services.Interfaces.GameData;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace AGT.GalacticArchives.Controllers;
 
@@ -8,8 +11,18 @@ namespace AGT.GalacticArchives.Controllers;
 [Route("star-system")]
 public class StarSystemController(IStarSystemService starSystemService): ControllerBase
 {
+    [HttpGet]
+    [ProducesResponseType(typeof(MessageResponse<HashSet<StarSystemResponse>>), StatusCodes.Status200OK)]
+    [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
+    public async Task<IActionResult> GetAsync(StarSystemRequest request)
+    {
+        var galaxies = await starSystemService.GetStarSystemsAsync(request);
+        return Ok(galaxies);
+    }
 
     [HttpGet("{starSystemId}")]
+    [ProducesResponseType(typeof(MessageResponse<StarSystemResponse>), StatusCodes.Status200OK)]
+    [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
     public async Task<IActionResult> GetAsync(Guid starSystemId)
     {
         var starSystem = await starSystemService.GetStarSystemByIdAsync(starSystemId);
@@ -17,13 +30,16 @@ public class StarSystemController(IStarSystemService starSystemService): Control
     }
 
     [HttpPost]
-    public async Task<IActionResult> PostAsync([FromBody] StarSystem starSystem)
+    [ProducesResponseType(typeof(MessageResponse<StarSystemResponse>), StatusCodes.Status200OK)]
+    [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
+    public async Task<IActionResult> PostAsync([FromBody] StarSystemRequest starSystem)
     {
         var response = await starSystemService.UpsertStarSystemAsync(starSystem);
         return Ok(response);
     }
 
     [HttpDelete("{starSystemId}")]
+    [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
     public async Task<IActionResult> DeleteAsync(Guid starSystemId)
     {
         await starSystemService.DeleteStarSystemAsync(starSystemId);

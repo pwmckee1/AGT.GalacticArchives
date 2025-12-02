@@ -1,10 +1,17 @@
 ﻿using System.Reflection;
+using AGT.GalacticArchives.Core.Constants;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
 public class Galaxy : GameData
 {
     public override Guid EntityId => GalaxyId;
+
+    public override Guid ParentId => GalaxyId;
+
+    public override string CollectionName => DatabaseConstants.GalaxyCollection;
+
+    public override string ParentCollectionName => DatabaseConstants.GalaxyCollection;
 
     public Guid GalaxyId { get; set; } = Guid.NewGuid();
 
@@ -13,7 +20,7 @@ public class Galaxy : GameData
     public HashSet<Region> Regions { get; set; } = [];
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
@@ -22,6 +29,8 @@ public class Galaxy : GameData
         [
             nameof(EntityId),
             nameof(Regions),
+            nameof(CollectionName),
+            nameof(ParentCollectionName),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

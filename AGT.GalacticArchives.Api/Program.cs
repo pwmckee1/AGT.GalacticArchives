@@ -3,6 +3,7 @@ using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Extensions;
 using AGT.GalacticArchives.Middleware;
+using AGT.GalacticArchives.Services.Mapping;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper.EquivalencyExpression;

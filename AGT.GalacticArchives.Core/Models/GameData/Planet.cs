@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
@@ -8,10 +9,20 @@ public class Planet : GameData
 {
     public override Guid EntityId => PlanetId;
 
+    public override Guid ParentId => StarSystemId;
+
+    public override string CollectionName => DatabaseConstants.PlanetCollection;
+
+    public override string ParentCollectionName => DatabaseConstants.StarSystemCollection;
+
     public Guid PlanetId { get; set; } = Guid.NewGuid();
 
     [Display(ResourceType = typeof(PlanetResource), Description = nameof(PlanetResource.Name))]
     public override required string Name { get; set; }
+
+    public required Guid StarSystemId { get; set; }
+
+    public StarSystem? StarSystem { get; set; }
 
     public string? PlanetNameAllPlatforms { get; set; }
 
@@ -77,7 +88,7 @@ public class Planet : GameData
 
     public string? Flora { get; set; }
 
-    public string? Fauna { get; set; }
+    public string? FaunaCategory { get; set; }
 
     public int? NumberOfFauna { get; set; }
 
@@ -231,14 +242,10 @@ public class Planet : GameData
 
     public int? DocSeqCheck { get; set; }
 
-    public Guid? StarSystemId { get; set; }
-
-    public StarSystem? StarSystem { get; set; }
-
     public HashSet<Starship> Starships { get; set; } = [];
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
@@ -248,6 +255,8 @@ public class Planet : GameData
             nameof(EntityId),
             nameof(StarSystem),
             nameof(Starships),
+            nameof(CollectionName),
+            nameof(ParentCollectionName),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

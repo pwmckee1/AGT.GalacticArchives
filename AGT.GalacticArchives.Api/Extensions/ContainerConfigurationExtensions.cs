@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using AGT.GalacticArchives.Core.Interfaces.Caching;
 using AGT.GalacticArchives.Core.Managers.Caching;
+using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.AppSettings;
 using Autofac;

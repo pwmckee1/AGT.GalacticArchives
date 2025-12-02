@@ -219,6 +219,9 @@
   <data name="ExtremeWeatherInludingMegaExotic" xml:space="preserve">
     <value>Extreme Weather for Mega-Exotic/ Waterworld Manual Entry</value>
   </data>
+  <data name="FaunaCategory" xml:space="preserve">
+    <value>Fauna</value>
+  </data>
   <data name="GameVersionNumberForPage" xml:space="preserve">
     <value>Game Version Number for Page</value>
   </data>

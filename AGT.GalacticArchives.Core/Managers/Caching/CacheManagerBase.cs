@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Interfaces.Caching;
+using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 

@@ -1,43 +1,56 @@
-﻿using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Interfaces.Managers;
+﻿using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Services.Interfaces.GameData;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.GameData;
 
-public class GalaxyService(IGalaxyManager galaxyManager) : IGalaxyService
+public class GalaxyService(IGalaxyManager galaxyManager, IMapper mapper) : IGalaxyService
 {
-    public async Task<HashSet<Galaxy>> GetGalaxiesAsync()
+    public async Task<HashSet<GalaxyResponse>> GetGalaxiesAsync()
     {
-        return await galaxyManager.GetGalaxiesAsync();
+        var galaxies = await galaxyManager.GetGalaxiesAsync();
+        return mapper.Map<HashSet<GalaxyResponse>>(galaxies);
     }
 
-    public async Task<Galaxy?> GetGalaxyByIdAsync(Guid galaxyId)
+    public async Task<HashSet<GalaxyResponse>> GetGalaxiesAsync(GalaxyRequest request)
     {
-        return await galaxyManager.GetGalaxyByIdAsync(galaxyId);
-    }
-
-    /// <summary>
-    /// Inserts or updates a galaxy in the data store only If the associated galaxy
-    /// data has changed. This is done in the service layer to use the cache manager for the
-    /// duplicate check to reduce firestore db calls when no necessary
-    /// </summary>
-    /// <param name="galaxy">
-    /// The galaxy entity to upsert, including its associated galaxy and region data.
-    /// </param>
-    /// <returns>
-    /// The upserted <see cref="Galaxy"/> object containing the latest persisted data.
-    /// </returns>
-    public async Task<Galaxy> UpsertGalaxyAsync(Galaxy galaxy)
-    {
-        var galaxyData = await galaxyManager.GetByIdAsync(galaxy.GalaxyId, DatabaseConstants.GalaxyCollection);
-        if (galaxyData.HasAnyChanges(galaxy.ToDictionary()))
+        if (!request.GalaxyId.HasValue && string.IsNullOrEmpty(request.Name))
         {
-            galaxy = await galaxyManager.UpsertGalaxyAsync(galaxy);
+            return await GetGalaxiesAsync();
         }
 
-        return galaxy;
+        var galaxies = await galaxyManager.GetGalaxiesAsync(request);
+        return mapper.Map<HashSet<GalaxyResponse>>(galaxies);
+    }
+
+    public async Task<GalaxyResponse?> GetGalaxyByIdAsync(Guid galaxyId)
+    {
+        var galaxy = await galaxyManager.GetGalaxyByIdAsync(galaxyId);
+        return galaxy != null ? mapper.Map<GalaxyResponse>(galaxy) : new GalaxyResponse();
+    }
+
+    public async Task<GalaxyResponse> UpsertGalaxyAsync(GalaxyRequest request)
+    {
+        var galaxy = mapper.Map<Galaxy>(request);
+        if (request.GalaxyId.HasValue)
+        {
+            var existingGalaxy = await galaxyManager.GetGalaxyByIdAsync(request.GalaxyId.Value);
+
+            if (existingGalaxy!.ToDictionary().HasAnyChanges(galaxy.ToDictionary()))
+            {
+                galaxy = await galaxyManager.UpsertGalaxyAsync(galaxy);
+            }
+        }
+        else
+        {
+            galaxy =  await galaxyManager.UpsertGalaxyAsync(galaxy);
+        }
+
+        return mapper.Map<GalaxyResponse>(galaxy);
     }
 
     public async Task DeleteGalaxyAsync(Guid galaxyId)

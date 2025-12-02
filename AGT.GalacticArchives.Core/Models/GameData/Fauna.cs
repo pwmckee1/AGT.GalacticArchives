@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
@@ -8,12 +9,18 @@ public class Fauna : GameData
 {
     public override Guid EntityId => FaunaId;
 
+    public override Guid ParentId => PlanetId;
+
+    public override string CollectionName => DatabaseConstants.FaunaCollection;
+
+    public override string ParentCollectionName => DatabaseConstants.PlanetCollection;
+
     public Guid FaunaId { get; set; } = Guid.NewGuid();
 
     [Display(ResourceType = typeof(FaunaResource), Description = nameof(FaunaResource.Name))]
     public override required string Name { get; set; }
 
-    public Guid? PlanetId { get; set; }
+    public required Guid PlanetId { get; set; }
 
     public Planet? Planet { get; set; }
 
@@ -114,7 +121,7 @@ public class Fauna : GameData
     public float? VersionRelease { get; set; }
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
@@ -123,6 +130,8 @@ public class Fauna : GameData
         [
             nameof(EntityId),
             nameof(Planet),
+            nameof(CollectionName),
+            nameof(ParentCollectionName),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

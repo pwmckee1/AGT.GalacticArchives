@@ -237,6 +237,9 @@
   <data name="MultiToolSClassUpgradeModules" xml:space="preserve">
     <value>Multi-Tool S-Class Upgrade Modules</value>
   </data>
+  <data name="MustHaveRegion" xml:space="preserve">
+    <value>Star System {0} must have a Region selected.</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>System Name (Unique entry search key)</value>
   </data>

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Globalization;
 
@@ -11,12 +12,18 @@ public class Region : GameData
 
     public override Guid EntityId => RegionId;
 
+    public override Guid ParentId => GalaxyId;
+
+    public override string CollectionName => DatabaseConstants.RegionCollection;
+
+    public override string ParentCollectionName => DatabaseConstants.GalaxyCollection;
+
     public Guid RegionId { get; set; } = Guid.NewGuid();
 
     [Display(ResourceType = typeof(RegionResource), Description = nameof(RegionResource.Name))]
     public override required string Name { get; set; }
 
-    public Guid? GalaxyId { get; set; }
+    public required Guid GalaxyId { get; set; }
 
     public string? CivilizedBy { get; set; }
 
@@ -88,12 +95,12 @@ public class Region : GameData
 
     public string? Version { get; set; }
 
-    public HashSet<StarSystem> Systems { get; set; } = [];
+    public HashSet<StarSystem> StarSystems { get; set; } = [];
 
     public Galaxy? Galaxy { get; set; }
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
@@ -101,8 +108,10 @@ public class Region : GameData
         excludedProperties =
         [
             nameof(EntityId),
-            nameof(Systems),
+            nameof(StarSystems),
             nameof(Galaxy),
+            nameof(CollectionName),
+            nameof(ParentCollectionName),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

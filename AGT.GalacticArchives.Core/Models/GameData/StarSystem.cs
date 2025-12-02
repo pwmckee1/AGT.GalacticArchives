@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Extensions;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
@@ -9,11 +10,19 @@ public class StarSystem : GameData
 
     public override Guid EntityId => StarSystemId;
 
+    public override Guid ParentId => RegionId;
+
+    public override string CollectionName => DatabaseConstants.StarSystemCollection;
+
+    public override string ParentCollectionName => DatabaseConstants.RegionCollection;
+
     public Guid StarSystemId { get; set; } = Guid.NewGuid();
 
     public override required string Name { get; set; }
 
-    public string NormalizedName => Name.ToUpperInvariant();
+    public required Guid RegionId { get; set; }
+
+    public Region? Region { get; set; }
 
     public string? SystemNameAllPlatforms { get; set; }
 
@@ -158,14 +167,10 @@ public class StarSystem : GameData
 
     public string? SystemMisc { get; set; }
 
-    public Guid? RegionId { get; set; }
-
-    public Region? Region { get; set; }
-
     public HashSet<Planet> Planets { get; set; } = [];
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
@@ -175,6 +180,8 @@ public class StarSystem : GameData
             nameof(EntityId),
             nameof(Planets),
             nameof(Region),
+            nameof(CollectionName),
+            nameof(ParentCollectionName),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

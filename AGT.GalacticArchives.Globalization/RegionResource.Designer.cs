@@ -222,6 +222,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region {0} must have a Galaxy selected..
+        /// </summary>
+        public static string MustHaveGalaxy {
+            get {
+                return ResourceManager.GetString("MustHaveGalaxy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region Name.
         /// </summary>
         public static string Name {
@@ -236,6 +245,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string RegionAge {
             get {
                 return ResourceManager.GetString("RegionAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Systems.
+        /// </summary>
+        public static string StarSystems {
+            get {
+                return ResourceManager.GetString("StarSystems", resourceCulture);
             }
         }
         

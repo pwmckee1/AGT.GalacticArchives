@@ -174,11 +174,17 @@
   <data name="LowestKnownPhantomSystem" xml:space="preserve">
     <value>Lowest Known Phantom System</value>
   </data>
+  <data name="MustHaveGalaxy" xml:space="preserve">
+    <value>Region {0} must have a Galaxy selected.</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Region Name</value>
   </data>
   <data name="RegionAge" xml:space="preserve">
     <value>Region Age</value>
+  </data>
+  <data name="StarSystems" xml:space="preserve">
+    <value>Systems</value>
   </data>
   <data name="SummaryNotes" xml:space="preserve">
     <value>Summary Notes</value>

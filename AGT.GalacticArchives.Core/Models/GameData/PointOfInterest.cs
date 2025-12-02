@@ -1,6 +1,7 @@
 ﻿using AGT.GalacticArchives.Globalization;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using AGT.GalacticArchives.Core.Constants;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
@@ -8,10 +9,20 @@ public class PointOfInterest : GameData
 {
     public override Guid EntityId => PointOfInterestId;
 
+    public override Guid ParentId => PlanetId;
+
+    public override string CollectionName => DatabaseConstants.PointOfInterestCollection;
+
+    public override string ParentCollectionName => DatabaseConstants.PlanetCollection;
+
     public Guid PointOfInterestId = Guid.NewGuid();
 
     [Display(ResourceType = typeof(PointOfInterestResource), Description = nameof(PointOfInterestResource.Name))]
     public override required string Name { get; set; }
+
+    public required Guid PlanetId { get; set; }
+
+    public Planet? Planet { get; set; }
 
     public string? Type { get; set; }
 
@@ -26,12 +37,8 @@ public class PointOfInterest : GameData
     public string? Surveyor { get; set; }
 
     public string? Release { get; set; }
-
-    public Guid? StarSystemId { get; set; }
-
-    public StarSystem? StarSystem { get; set; }
     public override Dictionary<string, object?> ToDictionary(
-        GameData gameData = null!,
+        GameData? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
@@ -39,7 +46,9 @@ public class PointOfInterest : GameData
         excludedProperties =
         [
             nameof(EntityId),
-            nameof(StarSystem),
+            nameof(Planet),
+            nameof(CollectionName),
+            nameof(ParentCollectionName),
         ];
 
         return base.ToDictionary(this, properties, excludedProperties);

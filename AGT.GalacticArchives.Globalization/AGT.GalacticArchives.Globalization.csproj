@@ -47,7 +47,7 @@
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>MultiToolResource.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="BaseResource.resx">
+      <EmbeddedResource Update="PlayerBaseResource.resx">
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>BaseResource.Designer.cs</LastGenOutput>
       </EmbeddedResource>
@@ -107,10 +107,10 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>MultiToolResource.resx</DependentUpon>
       </Compile>
-      <Compile Update="BaseResource.Designer.cs">
+      <Compile Update="PlayerBaseResource.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>BaseResource.resx</DependentUpon>
+        <DependentUpon>PlayerBaseResource.resx</DependentUpon>
       </Compile>
       <Compile Update="FaunaResource.Designer.cs">
         <DesignTime>True</DesignTime>

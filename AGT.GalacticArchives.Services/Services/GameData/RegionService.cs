@@ -1,49 +1,45 @@
-﻿using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Interfaces.Managers;
+﻿using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Services.Interfaces.GameData;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.GameData;
 
-public class RegionService(IRegionManager regionManager) : IRegionService
+public class RegionService(IRegionManager regionManager, IMapper mapper) : IRegionService
 {
-    public async Task<Region?> GetRegionByIdAsync(Guid regionId)
+    public async Task<RegionResponse?> GetRegionByIdAsync(Guid regionId)
     {
-        return await regionManager.GetRegionByIdAsync(regionId);
+        var region = await regionManager.GetRegionByIdAsync(regionId);
+        return region != null ? mapper.Map<RegionResponse>(region) : null;
     }
 
-    /// <summary>
-    /// Inserts or updates a region in the data store. If the associated galaxy
-    /// data has changed, it is also updated. This is done in the service layer to use the cache manager for the
-    /// duplicate check to reduce firestore db calls when no necessary
-    /// </summary>
-    /// <param name="region">
-    /// The region entity to upsert, including its associated galaxy and region data.
-    /// </param>
-    /// <returns>
-    /// The upserted <see cref="Region"/> object containing the latest persisted data.
-    /// </returns>
-    public async Task<Region> UpsertRegionAsync(Region region)
+    public async Task<HashSet<RegionResponse>> GetRegionsAsync(RegionRequest request)
     {
-        if (!region.GalaxyId.HasValue && region.Galaxy == null)
+        var region = await regionManager.GetRegionsAsync(request);
+        return mapper.Map<HashSet<RegionResponse>>(region);
+    }
+
+    public async Task<RegionResponse> UpsertRegionAsync(RegionRequest request)
+    {
+        var region = mapper.Map<Region>(request);
+        if (request.RegionId.HasValue)
         {
-            throw new ArgumentException("Regions must have either a new Galaxy or an existing Galaxy");
+            var existingRegion = await regionManager.GetRegionByIdAsync(request.RegionId.Value);
+
+            if (existingRegion!.ToDictionary().HasAnyChanges(region.ToDictionary()))
+            {
+                region = await regionManager.UpsertRegionAsync(region);
+            }
+        }
+        else
+        {
+            region = await regionManager.UpsertRegionAsync(region);
         }
 
-        var galaxyData = await regionManager.GetByIdAsync(region.GalaxyId.GetValueOrDefault(), DatabaseConstants.GalaxyCollection);
-        if (region.Galaxy != null && galaxyData.HasAnyChanges(region.Galaxy.ToDictionary()))
-        {
-            await regionManager.UpsertAsync(region.Galaxy, DatabaseConstants.GalaxyCollection);
-        }
-
-        var regionData = await regionManager.GetByIdAsync(region.RegionId, DatabaseConstants.RegionCollection);
-        if (regionData.HasAnyChanges(region.ToDictionary()))
-        {
-           region = await regionManager.UpsertRegionAsync(region);
-        }
-
-        return region;
+        return mapper.Map<RegionResponse>(region);
     }
 
     public async Task DeleteRegionAsync(Guid regionId)
