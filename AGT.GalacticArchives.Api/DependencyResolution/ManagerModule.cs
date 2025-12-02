@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
+﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData;
 using AGT.GalacticArchives.Core.Managers.GameData.Caching;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
@@ -11,102 +12,102 @@ public class ManagerModule : Module
     protected override void Load(ContainerBuilder builder)
     {
         builder.RegisterType<GalaxyManager>()
-            .Named<IGalaxyManager>(nameof(GalaxyManager))
+            .Named<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedGalaxyManager(
+        builder.Register((c, _) => new CachedGalaxyManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IGalaxyManager>(nameof(GalaxyManager))))
+                c.ResolveNamed<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)))
             .As<IGalaxyManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<RegionManager>()
-            .Named<IRegionManager>(nameof(RegionManager))
+            .Named<IRegionManager>(NamedKeys.Managers.RegionManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedRegionManager(
+        builder.Register((c, _) => new CachedRegionManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IRegionManager>(nameof(RegionManager))))
+                c.ResolveNamed<IRegionManager>(NamedKeys.Managers.RegionManager)))
             .As<IRegionManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<StarSystemManager>()
-            .Named<IStarSystemManager>(nameof(StarSystemManager))
+            .Named<IStarSystemManager>(NamedKeys.Managers.StarSystemManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedStarSystemManager(
+        builder.Register((c, _) => new CachedStarSystemManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IStarSystemManager>(nameof(StarSystemManager))))
+                c.ResolveNamed<IStarSystemManager>(NamedKeys.Managers.StarSystemManager)))
             .As<IStarSystemManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<FaunaManager>()
-            .Named<IFaunaManager>(nameof(FaunaManager))
+            .Named<IFaunaManager>(NamedKeys.Managers.FaunaManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedFaunaManager(
+        builder.Register((c, _) => new CachedFaunaManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IFaunaManager>(nameof(FaunaManager))))
+                c.ResolveNamed<IFaunaManager>(NamedKeys.Managers.FaunaManager)))
             .As<IFaunaManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<MultiToolManager>()
-            .Named<IMultiToolManager>(nameof(MultiToolManager))
+            .Named<IMultiToolManager>(NamedKeys.Managers.MultiToolManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedMultiToolManager(
+        builder.Register((c, _) => new CachedMultiToolManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IMultiToolManager>(nameof(MultiToolManager))))
+                c.ResolveNamed<IMultiToolManager>(NamedKeys.Managers.MultiToolManager)))
             .As<IMultiToolManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<PlanetManager>()
-            .Named<IPlanetManager>(nameof(PlanetManager))
+            .Named<IPlanetManager>(NamedKeys.Managers.PlanetManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedPlanetManager(
+        builder.Register((c, _) => new CachedPlanetManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IPlanetManager>(nameof(PlanetManager))))
+                c.ResolveNamed<IPlanetManager>(NamedKeys.Managers.PlanetManager)))
             .As<IPlanetManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<PlayerBaseManager>()
-            .Named<IPlayerBaseManager>(nameof(PlayerBaseManager))
+            .Named<IPlayerBaseManager>(NamedKeys.Managers.PlayerBaseManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedPlayerBaseManager(
+        builder.Register((c, _) => new CachedPlayerBaseManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IPlayerBaseManager>(nameof(PlayerBaseManager))))
+                c.ResolveNamed<IPlayerBaseManager>(NamedKeys.Managers.PlayerBaseManager)))
             .As<IPlayerBaseManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<PointOfInterestManager>()
-            .Named<IPointOfInterestManager>(nameof(PointOfInterestManager))
+            .Named<IPointOfInterestManager>(NamedKeys.Managers.PointOfInterestManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedPointOfInterestManager(
+        builder.Register((c, _) => new CachedPointOfInterestManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IPointOfInterestManager>(nameof(PointOfInterestManager))))
+                c.ResolveNamed<IPointOfInterestManager>(NamedKeys.Managers.PointOfInterestManager)))
             .As<IPointOfInterestManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<SettlementManager>()
-            .Named<ISettlementManager>(nameof(SettlementManager))
+            .Named<ISettlementManager>(NamedKeys.Managers.SettlementManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedSettlementManager(
+        builder.Register((c, _) => new CachedSettlementManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<ISettlementManager>(nameof(SettlementManager))))
+                c.ResolveNamed<ISettlementManager>(NamedKeys.Managers.SettlementManager)))
             .As<ISettlementManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<StarshipManager>()
-            .Named<IStarshipManager>(nameof(StarshipManager))
+            .Named<IStarshipManager>(NamedKeys.Managers.StarshipManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, parameters) => new CachedStarshipManager(
+        builder.Register((c, _) => new CachedStarshipManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IStarshipManager>(nameof(StarshipManager))))
+                c.ResolveNamed<IStarshipManager>(NamedKeys.Managers.StarshipManager)))
             .As<IStarshipManager>()
             .InstancePerLifetimeScope();
     }
