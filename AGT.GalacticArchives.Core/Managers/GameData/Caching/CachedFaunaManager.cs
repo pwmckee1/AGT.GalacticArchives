@@ -42,7 +42,7 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Fauna)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

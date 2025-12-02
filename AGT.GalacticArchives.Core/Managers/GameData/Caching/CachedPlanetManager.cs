@@ -42,7 +42,7 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Planet)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

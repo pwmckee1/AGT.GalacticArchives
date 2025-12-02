@@ -47,7 +47,7 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(PlayerBase)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

@@ -194,7 +194,7 @@ public class GameDataModelTests
                     "Labooboo dolls",
                     "Funko pops"
                 };
-                _dictionary[nameof(StarSystem.HasCenterAccess)] = null;
+                _dictionary[nameof(StarSystem.HasCenterAccess)] = false;
             }
 
             [Test]

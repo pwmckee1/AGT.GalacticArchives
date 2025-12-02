@@ -55,7 +55,7 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Galaxy)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

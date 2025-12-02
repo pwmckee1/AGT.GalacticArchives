@@ -50,7 +50,7 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(StarSystem)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

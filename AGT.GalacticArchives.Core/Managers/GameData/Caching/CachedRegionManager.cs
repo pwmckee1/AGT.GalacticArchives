@@ -47,7 +47,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Region)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

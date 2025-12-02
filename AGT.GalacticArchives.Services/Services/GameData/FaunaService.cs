@@ -16,7 +16,7 @@ public class FaunaService(IFaunaManager faunaManager, IMapper mapper) : IFaunaSe
         return fauna != null ? mapper.Map<FaunaResponse>(fauna) : null;
     }
 
-    public async Task<HashSet<FaunaResponse>> GetFaunasAsync(FaunaRequest request)
+    public async Task<HashSet<FaunaResponse>> GetFaunaAsync(FaunaRequest request)
     {
         var fauna = await faunaManager.GetFaunaAsync(request);
         return mapper.Map<HashSet<FaunaResponse>>(fauna);

@@ -16,7 +16,7 @@ public class FaunaController(IFaunaService faunaService): ControllerBase
     [SwaggerOperation(Tags = ["Fauna/Fauna"])]
     public async Task<IActionResult> GetAsync(FaunaRequest request)
     {
-        var galaxies = await faunaService.GetFaunasAsync(request);
+        var galaxies = await faunaService.GetFaunaAsync(request);
         return Ok(galaxies);
     }
 

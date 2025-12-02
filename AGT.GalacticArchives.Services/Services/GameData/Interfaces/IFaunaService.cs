@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -8,7 +7,7 @@ public interface IFaunaService
 {
     Task<FaunaResponse?> GetFaunaByIdAsync(Guid faunaId);
 
-    Task<HashSet<FaunaResponse>> GetFaunasAsync(FaunaRequest request);
+    Task<HashSet<FaunaResponse>> GetFaunaAsync(FaunaRequest request);
 
     Task<FaunaResponse> UpsertFaunaAsync(FaunaRequest request);
 

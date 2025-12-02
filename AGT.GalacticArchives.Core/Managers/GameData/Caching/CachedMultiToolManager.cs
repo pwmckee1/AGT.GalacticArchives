@@ -47,7 +47,7 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(MultiTool)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

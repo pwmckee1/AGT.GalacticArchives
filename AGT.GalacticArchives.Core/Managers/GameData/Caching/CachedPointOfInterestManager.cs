@@ -47,7 +47,7 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(PointOfInterest)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

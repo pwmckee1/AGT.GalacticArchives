@@ -47,7 +47,7 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Settlement)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",

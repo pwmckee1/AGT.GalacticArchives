@@ -47,7 +47,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Starship)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",
