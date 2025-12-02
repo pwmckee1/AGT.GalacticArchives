@@ -12,25 +12,25 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
     protected readonly FirestoreDb FirestoreDb = firestoreDb;
     protected readonly IMapper Mapper = mapper;
 
-    public async Task<HashSet<DocumentSnapshot>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
     {
         var snapshot = await FirestoreDb.Collection(collectionName)
             .GetSnapshotAsync();
 
-        return  snapshot.Documents.Count == 0 ? [] : snapshot.Documents.ToHashSet();
+        return  snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public virtual async Task<DocumentSnapshot?> GetByIdAsync(Guid entityId, string collectionName)
+    public virtual async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var docRef = FirestoreDb.Collection(collectionName)
             .Document(entityId.ToString());
 
         var snapshot = await docRef.GetSnapshotAsync();
 
-        return snapshot != null && snapshot.Exists ? snapshot : null;
+        return snapshot != null && snapshot.Exists ? snapshot.ToDictionary() : null;
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
     {
         var query = FirestoreDb
             .Collection(collectionName)
@@ -39,10 +39,10 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
 
         var snapshot = await query.GetSnapshotAsync();
 
-        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.ToHashSet();
+        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetByNameAsync(string entityName, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
     {
         var query = FirestoreDb
             .Collection(collectionName)
@@ -50,7 +50,7 @@ public abstract class GameDataManager<T>(FirestoreDb firestoreDb, IMapper mapper
 
         var snapshot = await query.GetSnapshotAsync();
 
-        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.ToHashSet();
+        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
     public virtual async Task<T> UpsertAsync(T entity, string collectionName)

@@ -38,7 +38,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         await DeleteAsync(starshipId, DatabaseConstants.StarshipCollection);
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Starship)}:{nameof(GetAllAsync)}:{collectionName}",
@@ -47,7 +47,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<DocumentSnapshot?> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Starship)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",
@@ -56,7 +56,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Starship)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -65,7 +65,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetByNameAsync(string entityName, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Starship)}:{nameof(GetByNameAsync)}:{entityName}:{collectionName}",

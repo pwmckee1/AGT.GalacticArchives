@@ -7,4 +7,10 @@ public class GalaxyRequest : GameDataRequest
     public string? Name { get; set; }
 
     public int? Sequence { get; set; }
+
+    public string? CollectionName { get; set; }
+
+    public string? ParentCollectionName { get; set; }
+
+    public string? NormalizedName { get; set; }
 }

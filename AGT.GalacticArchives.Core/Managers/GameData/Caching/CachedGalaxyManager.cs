@@ -3,7 +3,6 @@ using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
@@ -47,7 +46,7 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
         await DeleteAsync(galaxyId, DatabaseConstants.GalaxyCollection);
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Galaxy)}:{nameof(GetAllAsync)}:{collectionName}",
@@ -56,7 +55,7 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
         return result!;
     }
 
-    public async Task<DocumentSnapshot?> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Galaxy)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",
@@ -65,7 +64,7 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
         return result!;
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, Guid parentId, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Galaxy)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
@@ -74,7 +73,7 @@ public class CachedGalaxyManager(ICacheManager cacheManager, IGalaxyManager targ
         return result!;
     }
 
-    public async Task<HashSet<DocumentSnapshot>> GetByNameAsync(string entityName, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Galaxy)}:{nameof(GetByNameAsync)}:{entityName}:{collectionName}",

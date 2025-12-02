@@ -1,16 +1,23 @@
 ﻿using AGT.GalacticArchives.Core.Models.GameData;
+using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Mapping.TypeConverters;
 using AutoMapper;
 
-namespace AGT.GalacticArchives.Services.Mapping;
+namespace AGT.GalacticArchives.Core.Mapping;
 
 public class GameDataMaps : Profile
 {
     public GameDataMaps()
     {
-        CreateMap<Dictionary<string, object?>, Galaxy>()
+        CreateMap<IGameData, GalaxyResponse>()
+            ;
+
+        CreateMap<Galaxy, GalaxyResponse>()
+            ;
+
+        CreateMap<Dictionary<string, object>, Galaxy>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

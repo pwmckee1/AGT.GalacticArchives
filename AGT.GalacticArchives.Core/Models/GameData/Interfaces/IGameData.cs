@@ -4,9 +4,9 @@ namespace AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 
 public interface IGameData
 {
-    public Guid EntityId { get; }
+    Guid EntityId { get; }
 
-    public string CollectionName { get; }
+    string CollectionName { get; }
 
     Dictionary<string, object?> ToDictionary(
         GameData? gameData = null,
