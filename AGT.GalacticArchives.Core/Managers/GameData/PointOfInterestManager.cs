@@ -24,7 +24,8 @@ public class PointOfInterestManager(
             return null;
         }
 
-        pointOfInterest.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId!.Value);
+        pointOfInterest.Planet =
+            await innerSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId!.Value);
 
         return pointOfInterest;
     }
@@ -48,7 +49,8 @@ public class PointOfInterestManager(
 
             foreach (var pointOfInterest in pointOfInterests)
             {
-                pointOfInterest.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId!.Value);
+                pointOfInterest.Planet =
+                    await innerSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId!.Value);
             }
         }
 
@@ -58,7 +60,8 @@ public class PointOfInterestManager(
     public async Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest request)
     {
         var updatedPointOfInterest = (PointOfInterest)await firestoreManager.UpsertAsync(request, Collection);
-        updatedPointOfInterest.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(request.PlanetId!.Value);
+        updatedPointOfInterest.Planet =
+            await innerSystemEntityManager.GetPlanetWithHierarchyAsync(request.PlanetId!.Value);
         return updatedPointOfInterest;
     }
 

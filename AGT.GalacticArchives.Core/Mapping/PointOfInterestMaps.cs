@@ -12,7 +12,7 @@ public class PointOfInterestMaps : Profile
 {
     public PointOfInterestMaps()
     {
-        CreateMap<Dictionary<string, object>, PointOfInterest>()
+        CreateMap<Dictionary<string, object?>, PointOfInterest>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

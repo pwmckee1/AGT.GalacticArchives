@@ -30,7 +30,10 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
     public async Task<MultiTool> UpsertMultiToolAsync(MultiTool multiTool)
     {
         var result = await target.UpsertMultiToolAsync(multiTool);
-        await cacheManager.SetAsync($"{nameof(MultiTool)}:{multiTool.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.SetAsync(
+            $"{nameof(MultiTool)}:{multiTool.EntityId}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

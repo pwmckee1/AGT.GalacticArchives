@@ -20,7 +20,7 @@ public class StarshipController(IStarshipService starshipService) : ControllerBa
         return Ok(galaxies);
     }
 
-    [HttpGet("{starshipId}")]
+    [HttpGet("{starshipId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<StarshipResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Starship/Starship"])]
     public async Task<IActionResult> GetAsync(Guid starshipId)
@@ -38,7 +38,7 @@ public class StarshipController(IStarshipService starshipService) : ControllerBa
         return Ok(response);
     }
 
-    [HttpDelete("{starshipId}")]
+    [HttpDelete("{starshipId:guid}")]
     [SwaggerOperation(Tags = ["Starship/Starship"])]
     public async Task<IActionResult> DeleteAsync(Guid starshipId)
     {

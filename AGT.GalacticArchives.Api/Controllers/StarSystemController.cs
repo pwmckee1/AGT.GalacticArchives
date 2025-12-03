@@ -20,7 +20,7 @@ public class StarSystemController(IStarSystemService starSystemService) : Contro
         return Ok(galaxies);
     }
 
-    [HttpGet("{starSystemId}")]
+    [HttpGet("{starSystemId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<StarSystemResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
     public async Task<IActionResult> GetAsync(Guid starSystemId)
@@ -38,7 +38,7 @@ public class StarSystemController(IStarSystemService starSystemService) : Contro
         return Ok(response);
     }
 
-    [HttpDelete("{starSystemId}")]
+    [HttpDelete("{starSystemId:guid}")]
     [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
     public async Task<IActionResult> DeleteAsync(Guid starSystemId)
     {

@@ -12,7 +12,7 @@ public class StarSystemMaps : Profile
 {
     public StarSystemMaps()
     {
-        CreateMap<Dictionary<string, object>, StarSystem>()
+        CreateMap<Dictionary<string, object?>, StarSystem>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

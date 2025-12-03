@@ -20,7 +20,7 @@ public class RegionController(IRegionService regionService) : ControllerBase
         return Ok(galaxies);
     }
 
-    [HttpGet("{regionId}")]
+    [HttpGet("{regionId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<RegionResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Region/Region"])]
     public async Task<IActionResult> GetAsync(Guid regionId)
@@ -38,7 +38,7 @@ public class RegionController(IRegionService regionService) : ControllerBase
         return Ok(response);
     }
 
-    [HttpDelete("{regionId}")]
+    [HttpDelete("{regionId:guid}")]
     [SwaggerOperation(Tags = ["Region/Region"])]
     public async Task<IActionResult> DeleteAsync(Guid regionId)
     {

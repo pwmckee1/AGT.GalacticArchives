@@ -20,7 +20,7 @@ public class MultiToolController(IMultiToolService multiToolService) : Controlle
         return Ok(galaxies);
     }
 
-    [HttpGet("{multiToolId}")]
+    [HttpGet("{multiToolId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<MultiToolResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["MultiTool/MultiTool"])]
     public async Task<IActionResult> GetAsync(Guid multiToolId)
@@ -38,7 +38,7 @@ public class MultiToolController(IMultiToolService multiToolService) : Controlle
         return Ok(response);
     }
 
-    [HttpDelete("{multiToolId}")]
+    [HttpDelete("{multiToolId:guid}")]
     [SwaggerOperation(Tags = ["MultiTool/MultiTool"])]
     public async Task<IActionResult> DeleteAsync(Guid multiToolId)
     {

@@ -11,7 +11,8 @@ public static class ControllerConfiguration
 {
     public static void AddControllers(IServiceCollection services)
     {
-        services.AddControllers(options => { options.Filters.Add<ModelStatePropertyValidationFilter>(); })
+        services
+            .AddControllers(options => { options.Filters.Add<ModelStatePropertyValidationFilter>(); })
             .ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressModelStateInvalidFilter = false;

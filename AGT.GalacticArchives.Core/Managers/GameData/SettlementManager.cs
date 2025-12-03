@@ -48,7 +48,8 @@ public class SettlementManager(
 
             foreach (var settlement in settlements)
             {
-                settlement.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId!.Value);
+                settlement.Planet =
+                    await innerSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId!.Value);
             }
         }
 

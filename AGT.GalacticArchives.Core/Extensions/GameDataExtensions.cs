@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 
 namespace AGT.GalacticArchives.Core.Extensions;
@@ -28,10 +27,7 @@ public static class GameDataExtensions
 
             return result;
         }
-    }
 
-    extension(IDatabaseEntity entity)
-    {
         public Dictionary<string, object?> ToDictionary()
         {
             var properties = entity.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);

@@ -7,9 +7,9 @@ namespace AGT.GalacticArchives.Tests.AutoFixture;
 
 public class OverridePropertyBuilder<T, TProp>(Expression<Func<T, TProp>> expr, TProp value) : ISpecimenBuilder
 {
-    private readonly PropertyInfo _propertyInfo
-        = (expr.Body as MemberExpression)?.Member as PropertyInfo ??
-          throw new InvalidOperationException("invalid property expression");
+    private readonly PropertyInfo _propertyInfo =
+        (expr.Body as MemberExpression)?.Member as PropertyInfo ??
+        throw new InvalidOperationException("invalid property expression");
 
     public object Create(object request, ISpecimenContext context)
     {

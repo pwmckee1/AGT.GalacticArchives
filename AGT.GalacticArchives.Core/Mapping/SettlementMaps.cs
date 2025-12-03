@@ -12,7 +12,7 @@ public class SettlementMaps : Profile
 {
     public SettlementMaps()
     {
-        CreateMap<Dictionary<string, object>, Settlement>()
+        CreateMap<Dictionary<string, object?>, Settlement>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

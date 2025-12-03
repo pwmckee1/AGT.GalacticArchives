@@ -30,7 +30,10 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
     public async Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem)
     {
         var result = await target.UpsertStarSystemAsync(starSystem);
-        await cacheManager.SetAsync($"{nameof(StarSystem)}:{starSystem.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.SetAsync(
+            $"{nameof(StarSystem)}:{starSystem.EntityId}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

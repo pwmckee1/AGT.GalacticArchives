@@ -8,17 +8,19 @@ namespace AGT.GalacticArchives.Core.Managers.Database;
 
 public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 {
-    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object?>>> GetAllAsync(string collectionName)
     {
-        var snapshot = await firestoreDb.Collection(collectionName)
+        var snapshot = await firestoreDb
+            .Collection(collectionName)
             .GetSnapshotAsync();
 
         return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public virtual async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
+    public virtual async Task<Dictionary<string, object?>?> GetByIdAsync(Guid entityId, string collectionName)
     {
-        var docRef = firestoreDb.Collection(collectionName)
+        var docRef = firestoreDb
+            .Collection(collectionName)
             .Document(entityId.ToString());
 
         var snapshot = await docRef.GetSnapshotAsync();
@@ -26,7 +28,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         return snapshot != null && snapshot.Exists ? snapshot.ToDictionary() : null;
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+    public async Task<HashSet<Dictionary<string, object?>>> GetByNameAsync(
         string entityName,
         Guid parentId,
         string collectionName)
@@ -41,7 +43,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
+    public async Task<HashSet<Dictionary<string, object?>>> GetByNameAsync(string entityName, string collectionName)
     {
         var query = firestoreDb
             .Collection(collectionName)
@@ -54,7 +56,8 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
     public virtual async Task<IDatabaseEntity> UpsertAsync(IDatabaseEntity entity, string collectionName)
     {
-        var docRef = firestoreDb.Collection(entity.CollectionName)
+        var docRef = firestoreDb
+            .Collection(entity.CollectionName)
             .Document(entity.EntityId.ToString());
 
         var snapshot = await docRef.GetSnapshotAsync();
@@ -73,7 +76,8 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
     public virtual async Task DeleteAsync(Guid entityId, string collectionName)
     {
-        await firestoreDb.Collection(collectionName)
+        await firestoreDb
+            .Collection(collectionName)
             .Document(entityId.ToString())
             .DeleteAsync();
     }

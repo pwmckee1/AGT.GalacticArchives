@@ -20,7 +20,7 @@ public class FaunaController(IFaunaService faunaService) : ControllerBase
         return Ok(galaxies);
     }
 
-    [HttpGet("{faunaId}")]
+    [HttpGet("{faunaId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<FaunaResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Fauna/Fauna"])]
     public async Task<IActionResult> GetAsync(Guid faunaId)
@@ -38,7 +38,7 @@ public class FaunaController(IFaunaService faunaService) : ControllerBase
         return Ok(response);
     }
 
-    [HttpDelete("{faunaId}")]
+    [HttpDelete("{faunaId:guid}")]
     [SwaggerOperation(Tags = ["Fauna/Fauna"])]
     public async Task<IActionResult> DeleteAsync(Guid faunaId)
     {

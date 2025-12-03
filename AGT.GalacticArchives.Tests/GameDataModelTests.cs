@@ -129,7 +129,7 @@ public class GameDataModelTests
 
     public class WhenConvertingToGameDataFromDictionary : GameDataModelTests
     {
-        private readonly Dictionary<string, object> _dictionary = [];
+        private readonly Dictionary<string, object?> _dictionary = [];
 
         public class WhenConvertingGalaxy : WhenConvertingToGameDataFromDictionary
         {

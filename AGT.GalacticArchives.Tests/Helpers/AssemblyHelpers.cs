@@ -6,11 +6,13 @@ public static class AssemblyHelpers
 {
     public static Assembly[] GetAllAssemblies()
     {
-        var targetAssemblies = AppDomain.CurrentDomain.GetAssemblies()
+        var targetAssemblies = AppDomain
+            .CurrentDomain.GetAssemblies()
             .Where(a => a.FullName!.StartsWith("ZanerBloser"))
             .ToHashSet();
 
-        var referencedAssemblyNames = Assembly.GetExecutingAssembly()
+        var referencedAssemblyNames = Assembly
+            .GetExecutingAssembly()
             .GetReferencedAssemblies()
             .Where(an => an.FullName!.StartsWith("ZanerBloser"))
             .ToHashSet();

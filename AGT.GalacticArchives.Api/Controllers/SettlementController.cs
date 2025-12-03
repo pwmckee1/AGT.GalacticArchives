@@ -20,7 +20,7 @@ public class SettlementController(ISettlementService settlementService) : Contro
         return Ok(galaxies);
     }
 
-    [HttpGet("{settlementId}")]
+    [HttpGet("{settlementId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<SettlementResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Settlement/Settlement"])]
     public async Task<IActionResult> GetAsync(Guid settlementId)
@@ -38,7 +38,7 @@ public class SettlementController(ISettlementService settlementService) : Contro
         return Ok(response);
     }
 
-    [HttpDelete("{settlementId}")]
+    [HttpDelete("{settlementId:guid}")]
     [SwaggerOperation(Tags = ["Settlement/Settlement"])]
     public async Task<IActionResult> DeleteAsync(Guid settlementId)
     {

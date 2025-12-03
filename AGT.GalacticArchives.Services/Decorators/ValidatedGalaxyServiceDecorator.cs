@@ -27,9 +27,10 @@ public class ValidatedGalaxyServiceDecorator(IGalaxyService galaxyService) : IGa
     {
         if (string.IsNullOrEmpty(request.Name))
         {
-            throw new ArgumentNullException(string.Format(
-                GeneralErrorResource.PropertyMissing,
-                $"{nameof(Galaxy)} => {nameof(Galaxy.Name)}"));
+            throw new ArgumentNullException(
+                string.Format(
+                    GeneralErrorResource.PropertyMissing,
+                    $"{nameof(Galaxy)} => {nameof(Galaxy.Name)}"));
         }
 
         if (request.Sequence is null or < 0)

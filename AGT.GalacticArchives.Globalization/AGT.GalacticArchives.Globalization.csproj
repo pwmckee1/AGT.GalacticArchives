@@ -64,8 +64,8 @@
             <LastGenOutput>GalaxyResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="FirebaseResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>FirebaseResource.Designer.cs</LastGenOutput>
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>FirebaseResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -136,9 +136,9 @@
             <DependentUpon>GalaxyResource.resx</DependentUpon>
         </Compile>
         <Compile Update="FirebaseResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>FirebaseResource.resx</DependentUpon>
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>FirebaseResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

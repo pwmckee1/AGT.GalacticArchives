@@ -4,24 +4,30 @@ namespace AGT.GalacticArchives.Extensions;
 
 public static class HttpContextExtensions
 {
-    public static string GetRequestParameters(this HttpContext httpContext, string parameterName)
+    extension(HttpContext httpContext)
     {
-        var parameter = httpContext.Request.Headers[parameterName];
-        if (!parameter.Any() && httpContext.Request.RouteValues.ContainsKey(parameterName))
+        public string GetRequestParameters(string parameterName)
         {
-            parameter = httpContext.Request.RouteValues[parameterName]?.ToString();
-        }
-        else if (!parameter.Any() && httpContext.Request.QueryString.HasValue)
-        {
-            var queryStringDictionary = QueryHelpers.ParseQuery(httpContext.Request.QueryString.Value);
-            queryStringDictionary.TryGetValue(parameterName, out parameter);
-        }
+            var parameter = httpContext.Request.Headers[parameterName];
+            if (!parameter.Any() && httpContext.Request.RouteValues.ContainsKey(parameterName))
+            {
+                parameter = httpContext.Request.RouteValues[parameterName]?.ToString();
+            }
+            else if (!parameter.Any() && httpContext.Request.QueryString.HasValue)
+            {
+                var queryStringDictionary = QueryHelpers.ParseQuery(httpContext.Request.QueryString.Value);
+                queryStringDictionary.TryGetValue(parameterName, out parameter);
+            }
 
-        return parameter!;
+            return parameter!;
+        }
     }
 
-    public static bool ContainsRoute(this PathString path, string route)
+    extension(PathString path)
     {
-        return path.HasValue && path.ToString().Contains(route);
+        public bool ContainsRoute(string route)
+        {
+            return path.HasValue && path.ToString().Contains(route);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class GalaxyMaps : Profile
 {
     public GalaxyMaps()
     {
-        CreateMap<Dictionary<string, object>, Galaxy>()
+        CreateMap<Dictionary<string, object?>, Galaxy>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

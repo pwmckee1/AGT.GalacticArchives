@@ -30,7 +30,10 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
     public async Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase request)
     {
         var result = await target.UpsertPlayerBaseAsync(request);
-        await cacheManager.SetAsync($"{nameof(PlayerBase)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.SetAsync(
+            $"{nameof(PlayerBase)}:{request.EntityId}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

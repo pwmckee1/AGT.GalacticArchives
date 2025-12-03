@@ -29,7 +29,8 @@ builder.Host.ConfigureContainer<ContainerBuilder>((_, containerBuilder) =>
 });
 
 builder.Services.AddAutoMapper(cfg => cfg.AddCollectionMappers(), AppDomain.CurrentDomain.GetAssemblies());
-builder.Services
+builder
+    .Services
     .AddControllers()
     .AddApplicationPart(typeof(Program).Assembly);
 builder.Services.AddOpenApi();
@@ -69,8 +70,9 @@ builder.Services.AddSingleton(sp =>
     }
     else
     {
-        string secret =
-            GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId!, "firebase-credentials");
+        string secret = GoogleSecretsConfiguration.GetSecret(
+            applicationSettings.GoogleCloudProjectId!,
+            "firebase-credentials");
 
         if (string.IsNullOrEmpty(secret))
         {

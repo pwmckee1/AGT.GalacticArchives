@@ -37,7 +37,9 @@ public class MessageResponseMiddleware(RequestDelegate next)
 
         await next(context);
 
-        string? contentType = context.Response.ContentType?.ToLower().Split(';', StringSplitOptions.RemoveEmptyEntries)
+        string? contentType = context
+            .Response.ContentType?.ToLower()
+            .Split(';', StringSplitOptions.RemoveEmptyEntries)
             .FirstOrDefault();
 
         using var streamReader = new StreamReader(context.Response.Body);
@@ -50,8 +52,9 @@ public class MessageResponseMiddleware(RequestDelegate next)
         // Exclude swagger output
         if (ValidContentTypes.Contains(contentType!) &&
             !responseBody.CanParseJson<MessageResponse<object>>() &&
-            !responseBody.CanParseJson<PagedResponse<object>>()
-            && context.Request.Path.Value != null && !context.Request.Path.Value.Contains("swagger"))
+            !responseBody.CanParseJson<PagedResponse<object>>() &&
+            context.Request.Path.Value != null &&
+            !context.Request.Path.Value.Contains("swagger"))
         {
             // Wrap responseBody in MessageResponse
             object contentBody = JsonConvert.DeserializeObject(responseBody)!;

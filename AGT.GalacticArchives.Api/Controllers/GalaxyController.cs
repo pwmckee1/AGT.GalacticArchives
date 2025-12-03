@@ -20,7 +20,7 @@ public class GalaxyController(IGalaxyService galaxyService) : ControllerBase
         return Ok(galaxies);
     }
 
-    [HttpGet("{galaxyId}")]
+    [HttpGet("{galaxyId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<GalaxyResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Galaxy/Galaxy"])]
     public async Task<IActionResult> GetAsync(Guid galaxyId)
@@ -38,7 +38,7 @@ public class GalaxyController(IGalaxyService galaxyService) : ControllerBase
         return Ok(response);
     }
 
-    [HttpDelete("{galaxyId}")]
+    [HttpDelete("{galaxyId:guid}")]
     [SwaggerOperation(Tags = ["Galaxy/Galaxy"])]
     public async Task<IActionResult> DeleteAsync(Guid galaxyId)
     {

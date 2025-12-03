@@ -20,7 +20,7 @@ public class PlayerBaseController(IPlayerBaseService playerBaseService) : Contro
         return Ok(galaxies);
     }
 
-    [HttpGet("{playerBaseId}")]
+    [HttpGet("{playerBaseId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<PlayerBaseResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["PlayerBase/PlayerBase"])]
     public async Task<IActionResult> GetAsync(Guid playerBaseId)
@@ -38,7 +38,7 @@ public class PlayerBaseController(IPlayerBaseService playerBaseService) : Contro
         return Ok(response);
     }
 
-    [HttpDelete("{playerBaseId}")]
+    [HttpDelete("{playerBaseId:guid}")]
     [SwaggerOperation(Tags = ["PlayerBase/PlayerBase"])]
     public async Task<IActionResult> DeleteAsync(Guid playerBaseId)
     {

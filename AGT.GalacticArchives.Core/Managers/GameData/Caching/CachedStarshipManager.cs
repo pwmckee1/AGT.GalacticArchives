@@ -30,7 +30,10 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
     public async Task<Starship> UpsertStarshipAsync(Starship request)
     {
         var result = await target.UpsertStarshipAsync(request);
-        await cacheManager.SetAsync($"{nameof(Starship)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.SetAsync(
+            $"{nameof(Starship)}:{request.EntityId}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

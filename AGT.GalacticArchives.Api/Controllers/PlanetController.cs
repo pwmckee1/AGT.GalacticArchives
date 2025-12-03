@@ -20,7 +20,7 @@ public class PlanetController(IPlanetService planetService) : ControllerBase
         return Ok(galaxies);
     }
 
-    [HttpGet("{planetId}")]
+    [HttpGet("{planetId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<PlanetResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Planet/Planet"])]
     public async Task<IActionResult> GetAsync(Guid planetId)
@@ -38,7 +38,7 @@ public class PlanetController(IPlanetService planetService) : ControllerBase
         return Ok(response);
     }
 
-    [HttpDelete("{planetId}")]
+    [HttpDelete("{planetId:guid}")]
     [SwaggerOperation(Tags = ["Planet/Planet"])]
     public async Task<IActionResult> DeleteAsync(Guid planetId)
     {

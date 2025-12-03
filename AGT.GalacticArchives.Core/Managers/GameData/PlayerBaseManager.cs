@@ -48,7 +48,8 @@ public class PlayerBaseManager(
 
             foreach (var playerBase in playerBases)
             {
-                playerBase.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId!.Value);
+                playerBase.Planet =
+                    await innerSystemEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId!.Value);
             }
         }
 

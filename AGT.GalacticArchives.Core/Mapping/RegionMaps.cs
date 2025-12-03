@@ -12,7 +12,7 @@ public class RegionMaps : Profile
 {
     public RegionMaps()
     {
-        CreateMap<Dictionary<string, object>, Region>()
+        CreateMap<Dictionary<string, object?>, Region>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

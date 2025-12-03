@@ -4,8 +4,11 @@ namespace AGT.GalacticArchives.Tests.AutoFixture;
 
 public static class CompositionExt
 {
-    public static FixtureCustomization<T> For<T>(this Fixture fixture)
+    extension(Fixture fixture)
     {
-        return new FixtureCustomization<T>(fixture);
+        public FixtureCustomization<T> For<T>()
+        {
+            return new FixtureCustomization<T>(fixture);
+        }
     }
 }
