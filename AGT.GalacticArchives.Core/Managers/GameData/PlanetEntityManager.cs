@@ -4,12 +4,12 @@ using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class PlanetEntityManager(
+public class StarSystemEntityManager(
     IGalaxyManager galaxyManager,
     IMapper mapper,
     IPlanetManager planetManager,
     IRegionManager regionManager,
-    IStarSystemManager starSystemManager) : IPlanetEntityManager
+    IStarSystemManager starSystemManager) : IStarSystemEntityManager
 {
     public async Task<Planet> GetPlanetWithHierarchyAsync(Guid planetId)
     {

@@ -1,11 +1,11 @@
-﻿namespace AGT.GalacticArchives.Core.Mapping;
-
-using AGT.GalacticArchives.Core.Mapping.TypeConverters;
+﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
+
+namespace AGT.GalacticArchives.Core.Mapping;
 
 public class PlanetMaps : Profile
 {
@@ -23,6 +23,7 @@ public class PlanetMaps : Profile
             ;
 
         CreateMap<PlanetRequest, Planet>()
+            .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.PlanetId, o => o.Ignore())
             ;
 

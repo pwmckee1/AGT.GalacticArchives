@@ -1,15 +1,13 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
-
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Globalization;
 
-public class Region : GameDataEntity
-{
-    private string? _coordinates;
+namespace AGT.GalacticArchives.Core.Models.GameData;
 
+public class Region : DatabaseEntity
+{
     public override Guid EntityId => RegionId;
 
     public override Guid ParentId => GalaxyId;
@@ -25,23 +23,25 @@ public class Region : GameDataEntity
 
     public required Guid GalaxyId { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public Galaxy? Galaxy { get; set; }
 
+    public HashSet<StarSystem> StarSystems { get; set; } = [];
+
+    public string? CivilizedBy { get; set; }
 
     public string? Coordinates
     {
-        get => _coordinates;
-        set => _coordinates = value.GetValidatedCoordinates();
+        get;
+        set => field = value.GetValidatedCoordinates();
     }
-
 
     public string? Quadrant { get; set; }
 
-    public string XX => !string.IsNullOrEmpty(_coordinates) ? _coordinates.Split(':')[0] : string.Empty;
+    public string XX => !string.IsNullOrEmpty(Coordinates) ? Coordinates.Split(':')[0] : string.Empty;
 
-    public string YY => !string.IsNullOrEmpty(_coordinates) ? _coordinates.Split(':')[1] : string.Empty;
+    public string YY => !string.IsNullOrEmpty(Coordinates) ? Coordinates.Split(':')[1] : string.Empty;
 
-    public string ZZ => !string.IsNullOrEmpty(_coordinates) ? _coordinates.Split(':')[2] : string.Empty;
+    public string ZZ => !string.IsNullOrEmpty(Coordinates) ? Coordinates.Split(':')[2] : string.Empty;
 
     public int DocSequence { get; set; }
 
@@ -93,29 +93,7 @@ public class Region : GameDataEntity
 
     public float? ZZdec { get; set; }
 
-    public string? Glylphs { get; set; }
+    public string? Glyphs { get; set; }
 
     public string? Version { get; set; }
-
-    public HashSet<StarSystem> StarSystems { get; set; } = [];
-
-    public Galaxy? Galaxy { get; set; }
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(Region).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(StarSystems),
-            nameof(Galaxy),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }

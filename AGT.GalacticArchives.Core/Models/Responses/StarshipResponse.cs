@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Responses.BaseResponses;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class StarshipResponse : ResponseStarSystemEntity
+public class StarshipResponse : StarSystemResponseEntity
 {
     public Guid? PlanetId { get; set; }
 

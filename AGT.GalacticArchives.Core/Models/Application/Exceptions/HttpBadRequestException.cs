@@ -1,6 +1,6 @@
-﻿namespace AGT.GalacticArchives.Core.Models.Application.Exceptions;
+﻿using Microsoft.AspNetCore.Http;
 
-using Microsoft.AspNetCore.Http;
+namespace AGT.GalacticArchives.Core.Models.Application.Exceptions;
 
 public class HttpBadRequestException : Exception
 {
@@ -14,5 +14,5 @@ public class HttpBadRequestException : Exception
     {
     }
 
-    public int StatusCode { get; } = StatusCodes.Status400BadRequest;
+    public static int StatusCode => StatusCodes.Status400BadRequest;
 }

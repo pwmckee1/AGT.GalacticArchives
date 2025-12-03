@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class PlanetRequest : RequestStarSystemEntity
+public class PlanetRequest : InnerSystemRequestEntity
 {
     public HashSet<FaunaRequest> Fauna { get; set; } = [];
 

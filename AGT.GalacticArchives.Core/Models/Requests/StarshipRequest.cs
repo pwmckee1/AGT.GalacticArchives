@@ -1,11 +1,9 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class StarshipRequest : RequestStarSystemEntity
+public class StarshipRequest : InnerSystemRequestEntity
 {
-    public Guid? PlanetId { get; set; }
-
-    public PlanetRequest? Planet { get; set; }
-
     public string? Location { get; set; }
 
     public string? YYFirstCoordinate { get; set; }

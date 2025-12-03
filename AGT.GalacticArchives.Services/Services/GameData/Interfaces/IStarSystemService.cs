@@ -9,7 +9,7 @@ public interface IStarSystemService
 
     Task<HashSet<StarSystemResponse>> GetStarSystemsAsync(StarSystemRequest request);
 
-    Task<StarSystemResponse> UpsertStarSystemAsync(StarSystemRequest starSystem);
+    Task<StarSystemResponse> UpsertStarSystemAsync(StarSystemRequest request);
 
     Task DeleteStarSystemAsync(Guid starSystemId);
 }

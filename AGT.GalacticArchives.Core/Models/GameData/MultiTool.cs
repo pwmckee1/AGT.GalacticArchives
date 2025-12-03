@@ -1,15 +1,16 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
-
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Globalization;
 
-public class MultiTool : GameDataEntity
+namespace AGT.GalacticArchives.Core.Models.GameData;
+
+public class MultiTool : InnerSystemEntity
 {
     public override Guid EntityId => MultiToolId;
 
-    public override Guid ParentId => PlanetId ?? StarSystemId!.Value;
+    public override Guid ParentId => PlanetId ?? StarSystemId;
 
     public override string CollectionName => DatabaseConstants.MultiToolCollection;
 
@@ -20,14 +21,6 @@ public class MultiTool : GameDataEntity
 
     [Display(ResourceType = typeof(MultiToolResource), Description = nameof(MultiToolResource.Name))]
     public override required string Name { get; set; }
-
-    public Guid? StarSystemId { get; set; }
-
-    public StarSystem? StarSystem { get; set; }
-
-    public Guid? PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
 
     public string? Location { get; set; }
 
@@ -75,7 +68,7 @@ public class MultiTool : GameDataEntity
 
     public string? SecondaryColor { get; set; }
 
-    public string? AcquistionGuidance { get; set; }
+    public string? AcquisitionGuidance { get; set; }
 
     public string? UserNotes { get; set; }
 
@@ -84,22 +77,4 @@ public class MultiTool : GameDataEntity
     public string? WikiLink { get; set; }
 
     public string? ResearchTeam { get; set; }
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(MultiTool).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(StarSystem),
-            nameof(Planet),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }

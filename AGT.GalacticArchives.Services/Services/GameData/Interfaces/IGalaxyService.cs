@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 

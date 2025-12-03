@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class SettlementRequest : RequestPlanetEntity
+public class SettlementRequest : InnerSystemRequestEntity
 {
     public string? OriginalName { get; set; }
 

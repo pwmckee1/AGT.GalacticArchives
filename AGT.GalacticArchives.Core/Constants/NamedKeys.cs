@@ -19,10 +19,11 @@ public static class NamedKeys
     public static class Managers
     {
         public const string FaunaManager = nameof(FaunaManager);
+        public const string FirestoreManager = nameof(FirestoreManager);
         public const string GalaxyManager = nameof(GalaxyManager);
         public const string GameDataManager = nameof(GameDataManager);
         public const string MultiToolManager = nameof(MultiToolManager);
-        public const string PlanetEntityManager = nameof(PlanetEntityManager);
+        public const string StarSystemEntityManager = nameof(StarSystemEntityManager);
         public const string PlanetManager = nameof(PlanetManager);
         public const string PlayerBaseManager = nameof(PlayerBaseManager);
         public const string PointOfInterestManager = nameof(PointOfInterestManager);

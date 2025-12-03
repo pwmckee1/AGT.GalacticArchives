@@ -26,11 +26,16 @@ public class ValidatedGalaxyServiceDecorator(IGalaxyService galaxyService) : IGa
     public async Task<GalaxyResponse> UpsertGalaxyAsync(GalaxyRequest request)
     {
         if (string.IsNullOrEmpty(request.Name))
+        {
             throw new ArgumentNullException(string.Format(
                 GeneralErrorResource.PropertyMissing,
                 $"{nameof(Galaxy)} => {nameof(Galaxy.Name)}"));
+        }
 
-        if (request.Sequence is null or < 0) throw new ArgumentOutOfRangeException(GalaxyResource.InvalidSequence);
+        if (request.Sequence is null or < 0)
+        {
+            throw new ArgumentOutOfRangeException(GalaxyResource.InvalidSequence);
+        }
 
         return await galaxyService.UpsertGalaxyAsync(request);
     }

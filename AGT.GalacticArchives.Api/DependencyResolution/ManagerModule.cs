@@ -1,5 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Database;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData;
 using AGT.GalacticArchives.Core.Managers.GameData.Caching;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
@@ -11,6 +13,10 @@ public class ManagerModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
+        builder.RegisterType<FirestoreManager>()
+            .Named<IFirestoreManager>(NamedKeys.Managers.FirestoreManager)
+            .InstancePerLifetimeScope();
+
         builder.RegisterType<GalaxyManager>()
             .Named<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)
             .InstancePerLifetimeScope();
@@ -51,14 +57,14 @@ public class ManagerModule : Module
             .As<IPlanetManager>()
             .InstancePerLifetimeScope();
 
-        builder.RegisterType<PlanetEntityManager>()
-            .Named<IPlanetEntityManager>(NamedKeys.Managers.PlanetEntityManager)
+        builder.RegisterType<StarSystemEntityManager>()
+            .Named<IStarSystemEntityManager>(NamedKeys.Managers.StarSystemEntityManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, _) => new CachedPlanetEntityManager(
+        builder.Register((c, _) => new CachedStarSystemEntityManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IPlanetEntityManager>(NamedKeys.Managers.PlanetEntityManager)))
-            .As<IPlanetEntityManager>()
+                c.ResolveNamed<IStarSystemEntityManager>(NamedKeys.Managers.StarSystemEntityManager)))
+            .As<IStarSystemEntityManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<FaunaManager>()

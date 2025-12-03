@@ -1,4 +1,6 @@
-﻿using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
+﻿using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using Google.Cloud.Firestore;
 
@@ -31,8 +33,8 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(Models.GameData.GameDataEntity.Name), entityName)
-            .WhereEqualTo(nameof(Models.GameData.GameDataEntity.ParentId), parentId.ToString());
+            .WhereEqualTo(nameof(DatabaseEntity.Name), entityName)
+            .WhereEqualTo(nameof(DatabaseEntity.ParentId), parentId.ToString());
 
         var snapshot = await query.GetSnapshotAsync();
 
@@ -43,14 +45,14 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(Models.GameData.GameDataEntity.Name), entityName);
+            .WhereEqualTo(nameof(DatabaseEntity.Name), entityName);
 
         var snapshot = await query.GetSnapshotAsync();
 
         return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public virtual async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
+    public virtual async Task<IDatabaseEntity> UpsertAsync(IDatabaseEntity entity, string collectionName)
     {
         var docRef = firestoreDb.Collection(entity.CollectionName)
             .Document(entity.EntityId.ToString());

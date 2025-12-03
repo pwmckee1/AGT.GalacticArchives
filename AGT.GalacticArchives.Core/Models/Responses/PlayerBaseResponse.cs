@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Responses.BaseResponses;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class PlayerBaseResponse : ResponsePlanetEntity
+public class PlayerBaseResponse : StarSystemResponseEntity
 {
     public string? CivilizedBy { get; set; }
 

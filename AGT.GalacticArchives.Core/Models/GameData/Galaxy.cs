@@ -1,9 +1,9 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.Application;
 
-using System.Reflection;
-using AGT.GalacticArchives.Core.Constants;
+namespace AGT.GalacticArchives.Core.Models.GameData;
 
-public class Galaxy : GameDataEntity
+public class Galaxy : DatabaseEntity
 {
     public override Guid EntityId => GalaxyId;
 
@@ -18,21 +18,4 @@ public class Galaxy : GameDataEntity
     public required int Sequence { get; set; }
 
     public HashSet<Region> Regions { get; set; } = [];
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(Galaxy).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(Regions),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }

@@ -2,7 +2,6 @@
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Models.Application;
-using AGT.GalacticArchives.Core.Models.AppSettings;
 using Autofac;
 
 namespace AGT.GalacticArchives.Extensions;

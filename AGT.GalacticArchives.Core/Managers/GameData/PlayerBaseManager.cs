@@ -10,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Managers.GameData;
 public class PlayerBaseManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IPlanetEntityManager planetEntityManager) : IPlayerBaseManager
+    IStarSystemEntityManager StarSystemEntityManager) : IPlayerBaseManager
 {
     private const string Collection = DatabaseConstants.PlayerBaseCollection;
 
@@ -24,7 +24,7 @@ public class PlayerBaseManager(
             return null;
         }
 
-        playerBase.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+        playerBase.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
 
         return playerBase;
     }
@@ -48,7 +48,7 @@ public class PlayerBaseManager(
 
             foreach (var playerBase in playerBases)
             {
-                playerBase.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+                playerBase.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
             }
         }
 
@@ -58,7 +58,7 @@ public class PlayerBaseManager(
     public async Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase playerBase)
     {
         var updatedPlayerBase = (PlayerBase)await firestoreManager.UpsertAsync(playerBase, Collection);
-        updatedPlayerBase.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+        updatedPlayerBase.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
         return updatedPlayerBase;
     }
 

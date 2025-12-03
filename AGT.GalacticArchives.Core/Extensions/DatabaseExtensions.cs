@@ -1,7 +1,8 @@
-﻿namespace AGT.GalacticArchives.Core.Extensions;
-
-using AGT.GalacticArchives.Core.Constants;
+﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.GameData;
+
+namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class DatabaseExtensions
 {
@@ -19,7 +20,7 @@ public static class DatabaseExtensions
             DatabaseConstants.PointOfInterestCollection => nameof(PointOfInterest),
             DatabaseConstants.SettlementCollection => nameof(Settlement),
             DatabaseConstants.StarshipCollection => nameof(Starship),
-            _ => nameof(GameDataEntity),
+            _ => nameof(DatabaseEntity),
         };
     }
 }

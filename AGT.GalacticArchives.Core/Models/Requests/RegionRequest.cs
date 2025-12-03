@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class RegionRequest : RequestGalaxyEntity
+public class RegionRequest : GalaxyRequestEntity
 {
     public string? CivilizedBy { get; set; }
 

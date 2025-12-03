@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Responses.BaseResponses;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class FaunaResponse : ResponsePlanetEntity
+public class FaunaResponse : StarSystemResponseEntity
 {
     public string? NameAfterExpeditions { get; set; }
 

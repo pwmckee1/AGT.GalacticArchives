@@ -9,7 +9,7 @@ public interface IStarshipService
 
     Task<HashSet<StarshipResponse>> GetStarshipsAsync(StarshipRequest request);
 
-    Task<StarshipResponse> UpsertStarshipAsync(StarshipRequest starship);
+    Task<StarshipResponse> UpsertStarshipAsync(StarshipRequest request);
 
     Task DeleteStarshipAsync(Guid starshipId);
 }

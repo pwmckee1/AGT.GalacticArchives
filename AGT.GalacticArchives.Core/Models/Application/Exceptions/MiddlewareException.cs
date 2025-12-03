@@ -1,28 +1,19 @@
 ﻿namespace AGT.GalacticArchives.Core.Models.Application.Exceptions;
 
-public class MiddlewareException : Exception
+public class MiddlewareException(
+    object url,
+    object userId,
+    object? requestBody,
+    object userAgent,
+    ExceptionDetail? exceptionDetail) : Exception
 {
-    public MiddlewareException(
-        object url,
-        object userId,
-        object? requestBody,
-        object userAgent,
-        ExceptionDetail? exceptionDetail)
-    {
-        Url = url;
-        UserId = userId;
-        RequestBody = requestBody;
-        UserAgent = userAgent;
-        ExceptionDetail = exceptionDetail;
-    }
+    public object Url { get; set; } = url;
 
-    public object Url { get; set; }
+    public object UserId { get; set; } = userId;
 
-    public object UserId { get; set; }
+    public object? RequestBody { get; set; } = requestBody;
 
-    public object? RequestBody { get; set; }
+    public object UserAgent { get; set; } = userAgent;
 
-    public object UserAgent { get; set; }
-
-    public ExceptionDetail? ExceptionDetail { get; set; }
+    public ExceptionDetail? ExceptionDetail { get; set; } = exceptionDetail;
 }

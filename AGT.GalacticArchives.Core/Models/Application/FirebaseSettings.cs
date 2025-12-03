@@ -1,4 +1,4 @@
-﻿namespace AGT.GalacticArchives.Core.Models.AppSettings;
+﻿namespace AGT.GalacticArchives.Core.Models.Application;
 
 public class FirebaseSettings
 {

@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Responses.BaseResponses;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class PointOfInterestResponse : ResponsePlanetEntity
+public class PointOfInterestResponse : StarSystemResponseEntity
 {
     public string? Type { get; set; }
 

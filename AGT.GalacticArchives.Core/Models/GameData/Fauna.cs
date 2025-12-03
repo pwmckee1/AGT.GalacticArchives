@@ -1,15 +1,15 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
-
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Globalization;
 
-public class Fauna : GameDataEntity
+namespace AGT.GalacticArchives.Core.Models.GameData;
+
+public class Fauna : InnerSystemEntity
 {
     public override Guid EntityId => FaunaId;
 
-    public override Guid ParentId => PlanetId;
+    public override Guid ParentId => PlanetId!.Value;
 
     public override string CollectionName => DatabaseConstants.FaunaCollection;
 
@@ -19,10 +19,6 @@ public class Fauna : GameDataEntity
 
     [Display(ResourceType = typeof(FaunaResource), Description = nameof(FaunaResource.Name))]
     public override required string Name { get; set; }
-
-    public required Guid PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
 
     public string? NameAfterExpeditions { get; set; }
 
@@ -119,21 +115,4 @@ public class Fauna : GameDataEntity
     public string? LegacyFaunaDateXbox { get; set; }
 
     public float? VersionRelease { get; set; }
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(Fauna).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(Planet),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }

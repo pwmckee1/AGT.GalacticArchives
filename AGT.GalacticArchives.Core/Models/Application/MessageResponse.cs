@@ -10,5 +10,5 @@ public class MessageResponse<T>
     /// <summary>
     /// Error messages if errors occur
     /// </summary>
-    public HashSet<object> Messages { get; set; } = new();
+    public HashSet<object> Messages { get; set; } = [];
 }

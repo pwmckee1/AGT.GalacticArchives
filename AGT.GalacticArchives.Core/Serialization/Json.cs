@@ -1,12 +1,12 @@
-﻿namespace AGT.GalacticArchives.Core.Serialization;
-
-using System.Collections;
+﻿using System.Collections;
 using System.Reflection;
 using System.Text;
 using AGT.GalacticArchives.Core.Constants;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+
+namespace AGT.GalacticArchives.Core.Serialization;
 
 public static class Json
 {
@@ -18,17 +18,26 @@ public static class Json
     /// <returns></returns>
     public static JToken RemoveFields(this JToken token, string[] fields)
     {
-        if (!(token is JContainer container)) return token;
+        if (!(token is JContainer container))
+        {
+            return token;
+        }
 
         var removeList = new List<JToken>();
         foreach (var el in container.Children())
         {
-            if (el is JProperty p && ((IList)fields).Contains(p.Name)) removeList.Add(el);
+            if (el is JProperty p && ((IList)fields).Contains(p.Name))
+            {
+                removeList.Add(el);
+            }
 
             el.RemoveFields(fields);
         }
 
-        foreach (var el in removeList) el.Remove();
+        foreach (var el in removeList)
+        {
+            el.Remove();
+        }
 
         return token;
     }
@@ -41,18 +50,26 @@ public static class Json
     /// <returns></returns>
     public static JToken ObfuscateFields(this JToken token, IList<string> fields)
     {
-        if (!(token is JContainer container)) return token;
+        if (!(token is JContainer container))
+        {
+            return token;
+        }
 
         var removeList = new List<JProperty>();
         foreach (var el in container.Children())
         {
             if (el is JProperty p && fields.Contains(p.Name, StringComparer.CurrentCultureIgnoreCase))
+            {
                 removeList.Add(p);
+            }
 
             el.ObfuscateFields(fields);
         }
 
-        foreach (var el in removeList) el.Value = BusinessRuleConstants.ObfuscationStringSequence;
+        foreach (var el in removeList)
+        {
+            el.Value = BusinessRuleConstants.ObfuscationStringSequence;
+        }
 
         return token;
     }
@@ -75,9 +92,12 @@ public static class Json
         };
         var parsedResult = JsonConvert.DeserializeObject<T>(item, settings);
 
-        if (parsedResult == null) success = false;
+        if (parsedResult == null)
+        {
+            success = false;
+        }
 
-        result = parsedResult ?? default!;
+        result = parsedResult ?? null!;
         return success;
     }
 
@@ -134,6 +154,7 @@ public static class Json
         // For object || For array
         if ((input.StartsWith('{') && input.EndsWith('}')) ||
             (input.StartsWith('[') && input.EndsWith(']')))
+        {
             try
             {
                 _ = JToken.Parse(input);
@@ -143,6 +164,7 @@ public static class Json
             {
                 return false;
             }
+        }
 
         return false;
     }

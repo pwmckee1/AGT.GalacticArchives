@@ -1,7 +1,5 @@
 ﻿namespace AGT.GalacticArchives.Core.Models.Application;
 
-using AGT.GalacticArchives.Core.Models.AppSettings;
-
 public class ApplicationSettings
 {
     public string[] AllowedOrigins { get; set; } = [];

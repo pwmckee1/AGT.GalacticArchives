@@ -7,14 +7,14 @@ public static class BusinessRuleConstants
     public const string ObfuscationStringSequence = "********";
     public const string ValueFieldName = "value__";
 
-    public static readonly IList<string> ObfuscateFieldList = new List<string>
+    public static readonly IEnumerable<string> ObfuscateFieldList = new HashSet<string>
     {
         "password",
         "currentPassword",
         "confirmPassword",
     };
 
-    public static readonly IList<string> SanitizerRouteWhiteList = new List<string>
+    public static readonly IEnumerable<string> SanitizerRouteWhiteList = new HashSet<string>
     {
         "/galaxy",
     };

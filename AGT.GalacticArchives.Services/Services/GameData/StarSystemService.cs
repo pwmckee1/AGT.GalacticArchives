@@ -25,12 +25,14 @@ public class StarSystemService(IStarSystemManager starSystemManager, IMapper map
     public async Task<StarSystemResponse> UpsertStarSystemAsync(StarSystemRequest request)
     {
         var starSystem = mapper.Map<StarSystem>(request);
-        if (request.StarSystemId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(request.StarSystemId.Value);
+            var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(request.EntityId.Value);
 
             if (existingStarSystem!.ToDictionary().HasAnyChanges(starSystem.ToDictionary()))
+            {
                 starSystem = await starSystemManager.UpsertStarSystemAsync(starSystem);
+            }
         }
         else
         {

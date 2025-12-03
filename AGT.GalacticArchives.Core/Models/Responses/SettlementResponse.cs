@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Responses.BaseResponses;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class SettlementResponse : ResponsePlanetEntity
+public class SettlementResponse : StarSystemResponseEntity
 {
     public string? OriginalName { get; set; }
 

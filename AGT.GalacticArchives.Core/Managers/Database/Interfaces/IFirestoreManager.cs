@@ -12,7 +12,7 @@ public interface IFirestoreManager
 
     Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName);
 
-    Task<IGameData> UpsertAsync(IGameData entity, string collectionName);
+    Task<IDatabaseEntity> UpsertAsync(IDatabaseEntity entity, string collectionName);
 
     Task DeleteAsync(Guid entityId, string collectionName);
 }

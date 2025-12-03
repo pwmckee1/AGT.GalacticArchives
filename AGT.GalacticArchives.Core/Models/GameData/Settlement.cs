@@ -1,15 +1,15 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
-
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Globalization;
 
-public class Settlement : GameDataEntity
+namespace AGT.GalacticArchives.Core.Models.GameData;
+
+public class Settlement : InnerSystemEntity
 {
     public override Guid EntityId => SettlementId;
 
-    public override Guid ParentId => PlanetId;
+    public override Guid ParentId => PlanetId!.Value;
 
     public override string CollectionName => DatabaseConstants.SettlementCollection;
 
@@ -19,10 +19,6 @@ public class Settlement : GameDataEntity
 
     [Display(ResourceType = typeof(SettlementResource), Description = nameof(SettlementResource.Name))]
     public override required string Name { get; set; }
-
-    public required Guid PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
 
     public string? OriginalName { get; set; }
 
@@ -67,21 +63,4 @@ public class Settlement : GameDataEntity
     public string? GameRelease { get; set; }
 
     public string? WikiLink { get; set; }
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(Settlement).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(Planet),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }

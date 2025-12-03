@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class FaunaRequest : RequestPlanetEntity
+public class FaunaRequest : InnerSystemRequestEntity
 {
     public string? NameAfterExpeditions { get; set; }
 

@@ -10,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Managers.GameData;
 public class SettlementManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IPlanetEntityManager planetEntityManager) : ISettlementManager
+    IStarSystemEntityManager StarSystemEntityManager) : ISettlementManager
 {
     private const string Collection = DatabaseConstants.SettlementCollection;
 
@@ -24,7 +24,7 @@ public class SettlementManager(
             return null;
         }
 
-        settlement.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+        settlement.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
 
         return settlement;
     }
@@ -48,7 +48,7 @@ public class SettlementManager(
 
             foreach (var settlement in settlements)
             {
-                settlement.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+                settlement.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
             }
         }
 
@@ -58,7 +58,7 @@ public class SettlementManager(
     public async Task<Settlement> UpsertSettlementAsync(Settlement settlement)
     {
         var updatedSettlement = (Settlement)await firestoreManager.UpsertAsync(settlement, Collection);
-        updatedSettlement.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+        updatedSettlement.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
         return updatedSettlement;
     }
 

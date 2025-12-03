@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class MultiToolRequest : RequestStarSystemEntity
+public class MultiToolRequest : InnerSystemRequestEntity
 {
     public string? Location { get; set; }
 

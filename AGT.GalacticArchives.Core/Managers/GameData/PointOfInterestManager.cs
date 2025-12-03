@@ -10,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Managers.GameData;
 public class PointOfInterestManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IPlanetEntityManager planetEntityManager) : IPointOfInterestManager
+    IStarSystemEntityManager StarSystemEntityManager) : IPointOfInterestManager
 {
     private const string Collection = DatabaseConstants.PointOfInterestCollection;
 
@@ -24,7 +24,7 @@ public class PointOfInterestManager(
             return null;
         }
 
-        pointOfInterest.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+        pointOfInterest.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
 
         return pointOfInterest;
     }
@@ -48,7 +48,7 @@ public class PointOfInterestManager(
 
             foreach (var pointOfInterest in pointOfInterests)
             {
-                pointOfInterest.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+                pointOfInterest.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
             }
         }
 
@@ -58,7 +58,7 @@ public class PointOfInterestManager(
     public async Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest pointOfInterest)
     {
         var updatedPointOfInterest = (PointOfInterest)await firestoreManager.UpsertAsync(pointOfInterest, Collection);
-        updatedPointOfInterest.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+        updatedPointOfInterest.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
         return updatedPointOfInterest;
     }
 

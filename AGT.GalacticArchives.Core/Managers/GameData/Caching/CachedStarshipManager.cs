@@ -3,6 +3,7 @@ using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Starship = AGT.GalacticArchives.Core.Models.GameData.Starship;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
@@ -18,11 +19,11 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request)
+    public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipDatabaseEntityRequest databaseEntityRequest)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Starship)}:{request.EntityId}",
-            async () => await target.GetStarshipsAsync(request),
+            $"{nameof(Starship)}:{databaseEntityRequest.EntityId}",
+            async () => await target.GetStarshipsAsync(databaseEntityRequest),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

@@ -25,12 +25,14 @@ public class SettlementService(ISettlementManager settlementManager, IMapper map
     public async Task<SettlementResponse> UpsertSettlementAsync(SettlementRequest request)
     {
         var settlement = mapper.Map<Settlement>(request);
-        if (request.SettlementId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var existingSettlement = await settlementManager.GetSettlementByIdAsync(request.SettlementId.Value);
+            var existingSettlement = await settlementManager.GetSettlementByIdAsync(request.EntityId.Value);
 
             if (existingSettlement!.ToDictionary().HasAnyChanges(settlement.ToDictionary()))
+            {
                 settlement = await settlementManager.UpsertSettlementAsync(settlement);
+            }
         }
         else
         {

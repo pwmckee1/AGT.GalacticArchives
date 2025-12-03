@@ -1,11 +1,12 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
-
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Globalization;
 
-public class Planet : GameDataEntity
+namespace AGT.GalacticArchives.Core.Models.GameData;
+
+public class Planet : DatabaseEntity
 {
     public override Guid EntityId => PlanetId;
 
@@ -23,6 +24,18 @@ public class Planet : GameDataEntity
     public required Guid StarSystemId { get; set; }
 
     public StarSystem? StarSystem { get; set; }
+
+    public HashSet<Fauna> Fauna { get; set; } = [];
+
+    public HashSet<MultiTool> MultiTools { get; set; } = [];
+
+    public HashSet<PlayerBase> PlayerBases { get; set; } = [];
+
+    public HashSet<PointOfInterest> PointsOfInterest { get; set; } = [];
+
+    public HashSet<Settlement> Settlements { get; set; } = [];
+
+    public HashSet<Starship> Starships { get; set; } = [];
 
     public string? PlanetNameAllPlatforms { get; set; }
 
@@ -241,24 +254,4 @@ public class Planet : GameDataEntity
     public string? GameVersionNumberForPage { get; set; }
 
     public int? DocSeqCheck { get; set; }
-
-    public HashSet<Starship> Starships { get; set; } = [];
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(Planet).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(StarSystem),
-            nameof(Starships),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }

@@ -9,7 +9,7 @@ public interface ISettlementService
 
     Task<HashSet<SettlementResponse>> GetSettlementsAsync(SettlementRequest request);
 
-    Task<SettlementResponse> UpsertSettlementAsync(SettlementRequest settlement);
+    Task<SettlementResponse> UpsertSettlementAsync(SettlementRequest request);
 
     Task DeleteSettlementAsync(Guid settlementId);
 }

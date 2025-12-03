@@ -1,7 +1,6 @@
 ﻿using System.Net.Mime;
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Application.Exceptions;
-using AGT.GalacticArchives.Core.Models.AppSettings;
 using AGT.GalacticArchives.Extensions;
 using AGT.GalacticArchives.Globalization;
 using Microsoft.AspNetCore.Diagnostics;
@@ -32,14 +31,19 @@ public class ErrorHandlingMiddleware
         context.Response.ContentType = MediaTypeNames.Application.Json;
         var ex = context.Features.Get<IExceptionHandlerFeature>();
         if (ex != null)
+        {
             try
             {
                 var exceptionType = ex.Error.GetType();
                 if (ex.Error.Message == GeneralErrorResource.InvalidLogin ||
                     exceptionType == typeof(AuthenticationValidationException))
+                {
                     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                }
                 else if (ex.Error is HttpBadRequestException)
+                {
                     context.Response.StatusCode = (ex.Error as HttpBadRequestException)!.StatusCode;
+                }
 
                 var error = new MessageResponse<MiddlewareException>
                 {
@@ -53,25 +57,6 @@ public class ErrorHandlingMiddleware
                 Logger.Log(LogLevel.Error, ex);
                 Logger.Log(LogLevel.Fatal, e);
             }
-    }
-
-    private MiddlewareException ObfuscateMiddlewareException(MiddlewareException middlewareException)
-    {
-        if (_hostEnvironment.IsProduction() || !_applicationSettings.EnableDeveloperErrors)
-        {
-            bool isFriendlyError = middlewareException.ExceptionDetail?.InnerException == null;
-            middlewareException.RequestBody = null;
-
-            if (middlewareException.ExceptionDetail != null)
-            {
-                middlewareException.ExceptionDetail.Message = isFriendlyError
-                    ? middlewareException.ExceptionDetail.Message
-                    : GeneralErrorResource.BasicError;
-                middlewareException.ExceptionDetail.StackTrace = null;
-                middlewareException.ExceptionDetail.InnerException = null;
-            }
         }
-
-        return middlewareException;
     }
 }

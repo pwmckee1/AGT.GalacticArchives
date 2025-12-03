@@ -4,13 +4,14 @@ using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
+using Starship = AGT.GalacticArchives.Core.Models.GameData.Starship;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
 public class StarshipManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IPlanetEntityManager planetEntityManager) : IStarshipManager
+    IStarSystemEntityManager StarSystemEntityManager) : IStarshipManager
 {
     private const string Collection = DatabaseConstants.StarshipCollection;
 
@@ -29,20 +30,20 @@ public class StarshipManager(
         return starship;
     }
 
-    public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request)
+    public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipDatabaseEntityRequest databaseEntityRequest)
     {
-        if (request.EntityId.HasValue)
+        if (databaseEntityRequest.EntityId.HasValue)
         {
-            var starship = await GetStarshipByIdAsync(request.EntityId!.Value);
+            var starship = await GetStarshipByIdAsync(databaseEntityRequest.EntityId!.Value);
 
             return starship != null ? [starship] : [];
         }
 
-        if (!string.IsNullOrEmpty(request.Name))
+        if (!string.IsNullOrEmpty(databaseEntityRequest.Name))
         {
-            var starshipDocs = request.ParentId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
-                : await firestoreManager.GetByNameAsync(request.Name, Collection);
+            var starshipDocs = databaseEntityRequest.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(databaseEntityRequest.Name, databaseEntityRequest.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(databaseEntityRequest.Name, Collection);
 
             var starships = mapper.Map<HashSet<Starship>>(starshipDocs);
 
@@ -73,11 +74,11 @@ public class StarshipManager(
     {
         if (starship.PlanetId.HasValue)
         {
-            starship.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(starship.ParentId);
+            starship.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(starship.ParentId);
         }
         else
         {
-            starship.StarSystem = await planetEntityManager.GetStarSystemWithHierarchyAsync(starship.ParentId);
+            starship.StarSystem = await StarSystemEntityManager.GetStarSystemWithHierarchyAsync(starship.ParentId);
         }
     }
 }

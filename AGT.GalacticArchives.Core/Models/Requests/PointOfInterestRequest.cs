@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class PointOfInterestRequest : RequestPlanetEntity
+public class PointOfInterestRequest : InnerSystemRequestEntity
 {
     public string? Type { get; set; }
 

@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class StarSystemRequest : RequestRegionEntity
+public class StarSystemRequest : RegionRequestEntity
 {
     public HashSet<PlanetRequest> Planets { get; set; } = [];
 

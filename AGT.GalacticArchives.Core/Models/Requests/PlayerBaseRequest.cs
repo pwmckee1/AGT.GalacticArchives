@@ -1,6 +1,6 @@
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class PlayerBaseRequest : RequestPlanetEntity
+public class PlayerBaseRequest : InnerSystemRequestEntity
 {
     public string? CivilizedBy { get; set; }
 

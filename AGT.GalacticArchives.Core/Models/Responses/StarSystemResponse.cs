@@ -1,6 +1,8 @@
+using AGT.GalacticArchives.Core.Models.Responses.BaseResponses;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class StarSystemResponse : ResponseRegionEntity
+public class StarSystemResponse : RegionResponseEntity
 {
     public HashSet<PlanetResponse> Planets { get; set; } = [];
 

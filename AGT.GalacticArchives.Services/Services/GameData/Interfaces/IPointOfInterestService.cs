@@ -9,7 +9,7 @@ public interface IPointOfInterestService
 
     Task<HashSet<PointOfInterestResponse>> GetPointOfInterestsAsync(PointOfInterestRequest request);
 
-    Task<PointOfInterestResponse> UpsertPointOfInterestAsync(PointOfInterestRequest pointOfInterest);
+    Task<PointOfInterestResponse> UpsertPointOfInterestAsync(PointOfInterestRequest request);
 
     Task DeletePointOfInterestAsync(Guid pointOfInterestId);
 }

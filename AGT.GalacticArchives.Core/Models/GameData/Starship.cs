@@ -1,11 +1,11 @@
-﻿namespace AGT.GalacticArchives.Core.Models.GameData;
-
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Globalization;
 
-public class Starship : GameDataEntity
+namespace AGT.GalacticArchives.Core.Models.GameData;
+
+public class Starship : InnerSystemEntity
 {
     public override Guid EntityId => StarshipId;
 
@@ -20,14 +20,6 @@ public class Starship : GameDataEntity
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.Name))]
     public override required string Name { get; set; }
-
-    public required Guid StarSystemId { get; set; }
-
-    public StarSystem? StarSystem { get; set; }
-
-    public Guid? PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
 
     public string? Location { get; set; }
 
@@ -106,22 +98,4 @@ public class Starship : GameDataEntity
     public string? ResearchTeam { get; set; }
 
     public bool? FreighterCostEvaluation { get; set; }
-
-    public override Dictionary<string, object?> ToDictionary(
-        GameDataEntity? gameData = null,
-        PropertyInfo[] properties = null!,
-        HashSet<string> excludedProperties = null!)
-    {
-        properties = typeof(Starship).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        excludedProperties =
-        [
-            nameof(EntityId),
-            nameof(StarSystem),
-            nameof(Planet),
-            nameof(CollectionName),
-            nameof(ParentCollectionName),
-        ];
-
-        return base.ToDictionary(this, properties, excludedProperties);
-    }
 }
