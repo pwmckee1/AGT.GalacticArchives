@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
 using AGT.GalacticArchives.Core.Models.GameData;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
@@ -15,7 +16,7 @@ public class MultiToolMaps : Profile
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
-        CreateMap<MultiToolRequest, GameDataEntity>()
+        CreateMap<MultiToolRequest, DatabaseEntity>()
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.CollectionName, o => o.Ignore())
             .ForMember(d => d.ParentCollectionName, o => o.Ignore())
@@ -27,7 +28,7 @@ public class MultiToolMaps : Profile
             .ForMember(d => d.MultiToolId, o => o.Ignore())
             ;
 
-        CreateMap<IGameData, MultiToolResponse>()
+        CreateMap<IDatabaseEntity, MultiToolResponse>()
             ;
 
         CreateMap<MultiTool, MultiToolResponse>()

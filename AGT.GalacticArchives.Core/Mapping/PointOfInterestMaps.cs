@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
 using AGT.GalacticArchives.Core.Models.GameData;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
@@ -15,7 +16,7 @@ public class PointOfInterestMaps : Profile
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
-        CreateMap<PointOfInterestRequest, GameDataEntity>()
+        CreateMap<PointOfInterestRequest, DatabaseEntity>()
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.CollectionName, o => o.Ignore())
             .ForMember(d => d.ParentCollectionName, o => o.Ignore())
@@ -30,7 +31,7 @@ public class PointOfInterestMaps : Profile
         CreateMap<PointOfInterest, PointOfInterestResponse>()
             ;
 
-        CreateMap<IGameData, PointOfInterestResponse>()
+        CreateMap<IDatabaseEntity, PointOfInterestResponse>()
             ;
     }
 }

@@ -24,7 +24,7 @@ public class SettlementManager(
             return null;
         }
 
-        settlement.Planet = await InnerSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+        settlement.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId!.Value);
 
         return settlement;
     }
@@ -48,7 +48,7 @@ public class SettlementManager(
 
             foreach (var settlement in settlements)
             {
-                settlement.Planet = await InnerSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+                settlement.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId!.Value);
             }
         }
 
@@ -58,7 +58,7 @@ public class SettlementManager(
     public async Task<Settlement> UpsertSettlementAsync(Settlement request)
     {
         var updatedSettlement = (Settlement)await firestoreManager.UpsertAsync(request, Collection);
-        updatedSettlement.Planet = await InnerSystemEntityManager.GetPlanetWithHierarchyAsync(request.PlanetId);
+        updatedSettlement.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(request.PlanetId!.Value);
         return updatedSettlement;
     }
 
