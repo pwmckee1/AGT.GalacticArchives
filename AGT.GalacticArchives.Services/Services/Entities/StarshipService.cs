@@ -1,5 +1,5 @@
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Entities;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AutoMapper;

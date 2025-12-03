@@ -1,10 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
+namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
 public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManager target)
     : IMultiToolManager, ICachedGameDataManager
@@ -21,7 +20,7 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
     public async Task<HashSet<MultiTool>> GetMultiToolsAsync(MultiToolRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(MultiTool)}:{request.EntityId}",
+            $"{nameof(MultiTool)}:{request.MultiToolId}",
             async () => await target.GetMultiToolsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -31,7 +30,7 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
     {
         var result = await target.UpsertMultiToolAsync(request);
         await cacheManager.SetAsync(
-            $"{nameof(MultiTool)}:{request.EntityId}",
+            $"{nameof(MultiTool)}:{request.MultiToolId}",
             result,
             BusinessRuleConstants.DayInMinutes);
         return result;

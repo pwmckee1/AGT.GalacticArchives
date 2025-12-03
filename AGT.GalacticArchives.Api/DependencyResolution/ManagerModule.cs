@@ -1,10 +1,10 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Database;
-using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Entities;
+using AGT.GalacticArchives.Core.Managers.Entities.Caching;
+using AGT.GalacticArchives.Core.Managers.Environments;
 using AGT.GalacticArchives.Core.Managers.Environments.Caching;
-using AGT.GalacticArchives.Core.Managers.GameData;
-using AGT.GalacticArchives.Core.Managers.GameData.Caching;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;
@@ -68,14 +68,14 @@ public class ManagerModule : Module
 
         builder
             .RegisterType<EntityHierarchyManager>()
-            .Named<IInnerSystemEntityManager>(NamedKeys.Managers.InnerSystemEntityManager)
+            .Named<IEntityHierarchyManager>(NamedKeys.Managers.EntityHierarchyManager)
             .InstancePerLifetimeScope();
 
         builder
             .Register((c, _) => new CachedInnerSystemEntityManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IInnerSystemEntityManager>(NamedKeys.Managers.InnerSystemEntityManager)))
-            .As<IInnerSystemEntityManager>()
+                c.ResolveNamed<IEntityHierarchyManager>(NamedKeys.Managers.EntityHierarchyManager)))
+            .As<IEntityHierarchyManager>()
             .InstancePerLifetimeScope();
 
         builder

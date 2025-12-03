@@ -1,8 +1,8 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Environments;
 using AGT.GalacticArchives.Services.Decorators;
-using AGT.GalacticArchives.Services.Services.Environments;
 using AGT.GalacticArchives.Services.Services.Entities;
+using AGT.GalacticArchives.Services.Services.Environments;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;

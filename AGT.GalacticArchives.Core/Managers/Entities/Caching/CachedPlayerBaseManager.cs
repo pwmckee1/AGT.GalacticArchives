@@ -1,10 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
+namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
 public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseManager target)
     : IPlayerBaseManager, ICachedGameDataManager
@@ -21,7 +20,7 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
     public async Task<HashSet<PlayerBase>> GetPlayerBasesAsync(PlayerBaseRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(PlayerBase)}:{request.EntityId}",
+            $"{nameof(PlayerBase)}:{request.PlayerBaseId}",
             async () => await target.GetPlayerBasesAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -31,7 +30,7 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
     {
         var result = await target.UpsertPlayerBaseAsync(request);
         await cacheManager.SetAsync(
-            $"{nameof(PlayerBase)}:{request.EntityId}",
+            $"{nameof(PlayerBase)}:{request.PlayerBaseId}",
             result,
             BusinessRuleConstants.DayInMinutes);
         return result;

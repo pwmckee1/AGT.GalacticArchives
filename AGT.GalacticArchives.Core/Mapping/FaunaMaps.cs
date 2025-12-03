@@ -1,8 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
-using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AutoMapper;
 
@@ -16,22 +14,18 @@ public class FaunaMaps : Profile
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
-        CreateMap<FaunaRequest, DatabaseEntity>()
-            .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.CollectionName, o => o.Ignore())
-            .ForMember(d => d.ParentCollectionName, o => o.Ignore())
+        CreateMap<Fauna, FaunaRequest>()
+            ;
+        CreateMap<FaunaRequest, Fauna>()
+            .ForMember(d => d.Id, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore())
             ;
 
-        CreateMap<FaunaRequest, Fauna>()
-            .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.FaunaId, o => o.Ignore())
-            ;
-
-        CreateMap<IDatabaseEntity, FaunaResponse>()
-            ;
-
         CreateMap<Fauna, FaunaResponse>()
+            ;
+        CreateMap<FaunaResponse, Fauna>()
+            .ForMember(d => d.Id, o => o.Ignore())
+            .ForMember(d => d.NormalizedName, o => o.Ignore())
             ;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+﻿namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
 public interface ICachedGameDataManager
 {

@@ -1,10 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using Starship = AGT.GalacticArchives.Core.Models.Entities.Starship;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
+namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
 public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager target)
     : IStarshipManager, ICachedGameDataManager
@@ -21,7 +20,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
     public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Starship)}:{request.EntityId}",
+            $"{nameof(Starship)}:{request.StarshipId}",
             async () => await target.GetStarshipsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -31,7 +30,7 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
     {
         var result = await target.UpsertStarshipAsync(request);
         await cacheManager.SetAsync(
-            $"{nameof(Starship)}:{request.EntityId}",
+            $"{nameof(Starship)}:{request.StarshipId}",
             result,
             BusinessRuleConstants.DayInMinutes);
         return result;

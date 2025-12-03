@@ -23,7 +23,7 @@ public static class NamedKeys
         public const string RegionManager = nameof(RegionManager);
         public const string StarSystemManager = nameof(StarSystemManager);
         public const string PlanetManager = nameof(PlanetManager);
-        public const string InnerSystemEntityManager = nameof(InnerSystemEntityManager);
+        public const string EntityHierarchyManager = nameof(EntityHierarchyManager);
         public const string FaunaManager = nameof(FaunaManager);
         public const string GameDataManager = nameof(GameDataManager);
         public const string MultiToolManager = nameof(MultiToolManager);

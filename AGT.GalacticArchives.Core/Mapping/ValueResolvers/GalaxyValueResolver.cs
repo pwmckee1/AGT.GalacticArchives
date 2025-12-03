@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Models.Environments;
-using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Core.Models.Responses.Environments;
 using AutoMapper;
 

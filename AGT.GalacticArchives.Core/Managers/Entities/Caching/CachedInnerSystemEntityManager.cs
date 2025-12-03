@@ -1,11 +1,11 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Environments;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
+namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
-public class CachedInnerSystemEntityManager(ICacheManager cacheManager, IInnerSystemEntityManager target)
-    : IInnerSystemEntityManager, ICachedGameDataManager
+public class CachedInnerSystemEntityManager(ICacheManager cacheManager, IEntityHierarchyManager target)
+    : IEntityHierarchyManager, ICachedGameDataManager
 {
     public async Task<Planet> GetPlanetWithHierarchyAsync(Guid planetId)
     {

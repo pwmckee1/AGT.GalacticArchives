@@ -1,10 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
+namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
 public class CachedSettlementManager(ICacheManager cacheManager, ISettlementManager target)
     : ISettlementManager, ICachedGameDataManager
@@ -21,7 +20,7 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
     public async Task<HashSet<Settlement>> GetSettlementsAsync(SettlementRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Settlement)}:{request.EntityId}",
+            $"{nameof(Settlement)}:{request.SettlementId}",
             async () => await target.GetSettlementsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -31,7 +30,7 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
     {
         var result = await target.UpsertSettlementAsync(request);
         await cacheManager.SetAsync(
-            $"{nameof(Settlement)}:{request.EntityId}",
+            $"{nameof(Settlement)}:{request.SettlementId}",
             result,
             BusinessRuleConstants.DayInMinutes);
         return result;

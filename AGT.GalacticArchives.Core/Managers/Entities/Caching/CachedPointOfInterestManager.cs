@@ -1,10 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
+namespace AGT.GalacticArchives.Core.Managers.Entities.Caching;
 
 public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfInterestManager target)
     : IPointOfInterestManager, ICachedGameDataManager
@@ -21,7 +20,7 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
     public async Task<HashSet<PointOfInterest>> GetPointOfInterestsAsync(PointOfInterestRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(PointOfInterest)}:{request.EntityId}",
+            $"{nameof(PointOfInterest)}:{request.PointOfInterestId}",
             async () => await target.GetPointOfInterestsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -31,7 +30,7 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
     {
         var result = await target.UpsertPointOfInterestAsync(request);
         await cacheManager.SetAsync(
-            $"{nameof(PointOfInterest)}:{request.EntityId}",
+            $"{nameof(PointOfInterest)}:{request.PointOfInterestId}",
             result,
             BusinessRuleConstants.DayInMinutes);
         return result;

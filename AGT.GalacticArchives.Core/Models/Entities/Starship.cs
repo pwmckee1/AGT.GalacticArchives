@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Globalization;
 

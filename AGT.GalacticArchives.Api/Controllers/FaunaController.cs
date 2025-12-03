@@ -1,8 +1,7 @@
 using AGT.GalacticArchives.Core.Models.Application;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
-using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Core.Models.Responses.Entities;
+using AGT.GalacticArchives.Services.Services.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
