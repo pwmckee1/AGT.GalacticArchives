@@ -1,6 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
-using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using Google.Cloud.Firestore;

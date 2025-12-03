@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 

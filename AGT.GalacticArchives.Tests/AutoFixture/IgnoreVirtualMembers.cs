@@ -10,7 +10,10 @@ public class IgnoreVirtualMembers : ISpecimenBuilder
         ArgumentNullException.ThrowIfNull(context);
 
         var pi = request as PropertyInfo;
-        if (pi == null) return new NoSpecimen();
+        if (pi == null)
+        {
+            return new NoSpecimen();
+        }
 
         return pi.GetGetMethod()!.IsVirtual ? null! : new NoSpecimen();
     }

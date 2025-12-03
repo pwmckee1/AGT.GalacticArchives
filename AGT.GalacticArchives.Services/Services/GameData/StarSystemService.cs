@@ -24,22 +24,21 @@ public class StarSystemService(IStarSystemManager starSystemManager, IMapper map
 
     public async Task<StarSystemResponse> UpsertStarSystemAsync(StarSystemRequest request)
     {
-        var starSystem = mapper.Map<StarSystem>(request);
         if (request.EntityId.HasValue)
         {
+            var requestedStarSystem = mapper.Map<StarSystem>(request);
             var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(request.EntityId.Value);
 
-            if (existingStarSystem!.ToDictionary().HasAnyChanges(starSystem.ToDictionary()))
+            if (existingStarSystem!.ToDictionary().HasAnyChanges(requestedStarSystem.ToDictionary()))
             {
-                starSystem = await starSystemManager.UpsertStarSystemAsync(starSystem);
+                var updatedStarSystem = await starSystemManager.UpsertStarSystemAsync(requestedStarSystem);
+                return mapper.Map<StarSystemResponse>(updatedStarSystem);
             }
         }
-        else
-        {
-            starSystem = await starSystemManager.UpsertStarSystemAsync(starSystem);
-        }
 
-        return mapper.Map<StarSystemResponse>(starSystem);
+        var newStarSystem = mapper.Map<StarSystem>(request);
+        newStarSystem = await starSystemManager.UpsertStarSystemAsync(newStarSystem);
+        return mapper.Map<StarSystemResponse>(newStarSystem);
     }
 
     public async Task DeleteStarSystemAsync(Guid starSystemId)

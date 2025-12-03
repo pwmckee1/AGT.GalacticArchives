@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Globalization;
 

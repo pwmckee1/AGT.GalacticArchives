@@ -30,7 +30,9 @@ public class PlanetService(IPlanetManager planetManager, IMapper mapper) : IPlan
             var existingPlanet = await planetManager.GetPlanetByIdAsync(request.PlanetId.Value);
 
             if (existingPlanet!.ToDictionary().HasAnyChanges(planet.ToDictionary()))
+            {
                 planet = await planetManager.UpsertPlanetAsync(planet);
+            }
         }
         else
         {

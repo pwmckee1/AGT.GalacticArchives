@@ -26,13 +26,15 @@ public class PointOfInterestService(IPointOfInterestManager pointOfInterestManag
     public async Task<PointOfInterestResponse> UpsertPointOfInterestAsync(PointOfInterestRequest request)
     {
         var pointOfInterest = mapper.Map<PointOfInterest>(request);
-        if (request.PointOfInterestId.HasValue)
+        if (request.EntityId.HasValue)
         {
             var existingPointOfInterest =
-                await pointOfInterestManager.GetPointOfInterestByIdAsync(request.PointOfInterestId.Value);
+                await pointOfInterestManager.GetPointOfInterestByIdAsync(request.EntityId.Value);
 
             if (existingPointOfInterest!.ToDictionary().HasAnyChanges(pointOfInterest.ToDictionary()))
+            {
                 pointOfInterest = await pointOfInterestManager.UpsertPointOfInterestAsync(pointOfInterest);
+            }
         }
         else
         {

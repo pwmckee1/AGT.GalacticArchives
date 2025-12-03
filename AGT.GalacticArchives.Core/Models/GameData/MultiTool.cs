@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
-using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;

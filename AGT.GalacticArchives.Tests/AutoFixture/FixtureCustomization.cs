@@ -5,14 +5,9 @@ using AutoFixture.AutoMoq;
 
 namespace AGT.GalacticArchives.Tests.AutoFixture;
 
-public sealed class FixtureCustomization<T>
+public sealed class FixtureCustomization<T>(Fixture fixture)
 {
-    public FixtureCustomization(Fixture fixture)
-    {
-        Fixture = fixture;
-    }
-
-    public Fixture Fixture { get; set; }
+    public Fixture Fixture { get; set; } = fixture;
 
     public static string? GetPropertyName<TProp>(Expression<Func<T, TProp>> expr)
     {
@@ -39,7 +34,10 @@ public sealed class FixtureCustomization<T>
 
     public T Create(int recursionDepth = 1, bool ignoreVirtualMembers = true)
     {
-        if (ignoreVirtualMembers) Fixture.Customizations.Add(new IgnoreVirtualMembers());
+        if (ignoreVirtualMembers)
+        {
+            Fixture.Customizations.Add(new IgnoreVirtualMembers());
+        }
 
         Fixture.Customize(new AutoMoqCustomization());
         Fixture.Behaviors.Remove(new ThrowingRecursionBehavior());
@@ -52,7 +50,10 @@ public sealed class FixtureCustomization<T>
 
     public IEnumerable<T> CreateMany(int? count, bool ignoreVirtualMembers = true)
     {
-        if (ignoreVirtualMembers) Fixture.Customizations.Add(new IgnoreVirtualMembers());
+        if (ignoreVirtualMembers)
+        {
+            Fixture.Customizations.Add(new IgnoreVirtualMembers());
+        }
 
         Fixture.Customize(new AutoMoqCustomization());
         Fixture.Behaviors.Remove(new ThrowingRecursionBehavior());

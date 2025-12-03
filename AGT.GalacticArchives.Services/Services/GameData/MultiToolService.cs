@@ -30,7 +30,9 @@ public class MultiToolService(IMultiToolManager multiToolManager, IMapper mapper
             var existingMultiTool = await multiToolManager.GetMultiToolByIdAsync(request.EntityId.Value);
 
             if (existingMultiTool!.ToDictionary().HasAnyChanges(multiTool.ToDictionary()))
+            {
                 multiTool = await multiToolManager.UpsertMultiToolAsync(multiTool);
+            }
         }
         else
         {

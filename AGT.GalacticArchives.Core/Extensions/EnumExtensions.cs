@@ -1,7 +1,7 @@
-﻿namespace AGT.GalacticArchives.Core.Extensions;
-
-using AGT.GalacticArchives.Core.Constants;
+﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
+
+namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class EnumExtensions
 {
@@ -29,10 +29,14 @@ public static class EnumExtensions
                 string.Equals(v.GetDescription(), description, StringComparison.InvariantCultureIgnoreCase))
             .ToHashSet();
         if (values.Count == 0)
+        {
             values = GetValues<T>()
                 .Where(v =>
-                    string.Equals(v.GetDescription().Replace(" ", string.Empty).Replace("-", string.Empty), description,
+                    string.Equals(
+                        v.GetDescription().Replace(" ", string.Empty).Replace("-", string.Empty),
+                        description,
                         StringComparison.InvariantCultureIgnoreCase)).ToHashSet();
+        }
 
         return values.FirstOrDefault()!;
     }
@@ -44,7 +48,8 @@ public static class EnumExtensions
         if ((byte)(object)value == 0)
         {
             string propertyName = typeof(T).Name;
-            throw new ArgumentException(propertyName,
+            throw new ArgumentException(
+                propertyName,
                 string.Format(GeneralErrorResource.PropertyMissing, propertyName));
         }
     }

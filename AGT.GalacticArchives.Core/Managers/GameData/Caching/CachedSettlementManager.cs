@@ -1,10 +1,10 @@
-namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
-
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
+
+namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
 public class CachedSettlementManager(ICacheManager cacheManager, ISettlementManager target)
     : ISettlementManager, ICachedGameDataManager
@@ -30,7 +30,10 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
     public async Task<Settlement> UpsertSettlementAsync(Settlement request)
     {
         var result = await target.UpsertSettlementAsync(request);
-        await cacheManager.SetAsync($"{nameof(Settlement)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.SetAsync(
+            $"{nameof(Settlement)}:{request.EntityId}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

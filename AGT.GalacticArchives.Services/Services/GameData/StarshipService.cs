@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
-using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
@@ -17,18 +16,18 @@ public class StarshipService(IStarshipManager starshipManager, IMapper mapper) :
         return starship != null ? mapper.Map<StarshipResponse>(starship) : null;
     }
 
-    public async Task<HashSet<StarshipResponse>> GetStarshipsAsync(StarshipDatabaseEntityRequest databaseEntityRequest)
+    public async Task<HashSet<StarshipResponse>> GetStarshipsAsync(StarshipRequest request)
     {
-        var starship = await starshipManager.GetStarshipsAsync(databaseEntityRequest);
+        var starship = await starshipManager.GetStarshipsAsync(request);
         return mapper.Map<HashSet<StarshipResponse>>(starship);
     }
 
-    public async Task<StarshipResponse> UpsertStarshipAsync(StarshipDatabaseEntityRequest databaseEntityRequest)
+    public async Task<StarshipResponse> UpsertStarshipAsync(StarshipRequest request)
     {
-        var starship = mapper.Map<Starship>(databaseEntityRequest);
-        if (databaseEntityRequest.EntityId.HasValue)
+        var starship = mapper.Map<Starship>(request);
+        if (request.EntityId.HasValue)
         {
-            var existingStarship = await starshipManager.GetStarshipByIdAsync(databaseEntityRequest.EntityId.Value);
+            var existingStarship = await starshipManager.GetStarshipByIdAsync(request.EntityId.Value);
 
             if (existingStarship!.ToDictionary().HasAnyChanges(starship.ToDictionary()))
             {

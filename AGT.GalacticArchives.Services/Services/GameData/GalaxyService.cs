@@ -18,7 +18,10 @@ public class GalaxyService(IGalaxyManager galaxyManager, IMapper mapper) : IGala
 
     public async Task<HashSet<GalaxyResponse>> GetGalaxiesAsync(GalaxyRequest request)
     {
-        if (!request.EntityId.HasValue && string.IsNullOrEmpty(request.Name)) return await GetGalaxiesAsync();
+        if (!request.EntityId.HasValue && string.IsNullOrEmpty(request.Name))
+        {
+            return await GetGalaxiesAsync();
+        }
 
         var galaxies = await galaxyManager.GetGalaxiesAsync(request);
         return mapper.Map<HashSet<GalaxyResponse>>(galaxies);

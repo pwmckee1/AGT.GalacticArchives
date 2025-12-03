@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.Requests;

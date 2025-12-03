@@ -25,12 +25,14 @@ public class PlayerBaseService(IPlayerBaseManager playerBaseManager, IMapper map
     public async Task<PlayerBaseResponse> UpsertPlayerBaseAsync(PlayerBaseRequest request)
     {
         var playerBase = mapper.Map<PlayerBase>(request);
-        if (request.PlayerBaseId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var existingPlayerBase = await playerBaseManager.GetPlayerBaseByIdAsync(request.PlayerBaseId.Value);
+            var existingPlayerBase = await playerBaseManager.GetPlayerBaseByIdAsync(request.EntityId.Value);
 
             if (existingPlayerBase!.ToDictionary().HasAnyChanges(playerBase.ToDictionary()))
+            {
                 playerBase = await playerBaseManager.UpsertPlayerBaseAsync(playerBase);
+            }
         }
         else
         {

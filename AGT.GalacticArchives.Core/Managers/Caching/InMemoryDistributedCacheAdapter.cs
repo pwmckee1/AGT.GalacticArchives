@@ -1,26 +1,19 @@
-﻿namespace AGT.GalacticArchives.Core.Managers.Caching;
-
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
 
-public class InMemoryDistributedCacheAdapter : IDistributedCache
+namespace AGT.GalacticArchives.Core.Managers.Caching;
+
+public class InMemoryDistributedCacheAdapter(IMemoryCache memoryCache) : IDistributedCache
 {
-    private readonly IMemoryCache _memoryCache;
-
-    public InMemoryDistributedCacheAdapter(IMemoryCache memoryCache)
-    {
-        _memoryCache = memoryCache;
-    }
-
     public byte[] Get(string key)
     {
-        _memoryCache.TryGetValue(key, out byte[]? value);
+        memoryCache.TryGetValue(key, out byte[]? value);
         return value ?? [];
     }
 
     public Task<byte[]?> GetAsync(string key, CancellationToken token = default)
     {
-        _memoryCache.TryGetValue(key, out byte[]? value);
+        memoryCache.TryGetValue(key, out byte[]? value);
         return Task.FromResult(value);
     }
 
@@ -33,7 +26,7 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
             SlidingExpiration = options.SlidingExpiration,
         };
 
-        _memoryCache.Set(key, value, cacheEntryOptions);
+        memoryCache.Set(key, value, cacheEntryOptions);
     }
 
     public Task SetAsync(
@@ -49,7 +42,7 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
             SlidingExpiration = options.SlidingExpiration,
         };
 
-        _memoryCache.Set(key, value, cacheEntryOptions);
+        memoryCache.Set(key, value, cacheEntryOptions);
         return Task.CompletedTask;
     }
 
@@ -66,12 +59,12 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
 
     public void Remove(string key)
     {
-        _memoryCache.Remove(key);
+        memoryCache.Remove(key);
     }
 
     public Task RemoveAsync(string key, CancellationToken token = default)
     {
-        _memoryCache.Remove(key);
+        memoryCache.Remove(key);
         return Task.CompletedTask;
     }
 }
