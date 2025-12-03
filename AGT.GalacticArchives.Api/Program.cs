@@ -25,7 +25,7 @@ builder.Services.AddSingleton<IDistributedCache, InMemoryDistributedCacheAdapter
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>((_, containerBuilder) =>
 {
-    containerBuilder.ConfigureDependencyInjection(applicationSettings, environment);
+    containerBuilder.ConfigureDependencyInjection();
 });
 
 builder.Services.AddAutoMapper(cfg => cfg.AddCollectionMappers(), AppDomain.CurrentDomain.GetAssemblies());
@@ -33,7 +33,6 @@ builder.Services
     .AddControllers()
     .AddApplicationPart(typeof(Program).Assembly);
 builder.Services.AddOpenApi();
-
 
 builder.Services.AddSingleton(sp =>
 {
@@ -58,7 +57,9 @@ builder.Services.AddSingleton(sp =>
         {
             string? credentialsPath = applicationSettings.Firebase.CredentialsPath;
             if (string.IsNullOrEmpty(credentialsPath) || !File.Exists(credentialsPath))
+            {
                 throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
+            }
 
             logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
 
@@ -72,7 +73,9 @@ builder.Services.AddSingleton(sp =>
             GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId!, "firebase-credentials");
 
         if (string.IsNullOrEmpty(secret))
+        {
             throw new InvalidOperationException("Unable to retrieve firebase credentials");
+        }
 
         firestoreBuilder.Credential = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
     }
@@ -84,11 +87,15 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseMessageResponseMiddleware();
-// app.UseMiddleware<RequestRewindMiddleware>();
+
+app.UseMiddleware<RequestRewindMiddleware>();
 app.UseExceptionHandler(options => { options.UseMiddleware<ErrorHandlingMiddleware>(); });
 app.UseOptions();
 
-if (app.Environment.IsDevelopment()) app.MapOpenApi();
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
 
 app.UseHttpsRedirection();
 

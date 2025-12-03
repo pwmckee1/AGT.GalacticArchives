@@ -9,21 +9,11 @@ using LogLevel = NLog.LogLevel;
 
 namespace AGT.GalacticArchives.Middleware;
 
-public class ErrorHandlingMiddleware
+#pragma warning disable CS9113 // Parameter is unread.
+public class ErrorHandlingMiddleware(RequestDelegate next)
+#pragma warning restore CS9113 // Parameter is unread.
 {
-    private static readonly NLog.ILogger Logger = LogManager.GetCurrentClassLogger();
-    private readonly ApplicationSettings _applicationSettings;
-    private readonly IHostEnvironment _hostEnvironment;
-
-    // ReSharper disable once UnusedParameter.Local
-    public ErrorHandlingMiddleware(
-        ApplicationSettings applicationSettings,
-        RequestDelegate next,
-        IHostEnvironment hostEnvironment)
-    {
-        _applicationSettings = applicationSettings;
-        _hostEnvironment = hostEnvironment;
-    }
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
     public async Task Invoke(HttpContext context)
     {
@@ -40,14 +30,14 @@ public class ErrorHandlingMiddleware
                 {
                     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                 }
-                else if (ex.Error is HttpBadRequestException)
+                else if (ex.Error is HttpBadRequestException exception)
                 {
-                    context.Response.StatusCode = (ex.Error as HttpBadRequestException)!.StatusCode;
+                    context.Response.StatusCode = exception.StatusCode;
                 }
 
                 var error = new MessageResponse<MiddlewareException>
                 {
-                    Messages = new HashSet<object> { context.HandleException(ex.Error, Logger) },
+                    Messages = [context.HandleException(ex.Error, Logger)],
                 };
 
                 await context.Response.WriteAsync(error.SerializeResponse()).ConfigureAwait(false);

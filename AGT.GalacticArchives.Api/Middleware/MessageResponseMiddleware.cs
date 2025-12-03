@@ -9,19 +9,12 @@ using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Middleware;
 
-public class MessageResponseMiddleware
+public class MessageResponseMiddleware(RequestDelegate next)
 {
-    private static readonly HashSet<string> _validContentTypes = new()
-    {
+    private static readonly HashSet<string> ValidContentTypes =
+    [
         MediaTypeNames.Application.Json,
-    };
-
-    private readonly RequestDelegate _next;
-
-    public MessageResponseMiddleware(RequestDelegate next)
-    {
-        _next = next;
-    }
+    ];
 
     public static bool IsSanitizeBypass(HttpContext context)
     {
@@ -42,7 +35,7 @@ public class MessageResponseMiddleware
         await using var memoryStream = new MemoryStream();
         context.Response.Body = memoryStream;
 
-        await _next(context);
+        await next(context);
 
         string? contentType = context.Response.ContentType?.ToLower().Split(';', StringSplitOptions.RemoveEmptyEntries)
             .FirstOrDefault();
@@ -55,7 +48,7 @@ public class MessageResponseMiddleware
 
         // Avoid wrapping non-JSON responses or responses that already inherit from MessageResponse
         // Exclude swagger output
-        if (_validContentTypes.Contains(contentType!) &&
+        if (ValidContentTypes.Contains(contentType!) &&
             !responseBody.CanParseJson<MessageResponse<object>>() &&
             !responseBody.CanParseJson<PagedResponse<object>>()
             && context.Request.Path.Value != null && !context.Request.Path.Value.Contains("swagger"))
@@ -67,7 +60,9 @@ public class MessageResponseMiddleware
 
         // add whitelist check and other partial path items
         if (responseBody != null! && !responseBody.Contains("response\": null") && !IsSanitizeBypass(context))
+        {
             responseBody = Sanitize(responseBody);
+        }
 
         // Create a new stream with the modified body and reset the content length to match the new stream.
         using var responseContent = new StringContent(responseBody!, Encoding.UTF8, contentType!);

@@ -35,9 +35,11 @@ public static class MiddlewareExtensions
         var requestBody = context.Items["RequestBody"]?.ToString();
 
         var middlewareException = new ExceptionDetail(exception.Message, exception.StackTrace);
-        if (exception.InnerException != null && exception.Message.Length > 0)
+        if (exception is { InnerException: not null, Message.Length: > 0 })
+        {
             middlewareException.InnerException =
                 new ExceptionDetail(exception.InnerException.Message, exception.InnerException.StackTrace);
+        }
 
         var errorDetail = new MiddlewareException(
             $"{context.Request.Method} {context.Request.GetDisplayUrl().Replace($"/{Assembly.GetExecutingAssembly().GetName().Name}", null)}",
@@ -46,7 +48,8 @@ public static class MiddlewareExtensions
             context.Request.Headers["User-Agent"],
             middlewareException);
 
-        logEvent.Properties["detail"] = JsonConvert.SerializeObject(errorDetail,
+        logEvent.Properties["detail"] = JsonConvert.SerializeObject(
+            errorDetail,
             new JsonSerializerSettings { Formatting = Formatting.Indented });
 
         logger.Log(logEvent);
@@ -73,23 +76,29 @@ public static class MiddlewareExtensions
         return builder;
     }
 
-    public static bool IsHealthCheckRequest(this HttpContext context)
+    extension(HttpContext context)
     {
-        return context.Request.Path.StartsWithSegments("/health-checks");
-    }
+        public bool IsHealthCheckRequest()
+        {
+            return context.Request.Path.StartsWithSegments("/health-checks");
+        }
 
-    public static bool IsSwaggerRequest(this HttpContext context)
-    {
-        return context.Request.Path.StartsWithSegments("/index.html") ||
-               context.Request.Path.StartsWithSegments("/swagger");
+        public bool IsSwaggerRequest()
+        {
+            return context.Request.Path.StartsWithSegments("/index.html") ||
+                   context.Request.Path.StartsWithSegments("/swagger");
+        }
     }
 
     private static object? RenderRequestBody(HttpRequest request, string? requestBody)
     {
-        if (string.IsNullOrEmpty(requestBody)) return null;
+        if (string.IsNullOrEmpty(requestBody))
+        {
+            return null;
+        }
 
         return request.ContentType == MediaTypeNames.Application.Json
             ? new JRaw(JToken.Parse(requestBody).ObfuscateFields(BusinessRuleConstants.ObfuscateFieldList))
-            : (object?)requestBody;
+            : requestBody;
     }
 }

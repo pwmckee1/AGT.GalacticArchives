@@ -2,13 +2,8 @@
 
 namespace AGT.GalacticArchives.Middleware;
 
-public class SanitizedMessageResponseMiddleware : MessageResponseMiddleware
+public class SanitizedMessageResponseMiddleware(RequestDelegate next) : MessageResponseMiddleware(next)
 {
-    public SanitizedMessageResponseMiddleware(RequestDelegate next)
-        : base(next)
-    {
-    }
-
     public override string Sanitize(string? responseBody)
     {
         var sanitizer = new HtmlSanitizer();

@@ -21,9 +21,11 @@ public static class ControllerConfiguration
                 options.InvalidModelStateResponseFactory = context =>
                 {
                     var response = new MessageResponse<string>();
-                    foreach ((string key, var value) in context.ModelState)
+                    foreach ((string _, var value) in context.ModelState)
                     foreach (var error in value.Errors)
+                    {
                         response.Messages.Add($"{error.ErrorMessage}");
+                    }
 
                     throw new HttpBadRequestException(string.Join(Environment.NewLine, response.Messages));
                 };

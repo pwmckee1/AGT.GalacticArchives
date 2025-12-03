@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
-using AGT.GalacticArchives.Core.Models.Application;
 using Autofac;
 
 namespace AGT.GalacticArchives.Extensions;
@@ -12,18 +11,13 @@ public static class ContainerConfigurationExtensions
     /// Configures dependency injection by registering services and managers into the DI container.
     /// </summary>
     /// <param name="builder">The WebApplicationBuilder instance used to configure the application.</param>
-    /// <param name="applicationSettings">The application settings containing configuration values.</param>
-    /// <param name="environment">The hosting environment of the application.</param>
-    public static void ConfigureDependencyInjection(
-        this ContainerBuilder builder,
-        ApplicationSettings applicationSettings,
-        IHostEnvironment environment)
+    public static void ConfigureDependencyInjection(this ContainerBuilder builder)
     {
         // Load assemblies from the application's bin directory
         string binPath = AppContext.BaseDirectory;
         string[] assemblyFiles = Directory.GetFiles(binPath, "AGT.*.dll");
         var assemblies = assemblyFiles
-            .Select(f => Assembly.LoadFrom(f))
+            .Select(Assembly.LoadFrom)
             .Concat(AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName!.StartsWith("AGT")))
             .Distinct()
             .ToArray();
