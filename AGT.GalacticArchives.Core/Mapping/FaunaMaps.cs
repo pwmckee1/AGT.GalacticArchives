@@ -1,9 +1,9 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
-using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Models.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping;
@@ -12,7 +12,7 @@ public class FaunaMaps : Profile
 {
     public FaunaMaps()
     {
-        CreateMap<Dictionary<string, object?>, Fauna>()
+        CreateMap<Dictionary<string, object>, Fauna>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

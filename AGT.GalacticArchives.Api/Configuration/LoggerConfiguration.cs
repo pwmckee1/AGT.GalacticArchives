@@ -44,8 +44,9 @@ public static class LoggerConfiguration
             {
                 string logger = rule["logger"] ?? "*";
                 string writeTo = rule["writeTo"]!;
+                var minLevel = LogLevel.FromString(rule["minLevel"]!);
 
-                config.AddRule(LogLevel.Debug, LogLevel.Fatal, writeTo, logger);
+                config.AddRule(minLevel, LogLevel.Fatal, writeTo, logger);
             }
         }
 

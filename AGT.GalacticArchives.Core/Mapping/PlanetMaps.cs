@@ -1,9 +1,8 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
-using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
-using AGT.GalacticArchives.Core.Models.Requests;
-using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Core.Mapping.ValueResolvers;
+using AGT.GalacticArchives.Core.Models.Environments;
+using AGT.GalacticArchives.Core.Models.Requests.Environments;
+using AGT.GalacticArchives.Core.Models.Responses.Environments;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping;
@@ -12,7 +11,7 @@ public class PlanetMaps : Profile
 {
     public PlanetMaps()
     {
-        CreateMap<Dictionary<string, object?>, Planet>()
+        CreateMap<Dictionary<string, object>, Planet>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
@@ -32,6 +31,11 @@ public class PlanetMaps : Profile
             ;
 
         CreateMap<Planet, PlanetResponse>()
+            .ForMember(d => d.GalaxyId, o => o.MapFrom<GalaxyValueResolver>())
+            .ForMember(d => d.Galaxy, o => o.MapFrom<GalaxyValueResolver>())
+            ;
+
+        CreateMap<Planet, PlanetResponseEntity>()
             ;
     }
 }

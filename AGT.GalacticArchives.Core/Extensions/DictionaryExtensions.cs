@@ -7,9 +7,9 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class DictionaryExtensions
 {
-    extension(Dictionary<string, object?> first)
+    extension(Dictionary<string, object> first)
     {
-        public bool HasAnyChanges(Dictionary<string, object?> second)
+        public bool HasAnyChanges(Dictionary<string, object> second)
         {
             if (first.Count == 0 && second.Count == 0)
             {
@@ -63,7 +63,7 @@ public static class DictionaryExtensions
                 try
                 {
                     // Handle type conversions
-                    object? convertedValue = Dictionary<string, object?>.ConvertValue(value, property.PropertyType);
+                    object? convertedValue = Dictionary<string, object>.ConvertValue(value, property.PropertyType);
                     property.SetValue(instance, convertedValue);
                 }
                 catch (Exception ex)
@@ -111,6 +111,13 @@ public static class DictionaryExtensions
                 return value;
             }
 
+            // Handle IEnumerable conversions - convert List to HashSet if needed
+            if (typeof(System.Collections.IEnumerable).IsAssignableFrom(underlyingType) && underlyingType.IsGenericType)
+            {
+                object? hashSet = Dictionary<string, object>.ConvertEnumerableToHashSet(value, underlyingType);
+                return hashSet;
+            }
+
             // Convert.ChangeType for primitives
             if (underlyingType.IsPrimitive || underlyingType == typeof(decimal))
             {
@@ -119,6 +126,31 @@ public static class DictionaryExtensions
 
             throw new InvalidCastException(
                 string.Format(GeneralErrorResource.CannotConvertValue, value.GetType().Name, targetType.Name));
+        }
+
+        // Have to force IEnumerable<T> vales to be HashSet<T> otherwise they will default as List<T>
+        private static object? ConvertEnumerableToHashSet(object value, Type underlyingType)
+        {
+            var genericArgs = underlyingType.GetGenericArguments();
+            if (genericArgs.Length > 0 &&
+                value is System.Collections.IEnumerable enumerable &&
+                underlyingType.GetGenericTypeDefinition() == typeof(HashSet<>))
+            {
+                // If target is HashSet, convert from List or other IEnumerable
+                var elementType = genericArgs[0];
+                var hashSetType = typeof(HashSet<>).MakeGenericType(elementType);
+                var hashSetInstance = (System.Collections.IEnumerable)Activator.CreateInstance(hashSetType)!;
+
+                var addMethod = hashSetType.GetMethod("Add", [elementType]);
+                foreach (object? item in enumerable)
+                {
+                    addMethod?.Invoke(hashSetInstance, [item]);
+                }
+
+                return hashSetInstance;
+            }
+
+            return null;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.GameData;
+using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
 using Should;
@@ -129,7 +129,7 @@ public class GameDataModelTests
 
     public class WhenConvertingToGameDataFromDictionary : GameDataModelTests
     {
-        private readonly Dictionary<string, object?> _dictionary = [];
+        private readonly Dictionary<string, object> _dictionary = [];
 
         public class WhenConvertingGalaxy : WhenConvertingToGameDataFromDictionary
         {

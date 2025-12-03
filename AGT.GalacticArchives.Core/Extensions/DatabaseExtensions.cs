@@ -1,5 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
+﻿using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.Environments;
 
 namespace AGT.GalacticArchives.Core.Extensions;
 
@@ -9,63 +9,28 @@ public static class DatabaseExtensions
     {
         public HashSet<string> PropertiesExcludedFromDatabase()
         {
-            var exclusions = new HashSet<string>
+            return typeof(T).Name switch
             {
-                nameof(DatabaseEntity.EntityId),
-                nameof(DatabaseEntity.CollectionName),
-                nameof(DatabaseEntity.ParentCollectionName),
+                nameof(Galaxy) => [nameof(Galaxy.Regions),],
+                nameof(Region) => [nameof(Region.Galaxy), nameof(Region.StarSystems),],
+                nameof(StarSystem) =>
+                [
+                    nameof(StarSystem.Region), nameof(StarSystem.Planets), nameof(StarSystem.MultiTools),
+                    nameof(StarSystem.Starships),
+                ],
+                nameof(Planet) =>
+                [
+                    nameof(Planet.StarSystem), nameof(Planet.Fauna), nameof(Planet.MultiTools),
+                    nameof(Planet.PlayerBases), nameof(Planet.PointsOfInterest), nameof(Planet.Settlements),
+                    nameof(Planet.Starships),
+                ],
+                nameof(MultiTool) or nameof(Starship) => [nameof(StarSystem), nameof(Planet),],
+                nameof(Fauna) or nameof(PlayerBase) or nameof(PointOfInterest) or nameof(Settlement) =>
+                [
+                    nameof(Planet),
+                ],
+                _ => [],
             };
-
-            switch (typeof(T).Name)
-            {
-                case nameof(Galaxy):
-                    exclusions.UnionWith([nameof(Galaxy.Regions)]);
-                    break;
-                case nameof(Region):
-                    exclusions.UnionWith(
-                    [
-                        nameof(Region.StarSystems),
-                        nameof(Region.Galaxy),
-                    ]);
-                    break;
-                case nameof(StarSystem):
-                    exclusions.UnionWith(
-                    [
-                        nameof(StarSystem.MultiTools),
-                        nameof(StarSystem.Planets),
-                        nameof(StarSystem.Region),
-                        nameof(StarSystem.Starships),
-                    ]);
-                    break;
-                case nameof(Planet):
-                    exclusions.UnionWith(
-                    [
-                        nameof(Planet.StarSystem),
-                        nameof(Planet.Fauna),
-                        nameof(Planet.MultiTools),
-                        nameof(Planet.PlayerBases),
-                        nameof(Planet.PointsOfInterest),
-                        nameof(Planet.Settlements),
-                        nameof(Planet.Starships),
-                    ]);
-                    break;
-                case nameof(MultiTool):
-                case nameof(Starship):
-                    exclusions.UnionWith(
-                    [
-                        nameof(InnerSystemEntity.StarSystem),
-                        nameof(InnerSystemEntity.Planet),
-                    ]);
-                    break;
-                case nameof(Fauna):
-                case nameof(PlayerBase):
-                case nameof(PointOfInterest):
-                case nameof(Settlement):
-                    exclusions.UnionWith([nameof(InnerSystemEntity.Planet)]);
-                    break;
-            }
-
-            return exclusions;
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
-using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Models.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AutoMapper;
-using Starship = AGT.GalacticArchives.Core.Models.GameData.Starship;
+using Starship = AGT.GalacticArchives.Core.Models.Entities.Starship;
 
 namespace AGT.GalacticArchives.Core.Mapping;
 
@@ -12,7 +13,7 @@ public class StarshipMaps : Profile
 {
     public StarshipMaps()
     {
-        CreateMap<Dictionary<string, object?>, Starship>()
+        CreateMap<Dictionary<string, object>, Starship>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
@@ -32,6 +33,7 @@ public class StarshipMaps : Profile
             ;
 
         CreateMap<Starship, StarshipResponse>()
+            .ForMember(d => d.GalaxyId, o => o.MapFrom(s => s.StarSystem.Region!.GalaxyId))
             ;
     }
 }

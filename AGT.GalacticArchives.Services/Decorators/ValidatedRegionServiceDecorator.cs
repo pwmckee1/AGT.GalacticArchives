@@ -1,9 +1,9 @@
 ﻿using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
-using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Core.Models.Requests;
-using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Core.Models.Environments;
+using AGT.GalacticArchives.Core.Models.Requests.Environments;
+using AGT.GalacticArchives.Core.Models.Responses.Environments;
 using AGT.GalacticArchives.Globalization;
-using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
+using AGT.GalacticArchives.Services.Services.Environments;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 

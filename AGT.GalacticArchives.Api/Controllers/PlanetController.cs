@@ -1,7 +1,8 @@
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Requests.Environments;
 using AGT.GalacticArchives.Core.Models.Responses;
-using AGT.GalacticArchives.Services.Services.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Models.Responses.Environments;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 

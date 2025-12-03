@@ -1,9 +1,10 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
-using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Requests.Environments;
 using AGT.GalacticArchives.Core.Models.Responses;
+using AGT.GalacticArchives.Core.Models.Responses.Environments;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping;
@@ -12,7 +13,7 @@ public class GalaxyMaps : Profile
 {
     public GalaxyMaps()
     {
-        CreateMap<Dictionary<string, object?>, Galaxy>()
+        CreateMap<Dictionary<string, object>, Galaxy>()
             .ConvertUsing<GameDataTypeConverter>()
             ;
 

@@ -1,14 +1,12 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
-using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
-using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
+using AGT.GalacticArchives.Core.Models;
 using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.Database;
 
 public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 {
-    public async Task<HashSet<Dictionary<string, object?>>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
     {
         var snapshot = await firestoreDb
             .Collection(collectionName)
@@ -17,7 +15,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public virtual async Task<Dictionary<string, object?>?> GetByIdAsync(Guid entityId, string collectionName)
+    public virtual async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
     {
         var docRef = firestoreDb
             .Collection(collectionName)
@@ -28,37 +26,38 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         return snapshot != null && snapshot.Exists ? snapshot.ToDictionary() : null;
     }
 
-    public async Task<HashSet<Dictionary<string, object?>>> GetByNameAsync(
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
         string entityName,
+        string parentIdName,
         Guid parentId,
         string collectionName)
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(DatabaseEntity.Name), entityName)
-            .WhereEqualTo(nameof(DatabaseEntity.ParentId), parentId.ToString());
+            .WhereEqualTo(nameof(IGameData.Name), entityName)
+            .WhereEqualTo(parentIdName, parentId.ToString());
 
         var snapshot = await query.GetSnapshotAsync();
 
         return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public async Task<HashSet<Dictionary<string, object?>>> GetByNameAsync(string entityName, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(DatabaseEntity.Name), entityName);
+            .WhereEqualTo(nameof(IGameData.Name), entityName);
 
         var snapshot = await query.GetSnapshotAsync();
 
         return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
     }
 
-    public virtual async Task<IDatabaseEntity> UpsertAsync(IDatabaseEntity entity, string collectionName)
+    public virtual async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
     {
         var docRef = firestoreDb
-            .Collection(entity.CollectionName)
-            .Document(entity.EntityId.ToString());
+            .Collection(collectionName)
+            .Document(entity.Id.ToString());
 
         var snapshot = await docRef.GetSnapshotAsync();
 

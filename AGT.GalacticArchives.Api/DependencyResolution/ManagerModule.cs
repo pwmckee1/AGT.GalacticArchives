@@ -1,7 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
+using AGT.GalacticArchives.Core.Managers.Environments.Caching;
 using AGT.GalacticArchives.Core.Managers.GameData;
 using AGT.GalacticArchives.Core.Managers.GameData.Caching;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
@@ -67,7 +67,7 @@ public class ManagerModule : Module
             .InstancePerLifetimeScope();
 
         builder
-            .RegisterType<InnerSystemEntityManager>()
+            .RegisterType<EntityHierarchyManager>()
             .Named<IInnerSystemEntityManager>(NamedKeys.Managers.InnerSystemEntityManager)
             .InstancePerLifetimeScope();
 
