@@ -2,10 +2,10 @@
 using System.Text;
 using AGT.GalacticArchives.Core.Attributes;
 using AGT.GalacticArchives.Core.Models.Application;
-using Microsoft.AspNetCore.Http.Features;
-using Newtonsoft.Json;
 using AGT.GalacticArchives.Core.Serialization;
 using AGT.GalacticArchives.Extensions;
+using Microsoft.AspNetCore.Http.Features;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Middleware;
 

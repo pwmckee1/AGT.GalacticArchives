@@ -1,6 +1,6 @@
-using System.Reflection;
-
 namespace AGT.GalacticArchives.Core.Models.GameData.Interfaces;
+
+using System.Reflection;
 
 public interface IGameData
 {
@@ -9,7 +9,7 @@ public interface IGameData
     string CollectionName { get; }
 
     Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!);
 }

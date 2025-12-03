@@ -1,17 +1,7 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class PointOfInterestRequest : GameDataRequest
+public class PointOfInterestRequest : RequestPlanetEntity
 {
-    public Guid? PointOfInterestId { get; set; }
-
-    public string? PointOfInterestName { get; set; }
-
-    public Guid? PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
-
     public string? Type { get; set; }
 
     public string? YYFirstCoordinate { get; set; }

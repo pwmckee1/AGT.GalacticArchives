@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IRegionManager : IGameDataManager<Region>
+public interface IRegionManager
 {
     Task<Region?> GetRegionByIdAsync(Guid regionId);
 

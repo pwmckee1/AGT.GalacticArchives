@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IStarshipManager : IGameDataManager<Starship>
+public interface IStarshipManager
 {
     Task<Starship?> GetStarshipByIdAsync(Guid starshipId);
 

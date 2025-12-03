@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IFaunaManager : IGameDataManager<Fauna>
+public interface IFaunaManager
 {
     Task<Fauna?> GetFaunaByIdAsync(Guid faunaId);
 

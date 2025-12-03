@@ -41,6 +41,26 @@ public class ManagerModule : Module
             .As<IStarSystemManager>()
             .InstancePerLifetimeScope();
 
+        builder.RegisterType<PlanetManager>()
+            .Named<IPlanetManager>(NamedKeys.Managers.PlanetManager)
+            .InstancePerLifetimeScope();
+
+        builder.Register((c, _) => new CachedPlanetManager(
+                c.Resolve<ICacheManager>(),
+                c.ResolveNamed<IPlanetManager>(NamedKeys.Managers.PlanetManager)))
+            .As<IPlanetManager>()
+            .InstancePerLifetimeScope();
+
+        builder.RegisterType<PlanetEntityManager>()
+            .Named<IPlanetEntityManager>(NamedKeys.Managers.PlanetEntityManager)
+            .InstancePerLifetimeScope();
+
+        builder.Register((c, _) => new CachedPlanetEntityManager(
+                c.Resolve<ICacheManager>(),
+                c.ResolveNamed<IPlanetEntityManager>(NamedKeys.Managers.PlanetEntityManager)))
+            .As<IPlanetEntityManager>()
+            .InstancePerLifetimeScope();
+
         builder.RegisterType<FaunaManager>()
             .Named<IFaunaManager>(NamedKeys.Managers.FaunaManager)
             .InstancePerLifetimeScope();
@@ -59,16 +79,6 @@ public class ManagerModule : Module
                 c.Resolve<ICacheManager>(),
                 c.ResolveNamed<IMultiToolManager>(NamedKeys.Managers.MultiToolManager)))
             .As<IMultiToolManager>()
-            .InstancePerLifetimeScope();
-
-        builder.RegisterType<PlanetManager>()
-            .Named<IPlanetManager>(NamedKeys.Managers.PlanetManager)
-            .InstancePerLifetimeScope();
-
-        builder.Register((c, _) => new CachedPlanetManager(
-                c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IPlanetManager>(NamedKeys.Managers.PlanetManager)))
-            .As<IPlanetManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<PlayerBaseManager>()

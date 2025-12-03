@@ -1,6 +1,6 @@
-﻿using AGT.GalacticArchives.Core.Models.AppSettings;
+﻿namespace AGT.GalacticArchives.Core.Models.Application;
 
-namespace AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.AppSettings;
 
 public class ApplicationSettings
 {

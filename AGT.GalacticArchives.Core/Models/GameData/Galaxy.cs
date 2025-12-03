@@ -1,9 +1,9 @@
-﻿using System.Reflection;
+﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+
+using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
 
-namespace AGT.GalacticArchives.Core.Models.GameData;
-
-public class Galaxy : GameData
+public class Galaxy : GameDataEntity
 {
     public override Guid EntityId => GalaxyId;
 
@@ -20,7 +20,7 @@ public class Galaxy : GameData
     public HashSet<Region> Regions { get; set; } = [];
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {

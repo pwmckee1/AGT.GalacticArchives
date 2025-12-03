@@ -1,8 +1,8 @@
-﻿using System.Text.Json;
+﻿namespace AGT.GalacticArchives.Core.Attributes;
+
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using AGT.GalacticArchives.Core.Extensions;
-
-namespace AGT.GalacticArchives.Core.Attributes;
 
 public class DisplayAttributeEnumConverter : JsonConverterFactory
 {

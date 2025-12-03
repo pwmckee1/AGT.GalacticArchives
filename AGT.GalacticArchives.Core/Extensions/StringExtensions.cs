@@ -1,7 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using AGT.GalacticArchives.Globalization;
+﻿namespace AGT.GalacticArchives.Core.Extensions;
 
-namespace AGT.GalacticArchives.Core.Extensions;
+using System.Text.RegularExpressions;
+using AGT.GalacticArchives.Globalization;
 
 public static partial class StringExtensions
 {

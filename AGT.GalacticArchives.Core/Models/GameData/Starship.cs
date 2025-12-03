@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.GameData;
-
-public class Starship : GameData
+public class Starship : GameDataEntity
 {
     public override Guid EntityId => StarshipId;
 
@@ -108,7 +108,7 @@ public class Starship : GameData
     public bool? FreighterCostEvaluation { get; set; }
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {

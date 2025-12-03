@@ -1,9 +1,8 @@
-using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
-using Google.Cloud.Firestore;
+﻿using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 
-namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
+namespace AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 
-public interface IGameDataManager<T> where T : IGameData
+public interface IFirestoreManager
 {
     Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName);
 
@@ -13,7 +12,7 @@ public interface IGameDataManager<T> where T : IGameData
 
     Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName);
 
-    Task<T> UpsertAsync(T entity, string collectionName);
+    Task<IGameData> UpsertAsync(IGameData entity, string collectionName);
 
     Task DeleteAsync(Guid entityId, string collectionName);
 }

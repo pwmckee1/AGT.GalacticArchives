@@ -1,10 +1,10 @@
-﻿using System.Reflection;
+﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+
+using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Extensions;
 
-namespace AGT.GalacticArchives.Core.Models.GameData;
-
-public class StarSystem : GameData
+public class StarSystem : GameDataEntity
 {
     private string? _galacticCoordinates;
 
@@ -172,7 +172,7 @@ public class StarSystem : GameData
     public HashSet<Planet> Planets { get; set; } = [];
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {

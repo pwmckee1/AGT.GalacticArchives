@@ -4,6 +4,8 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/../StyleCop.ruleset</CodeAnalysisRuleSet>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,6 +23,12 @@
 
     <ItemGroup>
         <ProjectReference Include="..\AGT.GalacticArchives.Globalization\AGT.GalacticArchives.Globalization.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)/../stylecop.json">
+            <Link>stylecop.json</Link>
+        </AdditionalFiles>
     </ItemGroup>
 
 </Project>

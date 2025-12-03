@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IGalaxyManager : IGameDataManager<Galaxy>
+public interface IGalaxyManager
 {
     Task<HashSet<Galaxy>> GetGalaxiesAsync();
 

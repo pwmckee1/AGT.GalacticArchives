@@ -2,8 +2,8 @@
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Application.Exceptions;
 using AGT.GalacticArchives.Core.Models.AppSettings;
-using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Extensions;
+using AGT.GalacticArchives.Globalization;
 using Microsoft.AspNetCore.Diagnostics;
 using NLog;
 using LogLevel = NLog.LogLevel;

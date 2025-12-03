@@ -1,10 +1,10 @@
-﻿using System.ComponentModel;
+﻿namespace AGT.GalacticArchives.Core.Extensions;
+
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using AGT.GalacticArchives.Core.Attributes;
 using CsvHelper.Configuration.Attributes;
-
-namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class AttributeExtensions
 {

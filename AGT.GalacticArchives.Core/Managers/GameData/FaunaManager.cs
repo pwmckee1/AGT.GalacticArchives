@@ -1,22 +1,30 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class FaunaManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<Fauna>(firestoreDb, mapper), IFaunaManager
+public class FaunaManager(
+    IFirestoreManager firestoreManager,
+    IMapper mapper,
+    IPlanetEntityManager planetEntityManager) : IFaunaManager
 {
+    private const string Collection = DatabaseConstants.FaunaCollection;
+
     public async Task<Fauna?> GetFaunaByIdAsync(Guid faunaId)
     {
-        var snapshot = await GetByIdAsync(faunaId, DatabaseConstants.FaunaCollection);
+        var faunaDoc = await firestoreManager.GetByIdAsync(faunaId, Collection);
+        var fauna = faunaDoc != null ? mapper.Map<Fauna>(faunaDoc) : null;
 
-        var fauna = Mapper.Map<Fauna>(snapshot);
+        if (fauna == null)
+        {
+            return null;
+        }
 
-        fauna.Planet = await GetPlanetWithHierarchyAsync(fauna.PlanetId);
+        fauna.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId);
 
         return fauna;
     }
@@ -32,14 +40,16 @@ public class FaunaManager(FirestoreDb firestoreDb, IMapper mapper)
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.FaunaCollection)
-                : GetByNameAsync(request.Name!, DatabaseConstants.FaunaCollection);
+            var faunaDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var faunaSet = Mapper.Map<HashSet<Fauna>>(snapshots);
-            foreach (var fauna in faunaSet) fauna.Planet = await GetPlanetWithHierarchyAsync(fauna.PlanetId);
+            var faunae = mapper.Map<HashSet<Fauna>>(faunaDocs);
 
-            return faunaSet;
+            foreach (var fauna in faunae)
+            {
+                fauna.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId);
+            }
         }
 
         return [];
@@ -47,11 +57,13 @@ public class FaunaManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<Fauna> UpsertFaunaAsync(Fauna fauna)
     {
-        return await UpsertAsync(fauna, DatabaseConstants.FaunaCollection);
+        var updatedFauna = (Fauna)await firestoreManager.UpsertAsync(fauna, Collection);
+        updatedFauna.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId);
+        return updatedFauna;
     }
 
     public async Task DeleteFaunaAsync(Guid faunaId)
     {
-        await DeleteAsync(faunaId, DatabaseConstants.FaunaCollection);
+        await firestoreManager.DeleteAsync(faunaId, Collection);
     }
 }

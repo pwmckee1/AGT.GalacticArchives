@@ -1,47 +1,55 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class PointOfInterestManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<PointOfInterest>(firestoreDb, mapper), IPointOfInterestManager
+public class PointOfInterestManager(
+    IFirestoreManager firestoreManager,
+    IMapper mapper,
+    IPlanetEntityManager planetEntityManager) : IPointOfInterestManager
 {
+    private const string Collection = DatabaseConstants.PointOfInterestCollection;
+
     public async Task<PointOfInterest?> GetPointOfInterestByIdAsync(Guid pointOfInterestId)
     {
-        var snapshot = await GetByIdAsync(pointOfInterestId, DatabaseConstants.PointOfInterestCollection);
+        var pointOfInterestDoc = await firestoreManager.GetByIdAsync(pointOfInterestId, Collection);
+        var pointOfInterest = pointOfInterestDoc != null ? mapper.Map<PointOfInterest>(pointOfInterestDoc) : null;
 
-        var pointOfInterest = Mapper.Map<PointOfInterest>(snapshot);
+        if (pointOfInterest == null)
+        {
+            return null;
+        }
 
-        pointOfInterest.Planet = await GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+        pointOfInterest.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
 
         return pointOfInterest;
     }
 
     public async Task<HashSet<PointOfInterest>> GetPointOfInterestsAsync(PointOfInterestRequest request)
     {
-        if (request.PointOfInterestId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var pointOfInterest = await GetPointOfInterestByIdAsync(request.PointOfInterestId!.Value);
+            var pointOfInterest = await GetPointOfInterestByIdAsync(request.EntityId!.Value);
 
             return pointOfInterest != null ? [pointOfInterest] : [];
         }
 
-        if (!string.IsNullOrEmpty(request.PointOfInterestName))
+        if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? GetByNameAsync(request.PointOfInterestName!, request.ParentId!.Value,
-                    DatabaseConstants.PointOfInterestCollection)
-                : GetByNameAsync(request.PointOfInterestName!, DatabaseConstants.PointOfInterestCollection);
+            var pointOfInterestDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var pointOfInterestSet = Mapper.Map<HashSet<PointOfInterest>>(snapshots);
-            foreach (var pointOfInterest in pointOfInterestSet)
-                pointOfInterest.Planet = await GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+            var pointOfInterests = mapper.Map<HashSet<PointOfInterest>>(pointOfInterestDocs);
 
-            return pointOfInterestSet;
+            foreach (var pointOfInterest in pointOfInterests)
+            {
+                pointOfInterest.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+            }
         }
 
         return [];
@@ -49,11 +57,13 @@ public class PointOfInterestManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest pointOfInterest)
     {
-        return await UpsertAsync(pointOfInterest, DatabaseConstants.PointOfInterestCollection);
+        var updatedPointOfInterest = (PointOfInterest)await firestoreManager.UpsertAsync(pointOfInterest, Collection);
+        updatedPointOfInterest.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId);
+        return updatedPointOfInterest;
     }
 
     public async Task DeletePointOfInterestAsync(Guid pointOfInterestId)
     {
-        await DeleteAsync(pointOfInterestId, DatabaseConstants.PointOfInterestCollection);
+        await firestoreManager.DeleteAsync(pointOfInterestId, Collection);
     }
 }

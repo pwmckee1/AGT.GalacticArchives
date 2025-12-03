@@ -1,22 +1,30 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<MultiTool>(firestoreDb, mapper), IMultiToolManager
+public class MultiToolManager(
+    IFirestoreManager firestoreManager,
+    IMapper mapper,
+    IPlanetEntityManager planetEntityManager) : IMultiToolManager
 {
+    private const string Collection = DatabaseConstants.MultiToolCollection;
+
     public async Task<MultiTool?> GetMultiToolByIdAsync(Guid multiToolId)
     {
-        var snapshot = await GetByIdAsync(multiToolId, DatabaseConstants.MultiToolCollection);
+        var multiToolDoc = await firestoreManager.GetByIdAsync(multiToolId, Collection);
+        var multiTool = multiToolDoc != null ? mapper.Map<MultiTool>(multiToolDoc) : null;
 
-        var multiTool = Mapper.Map<MultiTool>(snapshot);
+        if (multiTool == null)
+        {
+            return null;
+        }
 
-        multiTool.Planet = await GetPlanetWithHierarchyAsync(multiTool.PlanetId!.Value);
+        await SetMultiToolHierarchies(multiTool);
 
         return multiTool;
     }
@@ -26,23 +34,22 @@ public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper)
         if (request.EntityId.HasValue)
         {
             var multiTool = await GetMultiToolByIdAsync(request.EntityId!.Value);
+
             return multiTool != null ? [multiTool] : [];
         }
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? await GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.MultiToolCollection)
-                : await GetByNameAsync(request.Name!, DatabaseConstants.MultiToolCollection);
+            var multiToolDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var multiToolSet = Mapper.Map<HashSet<MultiTool>>(snapshots);
-            foreach (var multiTool in multiToolSet)
-                if (multiTool.PlanetId.HasValue)
-                    multiTool.Planet = await GetPlanetWithHierarchyAsync(multiTool.PlanetId!.Value);
-                else
-                    multiTool.StarSystem = await GetStarSystemWithHierarchyAsync(multiTool.StarSystemId);
+            var multiTools = mapper.Map<HashSet<MultiTool>>(multiToolDocs);
 
-            return multiToolSet;
+            foreach (var multiTool in multiTools)
+            {
+                await SetMultiToolHierarchies(multiTool);
+            }
         }
 
         return [];
@@ -50,11 +57,27 @@ public class MultiToolManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<MultiTool> UpsertMultiToolAsync(MultiTool multiTool)
     {
-        return await UpsertAsync(multiTool, DatabaseConstants.MultiToolCollection);
+        var updatedMultiTool = (MultiTool)await firestoreManager.UpsertAsync(multiTool, Collection);
+
+        await SetMultiToolHierarchies(updatedMultiTool);
+
+        return updatedMultiTool;
     }
 
     public async Task DeleteMultiToolAsync(Guid multiToolId)
     {
-        await DeleteAsync(multiToolId, DatabaseConstants.MultiToolCollection);
+        await firestoreManager.DeleteAsync(multiToolId, Collection);
+    }
+
+    private async Task SetMultiToolHierarchies(MultiTool multiTool)
+    {
+        if (multiTool.PlanetId.HasValue)
+        {
+            multiTool.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(multiTool.ParentId);
+        }
+        else
+        {
+            multiTool.StarSystem = await planetEntityManager.GetStarSystemWithHierarchyAsync(multiTool.ParentId);
+        }
     }
 }

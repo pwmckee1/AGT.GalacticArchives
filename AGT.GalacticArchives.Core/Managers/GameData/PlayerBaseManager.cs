@@ -1,46 +1,55 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class PlayerBaseManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<PlayerBase>(firestoreDb, mapper), IPlayerBaseManager
+public class PlayerBaseManager(
+    IFirestoreManager firestoreManager,
+    IMapper mapper,
+    IPlanetEntityManager planetEntityManager) : IPlayerBaseManager
 {
+    private const string Collection = DatabaseConstants.PlayerBaseCollection;
+
     public async Task<PlayerBase?> GetPlayerBaseByIdAsync(Guid playerBaseId)
     {
-        var snapshot = await GetByIdAsync(playerBaseId, DatabaseConstants.PlayerBaseCollection);
+        var playerBaseDoc = await firestoreManager.GetByIdAsync(playerBaseId, Collection);
+        var playerBase = playerBaseDoc != null ? mapper.Map<PlayerBase>(playerBaseDoc) : null;
 
-        var playerBase = Mapper.Map<PlayerBase>(snapshot);
+        if (playerBase == null)
+        {
+            return null;
+        }
 
-        playerBase.Planet = await GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+        playerBase.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
 
         return playerBase;
     }
 
     public async Task<HashSet<PlayerBase>> GetPlayerBasesAsync(PlayerBaseRequest request)
     {
-        if (request.PlayerBaseId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var playerBase = await GetPlayerBaseByIdAsync(request.PlayerBaseId!.Value);
+            var playerBase = await GetPlayerBaseByIdAsync(request.EntityId!.Value);
 
             return playerBase != null ? [playerBase] : [];
         }
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? await GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.PlayerBaseCollection)
-                : await GetByNameAsync(request.Name!, DatabaseConstants.PlayerBaseCollection);
+            var playerBaseDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var playerBaseSet = Mapper.Map<HashSet<PlayerBase>>(snapshots);
-            foreach (var playerBase in playerBaseSet)
-                playerBase.Planet = await GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+            var playerBases = mapper.Map<HashSet<PlayerBase>>(playerBaseDocs);
 
-            return playerBaseSet;
+            foreach (var playerBase in playerBases)
+            {
+                playerBase.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+            }
         }
 
         return [];
@@ -48,11 +57,13 @@ public class PlayerBaseManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase playerBase)
     {
-        return await UpsertAsync(playerBase, DatabaseConstants.PlayerBaseCollection);
+        var updatedPlayerBase = (PlayerBase)await firestoreManager.UpsertAsync(playerBase, Collection);
+        updatedPlayerBase.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId);
+        return updatedPlayerBase;
     }
 
     public async Task DeletePlayerBaseAsync(Guid playerBaseId)
     {
-        await DeleteAsync(playerBaseId, DatabaseConstants.PlayerBaseCollection);
+        await firestoreManager.DeleteAsync(playerBaseId, Collection);
     }
 }

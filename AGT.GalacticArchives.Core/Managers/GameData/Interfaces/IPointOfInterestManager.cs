@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IPointOfInterestManager : IGameDataManager<PointOfInterest>
+public interface IPointOfInterestManager
 {
     Task<PointOfInterest?> GetPointOfInterestByIdAsync(Guid pointOfInterestId);
 

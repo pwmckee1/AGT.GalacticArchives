@@ -7,6 +7,8 @@
         <RootNamespace>AGT.GalacticArchives</RootNamespace>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <UserSecretsId>63610807-7b92-4765-bbc3-5adda6b35b7d</UserSecretsId>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/../StyleCop.ruleset</CodeAnalysisRuleSet>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -35,6 +37,12 @@
 
     <ItemGroup>
         <Compile Remove="Controllers\TestController.cs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)/../stylecop.json">
+            <Link>stylecop.json</Link>
+        </AdditionalFiles>
     </ItemGroup>
 
 </Project>

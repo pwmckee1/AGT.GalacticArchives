@@ -2,5 +2,5 @@
 
 public interface ICachedGameDataManager
 {
-    Task ClearCacheAsync(Guid entityId, string collectionName);
+    Task ClearCacheAsync(Guid entityId);
 }

@@ -1,6 +1,6 @@
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class MultiToolRequest : RequestStarSystemEntity, RequestPlanetEntity
+public class MultiToolRequest : RequestStarSystemEntity
 {
     public string? Location { get; set; }
 

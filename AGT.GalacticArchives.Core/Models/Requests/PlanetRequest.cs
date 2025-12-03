@@ -1,20 +1,18 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class PlanetRequest : GameDataRequest
+public class PlanetRequest : RequestStarSystemEntity
 {
-    public Guid? PlanetId { get; set; }
+    public HashSet<FaunaRequest> Fauna { get; set; } = [];
 
-    public string? Name { get; set; }
+    public HashSet<MultiToolRequest> MultiTools { get; set; } = [];
 
-    public Guid? StarSystemId { get; set; }
+    public HashSet<PlayerBaseRequest> PlayerBases { get; set; } = [];
 
-    public StarSystem? StarSystem { get; set; }
+    public HashSet<PointOfInterestRequest> PointsOfInterest { get; set; } = [];
 
-    public HashSet<Fauna> Fauna { get; set; } = [];
+    public HashSet<SettlementRequest> Settlements { get; set; } = [];
 
-    public HashSet<Starship> Starships { get; set; } = [];
+    public HashSet<StarshipRequest> Starships { get; set; } = [];
 
     public string? PlanetNameAllPlatforms { get; set; }
 

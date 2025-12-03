@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Caching.Memory;
+﻿namespace AGT.GalacticArchives.Core.Managers.Caching;
 
-namespace AGT.GalacticArchives.Core.Managers.Caching;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Memory;
 
 public class InMemoryDistributedCacheAdapter : IDistributedCache
 {

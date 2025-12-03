@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Caching.Distributed;
+﻿namespace AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 
-namespace AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
+using Microsoft.Extensions.Caching.Distributed;
 
 public interface ICacheManager
 {

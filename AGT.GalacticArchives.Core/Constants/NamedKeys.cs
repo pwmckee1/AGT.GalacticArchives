@@ -22,6 +22,7 @@ public static class NamedKeys
         public const string GalaxyManager = nameof(GalaxyManager);
         public const string GameDataManager = nameof(GameDataManager);
         public const string MultiToolManager = nameof(MultiToolManager);
+        public const string PlanetEntityManager = nameof(PlanetEntityManager);
         public const string PlanetManager = nameof(PlanetManager);
         public const string PlayerBaseManager = nameof(PlayerBaseManager);
         public const string PointOfInterestManager = nameof(PointOfInterestManager);

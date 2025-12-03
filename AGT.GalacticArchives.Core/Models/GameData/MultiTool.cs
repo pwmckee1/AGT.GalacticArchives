@@ -1,15 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.GameData;
-
-public class MultiTool : GameData
+public class MultiTool : GameDataEntity
 {
     public override Guid EntityId => MultiToolId;
 
-    public override Guid ParentId => PlanetId ?? StarSystemId;
+    public override Guid ParentId => PlanetId ?? StarSystemId!.Value;
 
     public override string CollectionName => DatabaseConstants.MultiToolCollection;
 
@@ -21,7 +21,7 @@ public class MultiTool : GameData
     [Display(ResourceType = typeof(MultiToolResource), Description = nameof(MultiToolResource.Name))]
     public override required string Name { get; set; }
 
-    public required Guid StarSystemId { get; set; }
+    public Guid? StarSystemId { get; set; }
 
     public StarSystem? StarSystem { get; set; }
 
@@ -86,7 +86,7 @@ public class MultiTool : GameData
     public string? ResearchTeam { get; set; }
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {

@@ -1,9 +1,9 @@
-﻿using System.Reflection;
+﻿namespace AGT.GalacticArchives.Core.Extensions;
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using AGT.GalacticArchives.Globalization;
 using Newtonsoft.Json;
-
-namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class DictionaryExtensions
 {

@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 
-public abstract class GameData : IGameData
+public abstract class GameDataEntity : IGameData
 {
     public abstract Guid EntityId { get; }
 
@@ -18,7 +18,7 @@ public abstract class GameData : IGameData
     public string NormalizedName => Name.ToUpperInvariant();
 
     public virtual Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {

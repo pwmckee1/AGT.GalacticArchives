@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IStarSystemManager : IGameDataManager<StarSystem>
+public interface IStarSystemManager
 {
     Task<StarSystem?> GetStarSystemByIdAsync(Guid starSystemId);
 

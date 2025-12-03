@@ -1,20 +1,10 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class StarshipRequest : GameDataRequest
+public class StarshipRequest : RequestStarSystemEntity
 {
-    public Guid? StarshipId { get; set; }
-
-    public string? Name { get; set; }
-
-    public Guid? StarSystemId { get; set; }
-
-    public StarSystem? StarSystem { get; set; }
-
     public Guid? PlanetId { get; set; }
 
-    public Planet? Planet { get; set; }
+    public PlanetRequest? Planet { get; set; }
 
     public string? Location { get; set; }
 

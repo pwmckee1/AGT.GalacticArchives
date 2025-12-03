@@ -1,12 +1,12 @@
-﻿using System.Collections;
+﻿namespace AGT.GalacticArchives.Core.Serialization;
+
+using System.Collections;
 using System.Reflection;
 using System.Text;
 using AGT.GalacticArchives.Core.Constants;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-
-namespace AGT.GalacticArchives.Core.Serialization;
 
 public static class Json
 {

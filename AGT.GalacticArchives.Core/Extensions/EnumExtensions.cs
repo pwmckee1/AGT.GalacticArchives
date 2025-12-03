@@ -1,7 +1,7 @@
-﻿using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Globalization;
+﻿namespace AGT.GalacticArchives.Core.Extensions;
 
-namespace AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Globalization;
 
 public static class EnumExtensions
 {

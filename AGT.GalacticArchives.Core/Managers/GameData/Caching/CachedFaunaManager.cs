@@ -12,7 +12,7 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
     public async Task<Fauna?> GetFaunaByIdAsync(Guid faunaId)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetFaunaByIdAsync)}:{faunaId}",
+            $"{nameof(Fauna)}:{faunaId}",
             async () => await target.GetFaunaByIdAsync(faunaId),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -21,7 +21,7 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
     public async Task<HashSet<Fauna>> GetFaunaAsync(FaunaRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetFaunaAsync)}:{request.EntityId}:{request.Name}:{request.ParentId}",
+            $"{nameof(Fauna)}:{request.EntityId}",
             async () => await target.GetFaunaAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -29,71 +29,19 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
 
     public async Task<Fauna> UpsertFaunaAsync(Fauna fauna)
     {
-        var result = await UpsertAsync(fauna, DatabaseConstants.FaunaCollection);
+        var result = await target.UpsertFaunaAsync(fauna);
+        await cacheManager.SetAsync($"{nameof(Fauna)}:{fauna.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
-    }
-
-    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
-    {
-        var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetAllAsync)}:{collectionName}",
-            async () => await target.GetAllAsync(collectionName),
-            BusinessRuleConstants.DayInMinutes);
-        return result!;
-    }
-
-    public async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
-    {
-        var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}",
-            async () => await target.GetByIdAsync(entityId, collectionName),
-            BusinessRuleConstants.DayInMinutes);
-        return result!;
-    }
-
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
-        string entityName,
-        Guid parentId,
-        string collectionName)
-    {
-        var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetByNameAsync)}:{entityName}:{parentId}:{collectionName}",
-            async () => await target.GetByNameAsync(entityName, parentId, collectionName),
-            BusinessRuleConstants.DayInMinutes);
-        return result!;
-    }
-
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
-    {
-        var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{nameof(GetByNameAsync)}:{entityName}:{collectionName}",
-            async () => await target.GetByNameAsync(entityName, collectionName),
-            BusinessRuleConstants.DayInMinutes);
-        return result!;
-    }
-
-    public async Task<Fauna> UpsertAsync(Fauna entity, string collectionName)
-    {
-        var response = await target.UpsertAsync(entity, collectionName);
-        await ClearCacheAsync(entity.EntityId, collectionName);
-        return response;
     }
 
     public async Task DeleteFaunaAsync(Guid faunaId)
     {
-        await DeleteAsync(faunaId, DatabaseConstants.FaunaCollection);
+        await target.DeleteFaunaAsync(faunaId);
+        await ClearCacheAsync(faunaId);
     }
 
-    public async Task DeleteAsync(Guid entityId, string collectionName)
+    public async Task ClearCacheAsync(Guid entityId)
     {
-        await target.DeleteAsync(entityId, collectionName);
-        await ClearCacheAsync(entityId, collectionName);
-    }
-
-    public async Task ClearCacheAsync(Guid entityId, string collectionName)
-    {
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Fauna)}:{nameof(GetFaunaByIdAsync)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync(
-            $"{nameof(Fauna)}:{nameof(GetByIdAsync)}:{entityId}:{collectionName}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Fauna)}:{entityId}");
     }
 }

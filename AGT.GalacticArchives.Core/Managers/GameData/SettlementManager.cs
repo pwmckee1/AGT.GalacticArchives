@@ -1,46 +1,55 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class SettlementManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<Settlement>(firestoreDb, mapper), ISettlementManager
+public class SettlementManager(
+    IFirestoreManager firestoreManager,
+    IMapper mapper,
+    IPlanetEntityManager planetEntityManager) : ISettlementManager
 {
+    private const string Collection = DatabaseConstants.SettlementCollection;
+
     public async Task<Settlement?> GetSettlementByIdAsync(Guid settlementId)
     {
-        var snapshot = await GetByIdAsync(settlementId, DatabaseConstants.SettlementCollection);
+        var settlementDoc = await firestoreManager.GetByIdAsync(settlementId, Collection);
+        var settlement = settlementDoc != null ? mapper.Map<Settlement>(settlementDoc) : null;
 
-        var settlement = Mapper.Map<Settlement>(snapshot);
+        if (settlement == null)
+        {
+            return null;
+        }
 
-        settlement.Planet = await GetPlanetWithHierarchyAsync(settlement.PlanetId);
+        settlement.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
 
         return settlement;
     }
 
     public async Task<HashSet<Settlement>> GetSettlementsAsync(SettlementRequest request)
     {
-        if (request.SettlementId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var settlement = await GetSettlementByIdAsync(request.SettlementId!.Value);
+            var settlement = await GetSettlementByIdAsync(request.EntityId!.Value);
 
             return settlement != null ? [settlement] : [];
         }
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.SettlementCollection)
-                : GetByNameAsync(request.Name!, DatabaseConstants.SettlementCollection);
+            var settlementDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var settlementSet = Mapper.Map<HashSet<Settlement>>(snapshots);
-            foreach (var settlement in settlementSet)
-                settlement.Planet = await GetPlanetWithHierarchyAsync(settlement.PlanetId);
+            var settlements = mapper.Map<HashSet<Settlement>>(settlementDocs);
 
-            return settlementSet;
+            foreach (var settlement in settlements)
+            {
+                settlement.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+            }
         }
 
         return [];
@@ -48,11 +57,13 @@ public class SettlementManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<Settlement> UpsertSettlementAsync(Settlement settlement)
     {
-        return await UpsertAsync(settlement, DatabaseConstants.SettlementCollection);
+        var updatedSettlement = (Settlement)await firestoreManager.UpsertAsync(settlement, Collection);
+        updatedSettlement.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(settlement.PlanetId);
+        return updatedSettlement;
     }
 
     public async Task DeleteSettlementAsync(Guid settlementId)
     {
-        await DeleteAsync(settlementId, DatabaseConstants.SettlementCollection);
+        await firestoreManager.DeleteAsync(settlementId, Collection);
     }
 }

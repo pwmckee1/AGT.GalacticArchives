@@ -1,25 +1,20 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class GalaxyManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<Galaxy>(firestoreDb, mapper), IGalaxyManager
+public class GalaxyManager(IFirestoreManager firestoreManager, IMapper mapper) : IGalaxyManager
 {
+    private const string Collection = DatabaseConstants.GalaxyCollection;
+
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync()
     {
-        var data = await GetAllAsync(DatabaseConstants.GalaxyCollection);
-        return Mapper.Map<HashSet<Galaxy>>(data);
-    }
-
-    public async Task<Galaxy?> GetGalaxyByIdAsync(Guid galaxyId)
-    {
-        var snapshot = await GetByIdAsync(galaxyId, DatabaseConstants.GalaxyCollection);
-        return snapshot != null ? Mapper.Map<Galaxy>(snapshot.ToDictionary()) : null;
+        var galaxyDocs = await firestoreManager.GetAllAsync(Collection);
+        return mapper.Map<HashSet<Galaxy>>(galaxyDocs);
     }
 
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync(GalaxyRequest request)
@@ -32,21 +27,27 @@ public class GalaxyManager(FirestoreDb firestoreDb, IMapper mapper)
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = await GetByNameAsync(request.Name, DatabaseConstants.GalaxyCollection);
+            var records = firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            return Mapper.Map<HashSet<Galaxy>>(snapshots);
+            return mapper.Map<HashSet<Galaxy>>(records);
         }
 
         return [];
     }
 
+    public async Task<Galaxy?> GetGalaxyByIdAsync(Guid galaxyId)
+    {
+        var galaxyDoc = await firestoreManager.GetByIdAsync(galaxyId, Collection);
+        return galaxyDoc != null ? mapper.Map<Galaxy>(galaxyDoc) : null;
+    }
+
     public async Task<Galaxy> UpsertGalaxyAsync(Galaxy galaxy)
     {
-        return await UpsertAsync(galaxy, DatabaseConstants.GalaxyCollection);
+        return (Galaxy)await firestoreManager.UpsertAsync(galaxy, Collection);
     }
 
     public async Task DeleteGalaxyAsync(Guid galaxyId)
     {
-        await DeleteAsync(galaxyId, DatabaseConstants.GalaxyCollection);
+        await firestoreManager.DeleteAsync(galaxyId, Collection);
     }
 }

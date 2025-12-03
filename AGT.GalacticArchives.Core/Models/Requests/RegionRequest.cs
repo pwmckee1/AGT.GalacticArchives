@@ -1,15 +1,7 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class RegionRequest : GameDataRequest
+public class RegionRequest : RequestGalaxyEntity
 {
-    public Guid? RegionId { get; set; }
-
-    public string? Name { get; set; }
-
-    public Guid? GalaxyId { get; set; }
-
     public string? CivilizedBy { get; set; }
 
     public string? Coordinates { get; set; }
@@ -77,6 +69,4 @@ public class RegionRequest : GameDataRequest
     public string? Version { get; set; }
 
     public HashSet<StarSystemRequest> Systems { get; set; } = [];
-
-    public GalaxyRequest? Galaxy { get; set; }
 }

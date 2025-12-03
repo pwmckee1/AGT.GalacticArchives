@@ -9,7 +9,7 @@ public static class DatabaseConstants
     public const string FaunaCollection = "Fauna";
     public const string MultiToolCollection = "MultiTools";
     public const string PlayerBaseCollection = "PlayerBases";
+    public const string PointOfInterestCollection = "PointsOfInterest";
     public const string SettlementCollection = "Settlements";
     public const string StarshipCollection = "Starships";
-    public const string PointOfInterestCollection = "PointsOfInterest";
 }

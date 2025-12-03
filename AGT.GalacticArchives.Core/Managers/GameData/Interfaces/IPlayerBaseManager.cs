@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IPlayerBaseManager : IGameDataManager<PlayerBase>
+public interface IPlayerBaseManager
 {
     Task<PlayerBase?> GetPlayerBaseByIdAsync(Guid playerBaseId);
 

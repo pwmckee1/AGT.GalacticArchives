@@ -1,8 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿namespace AGT.GalacticArchives.Core.Managers.Caching;
+
+using System.Text.RegularExpressions;
 using AGT.GalacticArchives.Core.Constants;
 using Microsoft.Extensions.Caching.Distributed;
-
-namespace AGT.GalacticArchives.Core.Managers.Caching;
 
 public class InMemoryCacheManager : CacheManagerBase
 {

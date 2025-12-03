@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IMultiToolManager : IGameDataManager<MultiTool>
+public interface IMultiToolManager
 {
     Task<MultiTool?> GetMultiToolByIdAsync(Guid multiToolId);
 

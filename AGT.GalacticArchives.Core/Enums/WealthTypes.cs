@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Globalization;
+﻿namespace AGT.GalacticArchives.Core.Enums;
 
-namespace AGT.GalacticArchives.Core.Enums;
+using System.ComponentModel.DataAnnotations;
+using AGT.GalacticArchives.Globalization;
 
 public enum WealthTypes
 {

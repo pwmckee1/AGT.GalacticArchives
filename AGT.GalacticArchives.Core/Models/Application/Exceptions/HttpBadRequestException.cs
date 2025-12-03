@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿namespace AGT.GalacticArchives.Core.Models.Application.Exceptions;
 
-namespace AGT.GalacticArchives.Core.Models.Application.Exceptions;
+using Microsoft.AspNetCore.Http;
 
 public class HttpBadRequestException : Exception
 {

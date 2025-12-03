@@ -1,8 +1,8 @@
-﻿using AGT.GalacticArchives.Core.Extensions;
+﻿namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;
+
+using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AutoMapper;
-
-namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;
 
 public class GameDataTypeConverter :
     ITypeConverter<Dictionary<string, object>, Galaxy>,

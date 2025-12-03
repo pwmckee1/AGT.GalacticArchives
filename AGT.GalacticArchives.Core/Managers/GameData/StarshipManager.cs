@@ -1,48 +1,55 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class StarshipManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<Starship>(firestoreDb, mapper), IStarshipManager
+public class StarshipManager(
+    IFirestoreManager firestoreManager,
+    IMapper mapper,
+    IPlanetEntityManager planetEntityManager) : IStarshipManager
 {
+    private const string Collection = DatabaseConstants.StarshipCollection;
+
     public async Task<Starship?> GetStarshipByIdAsync(Guid starshipId)
     {
-        var snapshot = await GetByIdAsync(starshipId, DatabaseConstants.StarshipCollection);
+        var starshipDoc = await firestoreManager.GetByIdAsync(starshipId, Collection);
+        var starship = starshipDoc != null ? mapper.Map<Starship>(starshipDoc) : null;
 
-        var starship = Mapper.Map<Starship>(snapshot);
+        if (starship == null)
+        {
+            return null;
+        }
 
-        starship.Planet = await GetPlanetWithHierarchyAsync(starship.PlanetId!.Value);
+        await SetStarshipHierarchies(starship);
 
         return starship;
     }
 
     public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request)
     {
-        if (request.StarshipId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var starship = await GetStarshipByIdAsync(request.StarshipId!.Value);
+            var starship = await GetStarshipByIdAsync(request.EntityId!.Value);
+
             return starship != null ? [starship] : [];
         }
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? await GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.StarshipCollection)
-                : await GetByNameAsync(request.Name!, DatabaseConstants.StarshipCollection);
+            var starshipDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var starshipSet = Mapper.Map<HashSet<Starship>>(snapshots);
-            foreach (var starship in starshipSet)
-                if (starship.PlanetId.HasValue)
-                    starship.Planet = await GetPlanetWithHierarchyAsync(starship.PlanetId!.Value);
-                else
-                    starship.StarSystem = await GetStarSystemWithHierarchyAsync(starship.StarSystemId);
+            var starships = mapper.Map<HashSet<Starship>>(starshipDocs);
 
-            return starshipSet;
+            foreach (var starship in starships)
+            {
+                await SetStarshipHierarchies(starship);
+            }
         }
 
         return [];
@@ -50,13 +57,27 @@ public class StarshipManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<Starship> UpsertStarshipAsync(Starship starship)
     {
-        var starshipData = await UpsertAsync(starship, DatabaseConstants.StarshipCollection);
+        var updatedStarship = (Starship)await firestoreManager.UpsertAsync(starship, Collection);
 
-        return Mapper.Map<Starship>(starshipData);
+        await SetStarshipHierarchies(updatedStarship);
+
+        return updatedStarship;
     }
 
     public async Task DeleteStarshipAsync(Guid starshipId)
     {
-        await DeleteAsync(starshipId, DatabaseConstants.StarshipCollection);
+        await firestoreManager.DeleteAsync(starshipId, Collection);
+    }
+
+    private async Task SetStarshipHierarchies(Starship starship)
+    {
+        if (starship.PlanetId.HasValue)
+        {
+            starship.Planet = await planetEntityManager.GetPlanetWithHierarchyAsync(starship.ParentId);
+        }
+        else
+        {
+            starship.StarSystem = await planetEntityManager.GetStarSystemWithHierarchyAsync(starship.ParentId);
+        }
     }
 }

@@ -1,43 +1,51 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Managers.Database.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
-using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class RegionManager(FirestoreDb firestoreDb, IMapper mapper)
-    : GameDataManager<Region>(firestoreDb, mapper), IRegionManager
+public class RegionManager(IFirestoreManager firestoreManager, IMapper mapper) : IRegionManager
 {
+    private const string Collection = DatabaseConstants.RegionCollection;
+
     public async Task<Region?> GetRegionByIdAsync(Guid regionId)
     {
-        return await GetRegionWithHierarchyAsync(regionId);
+        var galaxyDoc = await firestoreManager.GetByIdAsync(regionId, Collection);
+        var region = galaxyDoc != null ? mapper.Map<Region>(galaxyDoc) : null;
+
+        if (region == null)
+        {
+            return null;
+        }
+
+        await GetRegionHierarchyAsync(region);
+
+        return region;
     }
 
     public async Task<HashSet<Region>> GetRegionsAsync(RegionRequest request)
     {
-        if (request.RegionId.HasValue)
+        if (request.EntityId.HasValue)
         {
-            var region = await GetRegionByIdAsync(request.RegionId!.Value);
+            var region = await GetRegionByIdAsync(request.EntityId!.Value);
             return region != null ? [region] : [];
         }
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var snapshots = request.ParentId.HasValue
-                ? GetByNameAsync(request.Name!, request.ParentId!.Value, DatabaseConstants.RegionCollection)
-                : GetByNameAsync(request.Name!, DatabaseConstants.RegionCollection);
+            var regionDocs = request.ParentId.HasValue
+                ? await firestoreManager.GetByNameAsync(request.Name, request.ParentId!.Value, Collection)
+                : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var regionSet = Mapper.Map<HashSet<Region>>(snapshots);
-            foreach (var region in regionSet)
+            var regions = mapper.Map<HashSet<Region>>(regionDocs);
+
+            foreach (var region in regions)
             {
-                var galaxyData = await GetByIdAsync(region.GalaxyId, DatabaseConstants.GalaxyCollection);
-
-                region.Galaxy = Mapper.Map<Galaxy>(galaxyData);
+                await GetRegionHierarchyAsync(region);
             }
-
-            return regionSet;
         }
 
         return [];
@@ -45,11 +53,20 @@ public class RegionManager(FirestoreDb firestoreDb, IMapper mapper)
 
     public async Task<Region> UpsertRegionAsync(Region region)
     {
-        return await UpsertAsync(region, DatabaseConstants.RegionCollection);
+        return (Region)await firestoreManager.UpsertAsync(region, Collection);
     }
 
     public async Task DeleteRegionAsync(Guid regionId)
     {
-        await DeleteAsync(regionId, DatabaseConstants.RegionCollection);
+        await firestoreManager.DeleteAsync(regionId, Collection);
+    }
+
+    private async Task GetRegionHierarchyAsync(Region region)
+    {
+        var galaxyData = await firestoreManager.GetByIdAsync(
+            region.GalaxyId,
+            DatabaseConstants.GalaxyCollection);
+
+        region.Galaxy = mapper.Map<Galaxy>(galaxyData);
     }
 }

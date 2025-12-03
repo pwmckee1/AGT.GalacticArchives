@@ -1,17 +1,7 @@
-using AGT.GalacticArchives.Core.Models.GameData;
-
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class SettlementRequest : GameDataRequest
+public class SettlementRequest : RequestPlanetEntity
 {
-    public Guid? SettlementId { get; set; }
-
-    public string? Name { get; set; }
-
-    public Guid? PlanetId { get; set; }
-
-    public Planet? Planet { get; set; }
-
     public string? OriginalName { get; set; }
 
     public string? YYFirstCoordinate { get; set; }

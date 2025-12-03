@@ -1,11 +1,11 @@
-﻿using AGT.GalacticArchives.Globalization;
+﻿namespace AGT.GalacticArchives.Core.Models.GameData;
+
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.GameData;
-
-public class PlayerBase : GameData
+public class PlayerBase : GameDataEntity
 {
     public override Guid EntityId => PlayerBaseId;
 
@@ -109,7 +109,7 @@ public class PlayerBase : GameData
     public string? ReleaseVersion { get; set; }
 
     public override Dictionary<string, object?> ToDictionary(
-        GameData? gameData = null,
+        GameDataEntity? gameData = null,
         PropertyInfo[] properties = null!,
         HashSet<string> excludedProperties = null!)
     {
