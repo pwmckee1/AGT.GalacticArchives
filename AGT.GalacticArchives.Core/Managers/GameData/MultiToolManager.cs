@@ -10,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Managers.GameData;
 public class MultiToolManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IStarSystemEntityManager StarSystemEntityManager) : IMultiToolManager
+    IInnerSystemEntityManager innerSystemEntityManager) : IMultiToolManager
 {
     private const string Collection = DatabaseConstants.MultiToolCollection;
 
@@ -73,11 +73,11 @@ public class MultiToolManager(
     {
         if (multiTool.PlanetId.HasValue)
         {
-            multiTool.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(multiTool.ParentId);
+            multiTool.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(multiTool.ParentId);
         }
         else
         {
-            multiTool.StarSystem = await StarSystemEntityManager.GetStarSystemWithHierarchyAsync(multiTool.ParentId);
+            multiTool.StarSystem = await innerSystemEntityManager.GetStarSystemWithHierarchyAsync(multiTool.ParentId);
         }
     }
 }

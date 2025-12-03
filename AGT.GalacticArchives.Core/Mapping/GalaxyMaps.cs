@@ -15,7 +15,7 @@ public class GalaxyMaps : Profile
             .ConvertUsing<GameDataTypeConverter>()
             ;
 
-        CreateMap<GalaxyRequest, GameDataEntity>()
+        CreateMap<GalaxyRequest, Data>()
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.CollectionName, o => o.Ignore())
             .ForMember(d => d.ParentCollectionName, o => o.Ignore())

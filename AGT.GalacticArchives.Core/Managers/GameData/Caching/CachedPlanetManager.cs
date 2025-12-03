@@ -27,10 +27,10 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
         return result!;
     }
 
-    public async Task<Planet> UpsertPlanetAsync(Planet planet)
+    public async Task<Planet> UpsertPlanetAsync(Planet request)
     {
-        var result = await target.UpsertPlanetAsync(planet);
-        await cacheManager.SetAsync($"{nameof(Planet)}:{planet.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertPlanetAsync(request);
+        await cacheManager.SetAsync($"{nameof(Planet)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

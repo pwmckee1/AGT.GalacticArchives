@@ -27,10 +27,10 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
         return result!;
     }
 
-    public async Task<Settlement> UpsertSettlementAsync(Settlement settlement)
+    public async Task<Settlement> UpsertSettlementAsync(Settlement request)
     {
-        var result = await target.UpsertSettlementAsync(settlement);
-        await cacheManager.SetAsync($"{nameof(Settlement)}:{settlement.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertSettlementAsync(request);
+        await cacheManager.SetAsync($"{nameof(Settlement)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

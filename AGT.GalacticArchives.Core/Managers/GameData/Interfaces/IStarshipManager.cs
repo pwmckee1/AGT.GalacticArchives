@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using Starship = AGT.GalacticArchives.Core.Models.GameData.Starship;
 
@@ -8,9 +7,9 @@ public interface IStarshipManager
 {
     Task<Starship?> GetStarshipByIdAsync(Guid starshipId);
 
-    Task<HashSet<Starship>> GetStarshipsAsync(StarshipDatabaseEntityRequest databaseEntityRequest);
+    Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request);
 
-    Task<Starship> UpsertStarshipAsync(Starship starship);
+    Task<Starship> UpsertStarshipAsync(Starship request);
 
     Task DeleteStarshipAsync(Guid starshipId);
 }

@@ -27,10 +27,10 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result!;
     }
 
-    public async Task<Region> UpsertRegionAsync(Region region)
+    public async Task<Region> UpsertRegionAsync(Region request)
     {
-        var result = await target.UpsertRegionAsync(region);
-        await cacheManager.SetAsync($"{nameof(Region)}:{region.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertRegionAsync(request);
+        await cacheManager.SetAsync($"{nameof(Region)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

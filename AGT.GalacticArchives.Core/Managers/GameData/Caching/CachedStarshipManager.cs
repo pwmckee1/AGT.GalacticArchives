@@ -1,7 +1,6 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
-using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using Starship = AGT.GalacticArchives.Core.Models.GameData.Starship;
 
@@ -19,19 +18,19 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result!;
     }
 
-    public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipDatabaseEntityRequest databaseEntityRequest)
+    public async Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request)
     {
         var result = await cacheManager.GetAsync(
-            $"{nameof(Starship)}:{databaseEntityRequest.EntityId}",
-            async () => await target.GetStarshipsAsync(databaseEntityRequest),
+            $"{nameof(Starship)}:{request.EntityId}",
+            async () => await target.GetStarshipsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }
 
-    public async Task<Starship> UpsertStarshipAsync(Starship starship)
+    public async Task<Starship> UpsertStarshipAsync(Starship request)
     {
-        var result = await target.UpsertStarshipAsync(starship);
-        await cacheManager.SetAsync($"{nameof(Starship)}:{starship.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertStarshipAsync(request);
+        await cacheManager.SetAsync($"{nameof(Starship)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

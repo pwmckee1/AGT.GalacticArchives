@@ -5,8 +5,8 @@ using AGT.GalacticArchives.Core.Models.GameData;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Caching;
 
-public class CachedStarSystemEntityManager(ICacheManager cacheManager, IStarSystemEntityManager target)
-    : IStarSystemEntityManager, ICachedGameDataManager
+public class CachedInnerSystemEntityManager(ICacheManager cacheManager, IInnerSystemEntityManager target)
+    : IInnerSystemEntityManager, ICachedGameDataManager
 {
     public async Task<Planet> GetPlanetWithHierarchyAsync(Guid planetId)
     {
@@ -37,6 +37,6 @@ public class CachedStarSystemEntityManager(ICacheManager cacheManager, IStarSyst
 
     public async Task ClearCacheAsync(Guid entityId)
     {
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystemEntityManager)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(InnerSystemEntityManager)}:{entityId}");
     }
 }

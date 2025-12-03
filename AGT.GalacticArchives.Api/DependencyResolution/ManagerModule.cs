@@ -57,14 +57,14 @@ public class ManagerModule : Module
             .As<IPlanetManager>()
             .InstancePerLifetimeScope();
 
-        builder.RegisterType<StarSystemEntityManager>()
-            .Named<IStarSystemEntityManager>(NamedKeys.Managers.StarSystemEntityManager)
+        builder.RegisterType<InnerSystemEntityManager>()
+            .Named<IInnerSystemEntityManager>(NamedKeys.Managers.InnerSystemEntityManager)
             .InstancePerLifetimeScope();
 
-        builder.Register((c, _) => new CachedStarSystemEntityManager(
+        builder.Register((c, _) => new CachedInnerSystemEntityManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IStarSystemEntityManager>(NamedKeys.Managers.StarSystemEntityManager)))
-            .As<IStarSystemEntityManager>()
+                c.ResolveNamed<IInnerSystemEntityManager>(NamedKeys.Managers.InnerSystemEntityManager)))
+            .As<IInnerSystemEntityManager>()
             .InstancePerLifetimeScope();
 
         builder.RegisterType<FaunaManager>()

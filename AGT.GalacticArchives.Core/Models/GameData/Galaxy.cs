@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 
 namespace AGT.GalacticArchives.Core.Models.GameData;
 

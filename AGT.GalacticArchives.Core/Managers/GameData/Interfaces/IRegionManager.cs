@@ -9,7 +9,7 @@ public interface IRegionManager
 
     Task<HashSet<Region>> GetRegionsAsync(RegionRequest request);
 
-    Task<Region> UpsertRegionAsync(Region region);
+    Task<Region> UpsertRegionAsync(Region request);
 
     Task DeleteRegionAsync(Guid regionId);
 }

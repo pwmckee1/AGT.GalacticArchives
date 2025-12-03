@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Models.GameData.Interfaces;
 
-namespace AGT.GalacticArchives.Core.Models.Application;
+namespace AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 
 public abstract class DatabaseEntity : IDatabaseEntity
 {

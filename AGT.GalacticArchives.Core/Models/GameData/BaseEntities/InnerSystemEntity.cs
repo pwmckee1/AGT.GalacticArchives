@@ -1,6 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Models.Application;
-
-namespace AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
+﻿namespace AGT.GalacticArchives.Core.Models.GameData.BaseEntities;
 
 public class InnerSystemEntity : DatabaseEntity
 {

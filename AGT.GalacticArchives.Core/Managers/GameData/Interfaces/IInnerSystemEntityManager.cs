@@ -2,7 +2,7 @@
 
 namespace AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 
-public interface IStarSystemEntityManager
+public interface IInnerSystemEntityManager
 {
     Task<Planet> GetPlanetWithHierarchyAsync(Guid planetId);
 

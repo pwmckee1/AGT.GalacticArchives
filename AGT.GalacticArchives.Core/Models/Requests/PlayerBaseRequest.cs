@@ -1,3 +1,5 @@
+using AGT.GalacticArchives.Core.Models.Requests.BaseRequests;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
 public class PlayerBaseRequest : InnerSystemRequestEntity

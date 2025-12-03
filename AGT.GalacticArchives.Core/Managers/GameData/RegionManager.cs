@@ -51,9 +51,9 @@ public class RegionManager(IFirestoreManager firestoreManager, IMapper mapper) :
         return [];
     }
 
-    public async Task<Region> UpsertRegionAsync(Region region)
+    public async Task<Region> UpsertRegionAsync(Region request)
     {
-        return (Region)await firestoreManager.UpsertAsync(region, Collection);
+        return (Region)await firestoreManager.UpsertAsync(request, Collection);
     }
 
     public async Task DeleteRegionAsync(Guid regionId)

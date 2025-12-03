@@ -9,7 +9,7 @@ public interface IPlanetManager
 
     Task<HashSet<Planet>> GetPlanetsAsync(PlanetRequest request);
 
-    Task<Planet> UpsertPlanetAsync(Planet planet);
+    Task<Planet> UpsertPlanetAsync(Planet request);
 
     Task DeletePlanetAsync(Guid planetId);
 }

@@ -9,7 +9,7 @@ public interface IPlayerBaseManager
 
     Task<HashSet<PlayerBase>> GetPlayerBasesAsync(PlayerBaseRequest request);
 
-    Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase playerBase);
+    Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase request);
 
     Task DeletePlayerBaseAsync(Guid playerBaseId);
 }

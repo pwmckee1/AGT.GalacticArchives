@@ -10,7 +10,7 @@ namespace AGT.GalacticArchives.Core.Managers.GameData;
 public class FaunaManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IStarSystemEntityManager StarSystemEntityManager) : IFaunaManager
+    IInnerSystemEntityManager innerSystemEntityManager) : IFaunaManager
 {
     private const string Collection = DatabaseConstants.FaunaCollection;
 
@@ -24,7 +24,7 @@ public class FaunaManager(
             return null;
         }
 
-        fauna.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId);
+        fauna.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId!.Value);
 
         return fauna;
     }
@@ -48,7 +48,7 @@ public class FaunaManager(
 
             foreach (var fauna in faunae)
             {
-                fauna.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId);
+                fauna.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId!.Value);
             }
         }
 
@@ -58,7 +58,7 @@ public class FaunaManager(
     public async Task<Fauna> UpsertFaunaAsync(Fauna fauna)
     {
         var updatedFauna = (Fauna)await firestoreManager.UpsertAsync(fauna, Collection);
-        updatedFauna.Planet = await StarSystemEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId);
+        updatedFauna.Planet = await innerSystemEntityManager.GetPlanetWithHierarchyAsync(fauna.PlanetId!.Value);
         return updatedFauna;
     }
 

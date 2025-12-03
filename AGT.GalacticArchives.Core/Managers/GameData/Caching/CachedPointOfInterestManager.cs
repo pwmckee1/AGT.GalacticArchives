@@ -27,10 +27,10 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
         return result!;
     }
 
-    public async Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest pointOfInterest)
+    public async Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest request)
     {
-        var result = await target.UpsertPointOfInterestAsync(pointOfInterest);
-        await cacheManager.SetAsync($"{nameof(PointOfInterest)}:{pointOfInterest.EntityId}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertPointOfInterestAsync(request);
+        await cacheManager.SetAsync($"{nameof(PointOfInterest)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 
