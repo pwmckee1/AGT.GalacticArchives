@@ -1,13 +1,9 @@
-﻿// <copyright file="CacheKeyExtensions.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
-namespace AGT.GalacticArchives.Core.Extensions;
-
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+
+namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class CacheKeyExtensions
 {

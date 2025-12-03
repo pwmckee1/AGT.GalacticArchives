@@ -1,26 +1,21 @@
-﻿namespace AGT.GalacticArchives.Core.Managers.Caching;
-
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Caching.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 
-public abstract class CacheManagerBase : ICacheManager
-{
-    protected readonly IDistributedCache DistributedCache;
-    protected ConcurrentDictionary<string, bool> Keys = new();
+namespace AGT.GalacticArchives.Core.Managers.Caching;
 
-    protected CacheManagerBase(IDistributedCache distributedCache)
-    {
-        DistributedCache = distributedCache;
-    }
+public abstract class CacheManagerBase(IDistributedCache distributedCache) : ICacheManager
+{
+    protected readonly IDistributedCache DistributedCache = distributedCache;
+    protected ConcurrentDictionary<string, bool> CacheKeys = new();
 
     public virtual HashSet<string> GetCacheKeys(string? key)
     {
         return string.IsNullOrEmpty(key)
-            ? Keys.Keys.ToHashSet()
-            : Keys.Keys.Where(k => k.Equals(key, StringComparison.InvariantCultureIgnoreCase)).ToHashSet();
+            ? [.. CacheKeys.Keys]
+            : [.. CacheKeys.Keys.Where(k => k.Equals(key, StringComparison.InvariantCultureIgnoreCase))];
     }
 
     // This implements the same as GetAsync<T/> without the T : Class requirement.
@@ -61,7 +56,7 @@ public abstract class CacheManagerBase : ICacheManager
         DistributedCacheEntryOptions cacheOptions)
         where T : class?
     {
-        T? result = default;
+        T? result = null;
 
         byte[]? cachedData = await DistributedCache.GetAsync(key);
         if (cachedData != null)
@@ -82,8 +77,10 @@ public abstract class CacheManagerBase : ICacheManager
     {
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = new TimeSpan(0,
-                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
+            AbsoluteExpirationRelativeToNow = new TimeSpan(
+                0,
+                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes,
+                0),
         };
 
         await SetAsync(key, value, cacheOptions);
@@ -99,7 +96,7 @@ public abstract class CacheManagerBase : ICacheManager
 
         string json = JsonConvert.SerializeObject(value, settings);
         await DistributedCache.SetAsync(key, System.Text.Encoding.UTF8.GetBytes(json), cacheOptions);
-        Keys[key] = true;
+        CacheKeys[key] = true;
     }
 
     public virtual async Task<T?> GetEnumAsync<T>(
@@ -111,8 +108,10 @@ public abstract class CacheManagerBase : ICacheManager
         T? result = default;
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = new TimeSpan(0,
-                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
+            AbsoluteExpirationRelativeToNow = new TimeSpan(
+                0,
+                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes,
+                0),
         };
 
         byte[]? cachedData = await DistributedCache.GetAsync(key);
@@ -140,20 +139,26 @@ public abstract class CacheManagerBase : ICacheManager
     {
         if (string.IsNullOrEmpty(cacheKey))
         {
-            foreach (string key in Keys.Keys) await DistributedCache.RemoveAsync(key);
+            foreach (string key in CacheKeys.Keys)
+            {
+                await DistributedCache.RemoveAsync(key);
+            }
 
-            Keys = new ConcurrentDictionary<string, bool>();
+            CacheKeys = new ConcurrentDictionary<string, bool>();
         }
         else
         {
             await DistributedCache.RemoveAsync(cacheKey);
-            Keys.TryRemove(cacheKey, out _);
+            CacheKeys.TryRemove(cacheKey, out _);
         }
     }
 
     public virtual async Task ClearCacheByKeyAsync(HashSet<string> cacheKeys)
     {
-        foreach (string cacheKey in cacheKeys) await ClearCacheByKeyAsync(cacheKey);
+        foreach (string cacheKey in cacheKeys)
+        {
+            await ClearCacheByKeyAsync(cacheKey);
+        }
     }
 
     public virtual async Task ClearAllCacheAsync()
