@@ -8,5 +8,5 @@ public class ApplicationSettings
 
     public bool EnableDeveloperErrors { get; set; }
 
-    public string? GoogleCloudProjectId { get; set; }
+    public string GoogleCloudProjectId { get; set; } = null!;
 }

@@ -4,15 +4,17 @@ using AGT.GalacticArchives.Core.Managers.GameData.Interfaces;
 using AGT.GalacticArchives.Core.Models.GameData;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
 
 namespace AGT.GalacticArchives.Core.Managers.GameData;
 
-public class GalaxyManager(IFirestoreManager firestoreManager, IMapper mapper) : IGalaxyManager
+public class GalaxyManager(IFirestoreManager firestoreManager, IMapper mapper, ILogger<GalaxyManager> logger) : IGalaxyManager
 {
     private const string Collection = DatabaseConstants.GalaxyCollection;
 
     public async Task<HashSet<Galaxy>> GetGalaxiesAsync()
     {
+        logger.LogInformation("Getting all galaxies");
         var galaxyDocs = await firestoreManager.GetAllAsync(Collection);
         return mapper.Map<HashSet<Galaxy>>(galaxyDocs);
     }

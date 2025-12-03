@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class FirebaseResource {
+    public class FirestoreResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal FirebaseResource() {
+        internal FirestoreResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.FirebaseResource", typeof(FirebaseResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.FirestoreResource", typeof(FirestoreResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,11 +60,38 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve firestore credentials from Google Secrets..
+        /// </summary>
+        public static string FirestoreCredentialsNotFound {
+            get {
+                return ResourceManager.GetString("FirestoreCredentialsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FIRESTORE_EMULATOR_HOST.
         /// </summary>
-        public static string FirestoreEnvVariable {
+        public static string FirestoreEnvironmentVariable {
             get {
-                return ResourceManager.GetString("FirestoreEnvVariable", resourceCulture);
+                return ResourceManager.GetString("FirestoreEnvironmentVariable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading Firebase credentials from file: {0}..
+        /// </summary>
+        public static string LoadingCredentialsFromFile {
+            get {
+                return ResourceManager.GetString("LoadingCredentialsFromFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using Firestore emulator at {0}..
+        /// </summary>
+        public static string UsingEmulator {
+            get {
+                return ResourceManager.GetString("UsingEmulator", resourceCulture);
             }
         }
     }
