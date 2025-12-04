@@ -1,6 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AutoMapper;
 
@@ -8,15 +9,15 @@ namespace AGT.GalacticArchives.Core.Managers.Entities;
 
 public class StarshipManager(
     IFirestoreManager firestoreManager,
-    IMapper mapper,
-    IEntityHierarchyManager entityHierarchyManager) : IStarshipManager
+    IGalacticEntityManager galacticEntityManager,
+    IMapper mapper) : IStarshipManager
 {
     private const string Collection = DatabaseConstants.StarshipCollection;
 
     public async Task<Starship?> GetStarshipByIdAsync(Guid starshipId)
     {
         var starshipDoc = await firestoreManager.GetByIdAsync(starshipId, Collection);
-        var starship = starshipDoc != null ? mapper.Map<Starship>(starshipDoc) : null;
+        var starship = mapper.Map<Starship>(starshipDoc);
 
         if (starship == null)
         {
@@ -24,7 +25,7 @@ public class StarshipManager(
         }
 
         var parentId = starship.PlanetId ?? starship.StarSystemId!.Value;
-        await SetStarshipHierarchies(starship, parentId);
+        await SetStarshipHierarchy(starship, parentId);
 
         return starship;
     }
@@ -58,7 +59,7 @@ public class StarshipManager(
 
             foreach (var starship in starships)
             {
-                await SetStarshipHierarchies(starship, parentId);
+                await SetStarshipHierarchy(starship, parentId);
             }
         }
 
@@ -67,12 +68,9 @@ public class StarshipManager(
 
     public async Task<Starship> UpsertStarshipAsync(Starship request)
     {
-        var updatedStarship = (Starship)await firestoreManager.UpsertAsync(request, Collection);
-
-        var parentId = request.PlanetId ?? request.StarSystemId!.Value;
-        await SetStarshipHierarchies(updatedStarship, parentId);
-
-        return updatedStarship;
+        await UpdateStarshipHierarchy(request);
+        await firestoreManager.UpsertAsync(request, Collection);
+        return request!;
     }
 
     public async Task DeleteStarshipAsync(Guid starshipId)
@@ -80,15 +78,37 @@ public class StarshipManager(
         await firestoreManager.DeleteAsync(starshipId, Collection);
     }
 
-    private async Task SetStarshipHierarchies(Starship starship, Guid parentId)
+    private async Task SetStarshipHierarchy(Starship starship, Guid parentId)
     {
         if (starship.PlanetId.HasValue)
         {
-            starship.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(parentId);
+            starship.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId);
         }
         else
         {
-            starship.StarSystem = await entityHierarchyManager.GetStarSystemWithHierarchyAsync(parentId);
+            starship.StarSystem = await galacticEntityManager.GetSolarHierarchyAsync(parentId);
         }
+    }
+
+    private async Task UpdateStarshipHierarchy(Starship starship)
+    {
+        if (starship.Planet == null && starship.StarSystem == null)
+        {
+            return;
+        }
+
+        StarSystem? starSystem = null;
+        if (starship.Planet != null)
+        {
+            await galacticEntityManager.UpsertPlanetAsync(starship.Planet);
+            starSystem = starship.Planet!.StarSystem;
+        }
+        else if (starship.StarSystem != null)
+        {
+            starSystem = starship.StarSystem;
+        }
+
+        await galacticEntityManager.UpsertStarSystemAsync(starSystem);
+        await galacticEntityManager.UpsertRegionAsync(starship.Planet!.StarSystem!.Region);
     }
 }

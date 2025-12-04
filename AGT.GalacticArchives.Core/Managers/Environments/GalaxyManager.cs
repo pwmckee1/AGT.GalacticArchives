@@ -39,12 +39,13 @@ public class GalaxyManager(IFirestoreManager firestoreManager, IMapper mapper, I
     public async Task<Galaxy?> GetGalaxyByIdAsync(Guid galaxyId)
     {
         var galaxyDoc = await firestoreManager.GetByIdAsync(galaxyId, Collection);
-        return galaxyDoc != null ? mapper.Map<Galaxy>(galaxyDoc) : null;
+        return mapper.Map<Galaxy>(galaxyDoc);
     }
 
     public async Task<Galaxy> UpsertGalaxyAsync(Galaxy galaxy)
     {
-        return (Galaxy)await firestoreManager.UpsertAsync(galaxy, Collection);
+        var updatedGalaxy = await firestoreManager.UpsertAsync(galaxy, Collection) as Galaxy;
+        return updatedGalaxy!;
     }
 
     public async Task DeleteGalaxyAsync(Guid galaxyId)

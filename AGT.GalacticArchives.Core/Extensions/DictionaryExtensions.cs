@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
+using AGT.GalacticArchives.Core.Models;
 using AGT.GalacticArchives.Globalization;
 using Newtonsoft.Json;
 
@@ -7,41 +8,41 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class DictionaryExtensions
 {
-    extension(Dictionary<string, object> first)
+    extension(Dictionary<string, object>? originalData)
     {
-        public bool HasAnyChanges(Dictionary<string, object> second)
+        public bool Matches(Dictionary<string, object>? comparisonData)
         {
-            if (first.Count == 0 && second.Count == 0)
+            if (originalData?.Count == 0 && comparisonData?.Count == 0)
             {
                 return false;
             }
 
-            if (first.Count == 0 || second.Count == 0)
+            if (originalData?.Count == 0 || comparisonData?.Count == 0)
             {
                 return true;
             }
 
-            string firstJson = JsonConvert.SerializeObject(
-                first,
+            string serializedOriginalData = JsonConvert.SerializeObject(
+                originalData,
                 new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                     NullValueHandling = NullValueHandling.Ignore,
                 });
 
-            string secondJson = JsonConvert.SerializeObject(
-                second,
+            string serializedComparisonData = JsonConvert.SerializeObject(
+                comparisonData,
                 new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                     NullValueHandling = NullValueHandling.Ignore,
                 });
 
-            return firstJson != secondJson;
+            return serializedOriginalData != serializedComparisonData;
         }
 
         public T ConvertDictionaryToObject<T>()
-            where T : class
+            where T : IGameData
         {
             var instance = (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
             var properties = typeof(T).GetProperties(
@@ -54,8 +55,7 @@ public static class DictionaryExtensions
                     continue;
                 }
 
-                // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-                if (!first.TryGetValue(property.Name, out object? value) || value == null)
+                if (originalData == null || !originalData.TryGetValue(property.Name, out object? value))
                 {
                     continue;
                 }
@@ -128,7 +128,7 @@ public static class DictionaryExtensions
                 string.Format(GeneralErrorResource.CannotConvertValue, value.GetType().Name, targetType.Name));
         }
 
-        // Have to force IEnumerable<T> vales to be HashSet<T> otherwise they will default as List<T>
+        // Force IEnumerable<T> vales to be HashSet<T> otherwise they will default as List<T>
         private static object? ConvertEnumerableToHashSet(object value, Type underlyingType)
         {
             var genericArgs = underlyingType.GetGenericArguments();
@@ -141,7 +141,7 @@ public static class DictionaryExtensions
                 var hashSetType = typeof(HashSet<>).MakeGenericType(elementType);
                 var hashSetInstance = (System.Collections.IEnumerable)Activator.CreateInstance(hashSetType)!;
 
-                var addMethod = hashSetType.GetMethod("Add", [elementType]);
+                var addMethod = hashSetType.GetMethod(nameof(HashSet<>.Add), [elementType]);
                 foreach (object? item in enumerable)
                 {
                     addMethod?.Invoke(hashSetInstance, [item]);

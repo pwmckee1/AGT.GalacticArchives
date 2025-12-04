@@ -27,7 +27,7 @@ public class FaunaService(IFaunaManager faunaManager, IMapper mapper) : IFaunaSe
         if (request.FaunaId.HasValue)
         {
             var existingFauna = await faunaManager.GetFaunaByIdAsync(request.FaunaId.Value);
-            if (existingFauna!.ToDictionary().HasAnyChanges(fauna.ToDictionary()))
+            if (!existingFauna!.ToDictionary().Matches(fauna.ToDictionary()))
             {
                 var updatedFauna = await faunaManager.UpsertFaunaAsync(fauna);
                 return mapper.Map<FaunaResponse>(updatedFauna);

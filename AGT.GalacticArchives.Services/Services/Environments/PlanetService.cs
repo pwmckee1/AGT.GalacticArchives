@@ -27,7 +27,7 @@ public class PlanetService(IPlanetManager planetManager, IMapper mapper) : IPlan
         if (request.PlanetId.HasValue)
         {
             var existingPlanet = await planetManager.GetPlanetByIdAsync(request.PlanetId.Value);
-            if (existingPlanet!.ToDictionary().HasAnyChanges(planet.ToDictionary()))
+            if (!existingPlanet!.ToDictionary().Matches(planet.ToDictionary()))
             {
                 var updatedPlanet = await planetManager.UpsertPlanetAsync(planet);
                 return mapper.Map<PlanetResponse>(updatedPlanet);

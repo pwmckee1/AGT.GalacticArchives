@@ -67,15 +67,15 @@ public class ManagerModule : Module
             .InstancePerLifetimeScope();
 
         builder
-            .RegisterType<EntityHierarchyManager>()
-            .Named<IEntityHierarchyManager>(NamedKeys.Managers.EntityHierarchyManager)
+            .RegisterType<GalacticEntityManager>()
+            .Named<IGalacticEntityManager>(NamedKeys.Managers.EntityHierarchyManager)
             .InstancePerLifetimeScope();
 
         builder
-            .Register((c, _) => new CachedInnerSystemEntityManager(
+            .Register((c, _) => new CachedGalacticEntityManager(
                 c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IEntityHierarchyManager>(NamedKeys.Managers.EntityHierarchyManager)))
-            .As<IEntityHierarchyManager>()
+                c.ResolveNamed<IGalacticEntityManager>(NamedKeys.Managers.EntityHierarchyManager)))
+            .As<IGalacticEntityManager>()
             .InstancePerLifetimeScope();
 
         builder

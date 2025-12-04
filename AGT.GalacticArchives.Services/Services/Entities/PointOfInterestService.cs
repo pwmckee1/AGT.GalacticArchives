@@ -28,7 +28,7 @@ public class PointOfInterestService(IPointOfInterestManager pointOfInterestManag
         if (request.PointOfInterestId.HasValue)
         {
             var existingPointOfInterest = await pointOfInterestManager.GetPointOfInterestByIdAsync(request.PointOfInterestId.Value);
-            if (existingPointOfInterest!.ToDictionary().HasAnyChanges(pointOfInterest.ToDictionary()))
+            if (existingPointOfInterest!.ToDictionary().Matches(pointOfInterest.ToDictionary()))
             {
                 var updatedPointOfInterest = await pointOfInterestManager.UpsertPointOfInterestAsync(pointOfInterest);
                 return mapper.Map<PointOfInterestResponse>(updatedPointOfInterest);

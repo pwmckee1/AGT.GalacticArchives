@@ -27,7 +27,7 @@ public class PlayerBaseService(IPlayerBaseManager playerBaseManager, IMapper map
         if (request.PlayerBaseId.HasValue)
         {
             var existingPlayerBase = await playerBaseManager.GetPlayerBaseByIdAsync(request.PlayerBaseId.Value);
-            if (existingPlayerBase!.ToDictionary().HasAnyChanges(playerBase.ToDictionary()))
+            if (!existingPlayerBase!.ToDictionary().Matches(playerBase.ToDictionary()))
             {
                 var updatedPlayerBase = await playerBaseManager.UpsertPlayerBaseAsync(playerBase);
                 return mapper.Map<PlayerBaseResponse>(updatedPlayerBase);

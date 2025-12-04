@@ -26,10 +26,10 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
         return result!;
     }
 
-    public async Task<Fauna> UpsertFaunaAsync(Fauna fauna)
+    public async Task<Fauna> UpsertFaunaAsync(Fauna request)
     {
-        var result = await target.UpsertFaunaAsync(fauna);
-        await cacheManager.SetAsync($"{nameof(Fauna)}:{fauna.FaunaId}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertFaunaAsync(request);
+        await cacheManager.SetAsync($"{nameof(Fauna)}:{request.FaunaId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 

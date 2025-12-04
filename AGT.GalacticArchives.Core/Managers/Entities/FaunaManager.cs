@@ -8,22 +8,22 @@ namespace AGT.GalacticArchives.Core.Managers.Entities;
 
 public class FaunaManager(
     IFirestoreManager firestoreManager,
-    IMapper mapper,
-    IEntityHierarchyManager entityHierarchyManager) : IFaunaManager
+    IGalacticEntityManager galacticEntityManager,
+    IMapper mapper) : IFaunaManager
 {
     private const string Collection = DatabaseConstants.FaunaCollection;
 
     public async Task<Fauna?> GetFaunaByIdAsync(Guid faunaId)
     {
         var faunaDoc = await firestoreManager.GetByIdAsync(faunaId, Collection);
-        var fauna = faunaDoc != null ? mapper.Map<Fauna>(faunaDoc) : null;
+        var fauna = mapper.Map<Fauna>(faunaDoc);
 
         if (fauna == null)
         {
             return null;
         }
 
-        fauna.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(fauna.PlanetId!.Value);
+        fauna.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(fauna.PlanetId!.Value);
 
         return fauna;
     }
@@ -39,26 +39,32 @@ public class FaunaManager(
 
         if (!string.IsNullOrEmpty(request.Name))
         {
-            var faunaDocs = request.FaunaId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(Fauna.PlanetId), request.PlanetId!.Value, Collection)
+            const string planetIdKey = nameof(Fauna.PlanetId);
+            string? name = request.Name;
+            var planetId = request.PlanetId!.Value;
+
+            var faunaRef = request.FaunaId.HasValue
+                ? await firestoreManager.GetByNameAsync(name, planetIdKey, planetId, Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
-            var faunae = mapper.Map<HashSet<Fauna>>(faunaDocs);
+            var faunae = mapper.Map<HashSet<Fauna>>(faunaRef);
 
             foreach (var fauna in faunae)
             {
-                fauna.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(fauna.PlanetId!.Value);
+                fauna.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(fauna.PlanetId!.Value);
             }
         }
 
         return [];
     }
 
-    public async Task<Fauna> UpsertFaunaAsync(Fauna fauna)
+    public async Task<Fauna> UpsertFaunaAsync(Fauna request)
     {
-        var updatedFauna = (Fauna)await firestoreManager.UpsertAsync(fauna, Collection);
-        updatedFauna.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(fauna.PlanetId!.Value);
-        return updatedFauna;
+        await galacticEntityManager.UpsertPlanetAsync(request.Planet);
+        await galacticEntityManager.UpsertStarSystemAsync(request.Planet?.StarSystem);
+        await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
+        await firestoreManager.UpsertAsync(request, Collection);
+        return request;
     }
 
     public async Task DeleteFaunaAsync(Guid faunaId)

@@ -1,6 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AutoMapper;
 
@@ -9,14 +10,14 @@ namespace AGT.GalacticArchives.Core.Managers.Entities;
 public class MultiToolManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IEntityHierarchyManager entityHierarchyManager) : IMultiToolManager
+    IGalacticEntityManager galacticEntityManager) : IMultiToolManager
 {
     private const string Collection = DatabaseConstants.MultiToolCollection;
 
     public async Task<MultiTool?> GetMultiToolByIdAsync(Guid multiToolId)
     {
         var multiToolDoc = await firestoreManager.GetByIdAsync(multiToolId, Collection);
-        var multiTool = multiToolDoc != null ? mapper.Map<MultiTool>(multiToolDoc) : null;
+        var multiTool = mapper.Map<MultiTool>(multiToolDoc);
 
         if (multiTool == null)
         {
@@ -67,12 +68,9 @@ public class MultiToolManager(
 
     public async Task<MultiTool> UpsertMultiToolAsync(MultiTool request)
     {
-        var updatedMultiTool = (MultiTool)await firestoreManager.UpsertAsync(request, Collection);
-
-        var parentId = request.PlanetId ?? request.StarSystemId!.Value;
-        await SetMultiToolHierarchies(updatedMultiTool, parentId);
-
-        return updatedMultiTool;
+        await UpdateMultiToolHierarchy(request);
+        await firestoreManager.UpsertAsync(request, Collection);
+        return request;
     }
 
     public async Task DeleteMultiToolAsync(Guid multiToolId)
@@ -84,11 +82,33 @@ public class MultiToolManager(
     {
         if (multiTool.PlanetId.HasValue)
         {
-            multiTool.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(parentId);
+            multiTool.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId);
         }
         else
         {
-            multiTool.StarSystem = await entityHierarchyManager.GetStarSystemWithHierarchyAsync(parentId);
+            multiTool.StarSystem = await galacticEntityManager.GetSolarHierarchyAsync(parentId);
         }
+    }
+
+    private async Task UpdateMultiToolHierarchy(MultiTool multiTool)
+    {
+        if (multiTool.Planet == null && multiTool.StarSystem == null)
+        {
+            return;
+        }
+
+        StarSystem? starSystem = null;
+        if (multiTool.Planet != null)
+        {
+            await galacticEntityManager.UpsertPlanetAsync(multiTool.Planet);
+            starSystem = multiTool.Planet!.StarSystem;
+        }
+        else if (multiTool.StarSystem != null)
+        {
+            starSystem = multiTool.StarSystem;
+        }
+
+        await galacticEntityManager.UpsertStarSystemAsync(starSystem);
+        await galacticEntityManager.UpsertRegionAsync(multiTool.Planet!.StarSystem!.Region);
     }
 }

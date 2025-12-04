@@ -9,21 +9,21 @@ namespace AGT.GalacticArchives.Core.Managers.Entities;
 public class SettlementManager(
     IFirestoreManager firestoreManager,
     IMapper mapper,
-    IEntityHierarchyManager entityHierarchyManager) : ISettlementManager
+    IGalacticEntityManager galacticEntityManager) : ISettlementManager
 {
     private const string Collection = DatabaseConstants.SettlementCollection;
 
     public async Task<Settlement?> GetSettlementByIdAsync(Guid settlementId)
     {
         var settlementDoc = await firestoreManager.GetByIdAsync(settlementId, Collection);
-        var settlement = settlementDoc != null ? mapper.Map<Settlement>(settlementDoc) : null;
+        var settlement = mapper.Map<Settlement>(settlementDoc);
 
         if (settlement == null)
         {
             return null;
         }
 
-        settlement.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(settlement.PlanetId!.Value);
+        settlement.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
 
         return settlement;
     }
@@ -48,7 +48,7 @@ public class SettlementManager(
             foreach (var settlement in settlements)
             {
                 settlement.Planet =
-                    await entityHierarchyManager.GetPlanetWithHierarchyAsync(settlement.PlanetId!.Value);
+                    await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
             }
         }
 
@@ -57,9 +57,11 @@ public class SettlementManager(
 
     public async Task<Settlement> UpsertSettlementAsync(Settlement request)
     {
-        var updatedSettlement = (Settlement)await firestoreManager.UpsertAsync(request, Collection);
-        updatedSettlement.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(request.PlanetId!.Value);
-        return updatedSettlement;
+        await galacticEntityManager.UpsertPlanetAsync(request.Planet);
+        await galacticEntityManager.UpsertStarSystemAsync(request.Planet?.StarSystem);
+        await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
+        await firestoreManager.UpsertAsync(request, Collection);
+        return request;
     }
 
     public async Task DeleteSettlementAsync(Guid settlementId)

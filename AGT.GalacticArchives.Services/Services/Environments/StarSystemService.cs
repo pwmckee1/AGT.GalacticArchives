@@ -27,7 +27,7 @@ public class StarSystemService(IStarSystemManager starSystemManager, IMapper map
         if (request.StarSystemId.HasValue)
         {
             var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(request.StarSystemId.Value);
-            if (existingStarSystem!.ToDictionary().HasAnyChanges(starSystem.ToDictionary()))
+            if (!existingStarSystem!.ToDictionary().Matches(starSystem.ToDictionary()))
             {
                 var updatedStarSystem = await starSystemManager.UpsertStarSystemAsync(starSystem);
                 return mapper.Map<StarSystemResponse>(updatedStarSystem);

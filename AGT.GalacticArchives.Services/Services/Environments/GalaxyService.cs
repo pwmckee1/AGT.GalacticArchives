@@ -38,7 +38,7 @@ public class GalaxyService(IGalaxyManager galaxyManager, IMapper mapper) : IGala
         if (request.GalaxyId.HasValue)
         {
             var existingGalaxy = await galaxyManager.GetGalaxyByIdAsync(request.GalaxyId.Value);
-            if (existingGalaxy!.ToDictionary().HasAnyChanges(galaxy.ToDictionary()))
+            if (!existingGalaxy!.ToDictionary().Matches(galaxy.ToDictionary()))
             {
                 var updatedGalaxy = await galaxyManager.UpsertGalaxyAsync(galaxy);
                 return mapper.Map<GalaxyResponse>(updatedGalaxy);

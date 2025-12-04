@@ -9,7 +9,7 @@ public interface IFaunaManager
 
     Task<HashSet<Fauna>> GetFaunaAsync(FaunaRequest request);
 
-    Task<Fauna> UpsertFaunaAsync(Fauna fauna);
+    Task<Fauna> UpsertFaunaAsync(Fauna request);
 
     Task DeleteFaunaAsync(Guid faunaId);
 }

@@ -27,7 +27,7 @@ public class SettlementService(ISettlementManager settlementManager, IMapper map
         if (request.SettlementId.HasValue)
         {
             var existingSettlement = await settlementManager.GetSettlementByIdAsync(request.SettlementId.Value);
-            if (existingSettlement!.ToDictionary().HasAnyChanges(settlement.ToDictionary()))
+            if (!existingSettlement!.ToDictionary().Matches(settlement.ToDictionary()))
             {
                 var updatedSettlement = await settlementManager.UpsertSettlementAsync(settlement);
                 return mapper.Map<SettlementResponse>(updatedSettlement);

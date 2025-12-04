@@ -27,7 +27,7 @@ public class StarshipService(IStarshipManager starshipManager, IMapper mapper) :
         if (request.StarshipId.HasValue)
         {
             var existingStarship = await starshipManager.GetStarshipByIdAsync(request.StarshipId.Value);
-            if (existingStarship!.ToDictionary().HasAnyChanges(starship.ToDictionary()))
+            if (!existingStarship!.ToDictionary().Matches(starship.ToDictionary()))
             {
                 var updatedStarship = await starshipManager.UpsertStarshipAsync(starship);
                 return mapper.Map<StarshipResponse>(updatedStarship);

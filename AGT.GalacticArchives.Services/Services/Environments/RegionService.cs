@@ -27,7 +27,7 @@ public class RegionService(IRegionManager regionManager, IMapper mapper) : IRegi
         if (request.RegionId.HasValue)
         {
             var existingRegion = await regionManager.GetRegionByIdAsync(request.RegionId.Value);
-            if (existingRegion!.ToDictionary().HasAnyChanges(region.ToDictionary()))
+            if (!existingRegion!.ToDictionary().Matches(region.ToDictionary()))
             {
                 var updatedRegion = await regionManager.UpsertRegionAsync(region);
                 return mapper.Map<RegionResponse>(updatedRegion);

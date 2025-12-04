@@ -12,10 +12,10 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
             .Collection(collectionName)
             .GetSnapshotAsync();
 
-        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
+        return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
-    public virtual async Task<Dictionary<string, object>?> GetByIdAsync(Guid entityId, string collectionName)
+    public virtual async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
     {
         var docRef = firestoreDb
             .Collection(collectionName)
@@ -23,7 +23,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
         var snapshot = await docRef.GetSnapshotAsync();
 
-        return snapshot != null && snapshot.Exists ? snapshot.ToDictionary() : null;
+        return snapshot is { Exists: true } ? snapshot.ToDictionary() : [];
     }
 
     public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
@@ -39,7 +39,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
         var snapshot = await query.GetSnapshotAsync();
 
-        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
+        return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
     public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
@@ -50,7 +50,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
         var snapshot = await query.GetSnapshotAsync();
 
-        return snapshot.Documents.Count == 0 ? [] : snapshot.Documents.Select(s => s.ToDictionary()).ToHashSet();
+        return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
     public virtual async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)

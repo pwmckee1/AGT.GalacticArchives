@@ -8,15 +8,15 @@ namespace AGT.GalacticArchives.Core.Managers.Entities;
 
 public class PointOfInterestManager(
     IFirestoreManager firestoreManager,
-    IMapper mapper,
-    IEntityHierarchyManager entityHierarchyManager) : IPointOfInterestManager
+    IGalacticEntityManager galacticEntityManager,
+    IMapper mapper) : IPointOfInterestManager
 {
     private const string Collection = DatabaseConstants.PointOfInterestCollection;
 
     public async Task<PointOfInterest?> GetPointOfInterestByIdAsync(Guid pointOfInterestId)
     {
         var pointOfInterestDoc = await firestoreManager.GetByIdAsync(pointOfInterestId, Collection);
-        var pointOfInterest = pointOfInterestDoc != null ? mapper.Map<PointOfInterest>(pointOfInterestDoc) : null;
+        var pointOfInterest = mapper.Map<PointOfInterest>(pointOfInterestDoc);
 
         if (pointOfInterest == null)
         {
@@ -24,7 +24,7 @@ public class PointOfInterestManager(
         }
 
         pointOfInterest.Planet =
-            await entityHierarchyManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId!.Value);
+            await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value);
 
         return pointOfInterest;
     }
@@ -40,8 +40,12 @@ public class PointOfInterestManager(
 
         if (!string.IsNullOrEmpty(request.Name))
         {
+            const string planetIdKey = nameof(PointOfInterest.PlanetId);
+            string? name = request.Name;
+            var planetId = request.PlanetId!.Value;
+
             var pointOfInterestDocs = request.PlanetId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(PointOfInterest.PlanetId), request.PlanetId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(name, planetIdKey, planetId, Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var pointOfInterests = mapper.Map<HashSet<PointOfInterest>>(pointOfInterestDocs);
@@ -49,7 +53,7 @@ public class PointOfInterestManager(
             foreach (var pointOfInterest in pointOfInterests)
             {
                 pointOfInterest.Planet =
-                    await entityHierarchyManager.GetPlanetWithHierarchyAsync(pointOfInterest.PlanetId!.Value);
+                    await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value);
             }
         }
 
@@ -58,10 +62,11 @@ public class PointOfInterestManager(
 
     public async Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest request)
     {
-        var updatedPointOfInterest = (PointOfInterest)await firestoreManager.UpsertAsync(request, Collection);
-        updatedPointOfInterest.Planet =
-            await entityHierarchyManager.GetPlanetWithHierarchyAsync(request.PlanetId!.Value);
-        return updatedPointOfInterest;
+        await galacticEntityManager.UpsertPlanetAsync(request.Planet);
+        await galacticEntityManager.UpsertStarSystemAsync(request.Planet?.StarSystem);
+        await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
+        await firestoreManager.UpsertAsync(request, Collection);
+        return request;
     }
 
     public async Task DeletePointOfInterestAsync(Guid pointOfInterestId)

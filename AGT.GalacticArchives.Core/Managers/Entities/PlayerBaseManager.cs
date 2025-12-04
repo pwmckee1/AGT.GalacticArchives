@@ -8,22 +8,22 @@ namespace AGT.GalacticArchives.Core.Managers.Entities;
 
 public class PlayerBaseManager(
     IFirestoreManager firestoreManager,
-    IMapper mapper,
-    IEntityHierarchyManager entityHierarchyManager) : IPlayerBaseManager
+    IGalacticEntityManager galacticEntityManager,
+    IMapper mapper) : IPlayerBaseManager
 {
     private const string Collection = DatabaseConstants.PlayerBaseCollection;
 
     public async Task<PlayerBase?> GetPlayerBaseByIdAsync(Guid playerBaseId)
     {
         var playerBaseDoc = await firestoreManager.GetByIdAsync(playerBaseId, Collection);
-        var playerBase = playerBaseDoc != null ? mapper.Map<PlayerBase>(playerBaseDoc) : null;
+        var playerBase = mapper.Map<PlayerBase>(playerBaseDoc);
 
         if (playerBase == null)
         {
             return null;
         }
 
-        playerBase.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId!.Value);
+        playerBase.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
 
         return playerBase;
     }
@@ -39,8 +39,12 @@ public class PlayerBaseManager(
 
         if (!string.IsNullOrEmpty(request.Name))
         {
+            const string planetIdKey = nameof(PlayerBase.PlanetId);
+            string? name = request.Name;
+            var planetId = request.PlanetId!.Value;
+
             var playerBaseDocs = request.PlanetId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(PlayerBase.PlanetId), request.PlanetId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(name, planetIdKey, planetId, Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var playerBases = mapper.Map<HashSet<PlayerBase>>(playerBaseDocs);
@@ -48,7 +52,7 @@ public class PlayerBaseManager(
             foreach (var playerBase in playerBases)
             {
                 playerBase.Planet =
-                    await entityHierarchyManager.GetPlanetWithHierarchyAsync(playerBase.PlanetId!.Value);
+                    await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
             }
         }
 
@@ -57,9 +61,11 @@ public class PlayerBaseManager(
 
     public async Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase request)
     {
-        var updatedPlayerBase = (PlayerBase)await firestoreManager.UpsertAsync(request, Collection);
-        updatedPlayerBase.Planet = await entityHierarchyManager.GetPlanetWithHierarchyAsync(request.PlanetId!.Value);
-        return updatedPlayerBase;
+        await galacticEntityManager.UpsertPlanetAsync(request.Planet);
+        await galacticEntityManager.UpsertStarSystemAsync(request.Planet?.StarSystem);
+        await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
+        await firestoreManager.UpsertAsync(request, Collection);
+        return request;
     }
 
     public async Task DeletePlayerBaseAsync(Guid playerBaseId)
