@@ -5,73 +5,57 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class EnumExtensions
 {
-    extension(string? description)
-    {
-        public T GetValueFromDescription<T>()
-            where T : Enum
-        {
-            description ??= string.Empty;
-            var values = GetValues<T>()
-                .Where(v => string.Equals(v.GetDescription(), description, StringComparison.InvariantCultureIgnoreCase))
-                .ToHashSet();
-            if (values.Count == 0)
-            {
-                values = GetValues<T>()
-                    .Where(v => string.Equals(
-                        v.GetDescription().Replace(" ", string.Empty).Replace("-", string.Empty),
-                        description,
-                        StringComparison.InvariantCultureIgnoreCase))
-                    .ToHashSet();
-            }
-
-            return values.FirstOrDefault()!;
-        }
-    }
-
-    // ReSharper disable once ParameterOnlyUsedForPreconditionCheck.Global
-    extension<T>(T value)
+    public static T GetValueFromDescription<T>(this string? description)
         where T : Enum
     {
-        public void ValidateEnum()
+        description ??= string.Empty;
+        var values = GetValues<T>()
+            .Where(v => string.Equals(v.GetDescription(), description, StringComparison.InvariantCultureIgnoreCase))
+            .ToHashSet();
+        if (values.Count == 0)
         {
-            if ((byte)(object)value == 0)
-            {
-                string propertyName = typeof(T).Name;
-                throw new ArgumentException(
-                    propertyName,
-                    string.Format(GeneralErrorResource.PropertyMissing, propertyName));
-            }
+            values = GetValues<T>()
+                .Where(v => string.Equals(
+                    v.GetDescription().Replace(" ", string.Empty).Replace("-", string.Empty),
+                    description,
+                    StringComparison.InvariantCultureIgnoreCase))
+                .ToHashSet();
+        }
+
+        return values.FirstOrDefault()!;
+    }
+
+    public static void ValidateEnum<T>(this T value)
+        where T : Enum
+    {
+        if ((byte)(object)value == 0)
+        {
+            string propertyName = typeof(T).Name;
+            throw new ArgumentException(
+                propertyName,
+                string.Format(GeneralErrorResource.PropertyMissing, propertyName));
         }
     }
 
-    extension<T>(T? value)
+    public static bool HasValidValue<T>(this T? value)
         where T : struct, Enum
     {
-        public bool HasValidValue()
-        {
-            return value.HasValue && value.Value.HasValidValue();
-        }
+        return value.HasValue && value.Value.HasValidValue();
     }
 
-    extension<T>(T value)
+    public static bool HasValidValue<T>(this T value)
         where T : struct, Enum
     {
-        public bool HasValidValue()
-        {
-            return (byte)(object)value > 0;
-        }
+        return (byte)(object)value > 0;
     }
 
-    extension(string enumStringValue)
+    public static T? GetValueFromString<T>(this string enumStringValue)
+        where T : struct, Enum
     {
-        public T? GetValueFromString<T>()
-            where T : struct, Enum
-        {
-            var gameType = GetValues<T>()
-                .FirstOrDefault(v => v.ToString().ToLowerInvariant().Equals(enumStringValue.ToLowerInvariant()));
+        var gameType = GetValues<T>()
+            .FirstOrDefault(v => v.ToString().ToLowerInvariant().Equals(enumStringValue.ToLowerInvariant()));
 
-            return gameType.HasValidValue() ? gameType : null;
-        }
+        return gameType.HasValidValue() ? gameType : null;
     }
 
     public static HashSet<T> GetValues<T>()

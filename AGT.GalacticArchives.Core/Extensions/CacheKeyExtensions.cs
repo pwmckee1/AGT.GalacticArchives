@@ -7,22 +7,21 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class CacheKeyExtensions
 {
-    extension<T>(T request)
+    private static readonly JsonSerializerOptions Options = new()
+    {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        WriteIndented = false,
+    };
+
+    public static string GetRequestHash<T>(this T request, [CallerMemberName] string callingMethod = "")
         where T : class
     {
-        public string GetRequestHash([CallerMemberName] string callingMethod = "")
-        {
-            string json = JsonSerializer.Serialize(
-                request,
-                new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                    WriteIndented = false,
-                });
-            Span<byte> hash = stackalloc byte[32];
-            SHA256.TryHashData(Encoding.UTF8.GetBytes(json), hash, out _);
-            string hex = Convert.ToHexString(hash).ToLower()[..16];
-            return $"{typeof(T)}:{callingMethod}:{hex}";
-        }
+        string json = JsonSerializer.Serialize(
+            request,
+            Options);
+        Span<byte> hash = stackalloc byte[32];
+        SHA256.TryHashData(Encoding.UTF8.GetBytes(json), hash, out _);
+        string hex = Convert.ToHexString(hash).ToLower()[..16];
+        return $"{typeof(T)}:{callingMethod}:{hex}";
     }
 }

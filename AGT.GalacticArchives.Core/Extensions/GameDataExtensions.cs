@@ -5,35 +5,33 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class GameDataExtensions
 {
-    extension(IGameData gameData)
+    public static Dictionary<string, object> ToDictionary(
+        this IGameData gameData,
+        PropertyInfo[] properties,
+        HashSet<string> excludedProperties)
     {
-        public Dictionary<string, object> ToDictionary(
-            PropertyInfo[] properties,
-            HashSet<string> excludedProperties)
+        var result = new Dictionary<string, object>();
+
+        foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
         {
-            var result = new Dictionary<string, object>();
+            object? value = property.GetValue(gameData);
 
-            foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
+            if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
             {
-                object? value = property.GetValue(gameData);
-
-                if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
-                {
-                    value = value?.ToString();
-                }
-
-                result[property.Name] = value!;
+                value = value?.ToString();
             }
 
-            return result;
+            result[property.Name] = value!;
         }
 
-        public Dictionary<string, object> ToDictionary()
-        {
-            var properties = gameData.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            var excludedProperties = gameData.PropertiesExcludedFromDatabase();
+        return result;
+    }
 
-            return gameData.ToDictionary(properties, excludedProperties);
-        }
+    public static Dictionary<string, object> ToDictionary(this IGameData gameData)
+    {
+        var properties = gameData.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        var excludedProperties = gameData.PropertiesExcludedFromDatabase();
+
+        return gameData.ToDictionary(properties, excludedProperties);
     }
 }

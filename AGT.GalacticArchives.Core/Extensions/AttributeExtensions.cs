@@ -8,114 +8,103 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class AttributeExtensions
 {
-    /// <param name="property"></param>
-    /// <typeparam name="T">typeof class containing attribute</typeparam>
-    extension<T>(T property)
+    /// <summary>
+    ///     Validates attribute(s) on a property.
+    /// </summary>
+    /// <param name="objectToValidate">The object to validate.</param>
+    /// <param name="propertyName">The name of the property to validate.</param>
+    /// <param name="propertyToValidate">The property on the object to validate.</param>
+    /// <returns>the results of the validation.</returns>
+    public static List<ValidationResult> ValidateProperty(
+        this object objectToValidate,
+        string propertyName,
+        object? propertyToValidate)
     {
-        /// <summary>
-        /// Get attribute from property - null if attribute is not found
-        /// </summary>
-        /// <typeparam name="TAttribute">typeof attribute</typeparam>
-        /// <returns></returns>
-        public TAttribute? GetAttribute<TAttribute>()
-            where TAttribute : Attribute
-        {
-            var type = typeof(T);
-            var fieldInfo = type.GetField(property?.ToString()!);
-            return fieldInfo != null
-                ? fieldInfo.GetCustomAttribute<TAttribute>()
-                : null;
-        }
+        var validationResults = new List<ValidationResult>();
+        var validationContext = new ValidationContext(objectToValidate, null, null) { MemberName = propertyName };
+        Validator.TryValidateProperty(propertyToValidate, validationContext, validationResults);
 
-        public string? GetSecondaryDescription()
-        {
-            var secondaryDescriptionAttribute = property.GetAttribute<T, SecondaryDescriptionAttribute>();
-            return secondaryDescriptionAttribute?.SecondaryDescription;
-        }
-
-        /// <summary>
-        ///     Get Localized Description from Display, Description, or Name Attribute on property
-        /// </summary>
-        /// <returns></returns>
-        public string GetDescription()
-        {
-            var description = property?.ToString()!;
-            return GetDescription<T>(description);
-        }
+        return validationResults;
     }
 
-    /// <param name="objectToValidate">The object to validate</param>
-    extension(object objectToValidate)
+    /// <summary>
+    /// Get an attribute from property - null if the attribute is not found.
+    /// </summary>
+    /// <typeparam name="T">typeof class containing attribute.</typeparam>
+    /// <typeparam name="TAttribute">typeof attribute.</typeparam>
+    /// <param name="property">property to get attribute from.</param>
+    /// <returns>the custom attribute if found, otherwise null.</returns>
+    public static TAttribute? GetAttribute<T, TAttribute>(this T property)
+        where TAttribute : Attribute
     {
-        /// <summary>
-        ///     Validates attribute(s) on a property
-        /// </summary>
-        /// <param name="propertyName">The name of the property to validate</param>
-        /// <param name="propertyToValidate">The property on the object to validate</param>
-        public List<ValidationResult> ValidateProperty(
-            string propertyName,
-            object? propertyToValidate)
-        {
-            var validationResults = new List<ValidationResult>();
-            var validationContext = new ValidationContext(objectToValidate, null, null) { MemberName = propertyName };
-            Validator.TryValidateProperty(propertyToValidate, validationContext, validationResults);
-
-            return validationResults;
-        }
+        var type = typeof(T);
+        var fieldInfo = type.GetField(property?.ToString()!);
+        return fieldInfo != null
+            ? fieldInfo.GetCustomAttribute<TAttribute>()
+            : null;
     }
 
-    /// <param name="propertyName"></param>
-    extension(string propertyName)
+    public static string? GetSecondaryDescription<T>(this T property)
     {
-        /// <summary>
-        ///      Get Localized Description from Display, Description, or Name Attribute on property
-        /// </summary>
-        /// <typeparam name="T">typeof class or enum containing property</typeparam>
-        /// <returns></returns>
-        public string GetDescription<T>()
-        {
-            string description = propertyName;
-            var type = typeof(T);
-            var fieldInfo = type.GetField(description);
-            if (fieldInfo != null)
-            {
-                description = fieldInfo.GetDescription();
-            }
-
-            return description;
-        }
+        var secondaryDescriptionAttribute = property.GetAttribute<T, SecondaryDescriptionAttribute>();
+        return secondaryDescriptionAttribute?.SecondaryDescription;
     }
 
-    /// <param name="fieldInfo"></param>
-    extension(FieldInfo fieldInfo)
+    /// <summary>
+    ///     Get Localized Description from Display, Description, or Name Attribute on property.
+    /// </summary>
+    /// <typeparam name="T">typeof class or enum.</typeparam>
+    /// <param name="property">property to get description from.</param>
+    /// <returns>value of the description attribute.</returns>
+    public static string GetDescription<T>(this T property)
     {
-        /// <summary>
-        ///     Get Localized Description from Display, Description, or Name Attribute on fieldInfo
-        /// </summary>
-        /// <returns></returns>
-        public string GetDescription()
-        {
-            var displayAttribute = fieldInfo.GetCustomAttribute<DisplayAttribute>();
-            var descriptionAttribute = fieldInfo.GetCustomAttribute<DescriptionAttribute>();
-            var nameAttribute = fieldInfo.GetCustomAttribute<NameAttribute>();
-            return GetDescription(displayAttribute, descriptionAttribute, nameAttribute, fieldInfo.Name);
-        }
+        string description = property?.ToString()!;
+        return GetDescription<T>(description);
     }
 
-    /// <param name="propertyInfo"></param>
-    extension(PropertyInfo propertyInfo)
+    /// <summary>
+    ///      Get Localized Description from Display, Description, or Name Attribute on property.
+    /// </summary>
+    /// <typeparam name="T">typeof class or enum containing property.</typeparam>
+    /// <param name="propertyName">property to get description from.</param>
+    /// <returns>description attribute of a property field or the main property name if a field with the name of the description attribute doesn't exist.</returns>
+    public static string GetDescription<T>(this string propertyName)
     {
-        /// <summary>
-        ///     Get Localized Description from Display, Description, or Name Attribute on propertyInfo
-        /// </summary>
-        /// <returns></returns>
-        public string GetDescription()
+        string description = propertyName;
+        var type = typeof(T);
+        var fieldInfo = type.GetField(description);
+        if (fieldInfo != null)
         {
-            var displayAttribute = propertyInfo.GetCustomAttribute<DisplayAttribute>();
-            var descriptionAttribute = propertyInfo.GetCustomAttribute<DescriptionAttribute>();
-            var nameAttribute = propertyInfo.GetCustomAttribute<NameAttribute>();
-            return GetDescription(displayAttribute, descriptionAttribute, nameAttribute, propertyInfo.Name);
+            description = fieldInfo.GetDescription();
         }
+
+        return description;
+    }
+
+    /// <summary>
+    ///     Get Localized Description from Display, Description, or Name Attribute on fieldInfo.
+    /// </summary>
+    /// <param name="fieldInfo">the fieldInfo to get the custom description attribute from.</param>
+    /// <returns>the corresponding description attribute based on which attribute is found.</returns>
+    public static string GetDescription(this FieldInfo fieldInfo)
+    {
+        var displayAttribute = fieldInfo.GetCustomAttribute<DisplayAttribute>();
+        var descriptionAttribute = fieldInfo.GetCustomAttribute<DescriptionAttribute>();
+        var nameAttribute = fieldInfo.GetCustomAttribute<NameAttribute>();
+        return GetDescription(displayAttribute, descriptionAttribute, nameAttribute, fieldInfo.Name);
+    }
+
+    /// <summary>
+    ///     Get Localized Description from Display, Description, or Name Attribute on propertyInfo.
+    /// </summary>
+    /// <param name="propertyInfo">the propertyInfo to get the custom description attribute from.</param>
+    /// <returns>the corresponding description attribute based on which attribute is found.</returns>
+    public static string GetDescription(this PropertyInfo propertyInfo)
+    {
+        var displayAttribute = propertyInfo.GetCustomAttribute<DisplayAttribute>();
+        var descriptionAttribute = propertyInfo.GetCustomAttribute<DescriptionAttribute>();
+        var nameAttribute = propertyInfo.GetCustomAttribute<NameAttribute>();
+        return GetDescription(displayAttribute, descriptionAttribute, nameAttribute, propertyInfo.Name);
     }
 
     private static string GetDescription(
@@ -126,19 +115,19 @@ public static class AttributeExtensions
     {
         string description;
 
-        // Get localized Description from Display attribute
+        // Get localized Description from the Display attribute
         if (displayAttribute != null)
         {
             description = displayAttribute.GetDescription()!;
         }
 
-        // Get Description from Description attribute
+        // Get Description from the Description attribute
         else if (descriptionAttribute != null)
         {
             description = descriptionAttribute.Description;
         }
 
-        // Get Description from Name attribute
+        // Get Description from the Name attribute
         else if (nameAttribute != null)
         {
             description = nameAttribute.Names.FirstOrDefault() ?? string.Empty;
