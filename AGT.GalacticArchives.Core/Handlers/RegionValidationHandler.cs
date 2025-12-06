@@ -8,7 +8,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Handlers;
 
-public class RegionValidationValidationHandler : BaseValidationHandler, IGoogleSheetValidationHandler
+public class RegionValidationHandler : BaseValidationHandler, IGoogleSheetValidationHandler
 {
     public bool CanHandle<T>()
     {
