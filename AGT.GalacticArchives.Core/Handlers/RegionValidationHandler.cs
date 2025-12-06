@@ -29,11 +29,6 @@ public class RegionValidationHandler : BaseValidationHandler, IGoogleSheetValida
         {
             var strategies = new HashSet<IExecutionStrategy>
             {
-                new NullFieldStrategy(
-                    regionField.AutoSurveyDate,
-                    lineNumber,
-                    nameof(regionField.AutoSurveyDate).GetDescription<RegionImport>(),
-                    sheetName),
                 new BaseCoordinateStrategy(
                     regionField.BaseCoordinates,
                     lineNumber,
@@ -44,40 +39,15 @@ public class RegionValidationHandler : BaseValidationHandler, IGoogleSheetValida
                     lineNumber,
                     nameof(regionField.Coordinates).GetDescription<RegionImport>(),
                     sheetName),
-                new NullableIntFieldStrategy(
-                    regionField.DocSequence,
-                    lineNumber,
-                    nameof(regionField.DocSequence).GetDescription<RegionImport>(),
-                    sheetName),
-                new NullableDateTimeStrategy(
-                    regionField.EarliestSystemDiscovery,
-                    lineNumber,
-                    nameof(regionField.EarliestSystemDiscovery).GetDescription<RegionImport>(),
-                    sheetName),
-                new NullFieldStrategy(
-                    regionField.GameRelease,
-                    lineNumber,
-                    nameof(regionField.GameRelease).GetDescription<RegionImport>(),
-                    sheetName),
                 new NullFieldStrategy(
                     regionField.GalaxyName,
                     lineNumber,
                     nameof(regionField.GalaxyName).GetDescription<RegionImport>(),
                     sheetName),
-                new NullableIntFieldStrategy(
-                    regionField.GalaxyId,
-                    lineNumber,
-                    nameof(regionField.GalaxyId).GetDescription<RegionImport>(),
-                    sheetName),
                 new HexadecimalGlyphStrategy(
                     regionField.Glyphs,
                     lineNumber,
                     nameof(regionField.Glyphs).GetDescription<RegionImport>(),
-                    sheetName),
-                new NullableIntFieldStrategy(
-                    regionField.LightYearsFromCenter,
-                    lineNumber,
-                    nameof(regionField.LightYearsFromCenter).GetDescription<RegionImport>(),
                     sheetName),
                 new NullFieldStrategy(
                     regionField.Name,
@@ -88,11 +58,6 @@ public class RegionValidationHandler : BaseValidationHandler, IGoogleSheetValida
                     regionField.Quadrant,
                     lineNumber,
                     nameof(regionField.Quadrant).GetDescription<RegionImport>(),
-                    sheetName),
-                new NullableFloatFieldStrategy(
-                    regionField.Version,
-                    lineNumber,
-                    nameof(regionField.Version).GetDescription<RegionImport>(),
                     sheetName),
                 new HexadecimalDigitStrategy(
                     regionField.XX,
