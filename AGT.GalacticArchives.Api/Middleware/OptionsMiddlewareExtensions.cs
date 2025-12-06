@@ -2,8 +2,11 @@
 
 public static class OptionsMiddlewareExtensions
 {
-    public static IApplicationBuilder UseOptions(this IApplicationBuilder builder)
+    extension(IApplicationBuilder builder)
     {
-        return builder.UseMiddleware<HttpVerbOptionsMiddleware>();
+        public IApplicationBuilder UseOptions()
+        {
+            return builder.UseMiddleware<HttpVerbOptionsMiddleware>();
+        }
     }
 }

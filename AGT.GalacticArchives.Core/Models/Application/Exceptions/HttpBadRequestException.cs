@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Http;
 
 namespace AGT.GalacticArchives.Core.Models.Application.Exceptions;
 
@@ -14,5 +15,6 @@ public class HttpBadRequestException : Exception
     {
     }
 
-    public int StatusCode { get; } = StatusCodes.Status400BadRequest;
+    [SuppressMessage("Performance", "CA1822:Mark members as static")]
+    public int StatusCode => StatusCodes.Status400BadRequest;
 }

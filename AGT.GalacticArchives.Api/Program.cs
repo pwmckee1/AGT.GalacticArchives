@@ -2,6 +2,7 @@ using AGT.GalacticArchives.Configuration;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Extensions;
+using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Middleware;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -17,23 +18,25 @@ var environment = builder.Environment;
 var applicationSettings = new ApplicationSettings();
 builder.Configuration.GetSection("ApplicationSettings").Bind(applicationSettings);
 builder.Services.AddSingleton(applicationSettings);
+
+LoggerConfiguration.ConfigureNLog(builder);
 ControllerConfiguration.AddControllers(builder.Services);
 
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<IDistributedCache, InMemoryDistributedCacheAdapter>();
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-builder.Host.ConfigureContainer<ContainerBuilder>((context, containerBuilder) =>
+builder.Host.ConfigureContainer<ContainerBuilder>((_, containerBuilder) =>
 {
-    containerBuilder.ConfigureDependencyInjection(applicationSettings, environment);
+    containerBuilder.ConfigureDependencyInjection();
 });
 
 builder.Services.AddAutoMapper(cfg => cfg.AddCollectionMappers(), AppDomain.CurrentDomain.GetAssemblies());
-builder.Services
+builder
+    .Services
     .AddControllers()
     .AddApplicationPart(typeof(Program).Assembly);
 builder.Services.AddOpenApi();
-
 
 builder.Services.AddSingleton(sp =>
 {
@@ -47,11 +50,15 @@ builder.Services.AddSingleton(sp =>
     if (environment.IsDevelopment())
     {
         // Check for emulator configuration
-        var emulatorHost = Environment.GetEnvironmentVariable("FIRESTORE_EMULATOR_HOST");
+        string? emulatorHost = Environment.GetEnvironmentVariable(FirestoreResource.FirestoreEnvironmentVariable);
 
         if (!string.IsNullOrEmpty(emulatorHost))
         {
-            logger.LogInformation($"Using Firestore emulator at {emulatorHost}");
+            if (logger.IsEnabled(LogLevel.Information))
+            {
+                logger.LogInformation(string.Format(FirestoreResource.UsingEmulator, emulatorHost));
+            }
+
             firestoreBuilder.EmulatorDetection = EmulatorDetection.EmulatorOnly;
         }
         else
@@ -62,7 +69,10 @@ builder.Services.AddSingleton(sp =>
                 throw new FileNotFoundException($"Firebase credentials not found at {credentialsPath}");
             }
 
-            logger.LogInformation($"Loading Firebase credentials from file: {credentialsPath}");
+            if (logger.IsEnabled(LogLevel.Information))
+            {
+                logger.LogInformation(string.Format(FirestoreResource.LoadingCredentialsFromFile, credentialsPath));
+            }
 
             var stream = new FileStream(credentialsPath, FileMode.Open, FileAccess.Read);
             firestoreBuilder.Credential = CredentialFactory.FromStream<ServiceAccountCredential>(stream);
@@ -70,12 +80,13 @@ builder.Services.AddSingleton(sp =>
     }
     else
     {
-        var secret =
-            GoogleSecretsConfiguration.GetSecret(applicationSettings.GoogleCloudProjectId!, "firebase-credentials");
+        string secret = GoogleSecretsConfiguration.GetSecret(
+            applicationSettings.GoogleCloudProjectId,
+            applicationSettings.Firebase.SecretsId);
 
         if (string.IsNullOrEmpty(secret))
         {
-            throw new InvalidOperationException("Unable to retrieve firebase credentials");
+            throw new InvalidOperationException(FirestoreResource.FirestoreCredentialsNotFound);
         }
 
         firestoreBuilder.Credential = CredentialFactory.FromJson<ServiceAccountCredential>(secret);
@@ -88,7 +99,8 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseMessageResponseMiddleware();
-// app.UseMiddleware<RequestRewindMiddleware>();
+
+app.UseMiddleware<RequestRewindMiddleware>();
 app.UseExceptionHandler(options => { options.UseMiddleware<ErrorHandlingMiddleware>(); });
 app.UseOptions();
 

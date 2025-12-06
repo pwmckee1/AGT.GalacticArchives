@@ -1,15 +1,28 @@
-﻿using AGT.GalacticArchives.Core.Models.GameData;
-using AGT.GalacticArchives.Services.Interfaces.GameData;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests.Environments;
+using AGT.GalacticArchives.Core.Models.Responses.Environments;
+using AGT.GalacticArchives.Services.Services.Environments;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("region")]
-public class RegionController(IRegionService regionService): ControllerBase
+public class RegionController(IRegionService regionService) : ControllerBase
 {
+    [HttpGet]
+    [ProducesResponseType(typeof(MessageResponse<HashSet<RegionResponse>>), StatusCodes.Status200OK)]
+    [SwaggerOperation(Tags = ["Region/Region"])]
+    public async Task<IActionResult> GetAsync(RegionRequest request)
+    {
+        var galaxies = await regionService.GetRegionsAsync(request);
+        return Ok(galaxies);
+    }
 
-    [HttpGet("{regionId}")]
+    [HttpGet("{regionId:guid}")]
+    [ProducesResponseType(typeof(MessageResponse<RegionResponse>), StatusCodes.Status200OK)]
+    [SwaggerOperation(Tags = ["Region/Region"])]
     public async Task<IActionResult> GetAsync(Guid regionId)
     {
         var region = await regionService.GetRegionByIdAsync(regionId);
@@ -17,13 +30,16 @@ public class RegionController(IRegionService regionService): ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> PostAsync([FromBody] Region region)
+    [ProducesResponseType(typeof(MessageResponse<RegionResponse>), StatusCodes.Status200OK)]
+    [SwaggerOperation(Tags = ["Region/Region"])]
+    public async Task<IActionResult> PostAsync([FromBody] RegionRequest region)
     {
         var response = await regionService.UpsertRegionAsync(region);
         return Ok(response);
     }
 
-    [HttpDelete("{regionId}")]
+    [HttpDelete("{regionId:guid}")]
+    [SwaggerOperation(Tags = ["Region/Region"])]
     public async Task<IActionResult> DeleteAsync(Guid regionId)
     {
         await regionService.DeleteRegionAsync(regionId);

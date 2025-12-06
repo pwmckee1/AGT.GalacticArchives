@@ -1,6 +1,6 @@
 ﻿namespace AGT.GalacticArchives.Core.Constants;
 
-public class Claims
+public static class Claims
 {
     public const string ApplicationAuthKey = "ApplicationAuthKey";
     public const string CsrfToken = "CsrfToken";

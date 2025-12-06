@@ -3,24 +3,17 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
-public class InMemoryDistributedCacheAdapter : IDistributedCache
+public class InMemoryDistributedCacheAdapter(IMemoryCache memoryCache) : IDistributedCache
 {
-    private readonly IMemoryCache _memoryCache;
-
-    public InMemoryDistributedCacheAdapter(IMemoryCache memoryCache)
-    {
-        _memoryCache = memoryCache;
-    }
-
     public byte[] Get(string key)
     {
-        _memoryCache.TryGetValue(key, out byte[]? value);
+        memoryCache.TryGetValue(key, out byte[]? value);
         return value ?? [];
     }
 
     public Task<byte[]?> GetAsync(string key, CancellationToken token = default)
     {
-        _memoryCache.TryGetValue(key, out byte[]? value);
+        memoryCache.TryGetValue(key, out byte[]? value);
         return Task.FromResult(value);
     }
 
@@ -33,10 +26,14 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
             SlidingExpiration = options.SlidingExpiration,
         };
 
-        _memoryCache.Set(key, value, cacheEntryOptions);
+        memoryCache.Set(key, value, cacheEntryOptions);
     }
 
-    public Task SetAsync(string key, byte[] value, DistributedCacheEntryOptions options, CancellationToken token = default)
+    public Task SetAsync(
+        string key,
+        byte[] value,
+        DistributedCacheEntryOptions options,
+        CancellationToken token = default)
     {
         var cacheEntryOptions = new MemoryCacheEntryOptions
         {
@@ -45,12 +42,14 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
             SlidingExpiration = options.SlidingExpiration,
         };
 
-        _memoryCache.Set(key, value, cacheEntryOptions);
+        memoryCache.Set(key, value, cacheEntryOptions);
         return Task.CompletedTask;
     }
 
     // Not supported by In Memory Cache
-    public void Refresh(string key) { }
+    public void Refresh(string key)
+    {
+    }
 
     // Not supported by In Memory Cache
     public Task RefreshAsync(string key, CancellationToken token = default)
@@ -60,12 +59,12 @@ public class InMemoryDistributedCacheAdapter : IDistributedCache
 
     public void Remove(string key)
     {
-        _memoryCache.Remove(key);
+        memoryCache.Remove(key);
     }
 
     public Task RemoveAsync(string key, CancellationToken token = default)
     {
-        _memoryCache.Remove(key);
+        memoryCache.Remove(key);
         return Task.CompletedTask;
     }
 }

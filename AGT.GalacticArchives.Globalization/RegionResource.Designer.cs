@@ -116,9 +116,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Earliest Known Surveyor ID.
         /// </summary>
-        public static string EarliestKnownSurveyorId {
+        public static string EarliestKnownSurveyor {
             get {
-                return ResourceManager.GetString("EarliestKnownSurveyorId", resourceCulture);
+                return ResourceManager.GetString("EarliestKnownSurveyor", resourceCulture);
             }
         }
         
@@ -161,9 +161,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Latest Surveyor ID.
         /// </summary>
-        public static string LatestKnownSurveyorId {
+        public static string LatestKnownSurveyor {
             get {
-                return ResourceManager.GetString("LatestKnownSurveyorId", resourceCulture);
+                return ResourceManager.GetString("LatestKnownSurveyor", resourceCulture);
             }
         }
         
@@ -222,6 +222,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region {0} must have a Galaxy selected..
+        /// </summary>
+        public static string MustHaveGalaxy {
+            get {
+                return ResourceManager.GetString("MustHaveGalaxy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region Name.
         /// </summary>
         public static string Name {
@@ -236,6 +245,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string RegionAge {
             get {
                 return ResourceManager.GetString("RegionAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Systems.
+        /// </summary>
+        public static string StarSystems {
+            get {
+                return ResourceManager.GetString("StarSystems", resourceCulture);
             }
         }
         

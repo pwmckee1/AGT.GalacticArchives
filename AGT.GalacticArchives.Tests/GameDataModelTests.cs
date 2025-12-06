@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.GameData;
+using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
 using Should;
@@ -19,6 +19,7 @@ public class GameDataModelTests
             {
                 _galaxy = new Fixture()
                     .For<Galaxy>()
+                    .With(g => g.Name, "Euclid")
                     .With(g => g.Regions, [])
                     .Create();
             }
@@ -43,9 +44,10 @@ public class GameDataModelTests
             {
                 _region = new Fixture()
                     .For<Region>()
+                    .With(p => p.Name, "Region Name")
                     .With(r => r.Galaxy, null)
                     .With(r => r.Coordinates, "0000:0000:0000:0000")
-                    .With(r => r.Systems, [])
+                    .With(r => r.StarSystems, [])
                     .Create();
             }
 
@@ -72,6 +74,7 @@ public class GameDataModelTests
             {
                 _starSystem = new Fixture()
                     .For<StarSystem>()
+                    .With(p => p.Name, "Star System Name")
                     .With(r => r.Region, null)
                     .With(r => r.GalacticCoordinates, "0000:0000:0000:0000")
                     .With(r => r.Planets, [])
@@ -103,8 +106,9 @@ public class GameDataModelTests
             {
                 _planet = new Fixture()
                     .For<Planet>()
+                    .With(p => p.Name, "Planet Name")
                     .With(p => p.StarSystem, null)
-                    .With(p => p.RawIngredients, ["bread" , "milk"])
+                    .With(p => p.RawIngredients, ["bread", "milk"])
                     .Create();
             }
 
@@ -125,11 +129,10 @@ public class GameDataModelTests
 
     public class WhenConvertingToGameDataFromDictionary : GameDataModelTests
     {
-        private readonly Dictionary<string, object?> _dictionary = [];
+        private readonly Dictionary<string, object> _dictionary = [];
 
         public class WhenConvertingGalaxy : WhenConvertingToGameDataFromDictionary
         {
-
             [SetUp]
             public void Setup()
             {
@@ -188,9 +191,9 @@ public class GameDataModelTests
                 _dictionary[nameof(StarSystem.SpaceStationTradeItems)] = new HashSet<string?>
                 {
                     "Labooboo dolls",
-                    "Funko pops"
+                    "Funko pops",
                 };
-                _dictionary[nameof(StarSystem.HasCenterAccess)] = null;
+                _dictionary[nameof(StarSystem.HasCenterAccess)] = false;
             }
 
             [Test]
@@ -200,7 +203,8 @@ public class GameDataModelTests
                 starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]!);
                 starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]!);
                 starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]!);
-                starSystem.GalacticCoordinates.ShouldEqual(((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]!).ToUpperInvariant());
+                starSystem.GalacticCoordinates.ShouldEqual(
+                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]!).ToUpperInvariant());
                 starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]!);
                 starSystem.Buy.ShouldEqual((float?)_dictionary[nameof(StarSystem.Buy)]);
                 starSystem.HasCenterAccess.ShouldEqual((bool?)_dictionary[nameof(StarSystem.HasCenterAccess)]!);
@@ -215,8 +219,8 @@ public class GameDataModelTests
                 _dictionary[nameof(Planet.PlanetId)] = Guid.NewGuid();
                 _dictionary[nameof(Planet.Name)] = "Earth";
                 _dictionary[nameof(Planet.PlanetNameAllPlatforms)] = "Terra";
-                _dictionary[nameof(Planet.PlanetIdInSystem)] = null;
-                _dictionary[nameof(Planet.IsInfected)] = null;
+                _dictionary[nameof(Planet.PlanetIdInSystem)] = null!;
+                _dictionary[nameof(Planet.IsInfected)] = true;
                 _dictionary[nameof(Planet.RawIngredients)] = new HashSet<string?> { "tofu", "spam" };
                 _dictionary[nameof(Planet.NumberOfFauna)] = 2;
                 _dictionary[nameof(Planet.HasSandworms)] = true;

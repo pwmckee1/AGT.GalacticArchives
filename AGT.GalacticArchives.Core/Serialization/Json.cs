@@ -9,14 +9,16 @@ using Newtonsoft.Json.Serialization;
 namespace AGT.GalacticArchives.Core.Serialization;
 
 public static class Json
+{
+    /// <param name="token"></param>
+    extension(JToken token)
     {
         /// <summary>
         ///     Searches the given json and removes any nodes with the fields specified
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="fields"></param>
         /// <returns></returns>
-        public static JToken RemoveFields(this JToken token, string[] fields)
+        public JToken RemoveFields(string[] fields)
         {
             if (!(token is JContainer container))
             {
@@ -45,10 +47,9 @@ public static class Json
         /// <summary>
         /// Obfuscates the specified fields within the given json
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="fields"></param>
         /// <returns></returns>
-        public static JToken ObfuscateFields(this JToken token, IList<string> fields)
+        public JToken ObfuscateFields(IList<string> fields)
         {
             if (!(token is JContainer container))
             {
@@ -73,8 +74,13 @@ public static class Json
 
             return token;
         }
+    }
 
-        public static bool TryParseJson<T>(this string item, out T result, MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
+    extension(string item)
+    {
+        public bool TryParseJson<T>(
+            out T result,
+            MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
             where T : class
         {
             var success = true;
@@ -94,11 +100,30 @@ public static class Json
                 success = false;
             }
 
-            result = parsedResult ?? default!;
+            result = parsedResult ?? null!;
             return success;
         }
 
-        public static bool TryParseJson<T>(this object? item, out T result, MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
+        public bool CanParseJson<T>()
+            where T : class
+        {
+            return item.TryParseJson(out T _);
+        }
+
+        public T ParseJson<T>(MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
+            where T : class
+        {
+            return item.TryParseJson(out T jsonObject, missingMemberHandling)
+                ? jsonObject
+                : default!;
+        }
+    }
+
+    extension(object? item)
+    {
+        public bool TryParseJson<T>(
+            out T result,
+            MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
             where T : class
         {
             // ReSharper disable once MergeCastWithTypeCheck
@@ -108,72 +133,30 @@ public static class Json
                 return true;
             }
 
-            StringBuilder itemBuilder = new StringBuilder();
+            var itemBuilder = new StringBuilder();
             itemBuilder.Append(item);
 
             return TryParseJson(itemBuilder.ToString(), out result, missingMemberHandling);
         }
 
-        public static bool CanParseJson<T>(this string item)
+        public T ParseJson<T>(MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
             where T : class
         {
-            return item.TryParseJson(out T _);
-        }
-
-        public static T ParseJson<T>(this string item, MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
-            where T : class
-        {
-            return item.TryParseJson(out T jsonObject, missingMemberHandling)
-                ? jsonObject
-                : default!;
-        }
-
-        public static T ParseJson<T>(this object? item, MissingMemberHandling missingMemberHandling = MissingMemberHandling.Error)
-            where T : class
-        {
-            StringBuilder itemBuilder = new StringBuilder();
+            var itemBuilder = new StringBuilder();
             itemBuilder.Append(item);
 
             return item as T ?? ParseJson<T>(itemBuilder.ToString(), missingMemberHandling);
         }
+    }
 
-        public static bool IsValidJson(this string input)
+    public class IgnorePropertiesResolver(IEnumerable<string> propNamesToIgnore) : DefaultContractResolver
+    {
+        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {
-            input = input.Trim();
+            var property = base.CreateProperty(member, memberSerialization);
+            property.ShouldSerialize = x => !propNamesToIgnore.Contains(property.PropertyName);
 
-            // For object || For array
-            if ((input.StartsWith('{') && input.EndsWith('}')) ||
-                (input.StartsWith('[') && input.EndsWith(']')))
-            {
-                try
-                {
-                    _ = JToken.Parse(input);
-                    return true;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-
-            return false;
-        }
-
-        public class IgnorePropertiesResolver : DefaultContractResolver
-        {
-            private readonly IEnumerable<string> _propsToIgnore;
-
-            public IgnorePropertiesResolver(IEnumerable<string> propNamesToIgnore)
-            {
-                _propsToIgnore = propNamesToIgnore;
-            }
-
-            protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
-            {
-                var property = base.CreateProperty(member, memberSerialization);
-                property.ShouldSerialize = x => !_propsToIgnore.Contains(property.PropertyName);
-
-                return property;
-            }
+            return property;
         }
     }
+}

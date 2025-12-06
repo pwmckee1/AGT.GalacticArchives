@@ -1,31 +1,28 @@
 ﻿using System.Collections.Concurrent;
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Interfaces.Caching;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
-public abstract class CacheManagerBase : ICacheManager
+public abstract class CacheManagerBase(IDistributedCache distributedCache) : ICacheManager
 {
-    protected readonly IDistributedCache DistributedCache;
-    protected ConcurrentDictionary<string, bool> Keys = new();
-
-    protected CacheManagerBase(IDistributedCache distributedCache)
-    {
-        DistributedCache = distributedCache;
-    }
+    protected readonly IDistributedCache DistributedCache = distributedCache;
+    protected ConcurrentDictionary<string, bool> CacheKeys = new();
 
     public virtual HashSet<string> GetCacheKeys(string? key)
     {
         return string.IsNullOrEmpty(key)
-            ? Keys.Keys.ToHashSet()
-            : Keys.Keys.Where(k => k.Equals(key, StringComparison.InvariantCultureIgnoreCase)).ToHashSet();
+            ? [.. CacheKeys.Keys]
+            : [.. CacheKeys.Keys.Where(k => k.Equals(key, StringComparison.InvariantCultureIgnoreCase))];
     }
 
     // This implements the same as GetAsync<T/> without the T : Class requirement.
     // This is used for when there's no backing class so you can still use cache only storage.
-    public async Task<T?> GetNoClassAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public async Task<T?> GetNoClassAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
     {
         byte[]? data = await DistributedCache.GetAsync(key);
         return data == null ? default : JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(data));
@@ -38,7 +35,10 @@ public abstract class CacheManagerBase : ICacheManager
         return data == null ? null : JsonConvert.DeserializeObject<T>(System.Text.Encoding.UTF8.GetString(data));
     }
 
-    public virtual async Task<T?> GetAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public virtual async Task<T?> GetAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
         where T : class?
     {
         return await GetAsync(
@@ -49,10 +49,13 @@ public abstract class CacheManagerBase : ICacheManager
                     new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0)));
     }
 
-    public virtual async Task<T?> GetAsync<T>(string key, Func<Task<T>>? targetMethod, DistributedCacheEntryOptions cacheOptions)
+    public virtual async Task<T?> GetAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        DistributedCacheEntryOptions cacheOptions)
         where T : class?
     {
-        T? result = default;
+        T? result = null;
 
         byte[]? cachedData = await DistributedCache.GetAsync(key);
         if (cachedData != null)
@@ -73,7 +76,10 @@ public abstract class CacheManagerBase : ICacheManager
     {
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
+            AbsoluteExpirationRelativeToNow = new TimeSpan(
+                0,
+                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes,
+                0),
         };
 
         await SetAsync(key, value, cacheOptions);
@@ -89,16 +95,22 @@ public abstract class CacheManagerBase : ICacheManager
 
         string json = JsonConvert.SerializeObject(value, settings);
         await DistributedCache.SetAsync(key, System.Text.Encoding.UTF8.GetBytes(json), cacheOptions);
-        Keys[key] = true;
+        CacheKeys[key] = true;
     }
 
-    public virtual async Task<T?> GetEnumAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null)
+    public virtual async Task<T?> GetEnumAsync<T>(
+        string key,
+        Func<Task<T>>? targetMethod,
+        int? cacheDurationInMinutes = null)
         where T : Enum
     {
         T? result = default;
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = new TimeSpan(0, cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes, 0),
+            AbsoluteExpirationRelativeToNow = new TimeSpan(
+                0,
+                cacheDurationInMinutes ?? BusinessRuleConstants.CacheDurationInMinutes,
+                0),
         };
 
         byte[]? cachedData = await DistributedCache.GetAsync(key);
@@ -126,17 +138,17 @@ public abstract class CacheManagerBase : ICacheManager
     {
         if (string.IsNullOrEmpty(cacheKey))
         {
-            foreach (var key in Keys.Keys)
+            foreach (string key in CacheKeys.Keys)
             {
                 await DistributedCache.RemoveAsync(key);
             }
 
-            Keys = new ConcurrentDictionary<string, bool>();
+            CacheKeys = new ConcurrentDictionary<string, bool>();
         }
         else
         {
             await DistributedCache.RemoveAsync(cacheKey);
-            Keys.TryRemove(cacheKey, out _);
+            CacheKeys.TryRemove(cacheKey, out _);
         }
     }
 
@@ -155,4 +167,3 @@ public abstract class CacheManagerBase : ICacheManager
 
     public abstract Task ClearCacheByPatternAsync(string pattern);
 }
-
