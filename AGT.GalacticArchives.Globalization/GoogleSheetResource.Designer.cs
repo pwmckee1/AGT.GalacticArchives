@@ -96,6 +96,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} file line {1}: {2} must be one of the following values - {3}.
+        /// </summary>
+        public static string InvalidFieldEnum {
+            get {
+                return ResourceManager.GetString("InvalidFieldEnum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} sheet, line {1}: column {2} must be valid decimal.
         /// </summary>
         public static string InvalidFloat {
@@ -168,6 +177,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error occurred on row {0} converting the value {1} to enumeration type {2}.  Considering changing the value to a valid type, or adding the value to the enumeration..
+        /// </summary>
+        public static string MissingEnumerationValueForType {
+            get {
+                return ResourceManager.GetString("MissingEnumerationValueForType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The following headers are missing from the {0} sheet: {1}..
         /// </summary>
         public static string MissingSheetHeader {
@@ -182,6 +200,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string MultiToolSheetName {
             get {
                 return ResourceManager.GetString("MultiToolSheetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to N/A.
+        /// </summary>
+        public static string NotApplicable {
+            get {
+                return ResourceManager.GetString("NotApplicable", resourceCulture);
             }
         }
         

@@ -71,6 +71,22 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>GoogleSheetResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="EconomyTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EconomyTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FactionTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FactionTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GameModeTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GameModeTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="ConflictTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>ConflictTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -148,6 +164,26 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>GoogleSheetResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="EconomyTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EconomyTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FactionTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FactionTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="GameModeTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GameModeTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="ConflictTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>ConflictTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

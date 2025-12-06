@@ -1,0 +1,31 @@
+namespace AGT.GalacticArchives.Core.Models.Enums;
+
+public enum StarSystemWealthTypes
+{
+    Adequate = 1,
+    Advanced,
+    Affluent,
+    Balanced,
+    BlackMarket,
+    Booming,
+    Comfortable,
+    DataUnavailable,
+    Declining,
+    Destitute,
+    Developing,
+    Failing,
+    Fledgling,
+    Flourishing,
+    HighSupply,
+    LowSupply,
+    MediumSupply,
+    Opulent,
+    Promising,
+    Prosperous,
+    Satisfactory,
+    Struggling,
+    Sustainable,
+    Unpromising,
+    Unsuccessful,
+    Wealthy,
+}

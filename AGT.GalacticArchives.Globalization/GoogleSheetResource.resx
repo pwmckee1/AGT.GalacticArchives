@@ -132,6 +132,9 @@
   <data name="InvalidDateTime" xml:space="preserve">
       <value>{0} sheet, line {1}: column {2} must be a valid date-time format: "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "dd-MM-yyyy", "dd-MM-yyyy HH:mm:ss", "MM/dd/yyyy", or "MM/dd/yyyy HH:mm:ss"</value>
   </data>
+  <data name="InvalidFieldEnum" xml:space="preserve">
+      <value>{0} file line {1}: {2} must be one of the following values - {3}</value>
+  </data>
   <data name="InvalidFloat" xml:space="preserve">
       <value>{0} sheet, line {1}: column {2} must be valid decimal</value>
   </data>
@@ -156,11 +159,17 @@
   <data name="InvalidSheetProvided" xml:space="preserve">
       <value>Import sheet must be named from one of the following types of import data: {0}</value>
   </data>
+  <data name="MissingEnumerationValueForType" xml:space="preserve">
+      <value>An error occurred on row {0} converting the value {1} to enumeration type {2}.  Considering changing the value to a valid type, or adding the value to the enumeration.</value>
+  </data>
   <data name="MissingSheetHeader" xml:space="preserve">
       <value>The following headers are missing from the {0} sheet: {1}.</value>
   </data>
   <data name="MultiToolSheetName" xml:space="preserve">
       <value>MultiTool DB</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+      <value>N/A</value>
   </data>
   <data name="PlanetSheetName" xml:space="preserve">
       <value>Planet DB</value>

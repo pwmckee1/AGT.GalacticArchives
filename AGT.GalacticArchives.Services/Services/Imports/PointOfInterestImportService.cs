@@ -1,6 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.Imports;
 using AGT.GalacticArchives.Globalization;
 using Autofac.Features.Indexed;
@@ -16,6 +17,8 @@ public class PointOfInterestImportService(
         importManagers[NamedKeys.Managers.PointOfInterestManager];
 
     protected override string SheetName => GoogleSheetResource.PointOfInterestSheetName;
+
+    protected override Type CsvMapType => typeof(PointOfInterestCsvMap);
 
     protected override async Task ProcessValidatedDataAsync(HashSet<PointOfInterestImport> importData)
     {

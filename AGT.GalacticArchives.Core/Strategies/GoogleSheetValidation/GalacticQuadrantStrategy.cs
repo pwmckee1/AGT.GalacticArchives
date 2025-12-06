@@ -9,7 +9,7 @@ public class GalacticQuadrantStrategy(string? fieldValue, int lineNumber, string
 {
     public void Execute(IExecutionContext context)
     {
-        var validQuadrants = EnumExtensions.GetDescriptions<Quadrant>();
+        var validQuadrants = EnumExtensions.GetDescriptions<GalacticQuadrants>();
         if (!validQuadrants.Contains(FieldValue!))
         {
             context.Errors.Add(

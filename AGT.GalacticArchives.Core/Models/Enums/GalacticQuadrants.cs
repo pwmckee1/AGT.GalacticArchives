@@ -1,8 +1,8 @@
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum Quadrant
+public enum GalacticQuadrants
 {
-    Alpha,
+    Alpha = 1,
     Beta,
     Delta,
     Gamma,

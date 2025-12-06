@@ -9,12 +9,13 @@ using Microsoft.AspNetCore.Http;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public abstract class GoogleSheetImportService<T>(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers)
-    : IGoogleSheetImportService
+    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers) : IGoogleSheetImportService
 {
     protected HashSet<string> Errors = [];
 
     protected abstract string SheetName { get; }
+
+    protected abstract Type CsvMapType { get; }
 
     public virtual async Task ImportGoogleSheetDataAsync(IFormFile form)
     {
@@ -26,11 +27,7 @@ public abstract class GoogleSheetImportService<T>(
     {
         if (!form.Name.Contains(SheetName))
         {
-            throw new ArgumentException(
-                string.Format(
-                    GoogleSheetResource.InvalidFormFile,
-                    SheetName,
-                    form.Name));
+            throw new ArgumentException(string.Format(GoogleSheetResource.InvalidFormFile, SheetName, form.Name));
         }
 
         var importData = await GetRecordsFromCsvFileAsync(form.OpenReadStream());
@@ -49,10 +46,12 @@ public abstract class GoogleSheetImportService<T>(
 
     protected async Task<HashSet<T>> GetRecordsFromCsvFileAsync(Stream stream)
     {
+        var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture) { MissingFieldFound = null };
+
         using var streamReader = new StreamReader(stream);
-        using var csvReader = new CsvReader(
-            streamReader,
-            new CsvConfiguration(CultureInfo.InvariantCulture) { MissingFieldFound = null });
+        using var csvReader = new CsvReader(streamReader, csvConfig);
+
+        csvReader.Context.RegisterClassMap(CsvMapType);
 
         await ValidateHeaderAsync(csvReader);
 

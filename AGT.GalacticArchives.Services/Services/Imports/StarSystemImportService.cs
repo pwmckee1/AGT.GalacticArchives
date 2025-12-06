@@ -1,6 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.Imports;
 using AGT.GalacticArchives.Globalization;
 using Autofac.Features.Indexed;
@@ -16,6 +17,8 @@ public class StarSystemImportService(
         importManagers[NamedKeys.Managers.StarSystemManager];
 
     protected override string SheetName => GoogleSheetResource.StarSystemSheetName;
+
+    protected override Type CsvMapType => typeof(StarSystemCsvMap);
 
     protected override async Task ProcessValidatedDataAsync(HashSet<StarSystemImport> importData)
     {

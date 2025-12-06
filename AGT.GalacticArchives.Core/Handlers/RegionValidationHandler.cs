@@ -30,44 +30,29 @@ public class RegionValidationHandler : BaseValidationHandler, IGoogleSheetValida
             var strategies = new HashSet<IExecutionStrategy>
             {
                 new NullFieldStrategy(
-                    regionField.Name,
+                    regionField.AutoSurveyDate,
                     lineNumber,
-                    nameof(regionField.Name).GetDescription<RegionImport>(),
+                    nameof(regionField.AutoSurveyDate).GetDescription<RegionImport>(),
                     sheetName),
-                new NullFieldStrategy(
-                    regionField.GalaxyName,
+                new BaseCoordinateStrategy(
+                    regionField.BaseCoordinates,
                     lineNumber,
-                    nameof(regionField.GalaxyName).GetDescription<RegionImport>(),
+                    nameof(regionField.BaseCoordinates).GetDescription<RegionImport>(),
                     sheetName),
                 new GalacticCoordinateStrategy(
                     regionField.Coordinates,
                     lineNumber,
                     nameof(regionField.Coordinates).GetDescription<RegionImport>(),
                     sheetName),
-                new GalacticQuadrantStrategy(
-                    regionField.Quadrant,
-                    lineNumber,
-                    nameof(regionField.Quadrant).GetDescription<RegionImport>(),
-                    sheetName),
-                new HexadecimalDigitStrategy(
-                    regionField.XX,
-                    lineNumber,
-                    nameof(regionField.XX).GetDescription<RegionImport>(),
-                    sheetName),
-                new HexadecimalDigitStrategy(
-                    regionField.YYAltitude,
-                    lineNumber,
-                    nameof(regionField.YYAltitude).GetDescription<RegionImport>(),
-                    sheetName),
-                new HexadecimalDigitStrategy(
-                    regionField.ZZ,
-                    lineNumber,
-                    nameof(regionField.ZZ).GetDescription<RegionImport>(),
-                    sheetName),
                 new NullableIntFieldStrategy(
                     regionField.DocSequence,
                     lineNumber,
                     nameof(regionField.DocSequence).GetDescription<RegionImport>(),
+                    sheetName),
+                new NullableDateTimeStrategy(
+                    regionField.EarliestSystemDiscovery,
+                    lineNumber,
+                    nameof(regionField.EarliestSystemDiscovery).GetDescription<RegionImport>(),
                     sheetName),
                 new NullFieldStrategy(
                     regionField.GameRelease,
@@ -75,54 +60,69 @@ public class RegionValidationHandler : BaseValidationHandler, IGoogleSheetValida
                     nameof(regionField.GameRelease).GetDescription<RegionImport>(),
                     sheetName),
                 new NullFieldStrategy(
-                    regionField.AutoSurveyDate,
+                    regionField.GalaxyName,
                     lineNumber,
-                    nameof(regionField.AutoSurveyDate).GetDescription<RegionImport>(),
+                    nameof(regionField.GalaxyName).GetDescription<RegionImport>(),
                     sheetName),
                 new NullableIntFieldStrategy(
-                    regionField.LightYearsFromCenter,
+                    regionField.GalaxyId,
                     lineNumber,
-                    nameof(regionField.LightYearsFromCenter).GetDescription<RegionImport>(),
-                    sheetName),
-                new NullableDateTimeStrategy(
-                    regionField.EarliestSystemDiscovery,
-                    lineNumber,
-                    nameof(regionField.EarliestSystemDiscovery).GetDescription<RegionImport>(),
-                    sheetName),
-                new BaseCoordinateStrategy(
-                    regionField.BaseCoordinates,
-                    lineNumber,
-                    nameof(regionField.BaseCoordinates).GetDescription<RegionImport>(),
-                    sheetName),
-                new IntegerFieldStrategy(
-                    regionField.XXDec,
-                    lineNumber,
-                    nameof(regionField.XXDec).GetDescription<RegionImport>(),
-                    sheetName),
-                new IntegerFieldStrategy(
-                    regionField.YYDec,
-                    lineNumber,
-                    nameof(regionField.YYDec).GetDescription<RegionImport>(),
-                    sheetName),
-                new IntegerFieldStrategy(
-                    regionField.ZZDec,
-                    lineNumber,
-                    nameof(regionField.ZZDec).GetDescription<RegionImport>(),
+                    nameof(regionField.GalaxyId).GetDescription<RegionImport>(),
                     sheetName),
                 new HexadecimalGlyphStrategy(
                     regionField.Glyphs,
                     lineNumber,
                     nameof(regionField.Glyphs).GetDescription<RegionImport>(),
                     sheetName),
+                new NullableIntFieldStrategy(
+                    regionField.LightYearsFromCenter,
+                    lineNumber,
+                    nameof(regionField.LightYearsFromCenter).GetDescription<RegionImport>(),
+                    sheetName),
+                new NullFieldStrategy(
+                    regionField.Name,
+                    lineNumber,
+                    nameof(regionField.Name).GetDescription<RegionImport>(),
+                    sheetName),
+                new GalacticQuadrantStrategy(
+                    regionField.Quadrant,
+                    lineNumber,
+                    nameof(regionField.Quadrant).GetDescription<RegionImport>(),
+                    sheetName),
                 new NullableFloatFieldStrategy(
                     regionField.Version,
                     lineNumber,
                     nameof(regionField.Version).GetDescription<RegionImport>(),
                     sheetName),
-                new NullableIntFieldStrategy(
-                    regionField.GalaxyId,
+                new HexadecimalDigitStrategy(
+                    regionField.XX,
                     lineNumber,
-                    nameof(regionField.GalaxyId).GetDescription<RegionImport>(),
+                    nameof(regionField.XX).GetDescription<RegionImport>(),
+                    sheetName),
+                new IntegerFieldStrategy(
+                    regionField.XXDec,
+                    lineNumber,
+                    nameof(regionField.XXDec).GetDescription<RegionImport>(),
+                    sheetName),
+                new HexadecimalDigitStrategy(
+                    regionField.YYAltitude,
+                    lineNumber,
+                    nameof(regionField.YYAltitude).GetDescription<RegionImport>(),
+                    sheetName),
+                new IntegerFieldStrategy(
+                    regionField.YYDec,
+                    lineNumber,
+                    nameof(regionField.YYDec).GetDescription<RegionImport>(),
+                    sheetName),
+                new HexadecimalDigitStrategy(
+                    regionField.ZZ,
+                    lineNumber,
+                    nameof(regionField.ZZ).GetDescription<RegionImport>(),
+                    sheetName),
+                new IntegerFieldStrategy(
+                    regionField.ZZDec,
+                    lineNumber,
+                    nameof(regionField.ZZDec).GetDescription<RegionImport>(),
                     sheetName),
             };
 

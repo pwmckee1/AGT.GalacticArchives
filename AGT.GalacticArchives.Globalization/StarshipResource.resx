@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-    <!--
+  <!--
       Microsoft ResX Schema
 
       Version 2.0
@@ -59,149 +59,1443 @@
               : using a System.ComponentModel.TypeConverter
               : and then encoded with base64 encoding.
       -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-        <xsd:element name="root" msdata:IsDataSet="true">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
             <xsd:complexType>
-                <xsd:choice maxOccurs="unbounded">
-                    <xsd:element name="metadata">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" use="required" type="xsd:string"/>
-                            <xsd:attribute name="type" type="xsd:string"/>
-                            <xsd:attribute name="mimetype" type="xsd:string"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="assembly">
-                        <xsd:complexType>
-                            <xsd:attribute name="alias" type="xsd:string"/>
-                            <xsd:attribute name="name" type="xsd:string"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="data">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="resheader">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:choice>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
-        </xsd:element>
-    </xsd:schema>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>1.3</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
-    </resheader>
-    <data name="AccentColor" xml:space="preserve">
+  </resheader>
+  <data name="AccentColor" xml:space="preserve">
     <value>Accent Color</value>
   </data>
-    <data name="AdditionalNotes" xml:space="preserve">
+  <data name="AdditionalNotes" xml:space="preserve">
     <value>Additional notes</value>
   </data>
-    <data name="CargoSlots" xml:space="preserve">
+  <data name="CadmiumDrive" xml:space="preserve">
+    <value>Cadmium Drive</value>
+  </data>
+  <data name="CargoSlots" xml:space="preserve">
     <value>Cargo Slots (Pre-Waypoint)</value>
   </data>
-    <data name="CivilizedBy" xml:space="preserve">
+  <data name="CivilizedBy" xml:space="preserve">
     <value>Civilized</value>
   </data>
-    <data name="DescriptionNotes" xml:space="preserve">
+  <data name="CyclotronBallista" xml:space="preserve">
+    <value>Cyclotron Ballista</value>
+  </data>
+  <data name="DeflectorShieldUpgrade" xml:space="preserve">
+    <value>Deflector Shield Upgrade</value>
+  </data>
+  <data name="DescriptionNotes" xml:space="preserve">
     <value>Description Notes</value>
   </data>
-    <data name="DiscoveredBy" xml:space="preserve">
+  <data name="DiscoveredBy" xml:space="preserve">
     <value>Discovered</value>
   </data>
-    <data name="DiscoveredDate" xml:space="preserve">
+  <data name="DiscoveredDate" xml:space="preserve">
     <value>Discovered Date</value>
   </data>
-    <data name="DiscoveredLinkOnWiki" xml:space="preserve">
+  <data name="DiscoveredLinkOnWiki" xml:space="preserve">
     <value>Discovered Link on Wiki</value>
   </data>
-    <data name="DocumentSequence" xml:space="preserve">
+  <data name="DocumentSequence" xml:space="preserve">
     <value>Document Sequence</value>
   </data>
-    <data name="FreighterCostEvaluation" xml:space="preserve">
+  <data name="EfficientThrusters" xml:space="preserve">
+    <value>Efficient Thrusters</value>
+  </data>
+  <data name="EmergencyWarpUnit" xml:space="preserve">
+    <value>Emergency Warp Unit</value>
+  </data>
+  <data name="EmerilDrive" xml:space="preserve">
+    <value>Emeril Drive</value>
+  </data>
+  <data name="ExoticBall" xml:space="preserve">
+    <value>Ball (Exotic)</value>
+  </data>
+  <data name="ExoticGuppy" xml:space="preserve">
+    <value>Guppy (Exotic)</value>
+  </data>
+  <data name="ExoticMosquito" xml:space="preserve">
+    <value>Mosquito (Exotic)</value>
+  </data>
+  <data name="ExoticMosquitoFin" xml:space="preserve">
+    <value>Mosquito Fin (Exotic)</value>
+  </data>
+  <data name="ExoticRoyal" xml:space="preserve">
+    <value>Royal (Exotic)</value>
+  </data>
+  <data name="ExoticRoyalFin" xml:space="preserve">
+    <value>Royal Fin (Exotic)</value>
+  </data>
+  <data name="ExoticSideBooster" xml:space="preserve">
+    <value>Side Booster (Exotic)</value>
+  </data>
+  <data name="ExoticSideWing" xml:space="preserve">
+    <value>Side Wing (Exotic)</value>
+  </data>
+  <data name="ExoticSquid" xml:space="preserve">
+    <value>Squid (Exotic)</value>
+  </data>
+  <data name="ExoticVWing" xml:space="preserve">
+    <value>V-Wing (Exotic)</value>
+  </data>
+  <data name="ExplorerArcfoil" xml:space="preserve">
+    <value>Arcfoil (Explorer)</value>
+  </data>
+  <data name="ExplorerAxial" xml:space="preserve">
+    <value>Axial (Explorer)</value>
+  </data>
+  <data name="ExplorerDragonfly" xml:space="preserve">
+    <value>Dragonfly (Explorer)</value>
+  </data>
+  <data name="ExplorerDragonflyD" xml:space="preserve">
+    <value>Dragonfly-D (Explorer)</value>
+  </data>
+  <data name="ExplorerDragonflyF" xml:space="preserve">
+    <value>Dragonfly-F (Explorer)</value>
+  </data>
+  <data name="ExplorerDragonflyS" xml:space="preserve">
+    <value>Dragonfly-S (Explorer)</value>
+  </data>
+  <data name="ExplorerDrum" xml:space="preserve">
+    <value>Drum (Explorer)</value>
+  </data>
+  <data name="ExplorerDrumObelisk" xml:space="preserve">
+    <value>Drum Obelisk (Explorer)</value>
+  </data>
+  <data name="ExplorerDrumOverseer" xml:space="preserve">
+    <value>Drum Overseer (Explorer)</value>
+  </data>
+  <data name="ExplorerDrumShortwave" xml:space="preserve">
+    <value>Drum Shortwave (Explorer)</value>
+  </data>
+  <data name="ExplorerEuclid" xml:space="preserve">
+    <value>Euclid (Explorer)</value>
+  </data>
+  <data name="ExplorerFirefly" xml:space="preserve">
+    <value>Firefly (Explorer)</value>
+  </data>
+  <data name="ExplorerFireflyD" xml:space="preserve">
+    <value>Firefly-D (Explorer)</value>
+  </data>
+  <data name="ExplorerFireflyF" xml:space="preserve">
+    <value>Firefly-F (Explorer)</value>
+  </data>
+  <data name="ExplorerFireflyS" xml:space="preserve">
+    <value>Firefly-S (Explorer)</value>
+  </data>
+  <data name="ExplorerFireflyWing" xml:space="preserve">
+    <value>Firefly Wing (Explorer)</value>
+  </data>
+  <data name="ExplorerGlider" xml:space="preserve">
+    <value>Glider (Explorer)</value>
+  </data>
+  <data name="ExplorerHesperius" xml:space="preserve">
+    <value>Hesperius (Explorer)</value>
+  </data>
+  <data name="ExplorerLargeDoubleThruster" xml:space="preserve">
+    <value>Large Double Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerLongwave" xml:space="preserve">
+    <value>Longwave (Explorer)</value>
+  </data>
+  <data name="ExplorerObelisk" xml:space="preserve">
+    <value>Obelisk (Explorer)</value>
+  </data>
+  <data name="ExplorerObserver" xml:space="preserve">
+    <value>Observer (Explorer)</value>
+  </data>
+  <data name="ExplorerPlanar" xml:space="preserve">
+    <value>Planar (Explorer)</value>
+  </data>
+  <data name="ExplorerPrismatic" xml:space="preserve">
+    <value>Prismatic (Explorer)</value>
+  </data>
+  <data name="ExplorerPulsar" xml:space="preserve">
+    <value>Pulsar (Explorer)</value>
+  </data>
+  <data name="ExplorerPulsarSplit" xml:space="preserve">
+    <value>Pulsar Split (Explorer)</value>
+  </data>
+  <data name="ExplorerPulsarStub" xml:space="preserve">
+    <value>Pulsar Stub (Explorer)</value>
+  </data>
+  <data name="ExplorerQuadThruster" xml:space="preserve">
+    <value>Quad Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerQuintupleThruster" xml:space="preserve">
+    <value>Quintuple Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerSextupleThruster" xml:space="preserve">
+    <value>Sextuple Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerShortwave" xml:space="preserve">
+    <value>Shortwave (Explorer)</value>
+  </data>
+  <data name="ExplorerSingleThruster" xml:space="preserve">
+    <value>Single Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerSkylance" xml:space="preserve">
+    <value>Skylance (Explorer)</value>
+  </data>
+  <data name="ExplorerSkywave" xml:space="preserve">
+    <value>Skywave (Explorer)</value>
+  </data>
+  <data name="ExplorerSmallDoubleThruster" xml:space="preserve">
+    <value>Small Double Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerSolarFlare" xml:space="preserve">
+    <value>Solar Flare (Explorer)</value>
+  </data>
+  <data name="ExplorerSolarPulse" xml:space="preserve">
+    <value>Solar Pulse (Explorer)</value>
+  </data>
+  <data name="ExplorerSolarWing" xml:space="preserve">
+    <value>Solar Wing (Explorer)</value>
+  </data>
+  <data name="ExplorerSunspot" xml:space="preserve">
+    <value>Sunspot (Explorer)</value>
+  </data>
+  <data name="ExplorerSunspotSplitWing" xml:space="preserve">
+    <value>Sunspot Split Wing (Explorer)</value>
+  </data>
+  <data name="ExplorerSunspotStubWing" xml:space="preserve">
+    <value>Sunspot Stub-Wing (Explorer)</value>
+  </data>
+  <data name="ExplorerSuperfoil" xml:space="preserve">
+    <value>Superfoil (Explorer)</value>
+  </data>
+  <data name="ExplorerTripleThruster" xml:space="preserve">
+    <value>Triple Thruster (Explorer)</value>
+  </data>
+  <data name="ExplorerVortex" xml:space="preserve">
+    <value>Vortex (Explorer)</value>
+  </data>
+  <data name="ExplorerWingCapRound" xml:space="preserve">
+    <value>Wing Cap Round (Explorer)</value>
+  </data>
+  <data name="ExplorerWingCapVertical" xml:space="preserve">
+    <value>Wing Cap Vertical (Explorer)</value>
+  </data>
+  <data name="ExplorerWingStub" xml:space="preserve">
+    <value>Wing Stub (Explorer)</value>
+  </data>
+  <data name="FighterAferburnerCWing" xml:space="preserve">
+    <value>Aferburner C-Wing (Fighter)</value>
+  </data>
+  <data name="FighterAfterburner" xml:space="preserve">
+    <value>Afterburner (Fighter)</value>
+  </data>
+  <data name="FighterAfterburnerCWingFin" xml:space="preserve">
+    <value>Afterburner C-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterAfterburnerEWing" xml:space="preserve">
+    <value>Afterburner E-Wing (Fighter)</value>
+  </data>
+  <data name="FighterAfterburnerEWingFin" xml:space="preserve">
+    <value>Afterburner E-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterAfterburnerFin" xml:space="preserve">
+    <value>Afterburner Fin (Fighter)</value>
+  </data>
+  <data name="FighterAfterburnerVWing" xml:space="preserve">
+    <value>Afterburner V-Wing (Fighter)</value>
+  </data>
+  <data name="FighterAfterburnerVWingFin" xml:space="preserve">
+    <value>Afterburner V-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterAlpha" xml:space="preserve">
+    <value>Alpha (Fighter)</value>
+  </data>
+  <data name="FighterCondor" xml:space="preserve">
+    <value>Condor (Fighter)</value>
+  </data>
+  <data name="FighterCondorFin" xml:space="preserve">
+    <value>Condor Fin (Fighter)</value>
+  </data>
+  <data name="FighterDroidCWing" xml:space="preserve">
+    <value>Droid C-Wing (Fighter)</value>
+  </data>
+  <data name="FighterDroidCWingFin" xml:space="preserve">
+    <value>Droid C-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterDroidEWing" xml:space="preserve">
+    <value>Droid E-Wing (Fighter)</value>
+  </data>
+  <data name="FighterDroidEWingFin" xml:space="preserve">
+    <value>Droid E-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterDroidSWing" xml:space="preserve">
+    <value>Droid S-Wing (Fighter)</value>
+  </data>
+  <data name="FighterDroidSWingFin" xml:space="preserve">
+    <value>Droid S-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterDroidVWing" xml:space="preserve">
+    <value>Droid V-Wing (Fighter)</value>
+  </data>
+  <data name="FighterDroidVWingFin" xml:space="preserve">
+    <value>Droid V-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterDroidWing" xml:space="preserve">
+    <value>Droid Wing (Fighter)</value>
+  </data>
+  <data name="FighterDroidWingFin" xml:space="preserve">
+    <value>Droid Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterGullWing" xml:space="preserve">
+    <value>Gull Wing (Fighter)</value>
+  </data>
+  <data name="FighterHalo" xml:space="preserve">
+    <value>Halo (Fighter)</value>
+  </data>
+  <data name="FighterHardframeCWing" xml:space="preserve">
+    <value>Hardframe C-Wing (Fighter)</value>
+  </data>
+  <data name="FighterHardframeCWingFin" xml:space="preserve">
+    <value>Hardframe C-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterHardframeEWing" xml:space="preserve">
+    <value>Hardframe E-Wing (Fighter)</value>
+  </data>
+  <data name="FighterHardframeEWingFin" xml:space="preserve">
+    <value>Hardframe E-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterHardframeSWing" xml:space="preserve">
+    <value>Hardframe S-Wing (Fighter)</value>
+  </data>
+  <data name="FighterHardframeSWingFin" xml:space="preserve">
+    <value>Hardframe S-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterHardframeVWing" xml:space="preserve">
+    <value>Hardframe V-Wing (Fighter)</value>
+  </data>
+  <data name="FighterHardframeVWingFin" xml:space="preserve">
+    <value>Hardframe V-Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterHardframeWing" xml:space="preserve">
+    <value>Hardframe Wing (Fighter)</value>
+  </data>
+  <data name="FighterHardframeWingFin" xml:space="preserve">
+    <value>Hardframe Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterHorizonWing" xml:space="preserve">
+    <value>Horizon Wing (Fighter)</value>
+  </data>
+  <data name="FighterHorizonWingFin" xml:space="preserve">
+    <value>Horizon Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterHotrod" xml:space="preserve">
+    <value>Hotrod (Fighter)</value>
+  </data>
+  <data name="FighterMonoThruster" xml:space="preserve">
+    <value>Mono Thruster (Fighter)</value>
+  </data>
+  <data name="FighterNeedle" xml:space="preserve">
+    <value>Needle (Fighter)</value>
+  </data>
+  <data name="FighterOmega" xml:space="preserve">
+    <value>Omega (Fighter)</value>
+  </data>
+  <data name="FighterPalisadeWing" xml:space="preserve">
+    <value>Palisade Wing (Fighter)</value>
+  </data>
+  <data name="FighterPalisadeWingFin" xml:space="preserve">
+    <value>Palisade Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterQuasarWing" xml:space="preserve">
+    <value>Quasar Wing (Fighter)</value>
+  </data>
+  <data name="FighterQuasarWingFin" xml:space="preserve">
+    <value>Quasar Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterRadiant" xml:space="preserve">
+    <value>Radiant (Fighter)</value>
+  </data>
+  <data name="FighterRadiantWing" xml:space="preserve">
+    <value>Radiant Wing (Fighter)</value>
+  </data>
+  <data name="FighterRadiantWingFin" xml:space="preserve">
+    <value>Radiant Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterSleek" xml:space="preserve">
+    <value>Sleek (Fighter)</value>
+  </data>
+  <data name="FighterSpeeder" xml:space="preserve">
+    <value>Speeder (Fighter)</value>
+  </data>
+  <data name="FighterStardancerWing" xml:space="preserve">
+    <value>Stardancer Wing (Fighter)</value>
+  </data>
+  <data name="FighterStardancerWingFin" xml:space="preserve">
+    <value>Stardancer Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterSweptWingFull" xml:space="preserve">
+    <value>Swept Wing Full (Fighter)</value>
+  </data>
+  <data name="FighterSweptWingLow" xml:space="preserve">
+    <value>Swept Wing Low (Fighter)</value>
+  </data>
+  <data name="FighterSweptWingMid" xml:space="preserve">
+    <value>Swept Wing Mid (Fighter)</value>
+  </data>
+  <data name="FighterTriBooster" xml:space="preserve">
+    <value>Tri-Booster (Fighter)</value>
+  </data>
+  <data name="FighterTurbine" xml:space="preserve">
+    <value>Turbine (Fighter)</value>
+  </data>
+  <data name="FighterVector" xml:space="preserve">
+    <value>Vector (Fighter)</value>
+  </data>
+  <data name="FighterVectorThruster" xml:space="preserve">
+    <value>Vector Thruster (Fighter)</value>
+  </data>
+  <data name="FighterVectorWing" xml:space="preserve">
+    <value>Vector Wing (Fighter)</value>
+  </data>
+  <data name="FighterVectorWingFin" xml:space="preserve">
+    <value>Vector Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterVesperWing" xml:space="preserve">
+    <value>Vesper Wing (Fighter)</value>
+  </data>
+  <data name="FighterVesperWingFin" xml:space="preserve">
+    <value>Vesper Wing Fin (Fighter)</value>
+  </data>
+  <data name="FighterVesperWingSwept" xml:space="preserve">
+    <value>Vesper Wing Swept (Fighter)</value>
+  </data>
+  <data name="FighterVigilWing" xml:space="preserve">
+    <value>Vigil Wing (Fighter)</value>
+  </data>
+  <data name="FighterVultureWing" xml:space="preserve">
+    <value>Vulture Wing (Fighter)</value>
+  </data>
+  <data name="FighterVultureWingFin" xml:space="preserve">
+    <value>Vulture Wing Fin (Fighter)</value>
+  </data>
+  <data name="FourierDeLimiter" xml:space="preserve">
+    <value>Fourier De-Limiter</value>
+  </data>
+  <data name="FreighterBattleship" xml:space="preserve">
+    <value>Battleship (Freighter)</value>
+  </data>
+  <data name="FreighterBlade" xml:space="preserve">
+    <value>Blade (Freighter)</value>
+  </data>
+  <data name="FreighterCargo" xml:space="preserve">
+    <value>Cargo (Freighter)</value>
+  </data>
+  <data name="FreighterCentrifuge" xml:space="preserve">
+    <value>Centrifuge (Freighter)</value>
+  </data>
+  <data name="FreighterCostEvaluation" xml:space="preserve">
     <value>Freighter Cost Evaluation</value>
   </data>
-    <data name="HasWings" xml:space="preserve">
+  <data name="FreighterDerelict" xml:space="preserve">
+    <value>Derelict (Freighter)</value>
+  </data>
+  <data name="FreighterDreadnought" xml:space="preserve">
+    <value>Dreadnought (Freighter)</value>
+  </data>
+  <data name="FreighterEnterprise" xml:space="preserve">
+    <value>Enterprise (Freighter)</value>
+  </data>
+  <data name="FreighterGalleon" xml:space="preserve">
+    <value>Galleon (Freighter)</value>
+  </data>
+  <data name="FreighterHammerhead" xml:space="preserve">
+    <value>Hammerhead (Freighter)</value>
+  </data>
+  <data name="FreighterImperial" xml:space="preserve">
+    <value>Imperial (Freighter)</value>
+  </data>
+  <data name="FreighterIris" xml:space="preserve">
+    <value>Iris (Freighter)</value>
+  </data>
+  <data name="FreighterOculus" xml:space="preserve">
+    <value>Oculus (Freighter)</value>
+  </data>
+  <data name="FreighterRegular" xml:space="preserve">
+    <value>Regular (Freighter)</value>
+  </data>
+  <data name="FreighterResurgent" xml:space="preserve">
+    <value>Resurgent (Freighter)</value>
+  </data>
+  <data name="FreighterRevolver" xml:space="preserve">
+    <value>Revolver (Freighter)</value>
+  </data>
+  <data name="FreighterSentinel" xml:space="preserve">
+    <value>Sentinel (Freighter)</value>
+  </data>
+  <data name="FreighterVenator" xml:space="preserve">
+    <value>Venator (Freighter)</value>
+  </data>
+  <data name="FrigateCombat" xml:space="preserve">
+    <value>Combat (Frigate)</value>
+  </data>
+  <data name="FrigateEthereal" xml:space="preserve">
+    <value>Ethereal (Frigate)</value>
+  </data>
+  <data name="FrigateExploration" xml:space="preserve">
+    <value>Exploration (Frigate)</value>
+  </data>
+  <data name="FrigateGimp" xml:space="preserve">
+    <value>Gimp (Frigate)</value>
+  </data>
+  <data name="FrigateIndustrial" xml:space="preserve">
+    <value>Industrial (Frigate)</value>
+  </data>
+  <data name="FrigateLeviathan" xml:space="preserve">
+    <value>Leviathan (Frigate)</value>
+  </data>
+  <data name="FrigateMonoleviathan" xml:space="preserve">
+    <value>Mono-leviathan (Frigate)</value>
+  </data>
+  <data name="FrigateRunt" xml:space="preserve">
+    <value>Runt (Frigate)</value>
+  </data>
+  <data name="FrigateSupport" xml:space="preserve">
+    <value>Support (Frigate)</value>
+  </data>
+  <data name="FrigateTrade" xml:space="preserve">
+    <value>Trade (Frigate)</value>
+  </data>
+  <data name="GraftedEyes" xml:space="preserve">
+    <value>Grafted Eyes</value>
+  </data>
+  <data name="HasWings" xml:space="preserve">
     <value>Wings?</value>
   </data>
-    <data name="HullAccessories" xml:space="preserve">
+  <data name="HaulerAirliftThruster" xml:space="preserve">
+    <value>Airlift Thruster (Hauler)</value>
+  </data>
+  <data name="HaulerAviator" xml:space="preserve">
+    <value>Aviator (Hauler)</value>
+  </data>
+  <data name="HaulerAviatorWing" xml:space="preserve">
+    <value>Aviator (Hauler)</value>
+  </data>
+  <data name="HaulerBulker" xml:space="preserve">
+    <value>Bulker (Hauler)</value>
+  </data>
+  <data name="HaulerBulkerAWing" xml:space="preserve">
+    <value>Bulker A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulkerDWing" xml:space="preserve">
+    <value>Bulker D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulkerFWing" xml:space="preserve">
+    <value>Bulker F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulkerSWing" xml:space="preserve">
+    <value>Bulker S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulkerWing" xml:space="preserve">
+    <value>Bulker Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkAWing" xml:space="preserve">
+    <value>Bulwark A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkCWing" xml:space="preserve">
+    <value>Bulwark C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkDWing" xml:space="preserve">
+    <value>Bulwark D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkFanWing" xml:space="preserve">
+    <value>Bulwark Fan-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkFWing" xml:space="preserve">
+    <value>Bulwark F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkSplitWing" xml:space="preserve">
+    <value>Bulwark Split Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkSWing" xml:space="preserve">
+    <value>Bulwark S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkVWing" xml:space="preserve">
+    <value>Bulwark V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkWing" xml:space="preserve">
+    <value>Bulwark Wing (Hauler)</value>
+  </data>
+  <data name="HaulerBulwarkWWing" xml:space="preserve">
+    <value>Bulwark W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerDuoMaxEngine" xml:space="preserve">
+    <value>Duo-Max Engine (Hauler)</value>
+  </data>
+  <data name="HaulerEmptyWingPanel" xml:space="preserve">
+    <value>Empty Wing Panel (Hauler)</value>
+  </data>
+  <data name="HaulerEWingHeavy" xml:space="preserve">
+    <value>E-Wing Heavy (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxAWing" xml:space="preserve">
+    <value>Firebox A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxCWing" xml:space="preserve">
+    <value>Firebox C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxDWing" xml:space="preserve">
+    <value>Firebox D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxFWing" xml:space="preserve">
+    <value>Firebox F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxSplitWing" xml:space="preserve">
+    <value>Firebox Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxSWing" xml:space="preserve">
+    <value>Firebox S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxVWing" xml:space="preserve">
+    <value>Firebox V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxWing" xml:space="preserve">
+    <value>Firebox Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFireboxWWing" xml:space="preserve">
+    <value>Firebox W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerFuselageArmour" xml:space="preserve">
+    <value>Fuselage Armour (Hauler)</value>
+  </data>
+  <data name="HaulerFWingAirliftThruster" xml:space="preserve">
+    <value>F-Wing Airlift Thruster (Hauler)</value>
+  </data>
+  <data name="HaulerFWingMegalithEngine" xml:space="preserve">
+    <value>F-Wing Megalith Engine (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22AWing" xml:space="preserve">
+    <value>Heavy-22 A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22FWing" xml:space="preserve">
+    <value>Heavy-22 F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22SplitWing" xml:space="preserve">
+    <value>Heavy-22 Split Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22SWing" xml:space="preserve">
+    <value>Heavy-22 S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22VWing" xml:space="preserve">
+    <value>Heavy-22 V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22Wing" xml:space="preserve">
+    <value>Heavy-22 Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHeavy22WWing" xml:space="preserve">
+    <value>Heavy-22 W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerHiRocLauncher" xml:space="preserve">
+    <value>Hi-Roc Launcher (Hauler)</value>
+  </data>
+  <data name="HaulerHydraulic" xml:space="preserve">
+    <value>Hydraulic (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseAWing" xml:space="preserve">
+    <value>Impulse A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseCWing" xml:space="preserve">
+    <value>Impulse C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseDWing" xml:space="preserve">
+    <value>Impulse D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseFWing" xml:space="preserve">
+    <value>Impulse F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseLauncher" xml:space="preserve">
+    <value>Impulse Launcher (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseSplitWing" xml:space="preserve">
+    <value>Impulse Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseSWing" xml:space="preserve">
+    <value>Impulse S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseVWing" xml:space="preserve">
+    <value>Impulse V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseWing" xml:space="preserve">
+    <value>Impulse Wing (Hauler)</value>
+  </data>
+  <data name="HaulerImpulseWWing" xml:space="preserve">
+    <value>Impulse W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonBladeWing" xml:space="preserve">
+    <value>Ion Blade Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareAWing" xml:space="preserve">
+    <value>Ion Flare A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareCWing" xml:space="preserve">
+    <value>Ion Flare C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareDWing" xml:space="preserve">
+    <value>Ion Flare D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareFWing" xml:space="preserve">
+    <value>Ion Flare F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareSplitWing" xml:space="preserve">
+    <value>Ion Flare Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareSWing" xml:space="preserve">
+    <value>Ion Flare S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareVWing" xml:space="preserve">
+    <value>Ion Flare V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareWing" xml:space="preserve">
+    <value>Ion Flare Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIonFlareWWing" xml:space="preserve">
+    <value>Ion Flare W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerIronVulture" xml:space="preserve">
+    <value>Iron Vulture (Hauler)</value>
+  </data>
+  <data name="HaulerIronVultureEngine" xml:space="preserve">
+    <value>Iron Vulture Engine (Hauler)</value>
+  </data>
+  <data name="HaulerIronVultureWing" xml:space="preserve">
+    <value>Iron Vulture Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshore" xml:space="preserve">
+    <value>Longshore (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreAWing" xml:space="preserve">
+    <value>Longshore A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreCWing" xml:space="preserve">
+    <value>Longshore C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreDWing" xml:space="preserve">
+    <value>Longshore D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreFanWing" xml:space="preserve">
+    <value>Longshore Fan-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreFWing" xml:space="preserve">
+    <value>Longshore F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreSplitWing" xml:space="preserve">
+    <value>Longshore Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreSWing" xml:space="preserve">
+    <value>Longshore S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreVWing" xml:space="preserve">
+    <value>Longshore V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreWing" xml:space="preserve">
+    <value>Longshore Wing (Hauler)</value>
+  </data>
+  <data name="HaulerLongshoreWWing" xml:space="preserve">
+    <value>Longshore W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerMegalithAWing" xml:space="preserve">
+    <value>Megalith A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerMegalithDWing" xml:space="preserve">
+    <value>Megalith D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerMegalithEngine" xml:space="preserve">
+    <value>Megalith Engine (Hauler)</value>
+  </data>
+  <data name="HaulerMegalithFWing" xml:space="preserve">
+    <value>Megalith F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerMegalithSWing" xml:space="preserve">
+    <value>Megalith S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerMegalithWing" xml:space="preserve">
+    <value>Megalith Wing (Hauler)</value>
+  </data>
+  <data name="HaulerNegotiator" xml:space="preserve">
+    <value>Negotiator (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetAWing" xml:space="preserve">
+    <value>Ramjet A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetCWing" xml:space="preserve">
+    <value>Ramjet C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetDWing" xml:space="preserve">
+    <value>Ramjet D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetFWing" xml:space="preserve">
+    <value>Ramjet F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetSplitWing" xml:space="preserve">
+    <value>Ramjet Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetSWing" xml:space="preserve">
+    <value>Ramjet S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetVWing" xml:space="preserve">
+    <value>Ramjet V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetWing" xml:space="preserve">
+    <value>Ramjet Wing (Hauler)</value>
+  </data>
+  <data name="HaulerRamjetWWing" xml:space="preserve">
+    <value>Ramjet W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratoHaul" xml:space="preserve">
+    <value>Strato-Haul (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseAWing" xml:space="preserve">
+    <value>Stratopulse A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseCWing" xml:space="preserve">
+    <value>Stratopulse C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseDWing" xml:space="preserve">
+    <value>Stratopulse D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseFanWing" xml:space="preserve">
+    <value>Stratopulse Fan-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseFWing" xml:space="preserve">
+    <value>Stratopulse F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseSplitWing" xml:space="preserve">
+    <value>Stratopulse Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseSWing" xml:space="preserve">
+    <value>Stratopulse S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseVWing" xml:space="preserve">
+    <value>Stratopulse V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseWing" xml:space="preserve">
+    <value>Stratopulse Wing (Hauler)</value>
+  </data>
+  <data name="HaulerStratopulseWWing" xml:space="preserve">
+    <value>Stratopulse W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercondorWing" xml:space="preserve">
+    <value>SupercCondor Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruise" xml:space="preserve">
+    <value>Supercruise (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseAWing" xml:space="preserve">
+    <value>Supercruise A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseCWing" xml:space="preserve">
+    <value>Supercruise C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseDWing" xml:space="preserve">
+    <value>Supercruise D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseFanWing" xml:space="preserve">
+    <value>Supercruise Fan-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseFWing" xml:space="preserve">
+    <value>Supercruise F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseSplitWing" xml:space="preserve">
+    <value>Supercruise Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseSWing" xml:space="preserve">
+    <value>Supercruise S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseVWing" xml:space="preserve">
+    <value>Supercruise V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseWing" xml:space="preserve">
+    <value>Supercruise Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSupercruiseWWing" xml:space="preserve">
+    <value>Supercruise W-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerSWingAirliftThruster" xml:space="preserve">
+    <value>S-Wing Airlift Thruster (Hauler)</value>
+  </data>
+  <data name="HaulerSWingMegalithEngine" xml:space="preserve">
+    <value>S-Wing Megalith Engine (Hauler)</value>
+  </data>
+  <data name="HaulerTitanAWing" xml:space="preserve">
+    <value>Titan A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerTitanDWing" xml:space="preserve">
+    <value>Titan D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerTitanFWing" xml:space="preserve">
+    <value>Titan F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerTitanSWing" xml:space="preserve">
+    <value>Titan S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerTitanWing" xml:space="preserve">
+    <value>Titan Wing (Hauler)</value>
+  </data>
+  <data name="HaulerTurbineWing" xml:space="preserve">
+    <value>Turbine Wing (Hauler)</value>
+  </data>
+  <data name="HaulerType11" xml:space="preserve">
+    <value>Type-11 (Hauler)</value>
+  </data>
+  <data name="HaulerUltralithWing" xml:space="preserve">
+    <value>Ultralith Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyAWing" xml:space="preserve">
+    <value>Widebody A-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyCWing" xml:space="preserve">
+    <value>Widebody C-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyDWing" xml:space="preserve">
+    <value>Widebody D-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyFanWing" xml:space="preserve">
+    <value>Widebody Fan-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyFWing" xml:space="preserve">
+    <value>Widebody F-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodySplitWing" xml:space="preserve">
+    <value>Widebody Split-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodySWing" xml:space="preserve">
+    <value>Widebody S-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyVWing" xml:space="preserve">
+    <value>Widebody V-Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyWing" xml:space="preserve">
+    <value>Widebody Wing (Hauler)</value>
+  </data>
+  <data name="HaulerWidebodyWWing" xml:space="preserve">
+    <value>Widebody W-Wing (Hauler)</value>
+  </data>
+  <data name="HullAccessories" xml:space="preserve">
     <value>Hull Accessories</value>
   </data>
-    <data name="InventorySize" xml:space="preserve">
+  <data name="HyperdriveUpgrade" xml:space="preserve">
+    <value>Hyperdrive Upgrade</value>
+  </data>
+  <data name="IndiumDrive" xml:space="preserve">
+    <value>Indium Drive</value>
+  </data>
+  <data name="InfraKnifeAccelerator" xml:space="preserve">
+    <value>Infra-Knife Accelerator</value>
+  </data>
+  <data name="InterceptorGuard" xml:space="preserve">
+    <value>Guard (Interceptor)</value>
+  </data>
+  <data name="InterceptorGuardElytra" xml:space="preserve">
+    <value>Guard Elytra (Interceptor)</value>
+  </data>
+  <data name="InterceptorHilt" xml:space="preserve">
+    <value>Hilt (Interceptor)</value>
+  </data>
+  <data name="InterceptorHiltElytra" xml:space="preserve">
+    <value>Hilt Elytra (Interceptor)</value>
+  </data>
+  <data name="InterceptorIWing" xml:space="preserve">
+    <value>I-Wing (Interceptor)</value>
+  </data>
+  <data name="InterceptorIWingMandible" xml:space="preserve">
+    <value>I-Wing Mandible (Interceptor)</value>
+  </data>
+  <data name="InterceptorIWingPincer" xml:space="preserve">
+    <value>I-Wing Pincer (Interceptor)</value>
+  </data>
+  <data name="InterceptorPointed" xml:space="preserve">
+    <value>Pointed (Interceptor)</value>
+  </data>
+  <data name="InterceptorPommel" xml:space="preserve">
+    <value>Pommel (Interceptor)</value>
+  </data>
+  <data name="InterceptorPommelElytra" xml:space="preserve">
+    <value>Pommel Elytra (Interceptor)</value>
+  </data>
+  <data name="InterceptorUWing" xml:space="preserve">
+    <value>U-Wing (Interceptor)</value>
+  </data>
+  <data name="InterceptorUWingMandible" xml:space="preserve">
+    <value>U-Wing Mandible (Interceptor)</value>
+  </data>
+  <data name="InterceptorUWingPincer" xml:space="preserve">
+    <value>U-Wing Pincer (Interceptor)</value>
+  </data>
+  <data name="InterceptorVented" xml:space="preserve">
+    <value>Vented (Interceptor)</value>
+  </data>
+  <data name="InterceptorWedged" xml:space="preserve">
+    <value>Wedged (Interceptor)</value>
+  </data>
+  <data name="InterceptorXWing" xml:space="preserve">
+    <value>X-Wing (Interceptor)</value>
+  </data>
+  <data name="InterceptorXWingMandible" xml:space="preserve">
+    <value>X-Wing Mandible (Interceptor)</value>
+  </data>
+  <data name="InterceptorXWingPincer" xml:space="preserve">
+    <value>X-Wing Pincer (Interceptor)</value>
+  </data>
+  <data name="InventorySize" xml:space="preserve">
     <value>Inventory Size</value>
   </data>
-    <data name="LocationNotes" xml:space="preserve">
+  <data name="LaunchSystemRecharger" xml:space="preserve">
+    <value>Launch System Recharger</value>
+  </data>
+  <data name="LaunchThrusterUpgrade" xml:space="preserve">
+    <value>Launch Thruster Upgrade</value>
+  </data>
+  <data name="LivingShip" xml:space="preserve">
+      <value>Living Ship</value>
+  </data>
+  <data name="LivingShipAnvil" xml:space="preserve">
+    <value>Anvil (Living Ship)</value>
+  </data>
+  <data name="LivingShipCompact" xml:space="preserve">
+    <value>Compact (Living Ship)</value>
+  </data>
+  <data name="LivingShipDualThruster" xml:space="preserve">
+    <value>Dual Thruster (Living Ship)</value>
+  </data>
+  <data name="LivingShipHammerhead" xml:space="preserve">
+    <value>Hammerhead (Living Ship)</value>
+  </data>
+  <data name="LivingShipShark" xml:space="preserve">
+    <value>Shark (Living Ship)</value>
+  </data>
+  <data name="LivingShipSingleThruster" xml:space="preserve">
+    <value>Single Thruster (Living Ship)</value>
+  </data>
+  <data name="LivingShipTripleThruster" xml:space="preserve">
+    <value>Triple Thruster (Living Ship)</value>
+  </data>
+  <data name="LivingShipTusked" xml:space="preserve">
+    <value>Tusked (Living Ship)</value>
+  </data>
+  <data name="LocationNotes" xml:space="preserve">
     <value>Location Notes</value>
   </data>
-    <data name="MoreHullAccessories" xml:space="preserve">
+  <data name="MoreHullAccessories" xml:space="preserve">
     <value>More Hull Accessories</value>
   </data>
-    <data name="Name" xml:space="preserve">
+  <data name="Name" xml:space="preserve">
     <value>Starship Name</value>
   </data>
-    <data name="PrimaryColor" xml:space="preserve">
+  <data name="NeuralAssembly" xml:space="preserve">
+    <value>Neural Assembly</value>
+  </data>
+  <data name="OrganicFrigates" xml:space="preserve">
+      <value>Organic Frigates</value>
+  </data>
+  <data name="PhaseBeam" xml:space="preserve">
+    <value>Phase Beam</value>
+  </data>
+  <data name="PhotonCannon" xml:space="preserve">
+    <value>Photon Cannon</value>
+  </data>
+  <data name="PositronEjector" xml:space="preserve">
+    <value>Positron Ejector</value>
+  </data>
+  <data name="PrimaryColor" xml:space="preserve">
     <value>Primary Color</value>
   </data>
-    <data name="ResearchTeam" xml:space="preserve">
+  <data name="PulseEngineUpgrades" xml:space="preserve">
+    <value>Pulse Engine Upgrades</value>
+  </data>
+  <data name="PulsingHeart" xml:space="preserve">
+    <value>Pulsing Heart</value>
+  </data>
+  <data name="ResearchTeam" xml:space="preserve">
     <value>Research Team</value>
   </data>
-    <data name="SecondaryColor" xml:space="preserve">
+  <data name="RocketLauncher" xml:space="preserve">
+    <value>Rocket Launcher</value>
+  </data>
+  <data name="ScreamSuppressor" xml:space="preserve">
+    <value>Scream Suppressor</value>
+  </data>
+  <data name="SecondaryColor" xml:space="preserve">
     <value>Secondary Color</value>
   </data>
-    <data name="ShipSubtype" xml:space="preserve">
+  <data name="ShipSubtype" xml:space="preserve">
     <value>ShipSubtype</value>
   </data>
-    <data name="SummaryNotes" xml:space="preserve">
+  <data name="ShuttleAfterburner" xml:space="preserve">
+    <value>Afterburner (Shuttle)</value>
+  </data>
+  <data name="ShuttleAirFoil" xml:space="preserve">
+    <value>Air Foil (Shuttle)</value>
+  </data>
+  <data name="ShuttleAngledChin" xml:space="preserve">
+    <value>Angled Chin (Shuttle)</value>
+  </data>
+  <data name="ShuttleAngledRudder" xml:space="preserve">
+    <value>Angled Rudder (Shuttle)</value>
+  </data>
+  <data name="ShuttleAngledVent" xml:space="preserve">
+    <value>Angled Vent (Shuttle)</value>
+  </data>
+  <data name="ShuttleAntenna" xml:space="preserve">
+    <value>Antenna (Shuttle)</value>
+  </data>
+  <data name="ShuttleBentWing" xml:space="preserve">
+    <value>Bent Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleBox" xml:space="preserve">
+    <value>Box (Shuttle)</value>
+  </data>
+  <data name="ShuttleCargoVent" xml:space="preserve">
+    <value>Cargo Vent (Shuttle)</value>
+  </data>
+  <data name="ShuttleCoolantPorts" xml:space="preserve">
+    <value>Coolant Ports (Shuttle)</value>
+  </data>
+  <data name="ShuttleCoolingChannel" xml:space="preserve">
+    <value>Cooling Channel (Shuttle)</value>
+  </data>
+  <data name="ShuttleCowlLights" xml:space="preserve">
+    <value>Cowl Lights (Shuttle)</value>
+  </data>
+  <data name="ShuttleDeltaWing" xml:space="preserve">
+    <value>Delta Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleDoubleTube" xml:space="preserve">
+    <value>Double Tube (Shuttle)</value>
+  </data>
+  <data name="ShuttleDropWing" xml:space="preserve">
+    <value>Drop Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleExhaustCoolingChannel" xml:space="preserve">
+    <value>Exhaust Cooling Channel (Shuttle)</value>
+  </data>
+  <data name="ShuttleFatboy" xml:space="preserve">
+    <value>Fatboy (Shuttle)</value>
+  </data>
+  <data name="ShuttleFiltrationNose" xml:space="preserve">
+    <value>Filtration Nose (Shuttle)</value>
+  </data>
+  <data name="ShuttleFork" xml:space="preserve">
+    <value>Fork (Shuttle)</value>
+  </data>
+  <data name="ShuttleFuelCompressor" xml:space="preserve">
+    <value>Fuel Compressor (Shuttle)</value>
+  </data>
+  <data name="ShuttleFuelPort" xml:space="preserve">
+    <value>Fuel Port (Shuttle)</value>
+  </data>
+  <data name="ShuttleGlider" xml:space="preserve">
+    <value>Glider (Shuttle)</value>
+  </data>
+  <data name="ShuttleGrillWing" xml:space="preserve">
+    <value>Grill Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleHoverFan" xml:space="preserve">
+    <value>Hover Fan (Shuttle)</value>
+  </data>
+  <data name="ShuttleKeg" xml:space="preserve">
+    <value>Keg (Shuttle)</value>
+  </data>
+  <data name="ShuttleLargeDoubleThruster" xml:space="preserve">
+    <value>Large Double Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleLowWing" xml:space="preserve">
+    <value>Low Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleLunchBox" xml:space="preserve">
+    <value>Lunch Box (Shuttle)</value>
+  </data>
+  <data name="ShuttleMagnatremeAdapter" xml:space="preserve">
+    <value>Magnatreme Adapter (Shuttle)</value>
+  </data>
+  <data name="ShuttleMagnatremeDome" xml:space="preserve">
+    <value>Magnatreme Dome (Shuttle)</value>
+  </data>
+  <data name="ShuttleMagnatremeRing" xml:space="preserve">
+    <value>Magnatreme Ring (Shuttle)</value>
+  </data>
+  <data name="ShuttleMagnatremeShield" xml:space="preserve">
+    <value>Magnatreme Shield (Shuttle)</value>
+  </data>
+  <data name="ShuttleMicroThruster" xml:space="preserve">
+    <value>Micro Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleMrFusion" xml:space="preserve">
+    <value>Mr. Fusion (Shuttle)</value>
+  </data>
+  <data name="ShuttleOmegaCap" xml:space="preserve">
+    <value>Omega Cap (Shuttle)</value>
+  </data>
+  <data name="ShuttleQuadThruster" xml:space="preserve">
+    <value>Quad Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleQuintupleThruster" xml:space="preserve">
+    <value>Quintuple Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleR2Unit" xml:space="preserve">
+    <value>R2 Unit (Shuttle)</value>
+  </data>
+  <data name="ShuttleRetroBooster" xml:space="preserve">
+    <value>Retro Booster (Shuttle)</value>
+  </data>
+  <data name="ShuttleRoundedChin" xml:space="preserve">
+    <value>Rounded Chin (Shuttle)</value>
+  </data>
+  <data name="ShuttleRudder" xml:space="preserve">
+    <value>Rudder (Shuttle)</value>
+  </data>
+  <data name="ShuttleSextupleThruster" xml:space="preserve">
+    <value>Sextuple Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleShield" xml:space="preserve">
+    <value>Shield (Shuttle)</value>
+  </data>
+  <data name="ShuttleSingleThruster" xml:space="preserve">
+    <value>Single Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleSmallDoubleThruster" xml:space="preserve">
+    <value>Small Double Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleSolarPanel" xml:space="preserve">
+    <value>Solar Panel (Shuttle)</value>
+  </data>
+  <data name="ShuttleStabilizer" xml:space="preserve">
+    <value>Stabilizer (Shuttle)</value>
+  </data>
+  <data name="ShuttleStraightTurbine" xml:space="preserve">
+    <value>Straight Turbine (Shuttle)</value>
+  </data>
+  <data name="ShuttleTaperedTurbine" xml:space="preserve">
+    <value>Tapered Turbine (Shuttle)</value>
+  </data>
+  <data name="ShuttleTripleThruster" xml:space="preserve">
+    <value>Triple Thruster (Shuttle)</value>
+  </data>
+  <data name="ShuttleTube" xml:space="preserve">
+    <value>Tube (Shuttle)</value>
+  </data>
+  <data name="ShuttleVerticalIntake" xml:space="preserve">
+    <value>Vertical Intake (Shuttle)</value>
+  </data>
+  <data name="ShuttleVoyager" xml:space="preserve">
+    <value>Voyager (Shuttle)</value>
+  </data>
+  <data name="ShuttleVWing" xml:space="preserve">
+    <value>V-Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleWingTurbine" xml:space="preserve">
+    <value>Wing Turbine (Shuttle)</value>
+  </data>
+  <data name="ShuttleXWing" xml:space="preserve">
+    <value>X-Wing (Shuttle)</value>
+  </data>
+  <data name="ShuttleYWing" xml:space="preserve">
+    <value>Y-Wing (Shuttle)</value>
+  </data>
+  <data name="SingularityCortex" xml:space="preserve">
+    <value>Singularity Cortex</value>
+  </data>
+  <data name="SolarArchanid" xml:space="preserve">
+    <value>Archanid (Solar)</value>
+  </data>
+  <data name="SolarCrescentSolarSail" xml:space="preserve">
+    <value>Crescent Solar Sail (Solar)</value>
+  </data>
+  <data name="SolarCutlassWingDrill" xml:space="preserve">
+    <value>Cutlass Wing Drill (Solar)</value>
+  </data>
+  <data name="SolarCutlassWingHBlade" xml:space="preserve">
+    <value>Cutlass Wing H-Blade (Solar)</value>
+  </data>
+  <data name="SolarCutlassWingSleek" xml:space="preserve">
+    <value>Cutlass Wing Sleek (Solar)</value>
+  </data>
+  <data name="SolarCutlassWingTristar" xml:space="preserve">
+    <value>Cutlass Wing Tristar (Solar)</value>
+  </data>
+  <data name="SolarCutlassWingVBlade" xml:space="preserve">
+    <value>Cutlass Wing V-Blade (Solar)</value>
+  </data>
+  <data name="SolarExocet" xml:space="preserve">
+    <value>Exocet (Solar)</value>
+  </data>
+  <data name="SolarFalcon" xml:space="preserve">
+    <value>Falcon (Solar)</value>
+  </data>
+  <data name="SolarHexSolarSail" xml:space="preserve">
+    <value>Hex Solar Sail (Solar)</value>
+  </data>
+  <data name="SolarRaven" xml:space="preserve">
+    <value>Raven (Solar)</value>
+  </data>
+  <data name="SolarRazorWingDrill" xml:space="preserve">
+    <value>Razor Wing Drill (Solar)</value>
+  </data>
+  <data name="SolarRazorWingHBlade" xml:space="preserve">
+    <value>Razor Wing H-Blade (Solar)</value>
+  </data>
+  <data name="SolarRazorWingSleek" xml:space="preserve">
+    <value>Razor Wing Sleek (Solar)</value>
+  </data>
+  <data name="SolarRazorWingTristar" xml:space="preserve">
+    <value>Razor Wing Tristar (Solar)</value>
+  </data>
+  <data name="SolarRazorWingVBlade" xml:space="preserve">
+    <value>Razor Wing V-Blade (Solar)</value>
+  </data>
+  <data name="SolarSabreWingDrill" xml:space="preserve">
+    <value>Sabre Wing Drill (Solar)</value>
+  </data>
+  <data name="SolarSabreWingHBlade" xml:space="preserve">
+    <value>Sabre Wing H-Blade (Solar)</value>
+  </data>
+  <data name="SolarSabreWingSleek" xml:space="preserve">
+    <value>Sabre Wing Sleek (Solar)</value>
+  </data>
+  <data name="SolarSabreWingTristar" xml:space="preserve">
+    <value>Sabre Wing Tristar (Solar)</value>
+  </data>
+  <data name="SolarSabreWingVBlade" xml:space="preserve">
+    <value>Sabre Wing V--Blade (Solar)</value>
+  </data>
+  <data name="SolarScimitarWingDrill" xml:space="preserve">
+    <value>Scimitar Wing Drill (Solar)</value>
+  </data>
+  <data name="SolarScimitarWingHBlade" xml:space="preserve">
+    <value>Scimitar Wing H-Blade (Solar)</value>
+  </data>
+  <data name="SolarScimitarWingSleek" xml:space="preserve">
+    <value>Scimitar Wing Sleek (Solar)</value>
+  </data>
+  <data name="SolarScimitarWingTristar" xml:space="preserve">
+    <value>Scimitar Wing Tristar (Solar)</value>
+  </data>
+  <data name="SolarScimitarWingVBlade" xml:space="preserve">
+    <value>Scimitar Wing V-Blade (Solar)</value>
+  </data>
+  <data name="SolarShieldedWingDrill" xml:space="preserve">
+    <value>Shielded Wing Drill (Solar)</value>
+  </data>
+  <data name="SolarShieldedWingHBlade" xml:space="preserve">
+    <value>Shielded Wing H-Blade (Solar)</value>
+  </data>
+  <data name="SolarShieldedWingSleek" xml:space="preserve">
+    <value>Shielded Wing Sleek (Solar)</value>
+  </data>
+  <data name="SolarShieldedWingTristar" xml:space="preserve">
+    <value>Shielded Wing Tristar (Solar)</value>
+  </data>
+  <data name="SolarShieldedWingVBlade" xml:space="preserve">
+    <value>Shielded Wing V-Blade (Solar)</value>
+  </data>
+  <data name="SolarSquareRigSolarSail" xml:space="preserve">
+    <value>Square-Rig Solar Sail (Solar)</value>
+  </data>
+  <data name="SolarStarwolf" xml:space="preserve">
+    <value>Starwolf (Solar)</value>
+  </data>
+  <data name="SolarTalonWingDrill" xml:space="preserve">
+    <value>Talon Wing Drill (Solar)</value>
+  </data>
+  <data name="SolarTalonWingHBlade" xml:space="preserve">
+    <value>Talon Wing H-Blade (Solar)</value>
+  </data>
+  <data name="SolarTalonWingSleek" xml:space="preserve">
+    <value>Talon Wing Sleek (Solar)</value>
+  </data>
+  <data name="SolarTalonWingTristar" xml:space="preserve">
+    <value>Talon Wing Tristar (Solar)</value>
+  </data>
+  <data name="SolarTalonWingVBlade" xml:space="preserve">
+    <value>Talon Wing V-Blade (Solar)</value>
+  </data>
+  <data name="SolarTurbofan" xml:space="preserve">
+    <value>Turbofan (Solar)</value>
+  </data>
+  <data name="SpewingVents" xml:space="preserve">
+    <value>Spewing Vents</value>
+  </data>
+  <data name="SummaryNotes" xml:space="preserve">
     <value>Summary Notes</value>
   </data>
-    <data name="Thruster" xml:space="preserve">
+  <data name="Thruster" xml:space="preserve">
     <value>Thruster/Engine</value>
   </data>
-    <data name="UpgradeModules" xml:space="preserve">
+  <data name="UpgradeModules" xml:space="preserve">
     <value>Upgrade Modules</value>
   </data>
-    <data name="WikiLink" xml:space="preserve">
+  <data name="WikiLink" xml:space="preserve">
     <value>Wiki Link</value>
   </data>
-    <data name="XXSecondCoordinate" xml:space="preserve">
+  <data name="XXSecondCoordinate" xml:space="preserve">
     <value>XX (second coord)</value>
   </data>
-    <data name="YYFirstCoordinate" xml:space="preserve">
+  <data name="YYFirstCoordinate" xml:space="preserve">
     <value>YY (first coord)</value>
   </data>
 </root>

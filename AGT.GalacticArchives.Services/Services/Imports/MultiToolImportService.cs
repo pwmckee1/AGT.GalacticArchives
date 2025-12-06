@@ -1,6 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.Imports;
 using AGT.GalacticArchives.Globalization;
 using Autofac.Features.Indexed;
@@ -16,6 +17,8 @@ public class MultiToolImportService(
         importManagers[NamedKeys.Managers.MultiToolManager];
 
     protected override string SheetName => GoogleSheetResource.MultiToolSheetName;
+
+    protected override Type CsvMapType => typeof(MultiToolCsvMap);
 
     protected override async Task ProcessValidatedDataAsync(HashSet<MultiToolImport> importData)
     {

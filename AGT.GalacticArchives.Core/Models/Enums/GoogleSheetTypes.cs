@@ -6,7 +6,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 public enum GoogleSheetTypes
 {
     [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.RegionSheetName))]
-    Region,
+    Region = 1,
     [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarSystemSheetName))]
     StarSystem,
     [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PlanetSheetName))]
