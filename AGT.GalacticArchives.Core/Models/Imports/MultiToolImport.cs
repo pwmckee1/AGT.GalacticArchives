@@ -1,4 +1,3 @@
-
 using AGT.GalacticArchives.Core.Constants;
 using CsvHelper.Configuration.Attributes;
 
