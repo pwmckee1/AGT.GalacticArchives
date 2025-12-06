@@ -14,6 +14,15 @@ public static class NamedKeys
         public const string PointOfInterestService = nameof(PointOfInterestService);
         public const string SettlementService = nameof(SettlementService);
         public const string StarshipService = nameof(StarshipService);
+        public const string FaunaImportService = nameof(GoogleSheetConstants.FaunaSheetName);
+        public const string MultiToolImportService = nameof(GoogleSheetConstants.MultiToolSheetName);
+        public const string PlanetImportService = nameof(GoogleSheetConstants.PlanetSheetName);
+        public const string PlayerBaseImportService = nameof(GoogleSheetConstants.PlayerBaseSheetName);
+        public const string PointOfInterestImportService = nameof(GoogleSheetConstants.PointOfInterestSheetName);
+        public const string RegionImportService = nameof(GoogleSheetConstants.RegionSheetName);
+        public const string SettlementImportService = nameof(GoogleSheetConstants.SettlementSheetName);
+        public const string StarshipImportService = nameof(GoogleSheetConstants.StarshipSheetName);
+        public const string StarSystemImportService = nameof(GoogleSheetConstants.StarSystemSheetName);
     }
 
     public static class Managers

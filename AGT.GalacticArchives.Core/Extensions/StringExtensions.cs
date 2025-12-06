@@ -1,12 +1,10 @@
-﻿using System.Text.RegularExpressions;
+﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Extensions;
 
-public static partial class StringExtensions
+public static class StringExtensions
 {
-    private static readonly Regex CoordinatesPattern = CoordinateRegexPattern();
-
     public static string GetValidatedCoordinates(this string? coordinates)
     {
         if (string.IsNullOrEmpty(coordinates))
@@ -15,7 +13,7 @@ public static partial class StringExtensions
         }
 
         string normalizedCoordinates = coordinates.ToUpperInvariant();
-        if (!CoordinatesPattern.IsMatch(normalizedCoordinates))
+        if (!RegexConstants.GalacticCoordinateRegexPattern().IsMatch(normalizedCoordinates))
         {
             throw new ArgumentException(
                 GeneralErrorResource.CoordinatesMustMatchPattern,
@@ -24,7 +22,4 @@ public static partial class StringExtensions
 
         return normalizedCoordinates;
     }
-
-    [GeneratedRegex(@"^[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F|XXXX]{4}$", RegexOptions.IgnoreCase, "en-US")]
-    private static partial Regex CoordinateRegexPattern();
 }

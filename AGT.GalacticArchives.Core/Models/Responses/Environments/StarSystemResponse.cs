@@ -8,7 +8,7 @@ public class StarSystemResponse
 
     public HashSet<PlanetResponse> Planets { get; set; } = [];
 
-    public string? SystemNameAllPlatforms { get; set; }
+    public string? StarSystemNameAllPlatforms { get; set; }
 
     public string? AdminNotes { get; set; }
 

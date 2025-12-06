@@ -3,6 +3,7 @@ using AGT.GalacticArchives.Core.Managers.Environments;
 using AGT.GalacticArchives.Services.Decorators;
 using AGT.GalacticArchives.Services.Services.Entities;
 using AGT.GalacticArchives.Services.Services.Environments;
+using AGT.GalacticArchives.Services.Services.Imports;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;
@@ -120,6 +121,51 @@ public class ServiceModule : Module
             .Register((c, _) => new ValidatedStarshipServiceDecorator(
                 c.ResolveNamed<IStarshipService>(NamedKeys.Services.StarshipService)))
             .As<IStarshipService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<FaunaImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.FaunaImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<MultiToolImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.MultiToolImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PlanetImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.PlanetImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PlayerBaseImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.PlayerBaseImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PointOfInterestImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.PointOfInterestImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<RegionImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.RegionImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<SettlementImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.SettlementImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<StarSystemImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.StarshipImportService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<StarshipImportService>()
+            .Named<IGoogleSheetImportService>(NamedKeys.Services.StarSystemImportService)
             .InstancePerLifetimeScope();
     }
 }

@@ -41,7 +41,7 @@ public class MultiTool : IGameData
 
     public bool? HasHorns { get; set; }
 
-    public bool? HasGlowtubes { get; set; }
+    public bool? HasGlowTubes { get; set; }
 
     public int? Cost { get; set; }
 

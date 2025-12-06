@@ -1,0 +1,50 @@
+namespace AGT.GalacticArchives.Core.Constants;
+
+public static class StarshipSheetFields
+{
+    public const string Name = "Starship Name";
+    public const string Galaxy = "Galaxy";
+    public const string Region = "Region";
+    public const string System = "System";
+    public const string Planet = "Planet";
+    public const string Location = "Location";
+    public const string YYFirstCoordinate = "YY (first coord)";
+    public const string XXSecondCoordinate = "XX (second coord)";
+    public const string Coordinates = "Coordinates";
+    public const string PortalGlyphs = "Portal Glyphs";
+    public const string Pilot = "Pilot";
+    public const string Type = "Type";
+    public const string ShipSubtype = "Ship Subtype";
+    public const string HasWings = "Wings?";
+    public const string HullAccessories = "Hull Accessories";
+    public const string Thruster = "Thruster/Engine";
+    public const string MoreHullAccessories = "More Hull Accessories";
+    public const string Class = "Class";
+    public const string InventorySize = "Inventory Size";
+    public const string Slots = "Slots";
+    public const string TechSlots = "Techslots";
+    public const string CargoSlots = "Cargo Slots (Pre-Waypoint)";
+    public const string Cost = "Cost";
+    public const string CivilizedBy = "Civilized";
+    public const string DiscoveredBy = "Discovered";
+    public const string DiscoveredLinkOnWiki = "Discovered Link on Wiki";
+    public const string DiscoveredDate = "Discovered Date";
+    public const string Mode = "Mode";
+    public const string Platform = "Platform";
+    public const string Release = "Release";
+    public const string Damage = "Damage";
+    public const string Shield = "Shield";
+    public const string Warp = "Warp";
+    public const string Maneuver = "Maneuver";
+    public const string SummaryNotes = "Summary Notes";
+    public const string LocationNotes = "Location Notes";
+    public const string DescriptionNotes = "Description Notes";
+    public const string AdditionalNotes = "Additional notes";
+    public const string PrimaryColor = "Primary Color";
+    public const string SecondaryColor = "Secondary Color";
+    public const string AccentColor = "Accent Color";
+    public const string DocumentSequence = "Document Sequence";
+    public const string WikiLink = "Lock Record";
+    public const string ResearchTeam = "Wiki Link";
+    public const string FreighterCostEvaluation = "Research Team";
+}

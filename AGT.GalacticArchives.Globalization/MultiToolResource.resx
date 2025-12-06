@@ -147,7 +147,7 @@
     <data name="HasCrystals" xml:space="preserve">
     <value>Crystals</value>
   </data>
-    <data name="HasGlowtubes" xml:space="preserve">
+    <data name="HasGlowTubes" xml:space="preserve">
     <value>Glowtubes</value>
   </data>
     <data name="HasHorns" xml:space="preserve">

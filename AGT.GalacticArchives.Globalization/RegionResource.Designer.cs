@@ -96,6 +96,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Civilized.
+        /// </summary>
+        public static string CivilizedBy {
+            get {
+                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Civilized Space Notes.
         /// </summary>
         public static string CivilizedSpaceNotes {
@@ -146,6 +155,24 @@ namespace AGT.GalacticArchives.Globalization {
         public static string ExternalLink1 {
             get {
                 return ResourceManager.GetString("ExternalLink1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Galaxy ID.
+        /// </summary>
+        public static string GalaxyId {
+            get {
+                return ResourceManager.GetString("GalaxyId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Galaxy.
+        /// </summary>
+        public static string GalaxyName {
+            get {
+                return ResourceManager.GetString("GalaxyName", resourceCulture);
             }
         }
         
@@ -263,6 +290,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string SummaryNotes {
             get {
                 return ResourceManager.GetString("SummaryNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string UnableToImportError {
+            get {
+                return ResourceManager.GetString("UnableToImportError", resourceCulture);
             }
         }
         

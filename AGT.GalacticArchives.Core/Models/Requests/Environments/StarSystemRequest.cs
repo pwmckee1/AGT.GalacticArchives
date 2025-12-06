@@ -12,7 +12,7 @@ public class StarSystemRequest
 
     public HashSet<PlanetRequest> Planets { get; set; } = [];
 
-    public string? SystemNameAllPlatforms { get; set; }
+    public string? StarSystemNameAllPlatforms { get; set; }
 
     public string? AdminNotes { get; set; }
 
