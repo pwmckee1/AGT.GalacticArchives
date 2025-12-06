@@ -30,8 +30,4 @@
         </AdditionalFiles>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Services\Entities\Interfaces\" />
-    </ItemGroup>
-
 </Project>
