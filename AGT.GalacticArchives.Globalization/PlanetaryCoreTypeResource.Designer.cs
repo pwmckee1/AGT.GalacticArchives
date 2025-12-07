@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class BiomeResource {
+    public class PlanetaryCoreTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BiomeResource() {
+        internal PlanetaryCoreTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.BiomeResource", typeof(BiomeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlanetaryCoreTypeResource", typeof(PlanetaryCoreTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,29 +60,47 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Edible Plants.
+        ///   Looks up a localized string similar to Condensed Carbon.
         /// </summary>
-        public static string BiomeEdiblePlants {
+        public static string CondensedCarbon {
             get {
-                return ResourceManager.GetString("BiomeEdiblePlants", resourceCulture);
+                return ResourceManager.GetString("CondensedCarbon", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Name.
+        ///   Looks up a localized string similar to Core Missing.
         /// </summary>
-        public static string BiomeName {
+        public static string CoreMissing {
             get {
-                return ResourceManager.GetString("BiomeName", resourceCulture);
+                return ResourceManager.GetString("CoreMissing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Type.
+        ///   Looks up a localized string similar to Magnetised Ferrite.
         /// </summary>
-        public static string BiomeType {
+        public static string MagnetisedFerrite {
             get {
-                return ResourceManager.GetString("BiomeType", resourceCulture);
+                return ResourceManager.GetString("MagnetisedFerrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screaming Echoes.
+        /// </summary>
+        public static string ScreamingEchoes {
+            get {
+                return ResourceManager.GetString("ScreamingEchoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Silicate Powder.
+        /// </summary>
+        public static string SilicatePowder {
+            get {
+                return ResourceManager.GetString("SilicatePowder", resourceCulture);
             }
         }
     }

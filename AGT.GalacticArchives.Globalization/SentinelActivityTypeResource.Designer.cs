@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class TerrainTypeResource {
+    public class SentinelActivityTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TerrainTypeResource() {
+        internal SentinelActivityTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.TerrainTypeResource", typeof(TerrainTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.SentinelActivityTypeResource", typeof(SentinelActivityTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,128 +60,119 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chasms (Mountains).
+        ///   Looks up a localized string similar to Answer To None.
         /// </summary>
-        public static string ChasmsMountains {
+        public static string AnswerToNone {
             get {
-                return ResourceManager.GetString("ChasmsMountains", resourceCulture);
+                return ResourceManager.GetString("AnswerToNone", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flat Tops (Mountains).
+        ///   Looks up a localized string similar to De-Harmonised.
         /// </summary>
-        public static string FlatTopsMountains {
+        public static string DeHarmonised {
             get {
-                return ResourceManager.GetString("FlatTopsMountains", resourceCulture);
+                return ResourceManager.GetString("DeHarmonised", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Floating Islands.
+        ///   Looks up a localized string similar to Ever-present.
         /// </summary>
-        public static string FloatingIslands {
+        public static string EverPresent {
             get {
-                return ResourceManager.GetString("FloatingIslands", resourceCulture);
+                return ResourceManager.GetString("EverPresent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Island Chains.
+        ///   Looks up a localized string similar to High Security.
         /// </summary>
-        public static string IslandChains {
+        public static string HighSecurity {
             get {
-                return ResourceManager.GetString("IslandChains", resourceCulture);
+                return ResourceManager.GetString("HighSecurity", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overhangs (Mountains).
+        ///   Looks up a localized string similar to Hostile Patrols.
         /// </summary>
-        public static string OverhangsMountains {
+        public static string HostilePatrols {
             get {
-                return ResourceManager.GetString("OverhangsMountains", resourceCulture);
+                return ResourceManager.GetString("HostilePatrols", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Peaks (Mountains).
+        ///   Looks up a localized string similar to Irregular Patrols.
         /// </summary>
-        public static string PeaksMountains {
+        public static string IrregularPatrols {
             get {
-                return ResourceManager.GetString("PeaksMountains", resourceCulture);
+                return ResourceManager.GetString("IrregularPatrols", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Riverland Terrain.
+        ///   Looks up a localized string similar to Low Security.
         /// </summary>
-        public static string RiverlandTerrain {
+        public static string LowSecurity {
             get {
-                return ResourceManager.GetString("RiverlandTerrain", resourceCulture);
+                return ResourceManager.GetString("LowSecurity", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rock Pillars.
+        ///   Looks up a localized string similar to Not Present.
         /// </summary>
-        public static string RockPillars {
+        public static string NotPresent {
             get {
-                return ResourceManager.GetString("RockPillars", resourceCulture);
+                return ResourceManager.GetString("NotPresent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rolling Hills (Mountains).
+        ///   Looks up a localized string similar to Regular Patrols.
         /// </summary>
-        public static string RollingHillsMountains {
+        public static string RegularPatrols {
             get {
-                return ResourceManager.GetString("RollingHillsMountains", resourceCulture);
+                return ResourceManager.GetString("RegularPatrols", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rolling Mountains.
+        ///   Looks up a localized string similar to Require Obedience.
         /// </summary>
-        public static string RollingMountains {
+        public static string RequireObedience {
             get {
-                return ResourceManager.GetString("RollingMountains", resourceCulture);
+                return ResourceManager.GetString("RequireObedience", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rugged Mountains.
+        ///   Looks up a localized string similar to Require Orthodoxy.
         /// </summary>
-        public static string RuggedMountains {
+        public static string RequireOrthodoxy {
             get {
-                return ResourceManager.GetString("RuggedMountains", resourceCulture);
+                return ResourceManager.GetString("RequireOrthodoxy", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spires (Mountains).
+        ///   Looks up a localized string similar to Sharded from the Atlas.
         /// </summary>
-        public static string SpiresMountains {
+        public static string ShardedFromTheAtlas {
             get {
-                return ResourceManager.GetString("SpiresMountains", resourceCulture);
+                return ResourceManager.GetString("ShardedFromTheAtlas", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tall Mountains.
+        ///   Looks up a localized string similar to Spread Thin.
         /// </summary>
-        public static string TallMountains {
+        public static string SpreadThin {
             get {
-                return ResourceManager.GetString("TallMountains", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uplands (Mountains).
-        /// </summary>
-        public static string UplandsMountains {
-            get {
-                return ResourceManager.GetString("UplandsMountains", resourceCulture);
+                return ResourceManager.GetString("SpreadThin", resourceCulture);
             }
         }
     }

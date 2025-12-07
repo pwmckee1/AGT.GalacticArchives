@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class PlanetResourceItemsResource {
+    public class MaterialsResourceType {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal PlanetResourceItemsResource() {
+        internal MaterialsResourceType() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlanetResourceItemsResource", typeof(PlanetResourceItemsResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.MaterialsResourceType", typeof(MaterialsResourceType).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -105,29 +105,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aluminium.
+        ///   Looks up a localized string similar to Albumen Pear lOrb.
         /// </summary>
-        public static string Aluminium {
+        public static string AlbumenPearlOrb {
             get {
-                return ResourceManager.GetString("Aluminium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ammonia.
-        /// </summary>
-        public static string Ammonia {
-            get {
-                return ResourceManager.GetString("Ammonia", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Basalt.
-        /// </summary>
-        public static string Basalt {
-            get {
-                return ResourceManager.GetString("Basalt", resourceCulture);
+                return ResourceManager.GetString("AlbumenPearlOrb", resourceCulture);
             }
         }
         
@@ -141,47 +123,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cadmium.
-        /// </summary>
-        public static string Cadmium {
-            get {
-                return ResourceManager.GetString("Cadmium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Carbon.
-        /// </summary>
-        public static string Carbon {
-            get {
-                return ResourceManager.GetString("Carbon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chlorine.
-        /// </summary>
-        public static string Chlorine {
-            get {
-                return ResourceManager.GetString("Chlorine", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Chromatic Metal.
         /// </summary>
         public static string ChromaticMetal {
             get {
                 return ResourceManager.GetString("ChromaticMetal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cobalt.
-        /// </summary>
-        public static string Cobalt {
-            get {
-                return ResourceManager.GetString("Cobalt", resourceCulture);
             }
         }
         
@@ -195,11 +141,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copper.
+        ///   Looks up a localized string similar to Creature Egg.
         /// </summary>
-        public static string Copper {
+        public static string CreatureEgg {
             get {
-                return ResourceManager.GetString("Copper", resourceCulture);
+                return ResourceManager.GetString("CreatureEgg", resourceCulture);
             }
         }
         
@@ -209,6 +155,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string CrystallisedHelium {
             get {
                 return ResourceManager.GetString("CrystallisedHelium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crystal Sulphide.
+        /// </summary>
+        public static string CrystalSulphide {
+            get {
+                return ResourceManager.GetString("CrystalSulphide", resourceCulture);
             }
         }
         
@@ -231,15 +186,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deuterium.
-        /// </summary>
-        public static string Deuterium {
-            get {
-                return ResourceManager.GetString("Deuterium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Di-hydrogen.
         /// </summary>
         public static string Dihydrogen {
@@ -249,38 +195,20 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dioxite.
-        /// </summary>
-        public static string Dioxite {
-            get {
-                return ResourceManager.GetString("Dioxite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Emeril.
-        /// </summary>
-        public static string Emeril {
-            get {
-                return ResourceManager.GetString("Emeril", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Faecium.
-        /// </summary>
-        public static string Faecium {
-            get {
-                return ResourceManager.GetString("Faecium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ferrite Dust.
         /// </summary>
         public static string FerriteDust {
             get {
                 return ResourceManager.GetString("FerriteDust", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Floating Crystal.
+        /// </summary>
+        public static string FloatingCrystal {
+            get {
+                return ResourceManager.GetString("FloatingCrystal", resourceCulture);
             }
         }
         
@@ -312,38 +240,20 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gold.
+        ///   Looks up a localized string similar to Gravitino Ball.
         /// </summary>
-        public static string Gold {
+        public static string GravitinoBall {
             get {
-                return ResourceManager.GetString("Gold", resourceCulture);
+                return ResourceManager.GetString("GravitinoBall", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heridium.
+        ///   Looks up a localized string similar to Humming Sac.
         /// </summary>
-        public static string Heridium {
+        public static string HummingSac {
             get {
-                return ResourceManager.GetString("Heridium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hexite.
-        /// </summary>
-        public static string Hexite {
-            get {
-                return ResourceManager.GetString("Hexite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Indium.
-        /// </summary>
-        public static string Indium {
-            get {
-                return ResourceManager.GetString("Indium", resourceCulture);
+                return ResourceManager.GetString("HummingSac", resourceCulture);
             }
         }
         
@@ -357,15 +267,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Iridium.
-        /// </summary>
-        public static string Iridium {
-            get {
-                return ResourceManager.GetString("Iridium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Kelp Sac.
         /// </summary>
         public static string KelpSac {
@@ -375,11 +276,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lithium.
+        ///   Looks up a localized string similar to Living Pearl.
         /// </summary>
-        public static string Lithium {
+        public static string LivingPearl {
             get {
-                return ResourceManager.GetString("Lithium", resourceCulture);
+                return ResourceManager.GetString("LivingPearl", resourceCulture);
             }
         }
         
@@ -411,15 +312,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mordite.
-        /// </summary>
-        public static string Mordite {
-            get {
-                return ResourceManager.GetString("Mordite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Nickel.
         /// </summary>
         public static string Nickel {
@@ -429,92 +321,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nitrogen.
-        /// </summary>
-        public static string Nitrogen {
-            get {
-                return ResourceManager.GetString("Nitrogen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Oxygen.
-        /// </summary>
-        public static string Oxygen {
-            get {
-                return ResourceManager.GetString("Oxygen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Paraffinium.
-        /// </summary>
-        public static string Paraffinium {
-            get {
-                return ResourceManager.GetString("Paraffinium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Phosphorus.
-        /// </summary>
-        public static string Phosphorus {
-            get {
-                return ResourceManager.GetString("Phosphorus", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Platinum.
-        /// </summary>
-        public static string Platinum {
-            get {
-                return ResourceManager.GetString("Platinum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pugneum.
-        /// </summary>
-        public static string Pugneum {
-            get {
-                return ResourceManager.GetString("Pugneum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Pure Ferrite.
         /// </summary>
         public static string PureFerrite {
             get {
                 return ResourceManager.GetString("PureFerrite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pyrite.
-        /// </summary>
-        public static string Pyrite {
-            get {
-                return ResourceManager.GetString("Pyrite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Quartzite.
-        /// </summary>
-        public static string Quartzite {
-            get {
-                return ResourceManager.GetString("Quartzite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Radon.
-        /// </summary>
-        public static string Radon {
-            get {
-                return ResourceManager.GetString("Radon", resourceCulture);
             }
         }
         
@@ -546,11 +357,20 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Salt.
+        ///   Looks up a localized string similar to Sac Venom.
         /// </summary>
-        public static string Salt {
+        public static string SacVenom {
             get {
-                return ResourceManager.GetString("Salt", resourceCulture);
+                return ResourceManager.GetString("SacVenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sentient Plant.
+        /// </summary>
+        public static string SentientPlant {
+            get {
+                return ResourceManager.GetString("SentientPlant", resourceCulture);
             }
         }
         
@@ -564,38 +384,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Silver.
-        /// </summary>
-        public static string Silver {
-            get {
-                return ResourceManager.GetString("Silver", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sodium.
-        /// </summary>
-        public static string Sodium {
-            get {
-                return ResourceManager.GetString("Sodium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Sodium Nitrate.
         /// </summary>
         public static string SodiumNitrate {
             get {
                 return ResourceManager.GetString("SodiumNitrate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Solanium.
-        /// </summary>
-        public static string Solanium {
-            get {
-                return ResourceManager.GetString("Solanium", resourceCulture);
             }
         }
         
@@ -609,29 +402,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sulphurine.
+        ///   Looks up a localized string similar to Storm Crystal.
         /// </summary>
-        public static string Sulphurine {
+        public static string StormCrystal {
             get {
-                return ResourceManager.GetString("Sulphurine", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tritium.
-        /// </summary>
-        public static string Tritium {
-            get {
-                return ResourceManager.GetString("Tritium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uranium.
-        /// </summary>
-        public static string Uranium {
-            get {
-                return ResourceManager.GetString("Uranium", resourceCulture);
+                return ResourceManager.GetString("StormCrystal", resourceCulture);
             }
         }
         

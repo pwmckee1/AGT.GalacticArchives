@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -120,13 +120,124 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BiomeEdiblePlants" xml:space="preserve">
-      <value>Biome Edible Plants</value>
+    <data name="ActivatedCadmium" xml:space="preserve">
+        <value>Activated Cadmium</value>
+      </data>
+    <data name="ActivatedCopper" xml:space="preserve">
+        <value>Activated Copper</value>
+      </data>
+    <data name="ActivatedEmeril" xml:space="preserve">
+        <value>Activated Emeril</value>
+      </data>
+    <data name="ActivatedIndium" xml:space="preserve">
+        <value>Activated Indium</value>
+      </data>
+    <data name="ActivatedQuartzite" xml:space="preserve">
+        <value>Activated Quartzite</value>
+      </data>
+    <data name="AlbumenPearlOrb" xml:space="preserve">
+      <value>Albumen Pear lOrb</value>
   </data>
-  <data name="BiomeName" xml:space="preserve">
-      <value>Biome Name</value>
+    <data name="CactusFlesh" xml:space="preserve">
+        <value>Cactus Flesh</value>
+      </data>
+    <data name="ChromaticMetal" xml:space="preserve">
+        <value>Chromatic Metal</value>
+      </data>
+    <data name="CondensedCarbon" xml:space="preserve">
+        <value>Condensed Carbon</value>
+      </data>
+    <data name="CreatureEgg" xml:space="preserve">
+      <value>Creature Egg</value>
   </data>
-  <data name="BiomeType" xml:space="preserve">
-      <value>Biome Type</value>
+    <data name="CrystallisedHelium" xml:space="preserve">
+        <value>Crystallised Helium</value>
+      </data>
+    <data name="CrystalSulphide" xml:space="preserve">
+      <value>Crystal Sulphide</value>
   </data>
+    <data name="CursedDust" xml:space="preserve">
+        <value>Cursed Dust</value>
+      </data>
+    <data name="CytoPhosphate" xml:space="preserve">
+        <value>Cyto-Phosphate</value>
+      </data>
+    <data name="Dihydrogen" xml:space="preserve">
+        <value>Di-hydrogen</value>
+      </data>
+    <data name="FerriteDust" xml:space="preserve">
+        <value>Ferrite Dust</value>
+      </data>
+    <data name="FloatingCrystal" xml:space="preserve">
+      <value>Floating Crystal</value>
+  </data>
+    <data name="FrostCrystal" xml:space="preserve">
+        <value>Frost Crystal</value>
+      </data>
+    <data name="FungalMould" xml:space="preserve">
+        <value>Fungal Mould</value>
+      </data>
+    <data name="GammaRoot" xml:space="preserve">
+        <value>Gamma Root</value>
+      </data>
+    <data name="GravitinoBall" xml:space="preserve">
+      <value>Gravitino Ball</value>
+  </data>
+    <data name="HummingSac" xml:space="preserve">
+      <value>Humming Sac</value>
+  </data>
+    <data name="IonisedCobalt" xml:space="preserve">
+        <value>Ionised Cobalt</value>
+      </data>
+    <data name="KelpSac" xml:space="preserve">
+        <value>Kelp Sac</value>
+      </data>
+    <data name="LivingPearl" xml:space="preserve">
+      <value>Living Pearl</value>
+  </data>
+    <data name="LivingSlime" xml:space="preserve">
+        <value>Living Slime</value>
+      </data>
+    <data name="MagnetisedFerrite" xml:space="preserve">
+        <value>Magnetised Ferrite</value>
+      </data>
+    <data name="MarrowBulb" xml:space="preserve">
+        <value>Marrow Bulb</value>
+      </data>
+    <data name="Nickel" xml:space="preserve">
+        <value>Nickel</value>
+      </data>
+    <data name="PureFerrite" xml:space="preserve">
+        <value>Pure Ferrite</value>
+      </data>
+    <data name="ResidualGoop" xml:space="preserve">
+        <value>Residual Goop</value>
+      </data>
+    <data name="RunawayMould" xml:space="preserve">
+        <value>Runaway Mould</value>
+      </data>
+    <data name="RustedMetal" xml:space="preserve">
+        <value>Rusted Metal</value>
+      </data>
+    <data name="SacVenom" xml:space="preserve">
+      <value>Sac Venom</value>
+  </data>
+    <data name="SentientPlant" xml:space="preserve">
+      <value>Sentient Plant</value>
+  </data>
+    <data name="SilicatePowder" xml:space="preserve">
+        <value>Silicate Powder</value>
+      </data>
+    <data name="SodiumNitrate" xml:space="preserve">
+        <value>Sodium Nitrate</value>
+      </data>
+    <data name="StarBulb" xml:space="preserve">
+        <value>Star Bulb</value>
+      </data>
+    <data name="StormCrystal" xml:space="preserve">
+      <value>Storm Crystal</value>
+  </data>
+    <data name="ViscousFluids" xml:space="preserve">
+        <value>Viscous Fluids</value>
+      </data>
 </root>

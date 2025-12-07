@@ -3,10 +3,8 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum PlanetTerrainTypes
+public enum TerrainTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
     Archipelago,
     Continental,
 

@@ -3,11 +3,8 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum PlanetLandTypes
+public enum LandTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(ResourceType = typeof(LandResource), Description = nameof(LandResource.RockyHilly))]
     RockyHilly,
 

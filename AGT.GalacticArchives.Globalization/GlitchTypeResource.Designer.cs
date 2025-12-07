@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class PlanetAtmosphereColorResource {
+    public class GlitchTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal PlanetAtmosphereColorResource() {
+        internal GlitchTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlanetAtmosphereColorResource", typeof(PlanetAtmosphereColorResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.GlitchTypeResource", typeof(GlitchTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,128 +60,92 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue green.
+        ///   Looks up a localized string similar to Cable Pod.
         /// </summary>
-        public static string BlueGreen {
+        public static string CablePod {
             get {
-                return ResourceManager.GetString("BlueGreen", resourceCulture);
+                return ResourceManager.GetString("CablePod", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue grey.
+        ///   Looks up a localized string similar to Calcishroom.
         /// </summary>
-        public static string Bluegrey {
+        public static string Calcishroom {
             get {
-                return ResourceManager.GetString("Bluegrey", resourceCulture);
+                return ResourceManager.GetString("Calcishroom", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue violet.
+        ///   Looks up a localized string similar to Capilliary Shell.
         /// </summary>
-        public static string Blueviolet {
+        public static string CapilliaryShell {
             get {
-                return ResourceManager.GetString("Blueviolet", resourceCulture);
+                return ResourceManager.GetString("CapilliaryShell", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Carnation pink.
+        ///   Looks up a localized string similar to Electric Cube.
         /// </summary>
-        public static string CarnationPink {
+        public static string ElectricCube {
             get {
-                return ResourceManager.GetString("CarnationPink", resourceCulture);
+                return ResourceManager.GetString("ElectricCube", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monochrome blue.
+        ///   Looks up a localized string similar to Glitching Separator.
         /// </summary>
-        public static string MonochromeBlue {
+        public static string GlitchingSeparator {
             get {
-                return ResourceManager.GetString("MonochromeBlue", resourceCulture);
+                return ResourceManager.GetString("GlitchingSeparator", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monochrome green.
+        ///   Looks up a localized string similar to Hexplate Bush.
         /// </summary>
-        public static string MonochromeGreen {
+        public static string HexplateBush {
             get {
-                return ResourceManager.GetString("MonochromeGreen", resourceCulture);
+                return ResourceManager.GetString("HexplateBush", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monochrome orange.
+        ///   Looks up a localized string similar to Light Fissure.
         /// </summary>
-        public static string MonochromeOrange {
+        public static string LightFissure {
             get {
-                return ResourceManager.GetString("MonochromeOrange", resourceCulture);
+                return ResourceManager.GetString("LightFissure", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monochrome red.
+        ///   Looks up a localized string similar to Ossified Star.
         /// </summary>
-        public static string MonochromeRed {
+        public static string OssifiedStar {
             get {
-                return ResourceManager.GetString("MonochromeRed", resourceCulture);
+                return ResourceManager.GetString("OssifiedStar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monochrome yellow.
+        ///   Looks up a localized string similar to Rattle Spine.
         /// </summary>
-        public static string MonochromeYellow {
+        public static string RattleSpine {
             get {
-                return ResourceManager.GetString("MonochromeYellow", resourceCulture);
+                return ResourceManager.GetString("RattleSpine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Red orange.
+        ///   Looks up a localized string similar to Terbium Growth.
         /// </summary>
-        public static string RedOrange {
+        public static string TerbiumGrowth {
             get {
-                return ResourceManager.GetString("RedOrange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Red violet.
-        /// </summary>
-        public static string RedViolet {
-            get {
-                return ResourceManager.GetString("RedViolet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Violet red.
-        /// </summary>
-        public static string VioletRed {
-            get {
-                return ResourceManager.GetString("VioletRed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yellow green.
-        /// </summary>
-        public static string YellowGreen {
-            get {
-                return ResourceManager.GetString("YellowGreen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yellow orange.
-        /// </summary>
-        public static string YellowOrange {
-            get {
-                return ResourceManager.GetString("YellowOrange", resourceCulture);
+                return ResourceManager.GetString("TerbiumGrowth", resourceCulture);
             }
         }
     }

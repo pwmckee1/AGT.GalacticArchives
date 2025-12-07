@@ -87,10 +87,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>ConflictTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="TerrainTypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>BiomeTypeResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="WeatherResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>WeatherResource.Designer.cs</LastGenOutput>
@@ -99,11 +95,7 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>LandResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="BiomeTypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>BiomeTypeResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="BiomeDescriptionResource.resx">
+        <EmbeddedResource Update="BiomeSubTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>BiomeDescriptionResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
@@ -117,10 +109,6 @@
         </EmbeddedResource>
         <EmbeddedResource Update="LandArchetypesResource.resx">
           <LastGenOutput>LandArchetypesResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="PlanetResourceItemsResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>PlanetResourceTypes.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="PlanetAtmosphereColorResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
@@ -140,6 +128,50 @@
         <EmbeddedResource Update="ApplicationResources.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>ApplicationResources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlanetPropertyTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetPropertyTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="UniqueMaterialsResourceType.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>UniqueMaterialsResourceType.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="MaterialsResourceType.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>MaterialsResourceType.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GlitchTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GlitchTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="SentinelActivityTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>SentinelActivityTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FloraFaunaLevelTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FloraFaunaLevelTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="AtmosphereGasTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>AtmosphereGasTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlanetaryCoreTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetaryCoreTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="GeologyTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GeologyTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="TerrainTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>TerrainTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="BiomeTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>BiomeTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -239,11 +271,6 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>ConflictTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="TerrainTypeResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>TerrainTypeResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="WeatherResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
@@ -254,15 +281,10 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>LandResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="BiomeTypeResource.Designer.cs">
+        <Compile Update="BiomeSubTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
-          <DependentUpon>BiomeTypeResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="BiomeDescriptionResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>BiomeDescriptionResource.resx</DependentUpon>
+          <DependentUpon>BiomeSubTypeResource.resx</DependentUpon>
         </Compile>
         <Compile Update="ExtremeWeatherResource.Designer.cs">
           <DesignTime>True</DesignTime>
@@ -273,11 +295,6 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>LandArchetypesResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="PlanetResourceItemsResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>PlanetResourceItemsResource.resx</DependentUpon>
         </Compile>
         <Compile Update="PlanetAtmosphereColorResource.Designer.cs">
           <DesignTime>True</DesignTime>
@@ -298,6 +315,61 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>ApplicationResources.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlanetPropertyTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetPropertyTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="UniqueMaterialsResourceType.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>UniqueMaterialsResourceType.resx</DependentUpon>
+        </Compile>
+        <Compile Update="MaterialsResourceType.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>MaterialsResourceType.resx</DependentUpon>
+        </Compile>
+        <Compile Update="GlitchTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GlitchTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="SentinelActivityTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>SentinelActivityTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FloraFaunaLevelTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FloraFaunaLevelTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="AtmosphereGasTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>AtmosphereGasTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlanetaryCoreTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetaryCoreTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="GeologyTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GeologyTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="TerrainTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>TerrainTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="BiomeTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>BiomeTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

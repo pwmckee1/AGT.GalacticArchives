@@ -5,9 +5,6 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetWeatherTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.BlueAllConsumingCold))]
     BlueAllConsumingCold,
 

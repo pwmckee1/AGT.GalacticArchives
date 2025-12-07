@@ -126,16 +126,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="Apricot" xml:space="preserve">
-        <value>Apricot</value>
-      </data>
-    <data name="Black" xml:space="preserve">
-        <value>Black</value>
-      </data>
-    <data name="Blue" xml:space="preserve">
-        <value>Blue</value>
-      </data>
-    <data name="Bluegreen" xml:space="preserve">
+    <data name="BlueGreen" xml:space="preserve">
         <value>Blue green</value>
       </data>
     <data name="Bluegrey" xml:space="preserve">
@@ -144,79 +135,37 @@
     <data name="Blueviolet" xml:space="preserve">
         <value>Blue violet</value>
       </data>
-    <data name="Brown" xml:space="preserve">
-        <value>Brown</value>
-      </data>
-    <data name="Carnationpink" xml:space="preserve">
+    <data name="CarnationPink" xml:space="preserve">
         <value>Carnation pink</value>
       </data>
-    <data name="Cerulean" xml:space="preserve">
-        <value>Cerulean</value>
-      </data>
-    <data name="Dandelion" xml:space="preserve">
-        <value>Dandelion</value>
-      </data>
-    <data name="Green" xml:space="preserve">
-        <value>Green</value>
-      </data>
-    <data name="Greenyellow" xml:space="preserve">
-        <value>Green yellow</value>
-      </data>
-    <data name="Grey" xml:space="preserve">
-        <value>Grey</value>
-      </data>
-    <data name="Indigo" xml:space="preserve">
-        <value>Indigo</value>
-      </data>
-    <data name="Monochrome" xml:space="preserve">
-        <value>Monochrome</value>
-      </data>
-    <data name="Monochromeblue" xml:space="preserve">
+    <data name="MonochromeBlue" xml:space="preserve">
         <value>Monochrome blue</value>
       </data>
-    <data name="Monochromegreen" xml:space="preserve">
+    <data name="MonochromeGreen" xml:space="preserve">
         <value>Monochrome green</value>
       </data>
-    <data name="Monochromeorange" xml:space="preserve">
+    <data name="MonochromeOrange" xml:space="preserve">
         <value>Monochrome orange</value>
       </data>
-    <data name="Monochromered" xml:space="preserve">
+    <data name="MonochromeRed" xml:space="preserve">
         <value>Monochrome red</value>
       </data>
-    <data name="Monochromeyellow" xml:space="preserve">
+    <data name="MonochromeYellow" xml:space="preserve">
         <value>Monochrome yellow</value>
       </data>
-    <data name="Orange" xml:space="preserve">
-        <value>Orange</value>
-      </data>
-    <data name="Red" xml:space="preserve">
-        <value>Red</value>
-      </data>
-    <data name="Redorange" xml:space="preserve">
+    <data name="RedOrange" xml:space="preserve">
         <value>Red orange</value>
       </data>
-    <data name="Redviolet" xml:space="preserve">
+    <data name="RedViolet" xml:space="preserve">
         <value>Red violet</value>
       </data>
-    <data name="Scarlet" xml:space="preserve">
-        <value>Scarlet</value>
-      </data>
-    <data name="Violet" xml:space="preserve">
-        <value>Violet</value>
-      </data>
-    <data name="Violetred" xml:space="preserve">
+    <data name="VioletRed" xml:space="preserve">
         <value>Violet red</value>
       </data>
-    <data name="White" xml:space="preserve">
-        <value>White</value>
-      </data>
-    <data name="Yellow" xml:space="preserve">
-        <value>Yellow</value>
-      </data>
-    <data name="Yellowgreen" xml:space="preserve">
+    <data name="YellowGreen" xml:space="preserve">
         <value>Yellow green</value>
       </data>
-    <data name="Yelloworange" xml:space="preserve">
+    <data name="YellowOrange" xml:space="preserve">
         <value>Yellow orange</value>
       </data>
 </root>

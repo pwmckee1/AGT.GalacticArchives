@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class TerrainTypeResource {
+    public class BiomeSubTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TerrainTypeResource() {
+        internal BiomeSubTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.TerrainTypeResource", typeof(TerrainTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.BiomeSubTypeResource", typeof(BiomeSubTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,128 +60,101 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chasms (Mountains).
+        ///   Looks up a localized string similar to The Nest.
         /// </summary>
-        public static string ChasmsMountains {
+        public static string TheNest {
             get {
-                return ResourceManager.GetString("ChasmsMountains", resourceCulture);
+                return ResourceManager.GetString("TheNest", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flat Tops (Mountains).
+        ///   Looks up a localized string similar to The Reliquary.
         /// </summary>
-        public static string FlatTopsMountains {
+        public static string TheReliquary {
             get {
-                return ResourceManager.GetString("FlatTopsMountains", resourceCulture);
+                return ResourceManager.GetString("TheReliquary", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Floating Islands.
+        ///   Looks up a localized string similar to Toxic Anomaly.
         /// </summary>
-        public static string FloatingIslands {
+        public static string ToxicAnomaly {
             get {
-                return ResourceManager.GetString("FloatingIslands", resourceCulture);
+                return ResourceManager.GetString("ToxicAnomaly", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Island Chains.
+        ///   Looks up a localized string similar to Toxic Horror.
         /// </summary>
-        public static string IslandChains {
+        public static string ToxicHorror {
             get {
-                return ResourceManager.GetString("IslandChains", resourceCulture);
+                return ResourceManager.GetString("ToxicHorror", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overhangs (Mountains).
+        ///   Looks up a localized string similar to Ultramarine Giant.
         /// </summary>
-        public static string OverhangsMountains {
+        public static string UltramarineGiant {
             get {
-                return ResourceManager.GetString("OverhangsMountains", resourceCulture);
+                return ResourceManager.GetString("UltramarineGiant", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Peaks (Mountains).
+        ///   Looks up a localized string similar to Vermillion Globe.
         /// </summary>
-        public static string PeaksMountains {
+        public static string VermillionGlobe {
             get {
-                return ResourceManager.GetString("PeaksMountains", resourceCulture);
+                return ResourceManager.GetString("VermillionGlobe", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Riverland Terrain.
+        ///   Looks up a localized string similar to Vile Anomaly.
         /// </summary>
-        public static string RiverlandTerrain {
+        public static string VileAnomaly {
             get {
-                return ResourceManager.GetString("RiverlandTerrain", resourceCulture);
+                return ResourceManager.GetString("VileAnomaly", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rock Pillars.
+        ///   Looks up a localized string similar to Wind-Swept.
         /// </summary>
-        public static string RockPillars {
+        public static string WindSwept {
             get {
-                return ResourceManager.GetString("RockPillars", resourceCulture);
+                return ResourceManager.GetString("WindSwept", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rolling Hills (Mountains).
+        ///   Looks up a localized string similar to Wine Dark.
         /// </summary>
-        public static string RollingHillsMountains {
+        public static string WineDark {
             get {
-                return ResourceManager.GetString("RollingHillsMountains", resourceCulture);
+                return ResourceManager.GetString("WineDark", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rolling Mountains.
+        ///   Looks up a localized string similar to Worm-Ridden.
         /// </summary>
-        public static string RollingMountains {
+        public static string WormRidden {
             get {
-                return ResourceManager.GetString("RollingMountains", resourceCulture);
+                return ResourceManager.GetString("WormRidden", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rugged Mountains.
+        ///   Looks up a localized string similar to Xeno-Colony.
         /// </summary>
-        public static string RuggedMountains {
+        public static string XenoColony {
             get {
-                return ResourceManager.GetString("RuggedMountains", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spires (Mountains).
-        /// </summary>
-        public static string SpiresMountains {
-            get {
-                return ResourceManager.GetString("SpiresMountains", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tall Mountains.
-        /// </summary>
-        public static string TallMountains {
-            get {
-                return ResourceManager.GetString("TallMountains", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uplands (Mountains).
-        /// </summary>
-        public static string UplandsMountains {
-            get {
-                return ResourceManager.GetString("UplandsMountains", resourceCulture);
+                return ResourceManager.GetString("XenoColony", resourceCulture);
             }
         }
     }

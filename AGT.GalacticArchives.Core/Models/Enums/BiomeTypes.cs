@@ -3,10 +3,8 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum PlanetBiomeTypes
+public enum BiomeTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
     Barren,
     Dead,
     Exotic,

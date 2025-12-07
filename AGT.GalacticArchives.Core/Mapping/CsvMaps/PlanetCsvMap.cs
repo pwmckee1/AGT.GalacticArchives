@@ -71,7 +71,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.BiomeType);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetBiomeTypes>(value, m)
+                    ? GetEnumValueFromCsvField<BiomeTypes>(value, m)
                     : null;
             });
 
@@ -80,7 +80,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.BiomeDescription);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetBiomeDescriptionTypes>(value, m)
+                    ? GetEnumValueFromCsvField<BiomeSubTypes>(value, m)
                     : null;
             });
 
@@ -89,7 +89,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.Terrain);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetTerrainTypes>(value, m)
+                    ? GetEnumValueFromCsvField<TerrainTypes>(value, m)
                     : null;
             });
 
@@ -98,7 +98,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.LandType);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetLandTypes>(value, m)
+                    ? GetEnumValueFromCsvField<LandTypes>(value, m)
                     : null;
             });
 
@@ -134,7 +134,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource1);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ExoticMaterialTypes>(value, m)
                     : null;
             });
 
@@ -143,7 +143,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource2);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ExoticMaterialTypes>(value, m)
                     : null;
             });
 
@@ -152,7 +152,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource3);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ExoticMaterialTypes>(value, m)
                     : null;
             });
 
@@ -161,7 +161,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.BiomeResource);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ExoticMaterialTypes>(value, m)
                     : null;
             });
 
@@ -170,7 +170,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.AtmosphereResource);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ExoticMaterialTypes>(value, m)
                     : null;
             });
 
@@ -179,7 +179,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.AtmosphereDaytimeColor);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetAtmosphereColorTypes>(value, m)
+                    ? GetEnumValueFromCsvField<AtmosphereColorTypes>(value, m)
                     : null;
             });
     }

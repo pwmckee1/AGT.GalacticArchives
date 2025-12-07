@@ -126,46 +126,7 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ChasmsMountains" xml:space="preserve">
-    <value>Chasms (Mountains)</value>
-  </data>
-    <data name="FlatTopsMountains" xml:space="preserve">
-    <value>Flat Tops (Mountains)</value>
-  </data>
-    <data name="FloatingIslands" xml:space="preserve">
-    <value>Floating Islands</value>
-  </data>
-    <data name="IslandChains" xml:space="preserve">
-      <value>Island Chains</value>
-  </data>
-    <data name="OverhangsMountains" xml:space="preserve">
-    <value>Overhangs (Mountains)</value>
-  </data>
-    <data name="PeaksMountains" xml:space="preserve">
-    <value>Peaks (Mountains)</value>
-  </data>
-    <data name="RiverlandTerrain" xml:space="preserve">
-      <value>Riverland Terrain</value>
-  </data>
-    <data name="RockPillars" xml:space="preserve">
-    <value>Rock Pillars</value>
-  </data>
-    <data name="RollingHillsMountains" xml:space="preserve">
-    <value>Rolling Hills (Mountains)</value>
-  </data>
-    <data name="RollingMountains" xml:space="preserve">
-    <value>Rolling Mountains</value>
-  </data>
-    <data name="RuggedMountains" xml:space="preserve">
-    <value>Rugged Mountains</value>
-  </data>
-    <data name="SpiresMountains" xml:space="preserve">
-    <value>Spires (Mountains)</value>
-  </data>
-    <data name="TallMountains" xml:space="preserve">
-    <value>Tall Mountains</value>
-  </data>
-    <data name="UplandsMountains" xml:space="preserve">
-    <value>Uplands (Mountains)</value>
-  </data>
+    <data name="BetweenWorlds" xml:space="preserve"><value>Between Worlds</value></data>
+    <data name="FromElsewhere" xml:space="preserve"><value>From Elsewhere</value></data>
+    <data name="NotPresent" xml:space="preserve"><value>Not Present</value></data>
 </root>

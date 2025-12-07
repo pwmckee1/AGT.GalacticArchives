@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -120,13 +120,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BiomeEdiblePlants" xml:space="preserve">
-      <value>Biome Edible Plants</value>
+  <data name="AlarminglySymmetric" xml:space="preserve">
+    <value>Alarmingly Symmetric</value>
   </data>
-  <data name="BiomeName" xml:space="preserve">
-      <value>Biome Name</value>
+  <data name="AncientTunnels" xml:space="preserve">
+    <value>Ancient Tunnels</value>
   </data>
-  <data name="BiomeType" xml:space="preserve">
-      <value>Biome Type</value>
+  <data name="AntiGravitational" xml:space="preserve">
+    <value>Anti-Gravitational</value>
+  </data>
+  <data name="ArtificiallyStructured" xml:space="preserve">
+    <value>Artificially Structured</value>
+  </data>
+  <data name="BasaltPlumes" xml:space="preserve">
+    <value>Basalt Plumes</value>
+  </data>
+  <data name="BoredOutInternals" xml:space="preserve">
+    <value>Bored-Out Internals</value>
+  </data>
+  <data name="BuriedRifts" xml:space="preserve">
+    <value>Buried Rifts</value>
+  </data>
+  <data name="CarvedByAncientRivers" xml:space="preserve">
+    <value>Carved By Ancient Rivers</value>
+  </data>
+  <data name="CreepingFissures" xml:space="preserve">
+    <value>Creeping Fissures</value>
+  </data>
+  <data name="CuriouslyRegular" xml:space="preserve">
+    <value>Curiously Regular</value>
+  </data>
+  <data name="DeepChasm" xml:space="preserve">
+    <value>Deep Chasm</value>
+  </data>
+  <data name="DeepClefts" xml:space="preserve">
+    <value>Deep Clefts</value>
+  </data>
+  <data name="DeepHollows" xml:space="preserve">
+    <value>Deep Hollows</value>
+  </data>
+  <data name="DeepMagmaChambers" xml:space="preserve">
+    <value>Deep Magma Chambers</value>
+  </data>
+  <data name="DeepSaltLayers" xml:space="preserve">
+    <value>Deep Salt Layers</value>
+  </data>
+  <data name="ElectroDynamic" xml:space="preserve">
+    <value>Electro-Dynamic</value>
+  </data>
+  <data name="ElectroMagnetic" xml:space="preserve">
+    <value>Electro-Magnetic</value>
+  </data>
+  <data name="ErodedValleys" xml:space="preserve">
+    <value>Eroded Valleys</value>
+  </data>
+  <data name="ExtensiveMeteorImpacts" xml:space="preserve">
+    <value>Extensive Meteor Impacts</value>
+  </data>
+  <data name="ExtensiveUndergroundCaverns" xml:space="preserve">
+    <value>Extensive Underground Caverns</value>
+  </data>
+  <data name="FrequentCalderas" xml:space="preserve">
+    <value>Frequent Calderas</value>
+  </data>
+  <data name="HeavilyMetallic" xml:space="preserve">
+    <value>Heavily Metallic</value>
+  </data>
+  <data name="LurkingCapstones" xml:space="preserve">
+    <value>Lurking Capstones</value>
+  </data>
+  <data name="LurkingVoids" xml:space="preserve">
+    <value>Lurking Voids</value>
+  </data>
+  <data name="MeanderingFaults" xml:space="preserve">
+    <value>Meandering Faults</value>
+  </data>
+  <data name="MineralRich" xml:space="preserve">
+    <value>Mineral Rich</value>
+  </data>
+  <data name="MultiDimensional" xml:space="preserve">
+    <value>Multi-Dimensional</value>
+  </data>
+  <data name="NonPorous" xml:space="preserve">
+    <value>Non-Porous</value>
+  </data>
+  <data name="PartiallyOrganic" xml:space="preserve">
+    <value>Partially Organic</value>
+  </data>
+  <data name="PostGlacial" xml:space="preserve">
+    <value>Post-Glacial</value>
+  </data>
+  <data name="RiftValleys" xml:space="preserve">
+    <value>Rift Valleys</value>
+  </data>
+  <data name="RockySpires" xml:space="preserve">
+    <value>Rocky Spires</value>
+  </data>
+  <data name="RollingDowns" xml:space="preserve">
+    <value>Rolling Downs</value>
+  </data>
+  <data name="ShapedByComets" xml:space="preserve">
+    <value>Shaped By Comets</value>
+  </data>
+  <data name="ShapedByGiants" xml:space="preserve">
+    <value>Shaped By Giants</value>
+  </data>
+  <data name="SnakingProtusions" xml:space="preserve">
+    <value>Snaking Protusions</value>
+  </data>
+  <data name="SpongeLike" xml:space="preserve">
+    <value>Sponge-Like</value>
+  </data>
+  <data name="StoneMonoliths" xml:space="preserve">
+    <value>Stone Monoliths</value>
+  </data>
+  <data name="StructuralValleys" xml:space="preserve">
+    <value>Structural Valleys</value>
+  </data>
+  <data name="SunkenColossi" xml:space="preserve">
+    <value>Sunked Colossi</value>
+  </data>
+  <data name="SunkenFissures" xml:space="preserve">
+    <value>Sunken Fissures</value>
+  </data>
+  <data name="TectonicCollisions" xml:space="preserve">
+    <value>Tectonic Collisions</value>
+  </data>
+  <data name="TectonicSkeletons" xml:space="preserve">
+    <value>Tectonic Skeletons</value>
+  </data>
+  <data name="ToweringUplands" xml:space="preserve">
+    <value>Towering Uplands</value>
+  </data>
+  <data name="UltraMagnetic" xml:space="preserve">
+    <value>Ultra-Magnetic</value>
+  </data>
+  <data name="UndergroundCaverns" xml:space="preserve">
+    <value>Underground Caverns</value>
+  </data>
+  <data name="UnevenMineralDistribution" xml:space="preserve">
+    <value>Uneven Mineral Distribution</value>
+  </data>
+  <data name="UnnaturalCrevasses" xml:space="preserve">
+    <value>Unnatural Crevasses</value>
+  </data>
+  <data name="UplandValleys" xml:space="preserve">
+    <value>Upland Valleys</value>
+  </data>
+  <data name="VeryThinMantle" xml:space="preserve">
+    <value>Very Thin Mantle</value>
+  </data>
+  <data name="VolcanicStacks" xml:space="preserve">
+    <value>Volcanic Stacks</value>
   </data>
 </root>

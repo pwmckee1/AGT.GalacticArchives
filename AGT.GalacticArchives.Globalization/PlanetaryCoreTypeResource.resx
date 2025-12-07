@@ -126,46 +126,10 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ChasmsMountains" xml:space="preserve">
-    <value>Chasms (Mountains)</value>
-  </data>
-    <data name="FlatTopsMountains" xml:space="preserve">
-    <value>Flat Tops (Mountains)</value>
-  </data>
-    <data name="FloatingIslands" xml:space="preserve">
-    <value>Floating Islands</value>
-  </data>
-    <data name="IslandChains" xml:space="preserve">
-      <value>Island Chains</value>
-  </data>
-    <data name="OverhangsMountains" xml:space="preserve">
-    <value>Overhangs (Mountains)</value>
-  </data>
-    <data name="PeaksMountains" xml:space="preserve">
-    <value>Peaks (Mountains)</value>
-  </data>
-    <data name="RiverlandTerrain" xml:space="preserve">
-      <value>Riverland Terrain</value>
-  </data>
-    <data name="RockPillars" xml:space="preserve">
-    <value>Rock Pillars</value>
-  </data>
-    <data name="RollingHillsMountains" xml:space="preserve">
-    <value>Rolling Hills (Mountains)</value>
-  </data>
-    <data name="RollingMountains" xml:space="preserve">
-    <value>Rolling Mountains</value>
-  </data>
-    <data name="RuggedMountains" xml:space="preserve">
-    <value>Rugged Mountains</value>
-  </data>
-    <data name="SpiresMountains" xml:space="preserve">
-    <value>Spires (Mountains)</value>
-  </data>
-    <data name="TallMountains" xml:space="preserve">
-    <value>Tall Mountains</value>
-  </data>
-    <data name="UplandsMountains" xml:space="preserve">
-    <value>Uplands (Mountains)</value>
-  </data>
+    <data name="CondensedCarbon" xml:space="preserve"><value>Condensed Carbon</value></data>
+    <data name="CoreMissing" xml:space="preserve"><value>Core Missing</value></data>
+    <data name="MagnetisedFerrite" xml:space="preserve"><value>Magnetised Ferrite</value></data>
+    <data name="ScreamingEchoes" xml:space="preserve"><value>Screaming Echoes</value></data>
+    <data name="SilicatePowder" xml:space="preserve"><value>Silicate Powder</value></data>
+
 </root>

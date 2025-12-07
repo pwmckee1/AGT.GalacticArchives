@@ -22,10 +22,10 @@ public class PlanetImport : IGoogleSheetImport
     public string? AssignedRawIngredient { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas1)]
-    public PlanetResourceTypes? AtmosphereGas1 { get; set; }
+    public ExoticMaterialTypes? AtmosphereGas1 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas2)]
-    public PlanetResourceTypes? AtmosphereGas2 { get; set; }
+    public ExoticMaterialTypes? AtmosphereGas2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGasPercentage1)]
     public string? AtmosphereGasPercentage1 { get; set; }
@@ -34,19 +34,19 @@ public class PlanetImport : IGoogleSheetImport
     public string? AtmosphereGasPercentage2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereDaytimeColor)]
-    public PlanetAtmosphereColorTypes? AtmosphereDaytimeColor { get; set; }
+    public AtmosphereColorTypes? AtmosphereDaytimeColor { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereResource)]
-    public PlanetResourceTypes? AtmosphereResource { get; set; }
+    public ExoticMaterialTypes? AtmosphereResource { get; set; }
 
     [Name(PlanetSheetFields.BiomeDescription)]
-    public PlanetBiomeDescriptionTypes? PlanetBiomeDescription { get; set; }
+    public BiomeSubTypes? PlanetBiomeDescription { get; set; }
 
     [Name(PlanetSheetFields.BiomeResource)]
-    public PlanetResourceTypes? BiomeResource { get; set; }
+    public ExoticMaterialTypes? BiomeResource { get; set; }
 
     [Name(PlanetSheetFields.BiomeType)]
-    public PlanetBiomeTypes? PlanetBiomeType { get; set; }
+    public BiomeTypes? PlanetBiomeType { get; set; }
 
     [Name(PlanetSheetFields.CivilizedBy)]
     public string? CivilizedBy { get; set; }
@@ -256,13 +256,13 @@ public class PlanetImport : IGoogleSheetImport
     public string? PrimaryCoreElement { get; set; }
 
     [Name(PlanetSheetFields.PrimaryResource1)]
-    public PlanetResourceTypes? PrimaryResource1 { get; set; }
+    public ExoticMaterialTypes? PrimaryResource1 { get; set; }
 
     [Name(PlanetSheetFields.PrimaryResource2)]
-    public PlanetResourceTypes? PrimaryResource2 { get; set; }
+    public ExoticMaterialTypes? PrimaryResource2 { get; set; }
 
     [Name(PlanetSheetFields.PrimaryResource3)]
-    public PlanetResourceTypes? PrimaryResource3 { get; set; }
+    public ExoticMaterialTypes? PrimaryResource3 { get; set; }
 
     [Name(PlanetSheetFields.RawIngredients)]
     public HashSet<string> RawIngredients { get; set; } = [];
@@ -304,10 +304,10 @@ public class PlanetImport : IGoogleSheetImport
     public string? System { get; set; }
 
     [Name(PlanetSheetFields.Terrain)]
-    public PlanetTerrainTypes? PlanetTerrain { get; set; }
+    public TerrainTypes? PlanetTerrain { get; set; }
 
     [Name(PlanetSheetFields.LandType)]
-    public PlanetLandTypes? PlanetLandType { get; set; }
+    public LandTypes? PlanetLandType { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayRadiation)]
     public string? UndergroundDayRadiation { get; set; }

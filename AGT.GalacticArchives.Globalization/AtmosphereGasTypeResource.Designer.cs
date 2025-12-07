@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class BiomeResource {
+    public class AtmosphereGasTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BiomeResource() {
+        internal AtmosphereGasTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.BiomeResource", typeof(BiomeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.AtmosphereGasTypeResource", typeof(AtmosphereGasTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,29 +60,29 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Edible Plants.
+        ///   Looks up a localized string similar to Carbon Dioxide.
         /// </summary>
-        public static string BiomeEdiblePlants {
+        public static string CarbonDioxide {
             get {
-                return ResourceManager.GetString("BiomeEdiblePlants", resourceCulture);
+                return ResourceManager.GetString("CarbonDioxide", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Name.
+        ///   Looks up a localized string similar to Carbon Monoxide.
         /// </summary>
-        public static string BiomeName {
+        public static string CarbonMonoxide {
             get {
-                return ResourceManager.GetString("BiomeName", resourceCulture);
+                return ResourceManager.GetString("CarbonMonoxide", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Type.
+        ///   Looks up a localized string similar to Not Present.
         /// </summary>
-        public static string BiomeType {
+        public static string NotPresent {
             get {
-                return ResourceManager.GetString("BiomeType", resourceCulture);
+                return ResourceManager.GetString("NotPresent", resourceCulture);
             }
         }
     }

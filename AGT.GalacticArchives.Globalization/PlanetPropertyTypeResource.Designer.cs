@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class BiomeResource {
+    public class PlanetPropertyTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BiomeResource() {
+        internal PlanetPropertyTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.BiomeResource", typeof(BiomeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlanetPropertyTypeResource", typeof(PlanetPropertyTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,29 +60,29 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Edible Plants.
+        ///   Looks up a localized string similar to Ancient Bones.
         /// </summary>
-        public static string BiomeEdiblePlants {
+        public static string AncientBones {
             get {
-                return ResourceManager.GetString("BiomeEdiblePlants", resourceCulture);
+                return ResourceManager.GetString("AncientBones", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Name.
+        ///   Looks up a localized string similar to Salvageable Scrap.
         /// </summary>
-        public static string BiomeName {
+        public static string SalvageableScrap {
             get {
-                return ResourceManager.GetString("BiomeName", resourceCulture);
+                return ResourceManager.GetString("SalvageableScrap", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Biome Type.
+        ///   Looks up a localized string similar to Vile Brood.
         /// </summary>
-        public static string BiomeType {
+        public static string VileBrood {
             get {
-                return ResourceManager.GetString("BiomeType", resourceCulture);
+                return ResourceManager.GetString("VileBrood", resourceCulture);
             }
         }
     }
