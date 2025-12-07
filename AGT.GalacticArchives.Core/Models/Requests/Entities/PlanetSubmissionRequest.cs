@@ -4,31 +4,31 @@ namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
 
 public class PlanetSubmissionRequest
 {
-    public required string? Username { get; set; }
+    public required string Username { get; set; }
 
-    public required string? Platform { get; set; }
+    public required string Platform { get; set; }
 
-    public required string? GameMode { get; set; }
+    public required string GameMode { get; set; }
 
-    public required string? GameRelease { get; set; }
+    public required string GameRelease { get; set; }
 
-    public required string? GalaxyName { get; set; }
+    public required Galaxies Galaxy { get; set; }
 
-    public required string? RegionName { get; set; }
+    public required string RegionName { get; set; }
 
-    public required string? StarSystemName { get; set; }
+    public required string StarSystemName { get; set; }
 
-    public required string? GalacticCoordinates { get; set; }
+    public required string GalacticCoordinates { get; set; }
 
-    public required string? PlanetName { get; set; }
+    public required string PlanetName { get; set; }
 
     public string? OriginalPlanetName { get; set; }
 
     public string? DiscoverersName { get; set; }
 
-    public required string? SpecialAttributes { get; set; }
+    public required string SpecialAttributes { get; set; }
 
-    public required bool? IsPlanet { get; set; }
+    public required bool IsPlanet { get; set; }
 
     public string? PlanetThatItOrbits { get; set; }
 
@@ -81,7 +81,7 @@ public class PlanetSubmissionRequest
 
     public string? DateOfDiscovery { get; set; }
 
-    public required string? DiscovererId { get; set; }
+    public required string DiscovererId { get; set; }
 
     public string? DateOfSurvey { get; set; }
 
@@ -95,7 +95,7 @@ public class PlanetSubmissionRequest
 
     public string? AdditionalPlanetImages { get; set; }
 
-    public required string? GamerTagHandle { get; set; }
+    public required string GamerTagHandle { get; set; }
 
     public string? Discord { get; set; }
 
