@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Environments;
 
 namespace AGT.GalacticArchives.Core.Extensions;
 

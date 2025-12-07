@@ -1,4 +1,4 @@
-using AGT.GalacticArchives.Core.Models.Environments;
+using AGT.GalacticArchives.Core.Models.Entities;
 using AGT.GalacticArchives.Core.Models.Requests.Environments;
 
 namespace AGT.GalacticArchives.Core.Managers.Environments;

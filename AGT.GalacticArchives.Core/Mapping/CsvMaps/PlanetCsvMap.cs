@@ -134,7 +134,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource1);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
                     : null;
             });
 
@@ -143,7 +143,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource2);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
                     : null;
             });
 
@@ -152,7 +152,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource3);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
                     : null;
             });
 
@@ -161,7 +161,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.BiomeResource);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
                     : null;
             });
 
@@ -170,7 +170,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.AtmosphereResource);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    ? GetEnumValueFromCsvField<ResourceTypes>(value, m)
                     : null;
             });
 

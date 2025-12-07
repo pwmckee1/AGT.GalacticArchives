@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Environments;
+using AGT.GalacticArchives.Core.Models.Entities;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
 using Should;

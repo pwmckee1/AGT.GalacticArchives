@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Database;
-using AGT.GalacticArchives.Core.Models.Environments;
+using AGT.GalacticArchives.Core.Models.Entities;
 using AGT.GalacticArchives.Core.Models.Requests.Environments;
 using AutoMapper;
 

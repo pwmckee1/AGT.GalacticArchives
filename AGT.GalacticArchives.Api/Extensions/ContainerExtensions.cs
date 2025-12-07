@@ -2,21 +2,13 @@
 
 public static class ContainerExtensions
 {
-    extension(Type type)
+    public static bool IsInjectableArtifactType(this Type type)
     {
-        public bool IsInjectableArtifactType()
-        {
-            return type.Name.IsInjectableArtifact() &&
-                   !type.GetInterfaces().Contains(typeof(IHostedService));
-        }
+        return type.Name.IsInjectableArtifact() && !type.GetInterfaces().Contains(typeof(IHostedService));
     }
 
-    extension(string name)
+    private static bool IsInjectableArtifact(this string name)
     {
-        private bool IsInjectableArtifact()
-        {
-            return name.EndsWith("Manager") ||
-                   name.EndsWith("Service");
-        }
+        return name.EndsWith("Manager") || name.EndsWith("Service");
     }
 }

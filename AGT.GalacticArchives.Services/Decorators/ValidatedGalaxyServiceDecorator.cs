@@ -1,4 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Models.Environments;
+﻿using AGT.GalacticArchives.Core.Models.Entities;
 using AGT.GalacticArchives.Core.Models.Requests.Environments;
 using AGT.GalacticArchives.Core.Models.Responses.Environments;
 using AGT.GalacticArchives.Globalization;
