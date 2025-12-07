@@ -56,7 +56,7 @@ public static class PlanetSheetFields
     public const string LegacyPSPlanetName = "LEGACY PS planet name";
     public const string LegacyXboxDiscoveryEra = "LEGACY Xbox Discovery Era";
     public const string LegacyXboxPlanetName = "LEGACY Xbox planet name";
-    public const string Mode = "Mode";
+    public const string GameModeType = "Mode";
     public const string Name = "Planet Name";
     public const string NightStormTemp = "Night Storm Temp (celsius)";
     public const string NightTemp = "Night Temp (celsius)";
@@ -89,7 +89,7 @@ public static class PlanetSheetFields
     public const string SurveyorGamertag = "Surveyor Gamertag";
     public const string System = "System";
     public const string Terrain = "Terrain";
-    public const string TypeOfLand = "Type of Land";
+    public const string LandType = "Type of Land";
     public const string UndergroundDayRadiation = "Underground Day Radiation";
     public const string UndergroundDayStormRadiation = "Underground Day Storm Radiation";
     public const string UndergroundDayStormTemp = "Underground Day Storm Temp (celsius)";

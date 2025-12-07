@@ -1,4 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Models.Enums;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.Imports;
@@ -15,7 +16,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? AdditionalNotes { get; set; }
 
     [Name(PlanetSheetFields.ArchetypeOfLand)]
-    public string? ArchetypeOfLand { get; set; }
+    public PlanetLandArchetypes? ArchetypeOfLand { get; set; }
 
     [Name(PlanetSheetFields.AssignedRawIngredient)]
     public string? AssignedRawIngredient { get; set; }
@@ -39,13 +40,13 @@ public class PlanetImport : IGoogleSheetImport
     public string? AtmosphereResource { get; set; }
 
     [Name(PlanetSheetFields.BiomeDescription)]
-    public string? BiomeDescription { get; set; }
+    public PlanetBiomeDescriptionTypes? PlanetBiomeDescription { get; set; }
 
     [Name(PlanetSheetFields.BiomeResource)]
     public string? BiomeResource { get; set; }
 
     [Name(PlanetSheetFields.BiomeType)]
-    public string? BiomeType { get; set; }
+    public PlanetBiomeTypes? PlanetBiomeType { get; set; }
 
     [Name(PlanetSheetFields.CivilizedBy)]
     public string? CivilizedBy { get; set; }
@@ -93,7 +94,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? ExternalLink2 { get; set; }
 
     [Name(PlanetSheetFields.ExtremeWeatherExcludingMegaExotic)]
-    public string? ExtremeWeatherExcludingMegaExotic { get; set; }
+    public PlanetExtremeWeatherTypes? ExtremeWeatherExcludingMegaExotic { get; set; }
 
     [Name(PlanetSheetFields.ExtremeWeatherIncludingMegaExotic)]
     public string? ExtremeWeatherIncludingMegaExotic { get; set; }
@@ -146,8 +147,20 @@ public class PlanetImport : IGoogleSheetImport
     [Name(PlanetSheetFields.HistoricalPlanetNameReset)]
     public string? HistoricalPlanetNameReset { get; set; }
 
+    [Name(PlanetSheetFields.RingsOrGiant)]
+    public bool HasRings { get; set; }
+
+    [Name(PlanetSheetFields.RingsOrGiant)]
+    public bool IsGasGiant { get; set; }
+
     [Name(PlanetSheetFields.IsInfected)]
-    public string? IsInfected { get; set; }
+    public bool IsInfected { get; set; }
+
+    [Name(PlanetSheetFields.PlanetOrMoon)]
+    public bool IsPlanet { get; set; }
+
+    [Name(PlanetSheetFields.PlanetOrMoon)]
+    public bool IsMoon { get; set; }
 
     [Name(PlanetSheetFields.LegacyPCDiscoveryDate)]
     public string? LegacyPCDiscoveryDate { get; set; }
@@ -197,17 +210,17 @@ public class PlanetImport : IGoogleSheetImport
     [Name(PlanetSheetFields.LegacyXboxPlanetName)]
     public string? LegacyXboxPlanetName { get; set; }
 
-    [Name(PlanetSheetFields.Mode)]
-    public string? Mode { get; set; }
+    [Name(PlanetSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
     [Name(PlanetSheetFields.Name)]
     public string? Name { get; set; }
 
     [Name(PlanetSheetFields.NightStormTemp)]
-    public string? NightStormTemp { get; set; }
+    public float? NightStormTemp { get; set; }
 
     [Name(PlanetSheetFields.NightTemp)]
-    public string? NightTemp { get; set; }
+    public float? NightTemp { get; set; }
 
     [Name(PlanetSheetFields.NumberOfFauna)]
     public string? NumberOfFauna { get; set; }
@@ -291,10 +304,10 @@ public class PlanetImport : IGoogleSheetImport
     public string? System { get; set; }
 
     [Name(PlanetSheetFields.Terrain)]
-    public string? Terrain { get; set; }
+    public PlanetTerrainTypes? PlanetTerrain { get; set; }
 
-    [Name(PlanetSheetFields.TypeOfLand)]
-    public string? TypeOfLand { get; set; }
+    [Name(PlanetSheetFields.LandType)]
+    public PlanetLandTypes? PlanetLandType { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayRadiation)]
     public string? UndergroundDayRadiation { get; set; }
@@ -345,7 +358,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? UnderwaterNightTemp { get; set; }
 
     [Name(PlanetSheetFields.Weather)]
-    public string? Weather { get; set; }
+    public PlanetWeatherTypes? PlanetWeather { get; set; }
 
     [Name(PlanetSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
