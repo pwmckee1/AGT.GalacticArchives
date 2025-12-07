@@ -5,15 +5,18 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetBiomeDescriptionTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.BarrenAbandoned))]
-    BarrenAbandoned = 0,
+    BarrenAbandoned,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.BarrenBarren))]
-    BarrenBarren = 1,
+    BarrenBarren,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
@@ -58,48 +61,48 @@ public enum PlanetBiomeDescriptionTypes
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.BarrenRuinedDustbowl))]
-    BarrenRuinedDustbowl = 10,
+    BarrenRuinedDustbowl0,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.BarrenTainted))]
-    BarrenTainted = 11,
+    BarrenTainted1,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.BarrenTerrorsphere))]
-    BarrenTerrorsphere = 12,
+    BarrenTerrorsphere2,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.BarrenWindswept))]
-    BarrenWindswept = 13,
+    BarrenWindswept3,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.DeadAbandoned))]
-    DeadAbandoned = 14,
+    DeadAbandoned4,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.DeadAirless))]
-    DeadAirless = 15,
+    DeadAirless5,
 
     [Display(ResourceType = typeof(BiomeDescriptionResource), Description = nameof(BiomeDescriptionResource.DeadDead))]
-    DeadDead = 16,
+    DeadDead6,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.DeadDesolate))]
-    DeadDesolate = 17,
+    DeadDesolate7,
 
     [Display(ResourceType = typeof(BiomeDescriptionResource), Description = nameof(BiomeDescriptionResource.DeadEmpty))]
-    DeadEmpty = 18,
+    DeadEmpty8,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.DeadForsaken))]
-    DeadForsaken = 19,
+    DeadForsaken9,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
@@ -502,494 +505,494 @@ public enum PlanetBiomeDescriptionTypes
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushAbandonedParadise))]
-    LushAbandonedParadise = 100,
+    LushAbandonedParadise00,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushBountiful))]
-    LushBountiful = 101,
+    LushBountiful01,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushFlourishing))]
-    LushFlourishing = 102,
+    LushFlourishing02,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushGrassy))]
-    LushGrassy = 103,
+    LushGrassy03,
 
     [Display(ResourceType = typeof(BiomeDescriptionResource), Description = nameof(BiomeDescriptionResource.LushHumid))]
-    LushHumid = 104,
+    LushHumid04,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushInfectedParadise))]
-    LushInfectedParadise = 105,
+    LushInfectedParadise05,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushInfestedParadise))]
-    LushInfestedParadise = 106,
+    LushInfestedParadise06,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushOvergrown))]
-    LushOvergrown = 107,
+    LushOvergrown07,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushOvergrownRelic))]
-    LushOvergrownRelic = 108,
+    LushOvergrownRelic08,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushParadise))]
-    LushParadise = 109,
+    LushParadise09,
 
     [Display(ResourceType = typeof(BiomeDescriptionResource), Description = nameof(BiomeDescriptionResource.LushRainy))]
-    LushRainy = 110,
+    LushRainy10,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushTemperate))]
-    LushTemperate = 111,
+    LushTemperate11,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushTheNest))]
-    LushTheNest = 112,
+    LushTheNest12,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushTheReliquary))]
-    LushTheReliquary = 113,
+    LushTheReliquary13,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushTropical))]
-    LushTropical = 114,
+    LushTropical14,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushVerdant))]
-    LushVerdant = 115,
+    LushVerdant15,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushViridescent))]
-    LushViridescent = 116,
+    LushViridescent16,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushWormRidden))]
-    LushWormRidden = 117,
+    LushWormRidden17,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.LushXenoColony))]
-    LushXenoColony = 118,
+    LushXenoColony18,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshBoggy))]
-    MarshBoggy = 119,
+    MarshBoggy19,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshCloudy))]
-    MarshCloudy = 120,
+    MarshCloudy20,
 
     [Display(ResourceType = typeof(BiomeDescriptionResource), Description = nameof(BiomeDescriptionResource.MarshDamp))]
-    MarshDamp = 121,
+    MarshDamp21,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshEndlessMorass))]
-    MarshEndlessMorass = 122,
+    MarshEndlessMorass22,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshFoggy))]
-    MarshFoggy = 123,
+    MarshFoggy23,
 
     [Display(ResourceType = typeof(BiomeDescriptionResource), Description = nameof(BiomeDescriptionResource.MarshHazy))]
-    MarshHazy = 124,
+    MarshHazy24,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshMarshy))]
-    MarshMarshy = 125,
+    MarshMarshy25,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshMisty))]
-    MarshMisty = 126,
+    MarshMisty26,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshMurky))]
-    MarshMurky = 127,
+    MarshMurky27,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshQuagmire))]
-    MarshQuagmire = 128,
+    MarshQuagmire28,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshReeking))]
-    MarshReeking = 129,
+    MarshReeking29,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshSwamp))]
-    MarshSwamp = 130,
+    MarshSwamp30,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshTropical))]
-    MarshTropical = 131,
+    MarshTropical31,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MarshVapour))]
-    MarshVapour = 132,
+    MarshVapour32,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticAzure))]
-    MegaExoticAzure = 133,
+    MegaExoticAzure33,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticBlood))]
-    MegaExoticBlood = 134,
+    MegaExoticBlood34,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticCerulean))]
-    MegaExoticCerulean = 135,
+    MegaExoticCerulean35,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticChromaticFog))]
-    MegaExoticChromaticFog = 136,
+    MegaExoticChromaticFog36,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticCrimson))]
-    MegaExoticCrimson = 137,
+    MegaExoticCrimson37,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticDeathlyGreenAnomaly))]
-    MegaExoticDeathlyGreenAnomaly = 138,
+    MegaExoticDeathlyGreenAnomaly38,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticDoomedJade))]
-    MegaExoticDoomedJade = 139,
+    MegaExoticDoomedJade39,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticFrozenAnomaly))]
-    MegaExoticFrozenAnomaly = 140,
+    MegaExoticFrozenAnomaly40,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticHarshBlueGlobe))]
-    MegaExoticHarshBlueGlobe = 141,
+    MegaExoticHarshBlueGlobe41,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticHauntedEmeril))]
-    MegaExoticHauntedEmeril = 142,
+    MegaExoticHauntedEmeril42,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticLostBlue))]
-    MegaExoticLostBlue = 143,
+    MegaExoticLostBlue43,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticLostGreen))]
-    MegaExoticLostGreen = 144,
+    MegaExoticLostGreen44,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticLostRed))]
-    MegaExoticLostRed = 145,
+    MegaExoticLostRed45,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticPlanetaryAnomaly))]
-    MegaExoticPlanetaryAnomaly = 146,
+    MegaExoticPlanetaryAnomaly46,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticRedacted))]
-    MegaExoticRedacted = 147,
+    MegaExoticRedacted47,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticScarlet))]
-    MegaExoticScarlet = 148,
+    MegaExoticScarlet48,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticStellarCorruptionDetected))]
-    MegaExoticStellarCorruptionDetected = 149,
+    MegaExoticStellarCorruptionDetected49,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticToxicAnomaly))]
-    MegaExoticToxicAnomaly = 150,
+    MegaExoticToxicAnomaly50,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticUltramarine))]
-    MegaExoticUltramarine = 151,
+    MegaExoticUltramarine51,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticVermillionGlobe))]
-    MegaExoticVermillionGlobe = 152,
+    MegaExoticVermillionGlobe52,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticVileAnomaly))]
-    MegaExoticVileAnomaly = 153,
+    MegaExoticVileAnomaly53,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.MegaExoticWineDark))]
-    MegaExoticWineDark = 154,
+    MegaExoticWineDark54,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedArid))]
-    ScorchedArid = 155,
+    ScorchedArid55,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedBoiling))]
-    ScorchedBoiling = 156,
+    ScorchedBoiling56,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedBoilingDoom))]
-    ScorchedBoilingDoom = 157,
+    ScorchedBoilingDoom57,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedCharred))]
-    ScorchedCharred = 158,
+    ScorchedCharred58,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedCorrupted))]
-    ScorchedCorrupted = 159,
+    ScorchedCorrupted59,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedFiery))]
-    ScorchedFiery = 160,
+    ScorchedFiery60,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedFieryDreadworld))]
-    ScorchedFieryDreadworld = 161,
+    ScorchedFieryDreadworld61,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedHighTemperature))]
-    ScorchedHighTemperature = 162,
+    ScorchedHighTemperature62,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedHot))]
-    ScorchedHot = 163,
+    ScorchedHot63,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedIncandescent))]
-    ScorchedIncandescent = 164,
+    ScorchedIncandescent64,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedInfested))]
-    ScorchedInfested = 165,
+    ScorchedInfested65,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedScalding))]
-    ScorchedScalding = 166,
+    ScorchedScalding66,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedScorched))]
-    ScorchedScorched = 167,
+    ScorchedScorched67,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedScorchedRelic))]
-    ScorchedScorchedRelic = 168,
+    ScorchedScorchedRelic68,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ScorchedTorrid))]
-    ScorchedTorrid = 169,
+    ScorchedTorrid69,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicAcidic))]
-    ToxicAcidic = 170,
+    ToxicAcidic70,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicAcrid))]
-    ToxicAcrid = 171,
+    ToxicAcrid71,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicBlighted))]
-    ToxicBlighted = 172,
+    ToxicBlighted72,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicCaustic))]
-    ToxicCaustic = 173,
+    ToxicCaustic73,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicCausticNightmare))]
-    ToxicCausticNightmare = 174,
+    ToxicCausticNightmare74,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicCorrosive))]
-    ToxicCorrosive = 175,
+    ToxicCorrosive75,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicDecayingRuin))]
-    ToxicDecayingRuin = 176,
+    ToxicDecayingRuin76,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicInfested))]
-    ToxicInfested = 177,
+    ToxicInfested77,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicMiasmatic))]
-    ToxicMiasmatic = 178,
+    ToxicMiasmatic78,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicNoxious))]
-    ToxicNoxious = 179,
+    ToxicNoxious79,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicPoisonous))]
-    ToxicPoisonous = 180,
+    ToxicPoisonous80,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicRotting))]
-    ToxicRotting = 181,
+    ToxicRotting81,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicToxic))]
-    ToxicToxic = 182,
+    ToxicToxic82,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.ToxicToxicHorror))]
-    ToxicToxicHorror = 183,
+    ToxicToxicHorror83,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicAshShrouded))]
-    VolcanicAshShrouded = 184,
+    VolcanicAshShrouded84,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicAshen))]
-    VolcanicAshen = 185,
+    VolcanicAshen85,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicBasalt))]
-    VolcanicBasalt = 186,
+    VolcanicBasalt86,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicErupting))]
-    VolcanicErupting = 187,
+    VolcanicErupting87,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicFlameRuptured))]
-    VolcanicFlameRuptured = 188,
+    VolcanicFlameRuptured88,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicImminentCoreDetonation))]
-    VolcanicImminentCoreDetonation = 189,
+    VolcanicImminentCoreDetonation89,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicLava))]
-    VolcanicLava = 190,
+    VolcanicLava90,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicMagma))]
-    VolcanicMagma = 191,
+    VolcanicMagma91,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicMolten))]
-    VolcanicMolten = 192,
+    VolcanicMolten92,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicObsidianBead))]
-    VolcanicObsidianBead = 193,
+    VolcanicObsidianBead93,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicTectonic))]
-    VolcanicTectonic = 194,
+    VolcanicTectonic94,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicUnstable))]
-    VolcanicUnstable = 195,
+    VolcanicUnstable95,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicViolent))]
-    VolcanicViolent = 196,
+    VolcanicViolent96,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.VolcanicVolcanic))]
-    VolcanicVolcanic = 197,
+    VolcanicVolcanic97,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.WaterworldAquatic))]
-    WaterworldAquatic = 198,
+    WaterworldAquatic98,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),
         Description = nameof(BiomeDescriptionResource.WaterworldMarine))]
-    WaterworldMarine = 199,
+    WaterworldMarine99,
 
     [Display(
         ResourceType = typeof(BiomeDescriptionResource),

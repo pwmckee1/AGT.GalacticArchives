@@ -1,12 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+using AGT.GalacticArchives.Globalization;
+
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum GameModeTypes
 {
-    Normal = 1,
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+    Normal,
     CommunityExpedition,
     Custom,
     Creative,
     Survival,
     Permadeath,
-    NotApplicable,
 }

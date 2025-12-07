@@ -5,8 +5,11 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemMultiToolUpdateTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.AdvancedMiningLaser))]
-    AdvancedMiningLaser = 1,
+    AdvancedMiningLaser,
 
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.AnalysisVisorUpgrade))]
     AnalysisVisorUpgrade,

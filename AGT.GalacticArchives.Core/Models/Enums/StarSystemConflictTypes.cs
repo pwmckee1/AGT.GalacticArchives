@@ -5,7 +5,9 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemConflictTypes
 {
-    Aggressive = 1,
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+    Aggressive,
     Alarming,
 
     [Display(ResourceType = typeof(ConflictTypeResource), Description = nameof(ConflictTypeResource.AtWar))]
@@ -28,8 +30,6 @@ public enum StarSystemConflictTypes
     Medium,
     Mild,
 
-    [Display(ResourceType = typeof(ConflictTypeResource), Description = nameof(ConflictTypeResource.NotAvailable))]
-    NotAvailable,
     Peaceful,
     Perilous,
 

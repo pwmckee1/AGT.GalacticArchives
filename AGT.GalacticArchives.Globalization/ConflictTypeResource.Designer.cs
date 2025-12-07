@@ -78,15 +78,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to N/A.
-        /// </summary>
-        public static string NotAvailable {
-            get {
-                return ResourceManager.GetString("NotAvailable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Pirate Controlled.
         /// </summary>
         public static string PirateControlled {

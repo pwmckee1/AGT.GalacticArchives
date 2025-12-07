@@ -1,8 +1,13 @@
+using System.ComponentModel.DataAnnotations;
+using AGT.GalacticArchives.Globalization;
+
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemWealthTypes
 {
-    Adequate = 1,
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+    Adequate,
     Advanced,
     Affluent,
     Balanced,

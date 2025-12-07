@@ -1044,9 +1044,6 @@
   <data name="NormalWanderingHotSpots" xml:space="preserve">
       <value>Wandering Hot Spots (Barren)</value>
   </data>
-  <data name="NotApplicable" xml:space="preserve">
-      <value>N/A</value>
-  </data>
   <data name="RedAngeredClouds" xml:space="preserve">
       <value>Angered Clouds (Mega Exotic)</value>
   </data>

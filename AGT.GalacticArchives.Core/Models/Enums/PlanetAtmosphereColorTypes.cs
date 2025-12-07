@@ -5,10 +5,13 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetAtmosphereColorTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(
         ResourceType = typeof(PlanetAtmosphereColorResource),
         Description = nameof(PlanetAtmosphereColorResource.Apricot))]
-    Apricot = 1,
+    Apricot,
 
     [Display(
         ResourceType = typeof(PlanetAtmosphereColorResource),

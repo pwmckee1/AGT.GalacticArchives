@@ -5,10 +5,10 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum ItemClassTypes
 {
-    S = 1,
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+    S,
     A,
     B,
     C,
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.NotApplicable))]
-    NotApplicable,
 }

@@ -5,8 +5,11 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipSubtypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticBall))]
-    ExoticBall = 1,
+    ExoticBall,
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticGuppy))]
     ExoticGuppy,

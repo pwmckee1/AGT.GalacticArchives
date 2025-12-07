@@ -5,8 +5,11 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipWingTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticMosquitoFin))]
-    ExoticMosquitoFin = 1,
+    ExoticMosquitoFin,
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticRoyalFin))]
     ExoticRoyalFin,

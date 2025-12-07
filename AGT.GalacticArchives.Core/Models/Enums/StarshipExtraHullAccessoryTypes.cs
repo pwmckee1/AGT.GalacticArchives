@@ -5,8 +5,11 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipExtraHullAccessoryTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleAfterburner))]
-    ShuttleAfterburner = 1,
+    ShuttleAfterburner,
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleFatboy))]
     ShuttleFatboy,

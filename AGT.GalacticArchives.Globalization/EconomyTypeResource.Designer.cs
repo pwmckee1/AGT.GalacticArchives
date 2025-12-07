@@ -168,15 +168,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to N/A.
-        /// </summary>
-        public static string NotApplicable {
-            get {
-                return ResourceManager.GetString("NotApplicable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ore Extraction.
         /// </summary>
         public static string OreExtraction {

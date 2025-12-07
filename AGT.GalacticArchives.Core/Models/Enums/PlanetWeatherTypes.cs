@@ -5,8 +5,11 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetWeatherTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.BlueAllConsumingCold))]
-    BlueAllConsumingCold = 1,
+    BlueAllConsumingCold,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.BlueAzureStorms))]
     BlueAzureStorms,
@@ -104,7 +107,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ClearCrisp))]
     ClearCrisp,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ClearDeadlyPressureVariations))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ClearDeadlyPressureVariations))]
     ClearDeadlyPressureVariations,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ClearDehydrated))]
@@ -386,7 +391,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeBoilingSuperstorms))]
     ExtremeBoilingSuperstorms,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeBoneStrippingAcidStorms))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeBoneStrippingAcidStorms))]
     ExtremeBoneStrippingAcidStorms,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeBroilingHumidity))]
@@ -413,7 +420,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeCombustibleDust))]
     ExtremeCombustibleDust,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeConstantPressureStorms))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeConstantPressureStorms))]
     ExtremeConstantPressureStorms,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeContaminatedSqualls))]
@@ -440,16 +449,22 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeDeepFreeze))]
     ExtremeDeepFreeze,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeEnormousNuclearStorms))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeEnormousNuclearStorms))]
     ExtremeEnormousNuclearStorms,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeEternalCyclones))]
     ExtremeEternalCyclones,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeExplosiveGasEruptions))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeExplosiveGasEruptions))]
     ExtremeExplosiveGasEruptions,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeExtremeAtmosphericDecay))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeExtremeAtmosphericDecay))]
     ExtremeExtremeAtmosphericDecay,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeExtremeHeat))]
@@ -458,7 +473,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeExtremeRadioactivity))]
     ExtremeExtremeRadioactivity,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeExtremeThermonuclearFog))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeExtremeThermonuclearFog))]
     ExtremeExtremeThermonuclearFog,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeExtremeWindBlasting))]
@@ -525,7 +542,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeIntenseHeatbursts))]
     ExtremeIntenseHeatbursts,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeIrradiatedThunderstorms))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremeIrradiatedThunderstorms))]
     ExtremeIrradiatedThunderstorms,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremeLethalAshStorms))]
@@ -552,7 +571,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremePainfullyHotRain))]
     ExtremePainfullyHotRain,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremePlanetwideDesiccation))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.ExtremePlanetwideDesiccation))]
     ExtremePlanetwideDesiccation,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.ExtremePlanetWideMaelstrom))]
@@ -638,7 +659,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.GreenCorruptedBlood))]
     GreenCorruptedBlood,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.GreenDeadlyPressureVariations))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.GreenDeadlyPressureVariations))]
     GreenDeadlyPressureVariations,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.GreenEchoesofAcid))]
@@ -724,7 +747,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalDangerouslyToxicRain))]
     NormalDangerouslyToxicRain,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalDeadlyPressureVariations))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.NormalDeadlyPressureVariations))]
     NormalDeadlyPressureVariations,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalDirectSunlight))]
@@ -792,10 +817,14 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalInfrequentTorrents))]
     NormalInfrequentTorrents,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalInfrequentToxicDrizzle))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.NormalInfrequentToxicDrizzle))]
     NormalInfrequentToxicDrizzle,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalIntermittentWindBlasting))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.NormalIntermittentWindBlasting))]
     NormalIntermittentWindBlasting,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalInvisibleJadeWinds))]
@@ -810,7 +839,9 @@ public enum PlanetWeatherTypes
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalLethalAtmosphere))]
     NormalLethalAtmosphere,
 
-    [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalLethalHumidityOutbreaks))]
+    [Display(
+        ResourceType = typeof(WeatherResource),
+        Description = nameof(WeatherResource.NormalLethalHumidityOutbreaks))]
     NormalLethalHumidityOutbreaks,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.NormalMagmaGeysers))]

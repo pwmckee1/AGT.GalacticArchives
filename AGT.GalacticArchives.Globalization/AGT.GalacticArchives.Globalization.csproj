@@ -126,6 +126,21 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>PlanetAtmosphereColorResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="BiomeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>BiomeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="BiomeResource.resx">
+          <LastGenOutput>BiomeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="EdiblePlantResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EdiblePlantResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="ApplicationResources.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>ApplicationResources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -268,6 +283,21 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>PlanetAtmosphereColorResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="BiomeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>BiomeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="EdiblePlantResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EdiblePlantResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="ApplicationResources.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>ApplicationResources.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

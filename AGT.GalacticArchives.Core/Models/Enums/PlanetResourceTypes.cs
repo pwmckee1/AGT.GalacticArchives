@@ -5,10 +5,13 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetResourceTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(
         ResourceType = typeof(PlanetResourceItemsResource),
         Description = nameof(PlanetResourceItemsResource.ActivatedCadmium))]
-    ActivatedCadmium = 1,
+    ActivatedCadmium,
 
     [Display(
         ResourceType = typeof(PlanetResourceItemsResource),

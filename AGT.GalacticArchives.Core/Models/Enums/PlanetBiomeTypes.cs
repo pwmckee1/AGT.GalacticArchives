@@ -5,14 +5,18 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetBiomeTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
     Barren,
     Dead,
     Exotic,
     Frozen,
     Irradiated,
+
     [Display(ResourceType = typeof(BiomeTypeResource), Description = nameof(BiomeTypeResource.GasGiant))]
     GasGiant,
     Lush,
+
     [Display(ResourceType = typeof(BiomeTypeResource), Description = nameof(BiomeTypeResource.MegaExotic))]
     MegaExotic,
     Scorched,
@@ -20,5 +24,4 @@ public enum PlanetBiomeTypes
     Marsh,
     Volcanic,
     Waterworld,
-    NotApplicable,
 }

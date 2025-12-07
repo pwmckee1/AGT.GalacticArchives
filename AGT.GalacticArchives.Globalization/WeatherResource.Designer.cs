@@ -2832,15 +2832,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to N/A.
-        /// </summary>
-        public static string NotApplicable {
-            get {
-                return ResourceManager.GetString("NotApplicable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Angered Clouds (Mega Exotic).
         /// </summary>
         public static string RedAngeredClouds {

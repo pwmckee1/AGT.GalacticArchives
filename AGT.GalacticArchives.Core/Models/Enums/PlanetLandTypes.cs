@@ -5,8 +5,11 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetLandTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(ResourceType = typeof(LandResource), Description = nameof(LandResource.RockyHilly))]
-    RockyHilly = 1,
+    RockyHilly,
 
     [Display(ResourceType = typeof(LandResource), Description = nameof(LandResource.Hilly))]
     Hilly,

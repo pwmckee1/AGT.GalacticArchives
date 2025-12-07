@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GameModeTypeResource {
+    public class EdiblePlantResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GameModeTypeResource() {
+        internal EdiblePlantResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.GameModeTypeResource", typeof(GameModeTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.EdiblePlantResource", typeof(EdiblePlantResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,11 +60,38 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Community Expedition.
+        ///   Looks up a localized string similar to Aloe Flesh.
         /// </summary>
-        public static string CommunityExpedition {
+        public static string AloeFlesh {
             get {
-                return ResourceManager.GetString("CommunityExpedition", resourceCulture);
+                return ResourceManager.GetString("AloeFlesh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frozen Tubers.
+        /// </summary>
+        public static string FrozenTubers {
+            get {
+                return ResourceManager.GetString("FrozenTubers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impulse Beans.
+        /// </summary>
+        public static string ImpulseBeans {
+            get {
+                return ResourceManager.GetString("ImpulseBeans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jade Peas.
+        /// </summary>
+        public static string JadePeas {
+            get {
+                return ResourceManager.GetString("JadePeas", resourceCulture);
             }
         }
     }

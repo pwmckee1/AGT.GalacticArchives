@@ -5,10 +5,13 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemShipUpgradeTypes
 {
+    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
+    NotApplicable,
+
     [Display(
         ResourceType = typeof(StarSystemResource),
         Description = nameof(StarSystemResource.CyclotronBallistaUpgrade))]
-    CyclotronBallistaUpgrade = 1,
+    CyclotronBallistaUpgrade,
 
     [Display(
         ResourceType = typeof(StarSystemResource),

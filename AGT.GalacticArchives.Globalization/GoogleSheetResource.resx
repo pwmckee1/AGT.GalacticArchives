@@ -168,9 +168,6 @@
   <data name="MultiToolSheetName" xml:space="preserve">
       <value>MultiTool DB</value>
   </data>
-  <data name="NotApplicable" xml:space="preserve">
-      <value>N/A</value>
-  </data>
   <data name="PlanetSheetName" xml:space="preserve">
       <value>Planet DB</value>
   </data>
