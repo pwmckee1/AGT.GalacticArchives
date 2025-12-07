@@ -128,5 +128,59 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
                     ? GetEnumValueFromCsvField<PlanetExtremeWeatherTypes>(value, m)
                     : null;
             });
+
+        Map(m => m.PrimaryResource1)
+            .Convert(m =>
+            {
+                string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource1);
+                return string.IsNullOrEmpty(value)
+                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    : null;
+            });
+
+        Map(m => m.PrimaryResource2)
+            .Convert(m =>
+            {
+                string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource2);
+                return string.IsNullOrEmpty(value)
+                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    : null;
+            });
+
+        Map(m => m.PrimaryResource3)
+            .Convert(m =>
+            {
+                string? value = m.Row.GetField(PlanetSheetFields.PrimaryResource3);
+                return string.IsNullOrEmpty(value)
+                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    : null;
+            });
+
+        Map(m => m.BiomeResource)
+            .Convert(m =>
+            {
+                string? value = m.Row.GetField(PlanetSheetFields.BiomeResource);
+                return string.IsNullOrEmpty(value)
+                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    : null;
+            });
+
+        Map(m => m.AtmosphereResource)
+            .Convert(m =>
+            {
+                string? value = m.Row.GetField(PlanetSheetFields.AtmosphereResource);
+                return string.IsNullOrEmpty(value)
+                    ? GetEnumValueFromCsvField<PlanetResourceTypes>(value, m)
+                    : null;
+            });
+
+        Map(m => m.AtmosphereDaytimeColor)
+            .Convert(m =>
+            {
+                string? value = m.Row.GetField(PlanetSheetFields.AtmosphereDaytimeColor);
+                return string.IsNullOrEmpty(value)
+                    ? GetEnumValueFromCsvField<PlanetAtmosphereColorTypes>(value, m)
+                    : null;
+            });
     }
 }

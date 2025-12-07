@@ -1,7 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Entities;
 
-namespace AGT.GalacticArchives.Core.Models.Environments;
+namespace AGT.GalacticArchives.Core.Models.Entities;
 
 public class StarSystem : IGameData
 {

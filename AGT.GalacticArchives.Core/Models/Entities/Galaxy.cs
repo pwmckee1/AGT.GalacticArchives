@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Environments;
+namespace AGT.GalacticArchives.Core.Models.Entities;
 
 public class Galaxy : IGameData
 {

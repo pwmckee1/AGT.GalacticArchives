@@ -22,10 +22,10 @@ public class PlanetImport : IGoogleSheetImport
     public string? AssignedRawIngredient { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas1)]
-    public string? AtmosphereGas1 { get; set; }
+    public PlanetResourceTypes? AtmosphereGas1 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas2)]
-    public string? AtmosphereGas2 { get; set; }
+    public PlanetResourceTypes? AtmosphereGas2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGasPercentage1)]
     public string? AtmosphereGasPercentage1 { get; set; }
@@ -34,16 +34,16 @@ public class PlanetImport : IGoogleSheetImport
     public string? AtmosphereGasPercentage2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereDaytimeColor)]
-    public string? AtmosphereDaytimeColor { get; set; }
+    public PlanetAtmosphereColorTypes? AtmosphereDaytimeColor { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereResource)]
-    public string? AtmosphereResource { get; set; }
+    public PlanetResourceTypes? AtmosphereResource { get; set; }
 
     [Name(PlanetSheetFields.BiomeDescription)]
     public PlanetBiomeDescriptionTypes? PlanetBiomeDescription { get; set; }
 
     [Name(PlanetSheetFields.BiomeResource)]
-    public string? BiomeResource { get; set; }
+    public PlanetResourceTypes? BiomeResource { get; set; }
 
     [Name(PlanetSheetFields.BiomeType)]
     public PlanetBiomeTypes? PlanetBiomeType { get; set; }
@@ -256,13 +256,13 @@ public class PlanetImport : IGoogleSheetImport
     public string? PrimaryCoreElement { get; set; }
 
     [Name(PlanetSheetFields.PrimaryResource1)]
-    public string? PrimaryResource1 { get; set; }
+    public PlanetResourceTypes? PrimaryResource1 { get; set; }
 
     [Name(PlanetSheetFields.PrimaryResource2)]
-    public string? PrimaryResource2 { get; set; }
+    public PlanetResourceTypes? PrimaryResource2 { get; set; }
 
     [Name(PlanetSheetFields.PrimaryResource3)]
-    public string? PrimaryResource3 { get; set; }
+    public PlanetResourceTypes? PrimaryResource3 { get; set; }
 
     [Name(PlanetSheetFields.RawIngredients)]
     public HashSet<string> RawIngredients { get; set; } = [];

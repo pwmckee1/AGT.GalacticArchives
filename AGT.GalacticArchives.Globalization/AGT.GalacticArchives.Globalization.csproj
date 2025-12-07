@@ -118,6 +118,14 @@
         <EmbeddedResource Update="LandArchetypesResource.resx">
           <LastGenOutput>LandArchetypesResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="PlanetResourceItemsResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetResourceTypes.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlanetAtmosphereColorResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetAtmosphereColorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -250,6 +258,16 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>LandArchetypesResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlanetResourceItemsResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetResourceItemsResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlanetAtmosphereColorResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetAtmosphereColorResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 
