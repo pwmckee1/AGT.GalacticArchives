@@ -1,4 +1,4 @@
-namespace AGT.GalacticArchives.Core.Models.Responses.Environments;
+namespace AGT.GalacticArchives.Core.Models.Responses.Entities;
 
 public class StarSystemResponse
 {

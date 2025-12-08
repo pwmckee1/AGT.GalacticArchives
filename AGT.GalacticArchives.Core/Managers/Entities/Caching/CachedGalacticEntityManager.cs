@@ -16,20 +16,11 @@ public class CachedGalacticEntityManager(ICacheManager cacheManager, IGalacticEn
         return result!;
     }
 
-    public async Task<StarSystem> GetSolarHierarchyAsync(Guid starSystemId)
+    public async Task<StarSystem> GetStarSystemHierarchyAsync(Guid starSystemId)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(StarSystem)}:{starSystemId}",
-            async () => await target.GetSolarHierarchyAsync(starSystemId),
-            BusinessRuleConstants.DayInMinutes);
-        return result!;
-    }
-
-    public async Task<Region> GetRegionalHierarchyAsync(Guid regionId)
-    {
-        var result = await cacheManager.GetAsync(
-            $"{nameof(Region)}:{regionId}",
-            async () => await target.GetRegionalHierarchyAsync(regionId),
+            async () => await target.GetStarSystemHierarchyAsync(starSystemId),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

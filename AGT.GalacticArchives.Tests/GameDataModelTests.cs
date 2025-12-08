@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
 using Should;
@@ -10,31 +11,6 @@ public class GameDataModelTests
 {
     public class WhenConvertingToDictionaryFromGameData : GameDataModelTests
     {
-        public class WhenGalaxyToDictionaryIsCalled : WhenConvertingToDictionaryFromGameData
-        {
-            private Galaxy _galaxy = null!;
-
-            [SetUp]
-            public void Setup()
-            {
-                _galaxy = new Fixture()
-                    .For<Galaxy>()
-                    .With(g => g.Name, "Euclid")
-                    .With(g => g.Regions, [])
-                    .Create();
-            }
-
-            [Test]
-            public void ThenGalaxyDictionaryIsPopulated()
-            {
-                var dictionary = _galaxy.ToDictionary();
-                dictionary[nameof(Galaxy.Name)].ShouldEqual(_galaxy.Name);
-                dictionary[nameof(Galaxy.GalaxyId)].ShouldEqual(_galaxy.GalaxyId.ToString());
-                dictionary[nameof(Galaxy.Sequence)].ShouldEqual(_galaxy.Sequence);
-                dictionary[nameof(Galaxy.NormalizedName)].ShouldEqual(_galaxy.NormalizedName);
-            }
-        }
-
         public class WhenRegionToDictionaryIsCalled : WhenConvertingToDictionaryFromGameData
         {
             private Region _region = null!;
@@ -45,7 +21,7 @@ public class GameDataModelTests
                 _region = new Fixture()
                     .For<Region>()
                     .With(p => p.Name, "Region Name")
-                    .With(r => r.Galaxy, null)
+                    .With(r => r.Galaxy, Galaxies.Euclid)
                     .With(r => r.Coordinates, "0000:0000:0000:0000")
                     .With(r => r.StarSystems, [])
                     .Create();
@@ -58,7 +34,7 @@ public class GameDataModelTests
                 dictionary[nameof(Region.Name)].ShouldEqual(_region.Name);
                 dictionary[nameof(Region.RegionId)].ShouldEqual(_region.RegionId.ToString());
                 dictionary[nameof(Region.NormalizedName)].ShouldEqual(_region.NormalizedName);
-                dictionary[nameof(Region.GalaxyId)].ShouldEqual(_region.GalaxyId.ToString());
+                dictionary[nameof(Region.Galaxy)].ShouldEqual(_region.Galaxy);
                 dictionary[nameof(Region.XX)].ShouldEqual(_region.XX);
                 dictionary[nameof(Region.DocSequence)].ShouldEqual(_region.DocSequence);
                 dictionary[nameof(Region.RegionAge)].ShouldEqual(_region.RegionAge);
@@ -131,34 +107,14 @@ public class GameDataModelTests
     {
         private readonly Dictionary<string, object> _dictionary = [];
 
-        public class WhenConvertingGalaxy : WhenConvertingToGameDataFromDictionary
-        {
-            [SetUp]
-            public void Setup()
-            {
-                _dictionary[nameof(Galaxy.GalaxyId)] = Guid.NewGuid();
-                _dictionary[nameof(Galaxy.Name)] = "Euclid";
-                _dictionary[nameof(Galaxy.Sequence)] = 1;
-            }
-
-            [Test]
-            public void ThenGalaxyIsPopulated()
-            {
-                var galaxy = _dictionary.ConvertDictionaryToObject<Galaxy>();
-                galaxy.GalaxyId.ShouldEqual((Guid)_dictionary[nameof(Galaxy.GalaxyId)]!);
-                galaxy.Name.ShouldEqual((string)_dictionary[nameof(Galaxy.Name)]!);
-                galaxy.Sequence.ShouldEqual((int)_dictionary[nameof(Galaxy.Sequence)]!);
-            }
-        }
-
         public class WhenConvertingRegion : WhenConvertingToGameDataFromDictionary
         {
             [SetUp]
             public void Setup()
             {
                 _dictionary[nameof(Region.RegionId)] = Guid.NewGuid();
-                _dictionary[nameof(Region.Name)] = "Euclid";
-                _dictionary[nameof(Region.GalaxyId)] = Guid.NewGuid();
+                _dictionary[nameof(Region.Name)] = "EuclidRegion";
+                _dictionary[nameof(Region.Galaxy)] = Galaxies.Euclid;
                 _dictionary[nameof(Region.Coordinates)] = "123a:123b:123d:123f";
                 _dictionary[nameof(Region.DocSequence)] = 1;
                 _dictionary[nameof(Region.RegionAge)] = 5.1f;
@@ -168,11 +124,11 @@ public class GameDataModelTests
             public void ThenRegionIsPopulated()
             {
                 var region = _dictionary.ConvertDictionaryToObject<Region>();
-                region.RegionId.ShouldEqual((Guid)_dictionary[nameof(Region.RegionId)]!);
-                region.Name.ShouldEqual((string)_dictionary[nameof(Region.Name)]!);
-                region.Coordinates.ShouldEqual(((string)_dictionary[nameof(Region.Coordinates)]!).ToUpperInvariant());
+                region.RegionId.ShouldEqual((Guid)_dictionary[nameof(Region.RegionId)]);
+                region.Name.ShouldEqual((string)_dictionary[nameof(Region.Name)]);
+                region.Coordinates.ShouldEqual(((string)_dictionary[nameof(Region.Coordinates)]).ToUpperInvariant());
                 region.XX.ShouldEqual("123A");
-                region.DocSequence.ShouldEqual((int)_dictionary[nameof(Region.DocSequence)]!);
+                region.DocSequence.ShouldEqual((int)_dictionary[nameof(Region.DocSequence)]);
                 region.RegionAge.ShouldEqual((float?)_dictionary[nameof(Region.RegionAge)]);
             }
         }
@@ -200,14 +156,14 @@ public class GameDataModelTests
             public void ThenStarSystemIsPopulated()
             {
                 var starSystem = _dictionary.ConvertDictionaryToObject<StarSystem>();
-                starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]!);
-                starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]!);
-                starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]!);
+                starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]);
+                starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]);
+                starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]);
                 starSystem.GalacticCoordinates.ShouldEqual(
-                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]!).ToUpperInvariant());
-                starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]!);
+                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]).ToUpperInvariant());
+                starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]);
                 starSystem.Buy.ShouldEqual((float?)_dictionary[nameof(StarSystem.Buy)]);
-                starSystem.HasCenterAccess.ShouldEqual((bool?)_dictionary[nameof(StarSystem.HasCenterAccess)]!);
+                starSystem.HasCenterAccess.ShouldEqual((bool?)_dictionary[nameof(StarSystem.HasCenterAccess)]);
             }
         }
 
@@ -230,11 +186,11 @@ public class GameDataModelTests
             public void ThenPlanetIsPopulated()
             {
                 var planet = _dictionary.ConvertDictionaryToObject<Planet>();
-                planet.PlanetId.ShouldEqual((Guid)_dictionary[nameof(Planet.PlanetId)]!);
-                planet.Name.ShouldEqual((string)_dictionary[nameof(Planet.Name)]!);
+                planet.PlanetId.ShouldEqual((Guid)_dictionary[nameof(Planet.PlanetId)]);
+                planet.Name.ShouldEqual((string)_dictionary[nameof(Planet.Name)]);
                 planet.PlanetNameAllPlatforms.ShouldEqual((string?)_dictionary[nameof(Planet.PlanetNameAllPlatforms)]);
                 planet.PlanetIdInSystem.ShouldEqual((int?)_dictionary[nameof(Planet.PlanetIdInSystem)]);
-                planet.RawIngredients.ShouldEqual((HashSet<string?>)_dictionary[nameof(Planet.RawIngredients)]!);
+                planet.RawIngredients.ShouldEqual((HashSet<string?>)_dictionary[nameof(Planet.RawIngredients)]);
                 planet.NumberOfFauna.ShouldEqual((int?)_dictionary[nameof(Planet.NumberOfFauna)]);
                 planet.HasSandworms.ShouldEqual((bool?)_dictionary[nameof(Planet.HasSandworms)]);
             }

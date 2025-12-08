@@ -1,6 +1,4 @@
-using AGT.GalacticArchives.Core.Models.Requests.Entities;
-
-namespace AGT.GalacticArchives.Core.Models.Requests.Environments;
+namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
 
 public class PlanetRequest
 {

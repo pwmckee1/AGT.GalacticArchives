@@ -1,13 +1,12 @@
-﻿using AGT.GalacticArchives.Core.Managers.Environments;
-using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests.Environments;
-using AGT.GalacticArchives.Core.Models.Responses.Environments;
+﻿using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.Requests.Entities;
+using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Services.Environments;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 
-public class ValidatedRegionServiceDecorator(IRegionService regionService, IGalaxyManager galaxyManager)
+public class ValidatedRegionServiceDecorator(IRegionService regionService)
     : IRegionService
 {
     public async Task<RegionResponse?> GetRegionByIdAsync(Guid regionId)
@@ -22,19 +21,9 @@ public class ValidatedRegionServiceDecorator(IRegionService regionService, IGala
 
     public async Task<RegionResponse> UpsertRegionAsync(RegionRequest request)
     {
-        if (!request.GalaxyId.HasValue)
+        if (!request.Galaxy.HasValue)
         {
             throw new ArgumentNullException(string.Format(RegionResource.MustHaveGalaxy, request.Name));
-        }
-
-        var galaxy = await galaxyManager.GetGalaxyByIdAsync(request.GalaxyId.Value);
-        if (galaxy == null)
-        {
-            throw new ArgumentException(
-                string.Format(
-                    GeneralErrorResource.InvalidGameDataId,
-                    request.GalaxyId.Value,
-                    $"{nameof(Region)} => {nameof(Region.GalaxyId)}"));
         }
 
         if (string.IsNullOrEmpty(request.Name))

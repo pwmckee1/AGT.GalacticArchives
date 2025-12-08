@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Entities;
@@ -15,9 +16,7 @@ public class Region : IGameData
 
     public string NormalizedName => Name.ToUpperInvariant();
 
-    public required Guid GalaxyId { get; set; }
-
-    public Galaxy? Galaxy { get; set; }
+    public Galaxies Galaxy { get; set; }
 
     public HashSet<StarSystem> StarSystems { get; set; } = [];
 

@@ -1,12 +1,14 @@
-namespace AGT.GalacticArchives.Core.Models.Responses.Environments;
+using AGT.GalacticArchives.Core.Models.Enums;
 
-public class RegionResponse
+namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
+
+public class RegionRequest
 {
     public Guid? RegionId { get; set; }
 
     public string? Name { get; set; }
 
-    public HashSet<StarSystemResponse> StarSystems { get; set; } = [];
+    public Galaxies? Galaxy { get; set; }
 
     public string? CivilizedBy { get; set; }
 
@@ -73,4 +75,6 @@ public class RegionResponse
     public string? Glylphs { get; set; }
 
     public string? Version { get; set; }
+
+    public HashSet<StarSystemRequest> Systems { get; set; } = [];
 }

@@ -1,7 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests.Environments;
+using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Managers.Environments;
@@ -13,7 +13,7 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
     public async Task<Planet?> GetPlanetByIdAsync(Guid planetId)
     {
         var planetDoc = await firestoreManager.GetByIdAsync(planetId, Collection);
-        var planet = planetDoc != null ? mapper.Map<Planet>(planetDoc) : null;
+        var planet = planetDoc.Count > 0 ? mapper.Map<Planet>(planetDoc) : null;
 
         if (planet == null)
         {
@@ -74,14 +74,7 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
         var regionData = await firestoreManager.GetByIdAsync(
             starSystem.RegionId,
             DatabaseConstants.RegionCollection);
-        var region = mapper.Map<Region>(regionData);
-
-        var galaxyData = await firestoreManager.GetByIdAsync(
-            region.GalaxyId,
-            DatabaseConstants.GalaxyCollection);
-
-        region.Galaxy = mapper.Map<Galaxy>(galaxyData);
-        starSystem.Region = region;
+        starSystem.Region = mapper.Map<Region>(regionData);
         planet.StarSystem = starSystem;
     }
 }

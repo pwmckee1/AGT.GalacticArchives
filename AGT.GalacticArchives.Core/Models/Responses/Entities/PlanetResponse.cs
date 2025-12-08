@@ -1,6 +1,4 @@
-using AGT.GalacticArchives.Core.Models.Responses.Entities;
-
-namespace AGT.GalacticArchives.Core.Models.Responses.Environments;
+namespace AGT.GalacticArchives.Core.Models.Responses.Entities;
 
 public class PlanetResponse
 {

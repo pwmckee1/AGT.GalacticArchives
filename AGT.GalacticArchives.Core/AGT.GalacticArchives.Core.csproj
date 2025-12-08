@@ -32,8 +32,4 @@
         </AdditionalFiles>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Models\Environments\" />
-    </ItemGroup>
-
 </Project>

@@ -6,7 +6,6 @@ using AutoMapper;
 namespace AGT.GalacticArchives.Core.Managers.Entities;
 
 public class GalacticEntityManager(
-    IGalaxyManager galaxyManager,
     IMapper mapper,
     IPlanetManager planetManager,
     IRegionManager regionManager,
@@ -18,33 +17,21 @@ public class GalacticEntityManager(
 
         var planet = mapper.Map<Planet>(planetData);
 
-        planet.StarSystem = await GetSolarHierarchyAsync(planet.StarSystemId);
+        planet.StarSystem = await GetStarSystemHierarchyAsync(planet.StarSystemId);
 
         return planet;
     }
 
-    public async Task<StarSystem> GetSolarHierarchyAsync(Guid starSystemId)
+    public async Task<StarSystem> GetStarSystemHierarchyAsync(Guid starSystemId)
     {
         var starSystemData = await starSystemManager.GetStarSystemByIdAsync(starSystemId);
 
         var starSystem = mapper.Map<StarSystem>(starSystemData);
+        var regionData = await regionManager.GetRegionByIdAsync(starSystem.RegionId);
 
-        starSystem.Region = await GetRegionalHierarchyAsync(starSystem.RegionId);
+        starSystem.Region = mapper.Map<Region>(regionData);
 
         return starSystem;
-    }
-
-    public async Task<Region> GetRegionalHierarchyAsync(Guid regionId)
-    {
-        var regionData = await regionManager.GetRegionByIdAsync(regionId);
-
-        var region = mapper.Map<Region>(regionData);
-
-        var galaxyData = await galaxyManager.GetGalaxyByIdAsync(region.GalaxyId);
-
-        region.Galaxy = mapper.Map<Galaxy>(galaxyData);
-
-        return region;
     }
 
     public async Task UpsertPlanetAsync(Planet? planet)

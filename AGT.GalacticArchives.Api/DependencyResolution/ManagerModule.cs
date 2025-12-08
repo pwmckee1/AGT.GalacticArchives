@@ -19,18 +19,6 @@ public class ManagerModule : Module
             .InstancePerLifetimeScope();
 
         builder
-            .RegisterType<GalaxyManager>()
-            .Named<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)
-            .InstancePerLifetimeScope();
-
-        builder
-            .Register((c, _) => new CachedGalaxyManager(
-                c.Resolve<ICacheManager>(),
-                c.ResolveNamed<IGalaxyManager>(NamedKeys.Managers.GalaxyManager)))
-            .As<IGalaxyManager>()
-            .InstancePerLifetimeScope();
-
-        builder
             .RegisterType<RegionManager>()
             .Named<IRegionManager>(NamedKeys.Managers.RegionManager)
             .InstancePerLifetimeScope();

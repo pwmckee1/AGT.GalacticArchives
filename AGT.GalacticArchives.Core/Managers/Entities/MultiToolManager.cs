@@ -85,7 +85,7 @@ public class MultiToolManager(
         }
         else
         {
-            multiTool.StarSystem = await galacticEntityManager.GetSolarHierarchyAsync(parentId);
+            multiTool.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
         }
     }
 

@@ -85,7 +85,7 @@ public class StarshipManager(
         }
         else
         {
-            starship.StarSystem = await galacticEntityManager.GetSolarHierarchyAsync(parentId);
+            starship.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
         }
     }
 

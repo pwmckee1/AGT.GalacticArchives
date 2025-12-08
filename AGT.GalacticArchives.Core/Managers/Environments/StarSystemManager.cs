@@ -1,7 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Requests.Environments;
+using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Managers.Environments;
@@ -13,7 +13,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
     public async Task<StarSystem?> GetStarSystemByIdAsync(Guid starSystemId)
     {
         var starSystemDoc = await firestoreManager.GetByIdAsync(starSystemId, Collection);
-        var starSystem = starSystemDoc != null ? mapper.Map<StarSystem>(starSystemDoc) : null;
+        var starSystem = starSystemDoc.Count > 0 ? mapper.Map<StarSystem>(starSystemDoc) : null;
 
         if (starSystem == null)
         {
@@ -44,14 +44,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
                 var regionData = await firestoreManager.GetByIdAsync(
                     starSystem.RegionId,
                     DatabaseConstants.RegionCollection);
-                var region = mapper.Map<Region>(regionData);
-
-                var galaxyData = await firestoreManager.GetByIdAsync(
-                    region.GalaxyId,
-                    DatabaseConstants.GalaxyCollection);
-                region.Galaxy = mapper.Map<Galaxy>(galaxyData);
-
-                starSystem.Region = region;
+                starSystem.Region = mapper.Map<Region>(regionData);
             }
         }
 
@@ -67,11 +60,6 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
             DatabaseConstants.RegionCollection);
         starSystem.Region = mapper.Map<Region>(regionData);
 
-        var galaxyData = await firestoreManager.GetByIdAsync(
-            starSystem.Region.GalaxyId,
-            DatabaseConstants.GalaxyCollection);
-        starSystem.Region.Galaxy = mapper.Map<Galaxy>(galaxyData);
-
         return starSystem;
     }
 
@@ -85,14 +73,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         var regionData = await firestoreManager.GetByIdAsync(
             starSystem.RegionId,
             DatabaseConstants.RegionCollection);
-        var region = mapper.Map<Region>(regionData);
-
-        var galaxyData = await firestoreManager.GetByIdAsync(
-            region.GalaxyId,
-            DatabaseConstants.GalaxyCollection);
-
-        region.Galaxy = mapper.Map<Galaxy>(galaxyData);
-        starSystem.Region = region;
+        starSystem.Region = mapper.Map<Region>(regionData);
 
         return starSystem;
     }
