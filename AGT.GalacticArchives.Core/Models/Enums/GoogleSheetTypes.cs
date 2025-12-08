@@ -5,9 +5,6 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum GoogleSheetTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.RegionSheetName))]
     Region,
 

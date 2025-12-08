@@ -4,10 +4,7 @@ using AGT.GalacticArchives.Globalization;
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum EdiblePlantTypes
-{
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    [Display(ResourceType = typeof(EdiblePlantResource), Description = nameof(EdiblePlantResource.AloeFlesh))]
+{    [Display(ResourceType = typeof(EdiblePlantResource), Description = nameof(EdiblePlantResource.AloeFlesh))]
     AloeFlesh,
     Hexaberry,
     [Display(ResourceType = typeof(EdiblePlantResource), Description = nameof(EdiblePlantResource.FrozenTubers))]

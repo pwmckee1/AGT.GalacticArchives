@@ -5,9 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipModelTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    Exotic,
+    Exotic = 1,
     Explorer,
     Fighter,
     Freighter,

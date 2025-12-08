@@ -5,13 +5,10 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetPropertyTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(
         ResourceType = typeof(PlanetPropertyTypeResource),
         Description = nameof(PlanetPropertyTypeResource.AncientBones))]
-    AncientBones,
+    AncientBones = 1,
 
     [Display(
         ResourceType = typeof(PlanetPropertyTypeResource),

@@ -4,10 +4,7 @@ using AGT.GalacticArchives.Globalization;
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum GamePlatformType
-{
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    All,
+{    All,
     Mac,
     PC,
     PS,

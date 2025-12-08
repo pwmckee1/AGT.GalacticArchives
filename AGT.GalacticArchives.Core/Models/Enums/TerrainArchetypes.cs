@@ -6,7 +6,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum TerrainArchetypes
 {
-    Craters,
+    Craters = 1,
     [Display(ResourceType = typeof(TerrainTypeResource), Description = nameof(TerrainTypeResource.SpiresMountains))]
     SpiresMountains,
     Flatlands,

@@ -6,7 +6,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 public enum PlanetWeatherTypes
 {
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.BlueAllConsumingCold))]
-    BlueAllConsumingCold,
+    BlueAllConsumingCold = 1,
 
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.BlueAzureStorms))]
     BlueAzureStorms,

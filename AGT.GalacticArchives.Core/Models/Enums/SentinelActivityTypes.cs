@@ -5,7 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum SentinelActivityTypes
 {
-    Absent,
+    Absent = 1,
     Aggressive,
     [Display(
         ResourceType = typeof(SentinelActivityTypeResource),

@@ -5,11 +5,8 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemSuitUpgradeTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.DefenceSystemsUpgrade))]
-    DefenceSystemsUpgrade,
+    DefenceSystemsUpgrade = 1,
 
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.LifeSupportUpgrade))]
     LifeSupportUpgrade,

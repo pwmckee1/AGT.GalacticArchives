@@ -4,10 +4,7 @@ using AGT.GalacticArchives.Globalization;
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum GameModeTypes
-{
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    Normal,
+{    Normal,
     CommunityExpedition,
     Custom,
     Creative,

@@ -8,7 +8,7 @@ public enum MultiToolLocationTypes
     [Display(
         ResourceType = typeof(MultiToolLocationResource),
         Description = nameof(MultiToolLocationResource.ColossalArchive))]
-    ColossalArchive,
+    ColossalArchive = 1,
     [Display(
         ResourceType = typeof(MultiToolLocationResource),
         Description = nameof(MultiToolLocationResource.CrashedShip))]

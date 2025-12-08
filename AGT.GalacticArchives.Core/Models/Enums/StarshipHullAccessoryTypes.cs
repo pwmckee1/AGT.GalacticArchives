@@ -5,11 +5,8 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipHullAccessoryTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleAfterburner))]
-    ShuttleAfterburner,
+    ShuttleAfterburner = 1,
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleAirFoil))]
     ShuttleAirFoil,

@@ -5,7 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetaryCoreTypes
 {
-    Aluminium,
+    Aluminium = 1,
     Anomalous,
     Basalt,
     Cadmium,

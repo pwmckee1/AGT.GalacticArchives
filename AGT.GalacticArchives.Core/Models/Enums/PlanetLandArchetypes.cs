@@ -5,13 +5,10 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum PlanetLandArchetypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(
         ResourceType = typeof(LandArchetypesResource),
         Description = nameof(LandArchetypesResource.ChasmsMountains))]
-    ChasmsMountains,
+    ChasmsMountains = 1,
 
     [Display(ResourceType = typeof(LandArchetypesResource), Description = nameof(LandArchetypesResource.Honeycomb))]
     Honeycomb,

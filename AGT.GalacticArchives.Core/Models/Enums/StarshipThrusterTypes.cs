@@ -5,13 +5,10 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipThrusterTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(
         ResourceType = typeof(StarshipResource),
         Description = nameof(StarshipResource.ExplorerLargeDoubleThruster))]
-    ExplorerLargeDoubleThruster,
+    ExplorerLargeDoubleThruster = 1,
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerQuadThruster))]
     ExplorerQuadThruster,

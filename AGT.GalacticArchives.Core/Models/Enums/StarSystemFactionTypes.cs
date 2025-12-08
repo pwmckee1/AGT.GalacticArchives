@@ -5,9 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemFactionTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    Gek,
+    Gek = 1,
     Korvax,
 
     [Display(ResourceType = typeof(FactionTypeResource), Description = nameof(FactionTypeResource.Vykeen))]

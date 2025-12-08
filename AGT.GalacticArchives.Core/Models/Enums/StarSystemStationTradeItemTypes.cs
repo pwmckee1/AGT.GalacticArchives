@@ -5,13 +5,10 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarSystemStationTradeItemTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(
         ResourceType = typeof(StarSystemResource),
         Description = nameof(StarSystemResource.AutonomousPositioningUnit))]
-    AutonomousPositioningUnit,
+    AutonomousPositioningUnit = 1,
 
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.BannedWeapons))]
     BannedWeapons,

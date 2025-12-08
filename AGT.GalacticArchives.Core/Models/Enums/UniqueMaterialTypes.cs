@@ -6,7 +6,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 public enum UniqueMaterialTypes
 {
     [Display(ResourceType = typeof(MaterialsResourceType), Description = nameof(MaterialsResourceType.AlbumenPearlOrb))]
-    AlbumenPearlOrb,
+    AlbumenPearlOrb = 1,
     [Display(ResourceType = typeof(MaterialsResourceType), Description = nameof(MaterialsResourceType.CreatureEgg))]
     CreatureEgg,
     [Display(ResourceType = typeof(MaterialsResourceType), Description = nameof(MaterialsResourceType.CrystalSulphide))]

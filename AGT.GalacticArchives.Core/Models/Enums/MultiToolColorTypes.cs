@@ -2,7 +2,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum MultiToolColorTypes
 {
-    Aqua,
+    Aqua = 1,
     AquaGreen,
     ArcticWhite,
     Azure,

@@ -5,7 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum MultiToolTypes
 {
-    Pistol,
+    Pistol = 1,
     Rifle,
     Experimental,
     Alien,

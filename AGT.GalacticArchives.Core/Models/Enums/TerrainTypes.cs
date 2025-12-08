@@ -5,7 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum TerrainTypes
 {
-    Archipelago,
+    Archipelago = 1,
     Continental,
 
     [Display(ResourceType = typeof(TerrainTypeResource), Description = nameof(TerrainTypeResource.IslandChains))]

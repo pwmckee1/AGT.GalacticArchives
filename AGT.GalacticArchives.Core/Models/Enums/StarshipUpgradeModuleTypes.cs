@@ -5,11 +5,8 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipUpgradeModuleTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.CadmiumDrive))]
-    CadmiumDrive,
+    CadmiumDrive = 1,
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.CyclotronBallista))]
     CyclotronBallista,

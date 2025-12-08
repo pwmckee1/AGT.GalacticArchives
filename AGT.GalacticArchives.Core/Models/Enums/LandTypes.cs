@@ -6,7 +6,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 public enum LandTypes
 {
     [Display(ResourceType = typeof(LandResource), Description = nameof(LandResource.RockyHilly))]
-    RockyHilly,
+    RockyHilly = 1,
 
     [Display(ResourceType = typeof(LandResource), Description = nameof(LandResource.Hilly))]
     Hilly,

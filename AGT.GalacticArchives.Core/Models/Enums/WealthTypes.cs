@@ -5,7 +5,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum WealthTypes
 {
-    Adequate,
+    Adequate = 1,
     Advanced,
     Affluent,
     Balanced,
