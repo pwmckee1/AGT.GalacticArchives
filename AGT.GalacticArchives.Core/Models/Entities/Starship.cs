@@ -10,7 +10,7 @@ public class Starship : IGameData
     public Guid Id => StarshipId;
 
     [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

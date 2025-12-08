@@ -10,11 +10,11 @@ public class Planet : IGameData
     public Guid Id => PlanetId;
 
     [Display(ResourceType = typeof(PlanetResource), Description = nameof(PlanetResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 
-    public required Guid StarSystemId { get; set; }
+    public Guid StarSystemId { get; set; }
 
     public StarSystem? StarSystem { get; set; }
 

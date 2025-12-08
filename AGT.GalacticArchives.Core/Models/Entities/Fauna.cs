@@ -10,7 +10,7 @@ public class Fauna : IGameData
     public Guid Id => FaunaId;
 
     [Display(ResourceType = typeof(FaunaResource), Description = nameof(FaunaResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

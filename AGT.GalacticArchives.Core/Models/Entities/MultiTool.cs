@@ -10,7 +10,7 @@ public class MultiTool : IGameData
     public Guid Id => MultiToolId;
 
     [Display(ResourceType = typeof(MultiToolResource), Description = nameof(MultiToolResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

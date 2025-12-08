@@ -10,7 +10,7 @@ public class Settlement : IGameData
     public Guid Id => SettlementId;
 
     [Display(ResourceType = typeof(SettlementResource), Description = nameof(SettlementResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

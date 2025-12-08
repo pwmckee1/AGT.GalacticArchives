@@ -2,40 +2,20 @@ using AGT.GalacticArchives.Core.Models.Enums;
 
 namespace AGT.GalacticArchives.Core.Models.Requests.Entities.UserSubmissions;
 
-public class PlanetSubmissionRequest
+public class PlanetSubmissionRequest : BaseSubmissionRequest
 {
-    public required string Username { get; set; }
-
-    public required string Platform { get; set; }
-
-    public required string GameMode { get; set; }
-
-    public required string GameRelease { get; set; }
-
-    public required GalaxyTypes GalaxyType { get; set; }
-
-    public required string RegionName { get; set; }
-
-    public required string StarSystemName { get; set; }
-
-    public required string GalacticCoordinates { get; set; }
-
-    public required string PlanetName { get; set; }
-
     public string? OriginalPlanetName { get; set; }
 
     public string? DiscoverersName { get; set; }
 
-    public required string SpecialAttributes { get; set; }
-
-    public required bool IsPlanet { get; set; }
+    public bool IsPlanet { get; set; }
 
     public string? PlanetThatItOrbits { get; set; }
 
     // Hexadecimal value of the first glyph in planet coordinates
-    public required string PlanetGlyph { get; set; }
+    public string? PlanetGlyph { get; set; }
 
-    public required BiomeTypes Biome { get; set; }
+    public BiomeTypes Biome { get; set; }
 
     public BiomeSubTypes? BiomeSubType { get; set; }
 
@@ -79,12 +59,6 @@ public class PlanetSubmissionRequest
 
     public string? OtherNotes { get; set; }
 
-    public DateTime? DateOfDiscovery { get; set; }
-
-    public required string DiscovererId { get; set; }
-
-    public DateTime? DateOfSurvey { get; set; }
-
     public string? PortalCoords { get; set; }
 
     public string? NotesAboutTheDiscovery { get; set; }
@@ -92,18 +66,4 @@ public class PlanetSubmissionRequest
     public string? DiscoveryScreen { get; set; }
 
     public string? PlanetSurfaceScan { get; set; }
-
-    public string? AdditionalPlanetImages { get; set; }
-
-    public string? GamerTagHandle { get; set; }
-
-    public string? Discord { get; set; }
-
-    public string? Email { get; set; }
-
-    public string? NmsFriendCode { get; set; }
-
-    public string? RedditName { get; set; }
-
-    public string? TwitterName { get; set; }
 }

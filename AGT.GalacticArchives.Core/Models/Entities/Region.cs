@@ -12,7 +12,7 @@ public class Region : IGameData
     public Guid Id => RegionId;
 
     [Display(ResourceType = typeof(RegionResource), Description = nameof(RegionResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

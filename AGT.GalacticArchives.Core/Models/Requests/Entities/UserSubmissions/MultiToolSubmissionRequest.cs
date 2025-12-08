@@ -3,27 +3,11 @@ using AGT.GalacticArchives.Core.Models.Meta;
 
 namespace AGT.GalacticArchives.Core.Models.Requests.Entities.UserSubmissions;
 
-public class MultiToolSubmissionRequest
+public class MultiToolSubmissionRequest : BaseSubmissionRequest
 {
-    public string Username { get; set; } = null!;
-
     public string MultiToolName { get; set; } = null!;
 
-    public GalaxyTypes GalaxyType { get; set; }
-
-    public string RegionName { get; set; } = null!;
-
-    public string StarSystemName { get; set; } = null!;
-
-    public string GalacticCoordinates { get; set; } = null!;
-
-    public MultiToolLocationTypes Location { get; set; }
-
-    public string? PlanetName { get; set; }
-
-    public float? Latitude { get; set; }
-
-    public float? Longitude { get; set; }
+    public MultiToolLocationTypes MultiToolLocationType { get; set; }
 
     public MultiToolTypes MultiToolType { get; set; }
 
@@ -47,16 +31,4 @@ public class MultiToolSubmissionRequest
     public EntityColorTypes PrimaryColor { get; set; }
 
     public EntityColorTypes SecondaryColor { get; set; }
-
-    public string GamerTagHandle { get; set; } = null!;
-
-    public DateTime DiscoveryDate { get; set; }
-
-    public GameModeTypes? GameMode { get; set; }
-
-    public GameRelease GameRelease { get; set; } = new();
-
-    public Communities? CivilizationClaim { get; set; }
-
-    public string? AdditionalNotes { get; set; }
 }

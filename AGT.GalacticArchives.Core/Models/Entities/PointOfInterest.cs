@@ -5,12 +5,12 @@ namespace AGT.GalacticArchives.Core.Models.Entities;
 
 public class PointOfInterest : IGameData
 {
-    public required Guid PointOfInterestId { get; set; } = Guid.NewGuid();
+    public Guid PointOfInterestId { get; set; } = Guid.NewGuid();
 
     public Guid Id => PointOfInterestId;
 
     [Display(ResourceType = typeof(PointOfInterestResource), Description = nameof(PointOfInterestResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

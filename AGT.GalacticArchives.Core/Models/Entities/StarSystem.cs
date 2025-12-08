@@ -8,11 +8,11 @@ public class StarSystem : IGameData
 
     public Guid Id => StarSystemId;
 
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 
-    public required Guid RegionId { get; set; }
+    public Guid RegionId { get; set; }
 
     public Region? Region { get; set; }
 
