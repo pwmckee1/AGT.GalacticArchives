@@ -32,8 +32,4 @@
         </AdditionalFiles>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Models\Requests\Entities\UserSubmissions\" />
-    </ItemGroup>
-
 </Project>

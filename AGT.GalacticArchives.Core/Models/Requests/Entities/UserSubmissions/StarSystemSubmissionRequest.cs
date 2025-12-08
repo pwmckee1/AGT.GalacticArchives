@@ -1,8 +1,7 @@
-using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Meta;
 
-namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
+namespace AGT.GalacticArchives.Core.Models.Requests.Entities.UserSubmissions;
 
 public class StarSystemSubmissionRequest
 {
