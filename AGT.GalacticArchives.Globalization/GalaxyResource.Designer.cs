@@ -67,5 +67,14 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("InvalidSequence", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ovna&apos;Uesed.
+        /// </summary>
+        public static string OvnaUesed {
+            get {
+                return ResourceManager.GetString("OvnaUesed", resourceCulture);
+            }
+        }
     }
 }

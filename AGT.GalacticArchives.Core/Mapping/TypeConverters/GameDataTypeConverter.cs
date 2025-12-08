@@ -1,12 +1,10 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Environments;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;
 
 public class GameDataTypeConverter :
-    ITypeConverter<Dictionary<string, object>, Galaxy>,
     ITypeConverter<Dictionary<string, object>, Region>,
     ITypeConverter<Dictionary<string, object>, StarSystem>,
     ITypeConverter<Dictionary<string, object>, Planet>,
@@ -17,11 +15,6 @@ public class GameDataTypeConverter :
     ITypeConverter<Dictionary<string, object>, PointOfInterest>,
     ITypeConverter<Dictionary<string, object>, Settlement>
 {
-    public Galaxy Convert(Dictionary<string, object> source, Galaxy destination, ResolutionContext context)
-    {
-        return source!.ConvertDictionaryToObject<Galaxy>();
-    }
-
     public Region Convert(Dictionary<string, object> source, Region destination, ResolutionContext context)
     {
         return source.ConvertDictionaryToObject<Region>();

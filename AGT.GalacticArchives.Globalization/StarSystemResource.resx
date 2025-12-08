@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-    <!--
+  <!--
       Microsoft ResX Schema
 
       Version 2.0
@@ -59,269 +59,513 @@
               : using a System.ComponentModel.TypeConverter
               : and then encoded with base64 encoding.
       -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-        <xsd:element name="root" msdata:IsDataSet="true">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
             <xsd:complexType>
-                <xsd:choice maxOccurs="unbounded">
-                    <xsd:element name="metadata">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" use="required" type="xsd:string"/>
-                            <xsd:attribute name="type" type="xsd:string"/>
-                            <xsd:attribute name="mimetype" type="xsd:string"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="assembly">
-                        <xsd:complexType>
-                            <xsd:attribute name="alias" type="xsd:string"/>
-                            <xsd:attribute name="name" type="xsd:string"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="data">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="resheader">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:choice>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
-        </xsd:element>
-    </xsd:schema>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>1.3</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
-    </resheader>
-    <data name="AdditionalNotes" xml:space="preserve">
+  </resheader>
+  <data name="AdditionalNotes" xml:space="preserve">
     <value>Additional Notes</value>
   </data>
-    <data name="AdminNotes" xml:space="preserve">
+  <data name="AdminNotes" xml:space="preserve">
     <value>Editor and admin notes on data quality</value>
   </data>
-    <data name="BlackHoleDestination" xml:space="preserve">
+  <data name="AdvancedMiningLaser" xml:space="preserve">
+    <value>Advanced Mining Laser</value>
+  </data>
+  <data name="AnalysisVisorUpgrade" xml:space="preserve">
+    <value>Analysis Visor Upgrade</value>
+  </data>
+  <data name="AutonomousPositioningUnit" xml:space="preserve">
+    <value>Autonomous Positioning Unit</value>
+  </data>
+  <data name="BannedWeapons" xml:space="preserve">
+    <value>Banned Weapons</value>
+  </data>
+  <data name="BlackHoleDestination" xml:space="preserve">
     <value>Black Hole Destination</value>
   </data>
-    <data name="Buy" xml:space="preserve">
+  <data name="BlazeJavelinUpgrade" xml:space="preserve">
+    <value>Blaze Javelin Upgrade</value>
+  </data>
+  <data name="BloodSalt" xml:space="preserve">
+    <value>Blood Salt</value>
+  </data>
+  <data name="BoltcasterUpgrade" xml:space="preserve">
+    <value>Boltcaster Upgrade</value>
+  </data>
+  <data name="BromideSalt" xml:space="preserve">
+    <value>Bromide Salt</value>
+  </data>
+  <data name="Buy" xml:space="preserve">
     <value>e-buy</value>
   </data>
-    <data name="CivilizedBy" xml:space="preserve">
+  <data name="CarbonNanotubes" xml:space="preserve">
+    <value>Carbon Nanotubes</value>
+  </data>
+  <data name="CivilizedBy" xml:space="preserve">
     <value>Civilized?</value>
   </data>
-    <data name="ConflictType" xml:space="preserve">
+  <data name="CometDroplets" xml:space="preserve">
+    <value>Comet Droplets</value>
+  </data>
+  <data name="ConflictType" xml:space="preserve">
     <value>Conflict</value>
   </data>
-    <data name="DataQualityCheck" xml:space="preserve">
+  <data name="CounterfeitCircuits" xml:space="preserve">
+    <value>Counterfeit Circuits</value>
+  </data>
+  <data name="CyclotronBallistaUpgrade" xml:space="preserve">
+    <value>Cyclotron Ballista Upgrade</value>
+  </data>
+  <data name="DataQualityCheck" xml:space="preserve">
     <value>Data Quality Check</value>
   </data>
-    <data name="DiscoveredBy" xml:space="preserve">
+  <data name="DecommissionedCircuitBoard" xml:space="preserve">
+    <value>Decommissioned Circuit Board</value>
+  </data>
+  <data name="DecommissionedCircuits" xml:space="preserve">
+    <value>Decommissioned Circuits</value>
+  </data>
+  <data name="DecryptedUserData" xml:space="preserve">
+    <value>Decrypted User Data</value>
+  </data>
+  <data name="DefenceSystemsUpgrade" xml:space="preserve">
+    <value>Defence Systems Upgrade</value>
+  </data>
+  <data name="DeflectorShieldUpgrade" xml:space="preserve">
+    <value>Deflector Shield Upgrade</value>
+  </data>
+  <data name="DeScentedBottles" xml:space="preserve">
+    <value>De-Scented Bottles</value>
+  </data>
+  <data name="DeScentedPheromoneBottle" xml:space="preserve">
+    <value>De-Scented Pheromone Bottle</value>
+  </data>
+  <data name="Dirt" xml:space="preserve">
+    <value>Dirt</value>
+  </data>
+  <data name="DiscoveredBy" xml:space="preserve">
     <value>Discovered by</value>
   </data>
-    <data name="DiscoveredLinkOnWiki" xml:space="preserve">
+  <data name="DiscoveredLinkOnWiki" xml:space="preserve">
     <value>Discovered Link on Wiki</value>
   </data>
-    <data name="DiscoveredNotes" xml:space="preserve">
+  <data name="DiscoveredNotes" xml:space="preserve">
     <value>Discovered Notes</value>
   </data>
-    <data name="DiscoveryDate" xml:space="preserve">
+  <data name="DiscoveryDate" xml:space="preserve">
     <value>Discovery Date</value>
   </data>
-    <data name="EconomyType" xml:space="preserve">
+  <data name="EconomyType" xml:space="preserve">
     <value>Economy</value>
   </data>
-    <data name="ExoSuitSClassUpgradeModules" xml:space="preserve">
-    <value>ExoSuit S-Class Upgrade Modules</value>
+  <data name="EnormousMetalCog" xml:space="preserve">
+    <value>Enormous Metal Cog</value>
   </data>
-    <data name="ExternalLink1" xml:space="preserve">
+  <data name="ExperimentalPowerFluid" xml:space="preserve">
+    <value>Experimental Power Fluid</value>
+  </data>
+  <data name="ExternalLink1" xml:space="preserve">
     <value>External Link 1</value>
   </data>
-    <data name="ExternalLink2" xml:space="preserve">
+  <data name="ExternalLink2" xml:space="preserve">
     <value>External Link 2</value>
   </data>
-    <data name="ExternalLink3" xml:space="preserve">
+  <data name="ExternalLink3" xml:space="preserve">
     <value>External Link 3</value>
   </data>
-    <data name="GalacticCoordinates" xml:space="preserve">
+  <data name="FirstSpawnRelics" xml:space="preserve">
+    <value>First Spawn Relics</value>
+  </data>
+  <data name="FiveDimensionalTorus" xml:space="preserve">
+    <value>Five Dimensional Torus</value>
+  </data>
+  <data name="FiveDTorus" xml:space="preserve">
+    <value>5D Torus</value>
+  </data>
+  <data name="FusionCore" xml:space="preserve">
+    <value>Fusion Core</value>
+  </data>
+  <data name="GalacticCoordinates" xml:space="preserve">
     <value>Galactic Coordinates</value>
   </data>
-    <data name="GalleryTextNotes" xml:space="preserve">
+  <data name="GalleryTextNotes" xml:space="preserve">
     <value>Gallery Text Notes</value>
   </data>
-    <data name="GameModeType" xml:space="preserve">
+  <data name="GameModeType" xml:space="preserve">
     <value>Mode</value>
   </data>
-    <data name="GameRelease" xml:space="preserve">
+  <data name="GameRelease" xml:space="preserve">
     <value>Release</value>
   </data>
-    <data name="GlyphCode" xml:space="preserve">
+  <data name="GeologyCannonUpgrade" xml:space="preserve">
+    <value>Geology Cannon Upgrade</value>
+  </data>
+  <data name="GlyphCode" xml:space="preserve">
     <value>Glyph Code</value>
   </data>
-    <data name="HasCenterAccess" xml:space="preserve">
+  <data name="GrahGrah" xml:space="preserve">
+    <value>GrahGrah</value>
+  </data>
+  <data name="HasCenterAccess" xml:space="preserve">
     <value>Center Access? (Y/blank)</value>
   </data>
-    <data name="HasWater" xml:space="preserve">
+  <data name="HasWater" xml:space="preserve">
     <value>Water (Y/N)</value>
   </data>
-    <data name="Hex2DecSystemId" xml:space="preserve">
+  <data name="Hex2DecSystemId" xml:space="preserve">
     <value>System ID</value>
   </data>
-    <data name="IsDissonant" xml:space="preserve">
+  <data name="HighCapacityVectorCompressor" xml:space="preserve">
+    <value>High Capacity Vector Compressor</value>
+  </data>
+  <data name="HolographicCrankshaft" xml:space="preserve">
+    <value>Holographic Crankshaft</value>
+  </data>
+  <data name="HyperdriveUpgrade" xml:space="preserve">
+    <value>Hyperdrive Upgrade</value>
+  </data>
+  <data name="IndustrialGradeBattery" xml:space="preserve">
+    <value>Industrial-Grade Battery</value>
+  </data>
+  <data name="InfraKnifeAcceleratorUpgrade" xml:space="preserve">
+    <value>Infra-Knife Accelerator Upgrade</value>
+  </data>
+  <data name="InstabilityInjector" xml:space="preserve">
+    <value>Instability Injector</value>
+  </data>
+  <data name="IonCapacitor" xml:space="preserve">
+    <value>Ion Capacitor</value>
+  </data>
+  <data name="IonSphere" xml:space="preserve">
+    <value>Ion Sphere</value>
+  </data>
+  <data name="IsDissonant" xml:space="preserve">
     <value>Dissonant?</value>
   </data>
-    <data name="IsGiantSystem" xml:space="preserve">
+  <data name="IsGiantSystem" xml:space="preserve">
     <value>Giant System, (Y/N)</value>
   </data>
-    <data name="IsPhantomSystem" xml:space="preserve">
+  <data name="IsPhantomSystem" xml:space="preserve">
     <value>Phantom System?</value>
   </data>
-    <data name="KeySystemIndicator" xml:space="preserve">
+  <data name="KeySystemIndicator" xml:space="preserve">
     <value>Key System Indicator</value>
   </data>
-    <data name="LegacyPCDiscoverersGamerTagName" xml:space="preserve">
+  <data name="LaunchThrusterUpgrade" xml:space="preserve">
+    <value>Launch Thruster Upgrade</value>
+  </data>
+  <data name="LegacyPCDiscoverersGamerTagName" xml:space="preserve">
     <value>LEGACY PC Discoverers GamerTag Name</value>
   </data>
-    <data name="LegacyPCSystemName" xml:space="preserve">
+  <data name="LegacyPCSystemName" xml:space="preserve">
     <value>LEGACY PC system name</value>
   </data>
-    <data name="LegacyPSDiscoverersGamerTagName" xml:space="preserve">
+  <data name="LegacyPSDiscoverersGamerTagName" xml:space="preserve">
     <value>LEGACY PS Discoverers GamerTag Name</value>
   </data>
-    <data name="LegacyPSSystemName" xml:space="preserve">
+  <data name="LegacyPSSystemName" xml:space="preserve">
     <value>LEGACY PS system name</value>
   </data>
-    <data name="LegacyXboxDiscoverersGamerTagName" xml:space="preserve">
+  <data name="LegacyXboxDiscoverersGamerTagName" xml:space="preserve">
     <value>LEGACY Xbox Discoverers GamerTag Name</value>
   </data>
-    <data name="LegacyXboxSystemName" xml:space="preserve">
+  <data name="LegacyXboxSystemName" xml:space="preserve">
     <value>LEGACY Xbox system name</value>
   </data>
-    <data name="LightYearsFromCenter" xml:space="preserve">
+  <data name="LifeSupportUpgrade" xml:space="preserve">
+    <value>Life Support Upgrade</value>
+  </data>
+  <data name="LightYearsFromCenter" xml:space="preserve">
     <value>LY from center (manual observation)</value>
   </data>
-    <data name="LightYearsFromCenterAutoEstimate" xml:space="preserve">
+  <data name="LightYearsFromCenterAutoEstimate" xml:space="preserve">
     <value>LY from center (auto estimate)</value>
   </data>
-    <data name="LocInfoNotes" xml:space="preserve">
+  <data name="LocInfoNotes" xml:space="preserve">
     <value>Loc Info Notes</value>
   </data>
-    <data name="MTTextNotes" xml:space="preserve">
+  <data name="MeshDecouplers" xml:space="preserve">
+    <value>Mesh Decouplers</value>
+  </data>
+  <data name="MiningBeamUpgrade" xml:space="preserve">
+    <value>Mining Beam Upgrade</value>
+  </data>
+  <data name="MissingEnumerationValueForType" xml:space="preserve">
+      <value />
+  </data>
+  <data name="MoonEther" xml:space="preserve">
+    <value>Moon Ether</value>
+  </data>
+  <data name="MovementSystemUpgrade" xml:space="preserve">
+    <value>Movement System Upgrade</value>
+  </data>
+  <data name="MTTextNotes" xml:space="preserve">
     <value>MT Text Notes</value>
   </data>
-    <data name="MultiToolSClassUpgradeModules" xml:space="preserve">
+  <data name="MultiToolSClassUpgradeModules" xml:space="preserve">
     <value>Multi-Tool S-Class Upgrade Modules</value>
   </data>
-    <data name="MustHaveRegion" xml:space="preserve">
+  <data name="MustHaveRegion" xml:space="preserve">
     <value>Star System {0} must have a Region selected.</value>
   </data>
-    <data name="Name" xml:space="preserve">
+  <data name="Name" xml:space="preserve">
     <value>System Name (Unique entry search key)</value>
   </data>
-    <data name="NMSWikiLink" xml:space="preserve">
+  <data name="NanotubeCrate" xml:space="preserve">
+    <value>Nanotube Crate</value>
+  </data>
+  <data name="NeuralDuct" xml:space="preserve">
+    <value>Neural Duct</value>
+  </data>
+  <data name="NeutronCannonUpgrade" xml:space="preserve">
+    <value>Neutron Cannon Upgrade</value>
+  </data>
+  <data name="NeutronMicroscope" xml:space="preserve">
+    <value>Neutron Microscope</value>
+  </data>
+  <data name="NipNipBuds" xml:space="preserve">
+    <value>NipNip Buds</value>
+  </data>
+  <data name="NMSWikiLink" xml:space="preserve">
     <value>NMS wiki Link</value>
   </data>
-    <data name="NumberOfMoons" xml:space="preserve">
+  <data name="NonStickPiston" xml:space="preserve">
+    <value>Non-Stick Piston</value>
+  </data>
+  <data name="NumberOfMoons" xml:space="preserve">
     <value># of moons</value>
   </data>
-    <data name="NumberOfPlanets" xml:space="preserve">
+  <data name="NumberOfPlanets" xml:space="preserve">
     <value># of planets</value>
   </data>
-    <data name="OriginalSystemName" xml:space="preserve">
+  <data name="OhmicGel" xml:space="preserve">
+    <value>Ohmic Gel</value>
+  </data>
+  <data name="OpticalSolvent" xml:space="preserve">
+    <value>Optical Solvent</value>
+  </data>
+  <data name="OrganicPiping" xml:space="preserve">
+    <value>Organic Piping</value>
+  </data>
+  <data name="OriginalSystemName" xml:space="preserve">
     <value>Original Sys Name</value>
   </data>
-    <data name="PlanetsTextNotes" xml:space="preserve">
+  <data name="PhaseBeamUpgrade" xml:space="preserve">
+    <value>Phase Beam Upgrade</value>
+  </data>
+  <data name="PhotonCannonUpgrade" xml:space="preserve">
+    <value>Photon Cannon Upgrade</value>
+  </data>
+  <data name="PlanetsTextNotes" xml:space="preserve">
     <value>Planets Text Notes</value>
   </data>
-    <data name="PlatformType" xml:space="preserve">
+  <data name="PlasmaLauncherUpgrade" xml:space="preserve">
+    <value>Plasma Launcher Upgrade</value>
+  </data>
+  <data name="PlasmaResonator" xml:space="preserve">
+    <value>Plasma Resonator</value>
+  </data>
+  <data name="PlatformType" xml:space="preserve">
     <value>Discovery Platform</value>
   </data>
-    <data name="PortalRepository" xml:space="preserve">
+  <data name="PolychromaticZirconium" xml:space="preserve">
+    <value>Polychromatic Zirconium</value>
+  </data>
+  <data name="PortalRepository" xml:space="preserve">
     <value>Portal Repository</value>
   </data>
-    <data name="Sell" xml:space="preserve">
+  <data name="PositronEjectorUpgrade" xml:space="preserve">
+    <value>Positron Ejector Upgrade</value>
+  </data>
+  <data name="PrismaticFeathers" xml:space="preserve">
+    <value>Prismatic Feathers</value>
+  </data>
+  <data name="PulseEngineUpgrade" xml:space="preserve">
+    <value>Pulse Engine Upgrade</value>
+  </data>
+  <data name="PulseSpitterUpgrade" xml:space="preserve">
+    <value>Pulse Spitter Upgrade</value>
+  </data>
+  <data name="QuantumAccelerator" xml:space="preserve">
+    <value>Quantum Accelerator</value>
+  </data>
+  <data name="RadiationProtectionModule" xml:space="preserve">
+    <value>Radiation Protection Module</value>
+  </data>
+  <data name="RelatticedArcCrystal" xml:space="preserve">
+    <value>Re-latticed Arc Crystal</value>
+  </data>
+  <data name="ScatterBlasterUpgrade" xml:space="preserve">
+    <value>Scatter Blaster Upgrade</value>
+  </data>
+  <data name="SelfRepairingHeridium" xml:space="preserve">
+    <value>Self-Repairing Heridium</value>
+  </data>
+  <data name="Sell" xml:space="preserve">
     <value>E-Sell</value>
   </data>
-    <data name="SpaceShipSClassUpgradeModules" xml:space="preserve">
-    <value>SpaceShip S-Class Upgrade Modules</value>
+  <data name="SixProngedMeshDecoupler" xml:space="preserve">
+    <value>Six-Pronged Mesh Decoupler</value>
   </data>
-    <data name="SpaceStationNotes" xml:space="preserve">
+  <data name="SpaceStationNotes" xml:space="preserve">
     <value>Space Station Notes</value>
   </data>
-    <data name="SpaceStationTradeItems" xml:space="preserve">
+  <data name="SpaceStationTradeItems" xml:space="preserve">
     <value>Space Station Trade Item</value>
   </data>
-    <data name="SpecialInterest" xml:space="preserve">
+  <data name="SparkCanister" xml:space="preserve">
+    <value>Spark Canister</value>
+  </data>
+  <data name="SpecialInterest" xml:space="preserve">
     <value>Special Interest</value>
   </data>
-    <data name="StarCategory" xml:space="preserve">
+  <data name="StarCategory" xml:space="preserve">
     <value>Category</value>
   </data>
-    <data name="StarCount" xml:space="preserve">
+  <data name="StarCount" xml:space="preserve">
     <value>Multiple stars?</value>
   </data>
-    <data name="StarshipsTextNotes" xml:space="preserve">
+  <data name="StarshipsTextNotes" xml:space="preserve">
     <value>Starships Text Notes</value>
   </data>
-    <data name="SummaryAdditions" xml:space="preserve">
+  <data name="StarSilk" xml:space="preserve">
+    <value>Star Silk</value>
+  </data>
+  <data name="StarSystemShipUpgradeModules" xml:space="preserve">
+    <value>SpaceShip S-Class Upgrade Modules</value>
+  </data>
+  <data name="StolenDNASamples" xml:space="preserve">
+    <value>Stolen DNA Samples</value>
+  </data>
+  <data name="SuitUpgradeModules" xml:space="preserve">
+    <value>ExoSuit S-Class Upgrade Modules</value>
+  </data>
+  <data name="SummaryAdditions" xml:space="preserve">
     <value>Summary Additions</value>
   </data>
-    <data name="SurveyDate" xml:space="preserve">
+  <data name="SuperconductingFibre" xml:space="preserve">
+    <value>Superconducting Fibre</value>
+  </data>
+  <data name="SurveyDate" xml:space="preserve">
     <value>Survey Date</value>
   </data>
-    <data name="SurveyorName" xml:space="preserve">
+  <data name="SurveyorName" xml:space="preserve">
     <value>Source/Surveyor Name</value>
   </data>
-    <data name="SystemMisc" xml:space="preserve">
+  <data name="SuspiciousPacketGoods" xml:space="preserve">
+    <value>Suspicious Packet (Goods)</value>
+  </data>
+  <data name="SuspiciousPacketTechnology" xml:space="preserve">
+    <value>Suspicious Packet (Technology)</value>
+  </data>
+  <data name="SuspiciousPacketWeaponry" xml:space="preserve">
+    <value>Suspicious Packet (Weaponry)</value>
+  </data>
+  <data name="SystemMisc" xml:space="preserve">
     <value>System Misc</value>
   </data>
-    <data name="SystemNameAllPlatforms" xml:space="preserve">
+  <data name="SystemNameAllPlatforms" xml:space="preserve">
     <value>System Name (All platforms)</value>
   </data>
-    <data name="VideoLink" xml:space="preserve">
+  <data name="TeleportCoordinators" xml:space="preserve">
+    <value>Teleport Coordinators</value>
+  </data>
+  <data name="ThermalProtectionModuleCold" xml:space="preserve">
+    <value>Thermal Protection Module (Cold)</value>
+  </data>
+  <data name="ThermalProtectionModuleHeat" xml:space="preserve">
+    <value>Thermal Protection Module (Heat)</value>
+  </data>
+  <data name="ToxicProtectionModule" xml:space="preserve">
+    <value>Toxic Protection Module</value>
+  </data>
+  <data name="UnderwaterProtectionModule" xml:space="preserve">
+    <value>Underwater Protection Module</value>
+  </data>
+  <data name="UnrefinedPyriteGrease" xml:space="preserve">
+    <value>Unrefined Pyrite Grease</value>
+  </data>
+  <data name="VectorCompressors" xml:space="preserve">
+    <value>Vector Compressors</value>
+  </data>
+  <data name="VideoLink" xml:space="preserve">
     <value>Video Link</value>
   </data>
-    <data name="WealthType" xml:space="preserve">
+  <data name="WealthType" xml:space="preserve">
     <value>Wealth</value>
   </data>
-    <data name="XCoordDec" xml:space="preserve">
+  <data name="WeldingSoap" xml:space="preserve">
+    <value>Welding Soap</value>
+  </data>
+  <data name="XCoordDec" xml:space="preserve">
     <value>X coord DEC</value>
   </data>
-    <data name="YCoordDec" xml:space="preserve">
+  <data name="YCoordDec" xml:space="preserve">
     <value>Y coord DEC</value>
   </data>
-    <data name="ZCoordDec" xml:space="preserve">
+  <data name="ZCoordDec" xml:space="preserve">
     <value>Z coord DEC</value>
   </data>
 </root>

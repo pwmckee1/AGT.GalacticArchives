@@ -1,4 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Models.Environments;
+﻿using AGT.GalacticArchives.Core.Models.Entities;
 
 namespace AGT.GalacticArchives.Core.Managers.Entities;
 
@@ -6,9 +6,7 @@ public interface IGalacticEntityManager
 {
     Task<Planet> GetPlanetaryHierarchyAsync(Guid planetId);
 
-    Task<StarSystem> GetSolarHierarchyAsync(Guid starSystemId);
-
-    Task<Region> GetRegionalHierarchyAsync(Guid regionId);
+    Task<StarSystem> GetStarSystemHierarchyAsync(Guid starSystemId);
 
     Task UpsertPlanetAsync(Planet? planet);
 

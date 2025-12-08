@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-    <!--
+  <!--
       Microsoft ResX Schema
 
       Version 2.0
@@ -59,122 +59,123 @@
               : using a System.ComponentModel.TypeConverter
               : and then encoded with base64 encoding.
       -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-        <xsd:element name="root" msdata:IsDataSet="true">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
             <xsd:complexType>
-                <xsd:choice maxOccurs="unbounded">
-                    <xsd:element name="metadata">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" use="required" type="xsd:string"/>
-                            <xsd:attribute name="type" type="xsd:string"/>
-                            <xsd:attribute name="mimetype" type="xsd:string"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="assembly">
-                        <xsd:complexType>
-                            <xsd:attribute name="alias" type="xsd:string"/>
-                            <xsd:attribute name="name" type="xsd:string"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="data">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="resheader">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:choice>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
-        </xsd:element>
-    </xsd:schema>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>1.3</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
-    </resheader>
-    <data name="AcquisitionGuidance" xml:space="preserve">
+  </resheader>
+  <data name="AcquisitionGuidance" xml:space="preserve">
     <value>Acquistion Guidance</value>
   </data>
-    <data name="CivilizedBy" xml:space="preserve">
+  <data name="CivilizedBy" xml:space="preserve">
     <value>Civilized</value>
   </data>
-    <data name="DiscoveredBy" xml:space="preserve">
+  <data name="DiscoveredBy" xml:space="preserve">
     <value>Discovered</value>
   </data>
-    <data name="DiscoveredLinkOnWiki" xml:space="preserve">
+  <data name="DiscoveredLinkOnWiki" xml:space="preserve">
     <value>Discovered Link on Wiki</value>
   </data>
-    <data name="DiscoveryDate" xml:space="preserve">
+  <data name="DiscoveryDate" xml:space="preserve">
     <value>Discovery Date</value>
   </data>
-    <data name="DocumentSequence" xml:space="preserve">
+  <data name="DocumentSequence" xml:space="preserve">
     <value>Document Sequence</value>
   </data>
-    <data name="HasCrystals" xml:space="preserve">
+  <data name="HasCrystals" xml:space="preserve">
     <value>Crystals</value>
   </data>
-    <data name="HasGlowtubes" xml:space="preserve">
+  <data name="HasGlowTubes" xml:space="preserve">
     <value>Glowtubes</value>
   </data>
-    <data name="HasHorns" xml:space="preserve">
+  <data name="HasHorns" xml:space="preserve">
     <value>Horns</value>
   </data>
-    <data name="Name" xml:space="preserve">
+  <data name="Name" xml:space="preserve">
     <value>Name of MT</value>
   </data>
-    <data name="PrimaryColor" xml:space="preserve">
+  <data name="PrimaryColor" xml:space="preserve">
     <value>Primary Color</value>
   </data>
-    <data name="ResearchTeam" xml:space="preserve">
+  <data name="ResearchTeam" xml:space="preserve">
     <value>Research Team</value>
   </data>
-    <data name="SecondaryColor" xml:space="preserve">
+  <data name="SecondaryColor" xml:space="preserve">
     <value>Secondary Color</value>
   </data>
-    <data name="UserNotes" xml:space="preserve">
+  <data name="UserNotes" xml:space="preserve">
     <value>User Notes</value>
   </data>
-    <data name="WikiLink" xml:space="preserve">
+  <data name="VoltaicStaff" xml:space="preserve">
+        <value>Voltaic Staff</value>
+    </data>
+  <data name="WikiLink" xml:space="preserve">
     <value>Wiki Link</value>
   </data>
-    <data name="XXSecondCoordinate" xml:space="preserve">
+  <data name="XXSecondCoordinate" xml:space="preserve">
     <value>XX (second cord)</value>
   </data>
-    <data name="YYFirstCoordinate" xml:space="preserve">
+  <data name="YYFirstCoordinate" xml:space="preserve">
     <value>YY (first coord)</value>
   </data>
 </root>

@@ -1,7 +1,6 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AutoMapper;
 
@@ -86,7 +85,7 @@ public class StarshipManager(
         }
         else
         {
-            starship.StarSystem = await galacticEntityManager.GetSolarHierarchyAsync(parentId);
+            starship.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
         }
     }
 

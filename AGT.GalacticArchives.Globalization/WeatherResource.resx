@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BlueAllConsumingCold" xml:space="preserve">
+      <value>All-Consuming Cold (Mega Exotic)</value>
+  </data>
+  <data name="BlueAzureStorms" xml:space="preserve">
+      <value>Azure Storms (Mega Exotic)</value>
+  </data>
+  <data name="BlueElectricRain" xml:space="preserve">
+      <value>Electric Rain (Mega Exotic)</value>
+  </data>
+  <data name="BlueExtremeLowPressure" xml:space="preserve">
+      <value>Extreme Low Pressure (Mega Exotic)</value>
+  </data>
+  <data name="BlueFrozenMists" xml:space="preserve">
+      <value>Frozen Mists (Mega Exotic)</value>
+  </data>
+  <data name="BlueInvertedSuperstorms" xml:space="preserve">
+      <value>Inverted Superstorms (Mega Exotic)</value>
+  </data>
+  <data name="BlueUltramarineWind" xml:space="preserve">
+      <value>Ultramarine Wind (Mega Exotic)</value>
+  </data>
+  <data name="BlueUnfathomableStorms" xml:space="preserve">
+      <value>Unfathomable Storms (Mega Exotic)</value>
+  </data>
+  <data name="BlueUnimaginableBlue" xml:space="preserve">
+      <value>Unimaginable Blue (Mega Exotic)</value>
+  </data>
+  <data name="BlueWindsfromBeyond" xml:space="preserve">
+      <value>Winds from Beyond (Mega Exotic)</value>
+  </data>
+  <data name="ClearAbsent" xml:space="preserve">
+      <value>Absent (Dead)</value>
+  </data>
+  <data name="ClearAcidRain" xml:space="preserve">
+      <value>Acid Rain (Toxic)</value>
+  </data>
+  <data name="ClearAirless" xml:space="preserve">
+      <value>Airless (Dead)</value>
+  </data>
+  <data name="ClearAnomalous" xml:space="preserve">
+      <value>Anomalous (Exotic)</value>
+  </data>
+  <data name="ClearAshenWinds" xml:space="preserve">
+      <value>Ashen Winds (Volcanic)</value>
+  </data>
+  <data name="ClearAshPlumes" xml:space="preserve">
+      <value>Ash Plumes (Volcanic)</value>
+  </data>
+  <data name="ClearAshWisps" xml:space="preserve">
+      <value>Ash Wisps (Volcanic)</value>
+  </data>
+  <data name="ClearBaked" xml:space="preserve">
+      <value>Baked (Barren)</value>
+  </data>
+  <data name="ClearBalmy" xml:space="preserve">
+      <value>Balmy (Lush)</value>
+  </data>
+  <data name="ClearBeautiful" xml:space="preserve">
+      <value>Beautiful (Lush)</value>
+  </data>
+  <data name="ClearBlissful" xml:space="preserve">
+      <value>Blissful (Lush)</value>
+  </data>
+  <data name="ClearBurningMists" xml:space="preserve">
+      <value>Burning Mists (Volcanic)</value>
+  </data>
+  <data name="ClearCausticMoisture" xml:space="preserve">
+      <value>Caustic Moisture (Marsh)</value>
+  </data>
+  <data name="ClearChokingAsh" xml:space="preserve">
+      <value>Choking Ash (Volcanic)</value>
+  </data>
+  <data name="ClearChokingClouds" xml:space="preserve">
+      <value>Choking Clouds (Marsh)</value>
+  </data>
+  <data name="ClearCinderfalls" xml:space="preserve">
+      <value>Cinderfalls (Volcanic)</value>
+  </data>
+  <data name="ClearClear" xml:space="preserve">
+      <value>Clear (Barren)</value>
+  </data>
+  <data name="ClearCloudsofHauntedGreen" xml:space="preserve">
+      <value>Clouds of Haunted Green (Exotic)</value>
+  </data>
+  <data name="ClearContaminatedPuddles" xml:space="preserve">
+      <value>Contaminated Puddles (Irradiated)</value>
+  </data>
+  <data name="ClearCorrosiveDamp" xml:space="preserve">
+      <value>Corrosive Damp (Toxic)</value>
+  </data>
+  <data name="ClearCorruptedBlood" xml:space="preserve">
+      <value>Corrupted Blood (Exotic)</value>
+  </data>
+  <data name="ClearCrimsonHeat" xml:space="preserve">
+      <value>Crimson Heat (Exotic)</value>
+  </data>
+  <data name="ClearCrisp" xml:space="preserve">
+      <value>Crisp (Frozen)</value>
+  </data>
+  <data name="ClearDeadlyPressureVariations" xml:space="preserve">
+      <value>Deadly Pressure Variations (Exotic)</value>
+  </data>
+  <data name="ClearDehydrated" xml:space="preserve">
+      <value>Dehydrated (Scorched)</value>
+  </data>
+  <data name="ClearDirectSunlight" xml:space="preserve">
+      <value>Direct Sunlight (Barren)</value>
+  </data>
+  <data name="ClearDriftingSmog" xml:space="preserve">
+      <value>Drifting Smog (Volcanic)</value>
+  </data>
+  <data name="ClearDryGusts" xml:space="preserve">
+      <value>Dry Gusts (Barren)</value>
+  </data>
+  <data name="ClearEchoesofAcid" xml:space="preserve">
+      <value>Echoes of Acid (Exotic)</value>
+  </data>
+  <data name="ClearEerilyCalm" xml:space="preserve">
+      <value>Eerily Calm (Dead)</value>
+  </data>
+  <data name="ClearEmollient" xml:space="preserve">
+      <value>Emollient (Dead)</value>
+  </data>
+  <data name="ClearEnvelopingAsh" xml:space="preserve">
+      <value>Enveloping Ash (Volcanic)</value>
+  </data>
+  <data name="ClearFair" xml:space="preserve">
+      <value>Fair (Dead)</value>
+  </data>
+  <data name="ClearFine" xml:space="preserve">
+      <value>Fine (Dead)</value>
+  </data>
+  <data name="ClearFreezing" xml:space="preserve">
+      <value>Freezing (Frozen)</value>
+  </data>
+  <data name="ClearFrost" xml:space="preserve">
+      <value>Frost (Frozen)</value>
+  </data>
+  <data name="ClearGammaDust" xml:space="preserve">
+      <value>Gamma Dust (Irradiated)</value>
+  </data>
+  <data name="ClearGentleMist" xml:space="preserve">
+      <value>Gentle Mist (Marsh)</value>
+  </data>
+  <data name="ClearHauntedFrost" xml:space="preserve">
+      <value>Haunted Frost (Exotic)</value>
+  </data>
+  <data name="ClearHeatedAtmosphere" xml:space="preserve">
+      <value>Heated Atmosphere (Barren)</value>
+  </data>
+  <data name="ClearHumid" xml:space="preserve">
+      <value>Humid (Lush)</value>
+  </data>
+  <data name="ClearIcy" xml:space="preserve">
+      <value>Icy (Frozen)</value>
+  </data>
+  <data name="ClearIcyNights" xml:space="preserve">
+      <value>Icy Nights (Barren)</value>
+  </data>
+  <data name="ClearIndetectableBurning" xml:space="preserve">
+      <value>Indetectable Burning (Exotic)</value>
+  </data>
+  <data name="ClearInert" xml:space="preserve">
+      <value>Inert (Dead)</value>
+  </data>
+  <data name="ClearInescapableToxins" xml:space="preserve">
+      <value>Inescapable Toxins (Exotic)</value>
+  </data>
+  <data name="ClearInfiniteToxicMist" xml:space="preserve">
+      <value>Infinite Toxic Mist (Exotic)</value>
+  </data>
+  <data name="ClearInternalRain" xml:space="preserve">
+      <value>Internal Rain (Exotic)</value>
+  </data>
+  <data name="ClearInvisibleJadeWinds" xml:space="preserve">
+      <value>Invisible Jade Winds (Exotic)</value>
+  </data>
+  <data name="ClearInvisibleMist" xml:space="preserve">
+      <value>Invisible Mist (Exotic)</value>
+  </data>
+  <data name="ClearIrradiatedWinds" xml:space="preserve">
+      <value>Irradiated Winds (Irradiated)</value>
+  </data>
+  <data name="ClearLightShowers" xml:space="preserve">
+      <value>Light Showers (Lush)</value>
+  </data>
+  <data name="ClearLostClouds" xml:space="preserve">
+      <value>Lost Clouds (Exotic)</value>
+  </data>
+  <data name="ClearMellow" xml:space="preserve">
+      <value>Mellow (Lush)</value>
+  </data>
+  <data name="ClearMemoriesofFrost" xml:space="preserve">
+      <value>Memories of Frost (Exotic)</value>
+  </data>
+  <data name="ClearMildDamp" xml:space="preserve">
+      <value>Mild Damp (Marsh)</value>
+  </data>
+  <data name="ClearMildRain" xml:space="preserve">
+      <value>Mild Rain (Lush)</value>
+  </data>
+  <data name="ClearModerate" xml:space="preserve">
+      <value>Moderate (Dead)</value>
+  </data>
+  <data name="ClearMoistureless" xml:space="preserve">
+      <value>Moistureless (Barren)</value>
+  </data>
+  <data name="ClearMuggyHaze" xml:space="preserve">
+      <value>Muggy Haze (Marsh)</value>
+  </data>
+  <data name="ClearNoAtmosphere" xml:space="preserve">
+      <value>No Atmosphere (Dead)</value>
+  </data>
+  <data name="ClearNuclidicAtmosphere" xml:space="preserve">
+      <value>Nuclidic Atmosphere (Irradiated)</value>
+  </data>
+  <data name="ClearObsidianHeat" xml:space="preserve">
+      <value>Obsidian Heat (Exotic)</value>
+  </data>
+  <data name="ClearOverlyWarm" xml:space="preserve">
+      <value>Overly Warm (Scorched)</value>
+  </data>
+  <data name="ClearParched" xml:space="preserve">
+      <value>Parched (Barren)</value>
+  </data>
+  <data name="ClearPeaceful" xml:space="preserve">
+      <value>Peaceful (Dead)</value>
+  </data>
+  <data name="ClearPeacefulClimate" xml:space="preserve">
+      <value>Peaceful Climate (Dead)</value>
+  </data>
+  <data name="ClearPerfectlyClear" xml:space="preserve">
+      <value>Perfectly Clear (Dead)</value>
+  </data>
+  <data name="ClearPermafrost" xml:space="preserve">
+      <value>Permafrost (Frozen)</value>
+  </data>
+  <data name="ClearPleasant" xml:space="preserve">
+      <value>Pleasant (Lush)</value>
+  </data>
+  <data name="ClearPoisonousGas" xml:space="preserve">
+      <value>Poisonous Gas (Toxic)</value>
+  </data>
+  <data name="ClearPoisonRain" xml:space="preserve">
+      <value>Poison Rain (Toxic)</value>
+  </data>
+  <data name="ClearPowderSnow" xml:space="preserve">
+      <value>Powder Snow (Frozen)</value>
+  </data>
+  <data name="ClearRadioactiveDamp" xml:space="preserve">
+      <value>Radioactive Damp (Irradiated)</value>
+  </data>
+  <data name="ClearRadioactiveHumidity" xml:space="preserve">
+      <value>Radioactive Humidity (Irradiated)</value>
+  </data>
+  <data name="ClearRedacted" xml:space="preserve">
+      <value>[REDACTED] (Exotic)</value>
+  </data>
+  <data name="ClearRefreshingBreeze" xml:space="preserve">
+      <value>Refreshing Breeze (Lush)</value>
+  </data>
+  <data name="ClearSilent" xml:space="preserve">
+      <value>Silent (Dead)</value>
+  </data>
+  <data name="ClearSmotheringAsh" xml:space="preserve">
+      <value>Smothering Ash (Volcanic)</value>
+  </data>
+  <data name="ClearSnowy" xml:space="preserve">
+      <value>Snowy (Frozen)</value>
+  </data>
+  <data name="ClearSterile" xml:space="preserve">
+      <value>Sterile (Barren)</value>
+  </data>
+  <data name="ClearStingingAtmosphere" xml:space="preserve">
+      <value>Stinging Atmosphere (Toxic)</value>
+  </data>
+  <data name="ClearStingingPuddles" xml:space="preserve">
+      <value>Stinging Puddles (Toxic)</value>
+  </data>
+  <data name="ClearSulfurFumes" xml:space="preserve">
+      <value>Sulfur Fumes (Volcanic)</value>
+  </data>
+  <data name="ClearSulphurousHaze" xml:space="preserve">
+      <value>Sulphurous Haze (Volcanic)</value>
+  </data>
+  <data name="ClearSunny" xml:space="preserve">
+      <value>Sunny (Barren)</value>
+  </data>
+  <data name="ClearSweatyDrizzle" xml:space="preserve">
+      <value>Sweaty Drizzle (Marsh)</value>
+  </data>
+  <data name="ClearSweltering" xml:space="preserve">
+      <value>Sweltering (Scorched)</value>
+  </data>
+  <data name="ClearTemperate" xml:space="preserve">
+      <value>Temperate (Lush)</value>
+  </data>
+  <data name="ClearTemperateMurk" xml:space="preserve">
+      <value>Temperate Murk (Marsh)</value>
+  </data>
+  <data name="ClearTempered" xml:space="preserve">
+      <value>Tempered (Dead)</value>
+  </data>
+  <data name="ClearTepidDamp" xml:space="preserve">
+      <value>Tepid Damp (Marsh)</value>
+  </data>
+  <data name="ClearThirstyClouds" xml:space="preserve">
+      <value>Thirsty Clouds (Exotic)</value>
+  </data>
+  <data name="ClearToxicClouds" xml:space="preserve">
+      <value>Toxic Clouds (Toxic)</value>
+  </data>
+  <data name="ClearToxicDamp" xml:space="preserve">
+      <value>Toxic Damp (Marsh)</value>
+  </data>
+  <data name="ClearTropicalWinds" xml:space="preserve">
+      <value>Tropical Winds (Marsh)</value>
+  </data>
+  <data name="ClearUncloudedSkies" xml:space="preserve">
+      <value>Unclouded Skies (Barren)</value>
+  </data>
+  <data name="ClearUnendingSunlight" xml:space="preserve">
+      <value>Unending Sunlight (Scorched)</value>
+  </data>
+  <data name="ClearUnstableAtmosphere" xml:space="preserve">
+      <value>Unstable Atmosphere (Toxic)</value>
+  </data>
+  <data name="ClearUtterlyStill" xml:space="preserve">
+      <value>Utterly Still (Dead)</value>
+  </data>
+  <data name="ClearVolatileWinds" xml:space="preserve">
+      <value>Volatile Winds (Irradiated)</value>
+  </data>
+  <data name="ClearWarmDewdrops" xml:space="preserve">
+      <value>Warm Dewdrops (Marsh)</value>
+  </data>
+  <data name="ClearWarmFog" xml:space="preserve">
+      <value>Warm Fog (Marsh)</value>
+  </data>
+  <data name="ClearWindsofGlass" xml:space="preserve">
+      <value>Winds of Glass (Exotic)</value>
+  </data>
+  <data name="ClearWintry" xml:space="preserve">
+      <value>Wintry (Frozen)</value>
+  </data>
+  <data name="ClearWithered" xml:space="preserve">
+      <value>Withered (Barren)</value>
+  </data>
+  <data name="ExtremeAcidicDeluges" xml:space="preserve">
+      <value>Acidic Deluges (Marsh)</value>
+  </data>
+  <data name="ExtremeAcidicDustPockets" xml:space="preserve">
+      <value>Acidic Dust Pockets (Marsh)</value>
+  </data>
+  <data name="ExtremeAllConsumingFog" xml:space="preserve">
+      <value>All-Consuming Fog (Marsh)</value>
+  </data>
+  <data name="ExtremeAshenDestruction" xml:space="preserve">
+      <value>Ashen Destruction (Volcanic)</value>
+  </data>
+  <data name="ExtremeBasaltHail" xml:space="preserve">
+      <value>Basalt Hail (Volcanic)</value>
+  </data>
+  <data name="ExtremeBillowingDustStorms" xml:space="preserve">
+      <value>Billowing Dust Storms (Barren)</value>
+  </data>
+  <data name="ExtremeBlastedAtmosphere" xml:space="preserve">
+      <value>Blasted Atmosphere (Barren)</value>
+  </data>
+  <data name="ExtremeBlisteringFloods" xml:space="preserve">
+      <value>Blistering Floods (Lush)</value>
+  </data>
+  <data name="ExtremeBoilingCatastrophe" xml:space="preserve">
+      <value>Boiling Catastrophe (Marsh)</value>
+  </data>
+  <data name="ExtremeBoilingMonsoons" xml:space="preserve">
+      <value>Boiling Monsoons (Lush)</value>
+  </data>
+  <data name="ExtremeBoilingSuperstorms" xml:space="preserve">
+      <value>Boiling Superstorms (Lush)</value>
+  </data>
+  <data name="ExtremeBoneStrippingAcidStorms" xml:space="preserve">
+      <value>Bone-Stripping Acid Storms (Toxic)</value>
+  </data>
+  <data name="ExtremeBroilingHumidity" xml:space="preserve">
+      <value>Broiling Humidity (Lush)</value>
+  </data>
+  <data name="ExtremeBurningGasClouds" xml:space="preserve">
+      <value>Burning Gas Clouds (Barren)</value>
+  </data>
+  <data name="ExtremeCataclysmicMonsoons" xml:space="preserve">
+      <value>Cataclysmic Monsoons (Marsh)</value>
+  </data>
+  <data name="ExtremeCausticFloods" xml:space="preserve">
+      <value>Caustic Floods (Toxic)</value>
+  </data>
+  <data name="ExtremeChokingSandstorms" xml:space="preserve">
+      <value>Choking Sandstorms (Barren)</value>
+  </data>
+  <data name="ExtremeCloudsofFire" xml:space="preserve">
+      <value>Clouds of Fire (Volcanic)</value>
+  </data>
+  <data name="ExtremeColossalFirestorms" xml:space="preserve">
+      <value>Colossal Firestorms (Volcanic)</value>
+  </data>
+  <data name="ExtremeCombustibleDust" xml:space="preserve">
+      <value>Combustible Dust (Barren)</value>
+  </data>
+  <data name="ExtremeConstantPressureStorms" xml:space="preserve">
+      <value>Constant Pressure Storms (Gas Giant)</value>
+  </data>
+  <data name="ExtremeContaminatedSqualls" xml:space="preserve">
+      <value>Contaminated Squalls (Irradiated)</value>
+  </data>
+  <data name="ExtremeCorrosiveCyclones" xml:space="preserve">
+      <value>Corrosive Cyclones (Toxic)</value>
+  </data>
+  <data name="ExtremeCorrosiveRainstorms" xml:space="preserve">
+      <value>Corrosive Rainstorms (Marsh)</value>
+  </data>
+  <data name="ExtremeCorrosiveStorms" xml:space="preserve">
+      <value>Corrosive Storms (Toxic)</value>
+  </data>
+  <data name="ExtremeDampMisery" xml:space="preserve">
+      <value>Damp Misery (Marsh)</value>
+  </data>
+  <data name="ExtremeDeadWastes" xml:space="preserve">
+      <value>Dead Wastes (Barren)</value>
+  </data>
+  <data name="ExtremeDeathFog" xml:space="preserve">
+      <value>Death Fog (Marsh)</value>
+  </data>
+  <data name="ExtremeDeepFreeze" xml:space="preserve">
+      <value>Deep Freeze (Frozen)</value>
+  </data>
+  <data name="ExtremeEnormousNuclearStorms" xml:space="preserve">
+      <value>Enormous Nuclear Storms (Irradiated)</value>
+  </data>
+  <data name="ExtremeEternalCyclones" xml:space="preserve">
+      <value>Eternal Cyclones (Gas Giant)</value>
+  </data>
+  <data name="ExtremeExplosiveGasEruptions" xml:space="preserve">
+      <value>Explosive Gas Eruptions (Volcanic)</value>
+  </data>
+  <data name="ExtremeExtremeAtmosphericDecay" xml:space="preserve">
+      <value>Extreme Atmospheric Decay (Irradiated)</value>
+  </data>
+  <data name="ExtremeExtremeHeat" xml:space="preserve">
+      <value>Extreme Heat (Scorched)</value>
+  </data>
+  <data name="ExtremeExtremeRadioactivity" xml:space="preserve">
+      <value>Extreme Radioactivity (Irradiated)</value>
+  </data>
+  <data name="ExtremeExtremeThermonuclearFog" xml:space="preserve">
+      <value>Extreme Thermonuclear Fog (Irradiated)</value>
+  </data>
+  <data name="ExtremeExtremeWindBlasting" xml:space="preserve">
+      <value>Extreme Wind Blasting (Barren)</value>
+  </data>
+  <data name="ExtremeFirestorms" xml:space="preserve">
+      <value>Firestorms (Barren)</value>
+  </data>
+  <data name="ExtremeFrequentBlizzards" xml:space="preserve">
+      <value>Frequent Blizzards (Frozen)</value>
+  </data>
+  <data name="ExtremeFrequentFirestorms" xml:space="preserve">
+      <value>Frequent Firestorms (Volcanic)</value>
+  </data>
+  <data name="ExtremeFrequentParticleEruptions" xml:space="preserve">
+      <value>Frequent Particle Eruptions (Irradiated)</value>
+  </data>
+  <data name="ExtremeFrequentToxicFloods" xml:space="preserve">
+      <value>Frequent Toxic Floods (Toxic)</value>
+  </data>
+  <data name="ExtremeGammaCyclones" xml:space="preserve">
+      <value>Gamma Cyclones (Irradiated)</value>
+  </data>
+  <data name="ExtremeGasStorms" xml:space="preserve">
+      <value>Gas Storms (Gas Giant)</value>
+  </data>
+  <data name="ExtremeHazardousTemperatureExtremes" xml:space="preserve">
+      <value>Hazardous Temperature Extremes (Barren)</value>
+  </data>
+  <data name="ExtremeHazardousWhiteouts" xml:space="preserve">
+      <value>Hazardous Whiteouts (Frozen)</value>
+  </data>
+  <data name="ExtremeHowlingBlizzards" xml:space="preserve">
+      <value>Howling Blizzards (Frozen)</value>
+  </data>
+  <data name="ExtremeHowlingGales" xml:space="preserve">
+      <value>Howling Gales (Barren)</value>
+  </data>
+  <data name="ExtremeIceStorms" xml:space="preserve">
+      <value>Ice Storms (Frozen)</value>
+  </data>
+  <data name="ExtremeIcyTempests" xml:space="preserve">
+      <value>Icy Tempests (Frozen)</value>
+  </data>
+  <data name="ExtremeIncendiaryDust" xml:space="preserve">
+      <value>Incendiary Dust (Scorched)</value>
+  </data>
+  <data name="ExtremeInescapableToxins" xml:space="preserve">
+      <value>Inescapable Toxins (Lush)</value>
+  </data>
+  <data name="ExtremeInfernoWinds" xml:space="preserve">
+      <value>Inferno Winds (Barren)</value>
+  </data>
+  <data name="ExtremeIntenseCold" xml:space="preserve">
+      <value>Intense Cold (Frozen)</value>
+  </data>
+  <data name="ExtremeIntenseHeat" xml:space="preserve">
+      <value>Intense Heat (Barren)</value>
+  </data>
+  <data name="ExtremeIntenseHeatbursts" xml:space="preserve">
+      <value>Intense Heatbursts (Lush)</value>
+  </data>
+  <data name="ExtremeIrradiatedThunderstorms" xml:space="preserve">
+      <value>Irradiated Thunderstorms (Irradiated)</value>
+  </data>
+  <data name="ExtremeLethalAshStorms" xml:space="preserve">
+      <value>Lethal Ash Storms (Volcanic)</value>
+  </data>
+  <data name="ExtremeLiquidHell" xml:space="preserve">
+      <value>Liquid Hell (Marsh)</value>
+  </data>
+  <data name="ExtremeLungBurningNightWind" xml:space="preserve">
+      <value>Lung-Burning Night Wind (Barren)</value>
+  </data>
+  <data name="ExtremeMagmaRain" xml:space="preserve">
+      <value>Magma Rain (Volcanic)</value>
+  </data>
+  <data name="ExtremeMeltingDeluges" xml:space="preserve">
+      <value>Melting Deluges (Marsh)</value>
+  </data>
+  <data name="ExtremeMistsofAnnihilation" xml:space="preserve">
+      <value>Mists of Annihilation (Marsh)</value>
+  </data>
+  <data name="ExtremeNoxiousGasStorms" xml:space="preserve">
+      <value>Noxious Gas Storms (Toxic)</value>
+  </data>
+  <data name="ExtremePainfullyHotRain" xml:space="preserve">
+      <value>Painfully Hot Rain (Lush)</value>
+  </data>
+  <data name="ExtremePlanetwideDesiccation" xml:space="preserve">
+      <value>Planetwide Desiccation (Barren)</value>
+  </data>
+  <data name="ExtremePlanetWideMaelstrom" xml:space="preserve">
+      <value>Planet-Wide Maelstrom (Gas Giant)</value>
+  </data>
+  <data name="ExtremePlanetWideRadiationStorms" xml:space="preserve">
+      <value>Planet-Wide Radiation Storms (Irradiated)</value>
+  </data>
+  <data name="ExtremePouringToxicRain" xml:space="preserve">
+      <value>Pouring Toxic Rain (Toxic)</value>
+  </data>
+  <data name="ExtremeRagingSnowstorms" xml:space="preserve">
+      <value>Raging Snowstorms (Frozen)</value>
+  </data>
+  <data name="ExtremeRareFirestorms" xml:space="preserve">
+      <value>Rare Firestorms (Scorched)</value>
+  </data>
+  <data name="ExtremeRoaringIceStorms" xml:space="preserve">
+      <value>Roaring Ice Storms (Frozen)</value>
+  </data>
+  <data name="ExtremeRoaringNuclearWind" xml:space="preserve">
+      <value>Roaring Nuclear Wind (Irradiated)</value>
+  </data>
+  <data name="ExtremeSandBlizzards" xml:space="preserve">
+      <value>Sand Blizzards (Barren)</value>
+  </data>
+  <data name="ExtremeScaldingHeat" xml:space="preserve">
+      <value>Scalding Heat (Scorched)</value>
+  </data>
+  <data name="ExtremeScaldingRainstorms" xml:space="preserve">
+      <value>Scalding Rainstorms (Lush)</value>
+  </data>
+  <data name="ExtremeSelfIgnitingStorms" xml:space="preserve">
+      <value>Self-Igniting Storms (Scorched)</value>
+  </data>
+  <data name="ExtremeStormsofDesolation" xml:space="preserve">
+      <value>Storms of Desolation (Marsh)</value>
+  </data>
+  <data name="ExtremeSulphurousInferno" xml:space="preserve">
+      <value>Sulphurous Inferno (Volcanic)</value>
+  </data>
+  <data name="ExtremeSultryDisaster" xml:space="preserve">
+      <value>Sultry Disaster (Marsh)</value>
+  </data>
+  <data name="ExtremeSupercooledStorms" xml:space="preserve">
+      <value>Supercooled Storms (Frozen)</value>
+  </data>
+  <data name="ExtremeSuperheatedAir" xml:space="preserve">
+      <value>Superheated Air (Scorched)</value>
+  </data>
+  <data name="ExtremeSuperheatedRain" xml:space="preserve">
+      <value>Superheated Rain (Lush)</value>
+  </data>
+  <data name="ExtremeTorrentialAcid" xml:space="preserve">
+      <value>Torrential Acid (Toxic)</value>
+  </data>
+  <data name="ExtremeTorrentialHeat" xml:space="preserve">
+      <value>Torrential Heat (Lush)</value>
+  </data>
+  <data name="ExtremeTorridDeluges" xml:space="preserve">
+      <value>Torrid Deluges (Lush)</value>
+  </data>
+  <data name="ExtremeToxicDamp" xml:space="preserve">
+      <value>Toxic Damp (Toxic)</value>
+  </data>
+  <data name="ExtremeToxicMonsoons" xml:space="preserve">
+      <value>Toxic Monsoons (Marsh)</value>
+  </data>
+  <data name="ExtremeToxicSuperstorms" xml:space="preserve">
+      <value>Toxic Superstorms (Toxic)</value>
+  </data>
+  <data name="ExtremeWallsofFlame" xml:space="preserve">
+      <value>Walls of Flame (Volcanic)</value>
+  </data>
+  <data name="GreenBiliousStorms" xml:space="preserve">
+      <value>Bilious Storms (Mega Exotic)</value>
+  </data>
+  <data name="GreenCloudsofHauntedGreen" xml:space="preserve">
+      <value>Clouds of Haunted Green (Mega Exotic)</value>
+  </data>
+  <data name="GreenCorruptedBlood" xml:space="preserve">
+      <value>Corrupted Blood (Mega Exotic)</value>
+  </data>
+  <data name="GreenDeadlyPressureVariations" xml:space="preserve">
+      <value>Deadly Pressure Variations (Mega Exotic)</value>
+  </data>
+  <data name="GreenEchoesofAcid" xml:space="preserve">
+      <value>Echoes of Acid (Mega Exotic)</value>
+  </data>
+  <data name="GreenHarshToxicWind" xml:space="preserve">
+      <value>Harsh Toxic Wind (Mega Exotic)</value>
+  </data>
+  <data name="GreenInescapableToxins" xml:space="preserve">
+      <value>Inescapable Toxins (Mega Exotic)</value>
+  </data>
+  <data name="GreenInfiniteToxicMist" xml:space="preserve">
+      <value>Infinite Toxic Mist (Mega Exotic)</value>
+  </data>
+  <data name="GreenInvisibleJadeWinds" xml:space="preserve">
+      <value>Invisible Jade Winds (Mega Exotic)</value>
+  </data>
+  <data name="GreenPoisonCyclones" xml:space="preserve">
+      <value>Poison Cyclones (Mega Exotic)</value>
+  </data>
+  <data name="IcyWinds" xml:space="preserve">
+      <value>Harsh, Icy Winds (Frozen)</value>
+  </data>
+  <data name="NormalAcidicDustPockets" xml:space="preserve">
+      <value>Acidic Dust Pockets (Toxic)</value>
+  </data>
+  <data name="NormalAlkalineCloudbursts" xml:space="preserve">
+      <value>Alkaline Cloudbursts (Marsh)</value>
+  </data>
+  <data name="NormalAtmosphericCorruption" xml:space="preserve">
+      <value>Atmospheric Corruption (Marsh)</value>
+  </data>
+  <data name="NormalAtmosphericHeatInstabilities" xml:space="preserve">
+      <value>Atmospheric Heat Instabilities (Scorched)</value>
+  </data>
+  <data name="NormalBiliousStorms" xml:space="preserve">
+      <value>Bilious Storms (Lush)</value>
+  </data>
+  <data name="NormalBlastedAtmosphere" xml:space="preserve">
+      <value>Blasted Atmosphere (Barren)</value>
+  </data>
+  <data name="NormalBlisteringDamp" xml:space="preserve">
+      <value>Blistering Damp (Lush)</value>
+  </data>
+  <data name="NormalBoilingPuddles" xml:space="preserve">
+      <value>Boiling Puddles (Lush)</value>
+  </data>
+  <data name="NormalBurningAir" xml:space="preserve">
+      <value>Burning Air (Barren)</value>
+  </data>
+  <data name="NormalCausticMoisture" xml:space="preserve">
+      <value>Caustic Moisture (Toxic)</value>
+  </data>
+  <data name="NormalCausticWinds" xml:space="preserve">
+      <value>Caustic Winds (Marsh)</value>
+  </data>
+  <data name="NormalCeaselessDrought" xml:space="preserve">
+      <value>Ceaseless Drought (Barren)</value>
+  </data>
+  <data name="NormalChokingHumidity" xml:space="preserve">
+      <value>Choking Humidity (Lush)</value>
+  </data>
+  <data name="NormalClammyMenace" xml:space="preserve">
+      <value>Clammy Menace (Marsh)</value>
+  </data>
+  <data name="NormalCoastalStorms" xml:space="preserve">
+      <value>Coastal Storms (Waterworld)</value>
+  </data>
+  <data name="NormalCorrosiveRainstorms" xml:space="preserve">
+      <value>Corrosive Rainstorms (Toxic)</value>
+  </data>
+  <data name="NormalCorrosiveSleetStorms" xml:space="preserve">
+      <value>Corrosive sleet storms (Marsh)</value>
+  </data>
+  <data name="NormalCorruptedBlood" xml:space="preserve">
+      <value>Corrupted Blood (Lush)</value>
+  </data>
+  <data name="NormalDangerouslyHot" xml:space="preserve">
+      <value>Dangerously Hot (Barren)</value>
+  </data>
+  <data name="NormalDangerouslyHotFog" xml:space="preserve">
+      <value>Dangerously Hot Fog (Lush)</value>
+  </data>
+  <data name="NormalDangerouslyToxicRain" xml:space="preserve">
+      <value>Dangerously Toxic Rain (Toxic)</value>
+  </data>
+  <data name="NormalDeadlyPressureVariations" xml:space="preserve">
+      <value>Deadly Pressure Variations (Lush)</value>
+  </data>
+  <data name="NormalDirectSunlight" xml:space="preserve">
+      <value>Direct Sunlight (Scorched)</value>
+  </data>
+  <data name="NormalDriftingFirestorms" xml:space="preserve">
+      <value>Drifting Firestorms (Volcanic)</value>
+  </data>
+  <data name="NormalDriftingSnowstorms" xml:space="preserve">
+      <value>Drifting Snowstorms (Frozen)</value>
+  </data>
+  <data name="NormalDustChokedWinds" xml:space="preserve">
+      <value>Dust-Choked Winds (Barren)</value>
+  </data>
+  <data name="NormalEnergeticStorms" xml:space="preserve">
+      <value>Energetic Storms (Irradiated)</value>
+  </data>
+  <data name="NormalFreezingNightWinds" xml:space="preserve">
+      <value>Freezing Night Winds (Barren)</value>
+  </data>
+  <data name="NormalFrozenClouds" xml:space="preserve">
+      <value>Frozen Clouds (Frozen)</value>
+  </data>
+  <data name="NormalHarsh" xml:space="preserve">
+      <value>Harsh, Icy Winds (Frozen)</value>
+  </data>
+  <data name="NormalHazardousMoisture" xml:space="preserve">
+      <value>Hazardous Moisture (Marsh)</value>
+  </data>
+  <data name="NormalHeatedAtmosphere" xml:space="preserve">
+      <value>Heated Atmosphere (Scorched)</value>
+  </data>
+  <data name="NormalHeatedGasPockets" xml:space="preserve">
+      <value>Heated Gas Pockets (Volcanic)</value>
+  </data>
+  <data name="NormalHighlyVariableTemperatures" xml:space="preserve">
+      <value>Highly Variable Temperatures (Barren)</value>
+  </data>
+  <data name="NormalIceStorms" xml:space="preserve">
+      <value>Ice Storms (Frozen)</value>
+  </data>
+  <data name="NormalIcy" xml:space="preserve">
+      <value>Icy (Marsh)</value>
+  </data>
+  <data name="NormalIcyBlasts" xml:space="preserve">
+      <value>Icy Blasts (Frozen)</value>
+  </data>
+  <data name="NormalIncendiaryWinds" xml:space="preserve">
+      <value>Incendiary Winds (Volcanic)</value>
+  </data>
+  <data name="NormalInfrequentBlizzards" xml:space="preserve">
+      <value>Infrequent Blizzards (Frozen)</value>
+  </data>
+  <data name="NormalInfrequentDustStorms" xml:space="preserve">
+      <value>Infrequent Dust Storms (Barren)</value>
+  </data>
+  <data name="NormalInfrequentHeatStorms" xml:space="preserve">
+      <value>Infrequent Heat Storms (Barren)</value>
+  </data>
+  <data name="NormalInfrequentTorrents" xml:space="preserve">
+      <value>Infrequent Torrents (Marsh)</value>
+  </data>
+  <data name="NormalInfrequentToxicDrizzle" xml:space="preserve">
+      <value>Infrequent Toxic Drizzle (Toxic)</value>
+  </data>
+  <data name="NormalIntermittentWindBlasting" xml:space="preserve">
+      <value>Intermittent Wind Blasting (Barren)</value>
+  </data>
+  <data name="NormalInvisibleJadeWinds" xml:space="preserve">
+      <value>Invisible Jade Winds (Lush)</value>
+  </data>
+  <data name="NormalIrradiatedDownpours" xml:space="preserve">
+      <value>Irradiated Downpours (Irradiated)</value>
+  </data>
+  <data name="NormalIrradiatedStorms" xml:space="preserve">
+      <value>Irradiated Storms (Irradiated)</value>
+  </data>
+  <data name="NormalLethalAtmosphere" xml:space="preserve">
+      <value>Lethal Atmosphere (Marsh)</value>
+  </data>
+  <data name="NormalLethalHumidityOutbreaks" xml:space="preserve">
+      <value>Lethal Humidity Outbreaks (Lush)</value>
+  </data>
+  <data name="NormalMagmaGeysers" xml:space="preserve">
+      <value>Magma Geysers (Volcanic)</value>
+  </data>
+  <data name="NormalMigratoryBlizzards" xml:space="preserve">
+      <value>Migratory Blizzards (Frozen)</value>
+  </data>
+  <data name="NormalMoltenRain" xml:space="preserve">
+      <value>Molten Rain (Volcanic)</value>
+  </data>
+  <data name="NormalMostlyCalm" xml:space="preserve">
+      <value>Mostly Calm (Lush)</value>
+  </data>
+  <data name="NormalObsidianDoom" xml:space="preserve">
+      <value>Obsidian Doom (Volcanic)</value>
+  </data>
+  <data name="NormalOccasionalAcidStorms" xml:space="preserve">
+      <value>Occasional Acid Storms (Marsh)</value>
+  </data>
+  <data name="NormalOccasionalAshStorms" xml:space="preserve">
+      <value>Occasional Ash Storms (Scorched)</value>
+  </data>
+  <data name="NormalOccasionalBoilingFog" xml:space="preserve">
+      <value>Occasional Boiling Fog (Marsh)</value>
+  </data>
+  <data name="NormalOccasionalFirestorms" xml:space="preserve">
+      <value>Occasional Firestorms (Volcanic)</value>
+  </data>
+  <data name="NormalOccasionalRadiationOutbursts" xml:space="preserve">
+      <value>Occasional Radiation Outbursts (Irradiated)</value>
+  </data>
+  <data name="NormalOccasionalSandstorms" xml:space="preserve">
+      <value>Occasional Sandstorms (Barren)</value>
+  </data>
+  <data name="NormalOccasionalScaldingCloudbursts" xml:space="preserve">
+      <value>Occasional Scalding Cloudbursts (Lush)</value>
+  </data>
+  <data name="NormalOccasionalSnowfall" xml:space="preserve">
+      <value>Occasional Snowfall (Frozen)</value>
+  </data>
+  <data name="NormalOppressive" xml:space="preserve">
+      <value>Oppressive (Marsh)</value>
+  </data>
+  <data name="NormalOutbreaksofFrozenRain" xml:space="preserve">
+      <value>Outbreaks of Frozen Rain (Frozen)</value>
+  </data>
+  <data name="NormalPainfulMist" xml:space="preserve">
+      <value>Painful Mist (Marsh)</value>
+  </data>
+  <data name="NormalParched" xml:space="preserve">
+      <value>Parched (Scorched)</value>
+  </data>
+  <data name="NormalParchedSands" xml:space="preserve">
+      <value>Parched Sands (Barren)</value>
+  </data>
+  <data name="NormalParticulateWinds" xml:space="preserve">
+      <value>Particulate Winds (Irradiated)</value>
+  </data>
+  <data name="NormalPassingToxicFronts" xml:space="preserve">
+      <value>Passing Toxic Fronts (Toxic)</value>
+  </data>
+  <data name="NormalPillarsofFlame" xml:space="preserve">
+      <value>Pillars of Flame (Volcanic)</value>
+  </data>
+  <data name="NormalPlumesofFire" xml:space="preserve">
+      <value>Plumes of Fire (Volcanic)</value>
+  </data>
+  <data name="NormalPoisonCyclones" xml:space="preserve">
+      <value>Poison Cyclones (Lush)</value>
+  </data>
+  <data name="NormalPoisonFlurries" xml:space="preserve">
+      <value>Poison Flurries (Marsh)</value>
+  </data>
+  <data name="NormalRadioactiveDustStorms" xml:space="preserve">
+      <value>Radioactive Dust Storms (Irradiated)</value>
+  </data>
+  <data name="NormalReactiveRain" xml:space="preserve">
+      <value>Reactive Rain (Irradiated)</value>
+  </data>
+  <data name="NormalSoggyDanger" xml:space="preserve">
+      <value>Soggy Danger (Marsh)</value>
+  </data>
+  <data name="NormalSporadicGritStorms" xml:space="preserve">
+      <value>Sporadic Grit Storms (Barren)</value>
+  </data>
+  <data name="NormalStickyHeat" xml:space="preserve">
+      <value>Sticky Heat (Marsh)</value>
+  </data>
+  <data name="NormalSuperheatedDrizzle" xml:space="preserve">
+      <value>Superheated Drizzle (Lush)</value>
+  </data>
+  <data name="NormalSuperheatedGasPockets" xml:space="preserve">
+      <value>Superheated Gas Pockets (Barren)</value>
+  </data>
+  <data name="NormalSuperheatedMists" xml:space="preserve">
+      <value>Superheated Mists (Marsh)</value>
+  </data>
+  <data name="NormalSwelteringDamp" xml:space="preserve">
+      <value>Sweltering Damp (Lush)</value>
+  </data>
+  <data name="NormalTectonicStorms" xml:space="preserve">
+      <value>Tectonic Storms (Volcanic)</value>
+  </data>
+  <data name="NormalToxicOutbreaks" xml:space="preserve">
+      <value>Toxic Outbreaks (Marsh)</value>
+  </data>
+  <data name="NormalTropicalStorms" xml:space="preserve">
+      <value>Tropical Storms (Marsh)</value>
+  </data>
+  <data name="NormalUnpredictableConflagrations" xml:space="preserve">
+      <value>Unpredictable Conflagrations (Volcanic)</value>
+  </data>
+  <data name="NormalUnstableFog" xml:space="preserve">
+      <value>Unstable Fog (Irradiated)</value>
+  </data>
+  <data name="NormalUsuallyMild" xml:space="preserve">
+      <value>Usually Mild (Lush)</value>
+  </data>
+  <data name="NormalVolatileWindstorms" xml:space="preserve">
+      <value>Volatile Windstorms (Irradiated)</value>
+  </data>
+  <data name="NormalWanderingFrosts" xml:space="preserve">
+      <value>Wandering Frosts (Frozen)</value>
+  </data>
+  <data name="NormalWanderingHotSpots" xml:space="preserve">
+      <value>Wandering Hot Spots (Barren)</value>
+  </data>
+  <data name="RedAngeredClouds" xml:space="preserve">
+      <value>Angered Clouds (Mega Exotic)</value>
+  </data>
+  <data name="RedBloodRain" xml:space="preserve">
+      <value>Blood Rain (Mega Exotic)</value>
+  </data>
+  <data name="RedBurningCrimson" xml:space="preserve">
+      <value>Burning Crimson (Mega Exotic)</value>
+  </data>
+  <data name="RedCarmineWinds" xml:space="preserve">
+      <value>Carmine Winds (Mega Exotic)</value>
+  </data>
+  <data name="RedFeveredClouds" xml:space="preserve">
+      <value>Fevered Clouds (Mega Exotic)</value>
+  </data>
+  <data name="RedFlamingHail" xml:space="preserve">
+      <value>Flaming Hail (Mega Exotic)</value>
+  </data>
+  <data name="RedRainofAtlas" xml:space="preserve">
+      <value>Rain of Atlas (Mega Exotic)</value>
+  </data>
+  <data name="RedRedMist" xml:space="preserve">
+      <value>Red Mist (Mega Exotic)</value>
+  </data>
+  <data name="RedScarletRain" xml:space="preserve">
+      <value>Scarlet Rain (Mega Exotic)</value>
+  </data>
+  <data name="RedVermillionStorms" xml:space="preserve">
+      <value>Vermillion Storms (Mega Exotic)</value>
+  </data>
+</root>

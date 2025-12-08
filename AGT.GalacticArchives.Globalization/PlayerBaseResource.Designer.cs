@@ -9,8 +9,8 @@
 
 namespace AGT.GalacticArchives.Globalization {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -18,19 +18,19 @@ namespace AGT.GalacticArchives.Globalization {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class PlayerBaseResource {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal PlayerBaseResource() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -44,7 +44,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -58,7 +58,16 @@ namespace AGT.GalacticArchives.Globalization {
                 resourceCulture = value;
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abandoned Building.
+        /// </summary>
+        public static string AbandonedBuilding {
+            get {
+                return ResourceManager.GetString("AbandonedBuilding", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Access or Terrain Situation.
         /// </summary>
@@ -67,7 +76,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("AccessOrTerrainSituation", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Additional Notes.
         /// </summary>
@@ -76,7 +85,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("AdditionalNotes", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Deconstruction?.
         /// </summary>
@@ -85,7 +94,16 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("AllowsDeconstruction", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ancient Data Structure.
+        /// </summary>
+        public static string AncientDataStructure {
+            get {
+                return ResourceManager.GetString("AncientDataStructure", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Base Complexity.
         /// </summary>
@@ -94,7 +112,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("BaseComplexity", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Base Type.
         /// </summary>
@@ -103,7 +121,34 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("BaseType", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beacon (Building).
+        /// </summary>
+        public static string BeaconBuilding {
+            get {
+                return ResourceManager.GetString("BeaconBuilding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Black Market Terminal.
+        /// </summary>
+        public static string BlackMarketTerminal {
+            get {
+                return ResourceManager.GetString("BlackMarketTerminal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boundary Failure.
+        /// </summary>
+        public static string BoundaryFailure {
+            get {
+                return ResourceManager.GetString("BoundaryFailure", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Builderlink on Wiki.
         /// </summary>
@@ -112,7 +157,16 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("BuilderLinkOnWiki", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Civ Hq.
+        /// </summary>
+        public static string CivHq {
+            get {
+                return ResourceManager.GetString("CivHq", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Civilized.
         /// </summary>
@@ -121,7 +175,61 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("CivilizedBy", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colossal Archive.
+        /// </summary>
+        public static string ColossalArchive {
+            get {
+                return ResourceManager.GetString("ColossalArchive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colossal Stone Effigy.
+        /// </summary>
+        public static string ColossalStoneEffigy {
+            get {
+                return ResourceManager.GetString("ColossalStoneEffigy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Hq.
+        /// </summary>
+        public static string CompanyHq {
+            get {
+                return ResourceManager.GetString("CompanyHq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crashed Freighter.
+        /// </summary>
+        public static string CrashedFreighter {
+            get {
+                return ResourceManager.GetString("CrashedFreighter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crashed Ship.
+        /// </summary>
+        public static string CrashedShip {
+            get {
+                return ResourceManager.GetString("CrashedShip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Curious Deposit.
+        /// </summary>
+        public static string CuriousDeposit {
+            get {
+                return ResourceManager.GetString("CuriousDeposit", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Date Finished.
         /// </summary>
@@ -130,7 +238,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("DateFinished", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Date of Survey.
         /// </summary>
@@ -139,7 +247,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("DateOfSurvey", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Date Started.
         /// </summary>
@@ -148,7 +256,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("DateStarted", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Doc Sequence.
         /// </summary>
@@ -157,7 +265,25 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("DocSequence", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does Not Require Power.
+        /// </summary>
+        public static string DoesNotRequirePower {
+            get {
+                return ResourceManager.GetString("DoesNotRequirePower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drop Pod.
+        /// </summary>
+        public static string DropPod {
+            get {
+                return ResourceManager.GetString("DropPod", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to External Link 1.
         /// </summary>
@@ -166,7 +292,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("ExternalLink1", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to External Link 2.
         /// </summary>
@@ -175,7 +301,43 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("ExternalLink2", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Floating Crystal.
+        /// </summary>
+        public static string FloatingCrystal {
+            get {
+                return ResourceManager.GetString("FloatingCrystal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fungal Cluster.
+        /// </summary>
+        public static string FungalCluster {
+            get {
+                return ResourceManager.GetString("FungalCluster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Galactic Trade Terminal.
+        /// </summary>
+        public static string GalacticTradeTerminal {
+            get {
+                return ResourceManager.GetString("GalacticTradeTerminal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gamma Weed.
+        /// </summary>
+        public static string GammaWeed {
+            get {
+                return ResourceManager.GetString("GammaWeed", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Gas Extractor?.
         /// </summary>
@@ -184,7 +346,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("GasExtractor", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Gas Store Capacity.
         /// </summary>
@@ -193,7 +355,43 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("GasStoreCapacity", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geographic Poi.
+        /// </summary>
+        public static string GeographicPoi {
+            get {
+                return ResourceManager.GetString("GeographicPoi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gravitino Ball.
+        /// </summary>
+        public static string GravitinoBall {
+            get {
+                return ResourceManager.GetString("GravitinoBall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Habitable Base.
+        /// </summary>
+        public static string HabitableBase {
+            get {
+                return ResourceManager.GetString("HabitableBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Harmonic Camp.
+        /// </summary>
+        public static string HarmonicCamp {
+            get {
+                return ResourceManager.GetString("HarmonicCamp", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Arena.
         /// </summary>
@@ -202,7 +400,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("HasArena", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Farm.
         /// </summary>
@@ -211,7 +409,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("HasFarm", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Geobay.
         /// </summary>
@@ -220,7 +418,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("HasGeobay", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Landing Pad?.
         /// </summary>
@@ -229,16 +427,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("HasLandingPad", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Racetrack?.
-        /// </summary>
-        public static string HasRacetrack {
-            get {
-                return ResourceManager.GetString("HasRacetrack", resourceCulture);
-            }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Trade Terminal?.
         /// </summary>
@@ -247,7 +436,25 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("HasTradeTerminal", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holographic Comms Tower.
+        /// </summary>
+        public static string HolographicCommsTower {
+            get {
+                return ResourceManager.GetString("HolographicCommsTower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humming Sac.
+        /// </summary>
+        public static string HummingSac {
+            get {
+                return ResourceManager.GetString("HummingSac", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Layout Description.
         /// </summary>
@@ -256,7 +463,25 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("LayoutDescription", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manufacturing Facility.
+        /// </summary>
+        public static string ManufacturingFacility {
+            get {
+                return ResourceManager.GetString("ManufacturingFacility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metal &apos;Fingers&apos;.
+        /// </summary>
+        public static string MetalFingers {
+            get {
+                return ResourceManager.GetString("MetalFingers", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Mining Extractor?.
         /// </summary>
@@ -265,7 +490,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("MiningExtractor", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Mining Store Capacity.
         /// </summary>
@@ -274,7 +499,187 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("MiningStoreCapacity", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minor Settlement.
+        /// </summary>
+        public static string MinorSettlement {
+            get {
+                return ResourceManager.GetString("MinorSettlement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mixed Use.
+        /// </summary>
+        public static string MixedUse {
+            get {
+                return ResourceManager.GetString("MixedUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 01.
+        /// </summary>
+        public static string MonolithType01 {
+            get {
+                return ResourceManager.GetString("MonolithType01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 02.
+        /// </summary>
+        public static string MonolithType02 {
+            get {
+                return ResourceManager.GetString("MonolithType02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 03.
+        /// </summary>
+        public static string MonolithType03 {
+            get {
+                return ResourceManager.GetString("MonolithType03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 04.
+        /// </summary>
+        public static string MonolithType04 {
+            get {
+                return ResourceManager.GetString("MonolithType04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 05.
+        /// </summary>
+        public static string MonolithType05 {
+            get {
+                return ResourceManager.GetString("MonolithType05", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 06.
+        /// </summary>
+        public static string MonolithType06 {
+            get {
+                return ResourceManager.GetString("MonolithType06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 07.
+        /// </summary>
+        public static string MonolithType07 {
+            get {
+                return ResourceManager.GetString("MonolithType07", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 08.
+        /// </summary>
+        public static string MonolithType08 {
+            get {
+                return ResourceManager.GetString("MonolithType08", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 09.
+        /// </summary>
+        public static string MonolithType09 {
+            get {
+                return ResourceManager.GetString("MonolithType09", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 10.
+        /// </summary>
+        public static string MonolithType10 {
+            get {
+                return ResourceManager.GetString("MonolithType10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 11.
+        /// </summary>
+        public static string MonolithType11 {
+            get {
+                return ResourceManager.GetString("MonolithType11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 12.
+        /// </summary>
+        public static string MonolithType12 {
+            get {
+                return ResourceManager.GetString("MonolithType12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 13.
+        /// </summary>
+        public static string MonolithType13 {
+            get {
+                return ResourceManager.GetString("MonolithType13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 14.
+        /// </summary>
+        public static string MonolithType14 {
+            get {
+                return ResourceManager.GetString("MonolithType14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 15.
+        /// </summary>
+        public static string MonolithType15 {
+            get {
+                return ResourceManager.GetString("MonolithType15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 16.
+        /// </summary>
+        public static string MonolithType16 {
+            get {
+                return ResourceManager.GetString("MonolithType16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith Type 17.
+        /// </summary>
+        public static string MonolithType17 {
+            get {
+                return ResourceManager.GetString("MonolithType17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mutant Plant.
+        /// </summary>
+        public static string MutantPlant {
+            get {
+                return ResourceManager.GetString("MutantPlant", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Base Name.
         /// </summary>
@@ -283,7 +688,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("Name", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Nearby POI.
         /// </summary>
@@ -292,7 +697,52 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("NearByPOIs", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operations Centre.
+        /// </summary>
+        public static string OperationsCentre {
+            get {
+                return ResourceManager.GetString("OperationsCentre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Organic&apos; Rock.
+        /// </summary>
+        public static string OrganicRock {
+            get {
+                return ResourceManager.GetString("OrganicRock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overpowered Significantly.
+        /// </summary>
+        public static string OverpoweredSignificantly {
+            get {
+                return ResourceManager.GetString("OverpoweredSignificantly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Palaeontological Dig.
+        /// </summary>
+        public static string PalaeontologicalDig {
+            get {
+                return ResourceManager.GetString("PalaeontologicalDig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partially Powered, Some Elements Appear Unpowered.
+        /// </summary>
+        public static string PartiallyPoweredSomeElementsAppearUnpowered {
+            get {
+                return ResourceManager.GetString("PartiallyPoweredSomeElementsAppearUnpowered", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Personal Notes.
         /// </summary>
@@ -301,7 +751,34 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("PersonalNotes", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planetary Sentinel Pillar.
+        /// </summary>
+        public static string PlanetarySentinelPillar {
+            get {
+                return ResourceManager.GetString("PlanetarySentinelPillar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planetary Settlement.
+        /// </summary>
+        public static string PlanetarySettlement {
+            get {
+                return ResourceManager.GetString("PlanetarySettlement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portal Access.
+        /// </summary>
+        public static string PortalAccess {
+            get {
+                return ResourceManager.GetString("PortalAccess", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Portal Repository Link.
         /// </summary>
@@ -310,7 +787,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("PortalRepositoryLink", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Power Situation.
         /// </summary>
@@ -319,7 +796,16 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("PowerSituation", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Race Track.
+        /// </summary>
+        public static string RaceTrack {
+            get {
+                return ResourceManager.GetString("RaceTrack", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Release version.
         /// </summary>
@@ -328,7 +814,61 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("ReleaseVersion", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sac Venom.
+        /// </summary>
+        public static string SacVenom {
+            get {
+                return ResourceManager.GetString("SacVenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sentient Plant.
+        /// </summary>
+        public static string SentientPlant {
+            get {
+                return ResourceManager.GetString("SentientPlant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solar Vine.
+        /// </summary>
+        public static string SolarVine {
+            get {
+                return ResourceManager.GetString("SolarVine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Star Bramble.
+        /// </summary>
+        public static string StarBramble {
+            get {
+                return ResourceManager.GetString("StarBramble", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subterranean Relic.
+        /// </summary>
+        public static string SubterraneanRelic {
+            get {
+                return ResourceManager.GetString("SubterraneanRelic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sufficiently Powered.
+        /// </summary>
+        public static string SufficientlyPowered {
+            get {
+                return ResourceManager.GetString("SufficientlyPowered", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Summary Text.
         /// </summary>
@@ -337,7 +877,16 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("SummaryText", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunken Building.
+        /// </summary>
+        public static string SunkenBuilding {
+            get {
+                return ResourceManager.GetString("SunkenBuilding", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Surveyor ID.
         /// </summary>
@@ -346,7 +895,34 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("Surveyor", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trading Post.
+        /// </summary>
+        public static string TradingPost {
+            get {
+                return ResourceManager.GetString("TradingPost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transmission Tower.
+        /// </summary>
+        public static string TransmissionTower {
+            get {
+                return ResourceManager.GetString("TransmissionTower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traveller Grave.
+        /// </summary>
+        public static string TravellerGrave {
+            get {
+                return ResourceManager.GetString("TravellerGrave", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Type of Base.
         /// </summary>
@@ -355,7 +931,25 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("TypeOfBase", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Underpowered Resulting In Periods Of No Power.
+        /// </summary>
+        public static string UnderpoweredResultingInPeriodsOfNoPower {
+            get {
+                return ResourceManager.GetString("UnderpoweredResultingInPeriodsOfNoPower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upper Atmosphere.
+        /// </summary>
+        public static string UpperAtmosphere {
+            get {
+                return ResourceManager.GetString("UpperAtmosphere", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Videoes.
         /// </summary>
@@ -364,7 +958,16 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("Videos", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water Surface.
+        /// </summary>
+        public static string WaterSurface {
+            get {
+                return ResourceManager.GetString("WaterSurface", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Wiki Link.
         /// </summary>
@@ -373,7 +976,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("WikiLink", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to XX (second coord).
         /// </summary>
@@ -382,7 +985,7 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("XXSecondCoordinate", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to YY (first coord).
         /// </summary>

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Entities;
@@ -11,7 +10,7 @@ public class Settlement : IGameData
     public Guid Id => SettlementId;
 
     [Display(ResourceType = typeof(SettlementResource), Description = nameof(SettlementResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

@@ -129,4 +129,7 @@
     <data name="InvalidSequence" xml:space="preserve">
     <value>Sequence ID must not be null and must be greater than 0.</value>
   </data>
+    <data name="OvnaUesed" xml:space="preserve">
+        <value>Ovna'Uesed</value>
+    </data>
 </root>

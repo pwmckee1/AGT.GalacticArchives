@@ -6,32 +6,29 @@ namespace AGT.GalacticArchives.Extensions;
 
 public static class ContainerConfigurationExtensions
 {
-    /// <param name="builder">The WebApplicationBuilder instance used to configure the application.</param>
-    extension(ContainerBuilder builder)
+    /// <summary>
+    /// Configures dependency injection by registering services and managers into the DI container.
+    /// </summary>
+    /// <param name="builder">The ContainerBuilder instance used to configure the application.</param>
+    public static void ConfigureDependencyInjection(this ContainerBuilder builder)
     {
-        /// <summary>
-        /// Configures dependency injection by registering services and managers into the DI container.
-        /// </summary>
-        public void ConfigureDependencyInjection()
-        {
-            // Load assemblies from the application's bin directory
-            string binPath = AppContext.BaseDirectory;
-            string[] assemblyFiles = Directory.GetFiles(binPath, "AGT.*.dll");
-            var assemblies = assemblyFiles
-                .Select(Assembly.LoadFrom)
-                .Concat(AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName!.StartsWith("AGT")))
-                .Distinct()
-                .ToArray();
+        // Load assemblies from the application's bin directory
+        string binPath = AppContext.BaseDirectory;
+        string[] assemblyFiles = Directory.GetFiles(binPath, "AGT.*.dll");
+        var assemblies = assemblyFiles
+            .Select(Assembly.LoadFrom)
+            .Concat(AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName!.StartsWith("AGT")))
+            .Distinct()
+            .ToArray();
 
-            builder
-                .RegisterAssemblyTypes(assemblies)
-                .Where(t => t.IsInjectableArtifactType())
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope();
+        builder
+            .RegisterAssemblyTypes(assemblies)
+            .Where(t => t.IsInjectableArtifactType())
+            .AsImplementedInterfaces()
+            .InstancePerLifetimeScope();
 
-            builder.RegisterType<InMemoryCacheManager>().As<ICacheManager>().SingleInstance();
+        builder.RegisterType<InMemoryCacheManager>().As<ICacheManager>().SingleInstance();
 
-            builder.RegisterAssemblyModules(assemblies);
-        }
+        builder.RegisterAssemblyModules(assemblies);
     }
 }

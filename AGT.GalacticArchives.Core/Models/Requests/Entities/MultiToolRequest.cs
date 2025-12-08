@@ -1,5 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Requests.Environments;
-
 namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
 
 public class MultiToolRequest
@@ -34,7 +32,7 @@ public class MultiToolRequest
 
     public bool? HasHorns { get; set; }
 
-    public bool? HasGlowtubes { get; set; }
+    public bool? HasGlowTubes { get; set; }
 
     public int? Cost { get; set; }
 

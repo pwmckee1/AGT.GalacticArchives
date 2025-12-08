@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Entities;
@@ -11,7 +10,7 @@ public class MultiTool : IGameData
     public Guid Id => MultiToolId;
 
     [Display(ResourceType = typeof(MultiToolResource), Description = nameof(MultiToolResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 
@@ -41,7 +40,7 @@ public class MultiTool : IGameData
 
     public bool? HasHorns { get; set; }
 
-    public bool? HasGlowtubes { get; set; }
+    public bool? HasGlowTubes { get; set; }
 
     public int? Cost { get; set; }
 

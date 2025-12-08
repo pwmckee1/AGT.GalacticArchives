@@ -1,5 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Requests.Environments;
-
 namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
 
 public class PointOfInterestRequest

@@ -1,5 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Responses.Environments;
-
 namespace AGT.GalacticArchives.Core.Models.Responses.Entities;
 
 public class MultiToolResponse
@@ -28,7 +26,7 @@ public class MultiToolResponse
 
     public bool? HasHorns { get; set; }
 
-    public bool? HasGlowtubes { get; set; }
+    public bool? HasGlowTubes { get; set; }
 
     public int? Cost { get; set; }
 

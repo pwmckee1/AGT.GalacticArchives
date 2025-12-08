@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Core.Models.Environments;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Entities;
@@ -11,7 +10,7 @@ public class PlayerBase : IGameData
     public Guid Id => PlayerBaseId;
 
     [Display(ResourceType = typeof(PlayerBaseResource), Description = nameof(PlayerBaseResource.Name))]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public string NormalizedName => Name.ToUpperInvariant();
 

@@ -125,9 +125,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Glowtubes.
         /// </summary>
-        public static string HasGlowtubes {
+        public static string HasGlowTubes {
             get {
-                return ResourceManager.GetString("HasGlowtubes", resourceCulture);
+                return ResourceManager.GetString("HasGlowTubes", resourceCulture);
             }
         }
         
@@ -182,6 +182,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string UserNotes {
             get {
                 return ResourceManager.GetString("UserNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltaic Staff.
+        /// </summary>
+        public static string VoltaicStaff {
+            get {
+                return ResourceManager.GetString("VoltaicStaff", resourceCulture);
             }
         }
         
