@@ -1,0 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+using AGT.GalacticArchives.Globalization;
+
+namespace AGT.GalacticArchives.Core.Models.Enums;
+
+public enum MultiToolTypes
+{
+    Pistol,
+    Rifle,
+    Experimental,
+    Alien,
+    Royal,
+    Sentinel,
+    Atlantid,
+
+    [Display(ResourceType = typeof(MultiToolResource), Description = nameof(MultiToolResource.VoltaicStaff))]
+    VoltaicStaff,
+}

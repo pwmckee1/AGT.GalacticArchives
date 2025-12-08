@@ -186,6 +186,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Voltaic Staff.
+        /// </summary>
+        public static string VoltaicStaff {
+            get {
+                return ResourceManager.GetString("VoltaicStaff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wiki Link.
         /// </summary>
         public static string WikiLink {

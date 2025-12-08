@@ -177,6 +177,14 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>LifeformTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="MultiToolLocationResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>MultiToolLocationResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="MultiToolColorResource.resx">
+          <Generator>ResXFileCodeGenerator</Generator>
+          <LastGenOutput>MultiToolColorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -379,6 +387,16 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>LifeformTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="MultiToolLocationResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>MultiToolLocationResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="MultiToolColorResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>MultiToolColorResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

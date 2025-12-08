@@ -1,4 +1,4 @@
-namespace AGT.GalacticArchives.Core.Models.Application;
+namespace AGT.GalacticArchives.Core.Models.Meta;
 
 public class Communities
 {
