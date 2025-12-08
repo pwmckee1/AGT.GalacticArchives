@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExplorerLargeDoubleThruster" xml:space="preserve">
+    <value>Explorer Large Double Thruster</value>
+  </data>
+  <data name="ExplorerQuadThruster" xml:space="preserve">
+    <value>Explorer Quad Thruster</value>
+  </data>
+  <data name="ExplorerQuintupleThruster" xml:space="preserve">
+    <value>Explorer Quintuple Thruster</value>
+  </data>
+  <data name="ExplorerSextupleThruster" xml:space="preserve">
+    <value>Explorer Sextuple Thruster</value>
+  </data>
+  <data name="ExplorerSingleThruster" xml:space="preserve">
+    <value>Explorer Single Thruster</value>
+  </data>
+  <data name="ExplorerSmallDoubleThruster" xml:space="preserve">
+    <value>Explorer Small Double Thruster</value>
+  </data>
+  <data name="ExplorerTripleThruster" xml:space="preserve">
+    <value>Explorer Triple Thruster</value>
+  </data>
+  <data name="FighterMonoThruster" xml:space="preserve">
+    <value>Fighter Mono Thruster</value>
+  </data>
+  <data name="FighterTriBooster" xml:space="preserve">
+    <value>Fighter Tri-Booster</value>
+  </data>
+  <data name="FighterVectorThruster" xml:space="preserve">
+    <value>Fighter Vector Thruster</value>
+  </data>
+  <data name="HaulerAirliftThruster" xml:space="preserve">
+    <value>Hauler Airlift Thruster</value>
+  </data>
+  <data name="HaulerDuoMaxEngine" xml:space="preserve">
+    <value>Hauler Duo-Max Engine</value>
+  </data>
+  <data name="HaulerFWingAirliftThruster" xml:space="preserve">
+    <value>Hauler F-Wing Airlift Thruster</value>
+  </data>
+  <data name="HaulerFWingMegalithEngine" xml:space="preserve">
+    <value>Hauler F-Wing Megalith Engine</value>
+  </data>
+  <data name="HaulerIronVultureEngine" xml:space="preserve">
+    <value>Hauler Iron Vulture Engine</value>
+  </data>
+  <data name="HaulerMegalithEngine" xml:space="preserve">
+    <value>Hauler Megalith Engine</value>
+  </data>
+  <data name="HaulerSWingAirliftThruster" xml:space="preserve">
+    <value>Hauler S-Wing Airlift Thruster</value>
+  </data>
+  <data name="HaulerSWingMegalithEngine" xml:space="preserve">
+    <value>Hauler S-Wing Megalith Engine</value>
+  </data>
+  <data name="InterceptorPointed" xml:space="preserve">
+    <value>Interceptor Pointed</value>
+  </data>
+  <data name="InterceptorVented" xml:space="preserve">
+    <value>Interceptor Vented</value>
+  </data>
+  <data name="InterceptorWedged" xml:space="preserve">
+    <value>Interceptor Wedged</value>
+  </data>
+  <data name="LivingShipDualThruster" xml:space="preserve">
+    <value>Living Ship Dual Thruster</value>
+  </data>
+  <data name="LivingShipSingleThruster" xml:space="preserve">
+    <value>Living Ship Single Thruster</value>
+  </data>
+  <data name="LivingShipTripleThruster" xml:space="preserve">
+    <value>Living Ship Triple Thruster</value>
+  </data>
+  <data name="ShuttleLargeDoubleThruster" xml:space="preserve">
+    <value>Shuttle Large Double Thruster</value>
+  </data>
+  <data name="ShuttleQuadThruster" xml:space="preserve">
+    <value>Shuttle Quad Thruster</value>
+  </data>
+  <data name="ShuttleQuintupleThruster" xml:space="preserve">
+    <value>Shuttle Quintuple Thruster</value>
+  </data>
+  <data name="ShuttleSextupleThruster" xml:space="preserve">
+    <value>Shuttle Sextuple Thruster</value>
+  </data>
+  <data name="ShuttleSingleThruster" xml:space="preserve">
+    <value>Shuttle Single Thruster</value>
+  </data>
+  <data name="ShuttleSmallDoubleThruster" xml:space="preserve">
+    <value>Shuttle Small Double Thruster</value>
+  </data>
+  <data name="ShuttleTripleThruster" xml:space="preserve">
+    <value>Shuttle Triple Thruster</value>
+  </data>
+  <data name="SolarCrescentSolarSail" xml:space="preserve">
+    <value>Solar Crescent Solar Sail</value>
+  </data>
+  <data name="SolarHexSolarSail" xml:space="preserve">
+    <value>Solar Hex Solar Sail</value>
+  </data>
+  <data name="SolarSquareRigSolarSail" xml:space="preserve">
+    <value>Solar Square-Rig Solar Sail</value>
+  </data>
+</root>

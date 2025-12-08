@@ -13,11 +13,15 @@ public enum StarshipModelTypes
     Hauler,
     Interceptor,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShip))]
+    [Display(
+        ResourceType = typeof(StarshipModelTypeResource),
+        Description = nameof(StarshipModelTypeResource.LivingShip))]
     LivingShip,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.OrganicFrigates))]
-    OrganicFrigates,
+    [Display(
+        ResourceType = typeof(StarshipModelTypeResource),
+        Description = nameof(StarshipModelTypeResource.LivingFrigate))]
+    LivingFrigate,
     Shuttle,
     Solar,
 }

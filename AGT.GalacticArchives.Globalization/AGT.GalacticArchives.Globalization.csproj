@@ -35,10 +35,6 @@
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>PlanetResrouce.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="StarshipResource.resx">
-            <Generator>PublicResXFileCodeGenerator</Generator>
-            <LastGenOutput>StarshipResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="PointOfInterestResource.resx">
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>PointOfInterestResource.Designer.cs</LastGenOutput>
@@ -181,9 +177,25 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>MultiToolLocationResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="MultiToolColorResource.resx">
-          <Generator>ResXFileCodeGenerator</Generator>
-          <LastGenOutput>MultiToolColorResource.Designer.cs</LastGenOutput>
+        <EmbeddedResource Update="StarshipLocationTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipLocationTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarshipModelTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipModelTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarshipSubtypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipSubtypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarshipThrusterTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipThrusterTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="EntityColorTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EntityColorTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -217,11 +229,6 @@
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>PlanetResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="StarshipResource.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>StarshipResource.resx</DependentUpon>
         </Compile>
         <Compile Update="PointOfInterestResource.Designer.cs">
             <DesignTime>True</DesignTime>
@@ -393,10 +400,30 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>MultiToolLocationResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="MultiToolColorResource.Designer.cs">
+        <Compile Update="StarshipLocationTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
-          <DependentUpon>MultiToolColorResource.resx</DependentUpon>
+          <DependentUpon>StarshipLocationTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarshipModelTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipModelTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarshipSubtypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipSubtypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarshipThrusterTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipThrusterTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="EntityColorTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EntityColorTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

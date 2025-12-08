@@ -21,24 +21,24 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class MultiToolColorResource {
+    public class EntityColorTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MultiToolColorResource() {
+        internal EntityColorTypeResource() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.MultiToolColorResource", typeof(MultiToolColorResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.EntityColorTypeResource", typeof(EntityColorTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -50,7 +50,7 @@ namespace AGT.GalacticArchives.Globalization {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Aqua Green.
         /// </summary>
-        internal static string AquaGreen {
+        public static string AquaGreen {
             get {
                 return ResourceManager.GetString("AquaGreen", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Arctic White.
         /// </summary>
-        internal static string ArcticWhite {
+        public static string ArcticWhite {
             get {
                 return ResourceManager.GetString("ArcticWhite", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Blue Green.
         /// </summary>
-        internal static string BlueGreen {
+        public static string BlueGreen {
             get {
                 return ResourceManager.GetString("BlueGreen", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Bronze Yellow.
         /// </summary>
-        internal static string BronzeYellow {
+        public static string BronzeYellow {
             get {
                 return ResourceManager.GetString("BronzeYellow", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Bubble Gum.
         /// </summary>
-        internal static string BubbleGum {
+        public static string BubbleGum {
             get {
                 return ResourceManager.GetString("BubbleGum", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Burnt Orange.
         /// </summary>
-        internal static string BurntOrange {
+        public static string BurntOrange {
             get {
                 return ResourceManager.GetString("BurntOrange", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Cobalt Blue.
         /// </summary>
-        internal static string CobaltBlue {
+        public static string CobaltBlue {
             get {
                 return ResourceManager.GetString("CobaltBlue", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Cool Grey.
         /// </summary>
-        internal static string CoolGrey {
+        public static string CoolGrey {
             get {
                 return ResourceManager.GetString("CoolGrey", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Crimson Red.
         /// </summary>
-        internal static string CrimsonRed {
+        public static string CrimsonRed {
             get {
                 return ResourceManager.GetString("CrimsonRed", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Curry Yellow.
         /// </summary>
-        internal static string CurryYellow {
+        public static string CurryYellow {
             get {
                 return ResourceManager.GetString("CurryYellow", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Dark Brown.
         /// </summary>
-        internal static string DarkBrown {
+        public static string DarkBrown {
             get {
                 return ResourceManager.GetString("DarkBrown", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Dark Magenta.
         /// </summary>
-        internal static string DarkMagenta {
+        public static string DarkMagenta {
             get {
                 return ResourceManager.GetString("DarkMagenta", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Dark Orange.
         /// </summary>
-        internal static string DarkOrange {
+        public static string DarkOrange {
             get {
                 return ResourceManager.GetString("DarkOrange", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Dark Purple.
         /// </summary>
-        internal static string DarkPurple {
+        public static string DarkPurple {
             get {
                 return ResourceManager.GetString("DarkPurple", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Dusty Pink.
         /// </summary>
-        internal static string DustyPink {
+        public static string DustyPink {
             get {
                 return ResourceManager.GetString("DustyPink", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Forest Green.
         /// </summary>
-        internal static string ForestGreen {
+        public static string ForestGreen {
             get {
                 return ResourceManager.GetString("ForestGreen", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Gunmetal Blue.
         /// </summary>
-        internal static string GunmetalBlue {
+        public static string GunmetalBlue {
             get {
                 return ResourceManager.GetString("GunmetalBlue", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Gunmetal Grey.
         /// </summary>
-        internal static string GunmetalGrey {
+        public static string GunmetalGrey {
             get {
                 return ResourceManager.GetString("GunmetalGrey", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Harvest Gold.
         /// </summary>
-        internal static string HarvestGold {
+        public static string HarvestGold {
             get {
                 return ResourceManager.GetString("HarvestGold", resourceCulture);
             }
@@ -233,7 +233,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Hot Pink.
         /// </summary>
-        internal static string HotPink {
+        public static string HotPink {
             get {
                 return ResourceManager.GetString("HotPink", resourceCulture);
             }
@@ -242,7 +242,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Hunter Green.
         /// </summary>
-        internal static string HunterGreen {
+        public static string HunterGreen {
             get {
                 return ResourceManager.GetString("HunterGreen", resourceCulture);
             }
@@ -251,7 +251,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Jade Green.
         /// </summary>
-        internal static string JadeGreen {
+        public static string JadeGreen {
             get {
                 return ResourceManager.GetString("JadeGreen", resourceCulture);
             }
@@ -260,7 +260,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Lemon Yellow.
         /// </summary>
-        internal static string LemonYellow {
+        public static string LemonYellow {
             get {
                 return ResourceManager.GetString("LemonYellow", resourceCulture);
             }
@@ -269,7 +269,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Light Blue.
         /// </summary>
-        internal static string LightBlue {
+        public static string LightBlue {
             get {
                 return ResourceManager.GetString("LightBlue", resourceCulture);
             }
@@ -278,7 +278,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Light Brown.
         /// </summary>
-        internal static string LightBrown {
+        public static string LightBrown {
             get {
                 return ResourceManager.GetString("LightBrown", resourceCulture);
             }
@@ -287,7 +287,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Light Green.
         /// </summary>
-        internal static string LightGreen {
+        public static string LightGreen {
             get {
                 return ResourceManager.GetString("LightGreen", resourceCulture);
             }
@@ -296,7 +296,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Light Orange.
         /// </summary>
-        internal static string LightOrange {
+        public static string LightOrange {
             get {
                 return ResourceManager.GetString("LightOrange", resourceCulture);
             }
@@ -305,7 +305,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Light Yellow.
         /// </summary>
-        internal static string LightYellow {
+        public static string LightYellow {
             get {
                 return ResourceManager.GetString("LightYellow", resourceCulture);
             }
@@ -314,7 +314,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Lime Green.
         /// </summary>
-        internal static string LimeGreen {
+        public static string LimeGreen {
             get {
                 return ResourceManager.GetString("LimeGreen", resourceCulture);
             }
@@ -323,7 +323,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Metallic Blue.
         /// </summary>
-        internal static string MetallicBlue {
+        public static string MetallicBlue {
             get {
                 return ResourceManager.GetString("MetallicBlue", resourceCulture);
             }
@@ -332,7 +332,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Metallic Bronze.
         /// </summary>
-        internal static string MetallicBronze {
+        public static string MetallicBronze {
             get {
                 return ResourceManager.GetString("MetallicBronze", resourceCulture);
             }
@@ -341,7 +341,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Metallic Copper.
         /// </summary>
-        internal static string MetallicCopper {
+        public static string MetallicCopper {
             get {
                 return ResourceManager.GetString("MetallicCopper", resourceCulture);
             }
@@ -350,7 +350,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Mocha Brown.
         /// </summary>
-        internal static string MochaBrown {
+        public static string MochaBrown {
             get {
                 return ResourceManager.GetString("MochaBrown", resourceCulture);
             }
@@ -359,7 +359,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Moss Green.
         /// </summary>
-        internal static string MossGreen {
+        public static string MossGreen {
             get {
                 return ResourceManager.GetString("MossGreen", resourceCulture);
             }
@@ -368,7 +368,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Navy Blue.
         /// </summary>
-        internal static string NavyBlue {
+        public static string NavyBlue {
             get {
                 return ResourceManager.GetString("NavyBlue", resourceCulture);
             }
@@ -377,7 +377,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Neon Green.
         /// </summary>
-        internal static string NeonGreen {
+        public static string NeonGreen {
             get {
                 return ResourceManager.GetString("NeonGreen", resourceCulture);
             }
@@ -386,7 +386,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Ocher Brown.
         /// </summary>
-        internal static string OcherBrown {
+        public static string OcherBrown {
             get {
                 return ResourceManager.GetString("OcherBrown", resourceCulture);
             }
@@ -395,7 +395,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Pale Rose.
         /// </summary>
-        internal static string PaleRose {
+        public static string PaleRose {
             get {
                 return ResourceManager.GetString("PaleRose", resourceCulture);
             }
@@ -404,7 +404,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Pine Green.
         /// </summary>
-        internal static string PineGreen {
+        public static string PineGreen {
             get {
                 return ResourceManager.GetString("PineGreen", resourceCulture);
             }
@@ -413,7 +413,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Red Orange.
         /// </summary>
-        internal static string RedOrange {
+        public static string RedOrange {
             get {
                 return ResourceManager.GetString("RedOrange", resourceCulture);
             }
@@ -422,7 +422,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Rose Gold.
         /// </summary>
-        internal static string RoseGold {
+        public static string RoseGold {
             get {
                 return ResourceManager.GetString("RoseGold", resourceCulture);
             }
@@ -431,7 +431,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Royal Blue.
         /// </summary>
-        internal static string RoyalBlue {
+        public static string RoyalBlue {
             get {
                 return ResourceManager.GetString("RoyalBlue", resourceCulture);
             }
@@ -440,7 +440,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Ruby Red.
         /// </summary>
-        internal static string RubyRed {
+        public static string RubyRed {
             get {
                 return ResourceManager.GetString("RubyRed", resourceCulture);
             }
@@ -449,7 +449,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Scarlet Red.
         /// </summary>
-        internal static string ScarletRed {
+        public static string ScarletRed {
             get {
                 return ResourceManager.GetString("ScarletRed", resourceCulture);
             }
@@ -458,7 +458,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Sky Blue.
         /// </summary>
-        internal static string SkyBlue {
+        public static string SkyBlue {
             get {
                 return ResourceManager.GetString("SkyBlue", resourceCulture);
             }
@@ -467,7 +467,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Stone Green.
         /// </summary>
-        internal static string StoneGreen {
+        public static string StoneGreen {
             get {
                 return ResourceManager.GetString("StoneGreen", resourceCulture);
             }
@@ -476,7 +476,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Vista Blue.
         /// </summary>
-        internal static string VistaBlue {
+        public static string VistaBlue {
             get {
                 return ResourceManager.GetString("VistaBlue", resourceCulture);
             }
@@ -485,7 +485,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Warm Grey.
         /// </summary>
-        internal static string WarmGrey {
+        public static string WarmGrey {
             get {
                 return ResourceManager.GetString("WarmGrey", resourceCulture);
             }
@@ -494,7 +494,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Yellow Green.
         /// </summary>
-        internal static string YellowGreen {
+        public static string YellowGreen {
             get {
                 return ResourceManager.GetString("YellowGreen", resourceCulture);
             }
@@ -503,7 +503,7 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Yellow Orange.
         /// </summary>
-        internal static string YellowOrange {
+        public static string YellowOrange {
             get {
                 return ResourceManager.GetString("YellowOrange", resourceCulture);
             }

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--
+      Microsoft ResX Schema
+
+      Version 2.0
+
+      The primary goals of this format is to allow a simple XML format
+      that is mostly human readable. The generation and parsing of the
+      various data types are done through the TypeConverter classes
+      associated with the data types.
+
+      Example:
+
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+
+      There are any number of "resheader" rows that contain simple
+      name/value pairs.
+
+      Each data row contains a name, and value. The row also contains a
+      type or mimetype. Type corresponds to a .NET class that support
+      text/value conversion through the TypeConverter architecture.
+      Classes that don't support this are serialized and stored with the
+      mimetype set.
+
+      The mimetype is used for serialized objects, and tells the
+      ResXResourceReader how to depersist the object. This is currently not
+      extensible. For a given mimetype the value must be set accordingly:
+
+      Note - application/x-microsoft.net.object.binary.base64 is the format
+      that the ResXResourceWriter will generate, however the reader can
+      read any of the formats listed below.
+
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="ExoticBall" xml:space="preserve"><value>Exotic Ball</value></data>
+    <data name="ExoticGuppy" xml:space="preserve"><value>Exotic Guppy</value></data>
+    <data name="ExoticMosquito" xml:space="preserve"><value>Exotic Mosquito</value></data>
+    <data name="ExoticRoyal" xml:space="preserve"><value>Exotic Royal</value></data>
+    <data name="ExoticSquid" xml:space="preserve"><value>Exotic Squid</value></data>
+    <data name="ExplorerDragonfly" xml:space="preserve"><value>Explorer Dragonfly</value></data>
+    <data name="ExplorerDragonflyD" xml:space="preserve"><value>Explorer Dragonfly-D</value></data>
+    <data name="ExplorerDragonflyF" xml:space="preserve"><value>Explorer Dragonfly-F</value></data>
+    <data name="ExplorerDragonflyS" xml:space="preserve"><value>Explorer Dragonfly-S</value></data>
+    <data name="ExplorerEuclid" xml:space="preserve"><value>Explorer Euclid</value></data>
+    <data name="ExplorerFirefly" xml:space="preserve"><value>Explorer Firefly</value></data>
+    <data name="ExplorerFireflyD" xml:space="preserve"><value>Explorer Firefly-D</value></data>
+    <data name="ExplorerFireflyF" xml:space="preserve"><value>Explorer Firefly-F</value></data>
+    <data name="ExplorerFireflyS" xml:space="preserve"><value>Explorer Firefly-S</value></data>
+    <data name="ExplorerHesperius" xml:space="preserve"><value>Explorer Hesperius</value></data>
+    <data name="FighterAlpha" xml:space="preserve"><value>Fighter Alpha</value></data>
+    <data name="FighterHotrod" xml:space="preserve"><value>Fighter Hotrod</value></data>
+    <data name="FighterNeedle" xml:space="preserve"><value>Fighter Needle</value></data>
+    <data name="FighterOmega" xml:space="preserve"><value>Fighter Omega</value></data>
+    <data name="FighterRadiant" xml:space="preserve"><value>Fighter Radiant</value></data>
+    <data name="FighterSleek" xml:space="preserve"><value>Fighter Sleek</value></data>
+    <data name="FighterSpeeder" xml:space="preserve"><value>Fighter Speeder</value></data>
+    <data name="FighterTurbine" xml:space="preserve"><value>Fighter Turbine</value></data>
+    <data name="FighterVector" xml:space="preserve"><value>Fighter Vector</value></data>
+    <data name="FreighterBattleship" xml:space="preserve"><value>Freighter Battleship</value></data>
+    <data name="FreighterBlade" xml:space="preserve"><value>Freighter Blade</value></data>
+    <data name="FreighterCargo" xml:space="preserve"><value>Freighter Cargo</value></data>
+    <data name="FreighterCentrifuge" xml:space="preserve"><value>Freighter Centrifuge</value></data>
+    <data name="FreighterDerelict" xml:space="preserve"><value>Freighter Derelict</value></data>
+    <data name="FreighterDreadnought" xml:space="preserve"><value>Freighter Dreadnought</value></data>
+    <data name="FreighterEnterprise" xml:space="preserve"><value>Freighter Enterprise</value></data>
+    <data name="FreighterGalleon" xml:space="preserve"><value>Freighter Galleon</value></data>
+    <data name="FreighterHammerhead" xml:space="preserve"><value>Freighter Hammerhead</value></data>
+    <data name="FreighterImperial" xml:space="preserve"><value>Freighter Imperial</value></data>
+    <data name="FreighterIris" xml:space="preserve"><value>Freighter Iris</value></data>
+    <data name="FreighterOculus" xml:space="preserve"><value>Freighter Oculus</value></data>
+    <data name="FreighterRegular" xml:space="preserve"><value>Freighter Regular</value></data>
+    <data name="FreighterResurgent" xml:space="preserve"><value>Freighter Resurgent</value></data>
+    <data name="FreighterRevolver" xml:space="preserve"><value>Freighter Revolver</value></data>
+    <data name="FreighterSentinel" xml:space="preserve"><value>Freighter Sentinel</value></data>
+    <data name="FreighterVenator" xml:space="preserve"><value>Freighter Venator</value></data>
+    <data name="FrigateCombat" xml:space="preserve"><value>Frigate Combat</value></data>
+    <data name="FrigateEthereal" xml:space="preserve"><value>Frigate Ethereal</value></data>
+    <data name="FrigateExploration" xml:space="preserve"><value>Frigate Exploration</value></data>
+    <data name="FrigateGimp" xml:space="preserve"><value>Frigate Gimp</value></data>
+    <data name="FrigateIndustrial" xml:space="preserve"><value>Frigate Industrial</value></data>
+    <data name="FrigateLeviathan" xml:space="preserve"><value>Frigate Leviathan</value></data>
+    <data name="FrigateMonoLeviathan" xml:space="preserve"><value>Frigate Mono-Leviathan</value></data>
+    <data name="FrigateRunt" xml:space="preserve"><value>Frigate Runt</value></data>
+    <data name="FrigateSupport" xml:space="preserve"><value>Frigate Support</value></data>
+    <data name="FrigateTrade" xml:space="preserve"><value>Frigate Trade</value></data>
+    <data name="HaulerAviator" xml:space="preserve"><value>Hauler Aviator</value></data>
+    <data name="HaulerBulker" xml:space="preserve"><value>Hauler Bulker</value></data>
+    <data name="HaulerHydraulic" xml:space="preserve"><value>Hauler Hydraulic</value></data>
+    <data name="HaulerIronVulture" xml:space="preserve"><value>Hauler Iron Vulture</value></data>
+    <data name="HaulerLongshore" xml:space="preserve"><value>Hauler Longshore</value></data>
+    <data name="HaulerNegotiator" xml:space="preserve"><value>Hauler Negotiator</value></data>
+    <data name="HaulerStratoHaul" xml:space="preserve"><value>Hauler Strato-Haul</value></data>
+    <data name="HaulerSupercruise" xml:space="preserve"><value>Hauler Supercruise</value></data>
+    <data name="HaulerType11" xml:space="preserve"><value>Hauler Type-11</value></data>
+    <data name="InterceptorIWing" xml:space="preserve"><value>Interceptor I-Wing</value></data>
+    <data name="InterceptorIWingMandible" xml:space="preserve"><value>Interceptor I-Wing Mandible</value></data>
+    <data name="InterceptorIWingPincer" xml:space="preserve"><value>Interceptor I-Wing Pincer</value></data>
+    <data name="InterceptorUWing" xml:space="preserve"><value>Interceptor U-Wing</value></data>
+    <data name="InterceptorUWingMandible" xml:space="preserve"><value>Interceptor U-Wing Mandible</value></data>
+    <data name="InterceptorUWingPincer" xml:space="preserve"><value>Interceptor U-Wing Pincer</value></data>
+    <data name="InterceptorXWing" xml:space="preserve"><value>Interceptor X-Wing</value></data>
+    <data name="InterceptorXWingMandible" xml:space="preserve"><value>Interceptor X-Wing Mandible</value></data>
+    <data name="InterceptorXWingPincer" xml:space="preserve"><value>Interceptor X-Wing Pincer</value></data>
+    <data name="LivingShipAnvil" xml:space="preserve"><value>Living Ship Anvil</value></data>
+    <data name="LivingShipCompact" xml:space="preserve"><value>Living Ship Compact</value></data>
+    <data name="LivingShipHammerhead" xml:space="preserve"><value>Living Ship Hammerhead</value></data>
+    <data name="LivingShipShark" xml:space="preserve"><value>Living Ship Shark</value></data>
+    <data name="LivingShipTusked" xml:space="preserve"><value>Living Ship Tusked</value></data>
+    <data name="ShuttleBox" xml:space="preserve"><value>Shuttle Box</value></data>
+    <data name="ShuttleDoubleTube" xml:space="preserve"><value>Shuttle Double Tube</value></data>
+    <data name="ShuttleTube" xml:space="preserve"><value>Shuttle Tube</value></data>
+    <data name="SolarArchanid" xml:space="preserve"><value>Solar Archanid</value></data>
+    <data name="SolarExocet" xml:space="preserve"><value>Solar Exocet</value></data>
+    <data name="SolarFalcon" xml:space="preserve"><value>Solar Falcon</value></data>
+    <data name="SolarRaven" xml:space="preserve"><value>Solar Raven</value></data>
+    <data name="SolarStarwolf" xml:space="preserve"><value>Solar Starwolf</value></data>
+    <data name="SolarTurbofan" xml:space="preserve"><value>Solar Turbofan</value></data>
+
+</root>

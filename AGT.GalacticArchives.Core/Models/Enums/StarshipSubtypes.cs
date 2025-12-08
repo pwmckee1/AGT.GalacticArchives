@@ -5,252 +5,396 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum StarshipSubtypes
 {
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticBall))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ExoticBall))]
     ExoticBall = 1,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticGuppy))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ExoticGuppy))]
     ExoticGuppy,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticMosquito))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExoticMosquito))]
     ExoticMosquito,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticRoyal))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ExoticRoyal))]
     ExoticRoyal,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExoticSquid))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ExoticSquid))]
     ExoticSquid,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerDragonfly))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerDragonfly))]
     ExplorerDragonfly,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerDragonflyD))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerDragonflyD))]
     ExplorerDragonflyD,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerDragonflyF))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerDragonflyF))]
     ExplorerDragonflyF,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerDragonflyS))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerDragonflyS))]
     ExplorerDragonflyS,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerEuclid))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerEuclid))]
     ExplorerEuclid,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerFirefly))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerFirefly))]
     ExplorerFirefly,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerFireflyD))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerFireflyD))]
     ExplorerFireflyD,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerFireflyF))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerFireflyF))]
     ExplorerFireflyF,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerFireflyS))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerFireflyS))]
     ExplorerFireflyS,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerHesperius))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ExplorerHesperius))]
     ExplorerHesperius,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterAlpha))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterAlpha))]
     FighterAlpha,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterHotrod))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterHotrod))]
     FighterHotrod,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterNeedle))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterNeedle))]
     FighterNeedle,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterOmega))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterOmega))]
     FighterOmega,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterRadiant))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterRadiant))]
     FighterRadiant,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterSleek))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterSleek))]
     FighterSleek,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterSpeeder))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterSpeeder))]
     FighterSpeeder,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterTurbine))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterTurbine))]
     FighterTurbine,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterVector))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FighterVector))]
     FighterVector,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterBattleship))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterBattleship))]
     FreighterBattleship,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterBlade))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterBlade))]
     FreighterBlade,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterCargo))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterCargo))]
     FreighterCargo,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterCentrifuge))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterCentrifuge))]
     FreighterCentrifuge,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterDerelict))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterDerelict))]
     FreighterDerelict,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterDreadnought))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterDreadnought))]
     FreighterDreadnought,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterEnterprise))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterEnterprise))]
     FreighterEnterprise,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterGalleon))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterGalleon))]
     FreighterGalleon,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterHammerhead))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterHammerhead))]
     FreighterHammerhead,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterImperial))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterImperial))]
     FreighterImperial,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterIris))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterIris))]
     FreighterIris,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterOculus))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterOculus))]
     FreighterOculus,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterRegular))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterRegular))]
     FreighterRegular,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterResurgent))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterResurgent))]
     FreighterResurgent,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterRevolver))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterRevolver))]
     FreighterRevolver,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterSentinel))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterSentinel))]
     FreighterSentinel,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FreighterVenator))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FreighterVenator))]
     FreighterVenator,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateCombat))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateCombat))]
     FrigateCombat,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateEthereal))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateEthereal))]
     FrigateEthereal,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateExploration))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateExploration))]
     FrigateExploration,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateGimp))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.FrigateGimp))]
     FrigateGimp,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateIndustrial))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateIndustrial))]
     FrigateIndustrial,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateLeviathan))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateLeviathan))]
     FrigateLeviathan,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateMonoleviathan))]
-    FrigateMonoleviathan,
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateMonoLeviathan))]
+    FrigateMonoLeviathan,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateRunt))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.FrigateRunt))]
     FrigateRunt,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateSupport))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateSupport))]
     FrigateSupport,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FrigateTrade))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.FrigateTrade))]
     FrigateTrade,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerAviator))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerAviator))]
     HaulerAviator,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerBulker))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerBulker))]
     HaulerBulker,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerHydraulic))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerHydraulic))]
     HaulerHydraulic,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerIronVulture))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerIronVulture))]
     HaulerIronVulture,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerLongshore))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerLongshore))]
     HaulerLongshore,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerNegotiator))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerNegotiator))]
     HaulerNegotiator,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerStratoHaul))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerStratoHaul))]
     HaulerStratoHaul,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerSupercruise))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerSupercruise))]
     HaulerSupercruise,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerType11))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.HaulerType11))]
     HaulerType11,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorIWingMandible))]
-    InterceptorIWingMandible,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorIWingPincer))]
-    InterceptorIWingPincer,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorIWing))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorIWing))]
     InterceptorIWing,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorUWingMandible))]
-    InterceptorUWingMandible,
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorIWingMandible))]
+    InterceptorIWingMandible,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorUWingPincer))]
-    InterceptorUWingPincer,
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorIWingPincer))]
+    InterceptorIWingPincer,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorUWing))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorUWing))]
     InterceptorUWing,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorXWingMandible))]
-    InterceptorXWingMandible,
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorUWingMandible))]
+    InterceptorUWingMandible,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorXWingPincer))]
-    InterceptorXWingPincer,
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorUWingPincer))]
+    InterceptorUWingPincer,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorXWing))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorXWing))]
     InterceptorXWing,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipAnvil))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorXWingMandible))]
+    InterceptorXWingMandible,
+
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.InterceptorXWingPincer))]
+    InterceptorXWingPincer,
+
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.LivingShipAnvil))]
     LivingShipAnvil,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipCompact))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.LivingShipCompact))]
     LivingShipCompact,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipHammerhead))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.LivingShipHammerhead))]
     LivingShipHammerhead,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipShark))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.LivingShipShark))]
     LivingShipShark,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipTusked))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.LivingShipTusked))]
     LivingShipTusked,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleBox))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ShuttleBox))]
     ShuttleBox,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleDoubleTube))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.ShuttleDoubleTube))]
     ShuttleDoubleTube,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleTube))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ShuttleTube))]
     ShuttleTube,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarArchanid))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.SolarArchanid))]
     SolarArchanid,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarExocet))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.SolarExocet))]
     SolarExocet,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarFalcon))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.SolarFalcon))]
     SolarFalcon,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarRaven))]
+    [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.SolarRaven))]
     SolarRaven,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarStarwolf))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.SolarStarwolf))]
     SolarStarwolf,
 
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarTurbofan))]
+    [Display(
+        ResourceType = typeof(StarshipSubtypeResource),
+        Description = nameof(StarshipSubtypeResource.SolarTurbofan))]
     SolarTurbofan,
 }

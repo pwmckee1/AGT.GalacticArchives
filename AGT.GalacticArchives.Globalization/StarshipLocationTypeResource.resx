@@ -126,55 +126,31 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="AquaGreen" xml:space="preserve"><value>Aqua Green</value></data>
-    <data name="ArcticWhite" xml:space="preserve"><value>Arctic White</value></data>
-    <data name="BlueGreen" xml:space="preserve"><value>Blue Green</value></data>
-    <data name="BronzeYellow" xml:space="preserve"><value>Bronze Yellow</value></data>
-    <data name="BubbleGum" xml:space="preserve"><value>Bubble Gum</value></data>
-    <data name="BurntOrange" xml:space="preserve"><value>Burnt Orange</value></data>
-    <data name="CobaltBlue" xml:space="preserve"><value>Cobalt Blue</value></data>
-    <data name="CoolGrey" xml:space="preserve"><value>Cool Grey</value></data>
-    <data name="CrimsonRed" xml:space="preserve"><value>Crimson Red</value></data>
-    <data name="CurryYellow" xml:space="preserve"><value>Curry Yellow</value></data>
-    <data name="DarkBrown" xml:space="preserve"><value>Dark Brown</value></data>
-    <data name="DarkMagenta" xml:space="preserve"><value>Dark Magenta</value></data>
-    <data name="DarkOrange" xml:space="preserve"><value>Dark Orange</value></data>
-    <data name="DarkPurple" xml:space="preserve"><value>Dark Purple</value></data>
-    <data name="DustyPink" xml:space="preserve"><value>Dusty Pink</value></data>
-    <data name="ForestGreen" xml:space="preserve"><value>Forest Green</value></data>
-    <data name="GunmetalBlue" xml:space="preserve"><value>Gunmetal Blue</value></data>
-    <data name="GunmetalGrey" xml:space="preserve"><value>Gunmetal Grey</value></data>
-    <data name="HarvestGold" xml:space="preserve"><value>Harvest Gold</value></data>
-    <data name="HotPink" xml:space="preserve"><value>Hot Pink</value></data>
-    <data name="HunterGreen" xml:space="preserve"><value>Hunter Green</value></data>
-    <data name="JadeGreen" xml:space="preserve"><value>Jade Green</value></data>
-    <data name="LemonYellow" xml:space="preserve"><value>Lemon Yellow</value></data>
-    <data name="LightBlue" xml:space="preserve"><value>Light Blue</value></data>
-    <data name="LightBrown" xml:space="preserve"><value>Light Brown</value></data>
-    <data name="LightGreen" xml:space="preserve"><value>Light Green</value></data>
-    <data name="LightOrange" xml:space="preserve"><value>Light Orange</value></data>
-    <data name="LightYellow" xml:space="preserve"><value>Light Yellow</value></data>
-    <data name="LimeGreen" xml:space="preserve"><value>Lime Green</value></data>
-    <data name="MetallicBlue" xml:space="preserve"><value>Metallic Blue</value></data>
-    <data name="MetallicBronze" xml:space="preserve"><value>Metallic Bronze</value></data>
-    <data name="MetallicCopper" xml:space="preserve"><value>Metallic Copper</value></data>
-    <data name="MochaBrown" xml:space="preserve"><value>Mocha Brown</value></data>
-    <data name="MossGreen" xml:space="preserve"><value>Moss Green</value></data>
-    <data name="NavyBlue" xml:space="preserve"><value>Navy Blue</value></data>
-    <data name="NeonGreen" xml:space="preserve"><value>Neon Green</value></data>
-    <data name="OcherBrown" xml:space="preserve"><value>Ocher Brown</value></data>
-    <data name="PaleRose" xml:space="preserve"><value>Pale Rose</value></data>
-    <data name="PineGreen" xml:space="preserve"><value>Pine Green</value></data>
-    <data name="RedOrange" xml:space="preserve"><value>Red Orange</value></data>
-    <data name="RoseGold" xml:space="preserve"><value>Rose Gold</value></data>
-    <data name="RoyalBlue" xml:space="preserve"><value>Royal Blue</value></data>
-    <data name="RubyRed" xml:space="preserve"><value>Ruby Red</value></data>
-    <data name="ScarletRed" xml:space="preserve"><value>Scarlet Red</value></data>
-    <data name="SkyBlue" xml:space="preserve"><value>Sky Blue</value></data>
-    <data name="StoneGreen" xml:space="preserve"><value>Stone Green</value></data>
-    <data name="VistaBlue" xml:space="preserve"><value>Vista Blue</value></data>
-    <data name="WarmGrey" xml:space="preserve"><value>Warm Grey</value></data>
-    <data name="YellowGreen" xml:space="preserve"><value>Yellow Green</value></data>
-    <data name="YellowOrange" xml:space="preserve"><value>Yellow Orange</value></data>
-
+    <data name="ColossalArchive" xml:space="preserve">
+    <value>Colossal Archive</value>
+  </data>
+    <data name="CrashedShip" xml:space="preserve">
+    <value>Crashed Ship</value>
+  </data>
+    <data name="FreighterBay" xml:space="preserve">
+    <value>Freighter Bay</value>
+  </data>
+    <data name="HabitableBase" xml:space="preserve">
+    <value>Habitable Base</value>
+  </data>
+    <data name="MinorSettlement" xml:space="preserve">
+    <value>Minor Settlement</value>
+  </data>
+    <data name="SpaceAnomaly" xml:space="preserve">
+    <value>Space Anomaly</value>
+  </data>
+    <data name="SpaceBattle" xml:space="preserve">
+    <value>Space Battle</value>
+  </data>
+    <data name="SpaceStation" xml:space="preserve">
+    <value>Space Station</value>
+  </data>
+    <data name="TradingPost" xml:space="preserve">
+    <value>Trading Post</value>
+  </data>
 </root>

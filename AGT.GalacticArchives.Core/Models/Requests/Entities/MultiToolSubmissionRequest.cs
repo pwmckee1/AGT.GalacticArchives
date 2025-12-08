@@ -44,9 +44,9 @@ public class MultiToolSubmissionRequest
 
     public float? Scanner { get; set; }
 
-    public MultiToolColorTypes PrimaryColor { get; set; }
+    public EntityColorTypes PrimaryColor { get; set; }
 
-    public MultiToolColorTypes SecondaryColor { get; set; }
+    public EntityColorTypes SecondaryColor { get; set; }
 
     public string GamerTagHandle { get; set; } = null!;
 

@@ -6,116 +6,139 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 public enum StarshipThrusterTypes
 {
     [Display(
-        ResourceType = typeof(StarshipResource),
-        Description = nameof(StarshipResource.ExplorerLargeDoubleThruster))]
-    ExplorerLargeDoubleThruster = 1,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerQuadThruster))]
-    ExplorerQuadThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerQuintupleThruster))]
-    ExplorerQuintupleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerSextupleThruster))]
-    ExplorerSextupleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerSingleThruster))]
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerSingleThruster))]
     ExplorerSingleThruster,
-
     [Display(
-        ResourceType = typeof(StarshipResource),
-        Description = nameof(StarshipResource.ExplorerSmallDoubleThruster))]
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerSmallDoubleThruster))]
     ExplorerSmallDoubleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ExplorerTripleThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerLargeDoubleThruster))]
+    ExplorerLargeDoubleThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerTripleThruster))]
     ExplorerTripleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterMonoThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerQuadThruster))]
+    ExplorerQuadThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerQuintupleThruster))]
+    ExplorerQuintupleThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ExplorerSextupleThruster))]
+    ExplorerSextupleThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.FighterMonoThruster))]
     FighterMonoThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterTriBooster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.FighterTriBooster))]
     FighterTriBooster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.FighterVectorThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.FighterVectorThruster))]
     FighterVectorThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerAirliftThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerAirliftThruster))]
     HaulerAirliftThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerDuoMaxEngine))]
-    HaulerDuoMaxEngine,
-
     [Display(
-        ResourceType = typeof(StarshipResource),
-        Description = nameof(StarshipResource.HaulerFWingAirliftThruster))]
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerFWingAirliftThruster))]
     HaulerFWingAirliftThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerFWingMegalithEngine))]
-    HaulerFWingMegalithEngine,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerIronVultureEngine))]
-    HaulerIronVultureEngine,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerMegalithEngine))]
-    HaulerMegalithEngine,
-
     [Display(
-        ResourceType = typeof(StarshipResource),
-        Description = nameof(StarshipResource.HaulerSWingAirliftThruster))]
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerSWingAirliftThruster))]
     HaulerSWingAirliftThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.HaulerSWingMegalithEngine))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerDuoMaxEngine))]
+    HaulerDuoMaxEngine,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerFWingMegalithEngine))]
+    HaulerFWingMegalithEngine,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerIronVultureEngine))]
+    HaulerIronVultureEngine,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerMegalithEngine))]
+    HaulerMegalithEngine,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.HaulerSWingMegalithEngine))]
     HaulerSWingMegalithEngine,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorPointed))]
-    InterceptorPointed,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorVented))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.InterceptorVented))]
     InterceptorVented,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.InterceptorWedged))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.InterceptorWedged))]
     InterceptorWedged,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipDualThruster))]
-    LivingShipDualThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipSingleThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.InterceptorPointed))]
+    InterceptorPointed,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.LivingShipSingleThruster))]
     LivingShipSingleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.LivingShipTripleThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.LivingShipDualThruster))]
+    LivingShipDualThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.LivingShipTripleThruster))]
     LivingShipTripleThruster,
-
     [Display(
-        ResourceType = typeof(StarshipResource),
-        Description = nameof(StarshipResource.ShuttleLargeDoubleThruster))]
-    ShuttleLargeDoubleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleQuadThruster))]
-    ShuttleQuadThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleQuintupleThruster))]
-    ShuttleQuintupleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleSextupleThruster))]
-    ShuttleSextupleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleSingleThruster))]
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleSingleThruster))]
     ShuttleSingleThruster,
-
     [Display(
-        ResourceType = typeof(StarshipResource),
-        Description = nameof(StarshipResource.ShuttleSmallDoubleThruster))]
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleSmallDoubleThruster))]
     ShuttleSmallDoubleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.ShuttleTripleThruster))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleLargeDoubleThruster))]
+    ShuttleLargeDoubleThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleTripleThruster))]
     ShuttleTripleThruster,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarCrescentSolarSail))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleQuadThruster))]
+    ShuttleQuadThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleQuintupleThruster))]
+    ShuttleQuintupleThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.ShuttleSextupleThruster))]
+    ShuttleSextupleThruster,
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.SolarCrescentSolarSail))]
     SolarCrescentSolarSail,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarHexSolarSail))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.SolarHexSolarSail))]
     SolarHexSolarSail,
-
-    [Display(ResourceType = typeof(StarshipResource), Description = nameof(StarshipResource.SolarSquareRigSolarSail))]
+    [Display(
+        ResourceType = typeof(StarshipThrusterTypeResource),
+        Description = nameof(StarshipThrusterTypeResource.SolarSquareRigSolarSail))]
     SolarSquareRigSolarSail,
 }
