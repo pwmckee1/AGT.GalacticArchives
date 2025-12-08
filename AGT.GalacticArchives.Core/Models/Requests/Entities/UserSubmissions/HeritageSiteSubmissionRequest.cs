@@ -20,9 +20,17 @@ public class HeritageSiteSubmissionRequest
 
     public float? Longitude { get; set; }
 
+    public DateTime? StarSystemDiscoveryDate { get; set; }
+
+    public string StarSystemDiscovererName { get; set; } = null!;
+
+    public DateTime? PlanetDiscoveryDate { get; set; }
+
+    public string? PlanetDiscovererName { get; set; }
+
     public string GamerTagHandle { get; set; } = null!;
 
-    public string ReasonForHeritageStatus { get; set; } = null!;
+    public string ReasonForStatus { get; set; } = null!;
 
     public string ContactInformation { get; set; } = null!;
 }
