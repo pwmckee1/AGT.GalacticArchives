@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using AGT.GalacticArchives.Globalization;
+
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
 public enum Galaxies
@@ -72,7 +75,8 @@ public enum Galaxies
     Heholhofsko,
     Yebrilowisod,
     Husalvangewi,
-    Ovna'Uesed,
+    [Display(ResourceType = typeof(GalaxyResource), Description = nameof(GalaxyResource.OvnaUesed))]
+    OvnaUesed,
     Bahibusey,
     Nuybeliaure,
     Doshawchuc,
