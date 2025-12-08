@@ -10,7 +10,7 @@ public static class DatabaseExtensions
     {
         return typeof(T).Name switch
         {
-            nameof(Region) => [nameof(Region.Galaxy), nameof(Region.StarSystems)],
+            nameof(Region) => [nameof(Region.GalaxyType), nameof(Region.StarSystems)],
             nameof(StarSystem) =>
             [
                 nameof(StarSystem.Region),

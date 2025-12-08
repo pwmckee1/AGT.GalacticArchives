@@ -8,7 +8,7 @@ public class StarSystemSubmissionRequest
 {
     public required string Username { get; set; }
 
-    public required Galaxies Galaxy { get; set; }
+    public required GalaxyTypes GalaxyType { get; set; }
 
     public required string RegionName { get; set; }
 

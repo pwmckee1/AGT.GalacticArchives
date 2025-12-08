@@ -12,7 +12,7 @@ public class PlanetSubmissionRequest
 
     public required string GameRelease { get; set; }
 
-    public required Galaxies Galaxy { get; set; }
+    public required GalaxyTypes GalaxyType { get; set; }
 
     public required string RegionName { get; set; }
 
@@ -95,7 +95,7 @@ public class PlanetSubmissionRequest
 
     public string? AdditionalPlanetImages { get; set; }
 
-    public required string GamerTagHandle { get; set; }
+    public string? GamerTagHandle { get; set; }
 
     public string? Discord { get; set; }
 

@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum Galaxies
+public enum GalaxyTypes
 {
     Euclid = 1,
     HilbertDimension = 2,

@@ -16,7 +16,7 @@ public class Region : IGameData
 
     public string NormalizedName => Name.ToUpperInvariant();
 
-    public Galaxies Galaxy { get; set; }
+    public GalaxyTypes GalaxyType { get; set; }
 
     public HashSet<StarSystem> StarSystems { get; set; } = [];
 

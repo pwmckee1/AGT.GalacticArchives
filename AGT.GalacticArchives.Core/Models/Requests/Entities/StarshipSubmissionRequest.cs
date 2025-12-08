@@ -1,7 +1,7 @@
 using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Meta;
 
-namespace AGT.GalacticArchives.Core.Models.Requests;
+namespace AGT.GalacticArchives.Core.Models.Requests.Entities;
 
 public class StarshipSubmissionRequest
 {
@@ -13,7 +13,7 @@ public class StarshipSubmissionRequest
 
     public GameRelease GameRelease { get; set; } = new();
 
-    public Galaxies Galaxy { get; set; }
+    public GalaxyTypes GalaxyType { get; set; }
 
     public string RegionName { get; set; } = null!;
 

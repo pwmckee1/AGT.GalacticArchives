@@ -8,7 +8,7 @@ public class RegionRequest
 
     public string? Name { get; set; }
 
-    public Galaxies? Galaxy { get; set; }
+    public GalaxyTypes? Galaxy { get; set; }
 
     public string? CivilizedBy { get; set; }
 

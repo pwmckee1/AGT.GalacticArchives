@@ -9,7 +9,7 @@ public class MultiToolSubmissionRequest
 
     public string MultiToolName { get; set; } = null!;
 
-    public Galaxies Galaxy { get; set; }
+    public GalaxyTypes GalaxyType { get; set; }
 
     public string RegionName { get; set; } = null!;
 

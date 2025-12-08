@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgriculturalTerminal" xml:space="preserve">
+    <value>Agricultural Terminal</value>
+  </data>
+  <data name="AntimatterReactor" xml:space="preserve">
+    <value>Antimatter Reactor</value>
+  </data>
+  <data name="AppearanceModifier" xml:space="preserve">
+    <value>Appearance Modifier</value>
+  </data>
+  <data name="AtmosphereHarvester" xml:space="preserve">
+    <value>Atmosphere Harvester</value>
+  </data>
+  <data name="AutomatedFeeder" xml:space="preserve">
+    <value>Automated Feeder</value>
+  </data>
+  <data name="AutomatedTrap" xml:space="preserve">
+    <value>Automated Trap</value>
+  </data>
+  <data name="AutonomousMiningUnit" xml:space="preserve">
+    <value>Autonomous Mining Unit</value>
+  </data>
+  <data name="BarrelFabricator" xml:space="preserve">
+    <value>Barrel Fabricator</value>
+  </data>
+  <data name="BaseSalvageCapsule" xml:space="preserve">
+    <value>Base Salvage Capsule</value>
+  </data>
+  <data name="BaseTeleportModule" xml:space="preserve">
+    <value>Base Teleport Module</value>
+  </data>
+  <data name="BioDome" xml:space="preserve">
+    <value>Bio-Dome</value>
+  </data>
+  <data name="BiofuelReactor" xml:space="preserve">
+    <value>Biofuel Reactor</value>
+  </data>
+  <data name="BytebeatDevice" xml:space="preserve">
+    <value>Bytebeat Device</value>
+  </data>
+  <data name="ColossusGeobay" xml:space="preserve">
+    <value>Colossus Geobay</value>
+  </data>
+  <data name="ConstructionResearchUnit" xml:space="preserve">
+    <value>Construction Research Unit</value>
+  </data>
+  <data name="ConstructionTerminal" xml:space="preserve">
+    <value>Construction Terminal</value>
+  </data>
+  <data name="CrateFabricator" xml:space="preserve">
+    <value>Crate Fabricator</value>
+  </data>
+  <data name="DeepwaterChamber" xml:space="preserve">
+    <value>Deepwater Chamber</value>
+  </data>
+  <data name="ElectricalCloakingUnit" xml:space="preserve">
+    <value>Electrical Cloaking Unit</value>
+  </data>
+  <data name="ElectromagneticGenerator" xml:space="preserve">
+    <value>Electromagnetic Generator</value>
+  </data>
+  <data name="EmergencyHeater" xml:space="preserve">
+    <value>Emergency Heater</value>
+  </data>
+  <data name="ExocraftSummoningStation" xml:space="preserve">
+    <value>Exocraft Summoning Station</value>
+  </data>
+  <data name="ExocraftTerminal" xml:space="preserve">
+    <value>Exocraft Terminal</value>
+  </data>
+  <data name="FossilDisplay" xml:space="preserve">
+    <value>Fossil Display</value>
+  </data>
+  <data name="GalacticTradeTerminal" xml:space="preserve">
+    <value>Galactic Trade Terminal</value>
+  </data>
+  <data name="HazardProtectionUnitBaseBuilding" xml:space="preserve">
+    <value>Hazard Protection Unit (Base Building)</value>
+  </data>
+  <data name="HealthStation" xml:space="preserve">
+    <value>Health Station</value>
+  </data>
+  <data name="HolographicChartProjector" xml:space="preserve">
+    <value>Holographic Chart Projector</value>
+  </data>
+  <data name="HolographicGlobeGadget" xml:space="preserve">
+    <value>Holographic Globe Gadget</value>
+  </data>
+  <data name="HydroponicTray" xml:space="preserve">
+    <value>Hydroponic Tray</value>
+  </data>
+  <data name="LandingPad" xml:space="preserve">
+    <value>Landing Pad</value>
+  </data>
+  <data name="LargeRefiner" xml:space="preserve">
+    <value>Large Refiner</value>
+  </data>
+  <data name="LivestockUnit" xml:space="preserve">
+    <value>Livestock Unit</value>
+  </data>
+  <data name="MarineShelter" xml:space="preserve">
+    <value>Marine Shelter</value>
+  </data>
+  <data name="MediumRefiner" xml:space="preserve">
+    <value>Medium Refiner</value>
+  </data>
+  <data name="MessageModule" xml:space="preserve">
+    <value>Message Module</value>
+  </data>
+  <data name="MinotaurGeobay" xml:space="preserve">
+    <value>Minotaur Geobay</value>
+  </data>
+  <data name="MoonPoolFloor" xml:space="preserve">
+    <value>Moon Pool Floor</value>
+  </data>
+  <data name="NautilonChamber" xml:space="preserve">
+    <value>Nautilon Chamber</value>
+  </data>
+  <data name="NoiseBox" xml:space="preserve">
+    <value>Noise Box</value>
+  </data>
+  <data name="NomadGeobay" xml:space="preserve">
+    <value>Nomad Geobay</value>
+  </data>
+  <data name="NutrientProcessor" xml:space="preserve">
+    <value>Nutrient Processor</value>
+  </data>
+  <data name="OxygenHarvester" xml:space="preserve">
+    <value>Oxygen Harvester</value>
+  </data>
+  <data name="PilgrimGeobay" xml:space="preserve">
+    <value>Pilgrim Geobay</value>
+  </data>
+  <data name="PlanetaryGlobe" xml:space="preserve">
+    <value>Planetary Globe</value>
+  </data>
+  <data name="PocketRealityGenerator" xml:space="preserve">
+    <value>Pocket Reality Generator</value>
+  </data>
+  <data name="PortableRefiner" xml:space="preserve">
+    <value>Portable Refiner</value>
+  </data>
+  <data name="RaceForceAmplifier" xml:space="preserve">
+    <value>Race Force Amplifier</value>
+  </data>
+  <data name="RaceInitiator" xml:space="preserve">
+    <value>Race Initiator</value>
+  </data>
+  <data name="RaceObstacle" xml:space="preserve">
+    <value>Race Obstacle</value>
+  </data>
+  <data name="RoamerGeobay" xml:space="preserve">
+    <value>Roamer Geobay</value>
+  </data>
+  <data name="SavePoint" xml:space="preserve">
+    <value>Save Point</value>
+  </data>
+  <data name="ScienceTerminal" xml:space="preserve">
+    <value>Science Terminal</value>
+  </data>
+  <data name="ShieldStation" xml:space="preserve">
+    <value>Shield Station</value>
+  </data>
+  <data name="ShortRangeTeleporter" xml:space="preserve">
+    <value>Short-Range Teleporter</value>
+  </data>
+  <data name="SignalBooster" xml:space="preserve">
+    <value>Signal Booster</value>
+  </data>
+  <data name="SmallAquarium" xml:space="preserve">
+    <value>Small Aquarium</value>
+  </data>
+  <data name="SolarPanel" xml:space="preserve">
+    <value>Solar Panel</value>
+  </data>
+  <data name="SphereCreator" xml:space="preserve">
+    <value>Sphere Creator</value>
+  </data>
+  <data name="StandingPlanter" xml:space="preserve">
+    <value>Standing Planter</value>
+  </data>
+  <data name="StorageContainer" xml:space="preserve">
+    <value>Storage Container</value>
+  </data>
+  <data name="SupplyDepot" xml:space="preserve">
+    <value>Supply Depot</value>
+  </data>
+  <data name="WeaponsTerminal" xml:space="preserve">
+    <value>Weapons Terminal</value>
+  </data>
+  <data name="WonderProjector" xml:space="preserve">
+    <value>Wonder Projector</value>
+  </data>
+</root>

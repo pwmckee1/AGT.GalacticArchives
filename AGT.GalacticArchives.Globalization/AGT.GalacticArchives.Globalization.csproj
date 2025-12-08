@@ -43,10 +43,6 @@
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>MultiToolResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="PlayerBaseResource.resx">
-            <Generator>PublicResXFileCodeGenerator</Generator>
-            <LastGenOutput>BaseResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="FaunaResource.resx">
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>FaunaResource.Designer.cs</LastGenOutput>
@@ -197,6 +193,14 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>EntityColorTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="PlayerBaseResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlayerBaseResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerBaseElementTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlayerBaseElementTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -239,11 +243,6 @@
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>MultiToolResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="PlayerBaseResource.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>PlayerBaseResource.resx</DependentUpon>
         </Compile>
         <Compile Update="FaunaResource.Designer.cs">
             <DesignTime>True</DesignTime>
@@ -424,6 +423,16 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>EntityColorTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerBaseResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlayerBaseResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerBaseElementTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlayerBaseElementTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

@@ -21,7 +21,7 @@ public class GameDataModelTests
                 _region = new Fixture()
                     .For<Region>()
                     .With(p => p.Name, "Region Name")
-                    .With(r => r.Galaxy, Galaxies.Euclid)
+                    .With(r => r.GalaxyType, GalaxyTypes.Euclid)
                     .With(r => r.Coordinates, "0000:0000:0000:0000")
                     .With(r => r.StarSystems, [])
                     .Create();
@@ -34,7 +34,7 @@ public class GameDataModelTests
                 dictionary[nameof(Region.Name)].ShouldEqual(_region.Name);
                 dictionary[nameof(Region.RegionId)].ShouldEqual(_region.RegionId.ToString());
                 dictionary[nameof(Region.NormalizedName)].ShouldEqual(_region.NormalizedName);
-                dictionary[nameof(Region.Galaxy)].ShouldEqual(_region.Galaxy);
+                dictionary[nameof(Region.GalaxyType)].ShouldEqual(_region.GalaxyType);
                 dictionary[nameof(Region.XX)].ShouldEqual(_region.XX);
                 dictionary[nameof(Region.DocSequence)].ShouldEqual(_region.DocSequence);
                 dictionary[nameof(Region.RegionAge)].ShouldEqual(_region.RegionAge);
@@ -114,7 +114,7 @@ public class GameDataModelTests
             {
                 _dictionary[nameof(Region.RegionId)] = Guid.NewGuid();
                 _dictionary[nameof(Region.Name)] = "EuclidRegion";
-                _dictionary[nameof(Region.Galaxy)] = Galaxies.Euclid;
+                _dictionary[nameof(Region.GalaxyType)] = GalaxyTypes.Euclid;
                 _dictionary[nameof(Region.Coordinates)] = "123a:123b:123d:123f";
                 _dictionary[nameof(Region.DocSequence)] = 1;
                 _dictionary[nameof(Region.RegionAge)] = 5.1f;
