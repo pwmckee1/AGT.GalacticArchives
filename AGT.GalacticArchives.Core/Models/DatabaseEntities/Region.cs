@@ -3,9 +3,9 @@ using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class Region : IGameData
+public class Region : IDatabaseEntity
 {
     public Guid RegionId { get; set; } = Guid.NewGuid();
 

@@ -1,6 +1,6 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.DatabaseEntities;
 using AGT.GalacticArchives.Core.Models.Imports;
 using AGT.GalacticArchives.Core.Strategies;
 using AGT.GalacticArchives.Core.Strategies.GoogleSheetValidation;

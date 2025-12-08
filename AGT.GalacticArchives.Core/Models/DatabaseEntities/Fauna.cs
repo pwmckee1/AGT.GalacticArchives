@@ -1,16 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class Fauna : IGameData
+public class Fauna : IDatabaseEntity
 {
     public Guid FaunaId { get; set; } = Guid.NewGuid();
 
     public Guid Id => FaunaId;
 
-    [Display(ResourceType = typeof(FaunaResource), Description = nameof(FaunaResource.Name))]
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
     public string NormalizedName => Name.ToUpperInvariant();
 

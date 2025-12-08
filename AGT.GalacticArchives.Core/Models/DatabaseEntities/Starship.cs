@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class Starship : IGameData
+public class Starship : IDatabaseEntity
 {
     public Guid StarshipId { get; set; } = Guid.NewGuid();
 

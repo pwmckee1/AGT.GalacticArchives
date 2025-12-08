@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class PointOfInterest : IGameData
+public class PointOfInterest : IDatabaseEntity
 {
     public Guid PointOfInterestId { get; set; } = Guid.NewGuid();
 

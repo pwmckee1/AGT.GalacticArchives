@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class MultiTool : IGameData
+public class MultiTool : IDatabaseEntity
 {
     public Guid MultiToolId { get; set; } = Guid.NewGuid();
 

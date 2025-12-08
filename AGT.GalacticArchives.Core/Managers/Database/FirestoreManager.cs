@@ -34,7 +34,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(IGameData.Name), entityName)
+            .WhereEqualTo(nameof(IDatabaseEntity.Name), entityName)
             .WhereEqualTo(parentIdName, parentId.ToString());
 
         var snapshot = await query.GetSnapshotAsync();
@@ -46,14 +46,14 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(IGameData.Name), entityName);
+            .WhereEqualTo(nameof(IDatabaseEntity.Name), entityName);
 
         var snapshot = await query.GetSnapshotAsync();
 
         return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
-    public virtual async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
+    public virtual async Task<IDatabaseEntity> UpsertAsync(IDatabaseEntity entity, string collectionName)
     {
         var docRef = firestoreDb
             .Collection(collectionName)

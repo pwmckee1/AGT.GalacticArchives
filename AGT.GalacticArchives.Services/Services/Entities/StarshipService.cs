@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Core.Managers.Entities;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AutoMapper;
-using Starship = AGT.GalacticArchives.Core.Models.Entities.Starship;
+using Starship = AGT.GalacticArchives.Core.Models.DatabaseEntities.Starship;
 
 namespace AGT.GalacticArchives.Services.Services.Entities;
 

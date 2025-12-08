@@ -1,14 +1,14 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class StarSystem : IGameData
+public class StarSystem : IDatabaseEntity
 {
     public Guid StarSystemId { get; set; } = Guid.NewGuid();
 
     public Guid Id => StarSystemId;
 
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
     public string NormalizedName => Name.ToUpperInvariant();
 

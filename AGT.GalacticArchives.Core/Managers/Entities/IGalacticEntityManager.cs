@@ -1,4 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Models.Entities;
+﻿using AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
 namespace AGT.GalacticArchives.Core.Managers.Entities;
 

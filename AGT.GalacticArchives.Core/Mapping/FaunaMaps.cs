@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.DatabaseEntities;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 using AGT.GalacticArchives.Core.Models.Responses.Entities;
 using AutoMapper;

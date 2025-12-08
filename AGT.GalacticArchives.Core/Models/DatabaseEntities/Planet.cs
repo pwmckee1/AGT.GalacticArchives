@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Entities;
+namespace AGT.GalacticArchives.Core.Models.DatabaseEntities;
 
-public class Planet : IGameData
+public class Planet : IDatabaseEntity
 {
     public Guid PlanetId { get; set; } = Guid.NewGuid();
 

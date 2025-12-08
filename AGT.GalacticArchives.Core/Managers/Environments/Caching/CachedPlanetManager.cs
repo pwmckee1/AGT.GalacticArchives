@@ -1,7 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Entities.Caching;
-using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.DatabaseEntities;
 using AGT.GalacticArchives.Core.Models.Requests.Entities;
 
 namespace AGT.GalacticArchives.Core.Managers.Environments.Caching;

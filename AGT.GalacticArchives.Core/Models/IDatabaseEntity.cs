@@ -1,6 +1,6 @@
 ﻿namespace AGT.GalacticArchives.Core.Models;
 
-public interface IGameData
+public interface IDatabaseEntity
 {
     Guid Id { get; }
 

@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Managers.Environments;
-using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.DatabaseEntities;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Managers.Entities;

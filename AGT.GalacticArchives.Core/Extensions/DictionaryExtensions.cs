@@ -42,7 +42,7 @@ public static class DictionaryExtensions
     }
 
     public static T ConvertDictionaryToObject<T>(this Dictionary<string, object>? originalData)
-        where T : IGameData
+        where T : IDatabaseEntity
     {
         var instance = (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
         var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
