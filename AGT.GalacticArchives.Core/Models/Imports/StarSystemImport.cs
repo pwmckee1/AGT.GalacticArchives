@@ -28,7 +28,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? Color { get; set; }
 
     [Name(StarSystemSheetFields.ConflictType)]
-    public StarSystemConflictTypes StarSystemConflictType { get; set; }
+    public ConflictTypes ConflictType { get; set; }
 
     [Name(StarSystemSheetFields.DataQualityCheck)]
     public string? DataQualityCheck { get; set; }
@@ -52,7 +52,7 @@ public class StarSystemImport : IGoogleSheetImport
     public int DocSequence { get; set; }
 
     [Name(StarSystemSheetFields.EconomyType)]
-    public StarSystemEconomyTypes StarSystemEconomyType { get; set; }
+    public EconomyTypes EconomyType { get; set; }
 
     [Name(StarSystemSheetFields.Evolution)]
     public string? Evolution { get; set; }
@@ -223,7 +223,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? VideoLink { get; set; }
 
     [Name(StarSystemSheetFields.WealthType)]
-    public StarSystemWealthTypes StarSystemWealthType { get; set; }
+    public WealthTypes WealthType { get; set; }
 
     [Name(StarSystemSheetFields.XCoordDec)]
     public int XCoordDec { get; set; }

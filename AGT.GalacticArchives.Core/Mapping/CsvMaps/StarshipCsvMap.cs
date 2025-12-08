@@ -30,8 +30,8 @@ public sealed class StarshipCsvMap : BaseCsvMap<StarshipImport>
                 return float.TryParse(value, out float result) ? result : 0;
             });
 
-        Map(m => m.GamePlatform)
-            .Convert(m => GetEnumValueFromCsvField<GamePlatform>(m.Row.GetField(StarshipSheetFields.GamePlatform), m));
+        Map(m => m.GamePlatformType)
+            .Convert(m => GetEnumValueFromCsvField<GamePlatformType>(m.Row.GetField(StarshipSheetFields.GamePlatform), m));
 
         Map(m => m.GameMode)
             .Convert(m => GetEnumValueFromCsvField<GameModeTypes>(m.Row.GetField(StarshipSheetFields.GameMode), m));

@@ -85,7 +85,7 @@ public class StarshipImport : IGoogleSheetImport
     public string? Planet { get; set; }
 
     [Name(StarshipSheetFields.GamePlatform)]
-    public GamePlatform GamePlatform { get; set; }
+    public GamePlatformType GamePlatformType { get; set; }
 
     [Name(StarshipSheetFields.PortalGlyphs)]
     public string? PortalGlyphs { get; set; }

@@ -3,11 +3,9 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum StarSystemEconomyTypes
+public enum EconomyTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    Alchemical,
+    Alchemical = 1,
 
     [Display(ResourceType = typeof(EconomyTypeResource), Description = nameof(EconomyTypeResource.AdvancedMaterials))]
     AdvancedMaterials,

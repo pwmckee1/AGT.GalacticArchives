@@ -3,11 +3,9 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum StarSystemConflictTypes
+public enum ConflictTypes
 {
-    [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
-    NotApplicable,
-    Aggressive,
+    Aggressive = 1,
     Alarming,
 
     [Display(ResourceType = typeof(ConflictTypeResource), Description = nameof(ConflictTypeResource.AtWar))]

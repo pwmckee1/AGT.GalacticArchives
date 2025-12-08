@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum GamePlatform
+public enum GamePlatformType
 {
     [Display(ResourceType = typeof(ApplicationResources), Description = nameof(ApplicationResources.NotApplicable))]
     NotApplicable,

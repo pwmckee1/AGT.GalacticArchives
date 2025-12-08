@@ -26,13 +26,13 @@ public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
                 return float.TryParse(value, out float result) ? result : 0;
             });
 
-        Map(m => m.StarSystemConflictType)
-            .Convert(m => GetEnumValueFromCsvField<StarSystemConflictTypes>(
+        Map(m => m.ConflictType)
+            .Convert(m => GetEnumValueFromCsvField<ConflictTypes>(
                 m.Row.GetField(StarSystemSheetFields.ConflictType),
                 m));
 
-        Map(m => m.StarSystemEconomyType)
-            .Convert(m => GetEnumValueFromCsvField<StarSystemEconomyTypes>(
+        Map(m => m.EconomyType)
+            .Convert(m => GetEnumValueFromCsvField<EconomyTypes>(
                 m.Row.GetField(StarSystemSheetFields.EconomyType),
                 m));
 
@@ -153,8 +153,8 @@ public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
                 return int.TryParse(value, out int result) ? result : 0;
             });
 
-        Map(m => m.StarSystemWealthType)
-            .Convert(m => GetEnumValueFromCsvField<StarSystemWealthTypes>(StarSystemSheetFields.WealthType, m));
+        Map(m => m.WealthType)
+            .Convert(m => GetEnumValueFromCsvField<WealthTypes>(StarSystemSheetFields.WealthType, m));
 
         Map(m => m.XCoordDec)
             .Convert(m =>

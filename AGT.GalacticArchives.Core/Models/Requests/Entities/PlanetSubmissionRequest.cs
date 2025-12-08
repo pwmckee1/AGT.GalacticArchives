@@ -79,11 +79,11 @@ public class PlanetSubmissionRequest
 
     public string? OtherNotes { get; set; }
 
-    public string? DateOfDiscovery { get; set; }
+    public DateTime? DateOfDiscovery { get; set; }
 
     public required string DiscovererId { get; set; }
 
-    public string? DateOfSurvey { get; set; }
+    public DateTime? DateOfSurvey { get; set; }
 
     public string? PortalCoords { get; set; }
 
