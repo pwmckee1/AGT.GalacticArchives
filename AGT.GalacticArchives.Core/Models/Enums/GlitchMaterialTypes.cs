@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum GlitchTypes
+public enum GlitchMaterialTypes
 {
     [Display(ResourceType = typeof(GlitchTypeResource), Description = nameof(GlitchTypeResource.CablePod))]
     CablePod,

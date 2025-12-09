@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum PlayerBaseNearbyPOITypes
+public enum LocationTypes
 {
     [Display(
         ResourceType = typeof(PlayerBaseResource),
@@ -215,6 +215,14 @@ public enum PlayerBaseNearbyPOITypes
         ResourceType = typeof(PlayerBaseResource),
         Description = nameof(PlayerBaseResource.SolarVine))]
     SolarVine,
+    [Display(
+        ResourceType = typeof(MultiToolLocationResource),
+        Description = nameof(MultiToolLocationResource.SpaceAnomaly))]
+    SpaceAnomaly,
+    [Display(
+        ResourceType = typeof(MultiToolLocationResource),
+        Description = nameof(MultiToolLocationResource.SpaceStation))]
+    SpaceStation,
     [Display(
         ResourceType = typeof(PlayerBaseResource),
         Description = nameof(PlayerBaseResource.StarBramble))]

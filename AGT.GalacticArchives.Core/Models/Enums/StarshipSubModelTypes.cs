@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum StarshipSubtypes
+public enum StarshipSubModelTypes
 {
     [Display(ResourceType = typeof(StarshipSubtypeResource), Description = nameof(StarshipSubtypeResource.ExoticBall))]
     ExoticBall = 1,
