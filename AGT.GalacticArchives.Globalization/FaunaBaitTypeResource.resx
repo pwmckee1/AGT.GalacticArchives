@@ -126,13 +126,14 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="ColossalArchive" xml:space="preserve"><value>Colossal Archive</value></data>
-    <data name="CrashedShip" xml:space="preserve"><value>Crashed Ship</value></data>
-    <data name="HarmonicCamp" xml:space="preserve"><value>Harmonic Camp</value></data>
-    <data name="ManufacturingFacility" xml:space="preserve"><value>Manufacturing Facility</value></data>
-    <data name="MinorSettlement" xml:space="preserve"><value>Minor Settlement</value></data>
-    <data name="SentinelPillar" xml:space="preserve"><value>Sentinel Pillar</value></data>
-    <data name="SpaceAnomaly" xml:space="preserve"><value>Space Anomaly</value></data>
-    <data name="SpaceStation" xml:space="preserve"><value>Space Station</value></data>
+    <data name="BloodyOrgan" xml:space="preserve"><value>Bloody Organ</value></data>
+    <data name="CreaturePellets" xml:space="preserve"><value>Creature Pellets</value></data>
+    <data name="EnzymeFluid" xml:space="preserve"><value>Enzyme Fluid</value></data>
+    <data name="FermentedFruit" xml:space="preserve"><value>Fermented Fruit</value></data>
+    <data name="GroundMeat" xml:space="preserve"><value>Ground Meat</value></data>
+    <data name="PheromoneSac" xml:space="preserve"><value>Pheromone Sac</value></data>
+    <data name="ScentedHerbs" xml:space="preserve"><value>Scented Herbs</value></data>
+    <data name="SweetenedCompost" xml:space="preserve"><value>Sweetened Compost</value></data>
+    <data name="SyntheticWorms" xml:space="preserve"><value>Synthetic Worms</value></data>
 
 </root>

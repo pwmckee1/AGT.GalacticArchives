@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class MultiToolLocationResource {
+    public class FaunaBaitTypeResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MultiToolLocationResource() {
+        internal FaunaBaitTypeResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.MultiToolLocationResource", typeof(MultiToolLocationResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.FaunaBaitTypeResource", typeof(FaunaBaitTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,74 +60,83 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Colossal Archive.
+        ///   Looks up a localized string similar to Bloody Organ.
         /// </summary>
-        public static string ColossalArchive {
+        public static string BloodyOrgan {
             get {
-                return ResourceManager.GetString("ColossalArchive", resourceCulture);
+                return ResourceManager.GetString("BloodyOrgan", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crashed Ship.
+        ///   Looks up a localized string similar to Creature Pellets.
         /// </summary>
-        public static string CrashedShip {
+        public static string CreaturePellets {
             get {
-                return ResourceManager.GetString("CrashedShip", resourceCulture);
+                return ResourceManager.GetString("CreaturePellets", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Harmonic Camp.
+        ///   Looks up a localized string similar to Enzyme Fluid.
         /// </summary>
-        public static string HarmonicCamp {
+        public static string EnzymeFluid {
             get {
-                return ResourceManager.GetString("HarmonicCamp", resourceCulture);
+                return ResourceManager.GetString("EnzymeFluid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manufacturing Facility.
+        ///   Looks up a localized string similar to Fermented Fruit.
         /// </summary>
-        public static string ManufacturingFacility {
+        public static string FermentedFruit {
             get {
-                return ResourceManager.GetString("ManufacturingFacility", resourceCulture);
+                return ResourceManager.GetString("FermentedFruit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minor Settlement.
+        ///   Looks up a localized string similar to Ground Meat.
         /// </summary>
-        public static string MinorSettlement {
+        public static string GroundMeat {
             get {
-                return ResourceManager.GetString("MinorSettlement", resourceCulture);
+                return ResourceManager.GetString("GroundMeat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sentinel Pillar.
+        ///   Looks up a localized string similar to Pheromone Sac.
         /// </summary>
-        public static string SentinelPillar {
+        public static string PheromoneSac {
             get {
-                return ResourceManager.GetString("SentinelPillar", resourceCulture);
+                return ResourceManager.GetString("PheromoneSac", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Space Anomaly.
+        ///   Looks up a localized string similar to Scented Herbs.
         /// </summary>
-        public static string SpaceAnomaly {
+        public static string ScentedHerbs {
             get {
-                return ResourceManager.GetString("SpaceAnomaly", resourceCulture);
+                return ResourceManager.GetString("ScentedHerbs", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Space Station.
+        ///   Looks up a localized string similar to Sweetened Compost.
         /// </summary>
-        public static string SpaceStation {
+        public static string SweetenedCompost {
             get {
-                return ResourceManager.GetString("SpaceStation", resourceCulture);
+                return ResourceManager.GetString("SweetenedCompost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synthetic Worms.
+        /// </summary>
+        public static string SyntheticWorms {
+            get {
+                return ResourceManager.GetString("SyntheticWorms", resourceCulture);
             }
         }
     }

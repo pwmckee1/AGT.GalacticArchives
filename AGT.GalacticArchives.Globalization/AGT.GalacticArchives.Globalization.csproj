@@ -169,10 +169,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>LifeformTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="MultiToolLocationResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>MultiToolLocationResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="StarshipLocationTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>StarshipLocationTypeResource.Designer.cs</LastGenOutput>
@@ -200,6 +196,18 @@
         <EmbeddedResource Update="PlayerBaseElementTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>PlayerBaseElementTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="SettlementBuildingTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>SettlementBuildingTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="MultiToolCategoriesResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>MultiToolCategoriesResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaBaitTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaBaitTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -394,11 +402,6 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>LifeformTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="MultiToolLocationResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>MultiToolLocationResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="StarshipLocationTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
@@ -433,6 +436,21 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>PlayerBaseElementTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="SettlementBuildingTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>SettlementBuildingTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="MultiToolCategoriesResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>MultiToolCategoriesResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaBaitTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaBaitTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 
