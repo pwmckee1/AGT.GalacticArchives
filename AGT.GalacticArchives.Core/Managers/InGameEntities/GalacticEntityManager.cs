@@ -1,6 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.InGameLocations;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AutoMapper;
 
@@ -18,7 +17,7 @@ public class GalacticEntityManager(
 
         var planet = mapper.Map<Planet>(planetData);
 
-        planet.StarSystem = await GetStarSystemHierarchyAsync(planet.StarSystemId);
+        planet.StarSystem = await GetStarSystemHierarchyAsync(planet.StarSystemId!.Value);
 
         return planet;
     }
@@ -28,7 +27,7 @@ public class GalacticEntityManager(
         var starSystemData = await starSystemManager.GetStarSystemByIdAsync(starSystemId);
 
         var starSystem = mapper.Map<StarSystem>(starSystemData);
-        var regionData = await regionManager.GetRegionByIdAsync(starSystem.RegionId);
+        var regionData = await regionManager.GetRegionByIdAsync(starSystem.RegionId!.Value);
 
         starSystem.Region = mapper.Map<Region>(regionData);
 
@@ -42,7 +41,7 @@ public class GalacticEntityManager(
             return;
         }
 
-        var existingPlanet = await planetManager.GetPlanetByIdAsync(planet.PlanetId);
+        var existingPlanet = await planetManager.GetPlanetByIdAsync(planet.PlanetId!.Value);
         if (existingPlanet!.ToDictionary().Matches(planet.ToDictionary()))
         {
             return;
@@ -58,7 +57,7 @@ public class GalacticEntityManager(
             return;
         }
 
-        var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(starSystem.StarSystemId);
+        var existingStarSystem = await starSystemManager.GetStarSystemByIdAsync(starSystem.StarSystemId!.Value);
         if (existingStarSystem!.ToDictionary().Matches(starSystem.ToDictionary()))
         {
             return;
@@ -74,7 +73,7 @@ public class GalacticEntityManager(
             return;
         }
 
-        var existingRegion = await regionManager.GetRegionByIdAsync(region.RegionId);
+        var existingRegion = await regionManager.GetRegionByIdAsync(region.RegionId!.Value);
         if (existingRegion!.ToDictionary().Matches(region.ToDictionary()))
         {
             return;

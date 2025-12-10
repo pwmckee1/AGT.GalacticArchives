@@ -1,9 +1,9 @@
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Managers.InGameEntities;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
-using Starship = AGT.GalacticArchives.Core.Models.InGame.Starship;
 
 namespace AGT.GalacticArchives.Services.Services.Entities;
 

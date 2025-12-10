@@ -43,7 +43,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
             foreach (var starSystem in starSystems)
             {
                 var regionData = await firestoreManager.GetByIdAsync(
-                    starSystem.RegionId,
+                    starSystem.RegionId!.Value,
                     DatabaseConstants.RegionCollection);
                 starSystem.Region = mapper.Map<Region>(regionData);
             }
@@ -57,7 +57,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         var updatedStarSystem = (StarSystem)await firestoreManager.UpsertAsync(starSystem, Collection);
 
         var regionData = await firestoreManager.GetByIdAsync(
-            updatedStarSystem.RegionId,
+            updatedStarSystem.RegionId!.Value,
             DatabaseConstants.RegionCollection);
         starSystem.Region = mapper.Map<Region>(regionData);
 
@@ -72,7 +72,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
     private async Task<StarSystem> GetStarSystemHierarchyAsync(StarSystem starSystem)
     {
         var regionData = await firestoreManager.GetByIdAsync(
-            starSystem.RegionId,
+            starSystem.RegionId!.Value,
             DatabaseConstants.RegionCollection);
         starSystem.Region = mapper.Map<Region>(regionData);
 

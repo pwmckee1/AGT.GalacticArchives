@@ -1,5 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
 
@@ -33,9 +35,9 @@ public class MultiTool : DatabaseGameEntity
 
     public float? Scanner { get; set; }
 
-    public EntityColorTypes? PrimaryColor { get; set; }
+    public ItemColorTypes? PrimaryColor { get; set; }
 
-    public EntityColorTypes? SecondaryColor { get; set; }
+    public ItemColorTypes? SecondaryColor { get; set; }
 
     public string? AcquisitionGuidance { get; set; }
 

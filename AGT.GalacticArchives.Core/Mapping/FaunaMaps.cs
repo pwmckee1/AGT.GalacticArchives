@@ -17,14 +17,14 @@ public class FaunaMaps : Profile
         CreateMap<Fauna, FaunaRequest>()
             ;
         CreateMap<FaunaRequest, Fauna>()
-            .ForMember(d => d.Id, o => o.Ignore())
+            .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore())
             ;
 
         CreateMap<Fauna, FaunaResponse>()
             ;
         CreateMap<FaunaResponse, Fauna>()
-            .ForMember(d => d.Id, o => o.Ignore())
+            .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore())
             ;
     }

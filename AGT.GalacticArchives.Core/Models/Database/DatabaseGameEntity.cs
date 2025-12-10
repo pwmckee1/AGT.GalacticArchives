@@ -1,6 +1,7 @@
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.GameMetaData;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 
 namespace AGT.GalacticArchives.Core.Models.Database;

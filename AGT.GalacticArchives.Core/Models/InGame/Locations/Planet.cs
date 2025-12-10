@@ -1,10 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Core.Interfaces.Models;
-using AGT.GalacticArchives.Core.Models.Database;
+﻿using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.InGame.Components;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Globalization;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Locations;
 
@@ -148,7 +145,7 @@ public class Planet : DatabaseGameEntity
 
     public string? OtherNotes { get; set; }
 
-    public bool HasSandworms { get; set; }
+    public bool? HasSandworms { get; set; }
 
     public string? PortalRepository { get; set; }
 

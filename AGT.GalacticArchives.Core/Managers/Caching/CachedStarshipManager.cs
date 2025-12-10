@@ -1,7 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
-using Starship = AGT.GalacticArchives.Core.Models.InGame.Starship;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 

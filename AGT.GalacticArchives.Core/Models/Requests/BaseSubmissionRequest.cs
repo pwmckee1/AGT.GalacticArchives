@@ -1,5 +1,6 @@
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.GameMetaData;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Metadata;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
 

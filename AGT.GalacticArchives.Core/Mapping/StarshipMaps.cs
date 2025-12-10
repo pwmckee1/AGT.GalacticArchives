@@ -1,8 +1,8 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
-using Starship = AGT.GalacticArchives.Core.Models.InGame.Starship;
 
 namespace AGT.GalacticArchives.Core.Mapping;
 

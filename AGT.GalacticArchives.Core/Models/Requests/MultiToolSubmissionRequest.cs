@@ -1,5 +1,5 @@
-using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.GameMetaData;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
@@ -7,7 +7,7 @@ public class MultiToolSubmissionRequest : BaseSubmissionRequest
 {
     public string MultiToolName { get; set; } = null!;
 
-    public MultiToolLocationTypes MultiToolLocationType { get; set; }
+    public LocationTypes MultiToolLocationType { get; set; }
 
     public MultiToolTypes MultiToolType { get; set; }
 
@@ -28,7 +28,7 @@ public class MultiToolSubmissionRequest : BaseSubmissionRequest
 
     public float? Scanner { get; set; }
 
-    public EntityColorTypes PrimaryColor { get; set; }
+    public ItemColorTypes PrimaryColor { get; set; }
 
-    public EntityColorTypes SecondaryColor { get; set; }
+    public ItemColorTypes SecondaryColor { get; set; }
 }

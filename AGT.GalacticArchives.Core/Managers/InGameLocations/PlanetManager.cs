@@ -68,12 +68,12 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
     private async Task SetPlanetHierarchyAsync(Planet planet)
     {
         var starSystemDoc = await firestoreManager.GetByIdAsync(
-            planet.StarSystemId,
+            planet.StarSystemId!.Value,
             DatabaseConstants.StarSystemCollection);
         var starSystem = mapper.Map<StarSystem>(starSystemDoc);
 
         var regionData = await firestoreManager.GetByIdAsync(
-            starSystem.RegionId,
+            starSystem.RegionId!.Value,
             DatabaseConstants.RegionCollection);
         starSystem.Region = mapper.Map<Region>(regionData);
         planet.StarSystem = starSystem;
