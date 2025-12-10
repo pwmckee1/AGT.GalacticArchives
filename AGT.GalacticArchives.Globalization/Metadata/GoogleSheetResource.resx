@@ -121,7 +121,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FaunaSheetName" xml:space="preserve">
-      <value>Fauna DB</value>
+      <value>Fauna</value>
   </data>
   <data name="ImportSuccessful" xml:space="preserve">
       <value>{0} Google Sheet has been imported successfully</value>
@@ -166,31 +166,31 @@
       <value>The following headers are missing from the {0} sheet: {1}.</value>
   </data>
   <data name="MultiToolSheetName" xml:space="preserve">
-      <value>MultiTool DB</value>
+      <value>MultiTool</value>
   </data>
   <data name="PlanetSheetName" xml:space="preserve">
-      <value>Planet DB</value>
+      <value>Planet</value>
   </data>
   <data name="PlayerBaseSheetName" xml:space="preserve">
-      <value>BaseDB</value>
+      <value>Base</value>
   </data>
   <data name="PointOfInterestSheetName" xml:space="preserve">
-      <value>POI DB</value>
+      <value>POI</value>
   </data>
   <data name="RegionSheetName" xml:space="preserve">
-      <value>Region DB</value>
+      <value>Region</value>
   </data>
   <data name="RequiredFieldMissingError" xml:space="preserve">
       <value>{0} sheet, line {1}: column {2} must have a value.</value>
   </data>
   <data name="SettlementSheetName" xml:space="preserve">
-      <value>Settlement DB</value>
+      <value>Settlement</value>
   </data>
   <data name="StarshipSheetName" xml:space="preserve">
-      <value>Starship DB</value>
+      <value>Starship</value>
   </data>
   <data name="StarSystemSheetName" xml:space="preserve">
-      <value>System DB</value>
+      <value>System</value>
   </data>
   <data name="UnableToImportError" xml:space="preserve">
       <value>The {0} sheet could not be processed. Review the import file to ensure it is the {0} DB sheet and that no invalid values are entered</value>

@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.GoogleSheetResource", typeof(GoogleSheetResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Metadata.GoogleSheetResource", typeof(GoogleSheetResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,7 +60,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fauna DB.
+        ///   Looks up a localized string similar to Fauna.
         /// </summary>
         public static string FaunaSheetName {
             get {
@@ -195,7 +195,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MultiTool DB.
+        ///   Looks up a localized string similar to MultiTool.
         /// </summary>
         public static string MultiToolSheetName {
             get {
@@ -204,7 +204,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Planet DB.
+        ///   Looks up a localized string similar to Planet.
         /// </summary>
         public static string PlanetSheetName {
             get {
@@ -213,7 +213,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BaseDB.
+        ///   Looks up a localized string similar to Base.
         /// </summary>
         public static string PlayerBaseSheetName {
             get {
@@ -222,7 +222,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to POI DB.
+        ///   Looks up a localized string similar to POI.
         /// </summary>
         public static string PointOfInterestSheetName {
             get {
@@ -231,7 +231,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Region DB.
+        ///   Looks up a localized string similar to Region.
         /// </summary>
         public static string RegionSheetName {
             get {
@@ -249,7 +249,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settlement DB.
+        ///   Looks up a localized string similar to Settlement.
         /// </summary>
         public static string SettlementSheetName {
             get {
@@ -258,7 +258,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Starship DB.
+        ///   Looks up a localized string similar to Starship.
         /// </summary>
         public static string StarshipSheetName {
             get {
@@ -267,7 +267,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System DB.
+        ///   Looks up a localized string similar to System.
         /// </summary>
         public static string StarSystemSheetName {
             get {
