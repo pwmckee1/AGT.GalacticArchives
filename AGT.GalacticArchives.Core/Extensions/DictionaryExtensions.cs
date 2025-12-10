@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
+using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models;
 using AGT.GalacticArchives.Globalization;
 using Newtonsoft.Json;
@@ -42,7 +43,7 @@ public static class DictionaryExtensions
     }
 
     public static T ConvertDictionaryToObject<T>(this Dictionary<string, object>? originalData)
-        where T : IDatabaseEntity
+        where T : IDatabaseGameEntity
     {
         var instance = (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
         var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);

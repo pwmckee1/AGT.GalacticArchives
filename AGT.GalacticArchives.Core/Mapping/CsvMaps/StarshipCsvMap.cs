@@ -1,7 +1,7 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
 
@@ -12,7 +12,7 @@ public sealed class StarshipCsvMap : BaseCsvMap<StarshipImport>
         AutoMap(CultureInfo.InvariantCulture);
 
         Map(m => m.Class)
-            .Convert(m => GetEnumValueFromCsvField<ItemClassTypes>(m.Row.GetField(StarshipSheetFields.ModelType), m));
+            .Convert(m => GetEnumValueFromCsvField<QualityClassTypes>(m.Row.GetField(StarshipSheetFields.ModelType), m));
 
         Map(m => m.ExtraHullAccessories)
             .Convert(m =>
@@ -74,7 +74,7 @@ public sealed class StarshipCsvMap : BaseCsvMap<StarshipImport>
             .Convert(m =>
             {
                 string? value = m.Row.GetField(StarshipSheetFields.Subtype);
-                return string.IsNullOrEmpty(value) ? GetEnumValueFromCsvField<StarshipSubtypes>(value, m) : null;
+                return string.IsNullOrEmpty(value) ? GetEnumValueFromCsvField<StarshipSubModelTypes>(value, m) : null;
             });
 
         Map(m => m.Thruster)

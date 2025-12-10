@@ -8,31 +8,31 @@ public enum MultiToolCategories
     Alien,
 
     [Display(
-        ResourceType = typeof(MultiToolCategoriesResource),
-        Description = nameof(MultiToolCategoriesResource.AngleMuzzle))]
+        ResourceType = typeof(MultiToolResource),
+        Description = nameof(MultiToolResource.AngleMuzzle))]
     AngleMuzzle,
 
     [Display(
-        ResourceType = typeof(MultiToolCategoriesResource),
-        Description = nameof(MultiToolCategoriesResource.CircleBlaze))]
+        ResourceType = typeof(MultiToolResource),
+        Description = nameof(MultiToolResource.CircleBlaze))]
     CircleBlaze,
     Compact,
 
     [Display(
-        ResourceType = typeof(MultiToolCategoriesResource),
-        Description = nameof(MultiToolCategoriesResource.HoseMuzzle))]
+        ResourceType = typeof(MultiToolResource),
+        Description = nameof(MultiToolResource.HoseMuzzle))]
     HoseMuzzle,
     Other,
 
     [Display(
-        ResourceType = typeof(MultiToolCategoriesResource),
-        Description = nameof(MultiToolCategoriesResource.RailGun))]
+        ResourceType = typeof(MultiToolResource),
+        Description = nameof(MultiToolResource.RailGun))]
     RailGun,
     Scrimshaw,
 
     [Display(
-        ResourceType = typeof(MultiToolCategoriesResource),
-        Description = nameof(MultiToolCategoriesResource.StarterPistol))]
+        ResourceType = typeof(MultiToolResource),
+        Description = nameof(MultiToolResource.StarterPistol))]
     StarterPistol,
     Smg,
 }

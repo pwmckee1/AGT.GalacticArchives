@@ -1,7 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
-using AGT.GalacticArchives.Core.Models.DatabaseEntities;
-using AGT.GalacticArchives.Core.Models.Requests.Entities;
-using AGT.GalacticArchives.Core.Models.Responses.Entities;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping;

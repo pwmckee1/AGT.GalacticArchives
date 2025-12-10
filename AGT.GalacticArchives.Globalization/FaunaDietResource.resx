@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbsorbedNutrients" xml:space="preserve">
+    <value>Absorbed Nutrients</value>
+  </data>
+  <data name="AlgalParticulates" xml:space="preserve">
+    <value>Algal Particulates</value>
+  </data>
+  <data name="BloodDrinker" xml:space="preserve">
+    <value>Blood-Drinker</value>
+  </data>
+  <data name="BoiledMeat" xml:space="preserve">
+    <value>Boiled Meat</value>
+  </data>
+  <data name="BrainMatter" xml:space="preserve">
+    <value>Brain Matter</value>
+  </data>
+  <data name="CaveMarrow" xml:space="preserve">
+    <value>Cave Marrow</value>
+  </data>
+  <data name="CoagulatedBlood" xml:space="preserve">
+    <value>Coagulated Blood</value>
+  </data>
+  <data name="CollectsSeeds" xml:space="preserve">
+    <value>Collects Seeds</value>
+  </data>
+  <data name="CondensedCarbon" xml:space="preserve">
+    <value>Condensed Carbon</value>
+  </data>
+  <data name="CosmicRays" xml:space="preserve">
+    <value>Cosmic Rays</value>
+  </data>
+  <data name="CrunchesBones" xml:space="preserve">
+    <value>Crunches Bones</value>
+  </data>
+  <data name="DecayingAtoms" xml:space="preserve">
+    <value>Decaying Atoms</value>
+  </data>
+  <data name="DecayingPlantLife" xml:space="preserve">
+    <value>Decaying Plant Life</value>
+  </data>
+  <data name="DeepwaterAlgae" xml:space="preserve">
+    <value>Deepwater Algae</value>
+  </data>
+  <data name="DeepwaterSpores" xml:space="preserve">
+    <value>Deepwater Spores</value>
+  </data>
+  <data name="DigsForTubers" xml:space="preserve">
+    <value>Digs For Tubers</value>
+  </data>
+  <data name="DiHydrogenCrystals" xml:space="preserve">
+    <value>Di-Hydrogen Crystals</value>
+  </data>
+  <data name="DriftingPlants" xml:space="preserve">
+    <value>Drifting Plants</value>
+  </data>
+  <data name="ExtractsBoneMarrow" xml:space="preserve">
+    <value>Extracts Bone Marrow</value>
+  </data>
+  <data name="FetidMeat" xml:space="preserve">
+    <value>Fetid Meat</value>
+  </data>
+  <data name="FleshChunks" xml:space="preserve">
+    <value>Flesh Chunks</value>
+  </data>
+  <data name="FleshEater" xml:space="preserve">
+    <value>Flesh-Eater</value>
+  </data>
+  <data name="ForagedLeftovers" xml:space="preserve">
+    <value>Foraged Leftovers</value>
+  </data>
+  <data name="ForagedNuts" xml:space="preserve">
+    <value>Foraged Nuts</value>
+  </data>
+  <data name="FreshLeaves" xml:space="preserve">
+    <value>Fresh Leaves</value>
+  </data>
+  <data name="FreshMeat" xml:space="preserve">
+    <value>Fresh Meat</value>
+  </data>
+  <data name="FrozenMeat" xml:space="preserve">
+    <value>Frozen Meat</value>
+  </data>
+  <data name="FungalCluster" xml:space="preserve">
+    <value>Fungal Cluster</value>
+  </data>
+  <data name="GammaWeed" xml:space="preserve">
+    <value>Gamma Weed</value>
+  </data>
+  <data name="GravitinoBalls" xml:space="preserve">
+    <value>Gravitino Balls</value>
+  </data>
+  <data name="GrazingCreature" xml:space="preserve">
+    <value>Grazing Creature</value>
+  </data>
+  <data name="GroundMeat" xml:space="preserve">
+    <value>Ground Meat</value>
+  </data>
+  <data name="HighInCalcium" xml:space="preserve">
+    <value>High In Calcium</value>
+  </data>
+  <data name="HuntsSquid" xml:space="preserve">
+    <value>Hunts Squid</value>
+  </data>
+  <data name="HydrothermalMinerals" xml:space="preserve">
+    <value>Hydrothermal Minerals</value>
+  </data>
+  <data name="HypnotisesPrey" xml:space="preserve">
+    <value>Hypnotises Prey</value>
+  </data>
+  <data name="InsectEater" xml:space="preserve">
+    <value>Insect-Eater</value>
+  </data>
+  <data name="InsectsAndGrubs" xml:space="preserve">
+    <value>Insects And Grubs</value>
+  </data>
+  <data name="KelpSacs" xml:space="preserve">
+    <value>Kelp Sacs</value>
+  </data>
+  <data name="LargeMammals" xml:space="preserve">
+    <value>Large Mammals</value>
+  </data>
+  <data name="LiquidisedOrgans" xml:space="preserve">
+    <value>Liquidised Organs</value>
+  </data>
+  <data name="LivingSponges" xml:space="preserve">
+    <value>Living Sponges</value>
+  </data>
+  <data name="MarineDetritus" xml:space="preserve">
+    <value>Marine Detritus</value>
+  </data>
+  <data name="MarineSnow" xml:space="preserve">
+    <value>Marine Snow</value>
+  </data>
+  <data name="MeatChunks" xml:space="preserve">
+    <value>Meat Chunks</value>
+  </data>
+  <data name="MeatEater" xml:space="preserve">
+    <value>Meat-Eater</value>
+  </data>
+  <data name="MorditeRoot" xml:space="preserve">
+    <value>Mordite Root</value>
+  </data>
+  <data name="MostlyRocks" xml:space="preserve">
+    <value>Mostly Rocks</value>
+  </data>
+  <data name="NibblesAtMoss" xml:space="preserve">
+    <value>Nibbles At Moss</value>
+  </data>
+  <data name="NibblesAtShoots" xml:space="preserve">
+    <value>Nibbles At Shoots</value>
+  </data>
+  <data name="NipnipBuds" xml:space="preserve">
+    <value>Nipnip Buds</value>
+  </data>
+  <data name="NitrousOxide" xml:space="preserve">
+    <value>Nitrous Oxide</value>
+  </data>
+  <data name="NutritiousWaterWeeds" xml:space="preserve">
+    <value>Nutritious Water Weeds</value>
+  </data>
+  <data name="OldBones" xml:space="preserve">
+    <value>Old Bones</value>
+  </data>
+  <data name="OtherCarnivores" xml:space="preserve">
+    <value>Other Carnivores</value>
+  </data>
+  <data name="OtherFish" xml:space="preserve">
+    <value>Other Fish</value>
+  </data>
+  <data name="OxideElements" xml:space="preserve">
+    <value>Oxide Elements</value>
+  </data>
+  <data name="PartiallyDigestedMeat" xml:space="preserve">
+    <value>Partially Digested Meat</value>
+  </data>
+  <data name="PlantRoots" xml:space="preserve">
+    <value>Plant Roots</value>
+  </data>
+  <data name="PreservedMeat" xml:space="preserve">
+    <value>Preserved Meat</value>
+  </data>
+  <data name="ProcessesDirt" xml:space="preserve">
+    <value>Processes Dirt</value>
+  </data>
+  <data name="PutrefiedMeat" xml:space="preserve">
+    <value>Putrefied Meat</value>
+  </data>
+  <data name="RadioactiveMeat" xml:space="preserve">
+    <value>Radioactive Meat</value>
+  </data>
+  <data name="RawMeat" xml:space="preserve">
+    <value>Raw Meat</value>
+  </data>
+  <data name="RemovedHearts" xml:space="preserve">
+    <value>Removed Hearts</value>
+  </data>
+  <data name="RottenMeat" xml:space="preserve">
+    <value>Rotten Meat</value>
+  </data>
+  <data name="RottenWood" xml:space="preserve">
+    <value>Rotten Wood</value>
+  </data>
+  <data name="RottingFruit" xml:space="preserve">
+    <value>Rotting Fruit</value>
+  </data>
+  <data name="ScavengedRemains" xml:space="preserve">
+    <value>Scavenged Remains</value>
+  </data>
+  <data name="ScavengedScraps" xml:space="preserve">
+    <value>Scavenged Scraps</value>
+  </data>
+  <data name="SmallAnimals" xml:space="preserve">
+    <value>Small Animals</value>
+  </data>
+  <data name="SmallCrustaceans" xml:space="preserve">
+    <value>Small Crustaceans</value>
+  </data>
+  <data name="SmallFruit" xml:space="preserve">
+    <value>Small Fruit</value>
+  </data>
+  <data name="SmallTrees" xml:space="preserve">
+    <value>Small Trees</value>
+  </data>
+  <data name="SolarVine" xml:space="preserve">
+    <value>Solar Vine</value>
+  </data>
+  <data name="StarBramble" xml:space="preserve">
+    <value>Star Bramble</value>
+  </data>
+  <data name="StealsFromOthers" xml:space="preserve">
+    <value>Steals From Others</value>
+  </data>
+  <data name="StingingLeaves" xml:space="preserve">
+    <value>Stinging Leaves</value>
+  </data>
+  <data name="TallGrasses" xml:space="preserve">
+    <value>Tall Grasses</value>
+  </data>
+  <data name="ToxicMeat" xml:space="preserve">
+    <value>Toxic Meat</value>
+  </data>
+  <data name="VenomUrchins" xml:space="preserve">
+    <value>Venom Urchins</value>
+  </data>
+  <data name="VentedMinerals" xml:space="preserve">
+    <value>Vented Minerals</value>
+  </data>
+  <data name="WaterFiltration" xml:space="preserve">
+    <value>Water Filtration</value>
+  </data>
+  <data name="WaterVines" xml:space="preserve">
+    <value>Water Vines</value>
+  </data>
+</root>

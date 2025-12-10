@@ -1,8 +1,9 @@
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Managers.Environments;
-using AGT.GalacticArchives.Core.Models.DatabaseEntities;
-using AGT.GalacticArchives.Core.Models.Requests.Entities;
-using AGT.GalacticArchives.Core.Models.Responses.Entities;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Managers.InGameLocations;
+using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Environments;

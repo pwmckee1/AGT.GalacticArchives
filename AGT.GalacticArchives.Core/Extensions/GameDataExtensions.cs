@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models;
 
 namespace AGT.GalacticArchives.Core.Extensions;
@@ -6,7 +7,7 @@ namespace AGT.GalacticArchives.Core.Extensions;
 public static class GameDataExtensions
 {
     public static Dictionary<string, object> ToDictionary(
-        this IDatabaseEntity databaseEntity,
+        this IDatabaseGameEntity databaseGameEntity,
         PropertyInfo[] properties,
         HashSet<string> excludedProperties)
     {
@@ -14,7 +15,7 @@ public static class GameDataExtensions
 
         foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
         {
-            object? value = property.GetValue(databaseEntity);
+            object? value = property.GetValue(databaseGameEntity);
 
             if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
             {
@@ -27,11 +28,11 @@ public static class GameDataExtensions
         return result;
     }
 
-    public static Dictionary<string, object> ToDictionary(this IDatabaseEntity databaseEntity)
+    public static Dictionary<string, object> ToDictionary(this IDatabaseGameEntity databaseGameEntity)
     {
-        var properties = databaseEntity.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
-        var excludedProperties = databaseEntity.PropertiesExcludedFromDatabase();
+        var properties = databaseGameEntity.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        var excludedProperties = databaseGameEntity.PropertiesExcludedFromDatabase();
 
-        return databaseEntity.ToDictionary(properties, excludedProperties);
+        return databaseGameEntity.ToDictionary(properties, excludedProperties);
     }
 }

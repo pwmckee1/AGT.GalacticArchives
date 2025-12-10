@@ -1,5 +1,5 @@
-using AGT.GalacticArchives.Core.Models.Requests.Entities;
-using AGT.GalacticArchives.Core.Models.Responses.Entities;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
 
 namespace AGT.GalacticArchives.Services.Services.Environments;
 

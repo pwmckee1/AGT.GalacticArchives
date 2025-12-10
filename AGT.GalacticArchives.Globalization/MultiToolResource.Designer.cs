@@ -60,128 +60,47 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Acquistion Guidance.
+        ///   Looks up a localized string similar to Angle Muzzle.
         /// </summary>
-        public static string AcquisitionGuidance {
+        public static string AngleMuzzle {
             get {
-                return ResourceManager.GetString("AcquisitionGuidance", resourceCulture);
+                return ResourceManager.GetString("AngleMuzzle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Civilized.
+        ///   Looks up a localized string similar to Circle Blaze.
         /// </summary>
-        public static string CivilizedBy {
+        public static string CircleBlaze {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("CircleBlaze", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovered.
+        ///   Looks up a localized string similar to Hose Muzzle.
         /// </summary>
-        public static string DiscoveredBy {
+        public static string HoseMuzzle {
             get {
-                return ResourceManager.GetString("DiscoveredBy", resourceCulture);
+                return ResourceManager.GetString("HoseMuzzle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovered Link on Wiki.
+        ///   Looks up a localized string similar to Rail Gun.
         /// </summary>
-        public static string DiscoveredLinkOnWiki {
+        public static string RailGun {
             get {
-                return ResourceManager.GetString("DiscoveredLinkOnWiki", resourceCulture);
+                return ResourceManager.GetString("RailGun", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovery Date.
+        ///   Looks up a localized string similar to Starter Pistol.
         /// </summary>
-        public static string DiscoveryDate {
+        public static string StarterPistol {
             get {
-                return ResourceManager.GetString("DiscoveryDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Document Sequence.
-        /// </summary>
-        public static string DocumentSequence {
-            get {
-                return ResourceManager.GetString("DocumentSequence", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Crystals.
-        /// </summary>
-        public static string HasCrystals {
-            get {
-                return ResourceManager.GetString("HasCrystals", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Glowtubes.
-        /// </summary>
-        public static string HasGlowTubes {
-            get {
-                return ResourceManager.GetString("HasGlowTubes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Horns.
-        /// </summary>
-        public static string HasHorns {
-            get {
-                return ResourceManager.GetString("HasHorns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name of MT.
-        /// </summary>
-        public static string Name {
-            get {
-                return ResourceManager.GetString("Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Primary Color.
-        /// </summary>
-        public static string PrimaryColor {
-            get {
-                return ResourceManager.GetString("PrimaryColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Research Team.
-        /// </summary>
-        public static string ResearchTeam {
-            get {
-                return ResourceManager.GetString("ResearchTeam", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Secondary Color.
-        /// </summary>
-        public static string SecondaryColor {
-            get {
-                return ResourceManager.GetString("SecondaryColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Notes.
-        /// </summary>
-        public static string UserNotes {
-            get {
-                return ResourceManager.GetString("UserNotes", resourceCulture);
+                return ResourceManager.GetString("StarterPistol", resourceCulture);
             }
         }
         
@@ -191,33 +110,6 @@ namespace AGT.GalacticArchives.Globalization {
         public static string VoltaicStaff {
             get {
                 return ResourceManager.GetString("VoltaicStaff", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Wiki Link.
-        /// </summary>
-        public static string WikiLink {
-            get {
-                return ResourceManager.GetString("WikiLink", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to XX (second cord).
-        /// </summary>
-        public static string XXSecondCoordinate {
-            get {
-                return ResourceManager.GetString("XXSecondCoordinate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to YY (first coord).
-        /// </summary>
-        public static string YYFirstCoordinate {
-            get {
-                return ResourceManager.GetString("YYFirstCoordinate", resourceCulture);
             }
         }
     }

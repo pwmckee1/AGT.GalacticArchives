@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.DatabaseEntities;
 using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
 using Should;
@@ -22,7 +22,7 @@ public class GameDataModelTests
                     .For<Region>()
                     .With(p => p.Name, "Region Name")
                     .With(r => r.GalaxyType, GalaxyTypes.Euclid)
-                    .With(r => r.Coordinates, "0000:0000:0000:0000")
+                    .With(r => r.GalacticCoordinates, "0000:0000:0000:0000")
                     .With(r => r.StarSystems, [])
                     .Create();
             }
@@ -52,7 +52,7 @@ public class GameDataModelTests
                     .For<StarSystem>()
                     .With(p => p.Name, "Star System Name")
                     .With(r => r.Region, null)
-                    .With(r => r.GalacticCoordinates, "0000:0000:0000:0000")
+                    .With(r => r.GalacticAddressCoordinates, "0000:0000:0000:0000")
                     .With(r => r.Planets, [])
                     .With(r => r.SpaceStationTradeItems, ["iron", "pokemon cards"])
                     .Create();
@@ -65,7 +65,7 @@ public class GameDataModelTests
                 dictionary[nameof(StarSystem.Name)].ShouldEqual(_starSystem.Name);
                 dictionary[nameof(StarSystem.StarSystemId)].ShouldEqual(_starSystem.StarSystemId.ToString());
                 dictionary[nameof(StarSystem.NormalizedName)].ShouldEqual(_starSystem.NormalizedName);
-                dictionary[nameof(StarSystem.GalacticCoordinates)].ShouldEqual(_starSystem.GalacticCoordinates);
+                dictionary[nameof(StarSystem.GalacticAddressCoordinates)].ShouldEqual(_starSystem.GalacticAddressCoordinates);
                 dictionary[nameof(StarSystem.IsGiantSystem)].ShouldEqual(_starSystem.IsGiantSystem);
                 dictionary[nameof(StarSystem.StarCount)].ShouldEqual(_starSystem.StarCount);
                 dictionary[nameof(StarSystem.SpaceStationTradeItems)].ShouldEqual(_starSystem.SpaceStationTradeItems);
@@ -115,7 +115,7 @@ public class GameDataModelTests
                 _dictionary[nameof(Region.RegionId)] = Guid.NewGuid();
                 _dictionary[nameof(Region.Name)] = "EuclidRegion";
                 _dictionary[nameof(Region.GalaxyType)] = GalaxyTypes.Euclid;
-                _dictionary[nameof(Region.Coordinates)] = "123a:123b:123d:123f";
+                _dictionary[nameof(Region.GalacticCoordinates)] = "123a:123b:123d:123f";
                 _dictionary[nameof(Region.DocSequence)] = 1;
                 _dictionary[nameof(Region.RegionAge)] = 5.1f;
             }
@@ -126,7 +126,7 @@ public class GameDataModelTests
                 var region = _dictionary.ConvertDictionaryToObject<Region>();
                 region.RegionId.ShouldEqual((Guid)_dictionary[nameof(Region.RegionId)]);
                 region.Name.ShouldEqual((string)_dictionary[nameof(Region.Name)]);
-                region.Coordinates.ShouldEqual(((string)_dictionary[nameof(Region.Coordinates)]).ToUpperInvariant());
+                region.GalacticCoordinates.ShouldEqual(((string)_dictionary[nameof(Region.GalacticCoordinates)]).ToUpperInvariant());
                 region.XX.ShouldEqual("123A");
                 region.DocSequence.ShouldEqual((int)_dictionary[nameof(Region.DocSequence)]);
                 region.RegionAge.ShouldEqual((float?)_dictionary[nameof(Region.RegionAge)]);
@@ -141,7 +141,7 @@ public class GameDataModelTests
                 _dictionary[nameof(StarSystem.StarSystemId)] = Guid.NewGuid();
                 _dictionary[nameof(StarSystem.Name)] = "Euclid";
                 _dictionary[nameof(StarSystem.RegionId)] = Guid.NewGuid();
-                _dictionary[nameof(StarSystem.GalacticCoordinates)] = "123a:123b:123d:123f";
+                _dictionary[nameof(StarSystem.GalacticAddressCoordinates)] = "123a:123b:123d:123f";
                 _dictionary[nameof(StarSystem.IsGiantSystem)] = true;
                 _dictionary[nameof(StarSystem.Buy)] = -13.4f;
                 _dictionary[nameof(StarSystem.SpaceStationTradeItems)] = new HashSet<string?>
@@ -159,8 +159,8 @@ public class GameDataModelTests
                 starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]);
                 starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]);
                 starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]);
-                starSystem.GalacticCoordinates.ShouldEqual(
-                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]).ToUpperInvariant());
+                starSystem.GalacticAddressCoordinates.ShouldEqual(
+                    ((string)_dictionary[nameof(StarSystem.GalacticAddressCoordinates)]).ToUpperInvariant());
                 starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]);
                 starSystem.Buy.ShouldEqual((float?)_dictionary[nameof(StarSystem.Buy)]);
                 starSystem.HasCenterAccess.ShouldEqual((bool?)_dictionary[nameof(StarSystem.HasCenterAccess)]);

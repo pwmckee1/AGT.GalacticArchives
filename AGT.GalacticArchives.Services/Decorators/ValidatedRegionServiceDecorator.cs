@@ -1,6 +1,6 @@
-﻿using AGT.GalacticArchives.Core.Models.DatabaseEntities;
-using AGT.GalacticArchives.Core.Models.Requests.Entities;
-using AGT.GalacticArchives.Core.Models.Responses.Entities;
+﻿using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Services.Environments;
 
@@ -37,7 +37,7 @@ public class ValidatedRegionServiceDecorator(IRegionService regionService)
             throw new ArgumentNullException(
                 string.Format(
                     GeneralErrorResource.PropertyMissing,
-                    $"{nameof(Region)} => {nameof(Region.Coordinates)}"));
+                    $"{nameof(Region)} => {nameof(Region.GalacticCoordinates)}"));
         }
 
         if (string.IsNullOrEmpty(request.SurveyDate))

@@ -43,10 +43,6 @@
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>MultiToolResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="FaunaResource.resx">
-            <Generator>PublicResXFileCodeGenerator</Generator>
-            <LastGenOutput>FaunaResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="SettlementResource.resx">
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>SettlementResource.Designer.cs</LastGenOutput>
@@ -90,10 +86,6 @@
         <EmbeddedResource Update="BiomeSubTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>BiomeDescriptionResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="ExtremeWeatherResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>ExtremeWeatherResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="LandArchetypesResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
@@ -141,9 +133,9 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>SentinelActivityTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="FloraFaunaLevelTypeResource.resx">
+        <EmbeddedResource Update="PlanetBiotaLevelTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>FloraFaunaLevelTypeResource.Designer.cs</LastGenOutput>
+          <LastGenOutput>PlanetBiotaLevelTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="AtmosphereGasTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
@@ -201,13 +193,33 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>SettlementBuildingTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="MultiToolCategoriesResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>MultiToolCategoriesResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="FaunaBaitTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>FaunaBaitTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaGenderTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaGenderTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaBehaviorResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaBehaviorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaDietResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaDietResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaTaxonomyResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaTaxonomyResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="FaunaInGameNoteTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaInGameNoteTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -251,11 +263,6 @@
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>MultiToolResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="FaunaResource.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>FaunaResource.resx</DependentUpon>
         </Compile>
         <Compile Update="SettlementResource.Designer.cs">
             <DesignTime>True</DesignTime>
@@ -312,11 +319,6 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>BiomeSubTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="ExtremeWeatherResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>ExtremeWeatherResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="LandArchetypesResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
@@ -367,10 +369,10 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>SentinelActivityTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="FloraFaunaLevelTypeResource.Designer.cs">
+        <Compile Update="PlanetBiotaLevelTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
-          <DependentUpon>FloraFaunaLevelTypeResource.resx</DependentUpon>
+          <DependentUpon>PlanetBiotaLevelTypeResource.resx</DependentUpon>
         </Compile>
         <Compile Update="AtmosphereGasTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
@@ -442,15 +444,40 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>SettlementBuildingTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="MultiToolCategoriesResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>MultiToolCategoriesResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="FaunaBaitTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>FaunaBaitTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaGenderTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaGenderTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaBehaviorResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaBehaviorResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaDietResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaDietResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaTaxonomyResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaTaxonomyResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="FaunaInGameNoteTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaInGameNoteTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

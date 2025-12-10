@@ -1,7 +1,7 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
@@ -136,7 +136,7 @@ public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
             });
 
         Map(m => m.StarSystemShipUpgradeModules)
-            .Convert(m => GetEnumValuesFromCsvColumns<StarSystemShipUpgradeTypes>(
+            .Convert(m => GetEnumValuesFromCsvColumns<StarshipUpgradeTypes>(
                 StarSystemResource.StarSystemShipUpgradeModules,
                 m));
 

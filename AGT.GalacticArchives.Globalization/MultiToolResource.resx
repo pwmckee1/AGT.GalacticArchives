@@ -124,58 +124,22 @@
             PublicKeyToken=b77a5c561934e089
         </value>
   </resheader>
-  <data name="AcquisitionGuidance" xml:space="preserve">
-    <value>Acquistion Guidance</value>
+  <data name="AngleMuzzle" xml:space="preserve">
+    <value>Angle Muzzle</value>
   </data>
-  <data name="CivilizedBy" xml:space="preserve">
-    <value>Civilized</value>
+  <data name="CircleBlaze" xml:space="preserve">
+    <value>Circle Blaze</value>
   </data>
-  <data name="DiscoveredBy" xml:space="preserve">
-    <value>Discovered</value>
+  <data name="HoseMuzzle" xml:space="preserve">
+    <value>Hose Muzzle</value>
   </data>
-  <data name="DiscoveredLinkOnWiki" xml:space="preserve">
-    <value>Discovered Link on Wiki</value>
+  <data name="RailGun" xml:space="preserve">
+    <value>Rail Gun</value>
   </data>
-  <data name="DiscoveryDate" xml:space="preserve">
-    <value>Discovery Date</value>
-  </data>
-  <data name="DocumentSequence" xml:space="preserve">
-    <value>Document Sequence</value>
-  </data>
-  <data name="HasCrystals" xml:space="preserve">
-    <value>Crystals</value>
-  </data>
-  <data name="HasGlowTubes" xml:space="preserve">
-    <value>Glowtubes</value>
-  </data>
-  <data name="HasHorns" xml:space="preserve">
-    <value>Horns</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name of MT</value>
-  </data>
-  <data name="PrimaryColor" xml:space="preserve">
-    <value>Primary Color</value>
-  </data>
-  <data name="ResearchTeam" xml:space="preserve">
-    <value>Research Team</value>
-  </data>
-  <data name="SecondaryColor" xml:space="preserve">
-    <value>Secondary Color</value>
-  </data>
-  <data name="UserNotes" xml:space="preserve">
-    <value>User Notes</value>
+  <data name="StarterPistol" xml:space="preserve">
+    <value>Starter Pistol</value>
   </data>
   <data name="VoltaicStaff" xml:space="preserve">
         <value>Voltaic Staff</value>
     </data>
-  <data name="WikiLink" xml:space="preserve">
-    <value>Wiki Link</value>
-  </data>
-  <data name="XXSecondCoordinate" xml:space="preserve">
-    <value>XX (second cord)</value>
-  </data>
-  <data name="YYFirstCoordinate" xml:space="preserve">
-    <value>YY (first coord)</value>
-  </data>
 </root>

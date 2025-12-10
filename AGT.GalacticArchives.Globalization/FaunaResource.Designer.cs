@@ -60,326 +60,236 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Additional Notes.
+        ///   Looks up a localized string similar to Bone Nuggets.
         /// </summary>
-        public static string AdditionalNotes {
+        public static string BoneNuggets {
             get {
-                return ResourceManager.GetString("AdditionalNotes", resourceCulture);
+                return ResourceManager.GetString("BoneNuggets", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Behaviour Type.
+        ///   Looks up a localized string similar to Ceaseless Burrower.
         /// </summary>
-        public static string BehaviourType {
+        public static string CeaselessBurrower {
             get {
-                return ResourceManager.GetString("BehaviourType", resourceCulture);
+                return ResourceManager.GetString("CeaselessBurrower", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Civilized.
+        ///   Looks up a localized string similar to Chewy Wires.
         /// </summary>
-        public static string CivilizedBy {
+        public static string ChewyWires {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("ChewyWires", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diet Type.
+        ///   Looks up a localized string similar to Colossal Being.
         /// </summary>
-        public static string DietType {
+        public static string ColossalBeing {
             get {
-                return ResourceManager.GetString("DietType", resourceCulture);
+                return ResourceManager.GetString("ColossalBeing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovered.
+        ///   Looks up a localized string similar to Crab &apos;Apple&apos;.
         /// </summary>
-        public static string DiscoveredBy {
+        public static string CrabApple {
             get {
-                return ResourceManager.GetString("DiscoveredBy", resourceCulture);
+                return ResourceManager.GetString("CrabApple", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovered Date.
+        ///   Looks up a localized string similar to Craw Milk.
         /// </summary>
-        public static string DiscoveredDate {
+        public static string CrawMilk {
             get {
-                return ResourceManager.GetString("DiscoveredDate", resourceCulture);
+                return ResourceManager.GetString("CrawMilk", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovered Link on Wiki.
+        ///   Looks up a localized string similar to Creature Egg.
         /// </summary>
-        public static string DiscoveredLinkOnWiki {
+        public static string CreatureEgg {
             get {
-                return ResourceManager.GetString("DiscoveredLinkOnWiki", resourceCulture);
+                return ResourceManager.GetString("CreatureEgg", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovery Menu.
+        ///   Looks up a localized string similar to Dirty Meat.
         /// </summary>
-        public static string DiscoveryMenu {
+        public static string DirtyMeat {
             get {
-                return ResourceManager.GetString("DiscoveryMenu", resourceCulture);
+                return ResourceManager.GetString("DirtyMeat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovery Platform.
+        ///   Looks up a localized string similar to Fiendish Roe.
         /// </summary>
-        public static string DiscoveryPlatform {
+        public static string FiendishRoe {
             get {
-                return ResourceManager.GetString("DiscoveryPlatform", resourceCulture);
+                return ResourceManager.GetString("FiendishRoe", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovery Screen Height.
+        ///   Looks up a localized string similar to Foraged Mushrooms.
         /// </summary>
-        public static string DiscoveryScreenHeight {
+        public static string ForagedMushrooms {
             get {
-                return ResourceManager.GetString("DiscoveryScreenHeight", resourceCulture);
+                return ResourceManager.GetString("ForagedMushrooms", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discovery Screen Weight.
+        ///   Looks up a localized string similar to Fresh Milk.
         /// </summary>
-        public static string DiscoveryScreenWeight {
+        public static string FreshMilk {
             get {
-                return ResourceManager.GetString("DiscoveryScreenWeight", resourceCulture);
+                return ResourceManager.GetString("FreshMilk", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Extinction Status?.
+        ///   Looks up a localized string similar to Giant Egg.
         /// </summary>
-        public static string ExtinctionStatus {
+        public static string GiantEgg {
             get {
-                return ResourceManager.GetString("ExtinctionStatus", resourceCulture);
+                return ResourceManager.GetString("GiantEgg", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender 1.
+        ///   Looks up a localized string similar to Giant Parasite.
         /// </summary>
-        public static string Gender1 {
+        public static string GiantParasite {
             get {
-                return ResourceManager.GetString("Gender1", resourceCulture);
+                return ResourceManager.GetString("GiantParasite", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender 1 Scan Max Height (m).
+        ///   Looks up a localized string similar to Leopard-Fruit.
         /// </summary>
-        public static string Gender1ScanMaxHeight {
+        public static string LeopardFruit {
             get {
-                return ResourceManager.GetString("Gender1ScanMaxHeight", resourceCulture);
+                return ResourceManager.GetString("LeopardFruit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender 1 Scan Max Weight (kg).
+        ///   Looks up a localized string similar to Nourishing Slime.
         /// </summary>
-        public static string Gender1ScanMaxWeight {
+        public static string NourishingSlime {
             get {
-                return ResourceManager.GetString("Gender1ScanMaxWeight", resourceCulture);
+                return ResourceManager.GetString("NourishingSlime", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender 2.
+        ///   Looks up a localized string similar to Planetary Maggot.
         /// </summary>
-        public static string Gender2 {
+        public static string PlanetaryMaggot {
             get {
-                return ResourceManager.GetString("Gender2", resourceCulture);
+                return ResourceManager.GetString("PlanetaryMaggot", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender 2 scan Max Height (m).
+        ///   Looks up a localized string similar to Regis Grease.
         /// </summary>
-        public static string Gender2ScanMaxHeight {
+        public static string RegisGrease {
             get {
-                return ResourceManager.GetString("Gender2ScanMaxHeight", resourceCulture);
+                return ResourceManager.GetString("RegisGrease", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gender 2 Scan Max Weight (kg).
+        ///   Looks up a localized string similar to Round Mouth.
         /// </summary>
-        public static string Gender2ScanMaxWeight {
+        public static string RoundMouth {
             get {
-                return ResourceManager.GetString("Gender2ScanMaxWeight", resourceCulture);
+                return ResourceManager.GetString("RoundMouth", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Genus Subtype.
+        ///   Looks up a localized string similar to Sticky &apos;Honey&apos;.
         /// </summary>
-        public static string GenusSubtype {
+        public static string StickyHoney {
             get {
-                return ResourceManager.GetString("GenusSubtype", resourceCulture);
+                return ResourceManager.GetString("StickyHoney", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Date PC.
+        ///   Looks up a localized string similar to Tall Eggs.
         /// </summary>
-        public static string LegacyFaunaDatePC {
+        public static string TallEggs {
             get {
-                return ResourceManager.GetString("LegacyFaunaDatePC", resourceCulture);
+                return ResourceManager.GetString("TallEggs", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Date PS.
+        ///   Looks up a localized string similar to The Consumer.
         /// </summary>
-        public static string LegacyFaunaDatePS {
+        public static string TheConsumer {
             get {
-                return ResourceManager.GetString("LegacyFaunaDatePS", resourceCulture);
+                return ResourceManager.GetString("TheConsumer", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Date Xbox.
+        ///   Looks up a localized string similar to Unstoppable Nematode.
         /// </summary>
-        public static string LegacyFaunaDateXbox {
+        public static string UnstoppableNematode {
             get {
-                return ResourceManager.GetString("LegacyFaunaDateXbox", resourceCulture);
+                return ResourceManager.GetString("UnstoppableNematode", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Discoverer PC.
+        ///   Looks up a localized string similar to Warm Proto-Milk.
         /// </summary>
-        public static string LegacyFaunaDiscovererPC {
+        public static string WarmProtoMilk {
             get {
-                return ResourceManager.GetString("LegacyFaunaDiscovererPC", resourceCulture);
+                return ResourceManager.GetString("WarmProtoMilk", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Discoverer PS.
+        ///   Looks up a localized string similar to Wild Milk.
         /// </summary>
-        public static string LegacyFaunaDiscovererPS {
+        public static string WildMilk {
             get {
-                return ResourceManager.GetString("LegacyFaunaDiscovererPS", resourceCulture);
+                return ResourceManager.GetString("WildMilk", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Discoverer XBox.
+        ///   Looks up a localized string similar to Worm Lord.
         /// </summary>
-        public static string LegacyFaunaDiscovererXbox {
+        public static string WormLord {
             get {
-                return ResourceManager.GetString("LegacyFaunaDiscovererXbox", resourceCulture);
+                return ResourceManager.GetString("WormLord", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Name PC.
+        ///   Looks up a localized string similar to Wraith-Like.
         /// </summary>
-        public static string LegacyFaunaNamePC {
+        public static string WraithLike {
             get {
-                return ResourceManager.GetString("LegacyFaunaNamePC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Name PS.
-        /// </summary>
-        public static string LegacyFaunaNamePS {
-            get {
-                return ResourceManager.GetString("LegacyFaunaNamePS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Legacy Fauna Name Xbox.
-        /// </summary>
-        public static string LegacyFaunaNameXbox {
-            get {
-                return ResourceManager.GetString("LegacyFaunaNameXbox", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Location Notes.
-        /// </summary>
-        public static string LocationNotes {
-            get {
-                return ResourceManager.GetString("LocationNotes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fauna (unique name key).
-        /// </summary>
-        public static string Name {
-            get {
-                return ResourceManager.GetString("Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fauna Name (Integrated Name after Expeditions).
-        /// </summary>
-        public static string NameAfterExpeditions {
-            get {
-                return ResourceManager.GetString("NameAfterExpeditions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to NMS Wiki Link.
-        /// </summary>
-        public static string NMSWikiLink {
-            get {
-                return ResourceManager.GetString("NMSWikiLink", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fauna Name (Original).
-        /// </summary>
-        public static string OriginalName {
-            get {
-                return ResourceManager.GetString("OriginalName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Research Team.
-        /// </summary>
-        public static string ResearchTeam {
-            get {
-                return ResourceManager.GetString("ResearchTeam", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Summary Notes.
-        /// </summary>
-        public static string SummaryNotes {
-            get {
-                return ResourceManager.GetString("SummaryNotes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Version Release.
-        /// </summary>
-        public static string VersionRelease {
-            get {
-                return ResourceManager.GetString("VersionRelease", resourceCulture);
+                return ResourceManager.GetString("WraithLike", resourceCulture);
             }
         }
     }

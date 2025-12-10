@@ -1,7 +1,7 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
 

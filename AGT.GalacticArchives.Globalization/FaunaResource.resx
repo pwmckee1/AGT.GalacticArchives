@@ -1,237 +1,201 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-    <!--
-      Microsoft ResX Schema
+  <!--
+    Microsoft ResX Schema
 
-      Version 2.0
+    Version 2.0
 
-      The primary goals of this format is to allow a simple XML format
-      that is mostly human readable. The generation and parsing of the
-      various data types are done through the TypeConverter classes
-      associated with the data types.
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
 
-      Example:
+    Example:
 
-      ... ado.net/XML headers & schema ...
-      <resheader name="resmimetype">text/microsoft-resx</resheader>
-      <resheader name="version">2.0</resheader>
-      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-          <value>[base64 mime encoded serialized .NET Framework object]</value>
-      </data>
-      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-          <comment>This is a comment</comment>
-      </data>
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
 
-      There are any number of "resheader" rows that contain simple
-      name/value pairs.
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
 
-      Each data row contains a name, and value. The row also contains a
-      type or mimetype. Type corresponds to a .NET class that support
-      text/value conversion through the TypeConverter architecture.
-      Classes that don't support this are serialized and stored with the
-      mimetype set.
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
 
-      The mimetype is used for serialized objects, and tells the
-      ResXResourceReader how to depersist the object. This is currently not
-      extensible. For a given mimetype the value must be set accordingly:
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
 
-      Note - application/x-microsoft.net.object.binary.base64 is the format
-      that the ResXResourceWriter will generate, however the reader can
-      read any of the formats listed below.
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
 
-      mimetype: application/x-microsoft.net.object.binary.base64
-      value   : The object must be serialized with
-              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-              : and then encoded with base64 encoding.
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
 
-      mimetype: application/x-microsoft.net.object.soap.base64
-      value   : The object must be serialized with
-              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-              : and then encoded with base64 encoding.
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-      mimetype: application/x-microsoft.net.object.bytearray.base64
-      value   : The object must be serialized into a byte array
-              : using a System.ComponentModel.TypeConverter
-              : and then encoded with base64 encoding.
-      -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-        <xsd:element name="root" msdata:IsDataSet="true">
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
             <xsd:complexType>
-                <xsd:choice maxOccurs="unbounded">
-                    <xsd:element name="metadata">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" use="required" type="xsd:string"/>
-                            <xsd:attribute name="type" type="xsd:string"/>
-                            <xsd:attribute name="mimetype" type="xsd:string"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="assembly">
-                        <xsd:complexType>
-                            <xsd:attribute name="alias" type="xsd:string"/>
-                            <xsd:attribute name="name" type="xsd:string"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="data">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-                            <xsd:attribute ref="xml:space"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="resheader">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required"/>
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:choice>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
-        </xsd:element>
-    </xsd:schema>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>1.3</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
-            PublicKeyToken=b77a5c561934e089
-        </value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
-            PublicKeyToken=b77a5c561934e089
-        </value>
-    </resheader>
-    <data name="AdditionalNotes" xml:space="preserve">
-    <value>Additional Notes</value>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoneNuggets" xml:space="preserve">
+    <value>Bone Nuggets</value>
   </data>
-    <data name="BehaviourType" xml:space="preserve">
-    <value>Behaviour Type</value>
+  <data name="CeaselessBurrower" xml:space="preserve">
+    <value>Ceaseless Burrower</value>
   </data>
-    <data name="CivilizedBy" xml:space="preserve">
-    <value>Civilized</value>
+  <data name="ChewyWires" xml:space="preserve">
+    <value>Chewy Wires</value>
   </data>
-    <data name="DietType" xml:space="preserve">
-    <value>Diet Type</value>
+  <data name="ColossalBeing" xml:space="preserve">
+    <value>Colossal Being</value>
   </data>
-    <data name="DiscoveredBy" xml:space="preserve">
-    <value>Discovered</value>
+  <data name="CrabApple" xml:space="preserve">
+    <value>Crab 'Apple'</value>
   </data>
-    <data name="DiscoveredDate" xml:space="preserve">
-    <value>Discovered Date</value>
+  <data name="CrawMilk" xml:space="preserve">
+    <value>Craw Milk</value>
   </data>
-    <data name="DiscoveredLinkOnWiki" xml:space="preserve">
-    <value>Discovered Link on Wiki</value>
+  <data name="CreatureEgg" xml:space="preserve">
+    <value>Creature Egg</value>
   </data>
-    <data name="DiscoveryMenu" xml:space="preserve">
-    <value>Discovery Menu</value>
+  <data name="DirtyMeat" xml:space="preserve">
+    <value>Dirty Meat</value>
   </data>
-    <data name="DiscoveryPlatform" xml:space="preserve">
-    <value>Discovery Platform</value>
+  <data name="FiendishRoe" xml:space="preserve">
+    <value>Fiendish Roe</value>
   </data>
-    <data name="DiscoveryScreenHeight" xml:space="preserve">
-    <value>Discovery Screen Height</value>
+  <data name="ForagedMushrooms" xml:space="preserve">
+    <value>Foraged Mushrooms</value>
   </data>
-    <data name="DiscoveryScreenWeight" xml:space="preserve">
-    <value>Discovery Screen Weight</value>
+  <data name="FreshMilk" xml:space="preserve">
+    <value>Fresh Milk</value>
   </data>
-    <data name="ExtinctionStatus" xml:space="preserve">
-    <value>Extinction Status?</value>
+  <data name="GiantEgg" xml:space="preserve">
+    <value>Giant Egg</value>
   </data>
-    <data name="Gender1" xml:space="preserve">
-    <value>Gender 1</value>
+  <data name="GiantParasite" xml:space="preserve">
+    <value>Giant Parasite</value>
   </data>
-    <data name="Gender1ScanMaxHeight" xml:space="preserve">
-    <value>Gender 1 Scan Max Height (m)</value>
+  <data name="LeopardFruit" xml:space="preserve">
+    <value>Leopard-Fruit</value>
   </data>
-    <data name="Gender1ScanMaxWeight" xml:space="preserve">
-    <value>Gender 1 Scan Max Weight (kg)</value>
+  <data name="NourishingSlime" xml:space="preserve">
+    <value>Nourishing Slime</value>
   </data>
-    <data name="Gender2" xml:space="preserve">
-    <value>Gender 2</value>
+  <data name="PlanetaryMaggot" xml:space="preserve">
+    <value>Planetary Maggot</value>
   </data>
-    <data name="Gender2ScanMaxHeight" xml:space="preserve">
-    <value>Gender 2 scan Max Height (m)</value>
+  <data name="RegisGrease" xml:space="preserve">
+    <value>Regis Grease</value>
   </data>
-    <data name="Gender2ScanMaxWeight" xml:space="preserve">
-    <value>Gender 2 Scan Max Weight (kg)</value>
+  <data name="RoundMouth" xml:space="preserve">
+    <value>Round Mouth</value>
   </data>
-    <data name="GenusSubtype" xml:space="preserve">
-    <value>Genus Subtype</value>
+  <data name="StickyHoney" xml:space="preserve">
+    <value>Sticky 'Honey'</value>
   </data>
-    <data name="LegacyFaunaDatePC" xml:space="preserve">
-    <value>Legacy Fauna Date PC</value>
+  <data name="TallEggs" xml:space="preserve">
+    <value>Tall Eggs</value>
   </data>
-    <data name="LegacyFaunaDatePS" xml:space="preserve">
-    <value>Legacy Fauna Date PS</value>
+  <data name="TheConsumer" xml:space="preserve">
+    <value>The Consumer</value>
   </data>
-    <data name="LegacyFaunaDateXbox" xml:space="preserve">
-    <value>Legacy Fauna Date Xbox</value>
+  <data name="UnstoppableNematode" xml:space="preserve">
+    <value>Unstoppable Nematode</value>
   </data>
-    <data name="LegacyFaunaDiscovererPC" xml:space="preserve">
-    <value>Legacy Fauna Discoverer PC</value>
+  <data name="WarmProtoMilk" xml:space="preserve">
+    <value>Warm Proto-Milk</value>
   </data>
-    <data name="LegacyFaunaDiscovererPS" xml:space="preserve">
-    <value>Legacy Fauna Discoverer PS</value>
+  <data name="WildMilk" xml:space="preserve">
+    <value>Wild Milk</value>
   </data>
-    <data name="LegacyFaunaDiscovererXbox" xml:space="preserve">
-    <value>Legacy Fauna Discoverer XBox</value>
+  <data name="WormLord" xml:space="preserve">
+    <value>Worm Lord</value>
   </data>
-    <data name="LegacyFaunaNamePC" xml:space="preserve">
-    <value>Legacy Fauna Name PC</value>
-  </data>
-    <data name="LegacyFaunaNamePS" xml:space="preserve">
-    <value>Legacy Fauna Name PS</value>
-  </data>
-    <data name="LegacyFaunaNameXbox" xml:space="preserve">
-    <value>Legacy Fauna Name Xbox</value>
-  </data>
-    <data name="LocationNotes" xml:space="preserve">
-    <value>Location Notes</value>
-  </data>
-    <data name="Name" xml:space="preserve">
-    <value>Fauna (unique name key)</value>
-  </data>
-    <data name="NameAfterExpeditions" xml:space="preserve">
-    <value>Fauna Name (Integrated Name after Expeditions)</value>
-  </data>
-    <data name="NMSWikiLink" xml:space="preserve">
-    <value>NMS Wiki Link</value>
-  </data>
-    <data name="OriginalName" xml:space="preserve">
-    <value>Fauna Name (Original)</value>
-  </data>
-    <data name="ResearchTeam" xml:space="preserve">
-    <value>Research Team</value>
-  </data>
-    <data name="SummaryNotes" xml:space="preserve">
-    <value>Summary Notes</value>
-  </data>
-    <data name="VersionRelease" xml:space="preserve">
-    <value>Version Release</value>
+  <data name="WraithLike" xml:space="preserve">
+    <value>Wraith-Like</value>
   </data>
 </root>

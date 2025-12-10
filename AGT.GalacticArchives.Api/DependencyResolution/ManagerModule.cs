@@ -1,10 +1,9 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Database;
-using AGT.GalacticArchives.Core.Managers.Entities;
-using AGT.GalacticArchives.Core.Managers.Entities.Caching;
-using AGT.GalacticArchives.Core.Managers.Environments;
-using AGT.GalacticArchives.Core.Managers.Environments.Caching;
+using AGT.GalacticArchives.Core.Managers.InGameEntities;
+using AGT.GalacticArchives.Core.Managers.InGameLocations;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;

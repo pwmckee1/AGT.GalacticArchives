@@ -1,4 +1,4 @@
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 namespace AGT.GalacticArchives.Core.Managers.Imports;
 
