@@ -1,10 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Core.Interfaces.Models;
-using AGT.GalacticArchives.Core.Models.Database;
+﻿using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.InGame.CombinedTypes;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
-using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
 
@@ -65,8 +60,6 @@ public class Starship : DatabaseGameEntity
     public EntityColorTypes? AccentColor { get; set; }
 
     public HashSet<StarshipUpgradeTypes?> UpgradeModules { get; set; } = [];
-
-    public string? WikiLink { get; set; }
 
     public string? ResearchTeam { get; set; }
 

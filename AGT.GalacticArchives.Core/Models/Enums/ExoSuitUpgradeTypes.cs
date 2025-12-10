@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum StarSystemSuitUpgradeTypes
+public enum ExoSuitUpgradeTypes
 {
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.DefenceSystemsUpgrade))]
     DefenceSystemsUpgrade = 1,

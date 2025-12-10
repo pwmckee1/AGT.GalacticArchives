@@ -59,7 +59,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? Evolution { get; set; }
 
     [Name(StarSystemSheetFields.ExoSuitSClassUpgradeModules)]
-    public HashSet<StarSystemSuitUpgradeTypes> SuitUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeTypes> SuitUpgradeModules { get; set; } = [];
 
     [Name(StarSystemSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }
@@ -71,7 +71,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? ExternalLink3 { get; set; }
 
     [Name(StarSystemSheetFields.Faction)]
-    public StarSystemFactionTypes StarSystemFaction { get; set; }
+    public FactionTypes Faction { get; set; }
 
     [Name(StarSystemSheetFields.GalaxyName)]
     public string? GalaxyName { get; set; }
@@ -149,7 +149,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? MTTextNotes { get; set; }
 
     [Name(StarSystemSheetFields.MultiToolSClassUpgradeModules)]
-    public HashSet<StarSystemMultiToolUpdateTypes> MultiToolSClassUpgradeModules { get; set; } = [];
+    public HashSet<MultiToolUpdateTypes> MultiToolSClassUpgradeModules { get; set; } = [];
 
     [Name(StarSystemSheetFields.Name)]
     public string? Name { get; set; }
@@ -191,7 +191,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? SpaceStationNotes { get; set; }
 
     [Name(StarSystemSheetFields.SpaceStationTradeItems)]
-    public HashSet<StarSystemStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
+    public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
     [Name(StarSystemSheetFields.StarCategory)]
     public string? StarCategory { get; set; }

@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum PlanetWeatherTypes
+public enum WeatherTypes
 {
     [Display(ResourceType = typeof(WeatherResource), Description = nameof(WeatherResource.BlueAllConsumingCold))]
     BlueAllConsumingCold = 1,

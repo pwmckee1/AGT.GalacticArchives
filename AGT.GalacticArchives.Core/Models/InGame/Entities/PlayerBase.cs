@@ -1,6 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.InGame.CombinedTypes;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
 

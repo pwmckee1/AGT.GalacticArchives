@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum PlanetLandArchetypes
+public enum LandArchetypes
 {
     [Display(
         ResourceType = typeof(LandArchetypesResource),

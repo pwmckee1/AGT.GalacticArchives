@@ -6,7 +6,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums;
 public enum BiomeSubTypes
 {
     [Display(ResourceType = typeof(BiomeSubTypeResource), Description = nameof(BiomeSubTypeResource.TheNest))]
-    TheNest,
+    TheNest = 1,
     [Display(ResourceType = typeof(BiomeSubTypeResource), Description = nameof(BiomeSubTypeResource.TheReliquary))]
     TheReliquary,
     Thirsty,

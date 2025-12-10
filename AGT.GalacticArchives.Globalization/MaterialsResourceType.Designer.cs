@@ -418,5 +418,14 @@ namespace AGT.GalacticArchives.Globalization {
                 return ResourceManager.GetString("ViscousFluids", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vortex Cube.
+        /// </summary>
+        public static string VortexCube {
+            get {
+                return ResourceManager.GetString("VortexCube", resourceCulture);
+            }
+        }
     }
 }

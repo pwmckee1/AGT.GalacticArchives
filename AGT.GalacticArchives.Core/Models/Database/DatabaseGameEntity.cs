@@ -9,15 +9,15 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 {
     public GalaxyTypes? Galaxy { get; set; }
 
-    public Guid? RegionId { get; set; }
+    public virtual Guid? RegionId { get; set; }
 
     public Region? Region { get; set; }
 
-    public Guid? StarSystemId { get; set; }
+    public virtual Guid? StarSystemId { get; set; }
 
     public StarSystem? StarSystem { get; set; }
 
-    public Guid? PlanetId { get; set; }
+    public virtual Guid? PlanetId { get; set; }
 
     public Planet? Planet { get; set; }
 
@@ -34,6 +34,18 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
     /// Second coordinate number when viewed in game Y.Y/X.X format
     /// </summary>
     public float? XAxisPlanetCoordinate { get; set; }
+
+    public string? XGalaxyHex { get; set; }
+
+    public string? YGalaxyHex { get; set; }
+
+    public string? ZGalaxyHex { get; set; }
+
+    public string? XGalaxyDec { get; set; }
+
+    public string? YGalaxyDec { get; set; }
+
+    public string? ZGalaxyDec { get; set; }
 
     public string? SurveyedBy { get; set; }
 

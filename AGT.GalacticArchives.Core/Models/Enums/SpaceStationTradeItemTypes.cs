@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum StarSystemStationTradeItemTypes
+public enum SpaceStationTradeItemTypes
 {
     [Display(
         ResourceType = typeof(StarSystemResource),

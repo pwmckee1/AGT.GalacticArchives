@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using AGT.GalacticArchives.Core.Models.Enums;
 
-namespace AGT.GalacticArchives.Core.Models.InGame.CombinedTypes;
+namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
 #pragma warning disable SA1402:File may only contain a single type
 
 public class StarshipComponents

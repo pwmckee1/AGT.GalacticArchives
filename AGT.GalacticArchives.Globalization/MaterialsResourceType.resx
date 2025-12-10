@@ -240,4 +240,7 @@
     <data name="ViscousFluids" xml:space="preserve">
         <value>Viscous Fluids</value>
       </data>
+    <data name="VortexCube" xml:space="preserve">
+        <value>Vortex Cube</value>
+      </data>
 </root>

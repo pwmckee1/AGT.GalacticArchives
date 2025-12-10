@@ -17,7 +17,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? AdditionalNotes { get; set; }
 
     [Name(PlanetSheetFields.ArchetypeOfLand)]
-    public PlanetLandArchetypes? ArchetypeOfLand { get; set; }
+    public LandArchetypes? ArchetypeOfLand { get; set; }
 
     [Name(PlanetSheetFields.AssignedRawIngredient)]
     public string? AssignedRawIngredient { get; set; }
@@ -359,7 +359,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? UnderwaterNightTemp { get; set; }
 
     [Name(PlanetSheetFields.Weather)]
-    public PlanetWeatherTypes? PlanetWeather { get; set; }
+    public WeatherTypes? PlanetWeather { get; set; }
 
     [Name(PlanetSheetFields.WikiLink)]
     public string? WikiLink { get; set; }

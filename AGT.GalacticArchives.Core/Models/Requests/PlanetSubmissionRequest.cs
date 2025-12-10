@@ -25,7 +25,7 @@ public class PlanetSubmissionRequest : BaseSubmissionRequest
 
     public TerrainArchetypes? TerrainArchetypes { get; set; }
 
-    public PlanetWeatherTypes? PlanetWeather { get; set; }
+    public WeatherTypes? PlanetWeather { get; set; }
 
     public HashSet<ExoticMaterialTypes> Resources { get; set; } = [];
 

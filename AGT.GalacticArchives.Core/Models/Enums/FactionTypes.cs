@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums;
 
-public enum StarSystemFactionTypes
+public enum FactionTypes
 {
     Gek = 1,
     Korvax,
