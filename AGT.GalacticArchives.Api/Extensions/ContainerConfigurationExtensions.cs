@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using Autofac;
 

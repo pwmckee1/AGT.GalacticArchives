@@ -1,7 +1,9 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
@@ -38,10 +40,10 @@ public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
 
         Map(m => m.SuitUpgradeModules)
             .Convert(m =>
-                GetEnumValuesFromCsvColumns<StarSystemSuitUpgradeTypes>(StarSystemResource.SuitUpgradeModules, m));
+                GetEnumValuesFromCsvColumns<ExoSuitUpgradeTypes>(StarSystemResource.SuitUpgradeModules, m));
 
-        Map(m => m.StarSystemFaction)
-            .Convert(m => GetEnumValueFromCsvField<StarSystemFactionTypes>(StarSystemSheetFields.Faction, m));
+        Map(m => m.Faction)
+            .Convert(m => GetEnumValueFromCsvField<FactionTypes>(StarSystemSheetFields.Faction, m));
 
         Map(m => m.GalaxySequence)
             .Convert(m =>
@@ -110,7 +112,7 @@ public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
             });
 
         Map(m => m.MultiToolSClassUpgradeModules)
-            .Convert(m => GetEnumValuesFromCsvColumns<StarSystemMultiToolUpdateTypes>(
+            .Convert(m => GetEnumValuesFromCsvColumns<MultiToolUpdateTypes>(
                 StarSystemResource.MultiToolSClassUpgradeModules,
                 m));
 
@@ -136,13 +138,13 @@ public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
             });
 
         Map(m => m.StarSystemShipUpgradeModules)
-            .Convert(m => GetEnumValuesFromCsvColumns<StarSystemShipUpgradeTypes>(
+            .Convert(m => GetEnumValuesFromCsvColumns<StarshipUpgradeTypes>(
                 StarSystemResource.StarSystemShipUpgradeModules,
                 m));
 
         Map(m => m.SpaceStationTradeItems)
             .Convert(m =>
-                GetEnumValuesFromCsvColumns<StarSystemStationTradeItemTypes>(
+                GetEnumValuesFromCsvColumns<SpaceStationTradeItemTypes>(
                     StarSystemResource.SpaceStationTradeItems,
                     m));
 

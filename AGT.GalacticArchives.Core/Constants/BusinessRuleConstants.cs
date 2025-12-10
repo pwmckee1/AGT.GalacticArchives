@@ -2,6 +2,7 @@
 
 public static class BusinessRuleConstants
 {
+    public const string? SettlementName = "Settlement Name";
     public const int CacheDurationInMinutes = 5;
     public const int DayInMinutes = 1440;
     public const string ObfuscationStringSequence = "********";

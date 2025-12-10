@@ -1,4 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models;
 using Google.Cloud.Firestore;
 
@@ -34,7 +35,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(IGameData.Name), entityName)
+            .WhereEqualTo(nameof(IDatabaseGameEntity.Name), entityName)
             .WhereEqualTo(parentIdName, parentId.ToString());
 
         var snapshot = await query.GetSnapshotAsync();
@@ -46,31 +47,31 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         var query = firestoreDb
             .Collection(collectionName)
-            .WhereEqualTo(nameof(IGameData.Name), entityName);
+            .WhereEqualTo(nameof(IDatabaseGameEntity.Name), entityName);
 
         var snapshot = await query.GetSnapshotAsync();
 
         return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
-    public virtual async Task<IGameData> UpsertAsync(IGameData entity, string collectionName)
+    public virtual async Task<IDatabaseGameEntity> UpsertAsync(IDatabaseGameEntity gameEntity, string collectionName)
     {
         var docRef = firestoreDb
             .Collection(collectionName)
-            .Document(entity.Id.ToString());
+            .Document(gameEntity.EntityId.ToString());
 
         var snapshot = await docRef.GetSnapshotAsync();
 
         if (!snapshot.Exists)
         {
-            await docRef.SetAsync(entity.ToDictionary());
+            await docRef.SetAsync(gameEntity.ToDictionary());
         }
         else
         {
-            await docRef.UpdateAsync(entity.ToDictionary());
+            await docRef.UpdateAsync(gameEntity.ToDictionary());
         }
 
-        return entity;
+        return gameEntity;
     }
 
     public virtual async Task DeleteAsync(Guid entityId, string collectionName)

@@ -1,7 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Entities;
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Strategies;
 using AGT.GalacticArchives.Core.Strategies.GoogleSheetValidation;
 using AGT.GalacticArchives.Globalization;

@@ -7,7 +7,7 @@ public static class StarshipSheetFields
     public const string CargoSlots = "Cargo Slots (Pre-Waypoint)";
     public const string Class = "Class";
     public const string CivilizedBy = "Civilized";
-    public const string Coordinates = "Coordinates";
+    public const string Coordinates = "GalacticAddressCoordinates";
     public const string Cost = "Cost";
     public const string Damage = "Damage";
     public const string DescriptionNotes = "Description Notes";

@@ -27,7 +27,7 @@ public static class StarSystemSheetFields
     public const string Faction = "Faction";
     public const string GalaxyName = "Galaxy";
     public const string GalaxySequence = "GalaxyID";
-    public const string GalacticCoordinates = "Galactic Coordinates";
+    public const string GalacticCoordinates = "Galactic GalacticAddressCoordinates";
     public const string GameModeType = "Mode";
     public const string GameRelease = "Release";
     public const string GameReleaseVersionNumber = "Release Version Number";

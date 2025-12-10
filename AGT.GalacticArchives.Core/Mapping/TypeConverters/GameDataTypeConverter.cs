@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Entities;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
+using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;

@@ -1,7 +1,10 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Models.Enums;
-using AGT.GalacticArchives.Core.Models.Imports;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
 
@@ -107,7 +110,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.ArchetypeOfLand);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetLandArchetypes>(value, m)
+                    ? GetEnumValueFromCsvField<LandArchetypes>(value, m)
                     : null;
             });
 
@@ -116,7 +119,7 @@ public sealed class PlanetCsvMap : BaseCsvMap<PlanetImport>
             {
                 string? value = m.Row.GetField(PlanetSheetFields.Weather);
                 return string.IsNullOrEmpty(value)
-                    ? GetEnumValueFromCsvField<PlanetWeatherTypes>(value, m)
+                    ? GetEnumValueFromCsvField<WeatherTypes>(value, m)
                     : null;
             });
 
