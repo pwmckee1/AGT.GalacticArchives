@@ -1,4 +1,7 @@
-﻿namespace AGT.GalacticArchives.Core.Constants;
+﻿using System.ComponentModel.DataAnnotations;
+using AGT.GalacticArchives.Globalization;
+
+namespace AGT.GalacticArchives.Core.Constants;
 
 public static class NamedKeys
 {
@@ -13,15 +16,22 @@ public static class NamedKeys
         public const string PointOfInterestService = nameof(PointOfInterestService);
         public const string SettlementService = nameof(SettlementService);
         public const string StarshipService = nameof(StarshipService);
-        public const string FaunaImportService = nameof(GoogleSheetConstants.FaunaSheetName);
-        public const string MultiToolImportService = nameof(GoogleSheetConstants.MultiToolSheetName);
-        public const string PlanetImportService = nameof(GoogleSheetConstants.PlanetSheetName);
-        public const string PlayerBaseImportService = nameof(GoogleSheetConstants.PlayerBaseSheetName);
-        public const string PointOfInterestImportService = nameof(GoogleSheetConstants.PointOfInterestSheetName);
-        public const string RegionImportService = nameof(GoogleSheetConstants.RegionSheetName);
-        public const string SettlementImportService = nameof(GoogleSheetConstants.SettlementSheetName);
-        public const string StarshipImportService = nameof(GoogleSheetConstants.StarshipSheetName);
-        public const string StarSystemImportService = nameof(GoogleSheetConstants.StarSystemSheetName);
+        public const string FaunaImportService = nameof(FaunaImportService);
+        public const string MultiToolImportService = nameof(PlanetImportService);
+        public const string PlanetImportService = nameof(PlanetImportService);
+
+        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PlayerBaseSheetName))]
+        public const string PlayerBaseImportService = nameof(PlayerBaseImportService);
+        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PointOfInterestSheetName))]
+        public const string PointOfInterestImportService = nameof(PointOfInterestImportService);
+        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.RegionSheetName))]
+        public const string RegionImportService = nameof(RegionImportService);
+        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.SettlementSheetName))]
+        public const string SettlementImportService = nameof(SettlementImportService);
+        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarshipSheetName))]
+        public const string StarshipImportService = nameof(StarshipImportService);
+        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarSystemSheetName))]
+        public const string StarSystemImportService = nameof(StarSystemImportService);
     }
 
     public static class Managers
