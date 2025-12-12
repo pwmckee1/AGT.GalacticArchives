@@ -1,6 +1,6 @@
 namespace AGT.GalacticArchives.Core.Models.Enums.Metadata;
 
-public enum GamePlatformType
+public enum GamePlatformTypes
 {
     All,
     Mac,

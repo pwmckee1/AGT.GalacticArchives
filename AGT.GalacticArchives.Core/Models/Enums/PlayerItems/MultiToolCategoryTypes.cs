@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
-public enum MultiToolCategories
+public enum MultiToolCategoryTypes
 {
     Alien,
 

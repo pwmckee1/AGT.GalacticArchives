@@ -1,6 +1,50 @@
+using System.Globalization;
+using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 using CsvHelper.Configuration;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
 
-public class SettlementCsvMap : ClassMap<SettlementImport>;
+public sealed class SettlementCsvMap : ClassMap<SettlementImport>
+{
+    public SettlementCsvMap()
+    {
+        AutoMap(CultureInfo.InvariantCulture);
+
+        Map(m => m.YYFirstCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YYFirstCoordinate));
+
+        Map(m => m.XXSecondCoordinate)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.XXSecondCoordinate));
+
+        Map(m => m.DateObserved).Convert(m => m.Row.ReadDateTimeFieldOrNull(SettlementSheetFields.DateObserved));
+
+        Map(m => m.Economy).Convert(m => m.Row.ReadEnumFieldOrNull<EconomyTypes>(SettlementSheetFields.Economy));
+
+        Map(m => m.Class).Convert(m => m.Row.ReadEnumFieldOrNull<ItemClassTypes>(SettlementSheetFields.Class));
+
+        Map(m => m.Population).Convert(m => m.Row.ReadIntFieldOrNull(SettlementSheetFields.Population));
+
+        Map(m => m.Happiness).Convert(m => m.Row.ReadIntFieldOrNull(SettlementSheetFields.Happiness));
+
+        Map(m => m.Productivity).Convert(m => m.Row.ReadIntFieldOrNull(SettlementSheetFields.Productivity));
+
+        Map(m => m.Maintenance).Convert(m => m.Row.ReadIntFieldOrNull(SettlementSheetFields.Maintenance));
+
+        Map(m => m.Sentinels).Convert(m => m.Row.ReadIntFieldOrNull(SettlementSheetFields.Sentinels));
+
+        Map(m => m.IsProfitable)
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                SettlementSheetFields.IsProfitable,
+                SettlementSheetFields.IsProfitableIndicator));
+
+        Map(m => m.Buildings)
+            .Convert(m => m.Row.ReadEnumFields<SettlementBuildingTypes>(SettlementSheetFields.Buildings));
+
+        Map(m => m.GameMode).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(SettlementSheetFields.GameMode));
+    }
+}

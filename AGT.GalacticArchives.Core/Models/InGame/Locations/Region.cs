@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Locations;
 
@@ -11,7 +11,7 @@ public class Region : DatabaseGameEntity
 
     public HashSet<StarSystem> StarSystems { get; set; } = [];
 
-    public GalacticQuadrants? Quadrant { get; set; }
+    public GalacticQuadrantTypes? Quadrant { get; set; }
 
     public string? EarliestKnownSurveyor { get; set; }
 

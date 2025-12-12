@@ -1,5 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -10,10 +14,10 @@ public class MultiToolImport : IGoogleSheetImport
     public string? AcquisitionGuidance { get; set; }
 
     [Name(MultiToolSheetFields.Category)]
-    public string? Category { get; set; }
+    public MultiToolCategoryTypes? Category { get; set; }
 
     [Name(MultiToolSheetFields.Class)]
-    public string? Class { get; set; }
+    public ItemClassTypes? Class { get; set; }
 
     [Name(MultiToolSheetFields.CivilizedBy)]
     public string? CivilizedBy { get; set; }
@@ -22,10 +26,10 @@ public class MultiToolImport : IGoogleSheetImport
     public string? Coordinates { get; set; }
 
     [Name(MultiToolSheetFields.Cost)]
-    public string? Cost { get; set; }
+    public int? Cost { get; set; }
 
     [Name(MultiToolSheetFields.Damage)]
-    public string? Damage { get; set; }
+    public float? Damage { get; set; }
 
     [Name(MultiToolSheetFields.DiscoveredBy)]
     public string? DiscoveredBy { get; set; }
@@ -34,46 +38,46 @@ public class MultiToolImport : IGoogleSheetImport
     public string? DiscoveredLinkOnWiki { get; set; }
 
     [Name(MultiToolSheetFields.DiscoveryDate)]
-    public string? DiscoveryDate { get; set; }
+    public DateTime? DiscoveryDate { get; set; }
 
     [Name(MultiToolSheetFields.DocumentSequence)]
-    public string? DocumentSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 
     [Name(MultiToolSheetFields.Galaxy)]
-    public string? Galaxy { get; set; }
+    public GalaxyTypes? Galaxy { get; set; }
 
     [Name(MultiToolSheetFields.HasCrystals)]
-    public string? HasCrystals { get; set; }
+    public bool? HasCrystals { get; set; }
 
     [Name(MultiToolSheetFields.HasGlowTubes)]
-    public string? HasGlowTubes { get; set; }
+    public bool? HasGlowTubes { get; set; }
 
     [Name(MultiToolSheetFields.HasHorns)]
-    public string? HasHorns { get; set; }
+    public bool? HasHorns { get; set; }
 
     [Name(MultiToolSheetFields.Location)]
-    public string? Location { get; set; }
+    public LocationTypes? Location { get; set; }
 
     [Name(MultiToolSheetFields.Mining)]
-    public string? Mining { get; set; }
+    public float? Mining { get; set; }
 
-    [Name(MultiToolSheetFields.Mode)]
-    public string? Mode { get; set; }
+    [Name(MultiToolSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
-    [Name(MultiToolSheetFields.Name)]
-    public string? Name { get; set; }
+    [Name(MultiToolSheetFields.MultiToolName)]
+    public string? MultiToolName { get; set; }
 
     [Name(MultiToolSheetFields.Planet)]
     public string? Planet { get; set; }
 
     [Name(MultiToolSheetFields.Platform)]
-    public string? Platform { get; set; }
+    public GamePlatformTypes? Platform { get; set; }
 
     [Name(MultiToolSheetFields.PortalGlyphs)]
     public string? PortalGlyphs { get; set; }
 
     [Name(MultiToolSheetFields.PrimaryColor)]
-    public string? PrimaryColor { get; set; }
+    public ItemColorTypes? PrimaryColor { get; set; }
 
     [Name(MultiToolSheetFields.Region)]
     public string? Region { get; set; }
@@ -85,19 +89,19 @@ public class MultiToolImport : IGoogleSheetImport
     public string? ResearchTeam { get; set; }
 
     [Name(MultiToolSheetFields.Scanner)]
-    public string? Scanner { get; set; }
+    public float? Scanner { get; set; }
 
     [Name(MultiToolSheetFields.SecondaryColor)]
-    public string? SecondaryColor { get; set; }
+    public ItemColorTypes? SecondaryColor { get; set; }
 
-    [Name(MultiToolSheetFields.Slots)]
-    public string? Slots { get; set; }
+    [Name(MultiToolSheetFields.TechSlots)]
+    public int? TechSlots { get; set; }
 
-    [Name(MultiToolSheetFields.System)]
-    public string? System { get; set; }
+    [Name(MultiToolSheetFields.StarSystem)]
+    public string? StarSystem { get; set; }
 
-    [Name(MultiToolSheetFields.Type)]
-    public string? Type { get; set; }
+    [Name(MultiToolSheetFields.MultiToolType)]
+    public MultiToolTypes? MultiToolType { get; set; }
 
     [Name(MultiToolSheetFields.UserNotes)]
     public string? UserNotes { get; set; }
@@ -106,8 +110,8 @@ public class MultiToolImport : IGoogleSheetImport
     public string? WikiLink { get; set; }
 
     [Name(MultiToolSheetFields.XXSecondCoordinate)]
-    public string? XXSecondCoordinate { get; set; }
+    public float? XXSecondCoordinate { get; set; }
 
     [Name(MultiToolSheetFields.YYFirstCoordinate)]
-    public string? YYFirstCoordinate { get; set; }
+    public float? YYFirstCoordinate { get; set; }
 }

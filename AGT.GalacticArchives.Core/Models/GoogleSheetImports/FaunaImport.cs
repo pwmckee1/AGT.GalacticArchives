@@ -1,97 +1,109 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class FaunaImport : IGoogleSheetImport
 {
-    public string? Activity { get; set; }
+    [Name(FaunaSheetFields.ActivityType)]
+    public FaunaCircadianTypes? ActivityType { get; set; }
 
     [Name(FaunaSheetFields.AdditionalNotes)]
     public string? AdditionalNotes { get; set; }
 
-    public string? Appearance { get; set; }
+    [Name(FaunaSheetFields.AppearanceNotes)]
+    public string? AppearanceNotes { get; set; }
 
-    public string? Bait { get; set; }
-
-    public string? Behaviour { get; set; }
+    [Name(FaunaSheetFields.FaunaBaitType)]
+    public FaunaBaitTypes? FaunaBaitType { get; set; }
 
     [Name(FaunaSheetFields.BehaviourType)]
-    public string? BehaviourType { get; set; }
+    public FaunaBehaviorTypes? BehaviourType { get; set; }
+
+    [Name(FaunaSheetFields.BehaviourArchetype)]
+    public FaunaBehaviorArchetypes? BehaviourArchetype { get; set; }
 
     [Name(FaunaSheetFields.CivilizedBy)]
     public string? CivilizedBy { get; set; }
 
-    public string? Diet { get; set; }
+    [Name(FaunaSheetFields.FaunaDietType)]
+    public FaunaDietTypes? FaunaDietType { get; set; }
 
-    [Name(FaunaSheetFields.DietType)]
-    public string? DietType { get; set; }
+    [Name(FaunaSheetFields.FaunaDietArchetype)]
+    public FaunaDietArchetypes? FaunaDietArchetype { get; set; }
 
     [Name(FaunaSheetFields.DiscoveredBy)]
     public string? DiscoveredBy { get; set; }
 
     [Name(FaunaSheetFields.DiscoveredDate)]
-    public string? DiscoveredDate { get; set; }
+    public DateTime? DiscoveredDate { get; set; }
 
     [Name(FaunaSheetFields.DiscoveredLinkOnWiki)]
     public string? DiscoveredLinkOnWiki { get; set; }
 
-    [Name(FaunaSheetFields.DiscoveryMenu)]
-    public string? DiscoveryMenu { get; set; }
+    [Name(FaunaSheetFields.DiscoveryMenuNotes)]
+    public string? DiscoveryMenuNotes { get; set; }
 
-    [Name(FaunaSheetFields.DiscoveryPlatform)]
-    public string? DiscoveryPlatform { get; set; }
+    [Name(FaunaSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     [Name(FaunaSheetFields.DiscoveryScreenHeight)]
-    public string? DiscoveryScreenHeight { get; set; }
+    public float? DiscoveryScreenHeight { get; set; }
 
     [Name(FaunaSheetFields.DiscoveryScreenWeight)]
-    public string? DiscoveryScreenWeight { get; set; }
+    public float? DiscoveryScreenWeight { get; set; }
 
-    [Name(FaunaSheetFields.DocSeq)]
-    public string? DocSeq { get; set; }
+    [Name(FaunaSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
 
-    public string? Ecosystem { get; set; }
+    [Name(FaunaSheetFields.EcosystemType)]
+    public FaunaEcosystemTypes? EcosystemType { get; set; }
 
-    [Name(FaunaSheetFields.ExtinctionStatus)]
-    public string? ExtinctionStatus { get; set; }
+    [Name(FaunaSheetFields.IsExtinct)]
+    public bool? IsExtinct { get; set; }
 
-    public string? Galaxy { get; set; }
+    [Name(FaunaSheetFields.Galaxy)]
+    public GalaxyTypes? Galaxy { get; set; }
 
     [Name(FaunaSheetFields.Gender1)]
-    public string? Gender1 { get; set; }
+    public FaunaGenderTypes? Gender1 { get; set; }
 
     [Name(FaunaSheetFields.Gender1ScanMaxHeight)]
-    public string? Gender1ScanMaxHeight { get; set; }
+    public float? Gender1ScanMaxHeight { get; set; }
 
     [Name(FaunaSheetFields.Gender1ScanMaxWeight)]
-    public string? Gender1ScanMaxWeight { get; set; }
+    public float? Gender1ScanMaxWeight { get; set; }
 
     [Name(FaunaSheetFields.Gender2)]
-    public string? Gender2 { get; set; }
+    public FaunaGenderTypes? Gender2 { get; set; }
 
     [Name(FaunaSheetFields.Gender2ScanMaxHeight)]
-    public string? Gender2ScanMaxHeight { get; set; }
+    public float? Gender2ScanMaxHeight { get; set; }
 
     [Name(FaunaSheetFields.Gender2ScanMaxWeight)]
-    public string? Gender2ScanMaxWeight { get; set; }
+    public float? Gender2ScanMaxWeight { get; set; }
 
-    public string? Genus { get; set; }
+    [Name(FaunaSheetFields.GenusType)]
+    public FaunaGenusTypes? GenusType { get; set; }
 
     [Name(FaunaSheetFields.GenusSubtype)]
-    public string? GenusSubtype { get; set; }
+    public FaunaGenusSubtypes? GenusSubtype { get; set; }
 
-    public string? Hemisphere { get; set; }
+    [Name(FaunaSheetFields.HemisphereType)]
+    public HemisphereTypes? HemisphereType { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDatePC)]
-    public string? LegacyFaunaDatePC { get; set; }
+    public DateTime? LegacyFaunaDatePC { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDatePS)]
-    public string? LegacyFaunaDatePS { get; set; }
+    public DateTime? LegacyFaunaDatePS { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDateXbox)]
-    public string? LegacyFaunaDateXbox { get; set; }
+    public DateTime? LegacyFaunaDateXbox { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDiscovererPC)]
     public string? LegacyFaunaDiscovererPC { get; set; }
@@ -114,10 +126,11 @@ public class FaunaImport : IGoogleSheetImport
     [Name(FaunaSheetFields.LocationNotes)]
     public string? LocationNotes { get; set; }
 
-    public string? Mode { get; set; }
+    [Name(FaunaSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
-    [Name(FaunaSheetFields.Name)]
-    public string? Name { get; set; }
+    [Name(FaunaSheetFields.FaunaName)]
+    public string? FaunaName { get; set; }
 
     [Name(FaunaSheetFields.NameAfterExpeditions)]
     public string? NameAfterExpeditions { get; set; }
@@ -125,19 +138,25 @@ public class FaunaImport : IGoogleSheetImport
     [Name(FaunaSheetFields.NMSWikiLink)]
     public string? NMSWikiLink { get; set; }
 
+    [Name(FaunaSheetFields.Notes)]
     public string? Notes { get; set; }
 
     [Name(FaunaSheetFields.OriginalName)]
     public string? OriginalName { get; set; }
 
+    [Name(FaunaSheetFields.Planet)]
     public string? Planet { get; set; }
 
-    public string? Produces { get; set; }
+    [Name(FaunaSheetFields.ProductionType)]
+    public FaunaProductionTypes? ProductionType { get; set; }
 
-    public string? Rarity { get; set; }
+    [Name(FaunaSheetFields.FaunaRarityType)]
+    public FaunaRarityTypes? FaunaRarityType { get; set; }
 
+    [Name(FaunaSheetFields.Region)]
     public string? Region { get; set; }
 
+    [Name(FaunaSheetFields.Release)]
     public string? Release { get; set; }
 
     [Name(FaunaSheetFields.ResearchTeam)]
@@ -146,7 +165,8 @@ public class FaunaImport : IGoogleSheetImport
     [Name(FaunaSheetFields.SummaryNotes)]
     public string? SummaryNotes { get; set; }
 
-    public string? System { get; set; }
+    [Name(FaunaSheetFields.StarSystem)]
+    public string? StarSystem { get; set; }
 
     [Name(FaunaSheetFields.VersionRelease)]
     public string? VersionRelease { get; set; }

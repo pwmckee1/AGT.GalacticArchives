@@ -8,7 +8,7 @@ public static class PlayerBaseSheetFields
     public const string Aesthetics = "Aesthetics";
     public const string Arena = "Arena";
     public const string BaseComplexity = "Base Complexity";
-    public const string BaseElements1 = "Base Elements";
+    public const string BaseElements = "Base Elements";
     public const string BaseElements2 = "Base Elements";
     public const string BaseElements3 = "Base Elements";
     public const string BaseElements4 = "Base Elements";
@@ -41,11 +41,11 @@ public static class PlayerBaseSheetFields
     public const string HasTradeTerminal = "Trade Terminal?";
     public const string LayoutDescription = "Layout Description";
     public const string LandingPad = "Landing Pad?";
-    public const string MiningExtractor = "Mining Extractor?";
+    public const string MiningExtractorMaterial = "Mining Extractor?";
     public const string MiningStoreCapacity = "Mining Store Capacity";
     public const string Mode = "Mode";
     public const string Name = "Base Name";
-    public const string NearbyPOI1 = "Nearby POI";
+    public const string NearbyPOI = "Nearby POI";
     public const string NearbyPOI2 = "Nearby POI";
     public const string NearbyPOI3 = "Nearby POI";
     public const string NearbyPOI4 = "Nearby POI";
@@ -61,11 +61,18 @@ public static class PlayerBaseSheetFields
     public const string Region = "Region";
     public const string Surveyor = "Surveyor ID";
     public const string SummaryText = "Summary Text";
-    public const string System = "System";
+    public const string StarSystem = "System";
     public const string TradeTerminal = "Trade Terminal?";
     public const string TypeOfBase = "Type of Base";
     public const string Videos = "Videoes";
     public const string WikiLink = "Wiki Link";
     public const string XXSecondCoordinate = "XX (second coord)";
     public const string YYFirstCoordinate = "YY (first coord)";
+    public const string AllowsDeconstructionIndicator = "Y";
+    public const string HasArenaIndicator = "Y";
+    public const string HasFarmIndicator = "Y";
+    public const string HasGeoBayIndicator = "Y";
+    public const string HasLandingPadIndicator = "Y";
+    public const string HasRacetrackIndicator = "Y";
+    public const string HasTradeTerminalIndicator = "Y";
 }

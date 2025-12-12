@@ -19,7 +19,7 @@ public class StarshipSubmissionRequest : BaseSubmissionRequest
 
     public bool? IsLivingShip { get; set; }
 
-    public QualityClassTypes? ItemClass { get; set; }
+    public ItemClassTypes? ItemClass { get; set; }
 
     public int? InventorySlots { get; set; }
 

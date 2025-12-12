@@ -113,9 +113,9 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>GeologyTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Metadata\GoogleSheetResource.resx">
+        <EmbeddedResource Update="Metadata\ImportResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>GoogleSheetResource.Designer.cs</LastGenOutput>
+          <LastGenOutput>ImportResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="Planet\LandArchetypesResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
@@ -344,10 +344,10 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>GeologyTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="Metadata\GoogleSheetResource.Designer.cs">
+        <Compile Update="Metadata\ImportResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
-          <DependentUpon>GoogleSheetResource.resx</DependentUpon>
+          <DependentUpon>ImportResource.resx</DependentUpon>
         </Compile>
         <Compile Update="Planet\LandArchetypesResource.Designer.cs">
           <DesignTime>True</DesignTime>

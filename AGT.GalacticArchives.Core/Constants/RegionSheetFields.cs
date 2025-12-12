@@ -33,4 +33,7 @@ public static class RegionSheetFields
     public const string YYDec = "YY (dec)";
     public const string ZZDec = "ZZ (dec)";
     public const string YY = "YY (altitude)";
+    public const string GalacticQuadrant = "Quadrant";
+    public const string XXHex = "XX";
+    public const string ZZHex = "ZZ";
 }

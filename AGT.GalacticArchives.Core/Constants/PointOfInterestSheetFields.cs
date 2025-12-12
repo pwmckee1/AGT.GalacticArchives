@@ -11,7 +11,7 @@ public static class PointOfInterestSheetFields
     public const string Release = "Release";
     public const string Surveyor = "Surveyor ID";
     public const string System = "System";
-    public const string Type = "POI Type";
+    public const string LocationType = "POI Type";
     public const string XXSecondCoordinate = "XX (2nd coordinate)";
     public const string YYFirstCoordinate = "YY (1st coordinate)";
 }

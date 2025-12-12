@@ -1,8 +1,8 @@
 using AGT.GalacticArchives.Core.Interfaces.Models;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
-using AGT.GalacticArchives.Core.Models.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Metadata;
 
 namespace AGT.GalacticArchives.Core.Models.Database;
 
@@ -58,7 +58,7 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 
     public GameModeTypes? GameMode { get; set; }
 
-    public GamePlatformType? Platform { get; set; }
+    public GamePlatformTypes? Platform { get; set; }
 
     public Civilization? Civilization { get; set; }
 

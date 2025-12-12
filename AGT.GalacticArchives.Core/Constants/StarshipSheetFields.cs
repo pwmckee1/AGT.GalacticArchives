@@ -25,7 +25,7 @@ public static class StarshipSheetFields
     public const string Maneuver = "Maneuver";
     public const string GameMode = "Mode";
     public const string ExtraHullAccessories = "More Hull Accessories";
-    public const string Name = "Starship Name";
+    public const string StarshipName = "Starship Name";
     public const string Pilot = "Pilot";
     public const string Planet = "Planet";
     public const string GamePlatform = "Platform";
@@ -36,19 +36,19 @@ public static class StarshipSheetFields
     public const string ResearchTeam = "Wiki Link";
     public const string SecondaryColor = "Secondary Color";
     public const string Shield = "Shield";
+    public const string StarshipModelType = "Type";
     public const string Subtype = "Ship Subtype";
-    public const string Slots = "Slots";
+    public const string InventorySlots = "Slots";
     public const string SummaryNotes = "Summary Notes";
-    public const string System = "System";
+    public const string StarSystem = "System";
     public const string TechSlots = "Techslots";
     public const string Thruster = "Thruster/Engine";
-    public const string ModelType = "Type";
     public const string Warp = "Warp";
     public const string WikiLink = "Lock Record";
     public const string XXSecondCoordinate = "XX (second coord)";
     public const string YYFirstCoordinate = "YY (first coord)";
     public const string WingType = "Wings?";
-    public const string UpgradeModules = "Upgrade Modules";
+    public const string StarshipUpgradeModules = "Upgrade Modules";
     public const string ReleaseNumber = "Release Number";
     public const string ReleaseDate = "Release Date";
 }

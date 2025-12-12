@@ -1,4 +1,4 @@
-﻿namespace AGT.GalacticArchives.Core.Models.Enums;
+﻿namespace AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 public enum StarColorTypes
 {

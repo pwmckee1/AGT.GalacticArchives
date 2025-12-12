@@ -1,5 +1,6 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -13,7 +14,7 @@ public class RegionImport : IGoogleSheetImport
     public string? AdditionalNotes { get; set; }
 
     [Name(RegionSheetFields.AutoSurveyDate)]
-    public string? AutoSurveyDate { get; set; }
+    public DateTime? AutoSurveyDate { get; set; }
 
     [Name(RegionSheetFields.BaseCoord)]
     public string? BaseCoordinates { get; set; }
@@ -27,7 +28,7 @@ public class RegionImport : IGoogleSheetImport
     public string? Coordinates { get; set; }
 
     [Name(RegionSheetFields.DocSequence)]
-    public string? DocSequence { get; set; }
+    public int? DocSequence { get; set; }
 
     [Name(RegionSheetFields.EarliestKnownSurveyor)]
     public string? EarliestKnownSurveyor { get; set; }
@@ -36,16 +37,16 @@ public class RegionImport : IGoogleSheetImport
     public string? EarliestSurveyorWikiUser { get; set; }
 
     [Name(RegionSheetFields.EarliestSystemDiscovery)]
-    public string? EarliestSystemDiscovery { get; set; }
+    public DateTime? EarliestSystemDiscovery { get; set; }
 
     [Name(RegionSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }
 
     [Name(RegionSheetFields.GalaxyId)]
-    public string? GalaxyId { get; set; }
+    public int? GalaxyId { get; set; }
 
     [Name(RegionSheetFields.GalaxyName)]
-    public string? GalaxyName { get; set; }
+    public GalaxyTypes? GalaxyName { get; set; }
 
     public string? Glyphs { get; set; }
 
@@ -65,7 +66,7 @@ public class RegionImport : IGoogleSheetImport
     public string? LegacyWikilink { get; set; }
 
     [Name(RegionSheetFields.LightYearsFromCenter)]
-    public string? LightYearsFromCenter { get; set; }
+    public int? LightYearsFromCenter { get; set; }
 
     [Name(RegionSheetFields.LocationNotes)]
     public string? LocationNotes { get; set; }
@@ -74,9 +75,10 @@ public class RegionImport : IGoogleSheetImport
     public string? LowestKnownPhantomSystem { get; set; }
 
     [Name(RegionSheetFields.RegionName)]
-    public string? Name { get; set; }
+    public string? RegionName { get; set; }
 
-    public string? Quadrant { get; set; }
+    [Name(RegionSheetFields.GalacticQuadrant)]
+    public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
 
     [Name(RegionSheetFields.RegionAge)]
     public float? RegionAge { get; set; }
@@ -90,21 +92,23 @@ public class RegionImport : IGoogleSheetImport
     [Name(RegionSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
 
-    public string? XX { get; set; }
+    [Name(RegionSheetFields.XXHex)]
+    public string? XXHex { get; set; }
 
     [Name(RegionSheetFields.XXDec)]
-    public string? XXDec { get; set; }
+    public int? XXDec { get; set; }
 
     [Name(RegionSheetFields.YYAltitude)]
-    public string? YYAltitude { get; set; }
+    public string? YYHex { get; set; }
 
     [Name(RegionSheetFields.YYDec)]
-    public string? YYDec { get; set; }
+    public int? YYDec { get; set; }
 
-    public string? ZZ { get; set; }
+    [Name(RegionSheetFields.ZZHex)]
+    public string? ZZHex { get; set; }
 
     [Name(RegionSheetFields.ZZDec)]
-    public string? ZZDec { get; set; }
+    public int? ZZDec { get; set; }
 
     public string? Version { get; set; }
 }

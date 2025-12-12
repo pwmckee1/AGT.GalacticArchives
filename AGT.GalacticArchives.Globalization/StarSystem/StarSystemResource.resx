@@ -472,9 +472,6 @@
   <data name="SpaceStationNotes" xml:space="preserve">
     <value>Space Station Notes</value>
   </data>
-  <data name="SpaceStationTradeItems" xml:space="preserve">
-    <value>Space Station Trade Item</value>
-  </data>
   <data name="SparkCanister" xml:space="preserve">
     <value>Spark Canister</value>
   </data>
@@ -492,9 +489,6 @@
   </data>
   <data name="StarSilk" xml:space="preserve">
     <value>Star Silk</value>
-  </data>
-  <data name="StarSystemShipUpgradeModules" xml:space="preserve">
-    <value>SpaceShip S-Class Upgrade Modules</value>
   </data>
   <data name="StolenDNASamples" xml:space="preserve">
     <value>Stolen DNA Samples</value>

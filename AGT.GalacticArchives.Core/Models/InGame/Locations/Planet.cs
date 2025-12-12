@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 

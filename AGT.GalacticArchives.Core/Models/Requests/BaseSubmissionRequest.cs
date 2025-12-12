@@ -1,5 +1,5 @@
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.Metadata;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
@@ -42,7 +42,7 @@ public abstract class BaseSubmissionRequest
 
     public float? Longitude { get; set; }
 
-    public GamePlatformType? PlatformType { get; set; }
+    public GamePlatformTypes? PlatformType { get; set; }
 
     public GameRelease? GameRelease { get; set; }
 

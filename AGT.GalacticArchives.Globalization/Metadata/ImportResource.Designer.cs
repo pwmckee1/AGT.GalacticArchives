@@ -21,14 +21,14 @@ namespace AGT.GalacticArchives.Globalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GoogleSheetResource {
+    public class ImportResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GoogleSheetResource() {
+        internal ImportResource() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Metadata.GoogleSheetResource", typeof(GoogleSheetResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Metadata.ImportResource", typeof(ImportResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -177,6 +177,15 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The max character length was exceeded on row {0} in the {1} spreadsheet in column {2}..
+        /// </summary>
+        public static string LengthTooLong {
+            get {
+                return ResourceManager.GetString("LengthTooLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An error occurred on row {0} converting the value {1} to enumeration type {2}.  Considering changing the value to a valid type, or adding the value to the enumeration..
         /// </summary>
         public static string MissingEnumerationValueForType {
@@ -236,6 +245,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string RegionSheetName {
             get {
                 return ResourceManager.GetString("RegionSheetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error on row {0} in the {1} spreadsheet. The required field {2} is empty..
+        /// </summary>
+        public static string RequiredFieldEmpty {
+            get {
+                return ResourceManager.GetString("RequiredFieldEmpty", resourceCulture);
             }
         }
         

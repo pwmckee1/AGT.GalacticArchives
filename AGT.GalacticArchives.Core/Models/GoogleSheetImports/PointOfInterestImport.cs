@@ -1,5 +1,7 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -7,10 +9,10 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 public class PointOfInterestImport : IGoogleSheetImport
 {
     [Name(PointOfInterestSheetFields.DateOfSurvey)]
-    public string? DateOfSurvey { get; set; }
+    public DateTime? DateOfSurvey { get; set; }
 
     [Name(PointOfInterestSheetFields.Galaxy)]
-    public string? Galaxy { get; set; }
+    public GalaxyTypes? Galaxy { get; set; }
 
     [Name(PointOfInterestSheetFields.Name)]
     public string? Name { get; set; }
@@ -33,12 +35,12 @@ public class PointOfInterestImport : IGoogleSheetImport
     [Name(PointOfInterestSheetFields.System)]
     public string? System { get; set; }
 
-    [Name(PointOfInterestSheetFields.Type)]
-    public string? Type { get; set; }
+    [Name(PointOfInterestSheetFields.LocationType)]
+    public LocationTypes? LocationType { get; set; }
 
     [Name(PointOfInterestSheetFields.XXSecondCoordinate)]
-    public string? XXSecondCoordinate { get; set; }
+    public float? XXSecondCoordinate { get; set; }
 
     [Name(PointOfInterestSheetFields.YYFirstCoordinate)]
-    public string? YYFirstCoordinate { get; set; }
+    public float? YYFirstCoordinate { get; set; }
 }

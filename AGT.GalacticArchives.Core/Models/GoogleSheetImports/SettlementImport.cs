@@ -1,55 +1,44 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class SettlementImport : IGoogleSheetImport
 {
-    [Name(SettlementSheetFields.Building1)]
-    public string? Building1 { get; set; }
-
-    [Name(SettlementSheetFields.Building2)]
-    public string? Building2 { get; set; }
-
-    [Name(SettlementSheetFields.Building3)]
-    public string? Building3 { get; set; }
-
-    [Name(SettlementSheetFields.Building4)]
-    public string? Building4 { get; set; }
-
-    [Name(SettlementSheetFields.Building5)]
-    public string? Building5 { get; set; }
-
-    [Name(SettlementSheetFields.Building6)]
-    public string? Building6 { get; set; }
+    [Name(SettlementSheetFields.Buildings)]
+    public HashSet<SettlementBuildingTypes> Buildings { get; set; } = [];
 
     [Name(SettlementSheetFields.Class)]
-    public string? Class { get; set; }
+    public ItemClassTypes? Class { get; set; }
 
     [Name(SettlementSheetFields.Civilized)]
     public string? Civilized { get; set; }
 
     [Name(SettlementSheetFields.DateObserved)]
-    public string? DateObserved { get; set; }
+    public DateTime? DateObserved { get; set; }
 
     [Name(SettlementSheetFields.Economy)]
-    public string? Economy { get; set; }
+    public EconomyTypes? Economy { get; set; }
 
     [Name(SettlementSheetFields.GameRelease)]
     public string? GameRelease { get; set; }
 
     [Name(SettlementSheetFields.Happiness)]
-    public string? Happiness { get; set; }
+    public int? Happiness { get; set; }
 
     [Name(SettlementSheetFields.Industry)]
     public string? Industry { get; set; }
 
     [Name(SettlementSheetFields.Maintenance)]
-    public string? Maintenance { get; set; }
+    public int? Maintenance { get; set; }
 
-    [Name(SettlementSheetFields.Mode)]
-    public string? Mode { get; set; }
+    [Name(SettlementSheetFields.GameMode)]
+    public GameModeTypes? GameMode { get; set; }
 
     [Name(SettlementSheetFields.Name)]
     public string? Name { get; set; }
@@ -67,19 +56,19 @@ public class SettlementImport : IGoogleSheetImport
     public string? Planet { get; set; }
 
     [Name(SettlementSheetFields.Population)]
-    public string? Population { get; set; }
+    public int? Population { get; set; }
 
     [Name(SettlementSheetFields.Production)]
     public string? Production { get; set; }
 
     [Name(SettlementSheetFields.Productivity)]
-    public string? Productivity { get; set; }
+    public int? Productivity { get; set; }
 
-    [Name(SettlementSheetFields.Profitable)]
-    public string? Profitable { get; set; }
+    [Name(SettlementSheetFields.IsProfitable)]
+    public bool? IsProfitable { get; set; }
 
-    [Name(SettlementSheetFields.Sentinel)]
-    public string? Sentinel { get; set; }
+    [Name(SettlementSheetFields.Sentinels)]
+    public int? Sentinels { get; set; }
 
     [Name(SettlementSheetFields.Surveyor)]
     public string? Surveyor { get; set; }
@@ -91,8 +80,8 @@ public class SettlementImport : IGoogleSheetImport
     public string? WikiLink { get; set; }
 
     [Name(SettlementSheetFields.XXSecondCoordinate)]
-    public string? XXSecondCoordinate { get; set; }
+    public float? XXSecondCoordinate { get; set; }
 
     [Name(SettlementSheetFields.YYFirstCoordinate)]
-    public string? YYFirstCoordinate { get; set; }
+    public float? YYFirstCoordinate { get; set; }
 }

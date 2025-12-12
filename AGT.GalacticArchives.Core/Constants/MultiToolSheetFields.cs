@@ -19,8 +19,8 @@ public static class MultiToolSheetFields
     public const string HasHorns = "Horns";
     public const string Location = "Location";
     public const string Mining = "Mining";
-    public const string Mode = "Mode";
-    public const string Name = "Name of MT";
+    public const string GameModeType = "Mode";
+    public const string MultiToolName = "Name of MT";
     public const string Planet = "Planet";
     public const string Platform = "Platform";
     public const string PortalGlyphs = "PortalGlpyhs";
@@ -30,11 +30,14 @@ public static class MultiToolSheetFields
     public const string ResearchTeam = "Research Team";
     public const string Scanner = "Scanner";
     public const string SecondaryColor = "Secondary Color";
-    public const string Slots = "Slots";
-    public const string System = "System";
-    public const string Type = "Type";
+    public const string TechSlots = "Slots";
+    public const string StarSystem = "System";
+    public const string MultiToolType = "Type";
     public const string UserNotes = "User Notes";
     public const string WikiLink = "Wiki Link";
     public const string XXSecondCoordinate = "XX (second cord)";
     public const string YYFirstCoordinate = "YY (first coord)";
+    public const string HasCrystalsIndicator = "Y";
+    public const string HasGlowTubesIndicator = "Y";
+    public const string HasHornsIndicator = "Y";
 }

@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
@@ -27,7 +26,7 @@ public class Starship : DatabaseGameEntity
 
     public StarshipComponents? MoreHullAccessories { get; set; }
 
-    public QualityClassTypes? Class { get; set; }
+    public ItemClassTypes? Class { get; set; }
 
     public int? InventorySize { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Locations;
 

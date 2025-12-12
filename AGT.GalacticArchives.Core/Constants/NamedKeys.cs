@@ -20,17 +20,17 @@ public static class NamedKeys
         public const string MultiToolImportService = nameof(PlanetImportService);
         public const string PlanetImportService = nameof(PlanetImportService);
 
-        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PlayerBaseSheetName))]
+        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PlayerBaseSheetName))]
         public const string PlayerBaseImportService = nameof(PlayerBaseImportService);
-        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PointOfInterestSheetName))]
+        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PointOfInterestSheetName))]
         public const string PointOfInterestImportService = nameof(PointOfInterestImportService);
-        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.RegionSheetName))]
+        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.RegionSheetName))]
         public const string RegionImportService = nameof(RegionImportService);
-        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.SettlementSheetName))]
+        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.SettlementSheetName))]
         public const string SettlementImportService = nameof(SettlementImportService);
-        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarshipSheetName))]
+        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.StarshipSheetName))]
         public const string StarshipImportService = nameof(StarshipImportService);
-        [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarSystemSheetName))]
+        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.StarSystemSheetName))]
         public const string StarSystemImportService = nameof(StarSystemImportService);
     }
 

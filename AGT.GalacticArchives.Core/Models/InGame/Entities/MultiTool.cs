@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
@@ -15,9 +14,9 @@ public class MultiTool : DatabaseGameEntity
 
     public MultiToolTypes? MultiToolType { get; set; }
 
-    public MultiToolCategories? MultiToolCategory { get; set; }
+    public MultiToolCategoryTypes? MultiToolCategory { get; set; }
 
-    public QualityClassTypes? QualityClass { get; set; }
+    public ItemClassTypes? QualityClass { get; set; }
 
     public int? TechSlots { get; set; }
 

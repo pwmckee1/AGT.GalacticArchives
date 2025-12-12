@@ -1,7 +1,6 @@
 using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
@@ -40,9 +39,9 @@ public class PlayerBaseSubmissionRequest : BaseSubmissionRequest
     public PlayerBaseTerrainTypes? TerrainSituation { get; set; }
 
     /// <summary>
-    /// Uses <see cref="HarvestedMaterial"/> to combine Base, Exotic, and other types of material types;
+    /// Uses <see cref="HarvestedMaterialType"/> to combine Base, Exotic, and other types of material types;
     /// </summary>
-    public HashSet<HarvestedMaterial> MineralExtractorContents { get; set; } = [];
+    public HashSet<HarvestedMaterialType> MineralExtractorContents { get; set; } = [];
 
     public string? MineralExtractorCapacity { get; set; }
 

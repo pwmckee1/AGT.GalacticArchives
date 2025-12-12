@@ -24,7 +24,7 @@ public static class StarSystemSheetFields
     public const string ExternalLink1 = "External Link 1";
     public const string ExternalLink2 = "External Link 2";
     public const string ExternalLink3 = "External Link 3";
-    public const string Faction = "Faction";
+    public const string FactionType = "Faction";
     public const string GalaxyName = "Galaxy";
     public const string GalaxySequence = "GalaxyID";
     public const string GalacticCoordinates = "Galactic GalacticAddressCoordinates";
@@ -52,7 +52,7 @@ public static class StarSystemSheetFields
     public const string LocInfoNotes = "Loc Info Notes";
     public const string MTTextNotes = "MT Text Notes";
     public const string MultiToolSClassUpgradeModules = "Multi-Tool S-Class Upgrade Modules";
-    public const string Name = "System Name (Unique entry search key)";
+    public const string StarSystemName = "System Name (Unique entry search key)";
     public const string NMSWikiLink = "NMS wiki Link";
     public const string NumberOfMoons = "# of moons";
     public const string NumberOfPlanets = "# of planets";
@@ -60,10 +60,11 @@ public static class StarSystemSheetFields
     public const string PlanetOfInterestId = "Planets of interest";
     public const string PlanetsTextNotes = "Planets Text Notes";
     public const string PortalRepository = "Portal Repository";
+    public const string ResearchTeam = "Researchteam";
     public const string RegionName = "Region";
     public const string Sell = "E-Sell";
     public const string SpecialInterest = "Special Interest";
-    public const string SpaceShipSClassUpgradeModules = "SpaceShip S-Class Upgrade Modules";
+    public const string StarshipUpgradeModules = "SpaceShip S-Class Upgrade Modules";
     public const string SpaceStationNotes = "Space Station Notes";
     public const string SpaceStationTradeItems = "Space Station Trade Item";
     public const string StarCategory = "Category";
@@ -73,11 +74,19 @@ public static class StarSystemSheetFields
     public const string SurveyDate = "Survey Date";
     public const string SurveyorName = "Source/Surveyor Name";
     public const string SystemHexadecimal = "Sysnum";
-    public const string SystemMisc = "System Age (billions of years)";
+    public const string SystemAge = "System Age (billions of years)";
+    public const string SystemMisc = "System Misc";
     public const string SystemNameAllPlatforms = "System Name (All platforms)";
     public const string VideoLink = "Video Link";
     public const string WealthType = "Wealth";
     public const string XCoordDec = "X coord DEC";
     public const string YCoordDec = "Y coord DEC";
     public const string ZCoordDec = "Z coord DEC";
+    public const string XCoordHex = "X coord HEX";
+    public const string YCoordHex = "Y coord HEX";
+    public const string ZCoordHex = "Z coord HEX";
+    public const string HasWaterIdentifier = "Y";
+    public const string IsDissonantIdentifier = "Y";
+    public const string IsGiantSystemIdentifier = "Y";
+    public const string IsPhantomSystemIdentifier = "Y";
 }

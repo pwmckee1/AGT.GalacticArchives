@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarSystemResource", typeof(StarSystemResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarSystem.StarSystemResource", typeof(StarSystemResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -1104,15 +1104,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Space Station Trade Item.
-        /// </summary>
-        public static string SpaceStationTradeItems {
-            get {
-                return ResourceManager.GetString("SpaceStationTradeItems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Spark Canister.
         /// </summary>
         public static string SparkCanister {
@@ -1163,15 +1154,6 @@ namespace AGT.GalacticArchives.Globalization {
         public static string StarSilk {
             get {
                 return ResourceManager.GetString("StarSilk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SpaceShip S-Class Upgrade Modules.
-        /// </summary>
-        public static string StarSystemShipUpgradeModules {
-            get {
-                return ResourceManager.GetString("StarSystemShipUpgradeModules", resourceCulture);
             }
         }
         

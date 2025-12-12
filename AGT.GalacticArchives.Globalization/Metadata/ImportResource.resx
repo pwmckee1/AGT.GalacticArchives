@@ -159,6 +159,9 @@
   <data name="InvalidSheetProvided" xml:space="preserve">
       <value>Import sheet must be named from one of the following types of import data: {0}</value>
   </data>
+  <data name="LengthTooLong" xml:space="preserve">
+      <value>The max character length was exceeded on row {0} in the {1} spreadsheet in column {2}.</value>
+  </data>
   <data name="MissingEnumerationValueForType" xml:space="preserve">
       <value>An error occurred on row {0} converting the value {1} to enumeration type {2}.  Considering changing the value to a valid type, or adding the value to the enumeration.</value>
   </data>
@@ -179,6 +182,9 @@
   </data>
   <data name="RegionSheetName" xml:space="preserve">
       <value>Region</value>
+  </data>
+  <data name="RequiredFieldEmpty" xml:space="preserve">
+      <value>Error on row {0} in the {1} spreadsheet. The required field {2} is empty.</value>
   </data>
   <data name="RequiredFieldMissingError" xml:space="preserve">
       <value>{0} sheet, line {1}: column {2} must have a value.</value>
