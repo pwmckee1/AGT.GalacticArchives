@@ -16,7 +16,9 @@ public interface IFirestoreManager
 
     Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName);
 
-    Task<IDatabaseGameEntity> UpsertAsync(IDatabaseGameEntity gameEntity, string collectionName);
+    Task<T> UpsertAsync<T>(T entity, string collectionName) where T : class, IDatabaseEntity;
+
+    Task<HashSet<T>> UpsertAsync<T>(HashSet<T> entities, string collectionName) where T : class, IDatabaseEntity;
 
     Task DeleteAsync(Guid entityId, string collectionName);
 }

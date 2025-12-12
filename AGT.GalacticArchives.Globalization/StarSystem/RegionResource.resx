@@ -157,12 +157,12 @@
   <data name="ExternalLink1" xml:space="preserve">
     <value>External Link 1</value>
   </data>
-  <data name="GalaxyId" xml:space="preserve">
-        <value>Galaxy ID</value>
-    </data>
   <data name="GalaxyName" xml:space="preserve">
       <value>Galaxy</value>
   </data>
+  <data name="GalaxySequence" xml:space="preserve">
+        <value>Galaxy ID</value>
+    </data>
   <data name="GameRelease" xml:space="preserve">
     <value>Game Release</value>
   </data>

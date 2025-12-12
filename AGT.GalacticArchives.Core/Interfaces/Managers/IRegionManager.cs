@@ -11,5 +11,7 @@ public interface IRegionManager
 
     Task<Region> UpsertRegionAsync(Region request);
 
+    Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request);
+
     Task DeleteRegionAsync(Guid regionId);
 }

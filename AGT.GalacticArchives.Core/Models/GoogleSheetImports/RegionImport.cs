@@ -5,7 +5,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class RegionImport : IGoogleSheetImport
+public class RegionImport : IImportFormFile
 {
     [Name(RegionSheetFields.AdminNotes)]
     public string? AdminNotes { get; set; }
@@ -25,7 +25,8 @@ public class RegionImport : IGoogleSheetImport
     [Name(RegionSheetFields.CivilizedSpaceNotes)]
     public string? CivilizedSpaceNotes { get; set; }
 
-    public string? Coordinates { get; set; }
+    [Name(RegionSheetFields.GalacticCoordinates)]
+    public string? GalacticCoordinates { get; set; }
 
     [Name(RegionSheetFields.DocSequence)]
     public int? DocSequence { get; set; }
@@ -42,13 +43,14 @@ public class RegionImport : IGoogleSheetImport
     [Name(RegionSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }
 
-    [Name(RegionSheetFields.GalaxyId)]
+    [Name(RegionSheetFields.GalaxySequence)]
     public int? GalaxyId { get; set; }
 
-    [Name(RegionSheetFields.GalaxyName)]
-    public GalaxyTypes? GalaxyName { get; set; }
+    [Name(RegionSheetFields.Galaxy)]
+    public GalaxyTypes? Galaxy { get; set; }
 
-    public string? Glyphs { get; set; }
+    [Name(RegionSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(RegionSheetFields.GameRelease)]
     public string? GameRelease { get; set; }
@@ -110,5 +112,6 @@ public class RegionImport : IGoogleSheetImport
     [Name(RegionSheetFields.ZZDec)]
     public int? ZZDec { get; set; }
 
-    public string? Version { get; set; }
+    [Name(RegionSheetFields.GameReleaseVersionNumber)]
+    public string? GameReleaseVersionNumber { get; set; }
 }

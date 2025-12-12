@@ -1,27 +1,26 @@
-using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class FaunaImportService(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<FaunaImport>> importManagers)
-    : GoogleSheetImportService<FaunaImport>(googleSheetValidationHandlers)
+    IMapper mapper,
+    IFaunaManager faunaManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
+    : ImportService<FaunaImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<FaunaImport> _importManager =
-        importManagers[NamedKeys.Managers.FaunaManager];
-
     protected override string SheetName => ImportResource.FaunaSheetName;
 
     protected override Type CsvMapType => typeof(FaunaCsvMap);
 
     protected override async Task ProcessValidatedDataAsync(HashSet<FaunaImport> importData)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var regions = mapper.Map<HashSet<Fauna>>(importData);
+        await faunaManager.UpsertFaunaAsync(regions);
     }
 }

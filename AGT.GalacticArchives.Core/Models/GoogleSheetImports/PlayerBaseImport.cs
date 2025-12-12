@@ -8,7 +8,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class PlayerBaseImport : IGoogleSheetImport
+public class PlayerBaseImport : IImportFormFile
 {
     [Name(PlayerBaseSheetFields.AccessOrTerrainSituation)]
     public PlayerBaseTerrainTypes? AccessOrTerrainSituation { get; set; }

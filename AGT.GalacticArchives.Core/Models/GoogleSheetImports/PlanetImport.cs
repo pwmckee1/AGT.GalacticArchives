@@ -8,7 +8,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class PlanetImport : IGoogleSheetImport
+public class PlanetImport : IImportFormFile
 {
     [Name(PlanetSheetFields.AgeOfPlanetInBillionsOfYears)]
     public int? AgeOfPlanetInBillionsOfYears { get; set; }

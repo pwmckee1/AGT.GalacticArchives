@@ -53,7 +53,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
 
     public async Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem)
     {
-        var updatedStarSystem = (StarSystem)await firestoreManager.UpsertAsync(starSystem, Collection);
+        var updatedStarSystem = await firestoreManager.UpsertAsync(starSystem, Collection);
 
         var regionData = await firestoreManager.GetByIdAsync(
             updatedStarSystem.RegionId!.Value,

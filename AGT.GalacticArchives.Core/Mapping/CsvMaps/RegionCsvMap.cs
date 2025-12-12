@@ -13,7 +13,7 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
-        Map(m => m.GalaxyName).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(RegionSheetFields.GalaxyName));
+        Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(RegionSheetFields.Galaxy));
 
         Map(m => m.GalacticQuadrant)
             .Convert(m => m.Row.ReadEnumFieldOrNull<GalacticQuadrantTypes>(RegionSheetFields.GalacticQuadrant));
@@ -35,6 +35,6 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
 
         Map(m => m.ZZDec).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.ZZDec));
 
-        Map(m => m.GalaxyId).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.GalaxyId));
+        Map(m => m.GalaxyId).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.GalaxySequence));
     }
 }

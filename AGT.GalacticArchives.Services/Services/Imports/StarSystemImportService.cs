@@ -9,11 +9,11 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class StarSystemImportService(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<StarSystemImport>> importManagers)
-    : GoogleSheetImportService<StarSystemImport>(googleSheetValidationHandlers)
+    IEnumerable<IImportValidationHandler> importValidationHandlers,
+    IIndex<string, IImportFormFileManager<StarSystemImport>> importManagers)
+    : ImportService<StarSystemImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<StarSystemImport> _importManager =
+    private readonly IImportFormFileManager<StarSystemImport> _importManager =
         importManagers[NamedKeys.Managers.StarSystemManager];
 
     protected override string SheetName => ImportResource.StarSystemSheetName;

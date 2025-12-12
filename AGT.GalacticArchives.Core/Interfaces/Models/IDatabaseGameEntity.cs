@@ -1,7 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
-using AGT.GalacticArchives.Core.Models.Metadata;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Models;
 
@@ -15,7 +14,7 @@ public interface IDatabaseGameEntity : IDatabaseEntity
 
     string? GalacticCoordinates { get; set; }
 
-    string? GlyphCode { get; }
+    string? GlyphHexCode { get; }
 
     Guid? StarSystemId { get; set; }
 
@@ -35,6 +34,22 @@ public interface IDatabaseGameEntity : IDatabaseEntity
     /// </summary>
     float? XAxisPlanetCoordinate { get; set; }
 
+    string? XXHex { get; set; }
+
+    string? YYHex { get; set; }
+
+    string? ZZHex { get; set; }
+
+    string? SSHex { get; set; }
+
+    int? XXDec { get; set; }
+
+    int? YYDec { get; set; }
+
+    int? ZZDec { get; set; }
+
+    int? SSDec { get; set; }
+
     string? SurveyedBy { get; set; }
 
     DateTime? SurveyDate { get; set; }
@@ -43,13 +58,21 @@ public interface IDatabaseGameEntity : IDatabaseEntity
 
     DateTime? DiscoveryDate { get; set; }
 
-    GameModeTypes? GameMode { get; set; }
+    GameModeTypes? GameModeType { get; set; }
 
     GamePlatformTypes? Platform { get; set; }
 
-    Civilization? Civilization { get; set; }
+    string? Civilization { get; set; }
 
-    GameRelease GameRelease { get; set; }
+    string? GameRelease { get; set; }
 
     string? AdditionalNotes { get; set; }
+
+    string? GameReleaseVersionNumber { get; set; }
+
+    string? Description { get; set; }
+
+    string? WikiLink { get; set; }
+
+    int? GalaxySequence { get; set; }
 }

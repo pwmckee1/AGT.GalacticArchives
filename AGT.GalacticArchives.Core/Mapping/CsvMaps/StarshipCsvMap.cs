@@ -20,15 +20,15 @@ public sealed class StarshipCsvMap : ClassMap<StarshipImport>
         Map(m => m.Location)
             .Convert(m => m.Row.ReadNullableEnumField<StarshipLocationTypes>(StarshipSheetFields.Location));
 
-        Map(m => m.YYFirstCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(StarshipSheetFields.YYFirstCoordinate));
+        Map(m => m.YAxisPlanetCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(StarshipSheetFields.YAxisPlanetCoordinate));
 
-        Map(m => m.XXSecondCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(StarshipSheetFields.XXSecondCoordinate));
+        Map(m => m.XAxisPlanetCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(StarshipSheetFields.XAxisPlanetCoordinate));
 
         Map(m => m.StarshipModelType)
             .Convert(m => m.Row.ReadNullableEnumField<StarshipModelTypes>(StarshipSheetFields.StarshipModelType));
 
-        Map(m => m.Subtype)
-            .Convert(m => m.Row.ReadNullableEnumField<StarshipSubModelTypes>(StarshipSheetFields.Subtype));
+        Map(m => m.StarshipSubtype)
+            .Convert(m => m.Row.ReadNullableEnumField<StarshipSubModelTypes>(StarshipSheetFields.StarshipSubtype));
 
         Map(m => m.WingType).Convert(m => m.Row.ReadNullableEnumField<StarshipWingTypes>(StarshipSheetFields.WingType));
 
@@ -53,14 +53,14 @@ public sealed class StarshipCsvMap : ClassMap<StarshipImport>
 
         Map(m => m.CargoSlots).Convert(m => m.Row.ReadIntFieldOrNull(StarshipSheetFields.CargoSlots));
 
-        Map(m => m.DiscoveredDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(StarshipSheetFields.DiscoveredDate));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(StarshipSheetFields.DiscoveryDate));
 
         Map(m => m.Cost).Convert(m => m.Row.ReadIntFieldOrNull(StarshipSheetFields.Cost));
 
-        Map(m => m.GameMode).Convert(m => m.Row.ReadNullableEnumField<GameModeTypes>(StarshipSheetFields.GameMode));
+        Map(m => m.GameModeType).Convert(m => m.Row.ReadNullableEnumField<GameModeTypes>(StarshipSheetFields.GameModeType));
 
-        Map(m => m.GamePlatform)
-            .Convert(m => m.Row.ReadNullableEnumField<GamePlatformTypes>(StarshipSheetFields.GamePlatform));
+        Map(m => m.Platform)
+            .Convert(m => m.Row.ReadNullableEnumField<GamePlatformTypes>(StarshipSheetFields.Platform));
 
         Map(m => m.Damage).Convert(m => m.Row.ReadFloatFieldOrNull(StarshipSheetFields.Damage));
 
@@ -79,7 +79,7 @@ public sealed class StarshipCsvMap : ClassMap<StarshipImport>
         Map(m => m.AccentColor)
             .Convert(m => m.Row.ReadNullableEnumField<ItemColorTypes>(StarshipSheetFields.AccentColor));
 
-        Map(m => m.StarshipUpgradeModules)
-            .Convert(m => m.Row.ReadEnumFields<StarshipUpgradeModuleTypes>(StarshipSheetFields.StarshipUpgradeModules));
+        Map(m => m.UpgradeModules)
+            .Convert(m => m.Row.ReadEnumFields<StarshipUpgradeModuleTypes>(StarshipSheetFields.UpgradeModules));
     }
 }

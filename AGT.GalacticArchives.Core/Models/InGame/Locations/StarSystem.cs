@@ -11,9 +11,11 @@ public class StarSystem : DatabaseGameEntity
 
     public override Guid EntityId => StarSystemId ?? Guid.NewGuid();
 
+    public string? RegionName { get; set; }
+
     public string? OriginalSystemName { get; set; }
 
-    public string? NameAllPlatforms { get; set; }
+    public string? StarSystemNameAllPlatforms { get; set; }
 
     public string? AdminNotes { get; set; }
 
@@ -63,7 +65,7 @@ public class StarSystem : DatabaseGameEntity
 
     public HashSet<SpaceStationTradeItemTypes?> SpaceStationTradeItems { get; set; } = [];
 
-    public HashSet<ExoSuitUpgradeTypes?> ExoSuitSClassUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeTypes?> ExosuitUpgradeModules { get; set; } = [];
 
     public HashSet<StarshipUpgradeModuleTypes?> StarshipUpgradeModules { get; set; } = [];
 
@@ -116,4 +118,14 @@ public class StarSystem : DatabaseGameEntity
     public string? Evolution { get; set; }
 
     public string? SystemMisc { get; set; }
+
+    public float? StarSystemAge { get; set; }
+
+    public string? ResearchTeam { get; set; }
+
+    public int? Bases { get; set; }
+
+    public string? PlanetsTextNotes { get; set; }
+
+    public string? StarshipsTextNotes { get; set; }
 }

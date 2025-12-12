@@ -1,4 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
+using AGT.GalacticArchives.Core.Mapping.ValueConverters;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
@@ -11,7 +13,26 @@ public class StarshipMaps : Profile
     public StarshipMaps()
     {
         CreateMap<Dictionary<string, object>, Starship>()
-            .ConvertUsing<GameDataTypeConverter>()
+            .ConvertUsing<DatabaseEntityTypeConverter>()
+            ;
+
+        CreateMap<StarshipImport, Starship>()
+            .ForMember(d => d.Name, o => o.MapFrom(s => s.StarshipName))
+            .ForMember(d => d.GlyphHexCode, o => o.MapFrom<GlyphCodeValueResolver>())
+            .ForMember(d => d.XXHex, o => o.Ignore())
+            .ForMember(d => d.YYHex, o => o.Ignore())
+            .ForMember(d => d.ZZHex, o => o.Ignore())
+            .ForMember(d => d.SSHex, o => o.Ignore())
+            .ForMember(d => d.XXDec, o => o.Ignore())
+            .ForMember(d => d.YYDec, o => o.Ignore())
+            .ForMember(d => d.ZZDec, o => o.Ignore())
+            .ForMember(d => d.SSDec, o => o.Ignore())
+            .ForMember(d => d.RegionId, o => o.Ignore())
+            .ForMember(d => d.Region, o => o.Ignore())
+            .ForMember(d => d.StarSystemId, o => o.Ignore())
+            .ForMember(d => d.StarSystem, o => o.Ignore())
+            .ForMember(d => d.PlanetId, o => o.Ignore())
+            .ForMember(d => d.Planet, o => o.Ignore())
             ;
 
         CreateMap<Starship, StarshipRequest>()

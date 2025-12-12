@@ -8,7 +8,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class MultiToolImport : IGoogleSheetImport
+public class MultiToolImport : IImportFormFile
 {
     [Name(MultiToolSheetFields.AcquisitionGuidance)]
     public string? AcquisitionGuidance { get; set; }

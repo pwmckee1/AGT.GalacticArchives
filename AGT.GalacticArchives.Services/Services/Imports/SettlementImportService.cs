@@ -9,11 +9,11 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class SettlementImportService(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<SettlementImport>> importManagers)
-    : GoogleSheetImportService<SettlementImport>(googleSheetValidationHandlers)
+    IEnumerable<IImportValidationHandler> importValidationHandlers,
+    IIndex<string, IImportFormFileManager<SettlementImport>> importManagers)
+    : ImportService<SettlementImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<SettlementImport> _importManager =
+    private readonly IImportFormFileManager<SettlementImport> _importManager =
         importManagers[NamedKeys.Managers.SettlementManager];
 
     protected override string SheetName => ImportResource.SettlementSheetName;

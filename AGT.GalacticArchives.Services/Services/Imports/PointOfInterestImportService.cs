@@ -9,11 +9,11 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class PointOfInterestImportService(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<PointOfInterestImport>> importManagers)
-    : GoogleSheetImportService<PointOfInterestImport>(googleSheetValidationHandlers)
+    IEnumerable<IImportValidationHandler> importValidationHandlers,
+    IIndex<string, IImportFormFileManager<PointOfInterestImport>> importManagers)
+    : ImportService<PointOfInterestImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<PointOfInterestImport> _importManager =
+    private readonly IImportFormFileManager<PointOfInterestImport> _importManager =
         importManagers[NamedKeys.Managers.PointOfInterestManager];
 
     protected override string SheetName => ImportResource.PointOfInterestSheetName;

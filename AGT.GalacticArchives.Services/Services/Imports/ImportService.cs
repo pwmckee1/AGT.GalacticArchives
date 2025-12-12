@@ -1,15 +1,17 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Globalization;
+using AGT.GalacticArchives.Services.Interfaces.Services;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.AspNetCore.Http;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
-public abstract class GoogleSheetImportService<T>(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers) : IGoogleSheetImportService
+public abstract class ImportService<T>(
+    IEnumerable<IImportValidationHandler> importValidationHandlers) : IImportService
 {
     protected HashSet<string> Errors = [];
 
@@ -17,7 +19,7 @@ public abstract class GoogleSheetImportService<T>(
 
     protected abstract Type CsvMapType { get; }
 
-    public virtual async Task ImportGoogleSheetDataAsync(IFormFile form)
+    public virtual async Task ImportFormFileAsync(IFormFile form)
     {
         var importData = await ValidateFileAsync(form);
         await ProcessValidatedDataAsync(importData);
@@ -40,7 +42,7 @@ public abstract class GoogleSheetImportService<T>(
 
     protected virtual HashSet<string> ValidateRecords<THandler>(HashSet<THandler> importRequest)
     {
-        var handler = googleSheetValidationHandlers.SingleOrDefault(h => h.CanHandle<THandler>());
+        var handler = importValidationHandlers.SingleOrDefault(h => h.CanHandle<THandler>());
         return handler != null ? handler.Handle(importRequest, Errors) : [];
     }
 

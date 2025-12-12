@@ -52,7 +52,7 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
 
     public async Task<Planet> UpsertPlanetAsync(Planet request)
     {
-        var updatedPlanet = (Planet)await firestoreManager.UpsertAsync(request, Collection);
+        var updatedPlanet = await firestoreManager.UpsertAsync(request, Collection);
 
         await SetPlanetHierarchyAsync(updatedPlanet);
 

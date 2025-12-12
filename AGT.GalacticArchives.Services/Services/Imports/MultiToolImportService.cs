@@ -9,11 +9,11 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class MultiToolImportService(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<MultiToolImport>> importManagers)
-    : GoogleSheetImportService<MultiToolImport>(googleSheetValidationHandlers)
+    IEnumerable<IImportValidationHandler> importValidationHandlers,
+    IIndex<string, IImportFormFileManager<MultiToolImport>> importManagers)
+    : ImportService<MultiToolImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<MultiToolImport> _importManager =
+    private readonly IImportFormFileManager<MultiToolImport> _importManager =
         importManagers[NamedKeys.Managers.MultiToolManager];
 
     protected override string SheetName => ImportResource.MultiToolSheetName;

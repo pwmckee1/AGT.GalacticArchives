@@ -79,9 +79,9 @@ public class StarSystemImportValidationHandler : BaseImportValidationHandler, II
                     nameof(starSystemField.NumberOfMoons).GetDescription<StarSystemImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    starSystemField.SurveyorName,
+                    starSystemField.SurveyedBy,
                     LineNumber,
-                    nameof(starSystemField.SurveyorName).GetDescription<StarSystemImport>(),
+                    nameof(starSystemField.SurveyedBy).GetDescription<StarSystemImport>(),
                     SheetName),
             };
 

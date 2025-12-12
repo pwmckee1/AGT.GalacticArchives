@@ -36,7 +36,7 @@ public class GameDataModelTests
                 dictionary[nameof(Region.RegionId)].ShouldEqual(_region.RegionId.ToString());
                 dictionary[nameof(Region.NormalizedName)].ShouldEqual(_region.NormalizedName);
                 dictionary[nameof(Region.Galaxy)].ShouldEqual(_region.Galaxy);
-                dictionary[nameof(Region.XGalaxyHex)].ShouldEqual(_region.XGalaxyHex);
+                dictionary[nameof(Region.XXHex)].ShouldEqual(_region.XXHex);
                 dictionary[nameof(Region.DocumentSequence)].ShouldEqual(_region.DocumentSequence);
                 dictionary[nameof(Region.RegionAge)].ShouldEqual(_region.RegionAge);
             }
@@ -130,7 +130,7 @@ public class GameDataModelTests
                 region.Name.ShouldEqual((string)_dictionary[nameof(Region.Name)]);
                 region.GalacticCoordinates.ShouldEqual(
                     ((string)_dictionary[nameof(Region.GalacticCoordinates)]).ToUpperInvariant());
-                region.XGalaxyHex.ShouldEqual("123A");
+                region.XXHex.ShouldEqual("123A");
                 region.DocumentSequence.ShouldEqual((int)_dictionary[nameof(Region.DocumentSequence)]);
                 region.RegionAge.ShouldEqual((float?)_dictionary[nameof(Region.RegionAge)]);
             }

@@ -7,7 +7,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class FaunaImport : IGoogleSheetImport
+public class FaunaImport : IImportFormFile
 {
     [Name(FaunaSheetFields.ActivityType)]
     public FaunaCircadianTypes? ActivityType { get; set; }

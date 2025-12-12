@@ -1,14 +1,14 @@
 using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.Enums.Application;
 using AGT.GalacticArchives.Globalization;
-using AGT.GalacticArchives.Services.Services.Imports;
+using AGT.GalacticArchives.Services.Interfaces.Services;
 using Autofac.Features.Indexed;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace AGT.GalacticArchives.Controllers;
 
-public class GoogleSheetImportController(IIndex<string, IGoogleSheetImportService> googleSheetImportServices)
+public class GoogleSheetImportController(IIndex<string, IImportService> googleSheetImportServices)
     : ControllerBase
 {
     /// <summary>
@@ -31,19 +31,17 @@ public class GoogleSheetImportController(IIndex<string, IGoogleSheetImportServic
         if (googleSheetImportFile != null)
         {
             string[] spaceSeparatedFileName = googleSheetImportFile.Name.Split(' ');
-            bool isValidSheet = false;
             foreach (string fileNamePart in spaceSeparatedFileName)
             {
-                isValidSheet = Enum.TryParse(fileNamePart, out GoogleSheetTypes _);
-            }
+                bool isValidSheet = Enum.TryParse(fileNamePart, out GoogleSheetTypes googleSheetType);
 
-            if (isValidSheet)
-            {
-                Enum.TryParse(googleSheetImportFile.Name, out GoogleSheetTypes googleSheetType);
-                var importService = googleSheetImportServices[googleSheetType.GetDescription()];
-                await importService.ImportGoogleSheetDataAsync(googleSheetImportFile!);
+                if (isValidSheet)
+                {
+                    var importService = googleSheetImportServices[googleSheetType.GetDescription()];
+                    await importService.ImportFormFileAsync(googleSheetImportFile);
 
-                return Ok();
+                    return Ok();
+                }
             }
         }
 

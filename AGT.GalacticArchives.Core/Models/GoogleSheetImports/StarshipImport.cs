@@ -7,7 +7,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class StarshipImport : IGoogleSheetImport
+public class StarshipImport : IImportFormFile
 {
     [Name(StarshipSheetFields.StarshipName)]
     public string? StarshipName { get; set; }
@@ -15,29 +15,29 @@ public class StarshipImport : IGoogleSheetImport
     [Name(StarshipSheetFields.Galaxy)]
     public GalaxyTypes? Galaxy { get; set; }
 
-    [Name(StarshipSheetFields.Region)]
-    public string? Region { get; set; }
+    [Name(StarshipSheetFields.RegionName)]
+    public string? RegionName { get; set; }
 
-    [Name(StarshipSheetFields.StarSystem)]
-    public string? StarSystem { get; set; }
+    [Name(StarshipSheetFields.StarSystemName)]
+    public string? StarSystemName { get; set; }
 
-    [Name(StarshipSheetFields.Planet)]
-    public string? Planet { get; set; }
+    [Name(StarshipSheetFields.PlanetName)]
+    public string? PlanetName { get; set; }
 
     [Name(StarshipSheetFields.Location)]
     public StarshipLocationTypes? Location { get; set; }
 
-    [Name(StarshipSheetFields.YYFirstCoordinate)]
-    public float? YYFirstCoordinate { get; set; }
+    [Name(StarshipSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
 
-    [Name(StarshipSheetFields.XXSecondCoordinate)]
-    public float? XXSecondCoordinate { get; set; }
+    [Name(StarshipSheetFields.XAxisPlanetCoordinate)]
+    public float? XAxisPlanetCoordinate { get; set; }
 
     [Name(StarshipSheetFields.Coordinates)]
     public string? GalacticCoordinates { get; set; }
 
-    [Name(StarshipSheetFields.PortalGlyphs)]
-    public string? PortalGlyphs { get; set; }
+    [Name(StarshipSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(StarshipSheetFields.Pilot)]
     public string? Pilot { get; set; }
@@ -45,8 +45,8 @@ public class StarshipImport : IGoogleSheetImport
     [Name(StarshipSheetFields.StarshipModelType)]
     public StarshipModelTypes? StarshipModelType { get; set; }
 
-    [Name(StarshipSheetFields.Subtype)]
-    public StarshipSubModelTypes? Subtype { get; set; }
+    [Name(StarshipSheetFields.StarshipSubtype)]
+    public StarshipSubModelTypes? StarshipSubtype { get; set; }
 
     [Name(StarshipSheetFields.WingType)]
     public StarshipWingTypes? WingType { get; set; }
@@ -78,8 +78,8 @@ public class StarshipImport : IGoogleSheetImport
     [Name(StarshipSheetFields.Cost)]
     public int? Cost { get; set; }
 
-    [Name(StarshipSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(StarshipSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(StarshipSheetFields.DiscoveredBy)]
     public string? DiscoveredBy { get; set; }
@@ -87,17 +87,17 @@ public class StarshipImport : IGoogleSheetImport
     [Name(StarshipSheetFields.DiscoveredLinkOnWiki)]
     public string? DiscoveredLinkOnWiki { get; set; }
 
-    [Name(StarshipSheetFields.DiscoveredDate)]
-    public DateTime? DiscoveredDate { get; set; }
+    [Name(StarshipSheetFields.DiscoveryDate)]
+    public DateTime? DiscoveryDate { get; set; }
 
-    [Name(StarshipSheetFields.GameMode)]
-    public GameModeTypes? GameMode { get; set; }
+    [Name(StarshipSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
-    [Name(StarshipSheetFields.GamePlatform)]
-    public GamePlatformTypes? GamePlatform { get; set; }
+    [Name(StarshipSheetFields.Platform)]
+    public GamePlatformTypes? Platform { get; set; }
 
-    [Name(StarshipSheetFields.Release)]
-    public string? Release { get; set; }
+    [Name(StarshipSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
 
     [Name(StarshipSheetFields.Damage)]
     public float? Damage { get; set; }
@@ -132,8 +132,8 @@ public class StarshipImport : IGoogleSheetImport
     [Name(StarshipSheetFields.AccentColor)]
     public ItemColorTypes? AccentColor { get; set; }
 
-    [Name(StarshipSheetFields.StarshipUpgradeModules)]
-    public HashSet<StarshipUpgradeModuleTypes> StarshipUpgradeModules { get; set; } = [];
+    [Name(StarshipSheetFields.UpgradeModules)]
+    public HashSet<StarshipUpgradeModuleTypes> UpgradeModules { get; set; } = [];
 
     [Name(StarshipSheetFields.DocumentSequence)]
     public string? DocumentSequence { get; set; }

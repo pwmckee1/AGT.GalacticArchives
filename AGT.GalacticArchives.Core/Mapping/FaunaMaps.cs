@@ -11,7 +11,7 @@ public class FaunaMaps : Profile
     public FaunaMaps()
     {
         CreateMap<Dictionary<string, object>, Fauna>()
-            .ConvertUsing<GameDataTypeConverter>()
+            .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 
         CreateMap<Fauna, FaunaRequest>()

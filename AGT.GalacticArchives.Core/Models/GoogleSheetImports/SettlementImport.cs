@@ -8,7 +8,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class SettlementImport : IGoogleSheetImport
+public class SettlementImport : IImportFormFile
 {
     [Name(SettlementSheetFields.Buildings)]
     public HashSet<SettlementBuildingTypes> Buildings { get; set; } = [];

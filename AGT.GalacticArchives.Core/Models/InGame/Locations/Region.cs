@@ -11,7 +11,7 @@ public class Region : DatabaseGameEntity
 
     public HashSet<StarSystem> StarSystems { get; set; } = [];
 
-    public GalacticQuadrantTypes? Quadrant { get; set; }
+    public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
 
     public string? EarliestKnownSurveyor { get; set; }
 

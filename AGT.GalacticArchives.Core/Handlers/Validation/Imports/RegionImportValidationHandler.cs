@@ -30,9 +30,9 @@ public class RegionImportValidationHandler : BaseImportValidationHandler, IImpor
             var strategies = new HashSet<IExecutionStrategy>
             {
                 new EnumFieldTypeStrategy<GalaxyTypes>(
-                    regionField.GalaxyName?.ToString(),
+                    regionField.Galaxy?.ToString(),
                     LineNumber,
-                    nameof(regionField.GalaxyName).GetDescription<RegionImport>(),
+                    nameof(regionField.Galaxy).GetDescription<RegionImport>(),
                     SheetName),
                 new NullFieldStrategy(
                     regionField.RegionName,

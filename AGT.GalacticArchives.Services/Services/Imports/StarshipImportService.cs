@@ -9,11 +9,11 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class StarshipImportService(
-    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<StarshipImport>> importManagers)
-    : GoogleSheetImportService<StarshipImport>(googleSheetValidationHandlers)
+    IEnumerable<IImportValidationHandler> importValidationHandlers,
+    IIndex<string, IImportFormFileManager<StarshipImport>> importManagers)
+    : ImportService<StarshipImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<StarshipImport> _importManager =
+    private readonly IImportFormFileManager<StarshipImport> _importManager =
         importManagers[NamedKeys.Managers.StarshipManager];
 
     protected override string SheetName => ImportResource.StarshipSheetName;

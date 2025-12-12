@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;
 
-public class GameDataTypeConverter :
+public class DatabaseEntityTypeConverter :
     ITypeConverter<Dictionary<string, object>, Region>,
     ITypeConverter<Dictionary<string, object>, StarSystem>,
     ITypeConverter<Dictionary<string, object>, Planet>,

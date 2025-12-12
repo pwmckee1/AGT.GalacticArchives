@@ -37,19 +37,19 @@ public class StarshipImportValidationHandler : BaseImportValidationHandler, IImp
                     nameof(starshipField.DiscoveredBy).GetDescription<StarshipImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GamePlatformTypes>(
-                    starshipField.GamePlatform?.ToString(),
+                    starshipField.Platform?.ToString(),
                     LineNumber,
-                    nameof(starshipField.GamePlatform).GetDescription<StarshipImport>(),
+                    nameof(starshipField.Platform).GetDescription<StarshipImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GameModeTypes>(
-                    starshipField.GameMode?.ToString(),
+                    starshipField.GameModeType?.ToString(),
                     LineNumber,
-                    nameof(starshipField.GameMode).GetDescription<StarshipImport>(),
+                    nameof(starshipField.GameModeType).GetDescription<StarshipImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    starshipField.Release,
+                    starshipField.GameRelease,
                     LineNumber,
-                    nameof(starshipField.Release).GetDescription<StarshipImport>(),
+                    nameof(starshipField.GameRelease).GetDescription<StarshipImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GalaxyTypes>(
                     starshipField.Galaxy?.ToString(),
@@ -57,14 +57,14 @@ public class StarshipImportValidationHandler : BaseImportValidationHandler, IImp
                     nameof(starshipField.Galaxy).GetDescription<StarshipImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    starshipField.Region,
+                    starshipField.RegionName,
                     LineNumber,
-                    nameof(starshipField.Region).GetDescription<StarshipImport>(),
+                    nameof(starshipField.RegionName).GetDescription<StarshipImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    starshipField.StarSystem,
+                    starshipField.StarSystemName,
                     LineNumber,
-                    nameof(starshipField.StarSystem).GetDescription<StarshipImport>(),
+                    nameof(starshipField.StarSystemName).GetDescription<StarshipImport>(),
                     SheetName),
                 new GalacticCoordinateStrategy(
                     starshipField.GalacticCoordinates,
@@ -87,9 +87,9 @@ public class StarshipImportValidationHandler : BaseImportValidationHandler, IImp
                     nameof(starshipField.Class).GetDescription<StarshipImport>(),
                     SheetName),
                 new NullableDateTimeStrategy(
-                    starshipField.DiscoveredDate?.ToString(),
+                    starshipField.DiscoveryDate?.ToString(),
                     LineNumber,
-                    nameof(starshipField.DiscoveredDate).GetDescription<StarshipImport>(),
+                    nameof(starshipField.DiscoveryDate).GetDescription<StarshipImport>(),
                     SheetName),
             };
 

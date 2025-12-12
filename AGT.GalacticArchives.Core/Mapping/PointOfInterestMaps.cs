@@ -11,7 +11,7 @@ public class PointOfInterestMaps : Profile
     public PointOfInterestMaps()
     {
         CreateMap<Dictionary<string, object>, PointOfInterest>()
-            .ConvertUsing<GameDataTypeConverter>()
+            .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 
         CreateMap<PointOfInterest, PointOfInterestRequest>()

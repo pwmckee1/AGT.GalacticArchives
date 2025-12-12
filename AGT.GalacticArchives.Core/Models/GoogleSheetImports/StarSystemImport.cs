@@ -8,7 +8,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class StarSystemImport : IGoogleSheetImport
+public class StarSystemImport : IImportFormFile
 {
     [Name(StarSystemSheetFields.GalaxyName)]
     public GalaxyTypes? Galaxy { get; set; }
@@ -37,14 +37,14 @@ public class StarSystemImport : IGoogleSheetImport
     [Name(StarSystemSheetFields.GalacticCoordinates)]
     public string? GalacticCoordinates { get; set; }
 
-    [Name(StarSystemSheetFields.GlyphCode)]
-    public string? GlyphCode { get; set; }
+    [Name(StarSystemSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(StarSystemSheetFields.PlanetOfInterestId)]
     public string? PlanetOfInterestId { get; set; }
 
     [Name(StarSystemSheetFields.SurveyorName)]
-    public string? SurveyorName { get; set; }
+    public string? SurveyedBy { get; set; }
 
     [Name(StarSystemSheetFields.DiscoveredBy)]
     public string? DiscoveredBy { get; set; }
@@ -67,14 +67,14 @@ public class StarSystemImport : IGoogleSheetImport
     [Name(StarSystemSheetFields.IsDissonant)]
     public bool? IsDissonant { get; set; }
 
-    [Name(StarSystemSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(StarSystemSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(StarSystemSheetFields.Bases)]
     public int? Bases { get; set; }
 
-    [Name(StarSystemSheetFields.DiscoveryPlatform)]
-    public string? PlatformType { get; set; }
+    [Name(StarSystemSheetFields.Platform)]
+    public GamePlatformTypes? Platform { get; set; }
 
     [Name(StarSystemSheetFields.StarCount)]
     public int? StarCount { get; set; }
@@ -83,7 +83,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? StarCategory { get; set; }
 
     [Name(StarSystemSheetFields.Color)]
-    public string? Color { get; set; }
+    public StarColorTypes? Color { get; set; }
 
     [Name(StarSystemSheetFields.NumberOfPlanets)]
     public int? NumberOfPlanets { get; set; }
@@ -91,8 +91,8 @@ public class StarSystemImport : IGoogleSheetImport
     [Name(StarSystemSheetFields.NumberOfMoons)]
     public int? NumberOfMoons { get; set; }
 
-    [Name(StarSystemSheetFields.FactionType)]
-    public FactionTypes? FactionType { get; set; }
+    [Name(StarSystemSheetFields.Faction)]
+    public FactionTypes? Faction { get; set; }
 
     [Name(StarSystemSheetFields.LightYearsFromCenter)]
     public int? LightYearsFromCenter { get; set; }
@@ -127,26 +127,26 @@ public class StarSystemImport : IGoogleSheetImport
     [Name(StarSystemSheetFields.SpaceStationTradeItems)]
     public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
-    [Name(StarSystemSheetFields.ExoSuitSClassUpgradeModules)]
+    [Name(StarSystemSheetFields.ExosuitUpgradeModules)]
     public HashSet<ExoSuitUpgradeTypes> ExosuitUpgradeModules { get; set; } = [];
 
     [Name(StarSystemSheetFields.StarshipUpgradeModules)]
     public HashSet<StarshipUpgradeTypes> StarshipUpgradeModules { get; set; } = [];
 
-    [Name(StarSystemSheetFields.MultiToolSClassUpgradeModules)]
-    public HashSet<MultiToolUpdateTypes> MultiToolSClassUpgradeModules { get; set; } = [];
+    [Name(StarSystemSheetFields.MultiToolUpdateTypes)]
+    public HashSet<MultiToolUpdateTypes> MultiToolUpdateTypes { get; set; } = [];
 
-    [Name(StarSystemSheetFields.XCoordDec)]
-    public int? XCoordDec { get; set; }
+    [Name(StarSystemSheetFields.XXDec)]
+    public int? XXDec { get; set; }
 
-    [Name(StarSystemSheetFields.YCoordDec)]
-    public int? YCoordDec { get; set; }
+    [Name(StarSystemSheetFields.YYDec)]
+    public int? YYDec { get; set; }
 
-    [Name(StarSystemSheetFields.ZCoordDec)]
-    public int? ZCoordDec { get; set; }
+    [Name(StarSystemSheetFields.ZZDec)]
+    public int? ZZDec { get; set; }
 
     [Name(StarSystemSheetFields.Hex2DecSystemId)]
-    public int? Hex2DecSystemId { get; set; }
+    public int? SSDec { get; set; }
 
     [Name(StarSystemSheetFields.PlanetsTextNotes)]
     public string? PlanetsTextNotes { get; set; }
@@ -185,7 +185,7 @@ public class StarSystemImport : IGoogleSheetImport
     public string? BlackHoleDestination { get; set; }
 
     [Name(StarSystemSheetFields.NMSWikiLink)]
-    public string? NMSWikiLink { get; set; }
+    public string? WikiLink { get; set; }
 
     [Name(StarSystemSheetFields.PortalRepository)]
     public string? PortalRepository { get; set; }
@@ -223,8 +223,8 @@ public class StarSystemImport : IGoogleSheetImport
     [Name(StarSystemSheetFields.Evolution)]
     public string? Evolution { get; set; }
 
-    [Name(StarSystemSheetFields.SystemAge)]
-    public string? SystemAge { get; set; }
+    [Name(StarSystemSheetFields.StarSystemAge)]
+    public float? StarSystemAge { get; set; }
 
     [Name(StarSystemSheetFields.ResearchTeam)]
     public string? ResearchTeam { get; set; }
@@ -238,18 +238,18 @@ public class StarSystemImport : IGoogleSheetImport
     [Name(StarSystemSheetFields.GalaxySequence)]
     public int? GalaxySequence { get; set; }
 
-    [Name(StarSystemSheetFields.SystemHexadecimal)]
-    public string? SystemHexadecimal { get; set; }
+    [Name(StarSystemSheetFields.SSHex)]
+    public string? SSHex { get; set; }
 
-    [Name(StarSystemSheetFields.XCoordHex)]
-    public int? XCoordHex { get; set; }
+    [Name(StarSystemSheetFields.XXHex)]
+    public string? XXHex { get; set; }
 
-    [Name(StarSystemSheetFields.YCoordHex)]
-    public string? YCoordHex { get; set; }
+    [Name(StarSystemSheetFields.YYHex)]
+    public string? YYHex { get; set; }
 
-    [Name(StarSystemSheetFields.ZCoordHex)]
-    public string? ZCoordHex { get; set; }
+    [Name(StarSystemSheetFields.ZZHex)]
+    public string? ZZHex { get; set; }
 
     [Name(StarSystemSheetFields.DocSequence)]
-    public string? DocSequence { get; set; }
+    public string? DocumentSequence { get; set; }
 }

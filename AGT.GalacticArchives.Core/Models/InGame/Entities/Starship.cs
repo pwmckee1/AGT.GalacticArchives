@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
@@ -10,27 +9,33 @@ public class Starship : DatabaseGameEntity
 
     public override Guid EntityId => StarshipId;
 
-    public LocationTypes? Location { get; set; }
+    public StarshipLocationTypes? Location { get; set; }
 
     public string? Pilot { get; set; }
 
-    public StarshipComponents? Type { get; set; }
+    public string? RegionName { get; set; }
 
-    public StarshipComponents? ShipSubtype { get; set; }
+    public string? StarSystemName { get; set; }
 
-    public bool? HasWings { get; set; }
+    public string? PlanetName { get; set; }
 
-    public StarshipComponents? HullAccessories { get; set; }
+    public StarshipModelTypes? StarshipModelType { get; set; }
 
-    public StarshipComponents? Thruster { get; set; }
+    public StarshipSubModelTypes? StarshipSubtype { get; set; }
 
-    public StarshipComponents? MoreHullAccessories { get; set; }
+    public StarshipWingTypes? WingType { get; set; }
+
+    public StarshipHullAccessoryTypes? HullAccessories { get; set; }
+
+    public StarshipThrusterTypes? Thruster { get; set; }
+
+    public StarshipExtraHullAccessoryTypes? ExtraHullAccessories { get; set; }
 
     public ItemClassTypes? Class { get; set; }
 
-    public int? InventorySize { get; set; }
+    public InventorySizeTypes? InventorySize { get; set; }
 
-    public int? Slots { get; set; }
+    public int? InventorySlots { get; set; }
 
     public int? TechSlots { get; set; }
 

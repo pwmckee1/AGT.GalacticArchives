@@ -11,7 +11,7 @@ public class SettlementMaps : Profile
     public SettlementMaps()
     {
         CreateMap<Dictionary<string, object>, Settlement>()
-            .ConvertUsing<GameDataTypeConverter>()
+            .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 
         CreateMap<Settlement, SettlementRequest>()

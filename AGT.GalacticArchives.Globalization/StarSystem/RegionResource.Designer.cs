@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.RegionResource", typeof(RegionResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarSystem.RegionResource", typeof(RegionResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -159,20 +159,20 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Galaxy ID.
-        /// </summary>
-        public static string GalaxyId {
-            get {
-                return ResourceManager.GetString("GalaxyId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Galaxy.
         /// </summary>
         public static string GalaxyName {
             get {
                 return ResourceManager.GetString("GalaxyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Galaxy ID.
+        /// </summary>
+        public static string GalaxySequence {
+            get {
+                return ResourceManager.GetString("GalaxySequence", resourceCulture);
             }
         }
         

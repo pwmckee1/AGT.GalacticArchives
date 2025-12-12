@@ -6,7 +6,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class PointOfInterestImport : IGoogleSheetImport
+public class PointOfInterestImport : IImportFormFile
 {
     [Name(PointOfInterestSheetFields.DateOfSurvey)]
     public DateTime? DateOfSurvey { get; set; }
