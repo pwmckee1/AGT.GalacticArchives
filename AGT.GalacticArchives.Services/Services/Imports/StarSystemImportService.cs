@@ -9,7 +9,7 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class StarSystemImportService(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers,
+    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
     IIndex<string, IGoogleSheetImportManager<StarSystemImport>> importManagers)
     : GoogleSheetImportService<StarSystemImport>(googleSheetValidationHandlers)
 {

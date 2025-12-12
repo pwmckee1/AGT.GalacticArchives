@@ -9,7 +9,7 @@ using Autofac.Features.Indexed;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class MultiToolImportService(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers,
+    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers,
     IIndex<string, IGoogleSheetImportManager<MultiToolImport>> importManagers)
     : GoogleSheetImportService<MultiToolImport>(googleSheetValidationHandlers)
 {

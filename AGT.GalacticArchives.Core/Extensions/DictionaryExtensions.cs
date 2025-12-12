@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using AGT.GalacticArchives.Core.Interfaces.Models;
-using AGT.GalacticArchives.Core.Models;
 using AGT.GalacticArchives.Globalization;
 using Newtonsoft.Json;
 

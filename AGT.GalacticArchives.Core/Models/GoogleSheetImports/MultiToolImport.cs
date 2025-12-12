@@ -80,7 +80,7 @@ public class MultiToolImport : IGoogleSheetImport
     public ItemColorTypes? PrimaryColor { get; set; }
 
     [Name(MultiToolSheetFields.Region)]
-    public string? Region { get; set; }
+    public string? RegionName { get; set; }
 
     [Name(MultiToolSheetFields.Release)]
     public string? Release { get; set; }
@@ -98,7 +98,7 @@ public class MultiToolImport : IGoogleSheetImport
     public int? TechSlots { get; set; }
 
     [Name(MultiToolSheetFields.StarSystem)]
-    public string? StarSystem { get; set; }
+    public string? StarSystemName { get; set; }
 
     [Name(MultiToolSheetFields.MultiToolType)]
     public MultiToolTypes? MultiToolType { get; set; }

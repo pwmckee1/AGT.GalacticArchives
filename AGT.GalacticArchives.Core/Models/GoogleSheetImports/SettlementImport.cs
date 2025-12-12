@@ -41,7 +41,7 @@ public class SettlementImport : IGoogleSheetImport
     public GameModeTypes? GameMode { get; set; }
 
     [Name(SettlementSheetFields.Name)]
-    public string? Name { get; set; }
+    public string? SettlementName { get; set; }
 
     [Name(SettlementSheetFields.OriginalName)]
     public string? OriginalName { get; set; }
@@ -53,7 +53,7 @@ public class SettlementImport : IGoogleSheetImport
     public string? OverseerLink { get; set; }
 
     [Name(SettlementSheetFields.Planet)]
-    public string? Planet { get; set; }
+    public string? PlanetName { get; set; }
 
     [Name(SettlementSheetFields.Population)]
     public int? Population { get; set; }
@@ -74,7 +74,7 @@ public class SettlementImport : IGoogleSheetImport
     public string? Surveyor { get; set; }
 
     [Name(SettlementSheetFields.System)]
-    public string? System { get; set; }
+    public string? StarSystemName { get; set; }
 
     [Name(SettlementSheetFields.WikiLink)]
     public string? WikiLink { get; set; }

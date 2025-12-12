@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Interfaces.Models;
-using AGT.GalacticArchives.Core.Models;
 using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.Database;

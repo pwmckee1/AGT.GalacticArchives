@@ -11,7 +11,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Handlers.Validation.Imports;
 
-public class StarshipImportValidationHandler : BaseImportValidationHandler, IGoogleSheetValidationHandler
+public class StarshipImportValidationHandler : BaseImportValidationHandler, IImportValidationHandler
 {
     protected override string SheetName => ImportResource.StarshipSheetName;
 

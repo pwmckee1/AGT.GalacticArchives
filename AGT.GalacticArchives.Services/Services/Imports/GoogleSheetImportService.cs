@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public abstract class GoogleSheetImportService<T>(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers) : IGoogleSheetImportService
+    IEnumerable<IImportValidationHandler> googleSheetValidationHandlers) : IGoogleSheetImportService
 {
     protected HashSet<string> Errors = [];
 

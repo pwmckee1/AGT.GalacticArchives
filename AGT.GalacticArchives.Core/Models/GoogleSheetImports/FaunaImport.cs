@@ -154,7 +154,7 @@ public class FaunaImport : IGoogleSheetImport
     public FaunaRarityTypes? FaunaRarityType { get; set; }
 
     [Name(FaunaSheetFields.Region)]
-    public string? Region { get; set; }
+    public string? RegionName { get; set; }
 
     [Name(FaunaSheetFields.Release)]
     public string? Release { get; set; }
@@ -166,7 +166,7 @@ public class FaunaImport : IGoogleSheetImport
     public string? SummaryNotes { get; set; }
 
     [Name(FaunaSheetFields.StarSystem)]
-    public string? StarSystem { get; set; }
+    public string? StarSystemName { get; set; }
 
     [Name(FaunaSheetFields.VersionRelease)]
     public string? VersionRelease { get; set; }

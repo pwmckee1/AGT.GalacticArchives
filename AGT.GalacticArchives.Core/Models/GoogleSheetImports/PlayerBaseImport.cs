@@ -104,7 +104,7 @@ public class PlayerBaseImport : IGoogleSheetImport
     public GameModeTypes? Mode { get; set; }
 
     [Name(PlayerBaseSheetFields.Name)]
-    public string? Name { get; set; }
+    public string? PlayerBaseName { get; set; }
 
     [Name(PlayerBaseSheetFields.NearbyPOI)]
     public HashSet<LocationTypes> NearbyPOI { get; set; } = [];
@@ -113,7 +113,7 @@ public class PlayerBaseImport : IGoogleSheetImport
     public string? PersonalNotes { get; set; }
 
     [Name(PlayerBaseSheetFields.Planet)]
-    public string? Planet { get; set; }
+    public string? PlanetName { get; set; }
 
     [Name(PlayerBaseSheetFields.Platform)]
     public GamePlatformTypes? Platform { get; set; }
@@ -125,7 +125,7 @@ public class PlayerBaseImport : IGoogleSheetImport
     public PlayerBasePowerTypes? PowerSituation { get; set; }
 
     [Name(PlayerBaseSheetFields.Region)]
-    public string? Region { get; set; }
+    public string? RegionName { get; set; }
 
     [Name(PlayerBaseSheetFields.Release)]
     public string? Release { get; set; }
@@ -140,7 +140,7 @@ public class PlayerBaseImport : IGoogleSheetImport
     public string? Surveyor { get; set; }
 
     [Name(PlayerBaseSheetFields.StarSystem)]
-    public string? StarSystem { get; set; }
+    public string? StarSystemName { get; set; }
 
     [Name(PlayerBaseSheetFields.TypeOfBase)]
     public PlayerBaseTypes? TypeOfBase { get; set; }

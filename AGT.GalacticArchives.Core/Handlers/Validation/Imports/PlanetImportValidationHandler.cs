@@ -11,7 +11,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Handlers.Validation.Imports;
 
-public class PlanetImportValidationHandler : BaseImportValidationHandler, IGoogleSheetValidationHandler
+public class PlanetImportValidationHandler : BaseImportValidationHandler, IImportValidationHandler
 {
     protected override string SheetName => ImportResource.PlanetSheetName;
 

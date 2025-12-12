@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;

@@ -1,6 +1,6 @@
 namespace AGT.GalacticArchives.Core.Interfaces.Handlers;
 
-public interface IGoogleSheetValidationHandler
+public interface IImportValidationHandler
 {
     bool CanHandle<T>();
 

@@ -8,7 +8,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Handlers.Validation.Imports;
 
-public class StarSystemImportValidationHandler : BaseImportValidationHandler, IGoogleSheetValidationHandler
+public class StarSystemImportValidationHandler : BaseImportValidationHandler, IImportValidationHandler
 {
     protected override string SheetName => ImportResource.StarSystemSheetName;
 

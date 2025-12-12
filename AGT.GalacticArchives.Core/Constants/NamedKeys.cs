@@ -49,4 +49,18 @@ public static class NamedKeys
         public const string SettlementManager = nameof(SettlementManager);
         public const string StarshipManager = nameof(StarshipManager);
     }
+
+    public static class Handlers
+    {
+        public const string BaseImportValidationHandler = nameof(BaseImportValidationHandler);
+        public const string FaunaImportValidationHandler = nameof(FaunaImportValidationHandler);
+        public const string MultiToolImportValidationHandler = nameof(MultiToolImportValidationHandler);
+        public const string PlanetImportValidationHandler = nameof(PlanetImportValidationHandler);
+        public const string PlayerBaseImportValidationHandler = nameof(PlayerBaseImportValidationHandler);
+        public const string PointOfInterestImportValidationHandler = nameof(PointOfInterestImportValidationHandler);
+        public const string RegionImportValidationHandler = nameof(RegionImportValidationHandler);
+        public const string SettlementImportValidationHandler = nameof(SettlementImportValidationHandler);
+        public const string StarshipImportValidationHandler = nameof(StarshipImportValidationHandler);
+        public const string StarSystemImportValidationHandler = nameof(StarSystemImportValidationHandler);
+    }
 }

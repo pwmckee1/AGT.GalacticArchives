@@ -9,7 +9,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Handlers.Validation.Imports;
 
-public class RegionImportValidationHandler : BaseImportValidationHandler, IGoogleSheetValidationHandler
+public class RegionImportValidationHandler : BaseImportValidationHandler, IImportValidationHandler
 {
     protected override string SheetName => ImportResource.RegionSheetName;
 
