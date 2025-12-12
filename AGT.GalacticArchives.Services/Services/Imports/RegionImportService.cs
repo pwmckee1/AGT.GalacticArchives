@@ -1,5 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -16,7 +16,7 @@ public class RegionImportService(
     private readonly IGoogleSheetImportManager<RegionImport> _importManager =
         importManagers[NamedKeys.Managers.RegionManager];
 
-    protected override string SheetName => GoogleSheetResource.RegionSheetName;
+    protected override string SheetName => ImportResource.RegionSheetName;
 
     protected override Type CsvMapType => typeof(RegionCsvMap);
 

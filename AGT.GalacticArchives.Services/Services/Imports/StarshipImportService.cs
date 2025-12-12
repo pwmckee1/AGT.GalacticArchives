@@ -1,5 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -16,7 +16,7 @@ public class StarshipImportService(
     private readonly IGoogleSheetImportManager<StarshipImport> _importManager =
         importManagers[NamedKeys.Managers.StarshipManager];
 
-    protected override string SheetName => GoogleSheetResource.StarshipSheetName;
+    protected override string SheetName => ImportResource.StarshipSheetName;
 
     protected override Type CsvMapType => typeof(StarshipCsvMap);
 

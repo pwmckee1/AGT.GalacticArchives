@@ -1,4 +1,4 @@
-namespace AGT.GalacticArchives.Core.Handlers;
+namespace AGT.GalacticArchives.Core.Interfaces.Handlers;
 
 public interface IGoogleSheetValidationHandler
 {

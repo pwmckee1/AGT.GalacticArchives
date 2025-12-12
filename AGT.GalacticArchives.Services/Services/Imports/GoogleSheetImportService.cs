@@ -1,6 +1,6 @@
 using System.Globalization;
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
 using AGT.GalacticArchives.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -27,7 +27,7 @@ public abstract class GoogleSheetImportService<T>(
     {
         if (!form.Name.Contains(SheetName))
         {
-            throw new ArgumentException(string.Format(GoogleSheetResource.InvalidFormFile, SheetName, form.Name));
+            throw new ArgumentException(string.Format(ImportResource.InvalidFormFile, SheetName, form.Name));
         }
 
         var importData = await GetRecordsFromCsvFileAsync(form.OpenReadStream());
@@ -82,7 +82,7 @@ public abstract class GoogleSheetImportService<T>(
             {
                 Errors.Add(
                     string.Format(
-                        GoogleSheetResource.MissingSheetHeader,
+                        ImportResource.MissingSheetHeader,
                         SheetName,
                         string.Join(", ", missingHeaders)));
             }

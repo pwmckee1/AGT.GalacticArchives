@@ -32,8 +32,4 @@
         </AdditionalFiles>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Interfaces\Database\" />
-    </ItemGroup>
-
 </Project>

@@ -1,5 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -16,7 +16,7 @@ public class SettlementImportService(
     private readonly IGoogleSheetImportManager<SettlementImport> _importManager =
         importManagers[NamedKeys.Managers.SettlementManager];
 
-    protected override string SheetName => GoogleSheetResource.SettlementSheetName;
+    protected override string SheetName => ImportResource.SettlementSheetName;
 
     protected override Type CsvMapType => typeof(SettlementCsvMap);
 

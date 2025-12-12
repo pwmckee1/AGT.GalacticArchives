@@ -12,7 +12,7 @@ public class HexadecimalGlyphStrategy(string? fieldValue, int lineNumber, string
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidHexGlyph,
+                    ImportResource.InvalidHexGlyph,
                     SheetName,
                     LineNumber));
         }

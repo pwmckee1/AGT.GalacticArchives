@@ -1,5 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -16,7 +16,7 @@ public class PlayerBaseImportService(
     private readonly IGoogleSheetImportManager<PlayerBaseImport> _importManager =
         importManagers[NamedKeys.Managers.PlayerBaseManager];
 
-    protected override string SheetName => GoogleSheetResource.PlayerBaseSheetName;
+    protected override string SheetName => ImportResource.PlayerBaseSheetName;
 
     protected override Type CsvMapType => typeof(PlayerBaseCsvMap);
 

@@ -14,7 +14,7 @@ public class NullableIntFieldStrategy(string? fieldValue, int lineNumber, string
             {
                 context.Errors.Add(
                     string.Format(
-                        GoogleSheetResource.InvalidInteger,
+                        ImportResource.InvalidInteger,
                         SheetName,
                         LineNumber,
                         PropertyName));

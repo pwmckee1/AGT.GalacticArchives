@@ -11,7 +11,7 @@ public class NullFieldStrategy(string? fieldValue, int lineNumber, string proper
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.RequiredFieldMissingError,
+                    ImportResource.RequiredFieldMissingError,
                     SheetName,
                     LineNumber,
                     PropertyName));

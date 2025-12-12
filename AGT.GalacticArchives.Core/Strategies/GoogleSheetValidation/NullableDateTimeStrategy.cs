@@ -19,7 +19,7 @@ public class NullableDateTimeStrategy(string? fieldValue, int lineNumber, string
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidDateTime,
+                    ImportResource.InvalidDateTime,
                     SheetName,
                     LineNumber,
                     PropertyName));

@@ -15,7 +15,7 @@ public class EnumFieldTypeStrategy<T>(string? fieldValue, int lineNumber, string
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidFieldEnum,
+                    ImportResource.InvalidFieldEnum,
                     SheetName,
                     LineNumber,
                     PropertyName));

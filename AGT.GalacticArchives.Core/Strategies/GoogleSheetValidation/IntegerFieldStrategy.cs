@@ -12,7 +12,7 @@ public class IntegerFieldStrategy(string? fieldValue, int lineNumber, string pro
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidInteger,
+                    ImportResource.InvalidInteger,
                     SheetName,
                     LineNumber,
                     PropertyName));

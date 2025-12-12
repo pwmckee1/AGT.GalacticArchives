@@ -1,5 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
 using AGT.GalacticArchives.Core.Managers.Imports;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
@@ -16,7 +16,7 @@ public class FaunaImportService(
     private readonly IGoogleSheetImportManager<FaunaImport> _importManager =
         importManagers[NamedKeys.Managers.FaunaManager];
 
-    protected override string SheetName => GoogleSheetResource.FaunaSheetName;
+    protected override string SheetName => ImportResource.FaunaSheetName;
 
     protected override Type CsvMapType => typeof(FaunaCsvMap);
 

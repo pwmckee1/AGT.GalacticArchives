@@ -12,7 +12,7 @@ public class GalacticCoordinateStrategy(string? fieldValue, int lineNumber, stri
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidGalacticCoordinate,
+                    ImportResource.InvalidGalacticCoordinate,
                     SheetName,
                     LineNumber));
         }

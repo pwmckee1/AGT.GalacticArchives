@@ -1,5 +1,4 @@
 using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Application;
 using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Services.Imports;
@@ -50,7 +49,7 @@ public class GoogleSheetImportController(IIndex<string, IGoogleSheetImportServic
 
         return BadRequest(
             string.Format(
-                GoogleSheetResource.InvalidSheetProvided,
+                ImportResource.InvalidSheetProvided,
                 EnumExtensions.GetDescriptions<GoogleSheetTypes>()));
     }
 }

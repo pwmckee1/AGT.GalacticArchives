@@ -11,7 +11,7 @@ public class NullableFloatFieldStrategy(string? fieldValue, int lineNumber, stri
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidFloat,
+                    ImportResource.InvalidFloat,
                     SheetName,
                     LineNumber,
                     PropertyName));
