@@ -13,8 +13,8 @@ public class CacheController(ICacheService cacheService) : ControllerBase
         return Ok(cacheService.GetCacheKeys());
     }
 
-    [HttpPost("{cacheKey}")]
-    public async Task<IActionResult> PostAsync(string? cacheKey = null)
+    [HttpPost]
+    public async Task<IActionResult> PostAsync([FromQuery] string? cacheKey = null)
     {
         await cacheService.ClearCacheByKey(cacheKey);
         return Ok();
