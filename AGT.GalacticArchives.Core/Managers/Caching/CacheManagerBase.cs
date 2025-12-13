@@ -11,7 +11,7 @@ public abstract class CacheManagerBase(IDistributedCache distributedCache) : ICa
     protected readonly IDistributedCache DistributedCache = distributedCache;
     protected ConcurrentDictionary<string, bool> CacheKeys = new();
 
-    public virtual HashSet<string> GetCacheKeys(string? key)
+    public virtual HashSet<string> GetCacheKeys(string? key = null)
     {
         return string.IsNullOrEmpty(key)
             ? [.. CacheKeys.Keys]

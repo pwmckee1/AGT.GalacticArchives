@@ -1,14 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AGT.GalacticArchives.Services.Interfaces.Application;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
 [Route("cache")]
-public class CacheController : ControllerBase
+public class CacheController(ICacheService cacheService) : ControllerBase
 {
-    // GET
-    public IActionResult Index()
+    [HttpGet]
+    public IActionResult Get()
     {
-        return View();
+        return Ok(cacheService.GetCacheKeys());
+    }
+
+    [HttpPost("{cacheKey}")]
+    public async Task<IActionResult> PostAsync(string? cacheKey = null)
+    {
+        await cacheService.ClearCacheByKey(cacheKey);
+        return Ok();
     }
 }
