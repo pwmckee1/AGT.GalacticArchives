@@ -14,17 +14,17 @@ public class PointOfInterestImport : IImportFormFile
     [Name(PointOfInterestSheetFields.Galaxy)]
     public GalaxyTypes? Galaxy { get; set; }
 
-    [Name(PointOfInterestSheetFields.Name)]
-    public string? Name { get; set; }
+    [Name(PointOfInterestSheetFields.PointOfInterestName)]
+    public string? PointOfInterestName { get; set; }
 
     [Name(PointOfInterestSheetFields.NotesOrDescription)]
     public string? NotesOrDescription { get; set; }
 
     [Name(PointOfInterestSheetFields.Planet)]
-    public string? Planet { get; set; }
+    public string? PlanetName { get; set; }
 
     [Name(PointOfInterestSheetFields.Region)]
-    public string? Region { get; set; }
+    public string? RegionName { get; set; }
 
     [Name(PointOfInterestSheetFields.Release)]
     public string? Release { get; set; }
@@ -32,8 +32,8 @@ public class PointOfInterestImport : IImportFormFile
     [Name(PointOfInterestSheetFields.Surveyor)]
     public string? Surveyor { get; set; }
 
-    [Name(PointOfInterestSheetFields.System)]
-    public string? System { get; set; }
+    [Name(PointOfInterestSheetFields.StarSystemName)]
+    public string? StarSystemName { get; set; }
 
     [Name(PointOfInterestSheetFields.LocationType)]
     public LocationTypes? LocationType { get; set; }

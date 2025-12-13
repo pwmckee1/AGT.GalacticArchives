@@ -21,9 +21,7 @@ public enum ItemColorTypes
     BlueGreen,
     Bronze,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.BronzeYellow))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.BronzeYellow))]
     BronzeYellow,
     Brown,
 
@@ -81,14 +79,10 @@ public enum ItemColorTypes
     Green,
     Grey,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.GunmetalBlue))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.GunmetalBlue))]
     GunmetalBlue,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.GunmetalGrey))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.GunmetalGrey))]
     GunmetalGrey,
 
     [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.HarvestGold))]
@@ -134,19 +128,13 @@ public enum ItemColorTypes
     Maroon,
     Mauve,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.MetallicBlue))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.MetallicBlue))]
     MetallicBlue,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.MetallicBronze))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.MetallicBronze))]
     MetallicBronze,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.MetallicCopper))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.MetallicCopper))]
     MetallicCopper,
     Mint,
 
@@ -233,8 +221,6 @@ public enum ItemColorTypes
     [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.YellowGreen))]
     YellowGreen,
 
-    [Display(
-        ResourceType = typeof(ItemColorTypeResource),
-        Description = nameof(ItemColorTypeResource.YellowOrange))]
+    [Display(ResourceType = typeof(ItemColorTypeResource), Description = nameof(ItemColorTypeResource.YellowOrange))]
     YellowOrange,
 }

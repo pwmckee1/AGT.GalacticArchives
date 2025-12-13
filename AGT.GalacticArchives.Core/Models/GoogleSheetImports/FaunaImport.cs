@@ -27,8 +27,8 @@ public class FaunaImport : IImportFormFile
     [Name(FaunaSheetFields.BehaviourArchetype)]
     public FaunaBehaviorArchetypes? BehaviourArchetype { get; set; }
 
-    [Name(FaunaSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(FaunaSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(FaunaSheetFields.FaunaDietType)]
     public FaunaDietTypes? FaunaDietType { get; set; }
@@ -145,7 +145,7 @@ public class FaunaImport : IImportFormFile
     public string? OriginalName { get; set; }
 
     [Name(FaunaSheetFields.Planet)]
-    public string? Planet { get; set; }
+    public string? PlanetName { get; set; }
 
     [Name(FaunaSheetFields.ProductionType)]
     public FaunaProductionTypes? ProductionType { get; set; }
@@ -165,7 +165,7 @@ public class FaunaImport : IImportFormFile
     [Name(FaunaSheetFields.SummaryNotes)]
     public string? SummaryNotes { get; set; }
 
-    [Name(FaunaSheetFields.StarSystem)]
+    [Name(FaunaSheetFields.StarSystemName)]
     public string? StarSystemName { get; set; }
 
     [Name(FaunaSheetFields.VersionRelease)]

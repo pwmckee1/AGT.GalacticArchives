@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.GeneralErrorResource", typeof(GeneralErrorResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Application.GeneralErrorResource", typeof(GeneralErrorResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -83,6 +83,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string CoordinatesMustMatchPattern {
             get {
                 return ResourceManager.GetString("CoordinatesMustMatchPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot upsert {0} because EntityId is empty. Ensure the entity has a valid id before saving..
+        /// </summary>
+        public static string EntityIdMissing {
+            get {
+                return ResourceManager.GetString("EntityIdMissing", resourceCulture);
             }
         }
         

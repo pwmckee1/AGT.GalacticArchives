@@ -35,6 +35,9 @@ public class GlyphCodeValueResolver : IValueResolver<RegionImport, Region, strin
             return null;
         }
 
-        return string.IsNullOrEmpty(glyphHexCode) ? galacticCoordinates!.ToPortalGlyphHexValue() : glyphHexCode;
+        string? glyphCode = string.IsNullOrEmpty(glyphHexCode)
+            ? galacticCoordinates!.ToPortalGlyphHexValue()
+            : glyphHexCode;
+        return glyphCode;
     }
 }

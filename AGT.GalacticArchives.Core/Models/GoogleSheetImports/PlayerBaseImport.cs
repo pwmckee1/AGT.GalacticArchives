@@ -37,8 +37,8 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.BuilderLinkOnWiki)]
     public string? BuilderLinkOnWiki { get; set; }
 
-    [Name(PlayerBaseSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(PlayerBaseSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(PlayerBaseSheetFields.Coordinates)]
     public string? Coordinates { get; set; }
@@ -52,8 +52,8 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.DateStarted)]
     public DateTime? DateStarted { get; set; }
 
-    [Name(PlayerBaseSheetFields.DocSequence)]
-    public int? DocSequence { get; set; }
+    [Name(PlayerBaseSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
 
     [Name(PlayerBaseSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }

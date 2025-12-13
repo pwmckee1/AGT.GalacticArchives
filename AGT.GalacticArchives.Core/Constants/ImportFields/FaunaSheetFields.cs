@@ -8,7 +8,7 @@ public static class FaunaSheetFields
     public const string Bait = "Bait";
     public const string BehaviourType = "Behaviour";
     public const string BehaviourArchetype = "Behaviour Type";
-    public const string CivilizedBy = "Civilized";
+    public const string Civilization = "Civilized";
     public const string FaunaDietType = "Diet";
     public const string FaunaDietArchetype = "Diet Type";
     public const string DiscoveredBy = "Discovered";
@@ -55,7 +55,7 @@ public static class FaunaSheetFields
     public const string Release = "Release";
     public const string ResearchTeam = "Research Team";
     public const string SummaryNotes = "Summary Notes";
-    public const string StarSystem = "System";
+    public const string StarSystemName = "System";
     public const string VersionRelease = "Version Release";
     public const string FaunaBaitType = "Bait";
     public const string GenusType = "Genus";

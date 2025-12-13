@@ -10,7 +10,7 @@ public class MultiToolMaps : Profile
 {
     public MultiToolMaps()
     {
-        CreateMap<Dictionary<string, object>, MultiTool>()
+        CreateMap<Dictionary<string, object?>, MultiTool>()
             .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 

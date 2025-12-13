@@ -10,6 +10,8 @@ public class Planet : DatabaseGameEntity
 
     public override Guid EntityId => PlanetId ?? Guid.NewGuid();
 
+    public override string? PlanetName { get; set; }
+
     public string? PlanetNameAllPlatforms { get; set; }
 
     public string? AdminNotes { get; set; }

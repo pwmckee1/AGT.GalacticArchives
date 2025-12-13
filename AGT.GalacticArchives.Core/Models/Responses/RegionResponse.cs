@@ -8,7 +8,7 @@ public class RegionResponse
 
     public HashSet<StarSystemResponse> StarSystems { get; set; } = [];
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? Coordinates { get; set; }
 
@@ -20,7 +20,7 @@ public class RegionResponse
 
     public string? ZZ { get; set; }
 
-    public int? DocSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 
     public string? GameRelease { get; set; }
 

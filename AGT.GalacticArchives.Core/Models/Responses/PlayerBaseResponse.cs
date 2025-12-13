@@ -6,7 +6,7 @@ public class PlayerBaseResponse
 
     public string? Name { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? Builder { get; set; }
 
@@ -76,7 +76,7 @@ public class PlayerBaseResponse
 
     public string? WikiLink { get; set; }
 
-    public int? DocSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 
     public string? Videos { get; set; }
 

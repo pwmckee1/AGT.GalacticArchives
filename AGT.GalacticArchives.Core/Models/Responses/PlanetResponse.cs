@@ -88,7 +88,7 @@ public class PlanetResponse
 
     public string? Mode { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? DiscovererGamertag { get; set; }
 

@@ -41,13 +41,15 @@ public static class CsvMappingExtensions
     public static int? ReadIntFieldOrNull(this IReaderRow row, string propertyName)
     {
         string? value = row.GetField(propertyName);
-        return !string.IsNullOrEmpty(value) && int.TryParse(value, out int result) ? result : null;
+        string formattedValue = !string.IsNullOrEmpty(value) ? value.Replace(",", string.Empty) : string.Empty;
+        return int.TryParse(formattedValue, out int result) ? result : null;
     }
 
     public static float? ReadFloatFieldOrNull(this IReaderRow row, string propertyName)
     {
         string? value = row.GetField(propertyName);
-        return !string.IsNullOrEmpty(value) && float.TryParse(value, out float result) ? result : null;
+        string formattedValue = !string.IsNullOrEmpty(value) ? value.Replace(",", string.Empty) : string.Empty;
+        return float.TryParse(formattedValue, out float result) ? result : null;
     }
 
     public static bool? ReadBoolFieldOrNull(this IReaderRow row, string propertyName, string identifier)

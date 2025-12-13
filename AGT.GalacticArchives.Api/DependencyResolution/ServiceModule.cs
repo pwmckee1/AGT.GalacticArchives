@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Constants.Application;
-using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Decorators;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 using AGT.GalacticArchives.Services.Services.Entities;
@@ -114,47 +114,47 @@ public class ServiceModule : Module
 
         builder
             .RegisterType<FaunaImportService>()
-            .Named<IImportService>(NamedKeys.Services.FaunaImportService)
+            .Named<IImportService>(ImportResource.FaunaSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<MultiToolImportService>()
-            .Named<IImportService>(NamedKeys.Services.MultiToolImportService)
+            .Named<IImportService>(ImportResource.MultiToolSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<PlanetImportService>()
-            .Named<IImportService>(NamedKeys.Services.PlanetImportService)
+            .Named<IImportService>(ImportResource.PlanetSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<PlayerBaseImportService>()
-            .Named<IImportService>(NamedKeys.Services.PlayerBaseImportService.GetDescription())
+            .Named<IImportService>(ImportResource.PlayerBaseSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<PointOfInterestImportService>()
-            .Named<IImportService>(NamedKeys.Services.PointOfInterestImportService.GetDescription())
+            .Named<IImportService>(ImportResource.PointOfInterestSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<RegionImportService>()
-            .Named<IImportService>(NamedKeys.Services.RegionImportService.GetDescription())
+            .Named<IImportService>(ImportResource.RegionSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<SettlementImportService>()
-            .Named<IImportService>(NamedKeys.Services.SettlementImportService.GetDescription())
+            .Named<IImportService>(ImportResource.SettlementSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<StarSystemImportService>()
-            .Named<IImportService>(NamedKeys.Services.StarshipImportService.GetDescription())
+            .Named<IImportService>(ImportResource.StarSystemSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<StarshipImportService>()
-            .Named<IImportService>(NamedKeys.Services.StarSystemImportService.GetDescription())
+            .Named<IImportService>(ImportResource.StarshipSheetName)
             .InstancePerLifetimeScope();
     }
 }

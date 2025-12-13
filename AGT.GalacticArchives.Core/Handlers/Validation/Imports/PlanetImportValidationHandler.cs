@@ -52,14 +52,14 @@ public class PlanetImportValidationHandler : BaseImportValidationHandler, IImpor
                     nameof(planetField.Galaxy).GetDescription<PlanetImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    planetField.Region,
+                    planetField.RegionName,
                     LineNumber,
-                    nameof(planetField.Region).GetDescription<PlanetImport>(),
+                    nameof(planetField.RegionName).GetDescription<PlanetImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    planetField.StarSystem,
+                    planetField.StarSystemName,
                     LineNumber,
-                    nameof(planetField.StarSystem).GetDescription<PlanetImport>(),
+                    nameof(planetField.StarSystemName).GetDescription<PlanetImport>(),
                     SheetName),
                 new NullFieldStrategy(
                     planetField.PlanetName,

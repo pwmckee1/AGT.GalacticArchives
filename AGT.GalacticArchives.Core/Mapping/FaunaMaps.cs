@@ -10,7 +10,7 @@ public class FaunaMaps : Profile
 {
     public FaunaMaps()
     {
-        CreateMap<Dictionary<string, object>, Fauna>()
+        CreateMap<Dictionary<string, object?>, Fauna>()
             .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 

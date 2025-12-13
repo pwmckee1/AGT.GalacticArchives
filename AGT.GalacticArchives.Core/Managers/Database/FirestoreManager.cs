@@ -1,6 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Globalization;
 using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Managers.Database;
@@ -50,9 +51,14 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
     public async Task<T> UpsertAsync<T>(T entity, string collectionName) where T : class, IDatabaseEntity
     {
-        var docRef = firestoreDb.Collection(collectionName).Document();
+        if (entity.EntityId == Guid.Empty)
+        {
+            throw new InvalidOperationException(string.Format(GeneralErrorResource.EntityIdMissing, typeof(T).Name));
+        }
 
-        await docRef.SetAsync(entity.ToDictionary());
+        var docRef = firestoreDb.Collection(collectionName).Document(entity.EntityId.ToString());
+
+        await docRef.SetAsync(entity.ToDictionary(), SetOptions.MergeAll);
 
         return entity;
     }
@@ -61,16 +67,38 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         HashSet<T> entities,
         string collectionName) where T : class, IDatabaseEntity
     {
-        var batch = firestoreDb.StartBatch();
+        // Firestore batch limit is 500 writes, but gRPC message size can be hit earlier.
+        const int maxWritesPerBatch = 250;
 
-        var docRef = firestoreDb.Collection(collectionName).Document();
+        var batch = firestoreDb.StartBatch();
+        int writesInBatch = 0;
 
         foreach (var gameEntity in entities)
         {
-            batch.Set(docRef, gameEntity.ToDictionary());
+            if (gameEntity.EntityId == Guid.Empty)
+            {
+                throw new InvalidOperationException(
+                    string.Format(GeneralErrorResource.EntityIdMissing, typeof(T).Name));
+            }
+
+            var docRef = firestoreDb.Collection(collectionName).Document(gameEntity.EntityId.ToString());
+
+            var gameEntityRef = gameEntity.ToDictionary();
+            batch.Set(docRef, gameEntityRef, SetOptions.MergeAll);
+            writesInBatch++;
+
+            if (writesInBatch >= maxWritesPerBatch)
+            {
+                await batch.CommitAsync();
+                batch = firestoreDb.StartBatch();
+                writesInBatch = 0;
+            }
         }
 
-        await batch.CommitAsync();
+        if (writesInBatch > 0)
+        {
+            await batch.CommitAsync();
+        }
 
         return entities;
     }

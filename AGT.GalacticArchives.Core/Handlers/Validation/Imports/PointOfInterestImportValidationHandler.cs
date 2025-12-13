@@ -34,19 +34,19 @@ public class PointOfInterestImportValidationHandler : BaseImportValidationHandle
                     nameof(pointOfInterestField.LocationType).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    pointOfInterestField.Planet,
+                    pointOfInterestField.PlanetName,
                     LineNumber,
-                    nameof(pointOfInterestField.Planet).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.PlanetName).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    pointOfInterestField.System,
+                    pointOfInterestField.StarSystemName,
                     LineNumber,
-                    nameof(pointOfInterestField.System).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.StarSystemName).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    pointOfInterestField.Region,
+                    pointOfInterestField.RegionName,
                     LineNumber,
-                    nameof(pointOfInterestField.Region).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.RegionName).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullFieldStrategy(
                     pointOfInterestField.Galaxy?.ToString(),

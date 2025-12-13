@@ -19,7 +19,7 @@ public class AxisDecimalValueResolver : IMemberValueResolver<RegionImport, Regio
         {
             nameof(RegionImport.XXDec) when source.XXDec != null => source.XXDec,
             nameof(RegionImport.YYDec) when source.YYDec != null => source.YYDec,
-            nameof(RegionImport.YYDec) when source.ZZDec != null => source.ZZDec,
+            nameof(RegionImport.ZZDec) when source.ZZDec != null => source.ZZDec,
             _ => sourceMember switch
             {
                 nameof(RegionImport.XXDec) => source.XXHex.HasValidAxisCoordinates()
@@ -47,7 +47,7 @@ public class AxisDecimalValueResolver : IMemberValueResolver<RegionImport, Regio
         {
             nameof(StarSystemImport.XXDec) when source.XXDec != null => source.XXDec,
             nameof(StarSystemImport.YYDec) when source.YYDec != null => source.YYDec,
-            nameof(StarSystemImport.YYDec) when source.ZZDec != null => source.ZZDec,
+            nameof(StarSystemImport.ZZDec) when source.ZZDec != null => source.ZZDec,
             nameof(StarSystemImport.SSDec) when source.SSDec != null => source.SSDec,
             _ => sourceMember switch
             {

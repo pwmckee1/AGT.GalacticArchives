@@ -8,8 +8,9 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace AGT.GalacticArchives.Controllers;
 
-public class GoogleSheetImportController(IIndex<string, IImportService> googleSheetImportServices)
-    : ControllerBase
+[ApiController]
+[Route("import")]
+public class GoogleSheetImportController(IIndex<string, IImportService> googleSheetImportServices) : CsvFileController
 {
     /// <summary>
     /// When using this to import data from the AGT GoogleSheet DB, select the worksheet to be imported in Google Sheets,
@@ -30,7 +31,7 @@ public class GoogleSheetImportController(IIndex<string, IImportService> googleSh
         var googleSheetImportFile = HttpContext.Request.Form.Files.SingleOrDefault();
         if (googleSheetImportFile != null)
         {
-            string[] spaceSeparatedFileName = googleSheetImportFile.Name.Split(' ');
+            string[] spaceSeparatedFileName = googleSheetImportFile.FileName.Split(' ');
             foreach (string fileNamePart in spaceSeparatedFileName)
             {
                 bool isValidSheet = Enum.TryParse(fileNamePart, out GoogleSheetTypes googleSheetType);
@@ -46,8 +47,6 @@ public class GoogleSheetImportController(IIndex<string, IImportService> googleSh
         }
 
         return BadRequest(
-            string.Format(
-                ImportResource.InvalidSheetProvided,
-                EnumExtensions.GetDescriptions<GoogleSheetTypes>()));
+            string.Format(ImportResource.InvalidSheetProvided, EnumExtensions.GetDescriptions<GoogleSheetTypes>()));
     }
 }

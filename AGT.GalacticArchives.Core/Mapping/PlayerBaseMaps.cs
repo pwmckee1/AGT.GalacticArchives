@@ -10,7 +10,7 @@ public class PlayerBaseMaps : Profile
 {
     public PlayerBaseMaps()
     {
-        CreateMap<Dictionary<string, object>, PlayerBase>()
+        CreateMap<Dictionary<string, object?>, PlayerBase>()
             .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 

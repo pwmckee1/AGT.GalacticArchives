@@ -12,7 +12,7 @@ public class RegionMaps : Profile
 {
     public RegionMaps()
     {
-        CreateMap<Dictionary<string, object>, Region>().ConvertUsing<DatabaseEntityTypeConverter>();
+        CreateMap<Dictionary<string, object?>, Region>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<RegionImport, Region>()
             .ForMember(d => d.Name, o => o.MapFrom(s => s.RegionName))

@@ -38,7 +38,7 @@ public class StarSystemResponse
 
     public bool IsDissonant { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? Bases { get; set; }
 

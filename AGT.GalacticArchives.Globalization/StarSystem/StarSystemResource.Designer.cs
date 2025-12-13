@@ -179,9 +179,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Civilized?.
         /// </summary>
-        public static string CivilizedBy {
+        public static string Civilization {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("Civilization", resourceCulture);
             }
         }
         

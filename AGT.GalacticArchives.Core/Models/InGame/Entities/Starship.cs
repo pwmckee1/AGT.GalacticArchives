@@ -13,12 +13,6 @@ public class Starship : DatabaseGameEntity
 
     public string? Pilot { get; set; }
 
-    public string? RegionName { get; set; }
-
-    public string? StarSystemName { get; set; }
-
-    public string? PlanetName { get; set; }
-
     public StarshipModelTypes? StarshipModelType { get; set; }
 
     public StarshipSubModelTypes? StarshipSubtype { get; set; }

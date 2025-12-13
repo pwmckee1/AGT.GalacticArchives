@@ -5,7 +5,7 @@ public static class MultiToolSheetFields
     public const string AcquisitionGuidance = "Acquistion Guidance";
     public const string Category = "Category";
     public const string Class = "Class";
-    public const string CivilizedBy = "Civilized";
+    public const string Civilization = "Civilized";
     public const string Coordinates = "GalacticAddressCoordinates";
     public const string Cost = "Cost";
     public const string Damage = "Damage";
@@ -21,11 +21,11 @@ public static class MultiToolSheetFields
     public const string Mining = "Mining";
     public const string GameModeType = "Mode";
     public const string MultiToolName = "Name of MT";
-    public const string Planet = "Planet";
+    public const string PlanetName = "Planet";
     public const string Platform = "Platform";
     public const string PortalGlyphs = "PortalGlpyhs";
     public const string PrimaryColor = "Primary Color";
-    public const string Region = "Region =";
+    public const string RegionName = "Region =";
     public const string Release = "Release";
     public const string ResearchTeam = "Research Team";
     public const string Scanner = "Scanner";

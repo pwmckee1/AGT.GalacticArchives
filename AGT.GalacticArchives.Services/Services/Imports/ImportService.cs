@@ -26,9 +26,9 @@ public abstract class ImportService<T>(
 
     public async Task<HashSet<T>> ValidateFileAsync(IFormFile form)
     {
-        if (!form.Name.Contains(SheetName))
+        if (!form.FileName.Contains(SheetName))
         {
-            throw new ArgumentException(string.Format(ImportResource.InvalidFormFile, SheetName, form.Name));
+            throw new ArgumentException(string.Format(ImportResource.InvalidFormFile, SheetName, form.FileName));
         }
 
         var importData = await GetRecordsFromCsvFileAsync(form.OpenReadStream());

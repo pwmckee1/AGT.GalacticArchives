@@ -19,12 +19,12 @@ public static class PlayerBaseSheetFields
     public const string BaseType = "Base Type";
     public const string Builder = "Builder";
     public const string BuilderLinkOnWiki = "Builderlink on Wiki";
-    public const string CivilizedBy = "Civilized";
+    public const string Civilization = "Civilized";
     public const string Coordinates = "Coodinates";
     public const string DateFinished = "Date Finished";
     public const string DateOfSurvey = "Date of Survey";
     public const string DateStarted = "Date Started";
-    public const string DocSequence = "Doc Sequence";
+    public const string DocumentSequence = "Doc Sequence";
     public const string ExternalLink1 = "External Link 1";
     public const string ExternalLink2 = "External Link 2";
     public const string Farm = "Farm";

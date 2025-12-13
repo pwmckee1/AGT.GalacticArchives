@@ -17,7 +17,7 @@ public static class StarSystemSheetFields
     public const string DiscoveredNotes = "Discovered Notes";
     public const string DiscoveryDate = "Discovery Date";
     public const string Platform = "Discovery Platform";
-    public const string DocSequence = "Doc Seq";
+    public const string DocumentSequence = "Doc Seq";
     public const string EconomyType = "Economy";
     public const string Evolution = "Evolution";
     public const string ExosuitUpgradeModules = "ExoSuit S-Class Upgrade Modules";

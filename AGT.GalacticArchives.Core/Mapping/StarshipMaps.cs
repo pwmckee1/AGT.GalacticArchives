@@ -12,7 +12,7 @@ public class StarshipMaps : Profile
 {
     public StarshipMaps()
     {
-        CreateMap<Dictionary<string, object>, Starship>()
+        CreateMap<Dictionary<string, object?>, Starship>()
             .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 

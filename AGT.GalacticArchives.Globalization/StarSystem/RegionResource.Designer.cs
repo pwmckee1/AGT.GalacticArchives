@@ -98,9 +98,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Civilized.
         /// </summary>
-        public static string CivilizedBy {
+        public static string Civilization {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("Civilization", resourceCulture);
             }
         }
         
@@ -116,9 +116,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Doc Sequence.
         /// </summary>
-        public static string DocSequence {
+        public static string DocumentSequence {
             get {
-                return ResourceManager.GetString("DocSequence", resourceCulture);
+                return ResourceManager.GetString("DocumentSequence", resourceCulture);
             }
         }
         

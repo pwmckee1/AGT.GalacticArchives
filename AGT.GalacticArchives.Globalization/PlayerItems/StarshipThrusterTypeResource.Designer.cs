@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarshipThrusterTypeResource", typeof(StarshipThrusterTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlayerItems.StarshipThrusterTypeResource", typeof(StarshipThrusterTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

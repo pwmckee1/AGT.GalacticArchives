@@ -4,18 +4,18 @@ public static class RegionSheetFields
 {
     public const string AdditionalNotes = "Additional Notes";
     public const string AdminNotes = "Admin Notes";
-    public const string BaseCoord = "Base Coord";
-    public const string CivilizedBy = "Civilized";
+    public const string BaseCoordinates = "Base Coord";
+    public const string Civilization = "Civilized";
     public const string CivilizedSpaceNotes = "Civilized Space Notes";
     public const string GalacticCoordinates = "Coordinates";
     public const string YYAltitude = "YY (altitude)";
-    public const string DocSequence = "Doc Sequence";
+    public const string DocumentSequence = "Doc Sequence";
     public const string EarliestKnownSurveyor = "Earliest Known Surveyor ID";
     public const string EarliestSurveyorWikiUser = "Earliest Surveryor WikiUser";
     public const string EarliestSystemDiscovery = "Earliest System Discovery (disabled)";
     public const string ExternalLink1 = "External Link 1";
     public const string GameRelease = "Game Release";
-    public const string GlyphHexCode = "Glyphs";
+    public const string GlyphHexCode = "Glylphs";
     public const string Galaxy = "Galaxy";
     public const string GalaxySequence = "Galaxy ID";
     public const string LatestKnownSurveyor = "Latest Surveyor ID";

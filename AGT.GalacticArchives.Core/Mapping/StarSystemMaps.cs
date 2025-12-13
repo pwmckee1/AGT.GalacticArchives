@@ -12,7 +12,7 @@ public class StarSystemMaps : Profile
 {
     public StarSystemMaps()
     {
-        CreateMap<Dictionary<string, object>, StarSystem>().ConvertUsing<DatabaseEntityTypeConverter>();
+        CreateMap<Dictionary<string, object?>, StarSystem>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<StarSystemImport, StarSystem>()
             .ForMember(d => d.Name, o => o.MapFrom(s => s.StarSystemName))

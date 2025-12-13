@@ -9,6 +9,8 @@ public class Region : DatabaseGameEntity
 
     public override Guid EntityId => RegionId ?? Guid.NewGuid();
 
+    public override string? RegionName { get; set; }
+
     public HashSet<StarSystem> StarSystems { get; set; } = [];
 
     public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
@@ -35,7 +37,7 @@ public class Region : DatabaseGameEntity
 
     public string? EarliestSystemDiscovery { get; set; }
 
-    public string? BaseCoord { get; set; }
+    public string? BaseCoordinates { get; set; }
 
     public string? EarliestSurveyorWikiUser { get; set; }
 

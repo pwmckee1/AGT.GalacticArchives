@@ -136,13 +136,13 @@
   <data name="BaseCoord" xml:space="preserve">
     <value>Base Coord</value>
   </data>
-  <data name="CivilizedBy" xml:space="preserve">
+  <data name="Civilization" xml:space="preserve">
         <value>Civilized</value>
     </data>
   <data name="CivilizedSpaceNotes" xml:space="preserve">
     <value>Civilized Space Notes</value>
   </data>
-  <data name="DocSequence" xml:space="preserve">
+  <data name="DocumentSequence" xml:space="preserve">
     <value>Doc Sequence</value>
   </data>
   <data name="EarliestKnownSurveyor" xml:space="preserve">

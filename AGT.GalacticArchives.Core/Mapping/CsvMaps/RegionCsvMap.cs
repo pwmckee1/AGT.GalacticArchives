@@ -18,7 +18,7 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
         Map(m => m.GalacticQuadrant)
             .Convert(m => m.Row.ReadEnumFieldOrNull<GalacticQuadrantTypes>(RegionSheetFields.GalacticQuadrant));
 
-        Map(m => m.DocSequence).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.GalacticQuadrant));
+        Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.DocumentSequence));
 
         Map(m => m.AutoSurveyDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(RegionSheetFields.AutoSurveyDate));
 
@@ -35,6 +35,6 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
 
         Map(m => m.ZZDec).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.ZZDec));
 
-        Map(m => m.GalaxyId).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.GalaxySequence));
+        Map(m => m.GalaxySequence).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.GalaxySequence));
     }
 }

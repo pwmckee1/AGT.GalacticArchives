@@ -52,7 +52,7 @@ public class FaunaResponse
 
     public string? GenusSubtype { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? DiscoveredBy { get; set; }
 

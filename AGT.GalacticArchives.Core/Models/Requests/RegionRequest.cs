@@ -10,7 +10,7 @@ public class RegionRequest
 
     public GalaxyTypes? Galaxy { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? Coordinates { get; set; }
 
@@ -22,7 +22,7 @@ public class RegionRequest
 
     public string? ZZ { get; set; }
 
-    public int? DocSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 
     public string? GameRelease { get; set; }
 

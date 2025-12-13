@@ -52,8 +52,8 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.PlanetBiomeType)]
     public BiomeTypes? PlanetBiomeType { get; set; }
 
-    [Name(PlanetSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(PlanetSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(PlanetSheetFields.DataQualityCheck)]
     public string? DataQualityCheck { get; set; }
@@ -253,9 +253,6 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.RawIngredients)]
     public HashSet<EdibleMaterialTypes> RawIngredients { get; set; } = [];
 
-    [Name(PlanetSheetFields.Region)]
-    public string? Region { get; set; }
-
     [Name(PlanetSheetFields.RegionName)]
     public string? RegionName { get; set; }
 
@@ -282,9 +279,6 @@ public class PlanetImport : IImportFormFile
 
     [Name(PlanetSheetFields.SurveyorGamertag)]
     public string? SurveyorGamertag { get; set; }
-
-    [Name(PlanetSheetFields.System)]
-    public string? StarSystem { get; set; }
 
     [Name(PlanetSheetFields.PlanetTerrain)]
     public TerrainTypes? PlanetTerrain { get; set; }

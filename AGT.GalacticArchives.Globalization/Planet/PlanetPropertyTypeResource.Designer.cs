@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlanetPropertyTypeResource", typeof(PlanetPropertyTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Planet.PlanetPropertyTypeResource", typeof(PlanetPropertyTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

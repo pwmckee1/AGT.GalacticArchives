@@ -38,7 +38,7 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
 
         Map(m => m.DateStarted).Convert(m => m.Row.ReadDateTimeFieldOrNull(PlayerBaseSheetFields.DateStarted));
 
-        Map(m => m.DocSequence).Convert(m => m.Row.ReadIntFieldOrNull(PlayerBaseSheetFields.DocSequence));
+        Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(PlayerBaseSheetFields.DocumentSequence));
 
         Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(PlayerBaseSheetFields.Galaxy));
 

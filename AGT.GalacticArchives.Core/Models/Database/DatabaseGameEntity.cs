@@ -9,6 +9,8 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 {
     public GalaxyTypes? Galaxy { get; set; }
 
+    public int? GalaxySequence { get; set; }
+
     public virtual Guid? RegionId { get; set; }
 
     public Region? Region { get; set; }
@@ -24,6 +26,12 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
     public string? GalacticCoordinates { get; set; }
 
     public string? GlyphHexCode { get; set; }
+
+    public virtual string? RegionName { get; set; }
+
+    public virtual string? StarSystemName { get; set; }
+
+    public virtual string? PlanetName { get; set; }
 
     /// <summary>
     /// First coordinate number when viewed in game Y.Y/X.X format
@@ -74,6 +82,4 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
     public string? AdditionalNotes { get; set; }
 
     public string? WikiLink { get; set; }
-
-    public int? GalaxySequence { get; set; }
 }

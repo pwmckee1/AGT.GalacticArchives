@@ -16,11 +16,11 @@ public class RegionImport : IImportFormFile
     [Name(RegionSheetFields.AutoSurveyDate)]
     public DateTime? AutoSurveyDate { get; set; }
 
-    [Name(RegionSheetFields.BaseCoord)]
+    [Name(RegionSheetFields.BaseCoordinates)]
     public string? BaseCoordinates { get; set; }
 
-    [Name(RegionSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(RegionSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(RegionSheetFields.CivilizedSpaceNotes)]
     public string? CivilizedSpaceNotes { get; set; }
@@ -28,8 +28,8 @@ public class RegionImport : IImportFormFile
     [Name(RegionSheetFields.GalacticCoordinates)]
     public string? GalacticCoordinates { get; set; }
 
-    [Name(RegionSheetFields.DocSequence)]
-    public int? DocSequence { get; set; }
+    [Name(RegionSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
 
     [Name(RegionSheetFields.EarliestKnownSurveyor)]
     public string? EarliestKnownSurveyor { get; set; }
@@ -44,7 +44,7 @@ public class RegionImport : IImportFormFile
     public string? ExternalLink1 { get; set; }
 
     [Name(RegionSheetFields.GalaxySequence)]
-    public int? GalaxyId { get; set; }
+    public int? GalaxySequence { get; set; }
 
     [Name(RegionSheetFields.Galaxy)]
     public GalaxyTypes? Galaxy { get; set; }

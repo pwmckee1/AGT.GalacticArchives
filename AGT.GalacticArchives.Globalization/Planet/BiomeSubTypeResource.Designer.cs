@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGT.GalacticArchives.Globalization {
+namespace AGT.GalacticArchives.Globalization.Planet {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.BiomeSubTypeResource", typeof(BiomeSubTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Planet.BiomeSubTypeResource", typeof(BiomeSubTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

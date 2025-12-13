@@ -16,7 +16,7 @@ public static class PlanetSheetFields
     public const string PlanetBiomeDescription = "Biome Description";
     public const string BiomeResource = "Resource 4 (Automatic based on biome)";
     public const string PlanetBiomeType = "Biome Type";
-    public const string CivilizedBy = "Civilized";
+    public const string Civilization = "Civilized";
     public const string DataQualityCheck = "Data Quality Check";
     public const string DayRadiation = "Day Radiation";
     public const string DayStormRadiation = "Day Storm Radiation";

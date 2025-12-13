@@ -10,7 +10,7 @@ public class PlanetMaps : Profile
 {
     public PlanetMaps()
     {
-        CreateMap<Dictionary<string, object>, Planet>()
+        CreateMap<Dictionary<string, object?>, Planet>()
             .ConvertUsing<DatabaseEntityTypeConverter>()
             ;
 

@@ -20,7 +20,6 @@ public static class NamedKeys
         public const string MultiToolImportService = nameof(PlanetImportService);
         public const string PlanetImportService = nameof(PlanetImportService);
 
-        [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PlayerBaseSheetName))]
         public const string PlayerBaseImportService = nameof(PlayerBaseImportService);
         [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PointOfInterestSheetName))]
         public const string PointOfInterestImportService = nameof(PointOfInterestImportService);

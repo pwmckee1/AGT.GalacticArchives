@@ -19,8 +19,8 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.Class)]
     public ItemClassTypes? Class { get; set; }
 
-    [Name(MultiToolSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(MultiToolSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(MultiToolSheetFields.Coordinates)]
     public string? Coordinates { get; set; }
@@ -67,8 +67,8 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.MultiToolName)]
     public string? MultiToolName { get; set; }
 
-    [Name(MultiToolSheetFields.Planet)]
-    public string? Planet { get; set; }
+    [Name(MultiToolSheetFields.PlanetName)]
+    public string? PlanetName { get; set; }
 
     [Name(MultiToolSheetFields.Platform)]
     public GamePlatformTypes? Platform { get; set; }
@@ -79,7 +79,7 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.PrimaryColor)]
     public ItemColorTypes? PrimaryColor { get; set; }
 
-    [Name(MultiToolSheetFields.Region)]
+    [Name(MultiToolSheetFields.RegionName)]
     public string? RegionName { get; set; }
 
     [Name(MultiToolSheetFields.Release)]
