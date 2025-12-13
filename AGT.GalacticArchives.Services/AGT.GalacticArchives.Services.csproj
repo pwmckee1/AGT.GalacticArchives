@@ -30,9 +30,4 @@
         </AdditionalFiles>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Interfaces\Application\" />
-      <Folder Include="Services\Application\" />
-    </ItemGroup>
-
 </Project>

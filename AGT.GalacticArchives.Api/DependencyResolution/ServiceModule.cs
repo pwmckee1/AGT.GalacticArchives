@@ -1,9 +1,9 @@
 ﻿using AGT.GalacticArchives.Core.Constants.Application;
 using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Decorators;
+using AGT.GalacticArchives.Services.Interfaces.Application;
 using AGT.GalacticArchives.Services.Interfaces.Services;
-using AGT.GalacticArchives.Services.Services.InGameEntities;
-using AGT.GalacticArchives.Services.Services.InGameEnvironments;
+using AGT.GalacticArchives.Services.Services.Application;
 using AGT.GalacticArchives.Services.Services.Imports;
 using AGT.GalacticArchives.Services.Services.InGameEntities;
 using AGT.GalacticArchives.Services.Services.InGameEnvironments;
@@ -51,6 +51,11 @@ public class ServiceModule : Module
         builder
             .RegisterType<FaunaService>()
             .Named<IFaunaService>(NamedKeys.Services.FaunaService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<CacheService>()
+            .Named<ICacheService>(NamedKeys.Services.CacheService)
             .InstancePerLifetimeScope();
 
         builder

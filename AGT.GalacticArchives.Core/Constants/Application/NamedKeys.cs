@@ -17,8 +17,9 @@ public static class NamedKeys
         public const string SettlementService = nameof(SettlementService);
         public const string StarshipService = nameof(StarshipService);
         public const string FaunaImportService = nameof(FaunaImportService);
-        public const string MultiToolImportService = nameof(PlanetImportService);
+        public const string MultiToolImportService = nameof(MultiToolImportService);
         public const string PlanetImportService = nameof(PlanetImportService);
+        public const string CacheService = nameof(CacheService);
 
         public const string PlayerBaseImportService = nameof(PlayerBaseImportService);
         [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PointOfInterestSheetName))]
