@@ -10,22 +10,16 @@ public class SettlementMaps : Profile
 {
     public SettlementMaps()
     {
-        CreateMap<Dictionary<string, object?>, Settlement>()
-            .ConvertUsing<DatabaseEntityTypeConverter>()
-            ;
+        CreateMap<Dictionary<string, object?>, Settlement>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<Settlement, SettlementRequest>()
-            ;
+        CreateMap<Settlement, SettlementRequest>();
         CreateMap<SettlementRequest, Settlement>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<Settlement, SettlementResponse>()
-            ;
+        CreateMap<Settlement, SettlementResponse>();
         CreateMap<SettlementResponse, Settlement>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }

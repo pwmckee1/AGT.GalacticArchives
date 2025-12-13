@@ -10,22 +10,16 @@ public class PlanetMaps : Profile
 {
     public PlanetMaps()
     {
-        CreateMap<Dictionary<string, object?>, Planet>()
-            .ConvertUsing<DatabaseEntityTypeConverter>()
-            ;
+        CreateMap<Dictionary<string, object?>, Planet>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<Planet, PlanetRequest>()
-            ;
+        CreateMap<Planet, PlanetRequest>();
         CreateMap<PlanetRequest, Planet>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<Planet, PlanetResponse>()
-            ;
+        CreateMap<Planet, PlanetResponse>();
         CreateMap<PlanetResponse, Planet>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }

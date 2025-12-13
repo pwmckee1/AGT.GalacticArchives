@@ -10,22 +10,16 @@ public class PointOfInterestMaps : Profile
 {
     public PointOfInterestMaps()
     {
-        CreateMap<Dictionary<string, object?>, PointOfInterest>()
-            .ConvertUsing<DatabaseEntityTypeConverter>()
-            ;
+        CreateMap<Dictionary<string, object?>, PointOfInterest>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<PointOfInterest, PointOfInterestRequest>()
-            ;
+        CreateMap<PointOfInterest, PointOfInterestRequest>();
         CreateMap<PointOfInterestRequest, PointOfInterest>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<PointOfInterest, PointOfInterestResponse>()
-            ;
+        CreateMap<PointOfInterest, PointOfInterestResponse>();
         CreateMap<PointOfInterestResponse, PointOfInterest>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }

@@ -10,22 +10,16 @@ public class MultiToolMaps : Profile
 {
     public MultiToolMaps()
     {
-        CreateMap<Dictionary<string, object?>, MultiTool>()
-            .ConvertUsing<DatabaseEntityTypeConverter>()
-            ;
+        CreateMap<Dictionary<string, object?>, MultiTool>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<MultiTool, MultiToolRequest>()
-            ;
+        CreateMap<MultiTool, MultiToolRequest>();
         CreateMap<MultiToolRequest, MultiTool>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<MultiTool, MultiToolResponse>()
-            ;
+        CreateMap<MultiTool, MultiToolResponse>();
         CreateMap<MultiToolResponse, MultiTool>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }

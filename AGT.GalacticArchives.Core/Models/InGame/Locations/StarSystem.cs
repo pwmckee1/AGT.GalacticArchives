@@ -11,8 +11,6 @@ public class StarSystem : DatabaseGameEntity
 
     public override Guid EntityId => StarSystemId ?? Guid.NewGuid();
 
-    public override string? RegionName { get; set; }
-
     public string? OriginalSystemName { get; set; }
 
     public string? StarSystemNameAllPlatforms { get; set; }

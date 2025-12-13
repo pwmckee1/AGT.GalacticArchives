@@ -51,11 +51,13 @@ public class StarSystemMaps : Profile
             .ForMember(d => d.XAxisPlanetCoordinate, o => o.Ignore());
 
         CreateMap<StarSystem, StarSystemRequest>();
+
         CreateMap<StarSystemRequest, StarSystem>()
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 
         CreateMap<StarSystem, StarSystemResponse>();
+
         CreateMap<StarSystemResponse, StarSystem>()
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());

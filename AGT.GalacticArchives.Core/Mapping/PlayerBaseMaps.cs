@@ -10,22 +10,16 @@ public class PlayerBaseMaps : Profile
 {
     public PlayerBaseMaps()
     {
-        CreateMap<Dictionary<string, object?>, PlayerBase>()
-            .ConvertUsing<DatabaseEntityTypeConverter>()
-            ;
+        CreateMap<Dictionary<string, object?>, PlayerBase>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<PlayerBase, PlayerBaseRequest>()
-            ;
+        CreateMap<PlayerBase, PlayerBaseRequest>();
         CreateMap<PlayerBaseRequest, PlayerBase>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<PlayerBase, PlayerBaseResponse>()
-            ;
+        CreateMap<PlayerBase, PlayerBaseResponse>();
         CreateMap<PlayerBaseResponse, PlayerBase>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }

@@ -1,38 +1,40 @@
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class FaunaResponse
+public class FaunaResponse : GameEntityResponse
 {
     public Guid? FaunaId { get; set; }
 
-    public string? Name { get; set; }
+    public string? FaunaName { get; set; }
 
     public string? NameAfterExpeditions { get; set; }
 
     public string? OriginalName { get; set; }
 
-    public string? Bait { get; set; }
+    public FaunaBaitTypes? Bait { get; set; }
 
-    public string? Gender1 { get; set; }
+    public FaunaGenderTypes? Gender1 { get; set; }
 
-    public string? Gender2 { get; set; }
+    public FaunaGenderTypes? Gender2 { get; set; }
 
-    public string? Rarity { get; set; }
+    public FaunaRarityTypes? Rarity { get; set; }
 
     public string? Hemisphere { get; set; }
 
-    public string? Ecosystem { get; set; }
+    public FaunaEcosystemTypes? Ecosystem { get; set; }
 
-    public string? Behaviour { get; set; }
+    public FaunaBehaviorTypes? Behaviour { get; set; }
 
-    public string? BehaviourType { get; set; }
+    public FaunaBehaviorArchetypes? BehaviourArchetype { get; set; }
 
-    public string? Diet { get; set; }
+    public FaunaDietTypes? Diet { get; set; }
 
-    public string? DietType { get; set; }
+    public FaunaDietArchetypes? DietArchetype { get; set; }
 
-    public string? Produces { get; set; }
+    public FaunaProductionTypes? Produces { get; set; }
 
-    public string? Activity { get; set; }
+    public FaunaCircadianTypes? Activity { get; set; }
 
     public float? Gender1ScanMaxWeight { get; set; }
 
@@ -42,41 +44,25 @@ public class FaunaResponse
 
     public float? Gender2ScanMaxHeight { get; set; }
 
-    public string? DiscoveryScreenWeight { get; set; }
+    public float? DiscoveryScreenWeight { get; set; }
 
-    public string? DiscoveryScreenHeight { get; set; }
+    public float? DiscoveryScreenHeight { get; set; }
 
-    public string? Notes { get; set; }
+    public FaunaInGameNoteTypes? Notes { get; set; }
 
-    public string? Genus { get; set; }
+    public FaunaGenusSubtypes? Genus { get; set; }
 
-    public string? GenusSubtype { get; set; }
-
-    public string? Civilization { get; set; }
-
-    public string? DiscoveredBy { get; set; }
-
-    public string? DiscoveredLinkOnWiki { get; set; }
-
-    public string? DiscoveredDate { get; set; }
-
-    public string? DiscoveryPlatform { get; set; }
-
-    public string? Mode { get; set; }
-
-    public string? Release { get; set; }
+    public FaunaGenusTypes? GenusSubtype { get; set; }
 
     public string? SummaryNotes { get; set; }
 
     public string? Appearance { get; set; }
 
-    public string? AdditionalNotes { get; set; }
-
     public string? DiscoveryMenu { get; set; }
 
     public string? LocationNotes { get; set; }
 
-    public string? ExtinctionStatus { get; set; }
+    public bool? IsExtinct { get; set; }
 
     public string? NMSWikiLink { get; set; }
 
@@ -99,6 +85,4 @@ public class FaunaResponse
     public string? LegacyFaunaDiscovererXbox { get; set; }
 
     public string? LegacyFaunaDateXbox { get; set; }
-
-    public float? VersionRelease { get; set; }
 }

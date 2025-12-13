@@ -10,22 +10,16 @@ public class FaunaMaps : Profile
 {
     public FaunaMaps()
     {
-        CreateMap<Dictionary<string, object?>, Fauna>()
-            .ConvertUsing<DatabaseEntityTypeConverter>()
-            ;
+        CreateMap<Dictionary<string, object?>, Fauna>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<Fauna, FaunaRequest>()
-            ;
+        CreateMap<Fauna, FaunaRequest>();
         CreateMap<FaunaRequest, Fauna>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<Fauna, FaunaResponse>()
-            ;
+        CreateMap<Fauna, FaunaResponse>();
         CreateMap<FaunaResponse, Fauna>()
             .ForMember(d => d.EntityId, o => o.Ignore())
-            .ForMember(d => d.NormalizedName, o => o.Ignore())
-            ;
+            .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }
