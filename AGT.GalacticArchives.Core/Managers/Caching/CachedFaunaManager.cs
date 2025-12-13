@@ -33,6 +33,16 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
         return result;
     }
 
+    public async Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request)
+    {
+        var result = await target.UpsertFaunaAsync(request);
+        await cacheManager.SetAsync(
+            $"{nameof(Fauna)}:{BusinessRuleConstants.AllCacheKey}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
+        return result;
+    }
+
     public async Task DeleteFaunaAsync(Guid faunaId)
     {
         await target.DeleteFaunaAsync(faunaId);
@@ -42,5 +52,6 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Fauna)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Fauna)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

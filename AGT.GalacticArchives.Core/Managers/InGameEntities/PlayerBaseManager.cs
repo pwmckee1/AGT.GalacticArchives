@@ -51,8 +51,7 @@ public class PlayerBaseManager(
 
             foreach (var playerBase in playerBases)
             {
-                playerBase.Planet =
-                    await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
+                playerBase.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
             }
         }
 
@@ -66,6 +65,11 @@ public class PlayerBaseManager(
         await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
         await firestoreManager.UpsertAsync(request, Collection);
         return request;
+    }
+
+    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection);
     }
 
     public async Task DeletePlayerBaseAsync(Guid playerBaseId)

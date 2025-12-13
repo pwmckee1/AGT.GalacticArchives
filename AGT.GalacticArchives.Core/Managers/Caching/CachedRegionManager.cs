@@ -37,7 +37,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request)
     {
         var result = await target.UpsertRegionAsync(request);
-        await cacheManager.SetAsync($"{nameof(Region)}s", result, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.SetAsync($"{nameof(Region)}:{BusinessRuleConstants.AllCacheKey}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
 
@@ -50,6 +50,6 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}s");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

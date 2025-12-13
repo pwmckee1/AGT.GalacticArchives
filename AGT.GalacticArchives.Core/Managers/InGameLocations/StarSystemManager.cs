@@ -34,7 +34,11 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         if (!string.IsNullOrEmpty(request.Name))
         {
             var starSystemDocs = request.RegionId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(StarSystem.RegionId), request.RegionId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(
+                    request.Name,
+                    nameof(StarSystem.RegionId),
+                    request.RegionId!.Value,
+                    Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var starSystems = mapper.Map<HashSet<StarSystem>>(starSystemDocs);
@@ -61,6 +65,11 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         starSystem.Region = mapper.Map<Region>(regionData);
 
         return starSystem;
+    }
+
+    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection);
     }
 
     public async Task DeleteStarSystemAsync(Guid starSystemId)

@@ -1,4 +1,4 @@
-﻿namespace AGT.GalacticArchives.Core.Constants;
+﻿namespace AGT.GalacticArchives.Core.Constants.Application;
 
 public static class Claims
 {

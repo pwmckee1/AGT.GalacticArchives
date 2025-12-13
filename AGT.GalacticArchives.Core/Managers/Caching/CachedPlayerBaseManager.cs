@@ -36,6 +36,16 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
         return result;
     }
 
+    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request)
+    {
+        var result = await target.UpsertPlayerBaseAsync(request);
+        await cacheManager.SetAsync(
+            $"{nameof(PlayerBase)}:{BusinessRuleConstants.AllCacheKey}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
+        return result;
+    }
+
     public async Task DeletePlayerBaseAsync(Guid playerBaseId)
     {
         await target.DeletePlayerBaseAsync(playerBaseId);
@@ -45,5 +55,6 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(PlayerBase)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(PlayerBase)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

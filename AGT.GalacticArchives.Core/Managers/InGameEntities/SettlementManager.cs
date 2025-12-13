@@ -40,15 +40,18 @@ public class SettlementManager(
         if (!string.IsNullOrEmpty(request.Name))
         {
             var settlementDocs = request.PlanetId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(Settlement.PlanetId), request.PlanetId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(
+                    request.Name,
+                    nameof(Settlement.PlanetId),
+                    request.PlanetId!.Value,
+                    Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var settlements = mapper.Map<HashSet<Settlement>>(settlementDocs);
 
             foreach (var settlement in settlements)
             {
-                settlement.Planet =
-                    await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
+                settlement.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
             }
         }
 
@@ -62,6 +65,11 @@ public class SettlementManager(
         await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
         await firestoreManager.UpsertAsync(request, Collection);
         return request;
+    }
+
+    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection);
     }
 
     public async Task DeleteSettlementAsync(Guid settlementId)

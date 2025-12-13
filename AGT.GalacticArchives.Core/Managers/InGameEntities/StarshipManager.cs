@@ -73,6 +73,11 @@ public class StarshipManager(
         return request!;
     }
 
+    public async Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection);
+    }
+
     public async Task DeleteStarshipAsync(Guid starshipId)
     {
         await firestoreManager.DeleteAsync(starshipId, Collection);

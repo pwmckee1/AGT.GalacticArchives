@@ -1,27 +1,26 @@
-using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class MultiToolImportService(
-    IEnumerable<IImportValidationHandler> importValidationHandlers,
-    IIndex<string, IImportFormFileManager<MultiToolImport>> importManagers)
+    IMapper mapper,
+    IMultiToolManager multiToolManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
     : ImportService<MultiToolImport>(importValidationHandlers)
 {
-    private readonly IImportFormFileManager<MultiToolImport> _importManager =
-        importManagers[NamedKeys.Managers.MultiToolManager];
-
     protected override string SheetName => ImportResource.MultiToolSheetName;
 
     protected override Type CsvMapType => typeof(MultiToolCsvMap);
 
     protected override async Task ProcessValidatedDataAsync(HashSet<MultiToolImport> importData)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var multiTools = mapper.Map<HashSet<MultiTool>>(importData);
+        await multiToolManager.UpsertMultiToolAsync(multiTools);
     }
 }

@@ -1,4 +1,4 @@
-using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
@@ -40,7 +40,7 @@ public class SettlementImport : IImportFormFile
     [Name(SettlementSheetFields.GameMode)]
     public GameModeTypes? GameMode { get; set; }
 
-    [Name(SettlementSheetFields.Name)]
+    [Name(SettlementSheetFields.SettlementName)]
     public string? SettlementName { get; set; }
 
     [Name(SettlementSheetFields.OriginalName)]

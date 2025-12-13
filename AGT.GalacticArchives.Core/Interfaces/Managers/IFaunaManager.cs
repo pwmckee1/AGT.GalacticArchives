@@ -11,7 +11,7 @@ public interface IFaunaManager
 
     Task<Fauna> UpsertFaunaAsync(Fauna request);
 
-    Task<Fauna> UpsertFaunaAsync(HashSet<Fauna> request);
+    Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request);
 
     Task DeleteFaunaAsync(Guid faunaId);
 }

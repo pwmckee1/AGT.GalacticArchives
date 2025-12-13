@@ -1,4 +1,4 @@
-namespace AGT.GalacticArchives.Core.Constants;
+namespace AGT.GalacticArchives.Core.Constants.ImportFields;
 
 public static class SettlementSheetFields
 {
@@ -17,7 +17,7 @@ public static class SettlementSheetFields
     public const string Industry = "Industry";
     public const string Maintenance = "Maintenance";
     public const string GameMode = "Mode";
-    public const string Name = "Settlement Name";
+    public const string SettlementName = "Settlement Name";
     public const string OriginalName = "Original Name (if renamed)";
     public const string Overseer = "Overseer";
     public const string OverseerLink = "Overseerlink";

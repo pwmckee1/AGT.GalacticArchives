@@ -33,6 +33,13 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
         return result;
     }
 
+    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request)
+    {
+        var result = await target.UpsertPlanetAsync(request);
+        await cacheManager.SetAsync($"{nameof(Planet)}:{BusinessRuleConstants.AllCacheKey}", result, BusinessRuleConstants.DayInMinutes);
+        return result;
+    }
+
     public async Task DeletePlanetAsync(Guid planetId)
     {
         await target.DeletePlanetAsync(planetId);
@@ -42,5 +49,6 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Planet)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Planet)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

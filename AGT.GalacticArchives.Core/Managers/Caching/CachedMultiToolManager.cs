@@ -36,6 +36,16 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
         return result;
     }
 
+    public async Task<HashSet<MultiTool>> UpsertMultiToolAsync(HashSet<MultiTool> request)
+    {
+        var result = await target.UpsertMultiToolAsync(request);
+        await cacheManager.SetAsync(
+            $"{nameof(MultiTool)}:{BusinessRuleConstants.AllCacheKey}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
+        return result;
+    }
+
     public async Task DeleteMultiToolAsync(Guid multiToolId)
     {
         await target.DeleteMultiToolAsync(multiToolId);
@@ -45,5 +55,6 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(MultiTool)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(MultiTool)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

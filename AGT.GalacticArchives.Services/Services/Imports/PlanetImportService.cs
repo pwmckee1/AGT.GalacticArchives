@@ -1,27 +1,26 @@
-using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class PlanetImportService(
-    IEnumerable<IImportValidationHandler> importValidationHandlers,
-    IIndex<string, IImportFormFileManager<PlanetImport>> importManagers)
+    IMapper mapper,
+    IPlanetManager planetManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
     : ImportService<PlanetImport>(importValidationHandlers)
 {
-    private readonly IImportFormFileManager<PlanetImport> _importManager =
-        importManagers[NamedKeys.Managers.PlanetManager];
-
     protected override string SheetName => ImportResource.PlanetSheetName;
 
     protected override Type CsvMapType => typeof(PlanetCsvMap);
 
     protected override async Task ProcessValidatedDataAsync(HashSet<PlanetImport> importData)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var planets = mapper.Map<HashSet<Planet>>(importData);
+        await planetManager.UpsertPlanetAsync(planets);
     }
 }

@@ -73,6 +73,11 @@ public class MultiToolManager(
         return request;
     }
 
+    public async Task<HashSet<MultiTool>> UpsertMultiToolAsync(HashSet<MultiTool> request)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection);
+    }
+
     public async Task DeleteMultiToolAsync(Guid multiToolId)
     {
         await firestoreManager.DeleteAsync(multiToolId, Collection);

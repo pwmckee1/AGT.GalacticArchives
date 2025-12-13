@@ -20,7 +20,7 @@ public class FaunaImportService(
 
     protected override async Task ProcessValidatedDataAsync(HashSet<FaunaImport> importData)
     {
-        var regions = mapper.Map<HashSet<Fauna>>(importData);
-        await faunaManager.UpsertFaunaAsync(regions);
+        var fauna = mapper.Map<HashSet<Fauna>>(importData);
+        await faunaManager.UpsertFaunaAsync(fauna);
     }
 }

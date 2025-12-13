@@ -1,4 +1,4 @@
-using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;

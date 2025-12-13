@@ -36,6 +36,16 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
         return result;
     }
 
+    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request)
+    {
+        var result = await target.UpsertStarSystemAsync(request);
+        await cacheManager.SetAsync(
+            $"{nameof(StarSystem)}:{BusinessRuleConstants.AllCacheKey}",
+            result,
+            BusinessRuleConstants.DayInMinutes);
+        return result;
+    }
+
     public async Task DeleteStarSystemAsync(Guid starSystemId)
     {
         await target.DeleteStarSystemAsync(starSystemId);
@@ -45,5 +55,6 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

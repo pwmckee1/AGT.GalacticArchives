@@ -36,7 +36,11 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
         if (!string.IsNullOrEmpty(request.Name))
         {
             var planetDocs = request.StarSystemId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(Planet.StarSystemId), request.StarSystemId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(
+                    request.Name,
+                    nameof(Planet.StarSystemId),
+                    request.StarSystemId!.Value,
+                    Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var planets = mapper.Map<HashSet<Planet>>(planetDocs);
@@ -57,6 +61,11 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
         await SetPlanetHierarchyAsync(updatedPlanet);
 
         return updatedPlanet;
+    }
+
+    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection);
     }
 
     public async Task DeletePlanetAsync(Guid planetId)

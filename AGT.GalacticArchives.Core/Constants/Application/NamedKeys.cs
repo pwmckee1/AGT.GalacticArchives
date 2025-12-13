@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Constants;
+namespace AGT.GalacticArchives.Core.Constants.Application;
 
 public static class NamedKeys
 {

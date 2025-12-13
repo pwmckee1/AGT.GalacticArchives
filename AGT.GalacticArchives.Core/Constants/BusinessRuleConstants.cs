@@ -2,13 +2,13 @@
 
 public static class BusinessRuleConstants
 {
-    public const string? SettlementName = "Settlement Name";
     public const int CacheDurationInMinutes = 5;
     public const int DayInMinutes = 1440;
-    public const string ObfuscationStringSequence = "********";
-    public const string ValueFieldName = "value__";
     public const int StartingImportSheetLineNumber = 2;
     public const int MaxLengthStandardString = 200;
+    public const string ObfuscationStringSequence = "********";
+    public const string ValueFieldName = "value__";
+    public const string AllCacheKey = "All";
 
     public static readonly string[] ValidDateTimeFormats =
     [

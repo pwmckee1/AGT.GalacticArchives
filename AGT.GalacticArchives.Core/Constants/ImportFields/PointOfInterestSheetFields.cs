@@ -1,4 +1,4 @@
-namespace AGT.GalacticArchives.Core.Constants;
+namespace AGT.GalacticArchives.Core.Constants.ImportFields;
 
 public static class PointOfInterestSheetFields
 {
