@@ -6,7 +6,7 @@ using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 using AutoMapper;
 
-namespace AGT.GalacticArchives.Services.Services.Entities;
+namespace AGT.GalacticArchives.Services.Services.InGameEntities;
 
 public class PointOfInterestService(IPointOfInterestManager pointOfInterestManager, IMapper mapper)
     : IPointOfInterestService

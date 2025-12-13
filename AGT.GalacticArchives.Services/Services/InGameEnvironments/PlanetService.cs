@@ -5,7 +5,7 @@ using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
 
-namespace AGT.GalacticArchives.Services.Services.Environments;
+namespace AGT.GalacticArchives.Services.Services.InGameEnvironments;
 
 public class PlanetService(IPlanetManager planetManager, IMapper mapper) : IPlanetService
 {

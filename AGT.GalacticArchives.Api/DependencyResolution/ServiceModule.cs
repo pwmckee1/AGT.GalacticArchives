@@ -2,9 +2,11 @@
 using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Decorators;
 using AGT.GalacticArchives.Services.Interfaces.Services;
-using AGT.GalacticArchives.Services.Services.Entities;
-using AGT.GalacticArchives.Services.Services.Environments;
+using AGT.GalacticArchives.Services.Services.InGameEntities;
+using AGT.GalacticArchives.Services.Services.InGameEnvironments;
 using AGT.GalacticArchives.Services.Services.Imports;
+using AGT.GalacticArchives.Services.Services.InGameEntities;
+using AGT.GalacticArchives.Services.Services.InGameEnvironments;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;
