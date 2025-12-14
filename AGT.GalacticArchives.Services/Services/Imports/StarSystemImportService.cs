@@ -18,9 +18,11 @@ public class StarSystemImportService(
 
     protected override Type CsvMapType => typeof(StarSystemCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<StarSystemImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<StarSystemImport> importData,
+        CancellationToken ct = default)
     {
         var starSystems = mapper.Map<HashSet<StarSystem>>(importData);
-        await starSystemManager.UpsertStarSystemAsync(starSystems);
+        await starSystemManager.UpsertStarSystemAsync(starSystems, ct);
     }
 }

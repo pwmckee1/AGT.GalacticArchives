@@ -18,9 +18,11 @@ public class MultiToolImportService(
 
     protected override Type CsvMapType => typeof(MultiToolCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<MultiToolImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<MultiToolImport> importData,
+        CancellationToken ct = default)
     {
         var multiTools = mapper.Map<HashSet<MultiTool>>(importData);
-        await multiToolManager.UpsertMultiToolAsync(multiTools);
+        await multiToolManager.UpsertMultiToolAsync(multiTools, ct);
     }
 }

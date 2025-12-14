@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Extensions;
+﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Globalization;
@@ -8,18 +9,23 @@ namespace AGT.GalacticArchives.Core.Managers.Database;
 
 public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 {
-    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(
+        string collectionName,
+        CancellationToken ct = default)
     {
-        var snapshot = await firestoreDb.Collection(collectionName).GetSnapshotAsync();
+        var snapshot = await firestoreDb.Collection(collectionName).GetSnapshotAsync(ct);
 
         return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
-    public async Task<Dictionary<string, object>> GetByIdAsync(Guid entityId, string collectionName)
+    public async Task<Dictionary<string, object>> GetByIdAsync(
+        Guid entityId,
+        string collectionName,
+        CancellationToken ct = default)
     {
         var docRef = firestoreDb.Collection(collectionName).Document(entityId.ToString());
 
-        var snapshot = await docRef.GetSnapshotAsync();
+        var snapshot = await docRef.GetSnapshotAsync(ct);
 
         return snapshot is { Exists: true } ? snapshot.ToDictionary() : [];
     }
@@ -28,23 +34,27 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         string entityName,
         string parentIdName,
         Guid parentId,
-        string collectionName)
+        string collectionName,
+        CancellationToken ct = default)
     {
         var query = firestoreDb
             .Collection(collectionName)
             .WhereEqualTo(nameof(IDatabaseEntity.Name), entityName)
             .WhereEqualTo(parentIdName, parentId.ToString());
 
-        var snapshot = await query.GetSnapshotAsync();
+        var snapshot = await query.GetSnapshotAsync(ct);
 
         return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
 
-    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(string entityName, string collectionName)
+    public async Task<HashSet<Dictionary<string, object>>> GetByNameAsync(
+        string entityName,
+        string collectionName,
+        CancellationToken ct = default)
     {
         var query = firestoreDb.Collection(collectionName).WhereEqualTo(nameof(IDatabaseEntity.Name), entityName);
 
-        var snapshot = await query.GetSnapshotAsync();
+        var snapshot = await query.GetSnapshotAsync(ct);
 
         return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
     }
@@ -63,9 +73,8 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         return entity;
     }
 
-    public async Task<HashSet<T>> UpsertAsync<T>(
-        HashSet<T> entities,
-        string collectionName) where T : class, IDatabaseEntity
+    public async Task<HashSet<T>> UpsertAsync<T>(HashSet<T> entities, string collectionName, CancellationToken ct = default)
+        where T : class, IDatabaseEntity
     {
         // Firestore batch limit is 500 writes, but gRPC message size can be hit earlier.
         const int maxWritesPerBatch = 250;
@@ -75,6 +84,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
         foreach (var gameEntity in entities)
         {
+            ct.ThrowIfCancellationRequested();
             if (gameEntity.EntityId == Guid.Empty)
             {
                 throw new InvalidOperationException(
@@ -89,7 +99,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
             if (writesInBatch >= maxWritesPerBatch)
             {
-                await batch.CommitAsync();
+                await batch.CommitAsync(ct);
                 batch = firestoreDb.StartBatch();
                 writesInBatch = 0;
             }
@@ -97,7 +107,7 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 
         if (writesInBatch > 0)
         {
-            await batch.CommitAsync();
+            await batch.CommitAsync(ct);
         }
 
         return entities;

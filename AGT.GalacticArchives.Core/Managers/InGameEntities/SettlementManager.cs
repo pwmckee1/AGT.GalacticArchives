@@ -67,9 +67,9 @@ public class SettlementManager(
         return request;
     }
 
-    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request)
+    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request, CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteSettlementAsync(Guid settlementId)

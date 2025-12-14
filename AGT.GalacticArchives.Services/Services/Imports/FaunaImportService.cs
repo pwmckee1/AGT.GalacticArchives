@@ -18,9 +18,11 @@ public class FaunaImportService(
 
     protected override Type CsvMapType => typeof(FaunaCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<FaunaImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<FaunaImport> importData,
+        CancellationToken ct = default)
     {
         var fauna = mapper.Map<HashSet<Fauna>>(importData);
-        await faunaManager.UpsertFaunaAsync(fauna);
+        await faunaManager.UpsertFaunaAsync(fauna, ct);
     }
 }

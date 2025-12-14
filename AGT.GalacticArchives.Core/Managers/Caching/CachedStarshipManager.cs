@@ -36,13 +36,16 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result;
     }
 
-    public async Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request)
+    public async Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request, CancellationToken ct)
     {
-        var result = await target.UpsertStarshipAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(Starship)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertStarshipAsync(request, ct);
+        var starshipIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var starshipId in starshipIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Starship)}:{starshipId}");
+        }
+
         return result;
     }
 

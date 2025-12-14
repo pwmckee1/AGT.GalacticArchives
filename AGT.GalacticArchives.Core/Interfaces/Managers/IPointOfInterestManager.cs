@@ -11,7 +11,7 @@ public interface IPointOfInterestManager
 
     Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest request);
 
-    Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(HashSet<PointOfInterest> request);
+    Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(HashSet<PointOfInterest> request, CancellationToken ct);
 
     Task DeletePointOfInterestAsync(Guid pointOfInterestId);
 }

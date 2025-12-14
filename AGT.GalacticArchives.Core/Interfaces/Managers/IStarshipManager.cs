@@ -11,7 +11,7 @@ public interface IStarshipManager
 
     Task<Starship> UpsertStarshipAsync(Starship request);
 
-    Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request);
+    Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request, CancellationToken ct);
 
     Task DeleteStarshipAsync(Guid starshipId);
 }

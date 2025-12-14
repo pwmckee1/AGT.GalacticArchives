@@ -11,7 +11,7 @@ public interface IStarSystemManager
 
     Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem);
 
-    Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request);
+    Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request, CancellationToken ct);
 
     Task DeleteStarSystemAsync(Guid starSystemId);
 }

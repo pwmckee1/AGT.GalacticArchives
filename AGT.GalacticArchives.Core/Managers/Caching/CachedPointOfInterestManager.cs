@@ -36,13 +36,18 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
         return result;
     }
 
-    public async Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(HashSet<PointOfInterest> request)
+    public async Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(
+        HashSet<PointOfInterest> request,
+        CancellationToken ct)
     {
-        var result = await target.UpsertPointOfInterestAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(PointOfInterest)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertPointOfInterestAsync(request, ct);
+        var pointOfInterestIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var pointOfInterestId in pointOfInterestIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(PointOfInterest)}:{pointOfInterestId}");
+        }
+
         return result;
     }
 

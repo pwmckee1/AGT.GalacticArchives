@@ -41,9 +41,9 @@ public class RegionManager(IFirestoreManager firestoreManager, IMapper mapper) :
         return await firestoreManager.UpsertAsync(request, Collection);
     }
 
-    public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request)
+    public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request, CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteRegionAsync(Guid regionId)

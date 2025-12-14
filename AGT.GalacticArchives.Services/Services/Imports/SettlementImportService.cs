@@ -18,9 +18,11 @@ public class SettlementImportService(
 
     protected override Type CsvMapType => typeof(SettlementCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<SettlementImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<SettlementImport> importData,
+        CancellationToken ct = default)
     {
         var settlements = mapper.Map<HashSet<Settlement>>(importData);
-        await settlementManager.UpsertSettlementAsync(settlements);
+        await settlementManager.UpsertSettlementAsync(settlements, ct);
     }
 }

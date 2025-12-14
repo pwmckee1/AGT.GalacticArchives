@@ -36,13 +36,16 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
         return result;
     }
 
-    public async Task<HashSet<MultiTool>> UpsertMultiToolAsync(HashSet<MultiTool> request)
+    public async Task<HashSet<MultiTool>> UpsertMultiToolAsync(HashSet<MultiTool> request, CancellationToken ct)
     {
-        var result = await target.UpsertMultiToolAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(MultiTool)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertMultiToolAsync(request, ct);
+        var multiToolIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var multiToolId in multiToolIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(MultiTool)}:{multiToolId}");
+        }
+
         return result;
     }
 

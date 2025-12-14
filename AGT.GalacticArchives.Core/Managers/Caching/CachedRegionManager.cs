@@ -34,10 +34,16 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result;
     }
 
-    public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request)
+    public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request, CancellationToken ct)
     {
-        var result = await target.UpsertRegionAsync(request);
-        await cacheManager.SetAsync($"{nameof(Region)}:{BusinessRuleConstants.AllCacheKey}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertRegionAsync(request, ct);
+        var regionIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var regionId in regionIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Region)}:{regionId}");
+        }
+
         return result;
     }
 

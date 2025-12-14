@@ -18,9 +18,11 @@ public class RegionImportService(
 
     protected override Type CsvMapType => typeof(RegionCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<RegionImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<RegionImport> importData,
+        CancellationToken ct = default)
     {
         var regions = mapper.Map<HashSet<Region>>(importData);
-        await regionManager.UpsertRegionAsync(regions);
+        await regionManager.UpsertRegionAsync(regions, ct);
     }
 }

@@ -67,9 +67,9 @@ public class FaunaManager(
         return request;
     }
 
-    public async Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request)
+    public async Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request, CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteFaunaAsync(Guid faunaId)

@@ -26,7 +26,7 @@ public class GoogleSheetImportController(IIndex<string, IImportService> googleSh
     /// </returns>
     [HttpPost]
     [SwaggerOperation(Tags = ["GoogleSheetImport/GoogleSheetImport"])]
-    public async Task<IActionResult> Post()
+    public async Task<IActionResult> Post(CancellationToken ct = default)
     {
         var googleSheetImportFile = HttpContext.Request.Form.Files.SingleOrDefault();
         if (googleSheetImportFile != null)
@@ -34,12 +34,14 @@ public class GoogleSheetImportController(IIndex<string, IImportService> googleSh
             string[] spaceSeparatedFileName = googleSheetImportFile.FileName.Split(' ');
             foreach (string fileNamePart in spaceSeparatedFileName)
             {
+                // Interrupt validation process if cancelled
+                ct.ThrowIfCancellationRequested();
                 bool isValidSheet = Enum.TryParse(fileNamePart, out GoogleSheetTypes googleSheetType);
 
                 if (isValidSheet)
                 {
                     var importService = googleSheetImportServices[googleSheetType.GetDescription()];
-                    await importService.ImportFormFileAsync(googleSheetImportFile);
+                    await importService.ImportFormFileAsync(googleSheetImportFile, ct);
 
                     return Ok();
                 }

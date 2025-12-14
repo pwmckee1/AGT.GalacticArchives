@@ -33,13 +33,16 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
         return result;
     }
 
-    public async Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request)
+    public async Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request, CancellationToken ct)
     {
-        var result = await target.UpsertFaunaAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(Fauna)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertFaunaAsync(request, ct);
+        var faunaIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var faunaId in faunaIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Fauna)}:{faunaId}");
+        }
+
         return result;
     }
 

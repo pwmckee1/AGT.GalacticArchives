@@ -67,9 +67,9 @@ public class PlayerBaseManager(
         return request;
     }
 
-    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request)
+    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request, CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeletePlayerBaseAsync(Guid playerBaseId)

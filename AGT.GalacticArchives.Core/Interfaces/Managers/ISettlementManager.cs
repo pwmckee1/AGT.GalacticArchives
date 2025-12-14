@@ -11,7 +11,7 @@ public interface ISettlementManager
 
     Task<Settlement> UpsertSettlementAsync(Settlement request);
 
-    Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request);
+    Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request, CancellationToken ct);
 
     Task DeleteSettlementAsync(Guid settlementId);
 }

@@ -36,13 +36,16 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
         return result;
     }
 
-    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request)
+    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request, CancellationToken ct)
     {
-        var result = await target.UpsertStarSystemAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(StarSystem)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertStarSystemAsync(request, ct);
+        var starSystemIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var starSystemId in starSystemIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(StarSystem)}:{starSystemId}");
+        }
+
         return result;
     }
 

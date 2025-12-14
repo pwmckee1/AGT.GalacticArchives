@@ -67,9 +67,9 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         return starSystem;
     }
 
-    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request)
+    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request, CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteStarSystemAsync(Guid starSystemId)

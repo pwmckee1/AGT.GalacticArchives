@@ -18,9 +18,11 @@ public class PointOfInterestImportService(
 
     protected override Type CsvMapType => typeof(PointOfInterestCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<PointOfInterestImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<PointOfInterestImport> importData,
+        CancellationToken ct = default)
     {
         var pointOfInterests = mapper.Map<HashSet<PointOfInterest>>(importData);
-        await pointOfInterestManager.UpsertPointOfInterestAsync(pointOfInterests);
+        await pointOfInterestManager.UpsertPointOfInterestAsync(pointOfInterests, ct);
     }
 }

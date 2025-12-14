@@ -18,9 +18,11 @@ public class StarshipImportService(
 
     protected override Type CsvMapType => typeof(StarshipCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<StarshipImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<StarshipImport> importData,
+        CancellationToken ct = default)
     {
         var starships = mapper.Map<HashSet<Starship>>(importData);
-        await starshipManager.UpsertStarshipAsync(starships);
+        await starshipManager.UpsertStarshipAsync(starships, ct);
     }
 }

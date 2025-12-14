@@ -36,13 +36,16 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
         return result;
     }
 
-    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request)
+    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request, CancellationToken ct)
     {
-        var result = await target.UpsertSettlementAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(Settlement)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertSettlementAsync(request, ct);
+        var settlementIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var settlementId in settlementIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Settlement)}:{settlementId}");
+        }
+
         return result;
     }
 

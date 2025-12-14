@@ -18,9 +18,11 @@ public class PlanetImportService(
 
     protected override Type CsvMapType => typeof(PlanetCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<PlanetImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<PlanetImport> importData,
+        CancellationToken ct = default)
     {
         var planets = mapper.Map<HashSet<Planet>>(importData);
-        await planetManager.UpsertPlanetAsync(planets);
+        await planetManager.UpsertPlanetAsync(planets, ct);
     }
 }

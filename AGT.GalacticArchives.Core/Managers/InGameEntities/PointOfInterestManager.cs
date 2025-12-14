@@ -69,9 +69,11 @@ public class PointOfInterestManager(
         return request;
     }
 
-    public async Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(HashSet<PointOfInterest> request)
+    public async Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(
+        HashSet<PointOfInterest> request,
+        CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeletePointOfInterestAsync(Guid pointOfInterestId)

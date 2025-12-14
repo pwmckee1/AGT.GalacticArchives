@@ -63,9 +63,9 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
         return updatedPlanet;
     }
 
-    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request)
+    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request, CancellationToken ct)
     {
-        return await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeletePlanetAsync(Guid planetId)

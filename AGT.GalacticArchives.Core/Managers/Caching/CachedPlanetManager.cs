@@ -33,10 +33,16 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
         return result;
     }
 
-    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request)
+    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request, CancellationToken ct)
     {
-        var result = await target.UpsertPlanetAsync(request);
-        await cacheManager.SetAsync($"{nameof(Planet)}:{BusinessRuleConstants.AllCacheKey}", result, BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertPlanetAsync(request, ct);
+        var planetIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var planetId in planetIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Planet)}:{planetId}");
+        }
+
         return result;
     }
 

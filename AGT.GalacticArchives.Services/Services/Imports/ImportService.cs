@@ -9,8 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
-public abstract class ImportService<T>(
-    IEnumerable<IImportValidationHandler> importValidationHandlers) : IImportService
+public abstract class ImportService<T>(IEnumerable<IImportValidationHandler> importValidationHandlers) : IImportService
 {
     protected HashSet<string> Errors = [];
 
@@ -18,26 +17,26 @@ public abstract class ImportService<T>(
 
     protected abstract Type CsvMapType { get; }
 
-    public virtual async Task ImportFormFileAsync(IFormFile form)
+    public virtual async Task ImportFormFileAsync(IFormFile form, CancellationToken ct = default)
     {
-        var importData = await ValidateFileAsync(form);
-        await ProcessValidatedDataAsync(importData);
+        var importData = await ValidateFileAsync(form, ct);
+        await ProcessValidatedDataAsync(importData, ct);
     }
 
-    public async Task<HashSet<T>> ValidateFileAsync(IFormFile form)
+    public async Task<HashSet<T>> ValidateFileAsync(IFormFile form, CancellationToken ct = default)
     {
         if (!form.FileName.Contains(SheetName))
         {
             throw new ArgumentException(string.Format(ImportResource.InvalidFormFile, SheetName, form.FileName));
         }
 
-        var importData = await GetRecordsFromCsvFileAsync(form.OpenReadStream());
+        var importData = await GetRecordsFromCsvFileAsync(form.OpenReadStream(), ct);
         Errors = ValidateRecords(importData);
 
         return importData;
     }
 
-    protected abstract Task ProcessValidatedDataAsync(HashSet<T> importData);
+    protected abstract Task ProcessValidatedDataAsync(HashSet<T> importData, CancellationToken ct = default);
 
     protected virtual HashSet<string> ValidateRecords<THandler>(HashSet<THandler> importRequest)
     {
@@ -45,7 +44,7 @@ public abstract class ImportService<T>(
         return handler != null ? handler.Handle(importRequest, Errors) : [];
     }
 
-    protected async Task<HashSet<T>> GetRecordsFromCsvFileAsync(Stream stream)
+    protected async Task<HashSet<T>> GetRecordsFromCsvFileAsync(Stream stream, CancellationToken ct)
     {
         var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture) { MissingFieldFound = null };
 
@@ -54,13 +53,13 @@ public abstract class ImportService<T>(
 
         csvReader.Context.RegisterClassMap(CsvMapType);
 
-        await ValidateHeaderAsync(csvReader);
+        await ValidateHeaderAsync(csvReader, ct);
 
         var records = csvReader.GetRecords<T>();
         return records.ToHashSet();
     }
 
-    protected async Task ValidateHeaderAsync(CsvReader csvReader)
+    protected async Task ValidateHeaderAsync(CsvReader csvReader, CancellationToken ct)
     {
         await csvReader.ReadAsync();
         csvReader.ReadHeader();
@@ -73,6 +72,9 @@ public abstract class ImportService<T>(
 
             foreach (string propertyName in properties)
             {
+                // Interrupt validation process if cancelled
+                ct.ThrowIfCancellationRequested();
+
                 if (!headerRow.Contains(propertyName))
                 {
                     missingHeaders.Add(propertyName);
@@ -82,10 +84,7 @@ public abstract class ImportService<T>(
             if (missingHeaders.Count > 0)
             {
                 Errors.Add(
-                    string.Format(
-                        ImportResource.MissingSheetHeader,
-                        SheetName,
-                        string.Join(", ", missingHeaders)));
+                    string.Format(ImportResource.MissingSheetHeader, SheetName, string.Join(", ", missingHeaders)));
             }
         }
     }

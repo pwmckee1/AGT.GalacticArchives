@@ -11,7 +11,7 @@ public interface IPlanetManager
 
     Task<Planet> UpsertPlanetAsync(Planet request);
 
-    Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request);
+    Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request, CancellationToken ct);
 
     Task DeletePlanetAsync(Guid planetId);
 }

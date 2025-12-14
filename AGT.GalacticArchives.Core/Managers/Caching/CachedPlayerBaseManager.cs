@@ -36,13 +36,16 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
         return result;
     }
 
-    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request)
+    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request, CancellationToken ct)
     {
-        var result = await target.UpsertPlayerBaseAsync(request);
-        await cacheManager.SetAsync(
-            $"{nameof(PlayerBase)}:{BusinessRuleConstants.AllCacheKey}",
-            result,
-            BusinessRuleConstants.DayInMinutes);
+        var result = await target.UpsertPlayerBaseAsync(request, ct);
+        var playerBaseIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var playerBaseId in playerBaseIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(PlayerBase)}:{playerBaseId}");
+        }
+
         return result;
     }
 

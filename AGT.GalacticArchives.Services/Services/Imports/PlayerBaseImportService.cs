@@ -18,9 +18,11 @@ public class PlayerBaseImportService(
 
     protected override Type CsvMapType => typeof(PlayerBaseCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<PlayerBaseImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<PlayerBaseImport> importData,
+        CancellationToken ct = default)
     {
         var playerBases = mapper.Map<HashSet<PlayerBase>>(importData);
-        await playerBaseManager.UpsertPlayerBaseAsync(playerBases);
+        await playerBaseManager.UpsertPlayerBaseAsync(playerBases, ct);
     }
 }
