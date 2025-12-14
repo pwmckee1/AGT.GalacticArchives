@@ -19,6 +19,8 @@ public sealed class StarshipCsvMap : ClassMap<StarshipImport>
 
         Map(m => m.ReleaseDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(StarshipSheetFields.ReleaseDate));
 
+        Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(StarshipSheetFields.DocumentSequence));
+
         Map(m => m.Galaxy).Convert(m => m.Row.ReadNullableEnumField<GalaxyTypes>(StarshipSheetFields.Galaxy));
 
         Map(m => m.Location)

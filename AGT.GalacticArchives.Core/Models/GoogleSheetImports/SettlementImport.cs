@@ -87,4 +87,7 @@ public class SettlementImport : IImportFormFile
 
     [Name(SettlementSheetFields.YAxisPlanetCoordinate)]
     public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(SettlementSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
 }

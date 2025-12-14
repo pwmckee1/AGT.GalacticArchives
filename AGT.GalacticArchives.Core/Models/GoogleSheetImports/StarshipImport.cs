@@ -139,7 +139,7 @@ public class StarshipImport : IImportFormFile
     public HashSet<StarshipUpgradeModuleTypes> UpgradeModules { get; set; } = [];
 
     [Name(StarshipSheetFields.DocumentSequence)]
-    public string? DocumentSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 
     [Name(StarshipSheetFields.WikiLink)]
     public string? WikiLink { get; set; }

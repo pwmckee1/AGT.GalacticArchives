@@ -46,4 +46,7 @@ public class PointOfInterestImport : IImportFormFile
 
     [Name(PointOfInterestSheetFields.YAxisPlanetCoordinate)]
     public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(PointOfInterestSheetFields.DocumentSequence)]
+    public float? DocumentSequence { get; set; }
 }

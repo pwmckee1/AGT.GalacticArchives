@@ -22,6 +22,8 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
 
         Map(m => m.Bases).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Bases));
 
+        Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.DocumentSequence));
+
         Map(m => m.Buy).Convert(m => m.Row.ReadFloatFieldOrNull(StarSystemSheetFields.Buy));
 
         Map(m => m.ConflictType)

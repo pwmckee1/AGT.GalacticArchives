@@ -15,4 +15,5 @@ public static class PointOfInterestSheetFields
     public const string XAxisPlanetCoordinate = "XX (2nd coordinate)";
     public const string YAxisPlanetCoordinate = "YY (1st coordinate)";
     public const string PointOfInterestId = "PointOfInterestId";
+    public const string DocumentSequence = "Doc Sequence";
 }

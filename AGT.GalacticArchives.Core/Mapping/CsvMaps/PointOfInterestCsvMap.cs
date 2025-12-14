@@ -19,6 +19,9 @@ public sealed class PointOfInterestCsvMap : ClassMap<PointOfInterestImport>
         Map(m => m.LocationType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<LocationTypes>(PointOfInterestSheetFields.LocationType));
 
+        Map(m => m.DocumentSequence)
+            .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.DocumentSequence));
+
         Map(m => m.YAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.YAxisPlanetCoordinate));
 

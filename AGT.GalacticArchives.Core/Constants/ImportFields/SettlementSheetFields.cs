@@ -34,4 +34,5 @@ public static class SettlementSheetFields
     public const string YAxisPlanetCoordinate = "YY (first coord)";
     public const string IsProfitableIndicator = "Yes";
     public const string SettlementId = "SettlementId";
+    public const string DocumentSequence = "Doc Sequence";
 }

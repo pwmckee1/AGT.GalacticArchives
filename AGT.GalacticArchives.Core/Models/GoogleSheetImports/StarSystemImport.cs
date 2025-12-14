@@ -254,5 +254,5 @@ public class StarSystemImport : IImportFormFile
     public string? ZZHex { get; set; }
 
     [Name(StarSystemSheetFields.DocumentSequence)]
-    public string? DocumentSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 }

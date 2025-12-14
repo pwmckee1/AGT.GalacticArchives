@@ -18,7 +18,10 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
 
         Map(m => m.SettlementId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.SettlementId));
 
-        Map(m => m.YAxisPlanetCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YAxisPlanetCoordinate));
+        Map(m => m.YAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YAxisPlanetCoordinate));
+
+        Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(SettlementSheetFields.DocumentSequence));
 
         Map(m => m.XAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.XAxisPlanetCoordinate));
