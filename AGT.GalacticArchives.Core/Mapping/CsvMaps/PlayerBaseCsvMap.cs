@@ -36,7 +36,7 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
 
         Map(m => m.DateFinished).Convert(m => m.Row.ReadDateTimeFieldOrNull(PlayerBaseSheetFields.DateFinished));
 
-        Map(m => m.DateOfSurvey).Convert(m => m.Row.ReadDateTimeFieldOrNull(PlayerBaseSheetFields.DateOfSurvey));
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(PlayerBaseSheetFields.SurveyDate));
 
         Map(m => m.DateStarted).Convert(m => m.Row.ReadDateTimeFieldOrNull(PlayerBaseSheetFields.DateStarted));
 
@@ -82,10 +82,10 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
         Map(m => m.MiningStoreCapacity)
             .Convert(m => m.Row.ReadIntFieldOrNull(PlayerBaseSheetFields.MiningStoreCapacity));
 
-        Map(m => m.YYFirstCoordinate)
-            .Convert(m => m.Row.ReadFloatFieldOrNull(PlayerBaseSheetFields.YYFirstCoordinate));
+        Map(m => m.YAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(PlayerBaseSheetFields.YAxisPlanetCoordinate));
 
-        Map(m => m.XXSecondCoordinate)
+        Map(m => m.XAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(PlayerBaseSheetFields.XXSecondCoordinate));
     }
 }

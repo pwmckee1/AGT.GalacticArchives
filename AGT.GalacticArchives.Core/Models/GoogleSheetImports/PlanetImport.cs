@@ -88,8 +88,8 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.DiscoveryPlatform)]
     public GamePlatformTypes? DiscoveryPlatform { get; set; }
 
-    [Name(PlanetSheetFields.DiscovererGamertag)]
-    public string? DiscovererGamertag { get; set; }
+    [Name(PlanetSheetFields.DiscoveredBy)]
+    public string? DiscoveredBy { get; set; }
 
     [Name(PlanetSheetFields.DocumentSequence)]
     public int? DocumentSequence { get; set; }
@@ -280,8 +280,8 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.GameReleaseName)]
     public string? GameReleaseName { get; set; }
 
-    [Name(PlanetSheetFields.SurveyorGamertag)]
-    public string? SurveyorGamertag { get; set; }
+    [Name(PlanetSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
     [Name(PlanetSheetFields.PlanetTerrain)]
     public TerrainTypes? PlanetTerrain { get; set; }

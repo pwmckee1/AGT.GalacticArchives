@@ -10,7 +10,7 @@ public static class SettlementSheetFields
     public const string Building6 = "Building";
     public const string Class = "Class";
     public const string Civilized = "Civilized";
-    public const string DateObserved = "Date Observed (YYYY-DD-MMM-YEAR";
+    public const string DiscoveryDate = "Date Observed (YYYY-DD-MMM-YEAR";
     public const string Economy = "Economy";
     public const string GameRelease = "Game Release";
     public const string Happiness = "Happiness";
@@ -27,11 +27,11 @@ public static class SettlementSheetFields
     public const string Productivity = "Productivity";
     public const string IsProfitable = "Profitable";
     public const string Sentinels = "Sentinel";
-    public const string Surveyor = "Surveyor ID";
+    public const string SurveyedBy = "Surveyor ID";
     public const string System = "System";
     public const string WikiLink = "Wiki Link";
-    public const string XXSecondCoordinate = "XX (second coord)";
-    public const string YYFirstCoordinate = "YY (first coord)";
+    public const string XAxisPlanetCoordinate = "XX (second coord)";
+    public const string YAxisPlanetCoordinate = "YY (first coord)";
     public const string IsProfitableIndicator = "Yes";
     public const string SettlementId = "SettlementId";
 }

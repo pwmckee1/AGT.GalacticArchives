@@ -22,8 +22,8 @@ public class SettlementImport : IImportFormFile
     [Name(SettlementSheetFields.Civilized)]
     public string? Civilized { get; set; }
 
-    [Name(SettlementSheetFields.DateObserved)]
-    public DateTime? DateObserved { get; set; }
+    [Name(SettlementSheetFields.DiscoveryDate)]
+    public DateTime? DiscoveryDate { get; set; }
 
     [Name(SettlementSheetFields.Economy)]
     public EconomyTypes? Economy { get; set; }
@@ -73,8 +73,8 @@ public class SettlementImport : IImportFormFile
     [Name(SettlementSheetFields.Sentinels)]
     public int? Sentinels { get; set; }
 
-    [Name(SettlementSheetFields.Surveyor)]
-    public string? Surveyor { get; set; }
+    [Name(SettlementSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
     [Name(SettlementSheetFields.System)]
     public string? StarSystemName { get; set; }
@@ -82,9 +82,9 @@ public class SettlementImport : IImportFormFile
     [Name(SettlementSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
 
-    [Name(SettlementSheetFields.XXSecondCoordinate)]
-    public float? XXSecondCoordinate { get; set; }
+    [Name(SettlementSheetFields.XAxisPlanetCoordinate)]
+    public float? XAxisPlanetCoordinate { get; set; }
 
-    [Name(SettlementSheetFields.YYFirstCoordinate)]
-    public float? YYFirstCoordinate { get; set; }
+    [Name(SettlementSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
 }

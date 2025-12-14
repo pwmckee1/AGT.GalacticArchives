@@ -87,14 +87,14 @@ public class PlanetImportValidationHandler : BaseImportValidationHandler, IImpor
                     nameof(planetField.PlanetBiomeType).GetDescription<PlanetImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    planetField.DiscovererGamertag,
+                    planetField.DiscoveredBy,
                     LineNumber,
-                    nameof(planetField.DiscovererGamertag).GetDescription<PlanetImport>(),
+                    nameof(planetField.DiscoveredBy).GetDescription<PlanetImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    planetField.SurveyorGamertag,
+                    planetField.SurveyedBy,
                     LineNumber,
-                    nameof(planetField.SurveyorGamertag).GetDescription<PlanetImport>(),
+                    nameof(planetField.SurveyedBy).GetDescription<PlanetImport>(),
                     SheetName),
             };
 

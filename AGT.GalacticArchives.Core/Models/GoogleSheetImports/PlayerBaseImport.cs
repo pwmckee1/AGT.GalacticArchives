@@ -49,8 +49,8 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.DateFinished)]
     public DateTime? DateFinished { get; set; }
 
-    [Name(PlayerBaseSheetFields.DateOfSurvey)]
-    public DateTime? DateOfSurvey { get; set; }
+    [Name(PlayerBaseSheetFields.SurveyDate)]
+    public DateTime? SurveyDate { get; set; }
 
     [Name(PlayerBaseSheetFields.DateStarted)]
     public DateTime? DateStarted { get; set; }
@@ -139,8 +139,8 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.SummaryText)]
     public string? SummaryText { get; set; }
 
-    [Name(PlayerBaseSheetFields.Surveyor)]
-    public string? Surveyor { get; set; }
+    [Name(PlayerBaseSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
     [Name(PlayerBaseSheetFields.StarSystem)]
     public string? StarSystemName { get; set; }
@@ -155,8 +155,8 @@ public class PlayerBaseImport : IImportFormFile
     public string? WikiLink { get; set; }
 
     [Name(PlayerBaseSheetFields.XXSecondCoordinate)]
-    public float? XXSecondCoordinate { get; set; }
+    public float? XAxisPlanetCoordinate { get; set; }
 
-    [Name(PlayerBaseSheetFields.YYFirstCoordinate)]
-    public float? YYFirstCoordinate { get; set; }
+    [Name(PlayerBaseSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
 }

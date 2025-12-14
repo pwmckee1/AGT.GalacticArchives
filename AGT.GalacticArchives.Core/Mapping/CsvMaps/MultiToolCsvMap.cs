@@ -69,9 +69,9 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
         Map(m => m.MultiToolType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<MultiToolTypes>(MultiToolSheetFields.MultiToolType));
 
-        Map(m => m.XXSecondCoordinate)
-            .Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.XXSecondCoordinate));
+        Map(m => m.XAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.XAxisPlanetCoordinate));
 
-        Map(m => m.YYFirstCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.YYFirstCoordinate));
+        Map(m => m.YAxisPlanetCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.YAxisPlanetCoordinate));
     }
 }

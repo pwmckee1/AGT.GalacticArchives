@@ -12,7 +12,7 @@ public static class FaunaSheetFields
     public const string FaunaDietType = "Diet";
     public const string FaunaDietArchetype = "Diet Type";
     public const string DiscoveredBy = "Discovered";
-    public const string DiscoveredDate = "Discovered Date";
+    public const string DiscoveryDate = "Discovered Date";
     public const string DiscoveredLinkOnWiki = "Discovered Link on Wiki";
     public const string DiscoveryMenuNotes = "Discovery Menu";
     public const string GamePlatformType = "Discovery Platform";

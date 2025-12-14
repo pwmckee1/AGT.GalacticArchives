@@ -26,6 +26,8 @@ public class AxisHexValueResolver : IMemberValueResolver<RegionImport, Region, s
             nameof(RegionImport.ZZHex) => source.ZZHex.HasValidAxisCoordinates()
                 ? source.ZZHex!.Trim().ToUpperInvariant()
                 : source.GalacticCoordinates.ToZAxisHexValue(),
+
+                : source.GalacticCoordinates.ToStarSystemHexValue(),
             _ => null,
         };
     }

@@ -112,9 +112,9 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
 
-    [Name(MultiToolSheetFields.XXSecondCoordinate)]
-    public float? XXSecondCoordinate { get; set; }
+    [Name(MultiToolSheetFields.XAxisPlanetCoordinate)]
+    public float? XAxisPlanetCoordinate { get; set; }
 
-    [Name(MultiToolSheetFields.YYFirstCoordinate)]
-    public float? YYFirstCoordinate { get; set; }
+    [Name(MultiToolSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
 }

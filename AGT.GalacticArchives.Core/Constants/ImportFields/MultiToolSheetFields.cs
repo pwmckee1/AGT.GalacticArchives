@@ -35,8 +35,8 @@ public static class MultiToolSheetFields
     public const string MultiToolType = "Type";
     public const string UserNotes = "User Notes";
     public const string WikiLink = "Wiki Link";
-    public const string XXSecondCoordinate = "XX (second cord)";
-    public const string YYFirstCoordinate = "YY (first coord)";
+    public const string XAxisPlanetCoordinate = "XX (second cord)";
+    public const string YAxisPlanetCoordinate = "YY (first coord)";
     public const string HasCrystalsIndicator = "Y";
     public const string HasGlowTubesIndicator = "Y";
     public const string HasHornsIndicator = "Y";

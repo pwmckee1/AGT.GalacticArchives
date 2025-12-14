@@ -18,12 +18,12 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
 
         Map(m => m.SettlementId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.SettlementId));
 
-        Map(m => m.YYFirstCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YYFirstCoordinate));
+        Map(m => m.YAxisPlanetCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YAxisPlanetCoordinate));
 
-        Map(m => m.XXSecondCoordinate)
-            .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.XXSecondCoordinate));
+        Map(m => m.XAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.XAxisPlanetCoordinate));
 
-        Map(m => m.DateObserved).Convert(m => m.Row.ReadDateTimeFieldOrNull(SettlementSheetFields.DateObserved));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(SettlementSheetFields.DiscoveryDate));
 
         Map(m => m.Economy).Convert(m => m.Row.ReadEnumFieldOrNull<EconomyTypes>(SettlementSheetFields.Economy));
 

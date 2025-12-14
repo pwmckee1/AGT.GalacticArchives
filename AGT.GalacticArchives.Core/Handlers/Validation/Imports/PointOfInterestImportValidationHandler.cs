@@ -54,24 +54,24 @@ public class PointOfInterestImportValidationHandler : BaseImportValidationHandle
                     nameof(pointOfInterestField.Galaxy).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    pointOfInterestField.Surveyor,
+                    pointOfInterestField.SurveyedBy,
                     LineNumber,
-                    nameof(pointOfInterestField.Surveyor).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.SurveyedBy).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    pointOfInterestField.YYFirstCoordinate?.ToString(),
+                    pointOfInterestField.YAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(pointOfInterestField.YYFirstCoordinate).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.YAxisPlanetCoordinate).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    pointOfInterestField.XXSecondCoordinate?.ToString(),
+                    pointOfInterestField.XAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(pointOfInterestField.XXSecondCoordinate).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.XAxisPlanetCoordinate).GetDescription<PointOfInterestImport>(),
                     SheetName),
                 new NullableDateTimeStrategy(
-                    pointOfInterestField.DateOfSurvey?.ToString(),
+                    pointOfInterestField.SurveyDate?.ToString(),
                     LineNumber,
-                    nameof(pointOfInterestField.DateOfSurvey).GetDescription<PointOfInterestImport>(),
+                    nameof(pointOfInterestField.SurveyDate).GetDescription<PointOfInterestImport>(),
                     SheetName),
             };
 

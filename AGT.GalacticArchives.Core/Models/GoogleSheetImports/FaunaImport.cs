@@ -42,8 +42,8 @@ public class FaunaImport : IImportFormFile
     [Name(FaunaSheetFields.DiscoveredBy)]
     public string? DiscoveredBy { get; set; }
 
-    [Name(FaunaSheetFields.DiscoveredDate)]
-    public DateTime? DiscoveredDate { get; set; }
+    [Name(FaunaSheetFields.DiscoveryDate)]
+    public DateTime? DiscoveryDate { get; set; }
 
     [Name(FaunaSheetFields.DiscoveredLinkOnWiki)]
     public string? DiscoveredLinkOnWiki { get; set; }

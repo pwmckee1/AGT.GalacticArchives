@@ -54,19 +54,19 @@ public class PlayerBaseImportValidationHandler : BaseImportValidationHandler, II
                     nameof(playerBaseField.Galaxy).GetDescription<PlayerBaseImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    playerBaseField.Surveyor,
+                    playerBaseField.SurveyedBy,
                     LineNumber,
-                    nameof(playerBaseField.Surveyor).GetDescription<PlayerBaseImport>(),
+                    nameof(playerBaseField.SurveyedBy).GetDescription<PlayerBaseImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    playerBaseField.YYFirstCoordinate?.ToString(),
+                    playerBaseField.YAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(playerBaseField.YYFirstCoordinate).GetDescription<PlayerBaseImport>(),
+                    nameof(playerBaseField.YAxisPlanetCoordinate).GetDescription<PlayerBaseImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    playerBaseField.XXSecondCoordinate?.ToString(),
+                    playerBaseField.XAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(playerBaseField.XXSecondCoordinate).GetDescription<PlayerBaseImport>(),
+                    nameof(playerBaseField.XAxisPlanetCoordinate).GetDescription<PlayerBaseImport>(),
                     SheetName),
             };
 

@@ -17,20 +17,31 @@ public class RegionMaps : Profile
         CreateMap<RegionImport, Region>()
             .ForMember(d => d.Name, o => o.MapFrom(s => s.RegionName))
             .ForMember(d => d.GalacticQuadrant, o => o.MapFrom(s => s.GalacticQuadrant))
-            .ForMember(d => d.XXHex, o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(RegionImport.XXHex)))
-            .ForMember(d => d.YYHex, o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(RegionImport.YYHex)))
-            .ForMember(d => d.ZZHex, o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(RegionImport.ZZHex)))
+            .ForMember(d => d.GlyphHexCode, o => o.MapFrom<GlyphCodeValueResolver>())
+            .ForMember(
+                d => d.XXHex,
+                o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(StarSystemImport.XXHex)))
+            .ForMember(
+                d => d.YYHex,
+                o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(StarSystemImport.YYHex)))
+            .ForMember(
+                d => d.ZZHex,
+                o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(StarSystemImport.ZZHex)))
+            .ForMember(
+                d => d.SSHex,
+                o => o.MapFrom<AxisHexValueResolver, string>(src => nameof(StarSystemImport.SSHex)))
             .ForMember(
                 d => d.XXDec,
-                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(RegionImport.XXDec)))
+                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(StarSystemImport.XXDec)))
             .ForMember(
                 d => d.YYDec,
-                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(RegionImport.YYDec)))
+                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(StarSystemImport.YYDec)))
             .ForMember(
                 d => d.ZZDec,
-                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(RegionImport.ZZDec)))
-            .ForMember(d => d.GlyphHexCode, o => o.MapFrom<GlyphCodeValueResolver>())
-            .ForMember(d => d.SurveyedBy, o => o.MapFrom(s => s.LatestKnownSurveyor))
+                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(StarSystemImport.ZZDec)))
+            .ForMember(
+                d => d.SSDec,
+                o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(StarSystemImport.SSDec)))
             .ForMember(d => d.SSHex, o => o.Ignore())
             .ForMember(d => d.SSDec, o => o.Ignore())
             .ForMember(d => d.RegionId, o => o.Ignore())

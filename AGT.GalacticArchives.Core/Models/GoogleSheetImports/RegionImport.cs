@@ -16,8 +16,8 @@ public class RegionImport : IImportFormFile
     [Name(RegionSheetFields.AdditionalNotes)]
     public string? AdditionalNotes { get; set; }
 
-    [Name(RegionSheetFields.AutoSurveyDate)]
-    public DateTime? AutoSurveyDate { get; set; }
+    [Name(RegionSheetFields.SurveyDate)]
+    public DateTime? SurveyDate { get; set; }
 
     [Name(RegionSheetFields.BaseCoordinates)]
     public string? BaseCoordinates { get; set; }
@@ -58,8 +58,8 @@ public class RegionImport : IImportFormFile
     [Name(RegionSheetFields.GameRelease)]
     public string? GameRelease { get; set; }
 
-    [Name(RegionSheetFields.LatestKnownSurveyor)]
-    public string? LatestKnownSurveyor { get; set; }
+    [Name(RegionSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
     [Name(RegionSheetFields.LatestSurveyorWikiUser)]
     public string? LatestSurveyorWikiUser { get; set; }

@@ -27,7 +27,7 @@ public static class PlanetSheetFields
     public const string DiscoveredLinkOnWiki = "Discovered Link on Wiki";
     public const string DiscoveryDate = "Discovery Date";
     public const string DiscoveryPlatform = "Discovery Platform";
-    public const string DiscovererGamertag = "Discoverer Gamertag";
+    public const string DiscoveredBy = "Discoverer Gamertag";
     public const string DocumentSequence = "Document Sequence";
     public const string ExternalLink1 = "External Link 1";
     public const string ExternalLink2 = "External Link 2";
@@ -82,7 +82,7 @@ public static class PlanetSheetFields
     public const string Survey = "Survey";
     public const string SurveyDate = "Survey Date";
     public const string GameReleaseName = "Survey Release Era";
-    public const string SurveyorGamertag = "Surveyor Gamertag";
+    public const string SurveyedBy = "Surveyor Gamertag";
     public const string System = "System";
     public const string PlanetTerrain = "Terrain";
     public const string PlanetLandType = "Type of Land";

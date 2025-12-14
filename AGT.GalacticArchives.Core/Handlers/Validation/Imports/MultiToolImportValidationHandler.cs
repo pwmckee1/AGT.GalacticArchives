@@ -49,14 +49,14 @@ public class MultiToolImportValidationHandler : BaseImportValidationHandler, IIm
                     nameof(multiToolField.Galaxy).GetDescription<MultiToolImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    multiToolField.YYFirstCoordinate?.ToString(),
+                    multiToolField.YAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(multiToolField.YYFirstCoordinate).GetDescription<MultiToolImport>(),
+                    nameof(multiToolField.YAxisPlanetCoordinate).GetDescription<MultiToolImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    multiToolField.XXSecondCoordinate?.ToString(),
+                    multiToolField.XAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(multiToolField.XXSecondCoordinate).GetDescription<MultiToolImport>(),
+                    nameof(multiToolField.XAxisPlanetCoordinate).GetDescription<MultiToolImport>(),
                     SheetName),
             };
 

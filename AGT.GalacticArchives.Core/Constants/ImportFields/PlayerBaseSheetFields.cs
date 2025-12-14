@@ -22,7 +22,7 @@ public static class PlayerBaseSheetFields
     public const string Civilization = "Civilized";
     public const string Coordinates = "Coodinates";
     public const string DateFinished = "Date Finished";
-    public const string DateOfSurvey = "Date of Survey";
+    public const string SurveyDate = "Date of Survey";
     public const string DateStarted = "Date Started";
     public const string DocumentSequence = "Doc Sequence";
     public const string ExternalLink1 = "External Link 1";
@@ -59,7 +59,7 @@ public static class PlayerBaseSheetFields
     public const string Release = "Release";
     public const string ReleaseVersion = "Release version";
     public const string Region = "Region";
-    public const string Surveyor = "Surveyor ID";
+    public const string SurveyedBy = "Surveyor ID";
     public const string SummaryText = "Summary Text";
     public const string StarSystem = "System";
     public const string TradeTerminal = "Trade Terminal?";
@@ -67,7 +67,7 @@ public static class PlayerBaseSheetFields
     public const string Videos = "Videoes";
     public const string WikiLink = "Wiki Link";
     public const string XXSecondCoordinate = "XX (second coord)";
-    public const string YYFirstCoordinate = "YY (first coord)";
+    public const string YAxisPlanetCoordinate = "YY (first coord)";
     public const string AllowsDeconstructionIndicator = "Y";
     public const string HasArenaIndicator = "Y";
     public const string HasFarmIndicator = "Y";

@@ -7,7 +7,7 @@ using AutoMapper;
 namespace AGT.GalacticArchives.Core.Mapping.ValueConverters;
 
 public class GlyphCodeValueResolver : IValueResolver<RegionImport, Region, string?>,
-    IValueResolver<StarSystemImport, StarSystem, string?>, IValueResolver<StarshipImport, Starship, string?>
+    IValueResolver<StarSystemImport, StarSystem, string?>
 {
     public string? Resolve(RegionImport source, Region destination, string? destMember, ResolutionContext context)
     {

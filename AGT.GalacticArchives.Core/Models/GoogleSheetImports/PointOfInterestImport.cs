@@ -11,8 +11,8 @@ public class PointOfInterestImport : IImportFormFile
     [Name(PointOfInterestSheetFields.PointOfInterestId)]
     public Guid? PointOfInterestId { get; set; }
 
-    [Name(PointOfInterestSheetFields.DateOfSurvey)]
-    public DateTime? DateOfSurvey { get; set; }
+    [Name(PointOfInterestSheetFields.SurveyDate)]
+    public DateTime? SurveyDate { get; set; }
 
     [Name(PointOfInterestSheetFields.Galaxy)]
     public GalaxyTypes? Galaxy { get; set; }
@@ -32,8 +32,8 @@ public class PointOfInterestImport : IImportFormFile
     [Name(PointOfInterestSheetFields.Release)]
     public string? Release { get; set; }
 
-    [Name(PointOfInterestSheetFields.Surveyor)]
-    public string? Surveyor { get; set; }
+    [Name(PointOfInterestSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
     [Name(PointOfInterestSheetFields.StarSystemName)]
     public string? StarSystemName { get; set; }
@@ -41,9 +41,9 @@ public class PointOfInterestImport : IImportFormFile
     [Name(PointOfInterestSheetFields.LocationType)]
     public LocationTypes? LocationType { get; set; }
 
-    [Name(PointOfInterestSheetFields.XXSecondCoordinate)]
-    public float? XXSecondCoordinate { get; set; }
+    [Name(PointOfInterestSheetFields.XAxisPlanetCoordinate)]
+    public float? XAxisPlanetCoordinate { get; set; }
 
-    [Name(PointOfInterestSheetFields.YYFirstCoordinate)]
-    public float? YYFirstCoordinate { get; set; }
+    [Name(PointOfInterestSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
 }

@@ -32,7 +32,7 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
         Map(m => m.FaunaDietArchetype)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaDietArchetypes>(FaunaSheetFields.FaunaDietArchetype));
 
-        Map(m => m.DiscoveredDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(FaunaSheetFields.DiscoveredDate));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(FaunaSheetFields.DiscoveryDate));
 
         Map(m => m.GamePlatformType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(FaunaSheetFields.GamePlatformType));

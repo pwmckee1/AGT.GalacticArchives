@@ -19,14 +19,14 @@ public sealed class PointOfInterestCsvMap : ClassMap<PointOfInterestImport>
         Map(m => m.LocationType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<LocationTypes>(PointOfInterestSheetFields.LocationType));
 
-        Map(m => m.YYFirstCoordinate)
-            .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.YYFirstCoordinate));
+        Map(m => m.YAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.YAxisPlanetCoordinate));
 
-        Map(m => m.XXSecondCoordinate)
-            .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.XXSecondCoordinate));
+        Map(m => m.XAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.XAxisPlanetCoordinate));
 
-        Map(m => m.DateOfSurvey).Convert(m => m.Row.ReadDateTimeFieldOrNull(PointOfInterestSheetFields.DateOfSurvey));
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(PointOfInterestSheetFields.SurveyDate));
 
-        Map(m => m.DateOfSurvey).Convert(m => m.Row.ReadDateTimeFieldOrNull(PointOfInterestSheetFields.DateOfSurvey));
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(PointOfInterestSheetFields.SurveyDate));
     }
 }

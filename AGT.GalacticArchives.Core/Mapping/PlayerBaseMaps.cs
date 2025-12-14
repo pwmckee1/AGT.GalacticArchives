@@ -1,4 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
+using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
@@ -11,6 +12,17 @@ public class PlayerBaseMaps : Profile
     public PlayerBaseMaps()
     {
         CreateMap<Dictionary<string, object?>, PlayerBase>().ConvertUsing<DatabaseEntityTypeConverter>();
+
+        CreateMap<PlayerBaseImport, PlayerBase>()
+            .ForMember(d => d.Name, o => o.MapFrom(s => s.StarSystemName))
+            .ForMember(d => d.RegionId, o => o.Ignore())
+            .ForMember(d => d.Region, o => o.Ignore())
+            .ForMember(d => d.StarSystemId, o => o.Ignore())
+            .ForMember(d => d.StarSystem, o => o.Ignore())
+            .ForMember(d => d.PlanetId, o => o.Ignore())
+            .ForMember(d => d.Planet, o => o.Ignore())
+            .ForMember(d => d.YAxisPlanetCoordinate, o => o.Ignore())
+            .ForMember(d => d.XAxisPlanetCoordinate, o => o.Ignore());
 
         CreateMap<PlayerBase, PlayerBaseRequest>();
         CreateMap<PlayerBaseRequest, PlayerBase>()

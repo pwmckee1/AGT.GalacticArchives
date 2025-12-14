@@ -44,24 +44,24 @@ public class SettlementImportValidationHandler : BaseImportValidationHandler, II
                     nameof(settlementField.StarSystemName).GetDescription<SettlementImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    settlementField.Surveyor,
+                    settlementField.SurveyedBy,
                     LineNumber,
-                    nameof(settlementField.Surveyor).GetDescription<SettlementImport>(),
+                    nameof(settlementField.SurveyedBy).GetDescription<SettlementImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    settlementField.YYFirstCoordinate?.ToString(),
+                    settlementField.YAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(settlementField.YYFirstCoordinate).GetDescription<SettlementImport>(),
+                    nameof(settlementField.YAxisPlanetCoordinate).GetDescription<SettlementImport>(),
                     SheetName),
                 new NullableFloatFieldStrategy(
-                    settlementField.XXSecondCoordinate?.ToString(),
+                    settlementField.XAxisPlanetCoordinate?.ToString(),
                     LineNumber,
-                    nameof(settlementField.XXSecondCoordinate).GetDescription<SettlementImport>(),
+                    nameof(settlementField.XAxisPlanetCoordinate).GetDescription<SettlementImport>(),
                     SheetName),
                 new NullableDateTimeStrategy(
-                    settlementField.DateObserved?.ToString(),
+                    settlementField.DiscoveryDate?.ToString(),
                     LineNumber,
-                    nameof(settlementField.DateObserved).GetDescription<SettlementImport>(),
+                    nameof(settlementField.DiscoveryDate).GetDescription<SettlementImport>(),
                     SheetName),
                 new NullableIntFieldStrategy(
                     settlementField.Population?.ToString(),

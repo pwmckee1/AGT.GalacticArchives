@@ -18,7 +18,7 @@ public static class RegionSheetFields
     public const string GlyphHexCode = "Glylphs";
     public const string Galaxy = "Galaxy";
     public const string GalaxySequence = "Galaxy ID";
-    public const string LatestKnownSurveyor = "Latest Surveyor ID";
+    public const string SurveyedBy = "Latest Surveyor ID";
     public const string LatestSurveyorWikiUser = "Latest Surveryor WikiUser";
     public const string LegacyName = "Legacy Name";
     public const string LegacyWikilink = "Legacy wiki link";
@@ -28,7 +28,7 @@ public static class RegionSheetFields
     public const string RegionName = "Region Name";
     public const string RegionAge = "Region Age";
     public const string SummaryNotes = "Summary Notes";
-    public const string AutoSurveyDate = "Auto Latest Survey";
+    public const string SurveyDate = "Auto Latest Survey";
     public const string VideoLink1 = "Video Link 1";
     public const string WikiLink = "NMS Wiki link";
     public const string XXDec = "XX (dec)";
