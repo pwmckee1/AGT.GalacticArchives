@@ -16,6 +16,8 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(StarSystemSheetFields.StarSystemId));
+
         Map(m => m.Galaxy).Convert(m => m.Row.ReadNullableEnumField<GalaxyTypes>(StarSystemSheetFields.GalaxyName));
 
         Map(m => m.Bases).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Bases));

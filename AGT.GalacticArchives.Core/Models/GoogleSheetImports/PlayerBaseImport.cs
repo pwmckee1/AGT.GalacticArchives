@@ -10,6 +10,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class PlayerBaseImport : IImportFormFile
 {
+    [Name(PlayerBaseSheetFields.PlayerBaseId)]
+    public Guid? PlayerBaseId { get; set; }
+
     [Name(PlayerBaseSheetFields.AccessOrTerrainSituation)]
     public PlayerBaseTerrainTypes? AccessOrTerrainSituation { get; set; }
 

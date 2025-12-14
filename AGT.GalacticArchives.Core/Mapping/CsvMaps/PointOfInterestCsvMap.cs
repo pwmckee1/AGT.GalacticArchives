@@ -13,6 +13,9 @@ public sealed class PointOfInterestCsvMap : ClassMap<PointOfInterestImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.PointOfInterestId)
+            .Convert(m => m.Row.ReadGuidFieldOrNull(PointOfInterestSheetFields.PointOfInterestId));
+
         Map(m => m.LocationType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<LocationTypes>(PointOfInterestSheetFields.LocationType));
 

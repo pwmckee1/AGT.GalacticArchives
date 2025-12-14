@@ -59,4 +59,5 @@ public static class FaunaSheetFields
     public const string VersionRelease = "Version Release";
     public const string FaunaBaitType = "Bait";
     public const string GenusType = "Genus";
+    public const string FaunaId = "FaunaId";
 }

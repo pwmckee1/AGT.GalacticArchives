@@ -10,6 +10,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class MultiToolImport : IImportFormFile
 {
+    [Name(MultiToolSheetFields.MultiToolId)]
+    public Guid? MultiToolId { get; set; }
+
     [Name(MultiToolSheetFields.AcquisitionGuidance)]
     public string? AcquisitionGuidance { get; set; }
 

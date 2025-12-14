@@ -15,6 +15,8 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.PlanetId).Convert(m => m.Row.ReadGuidFieldOrNull(PlanetSheetFields.PlanetId));
+
         Map(m => m.AgeOfPlanetInBillionsOfYears)
             .Convert(m =>
             {

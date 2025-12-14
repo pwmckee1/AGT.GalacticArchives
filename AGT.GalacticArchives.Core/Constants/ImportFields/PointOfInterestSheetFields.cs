@@ -14,4 +14,5 @@ public static class PointOfInterestSheetFields
     public const string LocationType = "POI Type";
     public const string XXSecondCoordinate = "XX (2nd coordinate)";
     public const string YYFirstCoordinate = "YY (1st coordinate)";
+    public const string PointOfInterestId = "PointOfInterestId";
 }

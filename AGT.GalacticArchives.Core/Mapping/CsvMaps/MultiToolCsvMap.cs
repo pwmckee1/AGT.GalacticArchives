@@ -16,6 +16,8 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.MultiToolId).Convert(m => m.Row.ReadGuidFieldOrNull(MultiToolSheetFields.MultiToolId));
+
         Map(m => m.Category)
             .Convert(m => m.Row.ReadEnumFieldOrNull<MultiToolCategoryTypes>(MultiToolSheetFields.Category));
 

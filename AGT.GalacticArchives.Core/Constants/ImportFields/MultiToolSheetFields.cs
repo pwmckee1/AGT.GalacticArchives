@@ -40,4 +40,5 @@ public static class MultiToolSheetFields
     public const string HasCrystalsIndicator = "Y";
     public const string HasGlowTubesIndicator = "Y";
     public const string HasHornsIndicator = "Y";
+    public const string MultiToolId = "MultiToolId";
 }

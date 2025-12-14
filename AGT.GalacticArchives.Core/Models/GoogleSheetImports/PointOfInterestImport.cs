@@ -8,6 +8,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class PointOfInterestImport : IImportFormFile
 {
+    [Name(PointOfInterestSheetFields.PointOfInterestId)]
+    public Guid? PointOfInterestId { get; set; }
+
     [Name(PointOfInterestSheetFields.DateOfSurvey)]
     public DateTime? DateOfSurvey { get; set; }
 

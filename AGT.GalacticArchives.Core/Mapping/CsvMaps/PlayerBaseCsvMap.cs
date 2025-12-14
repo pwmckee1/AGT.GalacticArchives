@@ -14,6 +14,8 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.PlayerBaseId).Convert(m => m.Row.ReadGuidFieldOrNull(PlayerBaseSheetFields.PlayerBaseId));
+
         Map(m => m.AccessOrTerrainSituation)
             .Convert(m =>
                 m.Row.ReadEnumFieldOrNull<PlayerBaseTerrainTypes>(PlayerBaseSheetFields.AccessOrTerrainSituation));

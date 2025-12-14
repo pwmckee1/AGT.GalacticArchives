@@ -88,4 +88,5 @@ public static class StarSystemSheetFields
     public const string IsDissonantIdentifier = "Y";
     public const string IsGiantSystemIdentifier = "Y";
     public const string IsPhantomSystemIdentifier = "Y";
+    public const string StarSystemId = "StarSystemId";
 }

@@ -33,4 +33,5 @@ public static class SettlementSheetFields
     public const string XXSecondCoordinate = "XX (second coord)";
     public const string YYFirstCoordinate = "YY (first coord)";
     public const string IsProfitableIndicator = "Yes";
+    public const string SettlementId = "SettlementId";
 }

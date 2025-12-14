@@ -39,4 +39,5 @@ public static class RegionSheetFields
     public const string XXHex = "XX";
     public const string ZZHex = "ZZ";
     public const string GameReleaseVersionNumber = "Version";
+    public const string RegionId = "RegionId";
 }

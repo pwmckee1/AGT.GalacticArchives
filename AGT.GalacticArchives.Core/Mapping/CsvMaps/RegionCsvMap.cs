@@ -13,6 +13,8 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(RegionSheetFields.RegionId));
+
         Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(RegionSheetFields.Galaxy));
 
         Map(m => m.GalacticQuadrant)

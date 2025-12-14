@@ -10,6 +10,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class PlanetImport : IImportFormFile
 {
+    [Name(PlanetSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
+
     [Name(PlanetSheetFields.AgeOfPlanetInBillionsOfYears)]
     public int? AgeOfPlanetInBillionsOfYears { get; set; }
 

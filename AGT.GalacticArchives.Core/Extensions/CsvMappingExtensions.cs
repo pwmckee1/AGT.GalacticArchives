@@ -45,6 +45,12 @@ public static class CsvMappingExtensions
         return int.TryParse(formattedValue, out int result) ? result : null;
     }
 
+    public static Guid? ReadGuidFieldOrNull(this IReaderRow row, string propertyName)
+    {
+        string? value = row.GetField(propertyName);
+        return Guid.TryParse(value, out var result) ? result : null;
+    }
+
     public static float? ReadFloatFieldOrNull(this IReaderRow row, string propertyName)
     {
         string? value = row.GetField(propertyName);

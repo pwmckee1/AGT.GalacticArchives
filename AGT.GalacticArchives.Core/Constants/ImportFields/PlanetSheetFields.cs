@@ -125,4 +125,5 @@ public static class PlanetSheetFields
     public const string IsPlanetIndicator = "Planet";
     public const string IsMoonIndicator = "Moon";
     public const string PlanetOrMoonAddedInOriginsIndicator = "Y";
+    public const string PlanetId = "PlanetId";
 }

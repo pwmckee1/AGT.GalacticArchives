@@ -9,6 +9,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class FaunaImport : IImportFormFile
 {
+    [Name(FaunaSheetFields.FaunaId)]
+    public Guid? FaunaId { get; set; }
+
     [Name(FaunaSheetFields.ActivityType)]
     public FaunaCircadianTypes? ActivityType { get; set; }
 

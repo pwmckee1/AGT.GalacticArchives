@@ -10,6 +10,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class SettlementImport : IImportFormFile
 {
+    [Name(SettlementSheetFields.SettlementId)]
+    public Guid? SettlementId { get; set; }
+
     [Name(SettlementSheetFields.Buildings)]
     public HashSet<SettlementBuildingTypes> Buildings { get; set; } = [];
 

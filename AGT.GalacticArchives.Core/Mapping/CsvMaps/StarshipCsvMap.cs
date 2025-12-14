@@ -15,6 +15,10 @@ public sealed class StarshipCsvMap : ClassMap<StarshipImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.StarshipId).Convert(m => m.Row.ReadGuidFieldOrNull(StarshipSheetFields.StarshipId));
+
+        Map(m => m.ReleaseDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(StarshipSheetFields.ReleaseDate));
+
         Map(m => m.Galaxy).Convert(m => m.Row.ReadNullableEnumField<GalaxyTypes>(StarshipSheetFields.Galaxy));
 
         Map(m => m.Location)

@@ -10,6 +10,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class StarSystemImport : IImportFormFile
 {
+    [Name(StarSystemSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
     [Name(StarSystemSheetFields.GalaxyName)]
     public GalaxyTypes? Galaxy { get; set; }
 

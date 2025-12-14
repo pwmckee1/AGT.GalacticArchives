@@ -16,6 +16,8 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.SettlementId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.SettlementId));
+
         Map(m => m.YYFirstCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YYFirstCoordinate));
 
         Map(m => m.XXSecondCoordinate)

@@ -51,4 +51,5 @@ public static class StarshipSheetFields
     public const string UpgradeModules = "Upgrade Modules";
     public const string ReleaseNumber = "Release Number";
     public const string ReleaseDate = "Release Date";
+    public const string StarshipId = "StarshipId";
 }

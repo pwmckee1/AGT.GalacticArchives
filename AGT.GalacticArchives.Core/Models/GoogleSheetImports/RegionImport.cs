@@ -7,6 +7,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class RegionImport : IImportFormFile
 {
+    [Name(RegionSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
     [Name(RegionSheetFields.AdminNotes)]
     public string? AdminNotes { get; set; }
 

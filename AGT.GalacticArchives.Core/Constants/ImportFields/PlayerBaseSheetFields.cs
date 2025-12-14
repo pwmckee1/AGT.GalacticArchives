@@ -75,4 +75,5 @@ public static class PlayerBaseSheetFields
     public const string HasLandingPadIndicator = "Y";
     public const string HasRacetrackIndicator = "Y";
     public const string HasTradeTerminalIndicator = "Y";
+    public const string PlayerBaseId = "PlayerBaseId";
 }

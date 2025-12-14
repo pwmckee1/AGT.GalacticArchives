@@ -9,6 +9,9 @@ namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
 public class StarshipImport : IImportFormFile
 {
+    [Name(StarshipSheetFields.StarshipId)]
+    public Guid? StarshipId { get; set; }
+
     [Name(StarshipSheetFields.StarshipName)]
     public string? StarshipName { get; set; }
 
@@ -143,4 +146,10 @@ public class StarshipImport : IImportFormFile
 
     [Name(StarshipSheetFields.ResearchTeam)]
     public string? ResearchTeam { get; set; }
+
+    [Name(StarshipSheetFields.ReleaseNumber)]
+    public string? ReleaseNumber { get; set; }
+
+    [Name(StarshipSheetFields.ReleaseDate)]
+    public DateTime? ReleaseDate { get; set; }
 }

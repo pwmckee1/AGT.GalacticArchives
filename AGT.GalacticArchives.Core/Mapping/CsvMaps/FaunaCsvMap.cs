@@ -15,6 +15,8 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
     {
         AutoMap(CultureInfo.InvariantCulture);
 
+        Map(m => m.FaunaId).Convert(m => m.Row.ReadGuidFieldOrNull(FaunaSheetFields.FaunaId));
+
         Map(m => m.ActivityType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaCircadianTypes>(FaunaSheetFields.ActivityType));
 
