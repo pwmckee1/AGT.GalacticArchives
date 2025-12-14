@@ -20,7 +20,7 @@ public class StarshipMaps : Profile
             .ForMember(d => d.StarSystemId, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
             .ForMember(d => d.PlanetId, o => o.Ignore())
-            .ForMember(d => d.Planet, o => o.Ignore())
+            .ForMember(d => d.Planet, o => o.Ignore());
 
         CreateMap<Starship, StarshipRequest>();
         CreateMap<StarshipRequest, Starship>()
