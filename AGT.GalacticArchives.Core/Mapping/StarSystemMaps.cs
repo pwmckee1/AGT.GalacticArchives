@@ -43,7 +43,6 @@ public class StarSystemMaps : Profile
                 o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(StarSystemImport.SSDec)))
             .ForMember(d => d.RegionId, o => o.Ignore())
             .ForMember(d => d.Region, o => o.Ignore())
-            .ForMember(d => d.StarSystemId, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
             .ForMember(d => d.PlanetId, o => o.Ignore())
             .ForMember(d => d.Planet, o => o.Ignore())

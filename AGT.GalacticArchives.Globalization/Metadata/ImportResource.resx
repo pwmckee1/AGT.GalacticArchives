@@ -175,7 +175,7 @@
       <value>Planet</value>
   </data>
   <data name="PlayerBaseSheetName" xml:space="preserve">
-      <value>Base</value>
+      <value>BaseDB</value>
   </data>
   <data name="PointOfInterestSheetName" xml:space="preserve">
       <value>POI</value>

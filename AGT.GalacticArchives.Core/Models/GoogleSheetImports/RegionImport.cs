@@ -17,7 +17,7 @@ public class RegionImport : IImportFormFile
     public string? AdditionalNotes { get; set; }
 
     [Name(RegionSheetFields.SurveyDate)]
-    public DateTime? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
     [Name(RegionSheetFields.BaseCoordinates)]
     public string? BaseCoordinates { get; set; }
@@ -41,7 +41,7 @@ public class RegionImport : IImportFormFile
     public string? EarliestSurveyorWikiUser { get; set; }
 
     [Name(RegionSheetFields.EarliestSystemDiscovery)]
-    public DateTime? EarliestSystemDiscovery { get; set; }
+    public string? EarliestSystemDiscovery { get; set; }
 
     [Name(RegionSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }

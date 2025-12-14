@@ -222,7 +222,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Base.
+        ///   Looks up a localized string similar to BaseDB.
         /// </summary>
         public static string PlayerBaseSheetName {
             get {

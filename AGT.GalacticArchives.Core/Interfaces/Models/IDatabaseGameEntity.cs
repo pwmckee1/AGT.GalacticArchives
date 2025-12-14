@@ -52,11 +52,11 @@ public interface IDatabaseGameEntity : IDatabaseEntity
 
     string? SurveyedBy { get; set; }
 
-    DateTime? SurveyDate { get; set; }
+    DateTimeOffset? SurveyDate { get; set; }
 
     string? DiscoveredBy { get; set; }
 
-    DateTime? DiscoveryDate { get; set; }
+    DateTimeOffset? DiscoveryDate { get; set; }
 
     GameModeTypes? GameModeType { get; set; }
 

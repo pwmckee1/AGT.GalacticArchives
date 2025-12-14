@@ -61,11 +61,11 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 
     public string? SurveyedBy { get; set; }
 
-    public DateTime? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
     public string? DiscoveredBy { get; set; }
 
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
     public GameModeTypes? GameModeType { get; set; }
 

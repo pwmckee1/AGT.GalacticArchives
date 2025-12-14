@@ -19,7 +19,6 @@ public class PlanetMaps : Profile
             .ForMember(d => d.Region, o => o.Ignore())
             .ForMember(d => d.StarSystemId, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
-            .ForMember(d => d.PlanetId, o => o.Ignore())
             .ForMember(d => d.Planet, o => o.Ignore())
             .ForMember(d => d.YAxisPlanetCoordinate, o => o.Ignore())
             .ForMember(d => d.XAxisPlanetCoordinate, o => o.Ignore());

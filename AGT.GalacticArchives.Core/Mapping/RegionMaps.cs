@@ -44,7 +44,6 @@ public class RegionMaps : Profile
                 o => o.MapFrom<AxisDecimalValueResolver, string>(src => nameof(StarSystemImport.SSDec)))
             .ForMember(d => d.SSHex, o => o.Ignore())
             .ForMember(d => d.SSDec, o => o.Ignore())
-            .ForMember(d => d.RegionId, o => o.Ignore())
             .ForMember(d => d.StarSystems, o => o.Ignore())
             .ForMember(d => d.Region, o => o.Ignore())
             .ForMember(d => d.StarSystemId, o => o.Ignore())
