@@ -31,6 +31,8 @@ public sealed class PointOfInterestCsvMap : ClassMap<PointOfInterestImport>
         Map(m => m.DocumentSequence)
             .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.DocumentSequence));
 
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PointOfInterestSheetFields.SurveyDate));
+
         Map(m => m.YAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadIntFieldOrNull(PointOfInterestSheetFields.YAxisPlanetCoordinate));
 

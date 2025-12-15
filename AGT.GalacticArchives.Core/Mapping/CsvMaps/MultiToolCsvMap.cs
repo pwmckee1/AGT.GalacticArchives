@@ -33,6 +33,8 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
 
         Map(m => m.Damage).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.Damage));
 
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(MultiToolSheetFields.DiscoveryDate));
+
         Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.DocumentSequence));
 
         Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(MultiToolSheetFields.Galaxy));
@@ -56,9 +58,11 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
 
         Map(m => m.Mining).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.Mining));
 
-        Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(MultiToolSheetFields.GameModeType));
+        Map(m => m.GameModeType)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(MultiToolSheetFields.GameModeType));
 
-        Map(m => m.GamePlatformType).Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(MultiToolSheetFields.GamePlatformType));
+        Map(m => m.GamePlatformType)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(MultiToolSheetFields.GamePlatformType));
 
         Map(m => m.PrimaryColor)
             .Convert(m => m.Row.ReadEnumFieldOrNull<ItemColorTypes>(MultiToolSheetFields.PrimaryColor));
@@ -76,6 +80,7 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
         Map(m => m.XAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.XAxisPlanetCoordinate));
 
-        Map(m => m.YAxisPlanetCoordinate).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.YAxisPlanetCoordinate));
+        Map(m => m.YAxisPlanetCoordinate)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.YAxisPlanetCoordinate));
     }
 }

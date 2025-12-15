@@ -87,6 +87,8 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
         Map(m => m.FaunaInGameNotes)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaInGameNoteTypes>(FaunaSheetFields.FaunaInGameNotes));
 
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.DiscoveryDate));
+
         Map(m => m.FaunaRarityType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaRarityTypes>(FaunaSheetFields.FaunaRarityType));
     }

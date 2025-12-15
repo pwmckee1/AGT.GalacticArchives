@@ -3,7 +3,7 @@ using AGT.GalacticArchives.Globalization;
 
 namespace AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
-public enum MultiToolUpdateTypes
+public enum MultiToolUpdateModuleTypes
 {
     [Display(ResourceType = typeof(StarSystemResource), Description = nameof(StarSystemResource.AdvancedMiningLaser))]
     AdvancedMiningLaser = 1,

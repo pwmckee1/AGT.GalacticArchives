@@ -54,6 +54,8 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
         Map(m => m.Buildings)
             .Convert(m => m.Row.ReadEnumFields<SettlementBuildingTypes>(SettlementSheetFields.Buildings));
 
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(SettlementSheetFields.DiscoveryDate));
+
         Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(SettlementSheetFields.GameModeType));
     }
 }

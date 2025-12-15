@@ -27,7 +27,7 @@ public static class StarSystemSheetFields
     public const string Faction = "Faction";
     public const string GalaxyName = "Galaxy";
     public const string GalaxySequence = "GalaxyID";
-    public const string GalacticCoordinates = "Galactic GalacticAddressCoordinates";
+    public const string GalacticCoordinates = "Galactic Coordinates";
     public const string GameModeType = "Mode";
     public const string GameRelease = "Release";
     public const string GameReleaseVersionNumber = "Release Version Number";
@@ -84,11 +84,12 @@ public static class StarSystemSheetFields
     public const string XXHex = "X coord HEX";
     public const string YYHex = "Y coord HEX";
     public const string ZZHex = "Z coord HEX";
-    public const string HasWaterIdentifier = "Y";
-    public const string IsDissonantIdentifier = "Y";
+    public const string HasWaterIdentifier = "Yes";
+    public const string IsDissonantIdentifier = "Yes";
     public const string IsGiantSystemIdentifier = "Y";
     public const string IsPhantomSystemIdentifier = "Y";
     public const string HasCenterAccessIdentifier = "Y";
     public const string StarSystemId = "StarSystemId";
     public const string RegionId = "RegionId";
+    public const string ExocraftUpgradeModules = "ExocraftUpgradeModules";
 }

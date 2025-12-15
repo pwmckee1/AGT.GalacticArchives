@@ -61,8 +61,17 @@ public static class CsvMappingExtensions
         return value?.Trim().Equals(identifier, StringComparison.OrdinalIgnoreCase) ?? false;
     }
 
-    public static HashSet<TEnum> ReadEnumFields<TEnum>(this IReaderRow row, string headerColumnName)
-        where TEnum : Enum
+    public static DateTimeOffset? ReadDateTimeOffsetFieldOrNull(this IReaderRow row, string propertyName)
+    {
+        string? value = row.GetField(propertyName);
+#pragma warning disable S6580 // Use a format provider when parsing date and time.
+        return !string.IsNullOrEmpty(value) && DateTimeOffset.TryParse(value, out DateTimeOffset result)
+            ? result
+            : null;
+#pragma warning restore S6580 // Use a format provider when parsing date and time.
+    }
+
+    public static HashSet<TEnum> ReadEnumFields<TEnum>(this IReaderRow row, string headerColumnName) where TEnum : Enum
     {
         var results = new HashSet<TEnum>();
 
@@ -117,8 +126,7 @@ public static class CsvMappingExtensions
     /// <param name="propertyName"></param>
     /// <param name="defaultValue"></param>
     /// <returns></returns>
-    public static T ReadEnumFieldOrDefault<T>(this IReaderRow row, string propertyName, T defaultValue)
-        where T : Enum
+    public static T ReadEnumFieldOrDefault<T>(this IReaderRow row, string propertyName, T defaultValue) where T : Enum
     {
         row.TryGetField(propertyName, out string? value);
         var enumValue = value.GetValueFromDescription<T>();
@@ -132,8 +140,7 @@ public static class CsvMappingExtensions
     /// <param name="row"></param>
     /// <param name="propertyName"></param>
     /// <returns></returns>
-    public static T? ReadEnumFieldOrNull<T>(this IReaderRow row, string propertyName)
-        where T : struct, Enum
+    public static T? ReadEnumFieldOrNull<T>(this IReaderRow row, string propertyName) where T : struct, Enum
     {
         row.TryGetField(propertyName, out string? value);
 
@@ -147,7 +154,8 @@ public static class CsvMappingExtensions
         return (int)(object)enumValue > 0 ? enumValue : null;
     }
 
-    public static TEnum? ReadNullableEnumField<TEnum>(this IReaderRow row, string propertyName) where TEnum : struct, Enum
+    public static TEnum? ReadNullableEnumField<TEnum>(this IReaderRow row, string propertyName)
+        where TEnum : struct, Enum
     {
         row.TryGetField(propertyName, out string? value);
         return !string.IsNullOrEmpty(value) ? row.ReadEnumFieldOrNull<TEnum>(propertyName) : null;
@@ -160,7 +168,10 @@ public static class CsvMappingExtensions
     /// <param name="propertyName"></param>
     /// <param name="delimiters"></param>
     /// <returns></returns>
-    public static HashSet<string> ReadDelimitedField(this IReaderRow row, string propertyName, params string[] delimiters)
+    public static HashSet<string> ReadDelimitedField(
+        this IReaderRow row,
+        string propertyName,
+        params string[] delimiters)
     {
         var entries = new HashSet<string>();
         row.TryGetField(propertyName, out string? value);

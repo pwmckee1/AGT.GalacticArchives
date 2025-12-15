@@ -27,8 +27,6 @@ public class StarSystem : DatabaseGameEntity
 
     public bool? IsDissonant { get; set; }
 
-    public int? BaseQty { get; set; }
-
     public int? StarCount { get; set; }
 
     public string? StarCategory { get; set; }
@@ -61,17 +59,15 @@ public class StarSystem : DatabaseGameEntity
 
     public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
-    public HashSet<ExoSuitUpgradeTypes> ExosuitUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeModuleTypes> ExosuitUpgradeModules { get; set; } = [];
 
-    public HashSet<StarshipUpgradeModuleTypes> StarshipUpgradeModules { get; set; } = [];
+    public HashSet<StarshipUpgradeTypes> StarshipUpgradeModules { get; set; } = [];
 
-    public HashSet<MultiToolUpdateTypes> MultiToolUpdateTypes { get; set; } = [];
+    public HashSet<MultiToolUpdateModuleTypes> MultiToolUpdateTypes { get; set; } = [];
 
     public string? SummaryAdditions { get; set; }
 
     public string? DiscoveredNotes { get; set; }
-
-    public string? PlanetsNotes { get; set; }
 
     public string? StarshipsNotes { get; set; }
 

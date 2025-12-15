@@ -37,6 +37,9 @@ public class RegionImport : IImportFormFile
     [Name(RegionSheetFields.EarliestKnownSurveyor)]
     public string? EarliestKnownSurveyor { get; set; }
 
+    [Name(RegionSheetFields.LatestKnownSurveyor)]
+    public string? LatestKnownSurveyor { get; set; }
+
     [Name(RegionSheetFields.EarliestSurveyorWikiUser)]
     public string? EarliestSurveyorWikiUser { get; set; }
 

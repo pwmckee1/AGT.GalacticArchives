@@ -2,7 +2,7 @@ namespace AGT.GalacticArchives.Core.Models.Enums.Metadata;
 
 public enum GamePlatformTypes
 {
-    All,
+    All = 1,
     Mac,
     PC,
     PS,

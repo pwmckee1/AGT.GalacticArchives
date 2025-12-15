@@ -32,6 +32,8 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
 
         Map(m => m.ZZDec).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.ZZDec));
 
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(RegionSheetFields.SurveyDate));
+
         Map(m => m.GalaxySequence).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.GalaxySequence));
     }
 }

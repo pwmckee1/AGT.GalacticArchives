@@ -131,13 +131,16 @@ public class StarSystemImport : IImportFormFile
     public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
     [Name(StarSystemSheetFields.ExosuitUpgradeModules)]
-    public HashSet<ExoSuitUpgradeTypes> ExosuitUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeModuleTypes> ExosuitUpgradeModules { get; set; } = [];
+
+    [Name(StarSystemSheetFields.ExocraftUpgradeModules)]
+    public HashSet<ExocraftUpgradeModuleTypes> ExocraftUpgradeModules { get; set; } = [];
 
     [Name(StarSystemSheetFields.StarshipUpgradeModules)]
     public HashSet<StarshipUpgradeTypes> StarshipUpgradeModules { get; set; } = [];
 
     [Name(StarSystemSheetFields.MultiToolUpdateTypes)]
-    public HashSet<MultiToolUpdateTypes> MultiToolUpdateTypes { get; set; } = [];
+    public HashSet<MultiToolUpdateModuleTypes> MultiToolUpdateTypes { get; set; } = [];
 
     [Name(StarSystemSheetFields.XXDec)]
     public int? XXDec { get; set; }

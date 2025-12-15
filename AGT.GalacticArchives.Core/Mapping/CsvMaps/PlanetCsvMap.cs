@@ -224,6 +224,10 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
 
         Map(m => m.UnderwaterNightTemp).Convert(m => m.Row.ReadFloatFieldOrNull(PlanetSheetFields.UnderwaterNightTemp));
 
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.DiscoveryDate));
+
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.SurveyDate));
+
         Map(m => m.PlanetWeather)
             .Convert(m => m.Row.ReadEnumFieldOrNull<WeatherTypes>(PlanetSheetFields.PlanetWeather));
     }

@@ -40,4 +40,5 @@ public static class RegionSheetFields
     public const string ZZHex = "ZZ";
     public const string GameReleaseVersionNumber = "Version";
     public const string RegionId = "RegionId";
+    public const string LatestKnownSurveyor = "Latest Surveyor ID";
 }

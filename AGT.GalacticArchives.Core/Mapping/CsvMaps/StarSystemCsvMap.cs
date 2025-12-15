@@ -35,7 +35,10 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
             .Convert(m => m.Row.ReadNullableEnumField<EconomyTypes>(StarSystemSheetFields.EconomyType));
 
         Map(m => m.ExosuitUpgradeModules)
-            .Convert(m => m.Row.ReadEnumFields<ExoSuitUpgradeTypes>(StarSystemSheetFields.ExosuitUpgradeModules));
+            .Convert(m => m.Row.ReadEnumFields<ExoSuitUpgradeModuleTypes>(StarSystemSheetFields.ExosuitUpgradeModules));
+
+        Map(m => m.ExocraftUpgradeModules)
+            .Convert(m => m.Row.ReadEnumFields<ExocraftUpgradeModuleTypes>(StarSystemSheetFields.ExocraftUpgradeModules));
 
         Map(m => m.Faction).Convert(m => m.Row.ReadNullableEnumField<FactionTypes>(StarSystemSheetFields.Faction));
 
@@ -71,6 +74,10 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
                 StarSystemSheetFields.IsPhantomSystem,
                 StarSystemSheetFields.IsPhantomSystemIdentifier));
 
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(StarSystemSheetFields.DiscoveryDate));
+
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(StarSystemSheetFields.SurveyDate));
+
         Map(m => m.LightYearsFromCenter)
             .Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.LightYearsFromCenter));
 
@@ -78,11 +85,13 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
             .Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.LightYearsFromCenterAutoEstimate));
 
         Map(m => m.MultiToolUpdateTypes)
-            .Convert(m => m.Row.ReadEnumFields<MultiToolUpdateTypes>(StarSystemSheetFields.MultiToolUpdateTypes));
+            .Convert(m => m.Row.ReadEnumFields<MultiToolUpdateModuleTypes>(StarSystemSheetFields.MultiToolUpdateTypes));
+
+        Map(m => m.Bases).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Bases));
 
         Map(m => m.NumberOfMoons).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.NumberOfMoons));
 
-        Map(m => m.NumberOfMoons).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.NumberOfPlanets));
+        Map(m => m.NumberOfPlanets).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.NumberOfPlanets));
 
         Map(m => m.Sell).Convert(m => m.Row.ReadFloatFieldOrNull(StarSystemSheetFields.Sell));
 

@@ -106,6 +106,8 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
         Map(m => m.MineralExtractorCapacity)
             .Convert(m => m.Row.ReadIntFieldOrNull(PlayerBaseSheetFields.MineralExtractorCapacity));
 
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlayerBaseSheetFields.SurveyDate));
+
         Map(m => m.YAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(PlayerBaseSheetFields.YAxisPlanetCoordinate));
 

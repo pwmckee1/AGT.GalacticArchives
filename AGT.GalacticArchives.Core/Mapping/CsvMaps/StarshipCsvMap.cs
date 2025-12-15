@@ -87,6 +87,8 @@ public sealed class StarshipCsvMap : ClassMap<StarshipImport>
         Map(m => m.AccentColor)
             .Convert(m => m.Row.ReadNullableEnumField<ItemColorTypes>(StarshipSheetFields.AccentColor));
 
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(StarshipSheetFields.DiscoveryDate));
+
         Map(m => m.UpgradeModules)
             .Convert(m => m.Row.ReadEnumFields<StarshipUpgradeModuleTypes>(StarshipSheetFields.UpgradeModules));
     }
