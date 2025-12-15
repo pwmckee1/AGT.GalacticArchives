@@ -100,7 +100,7 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
 
         Map(m => m.HasGarden)
             .Convert(m => m.Row.ReadBoolFieldOrNull(
-                PlanetSheetFields.RingsOrGiant,
+                PlanetSheetFields.HasGarden,
                 PlanetSheetFields.HasGardenIndicator));
 
         Map(m => m.GameReleaseVersionNumber)
