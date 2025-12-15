@@ -22,8 +22,6 @@ public sealed class RegionCsvMap : ClassMap<RegionImport>
 
         Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.DocumentSequence));
 
-        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(RegionSheetFields.SurveyDate));
-
         Map(m => m.RegionAge).Convert(m => m.Row.ReadFloatFieldOrNull(RegionSheetFields.RegionAge));
 
         Map(m => m.LightYearsFromCenter).Convert(m => m.Row.ReadIntFieldOrNull(RegionSheetFields.LightYearsFromCenter));

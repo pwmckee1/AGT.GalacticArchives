@@ -45,12 +45,6 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
                 m.Row.ReadEnumFieldOrNull<PlayerBaseClassificationTypes>(
                     PlayerBaseSheetFields.PlayerBaseClassification));
 
-        Map(m => m.DateFinished).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlayerBaseSheetFields.DateFinished));
-
-        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlayerBaseSheetFields.SurveyDate));
-
-        Map(m => m.DateStarted).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlayerBaseSheetFields.DateStarted));
-
         Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(PlayerBaseSheetFields.DocumentSequence));
 
         Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(PlayerBaseSheetFields.Galaxy));

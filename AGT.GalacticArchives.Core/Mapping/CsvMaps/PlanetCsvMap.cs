@@ -75,8 +75,6 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
 
         Map(m => m.DayToxic).Convert(m => m.Row.ReadFloatFieldOrNull(PlanetSheetFields.DayToxic));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.DiscoveryDate));
-
         Map(m => m.GamePlatformType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(PlanetSheetFields.GamePlatformType));
 
@@ -139,15 +137,6 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
 
         Map(m => m.IsMoon)
             .Convert(m => m.Row.ReadBoolFieldOrNull(PlanetSheetFields.PlanetOrMoon, PlanetSheetFields.IsMoonIndicator));
-
-        Map(m => m.LegacyPCDiscoveryDate)
-            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.LegacyPCDiscoveryDate));
-
-        Map(m => m.LegacyPSDiscoveryDate)
-            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.LegacyPSDiscoveryDate));
-
-        Map(m => m.LegacyXboxDiscoveryDate)
-            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.LegacyXboxDiscoveryDate));
 
         Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(PlanetSheetFields.GameModeType));
 

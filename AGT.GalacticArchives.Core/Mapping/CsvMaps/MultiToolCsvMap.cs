@@ -33,8 +33,6 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
 
         Map(m => m.Damage).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.Damage));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(MultiToolSheetFields.DiscoveryDate));
-
         Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.DocumentSequence));
 
         Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(MultiToolSheetFields.Galaxy));

@@ -41,8 +41,6 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
         Map(m => m.FaunaDietArchetype)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaDietArchetypes>(FaunaSheetFields.FaunaDietArchetype));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.DiscoveryDate));
-
         Map(m => m.GamePlatformType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(FaunaSheetFields.GamePlatformType));
 
@@ -80,13 +78,6 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
 
         Map(m => m.HemisphereType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<HemisphereTypes>(FaunaSheetFields.HemisphereType));
-
-        Map(m => m.LegacyFaunaDatePC).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.LegacyFaunaDatePC));
-
-        Map(m => m.LegacyFaunaDatePS).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.LegacyFaunaDatePS));
-
-        Map(m => m.LegacyFaunaDateXbox)
-            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.LegacyFaunaDateXbox));
 
         Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(FaunaSheetFields.GameModeType));
 

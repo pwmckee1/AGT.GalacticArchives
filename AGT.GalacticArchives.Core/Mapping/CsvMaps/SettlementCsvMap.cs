@@ -32,8 +32,6 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
         Map(m => m.XAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.XAxisPlanetCoordinate));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(SettlementSheetFields.DiscoveryDate));
-
         Map(m => m.Economy).Convert(m => m.Row.ReadEnumFieldOrNull<EconomyTypes>(SettlementSheetFields.Economy));
 
         Map(m => m.Class).Convert(m => m.Row.ReadEnumFieldOrNull<ItemClassTypes>(SettlementSheetFields.Class));

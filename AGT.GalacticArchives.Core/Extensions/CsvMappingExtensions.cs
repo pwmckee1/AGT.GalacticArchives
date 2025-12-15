@@ -1,4 +1,3 @@
-using System.Globalization;
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Globalization;
 using CsvHelper;
@@ -60,20 +59,6 @@ public static class CsvMappingExtensions
     {
         string? value = row.GetField(propertyName);
         return value?.Trim().Equals(identifier, StringComparison.OrdinalIgnoreCase) ?? false;
-    }
-
-    public static DateTimeOffset? ReadDateTimeOffsetFieldOrNull(this IReaderRow row, string propertyName)
-    {
-        string? value = row.GetField(propertyName);
-        return !string.IsNullOrEmpty(value) &&
-               DateTimeOffset.TryParseExact(
-                   value,
-                   BusinessRuleConstants.ValidDateTimeFormats,
-                   DateTimeFormatInfo.InvariantInfo,
-                   DateTimeStyles.None,
-                   out var result)
-            ? result
-            : null;
     }
 
     public static HashSet<TEnum> ReadEnumFields<TEnum>(this IReaderRow row, string headerColumnName)
