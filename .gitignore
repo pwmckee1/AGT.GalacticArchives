@@ -10,5 +10,3 @@ firebase-credentials.json
 *.log
 *.user
 firestore-commands.txt
-.firestore-data
-firestore-data/
