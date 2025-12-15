@@ -87,11 +87,15 @@ public class MultiToolManager(
     {
         if (multiTool.PlanetId.HasValue)
         {
-            multiTool.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId);
+            multiTool.Planet = multiTool.PlanetId.HasValue
+                ? await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId)
+                : null;
         }
         else
         {
-            multiTool.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
+            multiTool.StarSystem = multiTool.StarSystemId.HasValue
+                ? await galacticEntityManager.GetStarSystemHierarchyAsync(parentId)
+                : null;
         }
     }
 

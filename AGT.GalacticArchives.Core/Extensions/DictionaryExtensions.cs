@@ -101,6 +101,40 @@ public static class DictionaryExtensions
         // Handle nullable types
         var underlyingType = Nullable.GetUnderlyingType(targetType) ?? targetType;
 
+        // Date/time: Firestore Timestamp gets normalized to DateTime, but your model might use DateTimeOffset
+        if (underlyingType == typeof(DateTimeOffset))
+        {
+            switch (value)
+            {
+                case DateTimeOffset dto:
+                    return dto;
+
+                case DateTime dt:
+                {
+                    // Treat unspecified as UTC to match Firestore Timestamp semantics
+                    if (dt.Kind == DateTimeKind.Unspecified)
+                    {
+                        dt = DateTime.SpecifyKind(dt, DateTimeKind.Utc);
+                    }
+
+                    return new DateTimeOffset(dt);
+                }
+
+                case string s when DateTimeOffset.TryParse(
+                    s,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.RoundtripKind,
+                    out var parsedDto):
+                    return parsedDto;
+            }
+        }
+
+        // Optional: if your target is DateTime but you got DateTimeOffset, convert back.
+        if (underlyingType == typeof(DateTime) && value is DateTimeOffset asDto)
+        {
+            return asDto.UtcDateTime;
+        }
+
         // Enums (Firestore may return string (preferred) or long (legacy docs))
         if (underlyingType.IsEnum)
         {

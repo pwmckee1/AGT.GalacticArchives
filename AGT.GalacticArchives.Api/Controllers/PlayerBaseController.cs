@@ -8,7 +8,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
-[Route("playerBase")]
+[Route("player-base")]
 public class PlayerBaseController(IPlayerBaseService playerBaseService) : ControllerBase
 {
     [HttpGet]

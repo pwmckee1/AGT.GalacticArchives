@@ -31,7 +31,7 @@ public class Settlement : DatabaseGameEntity
 
     public int? Maintenance { get; set; }
 
-    public int? Sentinel { get; set; }
+    public int? Sentinels { get; set; }
 
     public string? Industry { get; set; }
 

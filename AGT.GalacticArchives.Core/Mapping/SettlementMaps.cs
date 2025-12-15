@@ -14,15 +14,10 @@ public class SettlementMaps : Profile
         CreateMap<Dictionary<string, object?>, Settlement>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<SettlementImport, Settlement>()
-            .ForMember(d => d.Name, o => o.MapFrom(s => s.StarSystemName))
-            .ForMember(d => d.RegionId, o => o.Ignore())
+            .ForMember(d => d.Name, o => o.MapFrom(s => s.SettlementName))
             .ForMember(d => d.Region, o => o.Ignore())
-            .ForMember(d => d.StarSystemId, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
-            .ForMember(d => d.PlanetId, o => o.Ignore())
-            .ForMember(d => d.Planet, o => o.Ignore())
-            .ForMember(d => d.YAxisPlanetCoordinate, o => o.Ignore())
-            .ForMember(d => d.XAxisPlanetCoordinate, o => o.Ignore());
+            .ForMember(d => d.Planet, o => o.Ignore());
 
         CreateMap<Settlement, SettlementRequest>();
         CreateMap<SettlementRequest, Settlement>()

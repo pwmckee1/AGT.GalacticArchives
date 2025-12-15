@@ -6,5 +6,5 @@ public class PointOfInterestResponse : GameEntityResponse
 {
     public string? PointOfInterestName { get; set; }
 
-    public LocationTypes? Type { get; set; }
+    public LocationTypes? LocationType { get; set; }
 }

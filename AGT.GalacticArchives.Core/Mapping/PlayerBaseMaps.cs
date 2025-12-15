@@ -14,15 +14,10 @@ public class PlayerBaseMaps : Profile
         CreateMap<Dictionary<string, object?>, PlayerBase>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<PlayerBaseImport, PlayerBase>()
-            .ForMember(d => d.Name, o => o.MapFrom(s => s.StarSystemName))
-            .ForMember(d => d.RegionId, o => o.Ignore())
+            .ForMember(d => d.Name, o => o.MapFrom(s => s.PlayerBaseName))
             .ForMember(d => d.Region, o => o.Ignore())
-            .ForMember(d => d.StarSystemId, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
-            .ForMember(d => d.PlanetId, o => o.Ignore())
-            .ForMember(d => d.Planet, o => o.Ignore())
-            .ForMember(d => d.YAxisPlanetCoordinate, o => o.Ignore())
-            .ForMember(d => d.XAxisPlanetCoordinate, o => o.Ignore());
+            .ForMember(d => d.Planet, o => o.Ignore());
 
         CreateMap<PlayerBase, PlayerBaseRequest>();
         CreateMap<PlayerBaseRequest, PlayerBase>()

@@ -906,7 +906,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sufficiently Powered.
+        ///   Looks up a localized string similar to sufficiently powered.
         /// </summary>
         public static string SufficientlyPowered {
             get {

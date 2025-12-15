@@ -26,14 +26,14 @@ public static class PlanetSheetFields
     public const string DayToxic = "Day Toxic";
     public const string DiscoveredLinkOnWiki = "Discovered Link on Wiki";
     public const string DiscoveryDate = "Discovery Date";
-    public const string DiscoveryPlatform = "Discovery Platform";
+    public const string GamePlatformType = "Discovery Platform";
     public const string DiscoveredBy = "Discoverer Gamertag";
     public const string DocumentSequence = "Document Sequence";
     public const string ExternalLink1 = "External Link 1";
     public const string ExternalLink2 = "External Link 2";
     public const string ExtremeWeatherExcludingMegaExotic = "Extreme Weather (Excludes Mega Exotic)";
     public const string ExtremeWeatherIncludingMegaExotic = "Extreme Weather for Mega-Exotic/ Waterworld Manual Entry";
-    public const string Extras = "Extra";
+    public const string Extras = "Extras";
     public const string Fauna = "Fauna";
     public const string FaunaLevelCategory = "Fauna";
     public const string FloraLevelCategory = "Flora";
@@ -61,7 +61,7 @@ public static class PlanetSheetFields
     public const string NumberOfFauna = "Number of Fauna";
     public const string OriginalPlanetName = "Original Planet Name (Before renaming)";
     public const string OtherNotes = "Other Notes";
-    public const string PlanetGlyphs = "Planet Glyphs";
+    public const string GlyphHexCode = "Planet Glyphs";
     public const string PlanetIdInSystem = "Planet ID in system";
     public const string PlanetMoonMatch = "Planet- moon match";
     public const string PlanetNameAllPlatforms = "Planet Name (All platforms)";
@@ -69,19 +69,19 @@ public static class PlanetSheetFields
     public const string PlanetOrMoonAddedInOrigins = "Planet/moon Added in Origins?";
     public const string PortalRepository = "Portal Repository";
     public const string PrimaryCoreElement = "Primary Core Element";
-    public const string PrimaryResource = "Primary Resource";
+    public const string PrimaryResources = "Primary Resource";
     public const string RawIngredients = "Raw Ingredients";
     public const string Region = "Region";
     public const string RegionName = "Region name";
     public const string ResearchTeam = "Research Team";
     public const string RingsOrGiant = "Rings or Giant?";
     public const string SentinelActivity = "Sentinel";
-    public const string SpecialResource = "Special A";
+    public const string SpecialResources = "Special A";
     public const string StarSystemName = "System Name";
     public const string SummaryInfo = "Summary Info";
     public const string Survey = "Survey";
     public const string SurveyDate = "Survey Date";
-    public const string GameReleaseName = "Survey Release Era";
+    public const string GameRelease = "Survey Release Era";
     public const string SurveyedBy = "Surveyor Gamertag";
     public const string System = "System";
     public const string PlanetTerrain = "Terrain";
@@ -104,7 +104,7 @@ public static class PlanetSheetFields
     public const string UnderwaterNightTemp = "Underwater Night Temp (celsius)";
     public const string PlanetWeather = "Weather";
     public const string WikiLink = "Wiki Link";
-    public const string GameVersionNumberForPage = "Game Version Number for Page";
+    public const string GameReleaseVersionNumber = "Game Version Number for Page";
     public const string HistoricalPlanetDiscoverCreditBeforeReset = "Historical Planet Discover Credit Before Reset";
     public const string HistoricalPlanetNameLastKnownEra = "Historical Planet Name (Last Known Era)";
     public const string HistoricalPlanetNamePlatform = "Historical Planet Name (Platform)";
@@ -126,4 +126,6 @@ public static class PlanetSheetFields
     public const string IsMoonIndicator = "Moon";
     public const string PlanetOrMoonAddedInOriginsIndicator = "Y";
     public const string PlanetId = "PlanetId";
+    public const string RegionId = "RegionId";
+    public const string StarSystemId = "StarSystemId";
 }

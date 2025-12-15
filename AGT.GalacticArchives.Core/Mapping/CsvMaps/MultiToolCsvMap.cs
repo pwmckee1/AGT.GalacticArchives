@@ -18,16 +18,22 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
 
         Map(m => m.MultiToolId).Convert(m => m.Row.ReadGuidFieldOrNull(MultiToolSheetFields.MultiToolId));
 
-        Map(m => m.Category)
-            .Convert(m => m.Row.ReadEnumFieldOrNull<MultiToolCategoryTypes>(MultiToolSheetFields.Category));
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(MultiToolSheetFields.RegionId));
 
-        Map(m => m.Class).Convert(m => m.Row.ReadEnumFieldOrNull<ItemClassTypes>(MultiToolSheetFields.Class));
+        Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(MultiToolSheetFields.StarSystemId));
 
-        Map(m => m.Cost).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.Class));
+        Map(m => m.PlanetId).Convert(m => m.Row.ReadGuidFieldOrNull(MultiToolSheetFields.PlanetId));
+
+        Map(m => m.MultiToolCategory)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<MultiToolCategoryTypes>(MultiToolSheetFields.MultiToolCategory));
+
+        Map(m => m.ItemClass).Convert(m => m.Row.ReadEnumFieldOrNull<ItemClassTypes>(MultiToolSheetFields.ItemClass));
+
+        Map(m => m.Cost).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.ItemClass));
 
         Map(m => m.Damage).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.Damage));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(MultiToolSheetFields.DiscoveryDate));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(MultiToolSheetFields.DiscoveryDate));
 
         Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.DocumentSequence));
 
@@ -54,7 +60,7 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
 
         Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(MultiToolSheetFields.GameModeType));
 
-        Map(m => m.Platform).Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(MultiToolSheetFields.Platform));
+        Map(m => m.GamePlatformType).Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(MultiToolSheetFields.GamePlatformType));
 
         Map(m => m.PrimaryColor)
             .Convert(m => m.Row.ReadEnumFieldOrNull<ItemColorTypes>(MultiToolSheetFields.PrimaryColor));

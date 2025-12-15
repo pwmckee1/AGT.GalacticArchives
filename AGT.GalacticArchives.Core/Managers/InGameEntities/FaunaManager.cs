@@ -23,7 +23,9 @@ public class FaunaManager(
             return null;
         }
 
-        fauna.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(fauna.PlanetId!.Value);
+        fauna.Planet = fauna.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(fauna.PlanetId!.Value)
+            : null;
 
         return fauna;
     }

@@ -18,6 +18,8 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
 
         Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(StarSystemSheetFields.StarSystemId));
 
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(StarSystemSheetFields.RegionId));
+
         Map(m => m.Galaxy).Convert(m => m.Row.ReadNullableEnumField<GalaxyTypes>(StarSystemSheetFields.GalaxyName));
 
         Map(m => m.Bases).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Bases));
@@ -46,6 +48,11 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
             .Convert(m => m.Row.ReadBoolFieldOrNull(
                 StarSystemSheetFields.HasWater,
                 StarSystemSheetFields.HasWaterIdentifier));
+
+        Map(m => m.HasCenterAccess)
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                StarSystemSheetFields.HasCenterAccess,
+                StarSystemSheetFields.HasCenterAccessIdentifier));
 
         Map(m => m.SSDec).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Hex2DecSystemId));
 
@@ -98,7 +105,7 @@ public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
 
         Map(m => m.ZZDec).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.ZZDec));
 
-        Map(m => m.Platform).Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(StarSystemSheetFields.Platform));
+        Map(m => m.GamePlatformType).Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(StarSystemSheetFields.GamePlatformType));
 
         Map(m => m.Color).Convert(m => m.Row.ReadEnumFieldOrNull<StarColorTypes>(StarSystemSheetFields.Color));
     }

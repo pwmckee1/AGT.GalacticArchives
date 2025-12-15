@@ -28,7 +28,7 @@ public static class StarshipSheetFields
     public const string StarshipName = "Starship Name";
     public const string Pilot = "Pilot";
     public const string PlanetName = "Planet";
-    public const string Platform = "Platform";
+    public const string GamePlatformType = "Platform";
     public const string GlyphHexCode = "Portal Glyphs";
     public const string PrimaryColor = "Primary Color";
     public const string RegionName = "Region";
@@ -49,7 +49,10 @@ public static class StarshipSheetFields
     public const string YAxisPlanetCoordinate = "YY (first coord)";
     public const string WingType = "Wings?";
     public const string UpgradeModules = "Upgrade Modules";
-    public const string ReleaseNumber = "Release Number";
-    public const string ReleaseDate = "Release Date";
+    public const string GameReleaseVersionNumber = "Release Number";
+    public const string GameReleaseDate = "Release Date";
     public const string StarshipId = "StarshipId";
+    public const string RegionId = "RegionId";
+    public const string StarSystemId = "StarSystemId";
+    public const string PlanetId = "PlanetId";
 }

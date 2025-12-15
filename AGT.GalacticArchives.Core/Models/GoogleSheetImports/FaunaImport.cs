@@ -43,7 +43,7 @@ public class FaunaImport : IImportFormFile
     public string? DiscoveredBy { get; set; }
 
     [Name(FaunaSheetFields.DiscoveryDate)]
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
     [Name(FaunaSheetFields.DiscoveredLinkOnWiki)]
     public string? DiscoveredLinkOnWiki { get; set; }
@@ -90,23 +90,23 @@ public class FaunaImport : IImportFormFile
     [Name(FaunaSheetFields.Gender2ScanMaxWeight)]
     public float? Gender2ScanMaxWeight { get; set; }
 
-    [Name(FaunaSheetFields.GenusType)]
-    public FaunaGenusTypes? GenusType { get; set; }
+    [Name(FaunaSheetFields.FaunaGenusType)]
+    public string? FaunaGenusType { get; set; }
 
-    [Name(FaunaSheetFields.GenusSubtype)]
-    public FaunaGenusSubtypes? GenusSubtype { get; set; }
+    [Name(FaunaSheetFields.FaunaGenusSubtype)]
+    public string? FaunaGenusSubtype { get; set; }
 
     [Name(FaunaSheetFields.HemisphereType)]
     public HemisphereTypes? HemisphereType { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDatePC)]
-    public DateTime? LegacyFaunaDatePC { get; set; }
+    public DateTimeOffset? LegacyFaunaDatePC { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDatePS)]
-    public DateTime? LegacyFaunaDatePS { get; set; }
+    public DateTimeOffset? LegacyFaunaDatePS { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDateXbox)]
-    public DateTime? LegacyFaunaDateXbox { get; set; }
+    public DateTimeOffset? LegacyFaunaDateXbox { get; set; }
 
     [Name(FaunaSheetFields.LegacyFaunaDiscovererPC)]
     public string? LegacyFaunaDiscovererPC { get; set; }
@@ -141,8 +141,8 @@ public class FaunaImport : IImportFormFile
     [Name(FaunaSheetFields.NMSWikiLink)]
     public string? NMSWikiLink { get; set; }
 
-    [Name(FaunaSheetFields.Notes)]
-    public string? Notes { get; set; }
+    [Name(FaunaSheetFields.FaunaInGameNotes)]
+    public FaunaInGameNoteTypes? FaunaInGameNotes { get; set; }
 
     [Name(FaunaSheetFields.OriginalName)]
     public string? OriginalName { get; set; }
@@ -160,7 +160,7 @@ public class FaunaImport : IImportFormFile
     public string? RegionName { get; set; }
 
     [Name(FaunaSheetFields.Release)]
-    public string? Release { get; set; }
+    public string? GameRelease { get; set; }
 
     [Name(FaunaSheetFields.ResearchTeam)]
     public string? ResearchTeam { get; set; }
@@ -172,5 +172,14 @@ public class FaunaImport : IImportFormFile
     public string? StarSystemName { get; set; }
 
     [Name(FaunaSheetFields.VersionRelease)]
-    public string? VersionRelease { get; set; }
+    public string? GameReleaseVersionNumber { get; set; }
+
+    [Name(FaunaSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(FaunaSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(FaunaSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

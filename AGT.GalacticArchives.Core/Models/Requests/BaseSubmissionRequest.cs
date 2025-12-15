@@ -22,17 +22,17 @@ public abstract class BaseSubmissionRequest
 
     public string? SurveyorName { get; set; }
 
-    public DateTime? DateOfSurvey { get; set; }
+    public DateTimeOffset? DateOfSurvey { get; set; }
 
     public string? DiscoveredBy { get; set; }
 
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
-    public DateTime? RegionDiscoveryDate { get; set; }
+    public DateTimeOffset? RegionDiscoveryDate { get; set; }
 
-    public DateTime? StarSystemDiscoveryDate { get; set; }
+    public DateTimeOffset? StarSystemDiscoveryDate { get; set; }
 
-    public DateTime? PlanetDiscoveryDate { get; set; }
+    public DateTimeOffset? PlanetDiscoveryDate { get; set; }
 
     public string? StarSystemDiscovererName { get; set; }
 
@@ -42,7 +42,7 @@ public abstract class BaseSubmissionRequest
 
     public float? Longitude { get; set; }
 
-    public GamePlatformTypes? PlatformType { get; set; }
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     public GameRelease? GameRelease { get; set; }
 

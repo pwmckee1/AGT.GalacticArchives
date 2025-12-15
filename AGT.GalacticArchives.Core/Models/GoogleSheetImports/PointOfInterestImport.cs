@@ -12,7 +12,7 @@ public class PointOfInterestImport : IImportFormFile
     public Guid? PointOfInterestId { get; set; }
 
     [Name(PointOfInterestSheetFields.SurveyDate)]
-    public DateTime? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
     [Name(PointOfInterestSheetFields.Galaxy)]
     public GalaxyTypes? Galaxy { get; set; }
@@ -49,4 +49,13 @@ public class PointOfInterestImport : IImportFormFile
 
     [Name(PointOfInterestSheetFields.DocumentSequence)]
     public float? DocumentSequence { get; set; }
+
+    [Name(PointOfInterestSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(PointOfInterestSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(PointOfInterestSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

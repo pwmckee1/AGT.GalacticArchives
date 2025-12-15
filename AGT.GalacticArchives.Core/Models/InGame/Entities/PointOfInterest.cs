@@ -9,5 +9,5 @@ public class PointOfInterest : DatabaseGameEntity
 
     public override Guid EntityId => PointOfInterestId;
 
-    public LocationTypes? Type { get; set; }
+    public LocationTypes? LocationType { get; set; }
 }

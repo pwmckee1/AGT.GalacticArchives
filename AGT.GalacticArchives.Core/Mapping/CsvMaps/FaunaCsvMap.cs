@@ -17,8 +17,17 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
 
         Map(m => m.FaunaId).Convert(m => m.Row.ReadGuidFieldOrNull(FaunaSheetFields.FaunaId));
 
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(FaunaSheetFields.RegionId));
+
+        Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(FaunaSheetFields.StarSystemId));
+
+        Map(m => m.PlanetId).Convert(m => m.Row.ReadGuidFieldOrNull(FaunaSheetFields.PlanetId));
+
         Map(m => m.ActivityType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaCircadianTypes>(FaunaSheetFields.ActivityType));
+
+        Map(m => m.FaunaBaitType)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaBaitTypes>(FaunaSheetFields.FaunaBaitType));
 
         Map(m => m.BehaviourType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaBehaviorTypes>(FaunaSheetFields.BehaviourType));
@@ -32,7 +41,7 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
         Map(m => m.FaunaDietArchetype)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaDietArchetypes>(FaunaSheetFields.FaunaDietArchetype));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(FaunaSheetFields.DiscoveryDate));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.DiscoveryDate));
 
         Map(m => m.GamePlatformType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(FaunaSheetFields.GamePlatformType));
@@ -69,25 +78,23 @@ public sealed class FaunaCsvMap : ClassMap<FaunaImport>
         Map(m => m.Gender2ScanMaxWeight)
             .Convert(m => m.Row.ReadFloatFieldOrNull(FaunaSheetFields.Gender2ScanMaxWeight));
 
-        Map(m => m.GenusType).Convert(m => m.Row.ReadEnumFieldOrNull<FaunaGenusTypes>(FaunaSheetFields.GenusType));
-
-        Map(m => m.GenusSubtype)
-            .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaGenusSubtypes>(FaunaSheetFields.GenusSubtype));
-
         Map(m => m.HemisphereType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<HemisphereTypes>(FaunaSheetFields.HemisphereType));
 
-        Map(m => m.LegacyFaunaDatePC).Convert(m => m.Row.ReadDateTimeFieldOrNull(FaunaSheetFields.LegacyFaunaDatePC));
+        Map(m => m.LegacyFaunaDatePC).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.LegacyFaunaDatePC));
 
-        Map(m => m.LegacyFaunaDatePS).Convert(m => m.Row.ReadDateTimeFieldOrNull(FaunaSheetFields.LegacyFaunaDatePS));
+        Map(m => m.LegacyFaunaDatePS).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.LegacyFaunaDatePS));
 
         Map(m => m.LegacyFaunaDateXbox)
-            .Convert(m => m.Row.ReadDateTimeFieldOrNull(FaunaSheetFields.LegacyFaunaDateXbox));
+            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(FaunaSheetFields.LegacyFaunaDateXbox));
 
         Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(FaunaSheetFields.GameModeType));
 
         Map(m => m.ProductionType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaProductionTypes>(FaunaSheetFields.ProductionType));
+
+        Map(m => m.FaunaInGameNotes)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaInGameNoteTypes>(FaunaSheetFields.FaunaInGameNotes));
 
         Map(m => m.FaunaRarityType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<FaunaRarityTypes>(FaunaSheetFields.FaunaRarityType));

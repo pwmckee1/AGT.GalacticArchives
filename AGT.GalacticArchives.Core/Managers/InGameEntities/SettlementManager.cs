@@ -23,7 +23,9 @@ public class SettlementManager(
             return null;
         }
 
-        settlement.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
+        settlement.Planet = settlement.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value)
+            : null;
 
         return settlement;
     }
@@ -51,7 +53,9 @@ public class SettlementManager(
 
             foreach (var settlement in settlements)
             {
-                settlement.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
+                settlement.Planet = settlement.PlanetId.HasValue
+                    ? await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value)
+                    : null;
             }
         }
 

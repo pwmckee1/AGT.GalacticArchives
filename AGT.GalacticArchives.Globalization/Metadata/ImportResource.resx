@@ -175,7 +175,7 @@
       <value>Planet</value>
   </data>
   <data name="PlayerBaseSheetName" xml:space="preserve">
-      <value>BaseDB</value>
+      <value>Base</value>
   </data>
   <data name="PointOfInterestSheetName" xml:space="preserve">
       <value>POI</value>
@@ -199,6 +199,6 @@
       <value>System</value>
   </data>
   <data name="UnableToImportError" xml:space="preserve">
-      <value>The {0} sheet could not be processed. Review the import file to ensure it is the {0} DB sheet and that no invalid values are entered</value>
+      <value>The {0} sheet could not be processed. Review the import file to ensure it is the {0} DB sheet and that no invalid values are entered. The following error occured: {1}.</value>
   </data>
 </root>

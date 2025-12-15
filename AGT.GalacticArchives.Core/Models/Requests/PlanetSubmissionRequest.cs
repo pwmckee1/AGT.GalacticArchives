@@ -50,7 +50,7 @@ public class PlanetSubmissionRequest : BaseSubmissionRequest
 
     public float? PlanetAge { get; set; }
 
-    public AtmosphereMaterialTypes? AtmosphereGas { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas { get; set; }
 
     public float? AtmosphereGasComposition { get; set; }
 

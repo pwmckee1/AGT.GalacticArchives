@@ -16,7 +16,7 @@ public class MultiTool : DatabaseGameEntity
 
     public MultiToolCategoryTypes? MultiToolCategory { get; set; }
 
-    public ItemClassTypes? QualityClass { get; set; }
+    public ItemClassTypes? ItemClass { get; set; }
 
     public int? TechSlots { get; set; }
 
@@ -41,4 +41,6 @@ public class MultiTool : DatabaseGameEntity
     public string? AcquisitionGuidance { get; set; }
 
     public string? ResearchTeam { get; set; }
+
+    public string? UserNotes { get; set; }
 }

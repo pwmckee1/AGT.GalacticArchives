@@ -9,6 +9,8 @@ public class Starship : DatabaseGameEntity
 
     public override Guid EntityId => StarshipId;
 
+    public string? StarshipName { get; set; }
+
     public StarshipLocationTypes? Location { get; set; }
 
     public string? Pilot { get; set; }
@@ -37,8 +39,6 @@ public class Starship : DatabaseGameEntity
 
     public int? Cost { get; set; }
 
-    public string? DiscoveredLinkOnWiki { get; set; }
-
     public float? Damage { get; set; }
 
     public float? Shield { get; set; }
@@ -59,7 +59,7 @@ public class Starship : DatabaseGameEntity
 
     public ItemColorTypes? AccentColor { get; set; }
 
-    public HashSet<StarshipUpgradeTypes?> UpgradeModules { get; set; } = [];
+    public HashSet<StarshipUpgradeTypes> UpgradeModules { get; set; } = [];
 
     public string? ResearchTeam { get; set; }
 

@@ -91,13 +91,13 @@ public class StarshipImport : IImportFormFile
     public string? DiscoveredLinkOnWiki { get; set; }
 
     [Name(StarshipSheetFields.DiscoveryDate)]
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
     [Name(StarshipSheetFields.GameModeType)]
     public GameModeTypes? GameModeType { get; set; }
 
-    [Name(StarshipSheetFields.Platform)]
-    public GamePlatformTypes? Platform { get; set; }
+    [Name(StarshipSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     [Name(StarshipSheetFields.GameRelease)]
     public string? GameRelease { get; set; }
@@ -147,9 +147,18 @@ public class StarshipImport : IImportFormFile
     [Name(StarshipSheetFields.ResearchTeam)]
     public string? ResearchTeam { get; set; }
 
-    [Name(StarshipSheetFields.ReleaseNumber)]
-    public string? ReleaseNumber { get; set; }
+    [Name(StarshipSheetFields.GameReleaseVersionNumber)]
+    public string? GameReleaseVersionNumber { get; set; }
 
-    [Name(StarshipSheetFields.ReleaseDate)]
-    public DateTime? ReleaseDate { get; set; }
+    [Name(StarshipSheetFields.GameReleaseDate)]
+    public DateTimeOffset? GameReleaseDate { get; set; }
+
+    [Name(StarshipSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(StarshipSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(StarshipSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

@@ -16,17 +16,17 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.AcquisitionGuidance)]
     public string? AcquisitionGuidance { get; set; }
 
-    [Name(MultiToolSheetFields.Category)]
-    public MultiToolCategoryTypes? Category { get; set; }
+    [Name(MultiToolSheetFields.MultiToolCategory)]
+    public MultiToolCategoryTypes? MultiToolCategory { get; set; }
 
-    [Name(MultiToolSheetFields.Class)]
-    public ItemClassTypes? Class { get; set; }
+    [Name(MultiToolSheetFields.ItemClass)]
+    public ItemClassTypes? ItemClass { get; set; }
 
     [Name(MultiToolSheetFields.Civilization)]
     public string? Civilization { get; set; }
 
-    [Name(MultiToolSheetFields.Coordinates)]
-    public string? Coordinates { get; set; }
+    [Name(MultiToolSheetFields.GalacticCoordinates)]
+    public string? GalacticCoordinates { get; set; }
 
     [Name(MultiToolSheetFields.Cost)]
     public int? Cost { get; set; }
@@ -41,7 +41,7 @@ public class MultiToolImport : IImportFormFile
     public string? DiscoveredLinkOnWiki { get; set; }
 
     [Name(MultiToolSheetFields.DiscoveryDate)]
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
     [Name(MultiToolSheetFields.DocumentSequence)]
     public int? DocumentSequence { get; set; }
@@ -73,11 +73,11 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.PlanetName)]
     public string? PlanetName { get; set; }
 
-    [Name(MultiToolSheetFields.Platform)]
-    public GamePlatformTypes? Platform { get; set; }
+    [Name(MultiToolSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
-    [Name(MultiToolSheetFields.PortalGlyphs)]
-    public string? PortalGlyphs { get; set; }
+    [Name(MultiToolSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(MultiToolSheetFields.PrimaryColor)]
     public ItemColorTypes? PrimaryColor { get; set; }
@@ -85,8 +85,8 @@ public class MultiToolImport : IImportFormFile
     [Name(MultiToolSheetFields.RegionName)]
     public string? RegionName { get; set; }
 
-    [Name(MultiToolSheetFields.Release)]
-    public string? Release { get; set; }
+    [Name(MultiToolSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
 
     [Name(MultiToolSheetFields.ResearchTeam)]
     public string? ResearchTeam { get; set; }
@@ -117,4 +117,13 @@ public class MultiToolImport : IImportFormFile
 
     [Name(MultiToolSheetFields.YAxisPlanetCoordinate)]
     public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(MultiToolSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(MultiToolSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(MultiToolSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

@@ -16,7 +16,7 @@ public static class StarSystemSheetFields
     public const string DiscoveredLinkOnWiki = "Discovered Link on Wiki";
     public const string DiscoveredNotes = "Discovered Notes";
     public const string DiscoveryDate = "Discovery Date";
-    public const string Platform = "Discovery Platform";
+    public const string GamePlatformType = "Discovery Platform";
     public const string DocumentSequence = "Doc Seq";
     public const string EconomyType = "Economy";
     public const string Evolution = "Evolution";
@@ -49,7 +49,7 @@ public static class StarSystemSheetFields
     public const string LightYearsFromCenter = "LY from center (manual observation)";
     public const string LightYearsFromCenterAutoEstimate = "LY from center (auto estimate)";
     public const string LocInfoNotes = "Loc Info Notes";
-    public const string MTTextNotes = "MT Text Notes";
+    public const string MultiToolNotes = "MT Text Notes";
     public const string MultiToolUpdateTypes = "Multi-Tool S-Class Upgrade Modules";
     public const string StarSystemName = "System Name (Unique entry search key)";
     public const string NMSWikiLink = "NMS wiki Link";
@@ -88,5 +88,7 @@ public static class StarSystemSheetFields
     public const string IsDissonantIdentifier = "Y";
     public const string IsGiantSystemIdentifier = "Y";
     public const string IsPhantomSystemIdentifier = "Y";
+    public const string HasCenterAccessIdentifier = "Y";
     public const string StarSystemId = "StarSystemId";
+    public const string RegionId = "RegionId";
 }

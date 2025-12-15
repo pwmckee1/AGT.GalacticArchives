@@ -19,11 +19,11 @@ public class SettlementImport : IImportFormFile
     [Name(SettlementSheetFields.Class)]
     public ItemClassTypes? Class { get; set; }
 
-    [Name(SettlementSheetFields.Civilized)]
-    public string? Civilized { get; set; }
+    [Name(SettlementSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(SettlementSheetFields.DiscoveryDate)]
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
     [Name(SettlementSheetFields.Economy)]
     public EconomyTypes? Economy { get; set; }
@@ -40,8 +40,8 @@ public class SettlementImport : IImportFormFile
     [Name(SettlementSheetFields.Maintenance)]
     public int? Maintenance { get; set; }
 
-    [Name(SettlementSheetFields.GameMode)]
-    public GameModeTypes? GameMode { get; set; }
+    [Name(SettlementSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
     [Name(SettlementSheetFields.SettlementName)]
     public string? SettlementName { get; set; }
@@ -90,4 +90,13 @@ public class SettlementImport : IImportFormFile
 
     [Name(SettlementSheetFields.DocumentSequence)]
     public int? DocumentSequence { get; set; }
+
+    [Name(SettlementSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(SettlementSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(SettlementSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

@@ -225,6 +225,10 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>StarshipResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
+        <EmbeddedResource Update="Planet\EdibleRawMaterialTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EdibleRawMaterialTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -487,6 +491,11 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>StarshipResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\EdibleRawMaterialTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EdibleRawMaterialTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

@@ -15,61 +15,59 @@ public class PlanetResponse : GameEntityResponse
 
     public string? PlanetMoonMatch { get; set; }
 
-    public string? PlanetOrMoon { get; set; }
+    public bool? IsPlanet { get; set; }
 
-    public string? RingsOrGiant { get; set; }
+    public bool? IsMoon { get; set; }
+
+    public bool? HasRings { get; set; }
+
+    public bool? IsGasGiant { get; set; }
 
     public int? PlanetIdInSystem { get; set; }
 
-    public BiomeTypes? BiomeType { get; set; }
+    public BiomeTypes? PlanetBiomeType { get; set; }
 
-    public BiomeSubTypes? BiomeDescription { get; set; }
+    public BiomeSubTypes? PlanetBiomeDescription { get; set; }
 
     public bool? IsInfected { get; set; }
 
-    public TerrainTypes? Terrain { get; set; }
+    public TerrainTypes? PlanetTerrain { get; set; }
 
-    public LandTypes? TypeOfLand { get; set; }
+    public LandTypes? PlanetLandType { get; set; }
 
-    public LandArchetypes? LandArchetype { get; set; }
+    public LandArchetypes? ArchetypeOfLand { get; set; }
 
-    public WeatherTypes? Weather { get; set; }
+    public WeatherTypes? PlanetWeather { get; set; }
 
     public PlanetExtremeWeatherTypes? ExtremeWeatherExcludingMegaExotic { get; set; }
 
+    public PlanetExtremeWeatherTypes? ExtremeWeatherIncludingMegaExotic { get; set; }
+
     public bool? HasMegaExoticExtremeWeather { get; set; }
 
-    public HarvestedMaterialType? PrimaryResource1 { get; set; }
+    public HashSet<HarvestedMaterialTypes> PrimaryResources { get; set; } = [];
 
-    public HarvestedMaterialType? PrimaryResource2 { get; set; }
+    public HarvestedMaterialTypes? BiomeResource { get; set; }
 
-    public HarvestedMaterialType? PrimaryResource3 { get; set; }
-
-    public HarvestedMaterialType? BiomeResource { get; set; }
-
-    public HarvestedMaterialType? AtmosphereResource { get; set; }
+    public HarvestedMaterialTypes? AtmosphereResource { get; set; }
 
     public AtmosphereColorTypes? AtmosphereDaytimeColor { get; set; }
 
-    public PlanetPropertyTypes? SpecialA { get; set; }
+    public HashSet<PlanetPropertyTypes> SpecialResources { get; set; } = [];
 
-    public UniqueMaterialTypes? ExtrasA { get; set; }
-
-    public UniqueMaterialTypes? ExtrasB { get; set; }
-
-    public UniqueMaterialTypes? ExtrasC { get; set; }
+    public HashSet<UniqueMaterialTypes> Extras { get; set; } = [];
 
     public GlitchMaterialTypes? Glitches { get; set; }
 
-    public string? AssignedRawIngredient { get; set; }
+    public EdibleMaterialTypes? AssignedRawIngredient { get; set; }
 
-    public HashSet<EdibleMaterialTypes?> RawIngredients { get; set; } = [];
+    public HashSet<EdibleRawMaterialTypes> RawIngredients { get; set; } = [];
 
-    public SentinelActivityTypes? Sentinel { get; set; }
+    public SentinelActivityTypes? SentinelActivity { get; set; }
 
-    public PlanetBiotaLevelTypes? Flora { get; set; }
+    public PlanetBiotaLevelTypes? FloraLevelCategory { get; set; }
 
-    public PlanetBiotaLevelTypes? FaunaCategory { get; set; }
+    public PlanetBiotaLevelTypes? FaunaLevelCategory { get; set; }
 
     public int? NumberOfFauna { get; set; }
 
@@ -91,55 +89,57 @@ public class PlanetResponse : GameEntityResponse
 
     public float? NightStormTemp { get; set; }
 
-    public string? UndergroundDayTemp { get; set; }
+    public float? UndergroundDayTemp { get; set; }
 
-    public string? UndergroundDayRadiation { get; set; }
+    public float? UndergroundDayRadiation { get; set; }
 
-    public string? UndergroundDayToxic { get; set; }
+    public float? UndergroundDayToxic { get; set; }
 
-    public string? UndergroundNightTemp { get; set; }
+    public float? UndergroundNightTemp { get; set; }
 
-    public string? UnderwaterDayTemp { get; set; }
+    public float? UnderwaterDayTemp { get; set; }
 
-    public string? UnderwaterDayRadiation { get; set; }
+    public float? UnderwaterDayRadiation { get; set; }
 
-    public string? UnderwaterDayToxic { get; set; }
+    public float? UnderwaterDayToxic { get; set; }
 
-    public string? UnderwaterNightTemp { get; set; }
+    public float? UnderwaterNightTemp { get; set; }
 
-    public string? UnderwaterDayStormTemp { get; set; }
+    public float? UnderwaterDayStormTemp { get; set; }
 
-    public string? UnderwaterDayStormRadiation { get; set; }
+    public float? UnderwaterDayStormRadiation { get; set; }
 
-    public string? UnderwaterDayStormToxic { get; set; }
+    public float? UnderwaterDayStormToxic { get; set; }
 
-    public string? UnderwaterNightStormTemp { get; set; }
+    public float? UnderwaterNightStormTemp { get; set; }
 
-    public string? UndergroundDayStormTemp { get; set; }
+    public float? UndergroundDayStormTemp { get; set; }
 
-    public string? UndergroundDayStormRadiation { get; set; }
+    public float? UndergroundDayStormRadiation { get; set; }
 
-    public string? UndergroundDayStormToxic { get; set; }
+    public float? UndergroundDayStormToxic { get; set; }
 
-    public string? UndergroundNightStormTemp { get; set; }
+    public float? UndergroundNightStormTemp { get; set; }
 
-    public string? AgeOfPlanetInBillionsOfYears { get; set; }
+    public int? AgeOfPlanetInBillionsOfYears { get; set; }
 
-    public string? AtmosphereGas1 { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas1 { get; set; }
 
-    public string? AtmosphereGasPercentage1 { get; set; }
+    public float? AtmosphereGasPercentage1 { get; set; }
 
-    public AtmosphereMaterialTypes? AtmosphereGas2 { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas2 { get; set; }
 
     public float? AtmosphereGasPercentage2 { get; set; }
 
-    public HarvestedMaterialType? PrimaryCoreElement { get; set; }
+    public PlanetaryCoreTypes? PrimaryCoreElement { get; set; }
 
     public GeologyTypes? Geology { get; set; }
 
     public string? OtherNotes { get; set; }
 
     public bool? HasSandworms { get; set; }
+
+    public bool? HasGarden { get; set; }
 
     public string? PortalRepository { get; set; }
 
@@ -151,7 +151,7 @@ public class PlanetResponse : GameEntityResponse
 
     public string? ResearchTeam { get; set; }
 
-    public string? PlanetOrMoonAddedInOrigins { get; set; }
+    public bool? PlanetOrMoonAddedInOrigins { get; set; }
 
     public string? LegacyPCPlanetName { get; set; }
 
@@ -159,7 +159,7 @@ public class PlanetResponse : GameEntityResponse
 
     public string? LegacyPCDiscoverersGamerTagName { get; set; }
 
-    public string? LegacyPCDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyPCDiscoveryDate { get; set; }
 
     public string? LegacyPSPlanetName { get; set; }
 
@@ -167,7 +167,7 @@ public class PlanetResponse : GameEntityResponse
 
     public string? LegacyPSDiscoverersGamerTagName { get; set; }
 
-    public string? LegacyPSDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyPSDiscoveryDate { get; set; }
 
     public string? LegacyXboxPlanetName { get; set; }
 
@@ -175,7 +175,7 @@ public class PlanetResponse : GameEntityResponse
 
     public string? LegacyXboxDiscoverersGamerTagName { get; set; }
 
-    public string? LegacyXboxDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyXboxDiscoveryDate { get; set; }
 
     public string? HistoricalPlanetNameReset { get; set; }
 

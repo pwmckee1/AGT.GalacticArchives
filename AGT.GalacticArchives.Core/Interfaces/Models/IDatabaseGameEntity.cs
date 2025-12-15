@@ -60,7 +60,7 @@ public interface IDatabaseGameEntity : IDatabaseEntity
 
     GameModeTypes? GameModeType { get; set; }
 
-    GamePlatformTypes? Platform { get; set; }
+    GamePlatformTypes? GamePlatformType { get; set; }
 
     string? Civilization { get; set; }
 

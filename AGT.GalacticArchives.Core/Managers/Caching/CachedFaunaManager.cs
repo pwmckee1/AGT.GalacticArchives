@@ -28,6 +28,7 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
 
     public async Task<Fauna> UpsertFaunaAsync(Fauna request)
     {
+        await cacheManager.ClearCacheByKeyAsync($"{nameof(Fauna)}:{request.FaunaId}");
         var result = await target.UpsertFaunaAsync(request);
         await cacheManager.SetAsync($"{nameof(Fauna)}:{request.FaunaId}", result, BusinessRuleConstants.DayInMinutes);
         return result;

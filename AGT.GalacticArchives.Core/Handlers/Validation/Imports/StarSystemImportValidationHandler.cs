@@ -49,7 +49,7 @@ public class StarSystemImportValidationHandler : BaseImportValidationHandler, II
                     nameof(starSystemField.GalacticCoordinates).GetDescription<StarSystemImport>(),
                     SheetName),
                 new NullableDateTimeStrategy(
-                    starSystemField.SurveyDate,
+                    starSystemField.SurveyDate?.ToString(),
                     LineNumber,
                     nameof(starSystemField.SurveyDate).GetDescription<StarSystemImport>(),
                     SheetName),

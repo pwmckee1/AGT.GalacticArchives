@@ -18,6 +18,12 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
 
         Map(m => m.SettlementId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.SettlementId));
 
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.RegionId));
+
+        Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.StarSystemId));
+
+        Map(m => m.PlanetId).Convert(m => m.Row.ReadGuidFieldOrNull(SettlementSheetFields.PlanetId));
+
         Map(m => m.YAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.YAxisPlanetCoordinate));
 
@@ -26,7 +32,7 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
         Map(m => m.XAxisPlanetCoordinate)
             .Convert(m => m.Row.ReadFloatFieldOrNull(SettlementSheetFields.XAxisPlanetCoordinate));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(SettlementSheetFields.DiscoveryDate));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(SettlementSheetFields.DiscoveryDate));
 
         Map(m => m.Economy).Convert(m => m.Row.ReadEnumFieldOrNull<EconomyTypes>(SettlementSheetFields.Economy));
 
@@ -50,6 +56,6 @@ public sealed class SettlementCsvMap : ClassMap<SettlementImport>
         Map(m => m.Buildings)
             .Convert(m => m.Row.ReadEnumFields<SettlementBuildingTypes>(SettlementSheetFields.Buildings));
 
-        Map(m => m.GameMode).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(SettlementSheetFields.GameMode));
+        Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(SettlementSheetFields.GameModeType));
     }
 }

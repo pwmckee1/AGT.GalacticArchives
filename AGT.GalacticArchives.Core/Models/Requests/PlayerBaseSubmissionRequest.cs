@@ -29,22 +29,19 @@ public class PlayerBaseSubmissionRequest : BaseSubmissionRequest
 
     public LocationTypes NearbyPOITypes { get; set; }
 
-    public DateTime? ConstructionStarted { get; set; }
+    public DateTimeOffset? ConstructionStarted { get; set; }
 
-    public DateTime? ConstructionEnded { get; set; }
+    public DateTimeOffset? ConstructionEnded { get; set; }
 
     public PlayerBasePowerTypes? PowerConditions { get; set; }
 
     public PlayerBaseTerrainTypes? TerrainSituation { get; set; }
 
-    /// <summary>
-    /// Uses <see cref="HarvestedMaterialType"/> to combine Base, Exotic, and other types of material types;
-    /// </summary>
-    public HashSet<HarvestedMaterialType> MineralExtractorContents { get; set; } = [];
+    public HashSet<HarvestedMaterialTypes> MineralExtractorContents { get; set; } = [];
 
     public string? MineralExtractorCapacity { get; set; }
 
-    public HashSet<AtmosphereMaterialTypes> GasExtractorContents { get; set; } = [];
+    public HashSet<AtmosphereGasTypes> GasExtractorContents { get; set; } = [];
 
     public string? GasExtractorCapacity { get; set; }
 

@@ -22,8 +22,8 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.AllowsDeconstruction)]
     public bool? AllowsDeconstruction { get; set; }
 
-    [Name(PlayerBaseSheetFields.Aesthetics)]
-    public int? Aesthetics { get; set; }
+    [Name(PlayerBaseSheetFields.AestheticsRating)]
+    public int? AestheticsRating { get; set; }
 
     [Name(PlayerBaseSheetFields.BaseComplexity)]
     public int? BaseComplexity { get; set; }
@@ -31,11 +31,11 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.BaseElements)]
     public HashSet<PlayerBaseElementTypes> BaseElements { get; set; } = [];
 
-    [Name(PlayerBaseSheetFields.BaseType)]
-    public PlayerBaseTypes? BaseType { get; set; }
+    [Name(PlayerBaseSheetFields.PlayerBaseClassification)]
+    public PlayerBaseClassificationTypes? PlayerBaseClassification { get; set; }
 
-    [Name(PlayerBaseSheetFields.Builder)]
-    public string? Builder { get; set; }
+    [Name(PlayerBaseSheetFields.BuilderName)]
+    public string? BuilderName { get; set; }
 
     [Name(PlayerBaseSheetFields.BuilderLinkOnWiki)]
     public string? BuilderLinkOnWiki { get; set; }
@@ -43,17 +43,17 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.Civilization)]
     public string? Civilization { get; set; }
 
-    [Name(PlayerBaseSheetFields.Coordinates)]
-    public string? Coordinates { get; set; }
+    [Name(PlayerBaseSheetFields.GalacticCoordinates)]
+    public string? GalacticCoordinates { get; set; }
 
     [Name(PlayerBaseSheetFields.DateFinished)]
-    public DateTime? DateFinished { get; set; }
+    public DateTimeOffset? DateFinished { get; set; }
 
     [Name(PlayerBaseSheetFields.SurveyDate)]
-    public DateTime? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
     [Name(PlayerBaseSheetFields.DateStarted)]
-    public DateTime? DateStarted { get; set; }
+    public DateTimeOffset? DateStarted { get; set; }
 
     [Name(PlayerBaseSheetFields.DocumentSequence)]
     public int? DocumentSequence { get; set; }
@@ -67,14 +67,14 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.Galaxy)]
     public GalaxyTypes? Galaxy { get; set; }
 
-    [Name(PlayerBaseSheetFields.GasExtractor)]
-    public AtmosphereMaterialTypes? GasExtractor { get; set; }
+    [Name(PlayerBaseSheetFields.GasExtractorContents)]
+    public HashSet<AtmosphereGasTypes> GasExtractorContents { get; set; } = [];
 
-    [Name(PlayerBaseSheetFields.GasStoreCapacity)]
-    public int? GasStoreCapacity { get; set; }
+    [Name(PlayerBaseSheetFields.GasExtractorCapacity)]
+    public int? GasExtractorCapacity { get; set; }
 
-    [Name(PlayerBaseSheetFields.Glyph)]
-    public string? Glyph { get; set; }
+    [Name(PlayerBaseSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(PlayerBaseSheetFields.HasArena)]
     public bool? HasArena { get; set; }
@@ -97,20 +97,20 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.LayoutDescription)]
     public string? LayoutDescription { get; set; }
 
-    [Name(PlayerBaseSheetFields.MiningExtractorMaterial)]
-    public HarvestedMaterialType? MiningExtractorMaterial { get; set; }
+    [Name(PlayerBaseSheetFields.MineralExtractorContents)]
+    public HashSet<HarvestedMaterialTypes> MineralExtractorContents { get; set; } = [];
 
-    [Name(PlayerBaseSheetFields.MiningStoreCapacity)]
-    public int? MiningStoreCapacity { get; set; }
+    [Name(PlayerBaseSheetFields.MineralExtractorCapacity)]
+    public int? MineralExtractorCapacity { get; set; }
 
-    [Name(PlayerBaseSheetFields.Mode)]
-    public GameModeTypes? Mode { get; set; }
+    [Name(PlayerBaseSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
     [Name(PlayerBaseSheetFields.Name)]
     public string? PlayerBaseName { get; set; }
 
-    [Name(PlayerBaseSheetFields.NearbyPOI)]
-    public HashSet<LocationTypes> NearbyPOI { get; set; } = [];
+    [Name(PlayerBaseSheetFields.NearByPointsOfInterest)]
+    public HashSet<LocationTypes> NearByPointsOfInterest { get; set; } = [];
 
     [Name(PlayerBaseSheetFields.PersonalNotes)]
     public string? PersonalNotes { get; set; }
@@ -118,8 +118,8 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.Planet)]
     public string? PlanetName { get; set; }
 
-    [Name(PlayerBaseSheetFields.Platform)]
-    public GamePlatformTypes? Platform { get; set; }
+    [Name(PlayerBaseSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     [Name(PlayerBaseSheetFields.PortalRepositoryLink)]
     public string? PortalRepositoryLink { get; set; }
@@ -130,11 +130,11 @@ public class PlayerBaseImport : IImportFormFile
     [Name(PlayerBaseSheetFields.Region)]
     public string? RegionName { get; set; }
 
-    [Name(PlayerBaseSheetFields.Release)]
-    public string? Release { get; set; }
+    [Name(PlayerBaseSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
 
-    [Name(PlayerBaseSheetFields.ReleaseVersion)]
-    public string? ReleaseVersion { get; set; }
+    [Name(PlayerBaseSheetFields.GameReleaseVersionNumber)]
+    public string? GameReleaseVersionNumber { get; set; }
 
     [Name(PlayerBaseSheetFields.SummaryText)]
     public string? SummaryText { get; set; }
@@ -159,4 +159,13 @@ public class PlayerBaseImport : IImportFormFile
 
     [Name(PlayerBaseSheetFields.YAxisPlanetCoordinate)]
     public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(PlayerBaseSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(PlayerBaseSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(PlayerBaseSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

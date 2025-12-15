@@ -59,10 +59,10 @@ public class StarSystemImport : IImportFormFile
     public bool? IsGiantSystem { get; set; }
 
     [Name(StarSystemSheetFields.DiscoveryDate)]
-    public string? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
     [Name(StarSystemSheetFields.SurveyDate)]
-    public string? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
     [Name(StarSystemSheetFields.SpecialInterest)]
     public string? SpecialInterest { get; set; }
@@ -76,8 +76,8 @@ public class StarSystemImport : IImportFormFile
     [Name(StarSystemSheetFields.Bases)]
     public int? Bases { get; set; }
 
-    [Name(StarSystemSheetFields.Platform)]
-    public GamePlatformTypes? Platform { get; set; }
+    [Name(StarSystemSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     [Name(StarSystemSheetFields.StarCount)]
     public int? StarCount { get; set; }
@@ -163,8 +163,8 @@ public class StarSystemImport : IImportFormFile
     [Name(StarSystemSheetFields.StarshipsTextNotes)]
     public string? StarshipsTextNotes { get; set; }
 
-    [Name(StarSystemSheetFields.MTTextNotes)]
-    public string? MTTextNotes { get; set; }
+    [Name(StarSystemSheetFields.MultiToolNotes)]
+    public string? MultiToolNotes { get; set; }
 
     [Name(StarSystemSheetFields.LocInfoNotes)]
     public string? LocInfoNotes { get; set; }
@@ -182,7 +182,7 @@ public class StarSystemImport : IImportFormFile
     public bool? IsPhantomSystem { get; set; }
 
     [Name(StarSystemSheetFields.HasCenterAccess)]
-    public string? HasCenterAccess { get; set; }
+    public bool? HasCenterAccess { get; set; }
 
     [Name(StarSystemSheetFields.BlackHoleDestination)]
     public string? BlackHoleDestination { get; set; }
@@ -255,4 +255,7 @@ public class StarSystemImport : IImportFormFile
 
     [Name(StarSystemSheetFields.DocumentSequence)]
     public int? DocumentSequence { get; set; }
+
+    [Name(StarSystemSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
 }

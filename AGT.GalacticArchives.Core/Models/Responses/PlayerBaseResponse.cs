@@ -11,6 +11,8 @@ public class PlayerBaseResponse : GameEntityResponse
 
     public string? BuilderName { get; set; }
 
+    public string? BuilderLinkOnWiki { get; set; }
+
     public PlayerBaseTypes? BaseType { get; set; }
 
     public bool? HasFarm { get; set; }
@@ -27,9 +29,9 @@ public class PlayerBaseResponse : GameEntityResponse
 
     public HashSet<LocationTypes?> NearByPointsOfInterest { get; set; } = [];
 
-    public DateTime? DateStarted { get; set; }
+    public DateTimeOffset? DateStarted { get; set; }
 
-    public DateTime? DateFinished { get; set; }
+    public DateTimeOffset? DateFinished { get; set; }
 
     public string? SummaryText { get; set; }
 
@@ -39,14 +41,11 @@ public class PlayerBaseResponse : GameEntityResponse
 
     public PlayerBaseTerrainTypes? AccessOrTerrainSituation { get; set; }
 
-    /// <summary>
-    /// Uses reference type <see cref="HarvestedMaterial"/> to combine Base and Exotic materials;
-    /// </summary>
-    public HashSet<HarvestedMaterialType> MineralExtractorContents { get; set; } = [];
+    public HashSet<HarvestedMaterialTypes> MineralExtractorContents { get; set; } = [];
 
     public int? MineralExtractorCapacity { get; set; }
 
-    public HashSet<AtmosphereMaterialTypes> GasExtractorContents { get; set; } = [];
+    public HashSet<AtmosphereGasTypes> GasExtractorContents { get; set; } = [];
 
     public int? GasExtractorCapacity { get; set; }
 
@@ -58,7 +57,7 @@ public class PlayerBaseResponse : GameEntityResponse
 
     public string? PersonalNotes { get; set; }
 
-    public PlayerBaseClassificationTypes? BaseClassification { get; set; }
+    public PlayerBaseClassificationTypes? PlayerBaseClassification { get; set; }
 
     public string? Videos { get; set; }
 

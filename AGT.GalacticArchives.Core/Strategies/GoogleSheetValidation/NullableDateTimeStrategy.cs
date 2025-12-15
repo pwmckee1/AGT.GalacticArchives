@@ -10,7 +10,7 @@ public class NullableDateTimeStrategy(string? fieldValue, int lineNumber, string
     public void Execute(IExecutionContext context)
     {
         if (!string.IsNullOrEmpty(FieldValue) &&
-            !DateTime.TryParseExact(
+            !DateTimeOffset.TryParseExact(
                 FieldValue,
                 BusinessRuleConstants.ValidDateTimeFormats,
                 DateTimeFormatInfo.InvariantInfo,

@@ -14,12 +14,9 @@ public class FaunaMaps : Profile
         CreateMap<Dictionary<string, object?>, Fauna>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<FaunaImport, Fauna>()
-            .ForMember(d => d.Name, o => o.MapFrom(s => s.StarSystemName))
-            .ForMember(d => d.RegionId, o => o.Ignore())
+            .ForMember(d => d.Name, o => o.MapFrom(s => s.FaunaName))
             .ForMember(d => d.Region, o => o.Ignore())
-            .ForMember(d => d.StarSystemId, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
-            .ForMember(d => d.PlanetId, o => o.Ignore())
             .ForMember(d => d.Planet, o => o.Ignore());
 
         CreateMap<Fauna, FaunaRequest>();

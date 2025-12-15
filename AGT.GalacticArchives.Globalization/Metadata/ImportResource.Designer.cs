@@ -222,7 +222,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BaseDB.
+        ///   Looks up a localized string similar to Base.
         /// </summary>
         public static string PlayerBaseSheetName {
             get {
@@ -294,7 +294,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The {0} sheet could not be processed. Review the import file to ensure it is the {0} DB sheet and that no invalid values are entered.
+        ///   Looks up a localized string similar to The {0} sheet could not be processed. Review the import file to ensure it is the {0} DB sheet and that no invalid values are entered. The following error occured: {1}..
         /// </summary>
         public static string UnableToImportError {
             get {

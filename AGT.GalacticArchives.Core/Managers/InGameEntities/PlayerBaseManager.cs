@@ -23,7 +23,9 @@ public class PlayerBaseManager(
             return null;
         }
 
-        playerBase.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
+        playerBase.Planet = playerBase.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value)
+            : null;
 
         return playerBase;
     }
@@ -51,7 +53,9 @@ public class PlayerBaseManager(
 
             foreach (var playerBase in playerBases)
             {
-                playerBase.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
+                playerBase.Planet = playerBase.PlanetId.HasValue
+                    ? await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value)
+                    : null;
             }
         }
 

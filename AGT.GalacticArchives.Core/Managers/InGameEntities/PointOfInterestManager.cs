@@ -23,8 +23,9 @@ public class PointOfInterestManager(
             return null;
         }
 
-        pointOfInterest.Planet =
-            await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value);
+        pointOfInterest.Planet = pointOfInterest.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value)
+            : null;
 
         return pointOfInterest;
     }
@@ -52,8 +53,9 @@ public class PointOfInterestManager(
 
             foreach (var pointOfInterest in pointOfInterests)
             {
-                pointOfInterest.Planet =
-                    await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value);
+                pointOfInterest.Planet = pointOfInterest.PlanetId.HasValue
+                    ? await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value)
+                    : null;
             }
         }
 

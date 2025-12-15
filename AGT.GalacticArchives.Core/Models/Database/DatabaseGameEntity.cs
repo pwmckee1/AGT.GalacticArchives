@@ -69,7 +69,7 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 
     public GameModeTypes? GameModeType { get; set; }
 
-    public GamePlatformTypes? Platform { get; set; }
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     public string? Civilization { get; set; }
 
@@ -77,9 +77,13 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 
     public string? GameReleaseVersionNumber { get; set; }
 
+    public DateTimeOffset? GameReleaseDate { get; set; }
+
     public string? Description { get; set; }
 
     public string? AdditionalNotes { get; set; }
 
     public string? WikiLink { get; set; }
+
+    public string? DiscoveredLinkOnWiki { get; set; }
 }

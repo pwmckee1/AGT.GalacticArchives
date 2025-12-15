@@ -6,8 +6,6 @@ namespace AGT.GalacticArchives.Core.Models.Responses;
 
 public class StarSystemResponse : GameEntityResponse
 {
-    public HashSet<PlanetResponse> Planets { get; set; } = [];
-
     public string? OriginalSystemName { get; set; }
 
     public string? StarSystemNameAllPlatforms { get; set; }
@@ -17,8 +15,6 @@ public class StarSystemResponse : GameEntityResponse
     public string? DataQualityCheck { get; set; }
 
     public string? PlanetOfInterestId { get; set; }
-
-    public string? DiscoveredLinkOnWiki { get; set; }
 
     public bool? IsGiantSystem { get; set; }
 
@@ -58,13 +54,13 @@ public class StarSystemResponse : GameEntityResponse
 
     public string? KeySystemIndicator { get; set; }
 
-    public HashSet<SpaceStationTradeItemTypes?> SpaceStationTradeItems { get; set; } = [];
+    public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
-    public HashSet<ExoSuitUpgradeTypes?> ExosuitUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeTypes> ExosuitUpgradeModules { get; set; } = [];
 
-    public HashSet<StarshipUpgradeModuleTypes?> StarshipUpgradeModules { get; set; } = [];
+    public HashSet<StarshipUpgradeModuleTypes> StarshipUpgradeModules { get; set; } = [];
 
-    public HashSet<MultiToolUpdateTypes?> MultiToolUpdateTypes { get; set; } = [];
+    public HashSet<MultiToolUpdateTypes> MultiToolUpdateTypes { get; set; } = [];
 
     public string? SummaryAdditions { get; set; }
 

@@ -36,10 +36,16 @@ public class GoogleSheetImportController(IIndex<string, IImportService> googleSh
             {
                 // Interrupt validation process if cancelled
                 ct.ThrowIfCancellationRequested();
-                bool isValidSheet = Enum.TryParse(fileNamePart, out GoogleSheetTypes googleSheetType);
+                var googleSheetTypes = EnumExtensions.GetDescriptions<GoogleSheetTypes>();
+                bool isValidSheet = googleSheetTypes.Contains(fileNamePart);
 
                 if (isValidSheet)
                 {
+                    string sheetTypeDescription = googleSheetTypes.First(s => s.Equals(
+                        fileNamePart,
+                        StringComparison.InvariantCultureIgnoreCase));
+                    var googleSheetType = sheetTypeDescription.GetValueFromDescription<GoogleSheetTypes>();
+
                     var importService = googleSheetImportServices[googleSheetType.GetDescription()];
                     await importService.ImportFormFileAsync(googleSheetImportFile, ct);
 

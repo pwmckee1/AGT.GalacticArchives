@@ -15,7 +15,7 @@ public class MultiToolResponse : GameEntityResponse
 
     public MultiToolCategoryTypes? MultiToolCategory { get; set; }
 
-    public ItemClassTypes? QualityClass { get; set; }
+    public ItemClassTypes? ItemClass { get; set; }
 
     public int? TechSlots { get; set; }
 
@@ -40,4 +40,6 @@ public class MultiToolResponse : GameEntityResponse
     public string? AcquisitionGuidance { get; set; }
 
     public string? ResearchTeam { get; set; }
+
+    public string? UserNotes { get; set; }
 }

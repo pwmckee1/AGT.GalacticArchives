@@ -9,14 +9,14 @@ public static class SettlementSheetFields
     public const string Building5 = "Building";
     public const string Building6 = "Building";
     public const string Class = "Class";
-    public const string Civilized = "Civilized";
+    public const string Civilization = "Civilized";
     public const string DiscoveryDate = "Date Observed (YYYY-DD-MMM-YEAR";
     public const string Economy = "Economy";
     public const string GameRelease = "Game Release";
     public const string Happiness = "Happiness";
     public const string Industry = "Industry";
     public const string Maintenance = "Maintenance";
-    public const string GameMode = "Mode";
+    public const string GameModeType = "Mode";
     public const string SettlementName = "Settlement Name";
     public const string OriginalName = "Original Name (if renamed)";
     public const string Overseer = "Overseer";
@@ -35,4 +35,7 @@ public static class SettlementSheetFields
     public const string IsProfitableIndicator = "Yes";
     public const string SettlementId = "SettlementId";
     public const string DocumentSequence = "Doc Sequence";
+    public const string RegionId = "RegionId";
+    public const string StarSystemId = "StarSystemId";
+    public const string PlanetId = "PlanetId";
 }

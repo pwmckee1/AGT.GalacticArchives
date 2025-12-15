@@ -32,9 +32,9 @@ public class PlanetImportValidationHandler : BaseImportValidationHandler, IImpor
             var strategies = new HashSet<IExecutionStrategy>
             {
                 new NullFieldStrategy(
-                    planetField.DiscoveryPlatform?.ToString(),
+                    planetField.GamePlatformType?.ToString(),
                     LineNumber,
-                    nameof(planetField.DiscoveryPlatform).GetDescription<PlanetImport>(),
+                    nameof(planetField.GamePlatformType).GetDescription<PlanetImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GameModeTypes>(
                     planetField.GameModeType?.ToString(),
@@ -42,9 +42,9 @@ public class PlanetImportValidationHandler : BaseImportValidationHandler, IImpor
                     nameof(planetField.GameModeType).GetDescription<PlanetImport>(),
                     SheetName),
                 new NullFieldStrategy(
-                    planetField.GameReleaseName,
+                    planetField.GameRelease,
                     LineNumber,
-                    nameof(planetField.GameReleaseName).GetDescription<PlanetImport>(),
+                    nameof(planetField.GameRelease).GetDescription<PlanetImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GalaxyTypes>(
                     planetField.Galaxy?.ToString(),

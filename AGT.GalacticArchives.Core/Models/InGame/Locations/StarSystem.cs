@@ -21,8 +21,6 @@ public class StarSystem : DatabaseGameEntity
 
     public string? PlanetOfInterestId { get; set; }
 
-    public string? DiscoveredLinkOnWiki { get; set; }
-
     public bool? IsGiantSystem { get; set; }
 
     public string? SpecialInterest { get; set; }
@@ -61,13 +59,13 @@ public class StarSystem : DatabaseGameEntity
 
     public string? KeySystemIndicator { get; set; }
 
-    public HashSet<SpaceStationTradeItemTypes?> SpaceStationTradeItems { get; set; } = [];
+    public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
-    public HashSet<ExoSuitUpgradeTypes?> ExosuitUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeTypes> ExosuitUpgradeModules { get; set; } = [];
 
-    public HashSet<StarshipUpgradeModuleTypes?> StarshipUpgradeModules { get; set; } = [];
+    public HashSet<StarshipUpgradeModuleTypes> StarshipUpgradeModules { get; set; } = [];
 
-    public HashSet<MultiToolUpdateTypes?> MultiToolUpdateTypes { get; set; } = [];
+    public HashSet<MultiToolUpdateTypes> MultiToolUpdateTypes { get; set; } = [];
 
     public string? SummaryAdditions { get; set; }
 

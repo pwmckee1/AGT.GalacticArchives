@@ -37,9 +37,9 @@ public class StarshipImportValidationHandler : BaseImportValidationHandler, IImp
                     nameof(starshipField.DiscoveredBy).GetDescription<StarshipImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GamePlatformTypes>(
-                    starshipField.Platform?.ToString(),
+                    starshipField.GamePlatformType?.ToString(),
                     LineNumber,
-                    nameof(starshipField.Platform).GetDescription<StarshipImport>(),
+                    nameof(starshipField.GamePlatformType).GetDescription<StarshipImport>(),
                     SheetName),
                 new EnumFieldTypeStrategy<GameModeTypes>(
                     starshipField.GameModeType?.ToString(),

@@ -12,29 +12,29 @@ public class FaunaResponse : GameEntityResponse
 
     public string? OriginalName { get; set; }
 
-    public FaunaBaitTypes? Bait { get; set; }
+    public FaunaBaitTypes? FaunaBaitType { get; set; }
 
     public FaunaGenderTypes? Gender1 { get; set; }
 
     public FaunaGenderTypes? Gender2 { get; set; }
 
-    public FaunaRarityTypes? Rarity { get; set; }
+    public FaunaRarityTypes? FaunaRarityType { get; set; }
 
-    public string? Hemisphere { get; set; }
+    public HemisphereTypes? HemisphereType { get; set; }
 
-    public FaunaEcosystemTypes? Ecosystem { get; set; }
+    public FaunaEcosystemTypes? EcosystemType { get; set; }
 
-    public FaunaBehaviorTypes? Behaviour { get; set; }
+    public FaunaBehaviorTypes? BehaviourType { get; set; }
 
     public FaunaBehaviorArchetypes? BehaviourArchetype { get; set; }
 
-    public FaunaDietTypes? Diet { get; set; }
+    public FaunaDietTypes? FaunaDietType { get; set; }
 
-    public FaunaDietArchetypes? DietArchetype { get; set; }
+    public FaunaDietArchetypes? FaunaDietArchetype { get; set; }
 
-    public FaunaProductionTypes? Produces { get; set; }
+    public FaunaProductionTypes? ProductionType { get; set; }
 
-    public FaunaCircadianTypes? Activity { get; set; }
+    public FaunaCircadianTypes? ActivityType { get; set; }
 
     public float? Gender1ScanMaxWeight { get; set; }
 
@@ -48,17 +48,17 @@ public class FaunaResponse : GameEntityResponse
 
     public float? DiscoveryScreenHeight { get; set; }
 
-    public FaunaInGameNoteTypes? Notes { get; set; }
+    public FaunaInGameNoteTypes? FaunaInGameNotes { get; set; }
 
-    public FaunaGenusSubtypes? Genus { get; set; }
+    public string? FaunaGenusType { get; set; }
 
-    public FaunaGenusTypes? GenusSubtype { get; set; }
+    public string? FaunaGenusSubtype { get; set; }
 
     public string? SummaryNotes { get; set; }
 
-    public string? Appearance { get; set; }
+    public string? AppearanceNotes { get; set; }
 
-    public string? DiscoveryMenu { get; set; }
+    public string? DiscoveryMenuNotes { get; set; }
 
     public string? LocationNotes { get; set; }
 
@@ -72,17 +72,17 @@ public class FaunaResponse : GameEntityResponse
 
     public string? LegacyFaunaDiscovererPC { get; set; }
 
-    public string? LegacyFaunaDatePC { get; set; }
+    public DateTimeOffset? LegacyFaunaDatePC { get; set; }
 
     public string? LegacyFaunaNamePS { get; set; }
 
     public string? LegacyFaunaDiscovererPS { get; set; }
 
-    public string? LegacyFaunaDatePS { get; set; }
+    public DateTimeOffset? LegacyFaunaDatePS { get; set; }
 
     public string? LegacyFaunaNameXbox { get; set; }
 
     public string? LegacyFaunaDiscovererXbox { get; set; }
 
-    public string? LegacyFaunaDateXbox { get; set; }
+    public DateTimeOffset? LegacyFaunaDateXbox { get; set; }
 }

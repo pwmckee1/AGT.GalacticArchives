@@ -8,7 +8,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace AGT.GalacticArchives.Controllers;
 
 [ApiController]
-[Route("multiTool")]
+[Route("multi-tool")]
 public class MultiToolController(IMultiToolService multiToolService) : ControllerBase
 {
     [HttpGet]

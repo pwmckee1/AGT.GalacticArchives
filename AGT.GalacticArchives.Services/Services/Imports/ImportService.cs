@@ -46,17 +46,24 @@ public abstract class ImportService<T>(IEnumerable<IImportValidationHandler> imp
 
     protected async Task<HashSet<T>> GetRecordsFromCsvFileAsync(Stream stream, CancellationToken ct)
     {
-        var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture) { MissingFieldFound = null };
+        try
+        {
+            var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture) { MissingFieldFound = null };
 
-        using var streamReader = new StreamReader(stream);
-        using var csvReader = new CsvReader(streamReader, csvConfig);
+            using var streamReader = new StreamReader(stream);
+            using var csvReader = new CsvReader(streamReader, csvConfig);
 
-        csvReader.Context.RegisterClassMap(CsvMapType);
+            csvReader.Context.RegisterClassMap(CsvMapType);
 
-        await ValidateHeaderAsync(csvReader, ct);
+            await ValidateHeaderAsync(csvReader, ct);
 
-        var records = csvReader.GetRecords<T>();
-        return records.ToHashSet();
+            var records = csvReader.GetRecords<T>();
+            return records.ToHashSet();
+        }
+        catch (Exception e)
+        {
+            throw new ArgumentException(string.Format(ImportResource.UnableToImportError, SheetName, e.Message));
+        }
     }
 
     protected async Task ValidateHeaderAsync(CsvReader csvReader, CancellationToken ct)

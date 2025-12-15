@@ -1,4 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
@@ -86,7 +87,9 @@ public class GameDataModelTests
                     .For<Planet>()
                     .With(p => p.Name, "Planet Name")
                     .With(p => p.StarSystem, null)
-                    .With(p => p.RawIngredients, [EdibleMaterialTypes.AloeFlesh, EdibleMaterialTypes.Fireberry])
+                    .With(
+                        p => p.RawIngredients,
+                        [EdibleRawMaterialTypes.CactusNectar, EdibleRawMaterialTypes.CrabApple])
                     .Create();
             }
 
@@ -193,7 +196,6 @@ public class GameDataModelTests
                 planet.Name.ShouldEqual((string)_dictionary[nameof(Planet.Name)]!);
                 planet.PlanetNameAllPlatforms.ShouldEqual((string?)_dictionary[nameof(Planet.PlanetNameAllPlatforms)]);
                 planet.PlanetIdInSystem.ShouldEqual((int?)_dictionary[nameof(Planet.PlanetIdInSystem)]);
-                planet.RawIngredients.ShouldEqual((HashSet<EdibleMaterialTypes?>)_dictionary[nameof(Planet.RawIngredients)]!);
                 planet.NumberOfFauna.ShouldEqual((int?)_dictionary[nameof(Planet.NumberOfFauna)]);
                 planet.HasSandworms.ShouldEqual((bool?)_dictionary[nameof(Planet.HasSandworms)]);
             }

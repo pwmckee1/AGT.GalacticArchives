@@ -4,8 +4,6 @@ namespace AGT.GalacticArchives.Core.Models.Responses;
 
 public class RegionResponse : GameEntityResponse
 {
-    public HashSet<StarSystemResponse> StarSystems { get; set; } = [];
-
     public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
 
     public string? EarliestKnownSurveyor { get; set; }

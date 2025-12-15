@@ -4,6 +4,7 @@ using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 using CsvHelper.Configuration;
 
@@ -14,6 +15,14 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
     public PlanetCsvMap()
     {
         AutoMap(CultureInfo.InvariantCulture);
+
+        Map(m => m.Galaxy).Convert(m => m.Row.ReadEnumFieldOrNull<GalaxyTypes>(PlanetSheetFields.Galaxy));
+
+        Map(m => m.PlanetId).Convert(m => m.Row.ReadGuidFieldOrNull(PlanetSheetFields.PlanetId));
+
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(PlanetSheetFields.RegionId));
+
+        Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(PlanetSheetFields.StarSystemId));
 
         Map(m => m.PlanetId).Convert(m => m.Row.ReadGuidFieldOrNull(PlanetSheetFields.PlanetId));
 
@@ -28,13 +37,13 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
             .Convert(m => m.Row.ReadNullableEnumField<EdibleMaterialTypes>(PlanetSheetFields.AssignedRawIngredient));
 
         Map(m => m.AtmosphereGas1)
-            .Convert(m => m.Row.ReadHarvestedMaterialField(PlanetSheetFields.AtmosphereGas1));
+            .Convert(m => m.Row.ReadEnumFieldOrNull<AtmosphereGasTypes>(PlanetSheetFields.AtmosphereGas1));
 
         Map(m => m.AtmosphereGas2)
-            .Convert(m => m.Row.ReadHarvestedMaterialField(PlanetSheetFields.AtmosphereGas2));
+            .Convert(m => m.Row.ReadEnumFieldOrNull<AtmosphereGasTypes>(PlanetSheetFields.AtmosphereGas2));
 
         Map(m => m.AtmosphereResource)
-            .Convert(m => m.Row.ReadHarvestedMaterialField(PlanetSheetFields.AtmosphereResource));
+            .Convert(m => m.Row.ReadEnumFieldOrNull<HarvestedMaterialTypes>(PlanetSheetFields.AtmosphereResource));
 
         Map(m => m.AtmosphereGasPercentage1)
             .Convert(m => m.Row.ReadFloatFieldOrNull(PlanetSheetFields.AtmosphereGasPercentage1));
@@ -48,7 +57,8 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
         Map(m => m.PlanetBiomeDescription)
             .Convert(m => m.Row.ReadEnumFieldOrNull<BiomeSubTypes>(PlanetSheetFields.PlanetBiomeDescription));
 
-        Map(m => m.BiomeResource).Convert(m => m.Row.ReadHarvestedMaterialField(PlanetSheetFields.BiomeResource));
+        Map(m => m.BiomeResource)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<HarvestedMaterialTypes>(PlanetSheetFields.BiomeResource));
 
         Map(m => m.PlanetBiomeType)
             .Convert(m => m.Row.ReadEnumFieldOrNull<BiomeTypes>(PlanetSheetFields.PlanetBiomeType));
@@ -65,10 +75,10 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
 
         Map(m => m.DayToxic).Convert(m => m.Row.ReadFloatFieldOrNull(PlanetSheetFields.DayToxic));
 
-        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeFieldOrNull(PlanetSheetFields.DiscoveryDate));
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.DiscoveryDate));
 
-        Map(m => m.DiscoveryPlatform)
-            .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(PlanetSheetFields.DiscoveryPlatform));
+        Map(m => m.GamePlatformType)
+            .Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(PlanetSheetFields.GamePlatformType));
 
         Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(PlanetSheetFields.DocumentSequence));
 
@@ -95,8 +105,8 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
                 PlanetSheetFields.RingsOrGiant,
                 PlanetSheetFields.HasGardenIndicator));
 
-        Map(m => m.GameVersionNumberForPage)
-            .Convert(m => m.Row.ReadFloatFieldOrNull(PlanetSheetFields.GameVersionNumberForPage));
+        Map(m => m.GameReleaseVersionNumber)
+            .Convert(m => m.Row.ReadFloatFieldOrNull(PlanetSheetFields.GameReleaseVersionNumber));
 
         Map(m => m.Geology).Convert(m => m.Row.ReadEnumFieldOrNull<GeologyTypes>(PlanetSheetFields.Geology));
 
@@ -128,18 +138,16 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
                 PlanetSheetFields.IsPlanetIndicator));
 
         Map(m => m.IsMoon)
-            .Convert(m => m.Row.ReadBoolFieldOrNull(
-                PlanetSheetFields.PlanetOrMoon,
-                PlanetSheetFields.IsMoonIndicator));
+            .Convert(m => m.Row.ReadBoolFieldOrNull(PlanetSheetFields.PlanetOrMoon, PlanetSheetFields.IsMoonIndicator));
 
         Map(m => m.LegacyPCDiscoveryDate)
-            .Convert(m => m.Row.ReadDateTimeFieldOrNull(PlanetSheetFields.LegacyPCDiscoveryDate));
+            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.LegacyPCDiscoveryDate));
 
         Map(m => m.LegacyPSDiscoveryDate)
-            .Convert(m => m.Row.ReadDateTimeFieldOrNull(PlanetSheetFields.LegacyPSDiscoveryDate));
+            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.LegacyPSDiscoveryDate));
 
         Map(m => m.LegacyXboxDiscoveryDate)
-            .Convert(m => m.Row.ReadDateTimeFieldOrNull(PlanetSheetFields.LegacyXboxDiscoveryDate));
+            .Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(PlanetSheetFields.LegacyXboxDiscoveryDate));
 
         Map(m => m.GameModeType).Convert(m => m.Row.ReadEnumFieldOrNull<GameModeTypes>(PlanetSheetFields.GameModeType));
 
@@ -161,16 +169,17 @@ public sealed class PlanetCsvMap : ClassMap<PlanetImport>
 
         Map(m => m.Extras).Convert(m => m.Row.ReadEnumFields<UniqueMaterialTypes>(PlanetSheetFields.Extras));
 
-        Map(m => m.PrimaryResource).Convert(m => m.Row.ReadHarvestedMaterialFields(PlanetSheetFields.PrimaryResource));
+        Map(m => m.PrimaryResources)
+            .Convert(m => m.Row.ReadEnumFields<HarvestedMaterialTypes>(PlanetSheetFields.PrimaryResources));
 
         Map(m => m.RawIngredients)
-            .Convert(m => m.Row.ReadEnumFields<EdibleMaterialTypes>(PlanetSheetFields.RawIngredients));
+            .Convert(m => m.Row.ReadEnumFields<EdibleRawMaterialTypes>(PlanetSheetFields.RawIngredients));
 
         Map(m => m.SentinelActivity)
             .Convert(m => m.Row.ReadEnumFieldOrNull<SentinelActivityTypes>(PlanetSheetFields.SentinelActivity));
 
-        Map(m => m.SpecialResource)
-            .Convert(m => m.Row.ReadEnumFields<PlanetPropertyTypes>(PlanetSheetFields.SpecialResource));
+        Map(m => m.SpecialResources)
+            .Convert(m => m.Row.ReadEnumFields<PlanetPropertyTypes>(PlanetSheetFields.SpecialResources));
 
         Map(m => m.PlanetTerrain)
             .Convert(m => m.Row.ReadEnumFieldOrNull<TerrainTypes>(PlanetSheetFields.PlanetTerrain));

@@ -87,11 +87,15 @@ public class StarshipManager(
     {
         if (starship.PlanetId.HasValue)
         {
-            starship.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId);
+            starship.Planet = starship.PlanetId.HasValue
+                ? await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId)
+                : null;
         }
         else
         {
-            starship.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
+            starship.StarSystem = starship.StarSystemId.HasValue
+                ? await galacticEntityManager.GetStarSystemHierarchyAsync(parentId)
+                : null;
         }
     }
 

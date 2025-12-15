@@ -16,4 +16,7 @@ public static class PointOfInterestSheetFields
     public const string YAxisPlanetCoordinate = "YY (1st coordinate)";
     public const string PointOfInterestId = "PointOfInterestId";
     public const string DocumentSequence = "Doc Sequence";
+    public const string RegionId = "RegionId";
+    public const string StarSystemId = "StarSystemId";
+    public const string PlanetId = "PlanetId";
 }

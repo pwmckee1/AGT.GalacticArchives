@@ -60,11 +60,38 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hesperius Dimension.
+        /// </summary>
+        public static string HesperiusDimension {
+            get {
+                return ResourceManager.GetString("HesperiusDimension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hilbert Dimension.
+        /// </summary>
+        public static string HilbertDimension {
+            get {
+                return ResourceManager.GetString("HilbertDimension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sequence ID must not be null and must be greater than 0..
         /// </summary>
         public static string InvalidSequence {
             get {
                 return ResourceManager.GetString("InvalidSequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #N/A.
+        /// </summary>
+        public static string NotSpecified {
+            get {
+                return ResourceManager.GetString("NotSpecified", resourceCulture);
             }
         }
         

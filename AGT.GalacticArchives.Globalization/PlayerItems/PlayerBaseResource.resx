@@ -410,8 +410,8 @@
     <value>Subterranean Relic</value>
   </data>
     <data name="SufficientlyPowered" xml:space="preserve">
-    <value>Sufficiently Powered</value>
-  </data>
+        <value>sufficiently powered</value>
+    </data>
     <data name="SummaryText" xml:space="preserve">
     <value>Summary Text</value>
   </data>

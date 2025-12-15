@@ -30,7 +30,7 @@ public static class FaunaSheetFields
     public const string Gender2ScanMaxHeight = "Gender 2 scan Max Height (m)";
     public const string Gender2ScanMaxWeight = "Gender 2 Scan Max Weight (kg)";
     public const string Genus = "Genus";
-    public const string GenusSubtype = "Genus Subtype";
+    public const string FaunaGenusSubtype = "Genus Subtype";
     public const string HemisphereType = "Hemisphere";
     public const string LegacyFaunaDatePC = "Legacy Fauna Date PC";
     public const string LegacyFaunaDatePS = "Legacy Fauna Date PS";
@@ -46,7 +46,7 @@ public static class FaunaSheetFields
     public const string FaunaName = "Fauna (unique name key)";
     public const string NameAfterExpeditions = "Fauna Name (Integrated Name after Expeditions)";
     public const string NMSWikiLink = "NMS Wiki Link";
-    public const string Notes = "Notes";
+    public const string FaunaInGameNotes = "Notes";
     public const string OriginalName = "Fauna Name (Original)";
     public const string Planet = "Planet";
     public const string ProductionType = "Produces";
@@ -58,6 +58,9 @@ public static class FaunaSheetFields
     public const string StarSystemName = "System";
     public const string VersionRelease = "Version Release";
     public const string FaunaBaitType = "Bait";
-    public const string GenusType = "Genus";
+    public const string FaunaGenusType = "Genus";
     public const string FaunaId = "FaunaId";
+    public const string RegionId = "RegionId";
+    public const string StarSystemId = "StarSystemId";
+    public const string PlanetId = "PlanetId";
 }

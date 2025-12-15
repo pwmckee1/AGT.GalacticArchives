@@ -29,10 +29,10 @@ public class PlanetImport : IImportFormFile
     public EdibleMaterialTypes? AssignedRawIngredient { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas1)]
-    public HarvestedMaterialType? AtmosphereGas1 { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas1 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas2)]
-    public HarvestedMaterialType? AtmosphereGas2 { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGasPercentage1)]
     public float? AtmosphereGasPercentage1 { get; set; }
@@ -44,13 +44,13 @@ public class PlanetImport : IImportFormFile
     public AtmosphereColorTypes? AtmosphereDaytimeColor { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereResource)]
-    public HarvestedMaterialType? AtmosphereResource { get; set; }
+    public HarvestedMaterialTypes? AtmosphereResource { get; set; }
 
     [Name(PlanetSheetFields.PlanetBiomeDescription)]
     public BiomeSubTypes? PlanetBiomeDescription { get; set; }
 
     [Name(PlanetSheetFields.BiomeResource)]
-    public HarvestedMaterialType? BiomeResource { get; set; }
+    public HarvestedMaterialTypes? BiomeResource { get; set; }
 
     [Name(PlanetSheetFields.PlanetBiomeType)]
     public BiomeTypes? PlanetBiomeType { get; set; }
@@ -83,10 +83,10 @@ public class PlanetImport : IImportFormFile
     public string? DiscoveredLinkOnWiki { get; set; }
 
     [Name(PlanetSheetFields.DiscoveryDate)]
-    public DateTime? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
-    [Name(PlanetSheetFields.DiscoveryPlatform)]
-    public GamePlatformTypes? DiscoveryPlatform { get; set; }
+    [Name(PlanetSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     [Name(PlanetSheetFields.DiscoveredBy)]
     public string? DiscoveredBy { get; set; }
@@ -121,8 +121,8 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.HasGarden)]
     public bool? HasGarden { get; set; }
 
-    [Name(PlanetSheetFields.GameVersionNumberForPage)]
-    public float? GameVersionNumberForPage { get; set; }
+    [Name(PlanetSheetFields.GameReleaseVersionNumber)]
+    public float? GameReleaseVersionNumber { get; set; }
 
     [Name(PlanetSheetFields.Geology)]
     public GeologyTypes? Geology { get; set; }
@@ -161,7 +161,7 @@ public class PlanetImport : IImportFormFile
     public bool? IsMoon { get; set; }
 
     [Name(PlanetSheetFields.LegacyPCDiscoveryDate)]
-    public DateTime? LegacyPCDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyPCDiscoveryDate { get; set; }
 
     [Name(PlanetSheetFields.LegacyPCDiscoveryEra)]
     public string? LegacyPCDiscoveryEra { get; set; }
@@ -173,7 +173,7 @@ public class PlanetImport : IImportFormFile
     public string? LegacyPCPlanetName { get; set; }
 
     [Name(PlanetSheetFields.LegacyPSDiscoveryDate)]
-    public DateTime? LegacyPSDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyPSDiscoveryDate { get; set; }
 
     [Name(PlanetSheetFields.LegacyPSDiscoveryEra)]
     public string? LegacyPSDiscoveryEra { get; set; }
@@ -203,7 +203,7 @@ public class PlanetImport : IImportFormFile
     public string? LegacyXboxDiscoverersGamerTagName { get; set; }
 
     [Name(PlanetSheetFields.LegacyXboxDiscoveryDate)]
-    public DateTime? LegacyXboxDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyXboxDiscoveryDate { get; set; }
 
     [Name(PlanetSheetFields.LegacyXboxPlanetName)]
     public string? LegacyXboxPlanetName { get; set; }
@@ -229,8 +229,8 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.OtherNotes)]
     public string? OtherNotes { get; set; }
 
-    [Name(PlanetSheetFields.PlanetGlyphs)]
-    public string? PlanetGlyphs { get; set; }
+    [Name(PlanetSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(PlanetSheetFields.PlanetIdInSystem)]
     public int? PlanetIdInSystem { get; set; }
@@ -250,11 +250,11 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.PrimaryCoreElement)]
     public PlanetaryCoreTypes? PrimaryCoreElement { get; set; }
 
-    [Name(PlanetSheetFields.PrimaryResource)]
-    public HashSet<HarvestedMaterialType> PrimaryResource { get; set; } = [];
+    [Name(PlanetSheetFields.PrimaryResources)]
+    public HashSet<HarvestedMaterialTypes> PrimaryResources { get; set; } = [];
 
     [Name(PlanetSheetFields.RawIngredients)]
-    public HashSet<EdibleMaterialTypes> RawIngredients { get; set; } = [];
+    public HashSet<EdibleRawMaterialTypes> RawIngredients { get; set; } = [];
 
     [Name(PlanetSheetFields.RegionName)]
     public string? RegionName { get; set; }
@@ -265,8 +265,8 @@ public class PlanetImport : IImportFormFile
     [Name(PlanetSheetFields.SentinelActivity)]
     public SentinelActivityTypes? SentinelActivity { get; set; }
 
-    [Name(PlanetSheetFields.SpecialResource)]
-    public HashSet<PlanetPropertyTypes> SpecialResource { get; set; } = [];
+    [Name(PlanetSheetFields.SpecialResources)]
+    public HashSet<PlanetPropertyTypes> SpecialResources { get; set; } = [];
 
     [Name(PlanetSheetFields.StarSystemName)]
     public string? StarSystemName { get; set; }
@@ -275,10 +275,10 @@ public class PlanetImport : IImportFormFile
     public string? SummaryInfo { get; set; }
 
     [Name(PlanetSheetFields.SurveyDate)]
-    public string? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
-    [Name(PlanetSheetFields.GameReleaseName)]
-    public string? GameReleaseName { get; set; }
+    [Name(PlanetSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
 
     [Name(PlanetSheetFields.SurveyedBy)]
     public string? SurveyedBy { get; set; }
@@ -342,4 +342,10 @@ public class PlanetImport : IImportFormFile
 
     [Name(PlanetSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
+
+    [Name(PlanetSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(PlanetSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
 }
