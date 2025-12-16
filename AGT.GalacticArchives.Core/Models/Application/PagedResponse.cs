@@ -1,6 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Models.AppSettings;
-
-namespace AGT.GalacticArchives.Core.Models.Application;
+﻿namespace AGT.GalacticArchives.Core.Models.Application;
 
 public class PagedResponse<T> : MessageResponse<HashSet<T>>
 {

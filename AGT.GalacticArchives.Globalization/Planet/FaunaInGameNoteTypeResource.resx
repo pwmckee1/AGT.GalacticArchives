@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbsorbsMoistureFromAir" xml:space="preserve">
+    <value>Absorbs Moisture From Air</value>
+  </data>
+  <data name="AcidicBlood" xml:space="preserve">
+    <value>Acidic Blood</value>
+  </data>
+  <data name="AlluringPheromones" xml:space="preserve">
+    <value>Alluring Pheromones</value>
+  </data>
+  <data name="AlwaysWaiting" xml:space="preserve">
+    <value>Always Waiting</value>
+  </data>
+  <data name="AlwaysWatching" xml:space="preserve">
+    <value>Always Watching</value>
+  </data>
+  <data name="ArmouredSkull" xml:space="preserve">
+    <value>Armoured Skull</value>
+  </data>
+  <data name="AsexualReproduction" xml:space="preserve">
+    <value>Asexual Reproduction</value>
+  </data>
+  <data name="AutonomousRegeneration" xml:space="preserve">
+    <value>Autonomous Regeneration</value>
+  </data>
+  <data name="AwareOfItsFate" xml:space="preserve">
+    <value>Aware Of Its Fate</value>
+  </data>
+  <data name="BarbedFeet" xml:space="preserve">
+    <value>Barbed Feet</value>
+  </data>
+  <data name="BelovedByTheGek" xml:space="preserve">
+    <value>Beloved By The Gek</value>
+  </data>
+  <data name="BioluminescentBlood" xml:space="preserve">
+    <value>Bioluminescent Blood</value>
+  </data>
+  <data name="BioluminescentTeeth" xml:space="preserve">
+    <value>Bioluminescent Teeth</value>
+  </data>
+  <data name="BlueBlood" xml:space="preserve">
+    <value>Blue Blood</value>
+  </data>
+  <data name="BondsWithVyKeen" xml:space="preserve">
+    <value>Bonds With Vy'Keen</value>
+  </data>
+  <data name="BornOnMeteors" xml:space="preserve">
+    <value>Born On Meteors</value>
+  </data>
+  <data name="BothGillsAndLungs" xml:space="preserve">
+    <value>Both Gills And Lungs</value>
+  </data>
+  <data name="BrainHemispheresDoNotLink" xml:space="preserve">
+    <value>Brain Hemispheres Do Not Link</value>
+  </data>
+  <data name="BrainHemispheresNotIdentical" xml:space="preserve">
+    <value>Brain Hemispheres Not Identical</value>
+  </data>
+  <data name="BreathesThroughMouth" xml:space="preserve">
+    <value>Breathes Through Mouth</value>
+  </data>
+  <data name="BrittleBones" xml:space="preserve">
+    <value>Brittle Bones</value>
+  </data>
+  <data name="BruisableOrgans" xml:space="preserve">
+    <value>Bruisable Organs</value>
+  </data>
+  <data name="BuildsMetalNest" xml:space="preserve">
+    <value>Builds Metal Nest</value>
+  </data>
+  <data name="BuriesFoodSupplies" xml:space="preserve">
+    <value>Buries Food Supplies</value>
+  </data>
+  <data name="BurnsInTheSun" xml:space="preserve">
+    <value>Burns In The Sun</value>
+  </data>
+  <data name="CalcifiedClaws" xml:space="preserve">
+    <value>Calcified Claws</value>
+  </data>
+  <data name="CanChangeColour" xml:space="preserve">
+    <value>Can Change Colour</value>
+  </data>
+  <data name="CanDislocateJawbones" xml:space="preserve">
+    <value>Can Dislocate Jawbones</value>
+  </data>
+  <data name="CanFeelLove" xml:space="preserve">
+    <value>Can Feel Love</value>
+  </data>
+  <data name="CannotDigestStarch" xml:space="preserve">
+    <value>Cannot Digest Starch</value>
+  </data>
+  <data name="CannotDrown" xml:space="preserve">
+    <value>Cannot Drown</value>
+  </data>
+  <data name="CannotSeeColour" xml:space="preserve">
+    <value>Cannot See Colour</value>
+  </data>
+  <data name="CannotSweat" xml:space="preserve">
+    <value>Cannot Sweat</value>
+  </data>
+  <data name="CanSenseMagneticFields" xml:space="preserve">
+    <value>Can Sense Magnetic Fields</value>
+  </data>
+  <data name="CarbonBasedSkeleton" xml:space="preserve">
+    <value>Carbon Based Skeleton</value>
+  </data>
+  <data name="CarriesBabiesInPouch" xml:space="preserve">
+    <value>Carries Babies In Pouch</value>
+  </data>
+  <data name="CarriesSymbioticFungus" xml:space="preserve">
+    <value>Carries Symbiotic Fungus</value>
+  </data>
+  <data name="CarriesSymbioticWorms" xml:space="preserve">
+    <value>Carries Symbiotic Worms</value>
+  </data>
+  <data name="CausticSkin" xml:space="preserve">
+    <value>Caustic Skin</value>
+  </data>
+  <data name="ChangesGenderWhenCold" xml:space="preserve">
+    <value>Changes Gender When Cold</value>
+  </data>
+  <data name="ClawsHarbourDisease" xml:space="preserve">
+    <value>Claws Harbour Disease</value>
+  </data>
+  <data name="CompoundEyes" xml:space="preserve">
+    <value>Compound Eyes</value>
+  </data>
+  <data name="CoveredInTinyHairs" xml:space="preserve">
+    <value>Covered In Tiny Hairs</value>
+  </data>
+  <data name="CoveredInToxicBristles" xml:space="preserve">
+    <value>Covered In Toxic Bristles</value>
+  </data>
+  <data name="CreatesBeautifulWebs" xml:space="preserve">
+    <value>Creates Beautiful Webs</value>
+  </data>
+  <data name="CutaneousRespiration" xml:space="preserve">
+    <value>Cutaneous Respiration</value>
+  </data>
+  <data name="DecentralisedNervousSystem" xml:space="preserve">
+    <value>Decentralised Nervous System</value>
+  </data>
+  <data name="DeceptivelyFast" xml:space="preserve">
+    <value>Deceptively Fast</value>
+  </data>
+  <data name="DetachableTongue" xml:space="preserve">
+    <value>Detachable Tongue</value>
+  </data>
+  <data name="DigestsViaSymbiots" xml:space="preserve">
+    <value>Digests Via Symbiots</value>
+  </data>
+  <data name="DigsUndergroundNests" xml:space="preserve">
+    <value>Digs Underground Nests</value>
+  </data>
+  <data name="DislikesBeingScanned" xml:space="preserve">
+    <value>Dislikes Being Scanned</value>
+  </data>
+  <data name="DislikesBrightColors" xml:space="preserve">
+    <value>Dislikes Bright Colors</value>
+  </data>
+  <data name="DoesNotAge" xml:space="preserve">
+    <value>Does Not Age</value>
+  </data>
+  <data name="DoubleConedEyes" xml:space="preserve">
+    <value>Double-Coned Eyes</value>
+  </data>
+  <data name="DrinksBlood" xml:space="preserve">
+    <value>Drinks Blood</value>
+  </data>
+  <data name="EasilyConfused" xml:space="preserve">
+    <value>Easily Confused</value>
+  </data>
+  <data name="EasilyTrained" xml:space="preserve">
+    <value>Easily Trained</value>
+  </data>
+  <data name="EcholocationGlands" xml:space="preserve">
+    <value>Echolocation Glands</value>
+  </data>
+  <data name="ElaborateMatingDisplays" xml:space="preserve">
+    <value>Elaborate Mating Displays</value>
+  </data>
+  <data name="ExcellentNavigator" xml:space="preserve">
+    <value>Excellent Navigator</value>
+  </data>
+  <data name="ExcellentSenseOfSmell" xml:space="preserve">
+    <value>Excellent Sense Of Smell</value>
+  </data>
+  <data name="ExcessOfBile" xml:space="preserve">
+    <value>Excess Of Bile</value>
+  </data>
+  <data name="ExtensiveGutBacteria" xml:space="preserve">
+    <value>Extensive Gut Bacteria</value>
+  </data>
+  <data name="ExtremelyAggressive" xml:space="preserve">
+    <value>Extremely Aggressive</value>
+  </data>
+  <data name="ExtremelyHeterozygous" xml:space="preserve">
+    <value>Extremely Heterozygous</value>
+  </data>
+  <data name="ExtremelyHomozygous" xml:space="preserve">
+    <value>Extremely Homozygous</value>
+  </data>
+  <data name="EyesRegrowAfterDamage" xml:space="preserve">
+    <value>Eyes Regrow After Damage</value>
+  </data>
+  <data name="FearsTheRain" xml:space="preserve">
+    <value>Fears The Rain</value>
+  </data>
+  <data name="FleesAnySignsOfDanger" xml:space="preserve">
+    <value>Flees Any Signs Of Danger</value>
+  </data>
+  <data name="FleesInterlopers" xml:space="preserve">
+    <value>Flees Interlopers</value>
+  </data>
+  <data name="FlexibleJoints" xml:space="preserve">
+    <value>Flexible Joints</value>
+  </data>
+  <data name="FormsColonies" xml:space="preserve">
+    <value>Forms Colonies</value>
+  </data>
+  <data name="FragileSkin" xml:space="preserve">
+    <value>Fragile Skin</value>
+  </data>
+  <data name="FragileSkull" xml:space="preserve">
+    <value>Fragile Skull</value>
+  </data>
+  <data name="FrequentlyLost" xml:space="preserve">
+    <value>Frequently Lost</value>
+  </data>
+  <data name="FrequentlyRegurgitates" xml:space="preserve">
+    <value>Frequently Regurgitates</value>
+  </data>
+  <data name="GelatinousBones" xml:space="preserve">
+    <value>Gelatinous Bones</value>
+  </data>
+  <data name="GeneticallyUnstable" xml:space="preserve">
+    <value>Genetically Unstable</value>
+  </data>
+  <data name="GentleSoul" xml:space="preserve">
+    <value>Gentle Soul</value>
+  </data>
+  <data name="GetsColdEasily" xml:space="preserve">
+    <value>Gets Cold Easily</value>
+  </data>
+  <data name="GoesUndergroundToDie" xml:space="preserve">
+    <value>Goes Underground To Die</value>
+  </data>
+  <data name="GoodParent" xml:space="preserve">
+    <value>Good Parent</value>
+  </data>
+  <data name="GoodPollinator" xml:space="preserve">
+    <value>Good Pollinator</value>
+  </data>
+  <data name="GreenBlood" xml:space="preserve">
+    <value>Green Blood</value>
+  </data>
+  <data name="GrowsLungsAfterBirth" xml:space="preserve">
+    <value>Grows Lungs After Birth</value>
+  </data>
+  <data name="GrowsTeethEachDay" xml:space="preserve">
+    <value>Grows Teeth Each Day</value>
+  </data>
+  <data name="GrowsWingsBeforeDeath" xml:space="preserve">
+    <value>Grows Wings Before Death</value>
+  </data>
+  <data name="GrowWingsBeforeDeath" xml:space="preserve">
+    <value>Grow Wings Before Death</value>
+  </data>
+  <data name="HasChlorophyllGlands" xml:space="preserve">
+    <value>Has Chlorophyll Glands</value>
+  </data>
+  <data name="HasNoBones" xml:space="preserve">
+    <value>Has No Bones</value>
+  </data>
+  <data name="HatchedFromCocoons" xml:space="preserve">
+    <value>Hatched From Cocoons</value>
+  </data>
+  <data name="HearsGroundVibrations" xml:space="preserve">
+    <value>Hears Ground Vibrations</value>
+  </data>
+  <data name="HiddenExtraClaws" xml:space="preserve">
+    <value>Hidden Extra Claws</value>
+  </data>
+  <data name="HiddenExtraSkull" xml:space="preserve">
+    <value>Hidden Extra Skull</value>
+  </data>
+  <data name="HiddenExtraTongue" xml:space="preserve">
+    <value>Hidden Extra Tongue</value>
+  </data>
+  <data name="HiddenStinger" xml:space="preserve">
+    <value>Hidden Stinger</value>
+  </data>
+  <data name="HighlyFertile" xml:space="preserve">
+    <value>Highly Fertile</value>
+  </data>
+  <data name="HighlyIntelligent" xml:space="preserve">
+    <value>Highly Intelligent</value>
+  </data>
+  <data name="HighlySocial" xml:space="preserve">
+    <value>Highly Social</value>
+  </data>
+  <data name="HuntsSentinels" xml:space="preserve">
+    <value>Hunts Sentinels</value>
+  </data>
+  <data name="HybridSpecies" xml:space="preserve">
+    <value>Hybrid Species</value>
+  </data>
+  <data name="InflatesWhenStressed" xml:space="preserve">
+    <value>Inflates When Stressed</value>
+  </data>
+  <data name="InvertedOrganSacs" xml:space="preserve">
+    <value>Inverted Organ Sacs</value>
+  </data>
+  <data name="JenbenderWhenCold" xml:space="preserve">
+    <value>Jenbender When Cold</value>
+  </data>
+  <data name="LacksGallbladder" xml:space="preserve">
+    <value>Lacks Gallbladder</value>
+  </data>
+  <data name="LadenWithNectar" xml:space="preserve">
+    <value>Laden With Nectar</value>
+  </data>
+  <data name="LaysBeautifulEggs" xml:space="preserve">
+    <value>Lays Beautiful Eggs</value>
+  </data>
+  <data name="LimitedMindControl" xml:space="preserve">
+    <value>Limited Mind Control</value>
+  </data>
+  <data name="LimitedSentience" xml:space="preserve">
+    <value>Limited Sentience</value>
+  </data>
+  <data name="LivesInHerds" xml:space="preserve">
+    <value>Lives In Herds</value>
+  </data>
+  <data name="LovelyEyes" xml:space="preserve">
+    <value>Lovely Eyes</value>
+  </data>
+  <data name="MadeOfStardust" xml:space="preserve">
+    <value>Made Of Stardust</value>
+  </data>
+  <data name="MagneticTeeth" xml:space="preserve">
+    <value>Magnetic Teeth</value>
+  </data>
+  <data name="MakesArtWithSticks" xml:space="preserve">
+    <value>Makes Art With Sticks</value>
+  </data>
+  <data name="ManyHiddenToes" xml:space="preserve">
+    <value>Many Hidden Toes</value>
+  </data>
+  <data name="MassiveTongue" xml:space="preserve">
+    <value>Massive Tongue</value>
+  </data>
+  <data name="MatesForLife" xml:space="preserve">
+    <value>Mates For Life</value>
+  </data>
+  <data name="MatriarchalSociety" xml:space="preserve">
+    <value>Matriarchal Society</value>
+  </data>
+  <data name="MetalBones" xml:space="preserve">
+    <value>Metal Bones</value>
+  </data>
+  <data name="MildlyRadioactive" xml:space="preserve">
+    <value>Mildly Radioactive</value>
+  </data>
+  <data name="MonstrousTongue" xml:space="preserve">
+    <value>Monstrous Tongue</value>
+  </data>
+  <data name="MoonBaby" xml:space="preserve">
+    <value>Moon Baby</value>
+  </data>
+  <data name="NestsInBlueFoliage" xml:space="preserve">
+    <value>Nests In Blue Foliage</value>
+  </data>
+  <data name="NeverBlinks" xml:space="preserve">
+    <value>Never Blinks</value>
+  </data>
+  <data name="NightVision" xml:space="preserve">
+    <value>Night Vision</value>
+  </data>
+  <data name="NineAdditionalSenses" xml:space="preserve">
+    <value>Nine Additional Senses</value>
+  </data>
+  <data name="NitrogenRichBlood" xml:space="preserve">
+    <value>Nitrogen-Rich Blood</value>
+  </data>
+  <data name="NoStomach" xml:space="preserve">
+    <value>No Stomach</value>
+  </data>
+  <data name="NotCarbonBased" xml:space="preserve">
+    <value>Not Carbon Based</value>
+  </data>
+  <data name="NutritiousFaeces" xml:space="preserve">
+    <value>Nutritious Faeces</value>
+  </data>
+  <data name="OccasionallyEatsRocks" xml:space="preserve">
+    <value>Occasionally Eats Rocks</value>
+  </data>
+  <data name="OccasionallyInvisible" xml:space="preserve">
+    <value>Occasionally Invisible</value>
+  </data>
+  <data name="OneExtendibleFinger" xml:space="preserve">
+    <value>One Extendible Finger</value>
+  </data>
+  <data name="ParasitesInBrain" xml:space="preserve">
+    <value>Parasites In Brain</value>
+  </data>
+  <data name="PartiallyDomesticated" xml:space="preserve">
+    <value>Partially Domesticated</value>
+  </data>
+  <data name="ParticularlyOily" xml:space="preserve">
+    <value>Particularly Oily</value>
+  </data>
+  <data name="PoorHearing" xml:space="preserve">
+    <value>Poor Hearing</value>
+  </data>
+  <data name="PoorSenseOfDirection" xml:space="preserve">
+    <value>Poor Sense Of Direction</value>
+  </data>
+  <data name="PorousSkin" xml:space="preserve">
+    <value>Porous Skin</value>
+  </data>
+  <data name="PossessesLanguage" xml:space="preserve">
+    <value>Possesses Language</value>
+  </data>
+  <data name="PowerfulDigestiveEnzymes" xml:space="preserve">
+    <value>Powerful Digestive Enzymes</value>
+  </data>
+  <data name="PowerfulMandibles" xml:space="preserve">
+    <value>Powerful Mandibles</value>
+  </data>
+  <data name="ProducesVileStench" xml:space="preserve">
+    <value>Produces Vile Stench</value>
+  </data>
+  <data name="RapidSelfHealing" xml:space="preserve">
+    <value>Rapid Self Healing</value>
+  </data>
+  <data name="RecognisesOtherSpecies" xml:space="preserve">
+    <value>Recognises Other Species</value>
+  </data>
+  <data name="RedundantInternalOrgans" xml:space="preserve">
+    <value>Redundant Internal Organs</value>
+  </data>
+  <data name="RegrowsTeethEachDay" xml:space="preserve">
+    <value>Regrows Teeth Each Day</value>
+  </data>
+  <data name="RegularlyRegurgitates" xml:space="preserve">
+    <value>Regularly Regurgitates</value>
+  </data>
+  <data name="RegularlyShedSkin" xml:space="preserve">
+    <value>Regularly Shed Skin</value>
+  </data>
+  <data name="RequiresDietaryIron" xml:space="preserve">
+    <value>Requires Dietary Iron</value>
+  </data>
+  <data name="RespiresAnaerobically" xml:space="preserve">
+    <value>Respires Anaerobically</value>
+  </data>
+  <data name="RespiresInorganically" xml:space="preserve">
+    <value>Respires Inorganically</value>
+  </data>
+  <data name="RetractableAppendage" xml:space="preserve">
+    <value>Retractable Appendage</value>
+  </data>
+  <data name="RetractableEyeballs" xml:space="preserve">
+    <value>Retractable Eyeballs</value>
+  </data>
+  <data name="RetractableEyestalks" xml:space="preserve">
+    <value>Retractable Eyestalks</value>
+  </data>
+  <data name="RiddledWithPests" xml:space="preserve">
+    <value>Riddled With Pests</value>
+  </data>
+  <data name="RigidBones" xml:space="preserve">
+    <value>Rigid Bones</value>
+  </data>
+  <data name="RubberSkull" xml:space="preserve">
+    <value>Rubber Skull</value>
+  </data>
+  <data name="SalivaPh14" xml:space="preserve">
+    <value>Saliva Ph 14</value>
+  </data>
+  <data name="ScaredOfFire" xml:space="preserve">
+    <value>Scared Of Fire</value>
+  </data>
+  <data name="ScaredOfMirrors" xml:space="preserve">
+    <value>Scared Of Mirrors</value>
+  </data>
+  <data name="ScreamsWhenUpset" xml:space="preserve">
+    <value>Screams When Upset</value>
+  </data>
+  <data name="SecondarySkin" xml:space="preserve">
+    <value>Secondary Skin</value>
+  </data>
+  <data name="SecretesPhytotoxins" xml:space="preserve">
+    <value>Secretes Phytotoxins</value>
+  </data>
+  <data name="SecretesVenom" xml:space="preserve">
+    <value>Secretes Venom</value>
+  </data>
+  <data name="SeeksRedFlowers" xml:space="preserve">
+    <value>Seeks Red Flowers</value>
+  </data>
+  <data name="SelfAware" xml:space="preserve">
+    <value>Self-Aware</value>
+  </data>
+  <data name="SenseOrgansInFeet" xml:space="preserve">
+    <value>Sense Organs In Feet</value>
+  </data>
+  <data name="SensesAtlas" xml:space="preserve">
+    <value>Senses Atlas</value>
+  </data>
+  <data name="SensesOrgansInFeet" xml:space="preserve">
+    <value>Senses Organs In Feet</value>
+  </data>
+  <data name="SharpClaws" xml:space="preserve">
+    <value>Sharp Claws</value>
+  </data>
+  <data name="ShedsAndRegrowsBones" xml:space="preserve">
+    <value>Sheds And Regrows Bones</value>
+  </data>
+  <data name="SingsBeautifully" xml:space="preserve">
+    <value>Sings Beautifully</value>
+  </data>
+  <data name="SixStomachs" xml:space="preserve">
+    <value>Six Stomachs</value>
+  </data>
+  <data name="SkinFullOfHoles" xml:space="preserve">
+    <value>Skin Full Of Holes</value>
+  </data>
+  <data name="SkinParasites" xml:space="preserve">
+    <value>Skin Parasites</value>
+  </data>
+  <data name="SkullFullOfHoles" xml:space="preserve">
+    <value>Skull Full Of Holes</value>
+  </data>
+  <data name="SleepsStandingUp" xml:space="preserve">
+    <value>Sleeps Standing Up</value>
+  </data>
+  <data name="SmellsWithTongue" xml:space="preserve">
+    <value>Smells With Tongue</value>
+  </data>
+  <data name="SolarPowered" xml:space="preserve">
+    <value>Solar Powered</value>
+  </data>
+  <data name="SpawnsInWater" xml:space="preserve">
+    <value>Spawns In Water</value>
+  </data>
+  <data name="SpraysInkWhenScared" xml:space="preserve">
+    <value>Sprays Ink When Scared</value>
+  </data>
+  <data name="StomachInsideSkull" xml:space="preserve">
+    <value>Stomach Inside Skull</value>
+  </data>
+  <data name="StoresWaterInHiddenSacs" xml:space="preserve">
+    <value>Stores Water In Hidden Sacs</value>
+  </data>
+  <data name="StrongBurrower" xml:space="preserve">
+    <value>Strong Burrower</value>
+  </data>
+  <data name="StronglyRadioactive" xml:space="preserve">
+    <value>Strongly Radioactive</value>
+  </data>
+  <data name="StrongSwimmer" xml:space="preserve">
+    <value>Strong Swimmer</value>
+  </data>
+  <data name="SuperheatedStomach" xml:space="preserve">
+    <value>Superheated Stomach</value>
+  </data>
+  <data name="SweatsMilkForInfants" xml:space="preserve">
+    <value>Sweats Milk For Infants</value>
+  </data>
+  <data name="SymmetricalInsides" xml:space="preserve">
+    <value>Symmetrical Insides</value>
+  </data>
+  <data name="TapewormHost" xml:space="preserve">
+    <value>Tapeworm Host</value>
+  </data>
+  <data name="TechnicallyImmortal" xml:space="preserve">
+    <value>Technically Immortal</value>
+  </data>
+  <data name="ThickSkull" xml:space="preserve">
+    <value>Thick Skull</value>
+  </data>
+  <data name="ThreeHearts" xml:space="preserve">
+    <value>Three Hearts</value>
+  </data>
+  <data name="TinyBrain" xml:space="preserve">
+    <value>Tiny Brain</value>
+  </data>
+  <data name="TinyOrgans" xml:space="preserve">
+    <value>Tiny Organs</value>
+  </data>
+  <data name="TongueParasites" xml:space="preserve">
+    <value>Tongue Parasites</value>
+  </data>
+  <data name="ToughenedSkin" xml:space="preserve">
+    <value>Toughened Skin</value>
+  </data>
+  <data name="ToxicTongue" xml:space="preserve">
+    <value>Toxic Tongue</value>
+  </data>
+  <data name="TranslucentTeeth" xml:space="preserve">
+    <value>Translucent Teeth</value>
+  </data>
+  <data name="TwoLivers" xml:space="preserve">
+    <value>Two Livers</value>
+  </data>
+  <data name="UltrasonicRoar" xml:space="preserve">
+    <value>Ultrasonic Roar</value>
+  </data>
+  <data name="UnpleasantToEat" xml:space="preserve">
+    <value>Unpleasant To Eat</value>
+  </data>
+  <data name="ValuableBlood" xml:space="preserve">
+    <value>Valuable Blood</value>
+  </data>
+  <data name="VariedPhenotype" xml:space="preserve">
+    <value>Varied Phenotype</value>
+  </data>
+  <data name="VenomLadenClaws" xml:space="preserve">
+    <value>Venom Laden Claws</value>
+  </data>
+  <data name="VeryPredatory" xml:space="preserve">
+    <value>Very Predatory</value>
+  </data>
+  <data name="VerySkittish" xml:space="preserve">
+    <value>Very Skittish</value>
+  </data>
+  <data name="VestigialUdders" xml:space="preserve">
+    <value>Vestigal Udders</value>
+  </data>
+  <data name="WaxyAllOver" xml:space="preserve">
+    <value>Waxy All Over</value>
+  </data>
+  <data name="WeakLungs" xml:space="preserve">
+    <value>Weak Lungs</value>
+  </data>
+  <data name="WellInsulated" xml:space="preserve">
+    <value>Well Insulated</value>
+  </data>
+  <data name="YellowBlood" xml:space="preserve">
+    <value>Yellow Blood</value>
+  </data>
+</root>

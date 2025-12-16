@@ -1,16 +1,10 @@
 ﻿namespace AGT.GalacticArchives.Core.Models.Application;
 
-public class ExceptionDetail
+public class ExceptionDetail(string? message, string? stackTrace)
 {
-    public ExceptionDetail(string? message, string? stackTrace)
-    {
-        Message = message;
-        StackTrace = stackTrace;
-    }
+    public string? Message { get; set; } = message;
 
-    public string? Message { get; set; }
-
-    public string? StackTrace { get; set; }
+    public string? StackTrace { get; set; } = stackTrace;
 
     public ExceptionDetail? InnerException { get; set; }
 }

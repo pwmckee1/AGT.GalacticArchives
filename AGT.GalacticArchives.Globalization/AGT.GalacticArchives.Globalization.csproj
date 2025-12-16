@@ -7,40 +7,478 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="9.0.0" />
+        <PackageReference Include="Autofac" Version="9.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="GeneralErrorResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="PlatformTypeResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="WealthTypeResource.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>WealthTypeResource.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
+        <EmbeddedResource Update="PlatformTypeResource.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="LandArchetypesResource.resx">
+          <LastGenOutput>LandArchetypesResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="BiomeResource.resx">
+          <LastGenOutput>BiomeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="UniqueMaterialsResourceType.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>UniqueMaterialsResourceType.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Application\ApplicationResources.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>ApplicationResources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\AtmosphereGasTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>AtmosphereGasTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\BiomeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>BiomeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\BiomeTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>BiomeTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\ConflictTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>ConflictTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\EconomyTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EconomyTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\EdiblePlantResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EdiblePlantResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\ItemColorTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>ItemColorTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\FactionTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FactionTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaBaitTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaBaitTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaBehaviorResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaBehaviorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaDietResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaDietResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaGenderTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaGenderTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaInGameNoteTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaInGameNoteTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\FaunaTaxonomyResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FaunaTaxonomyResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\GalaxyResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GalaxyResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Application\GeneralErrorResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GeneralErrorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Metadata\GameModeTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GameModeTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\GeologyTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GeologyTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Metadata\ImportResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>ImportResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\LandArchetypesResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>LandArchetypesResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\LandResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>LandResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\LifeformTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>LifeformTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\GlitchTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>GlitchTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\MaterialsResourceType.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>MaterialsResourceType.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\MultiToolResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>MultiToolResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PlanetaryCoreTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetaryCoreTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PlanetAtmosphereColorResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetAtmosphereColorResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PlanetBiotaLevelTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetBiotaLevelTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PlanetPropertyTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetPropertyTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\PlayerBaseElementTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlayerBaseElementTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\PlayerBaseResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlayerBaseResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PointOfInterestResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PointOfInterestResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\RegionResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>RegionResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\SentinelActivityTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>SentinelActivityTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\SettlementBuildingTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>SettlementBuildingTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\SettlementResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>SettlementResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\StarshipLocationTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipLocationTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\StarshipModelTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipModelTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\StarSystemResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarSystemResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\TerrainTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>TerrainTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\WeatherResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>WeatherResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="StarSystem\WealthTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>WealthTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Application\FirestoreResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FirestoreResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\BiomeSubTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>BiomeSubTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PlanetResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\StarshipResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\EdibleRawMaterialTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EdibleRawMaterialTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="GeneralErrorResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>GeneralErrorResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="PlatformTypeResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PlatformTypeResource.resx</DependentUpon>
-      </Compile>
-      <Compile Update="WealthTypeResource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>WealthTypeResource.resx</DependentUpon>
-      </Compile>
+        <Compile Update="PlatformTypeResource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PlatformTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="UniqueMaterialsResourceType.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>UniqueMaterialsResourceType.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Application\ApplicationResources.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>ApplicationResources.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\AtmosphereGasTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>AtmosphereGasTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\BiomeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>BiomeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\BiomeTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>BiomeTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\ConflictTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>ConflictTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\EconomyTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EconomyTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\EdiblePlantResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EdiblePlantResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\ItemColorTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>ItemColorTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\FactionTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FactionTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaBaitTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaBaitTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaBehaviorResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaBehaviorResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaDietResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaDietResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaGenderTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaGenderTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaInGameNoteTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaInGameNoteTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\FaunaTaxonomyResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FaunaTaxonomyResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\GalaxyResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GalaxyResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Application\GeneralErrorResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GeneralErrorResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Metadata\GameModeTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GameModeTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\GeologyTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GeologyTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Metadata\ImportResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>ImportResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\LandArchetypesResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>LandArchetypesResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\LandResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>LandResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\LifeformTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>LifeformTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\GlitchTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>GlitchTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\MaterialsResourceType.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>MaterialsResourceType.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\MultiToolResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>MultiToolResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PlanetaryCoreTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetaryCoreTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PlanetAtmosphereColorResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetAtmosphereColorResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PlanetBiotaLevelTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetBiotaLevelTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PlanetPropertyTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetPropertyTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\PlayerBaseElementTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlayerBaseElementTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\PlayerBaseResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlayerBaseResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PointOfInterestResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PointOfInterestResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\RegionResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>RegionResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\SentinelActivityTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>SentinelActivityTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\SettlementBuildingTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>SettlementBuildingTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\SettlementResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>SettlementResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\StarshipLocationTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipLocationTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\StarshipModelTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipModelTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\StarSystemResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarSystemResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\TerrainTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>TerrainTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\WeatherResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>WeatherResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="StarSystem\WealthTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>WealthTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Application\FirestoreResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FirestoreResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\BiomeSubTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>BiomeSubTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PlanetResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\StarshipResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\EdibleRawMaterialTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EdibleRawMaterialTypeResource.resx</DependentUpon>
+        </Compile>
     </ItemGroup>
 
 </Project>

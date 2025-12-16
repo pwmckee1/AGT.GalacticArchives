@@ -7,3 +7,6 @@ firebase-credentials.json
 .vs
 .idea
 *.pfx
+*.log
+*.user
+firestore-commands.txt

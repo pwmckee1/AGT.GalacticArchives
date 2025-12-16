@@ -1,0 +1,167 @@
+﻿using AGT.GalacticArchives.Core.Constants.Application;
+using AGT.GalacticArchives.Globalization;
+using AGT.GalacticArchives.Services.Decorators;
+using AGT.GalacticArchives.Services.Interfaces.Application;
+using AGT.GalacticArchives.Services.Interfaces.Services;
+using AGT.GalacticArchives.Services.Services.Application;
+using AGT.GalacticArchives.Services.Services.Imports;
+using AGT.GalacticArchives.Services.Services.InGameEntities;
+using AGT.GalacticArchives.Services.Services.InGameEnvironments;
+using Autofac;
+
+namespace AGT.GalacticArchives.DependencyResolution;
+
+public class ServiceModule : Module
+{
+    protected override void Load(ContainerBuilder builder)
+    {
+        builder
+            .RegisterType<RegionService>()
+            .Named<IRegionService>(NamedKeys.Services.RegionService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedRegionServiceDecorator(
+                c.ResolveNamed<IRegionService>(NamedKeys.Services.RegionService)))
+            .As<IRegionService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<StarSystemService>()
+            .Named<IStarSystemService>(NamedKeys.Services.StarSystemService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedStarSystemServiceDecorator(
+                c.ResolveNamed<IStarSystemService>(NamedKeys.Services.StarSystemService)))
+            .As<IStarSystemService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PlanetService>()
+            .Named<IPlanetService>(NamedKeys.Services.PlanetService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedPlanetServiceDecorator(
+                c.ResolveNamed<IPlanetService>(NamedKeys.Services.PlanetService)))
+            .As<IPlanetService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<FaunaService>()
+            .Named<IFaunaService>(NamedKeys.Services.FaunaService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<CacheService>()
+            .Named<ICacheService>(NamedKeys.Services.CacheService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedFaunaServiceDecorator(
+                c.ResolveNamed<IFaunaService>(NamedKeys.Services.FaunaService)))
+            .As<IFaunaService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<MultiToolService>()
+            .Named<IMultiToolService>(NamedKeys.Services.MultiToolService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedMultiToolServiceDecorator(
+                c.ResolveNamed<IMultiToolService>(NamedKeys.Services.MultiToolService)))
+            .As<IMultiToolService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PlayerBaseService>()
+            .Named<IPlayerBaseService>(NamedKeys.Services.PlayerBaseService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedPlayerBaseServiceDecorator(
+                c.ResolveNamed<IPlayerBaseService>(NamedKeys.Services.PlayerBaseService)))
+            .As<IPlayerBaseService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PointOfInterestService>()
+            .Named<IPointOfInterestService>(NamedKeys.Services.PointOfInterestService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedPointOfInterestServiceDecorator(
+                c.ResolveNamed<IPointOfInterestService>(NamedKeys.Services.PointOfInterestService)))
+            .As<IPointOfInterestService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<SettlementService>()
+            .Named<ISettlementService>(NamedKeys.Services.SettlementService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedSettlementServiceDecorator(
+                c.ResolveNamed<ISettlementService>(NamedKeys.Services.SettlementService)))
+            .As<ISettlementService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<StarshipService>()
+            .Named<IStarshipService>(NamedKeys.Services.StarshipService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedStarshipServiceDecorator(
+                c.ResolveNamed<IStarshipService>(NamedKeys.Services.StarshipService)))
+            .As<IStarshipService>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<FaunaImportService>()
+            .Named<IImportService>(ImportResource.FaunaSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<MultiToolImportService>()
+            .Named<IImportService>(ImportResource.MultiToolSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PlanetImportService>()
+            .Named<IImportService>(ImportResource.PlanetSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PlayerBaseImportService>()
+            .Named<IImportService>(ImportResource.PlayerBaseSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<PointOfInterestImportService>()
+            .Named<IImportService>(ImportResource.PointOfInterestSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<RegionImportService>()
+            .Named<IImportService>(ImportResource.RegionSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<SettlementImportService>()
+            .Named<IImportService>(ImportResource.SettlementSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<StarSystemImportService>()
+            .Named<IImportService>(ImportResource.StarSystemSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<StarshipImportService>()
+            .Named<IImportService>(ImportResource.StarshipSheetName)
+            .InstancePerLifetimeScope();
+    }
+}

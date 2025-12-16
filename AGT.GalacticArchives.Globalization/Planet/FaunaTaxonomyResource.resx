@@ -1,0 +1,1318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+      Microsoft ResX Schema
+
+      Version 2.0
+
+      The primary goals of this format is to allow a simple XML format
+      that is mostly human readable. The generation and parsing of the
+      various data types are done through the TypeConverter classes
+      associated with the data types.
+
+      Example:
+
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+
+      There are any number of "resheader" rows that contain simple
+      name/value pairs.
+
+      Each data row contains a name, and value. The row also contains a
+      type or mimetype. Type corresponds to a .NET class that support
+      text/value conversion through the TypeConverter architecture.
+      Classes that don't support this are serialized and stored with the
+      mimetype set.
+
+      The mimetype is used for serialized objects, and tells the
+      ResXResourceReader how to depersist the object. This is currently not
+      extensible. For a given mimetype the value must be set accordingly:
+
+      Note - application/x-microsoft.net.object.binary.base64 is the format
+      that the ResXResourceWriter will generate, however the reader can
+      read any of the formats listed below.
+
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+  </resheader>
+  <data name="Agnelis1" xml:space="preserve">
+    <value>Agnelis-1</value>
+  </data>
+  <data name="Agnelis10" xml:space="preserve">
+    <value>Agnelis-10</value>
+  </data>
+  <data name="Agnelis11" xml:space="preserve">
+    <value>Agnelis-11</value>
+  </data>
+  <data name="Agnelis12" xml:space="preserve">
+    <value>Agnelis-12</value>
+  </data>
+  <data name="Agnelis2" xml:space="preserve">
+    <value>Agnelis-2</value>
+  </data>
+  <data name="Agnelis3" xml:space="preserve">
+    <value>Agnelis-3</value>
+  </data>
+  <data name="Agnelis4" xml:space="preserve">
+    <value>Agnelis-4</value>
+  </data>
+  <data name="Agnelis5" xml:space="preserve">
+    <value>Agnelis-5</value>
+  </data>
+  <data name="Agnelis6" xml:space="preserve">
+    <value>Agnelis-6</value>
+  </data>
+  <data name="Agnelis7" xml:space="preserve">
+    <value>Agnelis-7</value>
+  </data>
+  <data name="Agnelis8" xml:space="preserve">
+    <value>Agnelis-8</value>
+  </data>
+  <data name="Agnelis9" xml:space="preserve">
+    <value>Agnelis-9</value>
+  </data>
+  <data name="Anastomus12" xml:space="preserve">
+    <value>Anastomus-12</value>
+  </data>
+  <data name="AnastomusDorito" xml:space="preserve">
+    <value>Anastomus-Dorito</value>
+  </data>
+  <data name="AnastomusGull" xml:space="preserve">
+    <value>Anastomus-Gull</value>
+  </data>
+  <data name="AnastomusInsectoid" xml:space="preserve">
+    <value>Anastomus-Insectoid</value>
+  </data>
+  <data name="AnastomusInsectoidEyeless" xml:space="preserve">
+    <value>Anastomus-Insectoid Eyeless</value>
+  </data>
+  <data name="AnastomusLocust" xml:space="preserve">
+    <value>Anastomus-Locust</value>
+  </data>
+  <data name="AnastomusMantis" xml:space="preserve">
+    <value>Anastomus-Mantis</value>
+  </data>
+  <data name="AnastomusMushroomBack" xml:space="preserve">
+    <value>Anastomus-Mushroom Back</value>
+  </data>
+  <data name="AnastomusNoodles" xml:space="preserve">
+    <value>Anastomus-Noodles</value>
+  </data>
+  <data name="AnastomusScimitar" xml:space="preserve">
+    <value>Anastomus-Scimitar</value>
+  </data>
+  <data name="AnastomusShovelMouth" xml:space="preserve">
+    <value>Anastomus-Shovel-Mouth</value>
+  </data>
+  <data name="AnastomusTurtlehead" xml:space="preserve">
+    <value>Anastomus-Turtlehead</value>
+  </data>
+  <data name="AnomalousBall" xml:space="preserve">
+    <value>Anomalous-Ball</value>
+  </data>
+  <data name="AnomalousBeamLightCrawler" xml:space="preserve">
+    <value>Anomalous-Beam Light Crawler</value>
+  </data>
+  <data name="AnomalousBloodBalloon" xml:space="preserve">
+    <value>Anomalous-Blood Balloon</value>
+  </data>
+  <data name="AnomalousBoneCrawler" xml:space="preserve">
+    <value>Anomalous-Bone Crawler</value>
+  </data>
+  <data name="AnomalousButterflyShells" xml:space="preserve">
+    <value>Anomalous-Butterfly Shells</value>
+  </data>
+  <data name="AnomalousContourSphere" xml:space="preserve">
+    <value>Anomalous-Contour Sphere</value>
+  </data>
+  <data name="AnomalousElectricalAir" xml:space="preserve">
+    <value>Anomalous-Electrical Air</value>
+  </data>
+  <data name="AnomalousFloatingShards" xml:space="preserve">
+    <value>Anomalous-Floating Shards</value>
+  </data>
+  <data name="AnomalousFloatingWireCell" xml:space="preserve">
+    <value>Anomalous-Floating Wire Cell</value>
+  </data>
+  <data name="AnomalousFractCube" xml:space="preserve">
+    <value>Anomalous-Fract Cube</value>
+  </data>
+  <data name="AnomalousHexagonJellyfloater" xml:space="preserve">
+    <value>Anomalous-Hexagon Jellyfloater</value>
+  </data>
+  <data name="AnomalousRollingShell" xml:space="preserve">
+    <value>Anomalous-Rolling Shell</value>
+  </data>
+  <data name="Bos11" xml:space="preserve">
+    <value>Bos-11</value>
+  </data>
+  <data name="Bos12" xml:space="preserve">
+    <value>Bos-12</value>
+  </data>
+  <data name="Bosaquatica1" xml:space="preserve">
+    <value>Bosaquatica-1</value>
+  </data>
+  <data name="Bosaquatica10" xml:space="preserve">
+    <value>Bosaquatica-10</value>
+  </data>
+  <data name="Bosaquatica11" xml:space="preserve">
+    <value>Bosaquatica-11</value>
+  </data>
+  <data name="Bosaquatica12" xml:space="preserve">
+    <value>Bosaquatica-12</value>
+  </data>
+  <data name="Bosaquatica2" xml:space="preserve">
+    <value>Bosaquatica-2</value>
+  </data>
+  <data name="Bosaquatica4" xml:space="preserve">
+    <value>Bosaquatica-4</value>
+  </data>
+  <data name="Bosaquatica5" xml:space="preserve">
+    <value>Bosaquatica-5</value>
+  </data>
+  <data name="Bosaquatica6" xml:space="preserve">
+    <value>Bosaquatica-6</value>
+  </data>
+  <data name="Bosaquatica7" xml:space="preserve">
+    <value>Bosaquatica-7</value>
+  </data>
+  <data name="Bosaquatica8" xml:space="preserve">
+    <value>Bosaquatica-8</value>
+  </data>
+  <data name="Bosaquatica9" xml:space="preserve">
+    <value>Bosaquatica-9</value>
+  </data>
+  <data name="BosFloatingGreaterMushroomBeetle" xml:space="preserve">
+    <value>Bos-Floating Greater Mushroom Beetle</value>
+  </data>
+  <data name="BosFloatingLesserMushroomBeetle" xml:space="preserve">
+    <value>Bos-Floating Lesser Mushroom Beetle</value>
+  </data>
+  <data name="BosFloatingSpiderCrab" xml:space="preserve">
+    <value>Bos-Floating Spider-Crab</value>
+  </data>
+  <data name="BosFloatingSpiderCrabMantis" xml:space="preserve">
+    <value>Bos-Floating Spider-Crab Mantis</value>
+  </data>
+  <data name="BosFloatingSunBeetle" xml:space="preserve">
+    <value>Bos-Floating Sun Beetle</value>
+  </data>
+  <data name="BosGreaterMushroomBeetle" xml:space="preserve">
+    <value>Bos-Greater Mushroom Beetle</value>
+  </data>
+  <data name="BosLesserMushroomBeetle" xml:space="preserve">
+    <value>Bos-Lesser Mushroom Beetle</value>
+  </data>
+  <data name="Bosoptera10" xml:space="preserve">
+    <value>Bosoptera-10</value>
+  </data>
+  <data name="Bosoptera11" xml:space="preserve">
+    <value>Bosoptera-11</value>
+  </data>
+  <data name="Bosoptera12" xml:space="preserve">
+    <value>Bosoptera-12</value>
+  </data>
+  <data name="Bosoptera3" xml:space="preserve">
+    <value>Bosoptera-3</value>
+  </data>
+  <data name="Bosoptera4" xml:space="preserve">
+    <value>Bosoptera-4</value>
+  </data>
+  <data name="Bosoptera5" xml:space="preserve">
+    <value>Bosoptera-5</value>
+  </data>
+  <data name="Bosoptera6" xml:space="preserve">
+    <value>Bosoptera-6</value>
+  </data>
+  <data name="Bosoptera7" xml:space="preserve">
+    <value>Bosoptera-7</value>
+  </data>
+  <data name="Bosoptera8" xml:space="preserve">
+    <value>Bosoptera-8</value>
+  </data>
+  <data name="Bosoptera9" xml:space="preserve">
+    <value>Bosoptera-9</value>
+  </data>
+  <data name="BosopteraBeakHead" xml:space="preserve">
+    <value>Bosoptera-Beak Head</value>
+  </data>
+  <data name="BosopteraHerculesHead" xml:space="preserve">
+    <value>Bosoptera-Hercules Head</value>
+  </data>
+  <data name="BosSpiderCrab" xml:space="preserve">
+    <value>Bos-Spider-Crab</value>
+  </data>
+  <data name="BosSpiderCrabMantis" xml:space="preserve">
+    <value>Bos-Spider-Crab Mantis</value>
+  </data>
+  <data name="BosSunBeetle" xml:space="preserve">
+    <value>Bos-Sun Beetle</value>
+  </data>
+  <data name="Chrysaora1" xml:space="preserve">
+    <value>Chrysaora-1</value>
+  </data>
+  <data name="Chrysaora10" xml:space="preserve">
+    <value>Chrysaora-10</value>
+  </data>
+  <data name="Chrysaora11" xml:space="preserve">
+    <value>Chrysaora-11</value>
+  </data>
+  <data name="Chrysaora12" xml:space="preserve">
+    <value>Chrysaora-12</value>
+  </data>
+  <data name="Chrysaora2" xml:space="preserve">
+    <value>Chrysaora-2</value>
+  </data>
+  <data name="Chrysaora3" xml:space="preserve">
+    <value>Chrysaora-3</value>
+  </data>
+  <data name="Chrysaora4" xml:space="preserve">
+    <value>Chrysaora-4</value>
+  </data>
+  <data name="Chrysaora5" xml:space="preserve">
+    <value>Chrysaora-5</value>
+  </data>
+  <data name="Chrysaora6" xml:space="preserve">
+    <value>Chrysaora-6</value>
+  </data>
+  <data name="Chrysaora7" xml:space="preserve">
+    <value>Chrysaora-7</value>
+  </data>
+  <data name="Chrysaora8" xml:space="preserve">
+    <value>Chrysaora-8</value>
+  </data>
+  <data name="Chrysaora9" xml:space="preserve">
+    <value>Chrysaora-9</value>
+  </data>
+  <data name="Conokinis10" xml:space="preserve">
+    <value>Conokinis-10</value>
+  </data>
+  <data name="Conokinis11" xml:space="preserve">
+    <value>Conokinis-11</value>
+  </data>
+  <data name="Conokinis12" xml:space="preserve">
+    <value>Conokinis-12</value>
+  </data>
+  <data name="Conokinis6" xml:space="preserve">
+    <value>Conokinis-6</value>
+  </data>
+  <data name="Conokinis7" xml:space="preserve">
+    <value>Conokinis-7</value>
+  </data>
+  <data name="Conokinis8" xml:space="preserve">
+    <value>Conokinis-8</value>
+  </data>
+  <data name="Conokinis9" xml:space="preserve">
+    <value>Conokinis-9</value>
+  </data>
+  <data name="ConokinisGreaterMushroomBeetle" xml:space="preserve">
+    <value>Conokinis-Greater Mushroom Beetle</value>
+  </data>
+  <data name="ConokinisLesserMushroomBeetle" xml:space="preserve">
+    <value>Conokinis-Lesser Mushroom Beetle</value>
+  </data>
+  <data name="ConokinisSpiderCrab" xml:space="preserve">
+    <value>Conokinis-Spider-Crab</value>
+  </data>
+  <data name="ConokinisSpiderCrabMantis" xml:space="preserve">
+    <value>Conokinis-Spider-Crab Mantis</value>
+  </data>
+  <data name="ConokinisSunBeetle" xml:space="preserve">
+    <value>Conokinis-Sun Beetle</value>
+  </data>
+  <data name="Cycromys1" xml:space="preserve">
+    <value>Cycromys-1</value>
+  </data>
+  <data name="Cycromys10" xml:space="preserve">
+    <value>Cycromys-10</value>
+  </data>
+  <data name="Cycromys11" xml:space="preserve">
+    <value>Cycromys-11</value>
+  </data>
+  <data name="Cycromys12" xml:space="preserve">
+    <value>Cycromys-12</value>
+  </data>
+  <data name="Cycromys2" xml:space="preserve">
+    <value>Cycromys-2</value>
+  </data>
+  <data name="Cycromys3" xml:space="preserve">
+    <value>Cycromys-3</value>
+  </data>
+  <data name="Cycromys4" xml:space="preserve">
+    <value>Cycromys-4</value>
+  </data>
+  <data name="Cycromys5" xml:space="preserve">
+    <value>Cycromys-5</value>
+  </data>
+  <data name="Cycromys6" xml:space="preserve">
+    <value>Cycromys-6</value>
+  </data>
+  <data name="Cycromys7" xml:space="preserve">
+    <value>Cycromys-7</value>
+  </data>
+  <data name="Cycromys8" xml:space="preserve">
+    <value>Cycromys-8</value>
+  </data>
+  <data name="Cycromys9" xml:space="preserve">
+    <value>Cycromys-9</value>
+  </data>
+  <data name="Felidae10" xml:space="preserve">
+    <value>Felidae-10</value>
+  </data>
+  <data name="Felidae11" xml:space="preserve">
+    <value>Felidae-11</value>
+  </data>
+  <data name="Felidae12" xml:space="preserve">
+    <value>Felidae-12</value>
+  </data>
+  <data name="FelidaeBipedal" xml:space="preserve">
+    <value>Felidae-Bipedal</value>
+  </data>
+  <data name="FelidaeBoar" xml:space="preserve">
+    <value>Felidae-Boar</value>
+  </data>
+  <data name="FelidaeCanine" xml:space="preserve">
+    <value>Felidae-Canine</value>
+  </data>
+  <data name="FelidaeFeline" xml:space="preserve">
+    <value>Felidae-Feline</value>
+  </data>
+  <data name="FelidaeQuadruped" xml:space="preserve">
+    <value>Felidae-Quadruped</value>
+  </data>
+  <data name="FelidaeReptilian" xml:space="preserve">
+    <value>Felidae-Reptilian</value>
+  </data>
+  <data name="FelidaeUnicorn" xml:space="preserve">
+    <value>Felidae-Unicorn</value>
+  </data>
+  <data name="FelidaeWinged" xml:space="preserve">
+    <value>Felidae-Winged</value>
+  </data>
+  <data name="FelidaeXenobeast" xml:space="preserve">
+    <value>Felidae-Xenobeast</value>
+  </data>
+  <data name="FelihexFelihex" xml:space="preserve">
+    <value>Felihex-Felihex</value>
+  </data>
+  <data name="HexungulatisHexungulatis" xml:space="preserve">
+    <value>Hexungulatis-Hexungulatis</value>
+  </data>
+  <data name="Ictaloris1" xml:space="preserve">
+    <value>Ictaloris-1</value>
+  </data>
+  <data name="Ictaloris10" xml:space="preserve">
+    <value>Ictaloris-10</value>
+  </data>
+  <data name="Ictaloris11" xml:space="preserve">
+    <value>Ictaloris-11</value>
+  </data>
+  <data name="Ictaloris12" xml:space="preserve">
+    <value>Ictaloris-12</value>
+  </data>
+  <data name="Ictaloris2" xml:space="preserve">
+    <value>Ictaloris-2</value>
+  </data>
+  <data name="Ictaloris3" xml:space="preserve">
+    <value>Ictaloris-3</value>
+  </data>
+  <data name="Ictaloris4" xml:space="preserve">
+    <value>Ictaloris-4</value>
+  </data>
+  <data name="Ictaloris5" xml:space="preserve">
+    <value>Ictaloris-5</value>
+  </data>
+  <data name="Ictaloris6" xml:space="preserve">
+    <value>Ictaloris-6</value>
+  </data>
+  <data name="Ictaloris7" xml:space="preserve">
+    <value>Ictaloris-7</value>
+  </data>
+  <data name="Ictaloris8" xml:space="preserve">
+    <value>Ictaloris-8</value>
+  </data>
+  <data name="Ictaloris9" xml:space="preserve">
+    <value>Ictaloris-9</value>
+  </data>
+  <data name="Lok10" xml:space="preserve">
+    <value>Lok-10</value>
+  </data>
+  <data name="Lok11" xml:space="preserve">
+    <value>Lok-11</value>
+  </data>
+  <data name="Lok12" xml:space="preserve">
+    <value>Lok-12</value>
+  </data>
+  <data name="Lok9" xml:space="preserve">
+    <value>Lok-9</value>
+  </data>
+  <data name="LokBlobby" xml:space="preserve">
+    <value>Lok-Blobby</value>
+  </data>
+  <data name="LokColony" xml:space="preserve">
+    <value>Lok-Colony</value>
+  </data>
+  <data name="LokLargeBlob" xml:space="preserve">
+    <value>Lok-Large Blob</value>
+  </data>
+  <data name="LokLargeBlobTendrilled" xml:space="preserve">
+    <value>Lok-Large Blob Tendrilled</value>
+  </data>
+  <data name="LokLesserMeadowCrab" xml:space="preserve">
+    <value>Lok-Lesser Meadow Crab</value>
+  </data>
+  <data name="LokPlant" xml:space="preserve">
+    <value>Lok-Plant</value>
+  </data>
+  <data name="LokSquid" xml:space="preserve">
+    <value>Lok-Squid</value>
+  </data>
+  <data name="LokWormLike" xml:space="preserve">
+    <value>Lok-Worm-Like</value>
+  </data>
+  <data name="Mechanoceris10" xml:space="preserve">
+    <value>Mechanoceris-10</value>
+  </data>
+  <data name="Mechanoceris11" xml:space="preserve">
+    <value>Mechanoceris-11</value>
+  </data>
+  <data name="Mechanoceris12" xml:space="preserve">
+    <value>Mechanoceris-12</value>
+  </data>
+  <data name="Mechanoceris5" xml:space="preserve">
+    <value>Mechanoceris-5</value>
+  </data>
+  <data name="Mechanoceris6" xml:space="preserve">
+    <value>Mechanoceris-6</value>
+  </data>
+  <data name="Mechanoceris7" xml:space="preserve">
+    <value>Mechanoceris-7</value>
+  </data>
+  <data name="Mechanoceris8" xml:space="preserve">
+    <value>Mechanoceris-8</value>
+  </data>
+  <data name="Mechanoceris9" xml:space="preserve">
+    <value>Mechanoceris-9</value>
+  </data>
+  <data name="MechanocerisBipedRobot" xml:space="preserve">
+    <value>Mechanoceris-Biped Robot</value>
+  </data>
+  <data name="MechanocerisBipedRobotMagnet" xml:space="preserve">
+    <value>Mechanoceris-Biped Robot Magnet</value>
+  </data>
+  <data name="MechanocerisQuadrapedalRobotMagnet" xml:space="preserve">
+    <value>Mechanoceris-Quadrapedal Robot Magnet</value>
+  </data>
+  <data name="MechanocerisQuadrupedalRobot" xml:space="preserve">
+    <value>Mechanoceris-Quadrupedal Robot</value>
+  </data>
+  <data name="Mogara10" xml:space="preserve">
+    <value>Mogara-10</value>
+  </data>
+  <data name="Mogara11" xml:space="preserve">
+    <value>Mogara-11</value>
+  </data>
+  <data name="Mogara12" xml:space="preserve">
+    <value>Mogara-12</value>
+  </data>
+  <data name="Mogara7" xml:space="preserve">
+    <value>Mogara-7</value>
+  </data>
+  <data name="Mogara8" xml:space="preserve">
+    <value>Mogara-8</value>
+  </data>
+  <data name="Mogara9" xml:space="preserve">
+    <value>Mogara-9</value>
+  </data>
+  <data name="MogaraFlyingWingedMogara" xml:space="preserve">
+    <value>Mogara-Flying Winged Mogara</value>
+  </data>
+  <data name="MogaraGekAntlers" xml:space="preserve">
+    <value>Mogara-Gek Antlers</value>
+  </data>
+  <data name="MogaraGekLike" xml:space="preserve">
+    <value>Mogara-Gek-Like</value>
+  </data>
+  <data name="MogaraMaskedMogara" xml:space="preserve">
+    <value>Mogara-Masked Mogara</value>
+  </data>
+  <data name="MogaraTeddyAntlers" xml:space="preserve">
+    <value>Mogara-Teddy Antlers</value>
+  </data>
+  <data name="MogaraTeddyBear" xml:space="preserve">
+    <value>Mogara-Teddy Bear</value>
+  </data>
+  <data name="Osteofelidae10" xml:space="preserve">
+    <value>Osteofelidae-10</value>
+  </data>
+  <data name="Osteofelidae11" xml:space="preserve">
+    <value>Osteofelidae-11</value>
+  </data>
+  <data name="Osteofelidae12" xml:space="preserve">
+    <value>Osteofelidae-12</value>
+  </data>
+  <data name="Osteofelidae4" xml:space="preserve">
+    <value>Osteofelidae-4</value>
+  </data>
+  <data name="Osteofelidae5" xml:space="preserve">
+    <value>Osteofelidae-5</value>
+  </data>
+  <data name="Osteofelidae6" xml:space="preserve">
+    <value>Osteofelidae-6</value>
+  </data>
+  <data name="Osteofelidae7" xml:space="preserve">
+    <value>Osteofelidae-7</value>
+  </data>
+  <data name="Osteofelidae8" xml:space="preserve">
+    <value>Osteofelidae-8</value>
+  </data>
+  <data name="Osteofelidae9" xml:space="preserve">
+    <value>Osteofelidae-9</value>
+  </data>
+  <data name="OsteofelidaeCrystal" xml:space="preserve">
+    <value>Osteofelidae-Crystal</value>
+  </data>
+  <data name="OsteofelidaeMushroom" xml:space="preserve">
+    <value>Osteofelidae-Mushroom</value>
+  </data>
+  <data name="OsteofelidaeSpherical" xml:space="preserve">
+    <value>Osteofelidae-Spherical</value>
+  </data>
+  <data name="Oxyacta1" xml:space="preserve">
+    <value>Oxyacta-1</value>
+  </data>
+  <data name="Oxyacta10" xml:space="preserve">
+    <value>Oxyacta-10</value>
+  </data>
+  <data name="Oxyacta11" xml:space="preserve">
+    <value>Oxyacta-11</value>
+  </data>
+  <data name="Oxyacta12" xml:space="preserve">
+    <value>Oxyacta-12</value>
+  </data>
+  <data name="Oxyacta2" xml:space="preserve">
+    <value>Oxyacta-2</value>
+  </data>
+  <data name="Oxyacta3" xml:space="preserve">
+    <value>Oxyacta-3</value>
+  </data>
+  <data name="Oxyacta4" xml:space="preserve">
+    <value>Oxyacta-4</value>
+  </data>
+  <data name="Oxyacta5" xml:space="preserve">
+    <value>Oxyacta-5</value>
+  </data>
+  <data name="Oxyacta6" xml:space="preserve">
+    <value>Oxyacta-6</value>
+  </data>
+  <data name="Oxyacta7" xml:space="preserve">
+    <value>Oxyacta-7</value>
+  </data>
+  <data name="Oxyacta8" xml:space="preserve">
+    <value>Oxyacta-8</value>
+  </data>
+  <data name="Oxyacta9" xml:space="preserve">
+    <value>Oxyacta-9</value>
+  </data>
+  <data name="Prionace1" xml:space="preserve">
+    <value>Prionace-1</value>
+  </data>
+  <data name="Prionace10" xml:space="preserve">
+    <value>Prionace-10</value>
+  </data>
+  <data name="Prionace11" xml:space="preserve">
+    <value>Prionace-11</value>
+  </data>
+  <data name="Prionace12" xml:space="preserve">
+    <value>Prionace-12</value>
+  </data>
+  <data name="Prionace2" xml:space="preserve">
+    <value>Prionace-2</value>
+  </data>
+  <data name="Prionace3" xml:space="preserve">
+    <value>Prionace-3</value>
+  </data>
+  <data name="Prionace4" xml:space="preserve">
+    <value>Prionace-4</value>
+  </data>
+  <data name="Prionace5" xml:space="preserve">
+    <value>Prionace-5</value>
+  </data>
+  <data name="Prionace6" xml:space="preserve">
+    <value>Prionace-6</value>
+  </data>
+  <data name="Prionace7" xml:space="preserve">
+    <value>Prionace-7</value>
+  </data>
+  <data name="Prionace8" xml:space="preserve">
+    <value>Prionace-8</value>
+  </data>
+  <data name="Prionace9" xml:space="preserve">
+    <value>Prionace-9</value>
+  </data>
+  <data name="Prionacefda1" xml:space="preserve">
+    <value>Prionacefda-1</value>
+  </data>
+  <data name="Prionacefda10" xml:space="preserve">
+    <value>Prionacefda-10</value>
+  </data>
+  <data name="Prionacefda11" xml:space="preserve">
+    <value>Prionacefda-11</value>
+  </data>
+  <data name="Prionacefda12" xml:space="preserve">
+    <value>Prionacefda-12</value>
+  </data>
+  <data name="Prionacefda2" xml:space="preserve">
+    <value>Prionacefda-2</value>
+  </data>
+  <data name="Prionacefda3" xml:space="preserve">
+    <value>Prionacefda-3</value>
+  </data>
+  <data name="Prionacefda4" xml:space="preserve">
+    <value>Prionacefda-4</value>
+  </data>
+  <data name="Prionacefda5" xml:space="preserve">
+    <value>Prionacefda-5</value>
+  </data>
+  <data name="Prionacefda6" xml:space="preserve">
+    <value>Prionacefda-6</value>
+  </data>
+  <data name="Prionacefda7" xml:space="preserve">
+    <value>Prionacefda-7</value>
+  </data>
+  <data name="Prionacefda8" xml:space="preserve">
+    <value>Prionacefda-8</value>
+  </data>
+  <data name="Prionacefda9" xml:space="preserve">
+    <value>Prionacefda-9</value>
+  </data>
+  <data name="Prionterrae10" xml:space="preserve">
+    <value>Prionterrae-10</value>
+  </data>
+  <data name="Prionterrae11" xml:space="preserve">
+    <value>Prionterrae-11</value>
+  </data>
+  <data name="Prionterrae12" xml:space="preserve">
+    <value>Prionterrae-12</value>
+  </data>
+  <data name="PrionterraeAnglerDigger" xml:space="preserve">
+    <value>Prionterrae-Angler Digger</value>
+  </data>
+  <data name="PrionterraeBladeSwarm" xml:space="preserve">
+    <value>Prionterrae-Blade Swarm</value>
+  </data>
+  <data name="PrionterraeBoneSnake" xml:space="preserve">
+    <value>Prionterrae-Bone Snake</value>
+  </data>
+  <data name="PrionterraeBuzzsawSnail" xml:space="preserve">
+    <value>Prionterrae-Buzzsaw Snail</value>
+  </data>
+  <data name="PrionterraeCaterpillar" xml:space="preserve">
+    <value>Prionterrae-Caterpillar</value>
+  </data>
+  <data name="PrionterraeRollerSpade" xml:space="preserve">
+    <value>Prionterrae-Roller Spade</value>
+  </data>
+  <data name="PrionterraeSled" xml:space="preserve">
+    <value>Prionterrae-Sled</value>
+  </data>
+  <data name="PrionterraeSquid" xml:space="preserve">
+    <value>Prionterrae-Squid</value>
+  </data>
+  <data name="PrionterraeTendrilDigger" xml:space="preserve">
+    <value>Prionterrae-Tendril Digger</value>
+  </data>
+  <data name="Procavaquatica1" xml:space="preserve">
+    <value>Procavaquatica-1</value>
+  </data>
+  <data name="Procavaquatica10" xml:space="preserve">
+    <value>Procavaquatica-10</value>
+  </data>
+  <data name="Procavaquatica11" xml:space="preserve">
+    <value>Procavaquatica-11</value>
+  </data>
+  <data name="Procavaquatica12" xml:space="preserve">
+    <value>Procavaquatica-12</value>
+  </data>
+  <data name="Procavaquatica2" xml:space="preserve">
+    <value>Procavaquatica-2</value>
+  </data>
+  <data name="Procavaquatica3" xml:space="preserve">
+    <value>Procavaquatica-3</value>
+  </data>
+  <data name="Procavaquatica4" xml:space="preserve">
+    <value>Procavaquatica-4</value>
+  </data>
+  <data name="Procavaquatica5" xml:space="preserve">
+    <value>Procavaquatica-5</value>
+  </data>
+  <data name="Procavaquatica6" xml:space="preserve">
+    <value>Procavaquatica-6</value>
+  </data>
+  <data name="Procavaquatica7" xml:space="preserve">
+    <value>Procavaquatica-7</value>
+  </data>
+  <data name="Procavaquatica8" xml:space="preserve">
+    <value>Procavaquatica-8</value>
+  </data>
+  <data name="Procavaquatica9" xml:space="preserve">
+    <value>Procavaquatica-9</value>
+  </data>
+  <data name="Procavya12" xml:space="preserve">
+    <value>Procavya-12</value>
+  </data>
+  <data name="ProcavyaAnteater" xml:space="preserve">
+    <value>Procavya-Anteater</value>
+  </data>
+  <data name="ProcavyaBadger" xml:space="preserve">
+    <value>Procavya-Badger</value>
+  </data>
+  <data name="ProcavyaBirdhead" xml:space="preserve">
+    <value>Procavya-Birdhead</value>
+  </data>
+  <data name="ProcavyaCanine" xml:space="preserve">
+    <value>Procavya-Canine</value>
+  </data>
+  <data name="ProcavyaFrilledKoala" xml:space="preserve">
+    <value>Procavya-Frilled Koala</value>
+  </data>
+  <data name="ProcavyaMole" xml:space="preserve">
+    <value>Procavya-Mole</value>
+  </data>
+  <data name="ProcavyaRat" xml:space="preserve">
+    <value>Procavya-Rat</value>
+  </data>
+  <data name="ProcavyaReptilian" xml:space="preserve">
+    <value>Procavya-Reptilian</value>
+  </data>
+  <data name="ProcavyaReptilianTurtleShell" xml:space="preserve">
+    <value>Procavya-Reptilian Turtle Shell</value>
+  </data>
+  <data name="ProcavyaTurtlehead" xml:space="preserve">
+    <value>Procavya-Turtlehead</value>
+  </data>
+  <data name="ProcavyaTurtleheadShell" xml:space="preserve">
+    <value>Procavya-Turtlehead &amp; Shell</value>
+  </data>
+  <data name="Protocaeli11" xml:space="preserve">
+    <value>Protocaeli-11</value>
+  </data>
+  <data name="Protocaeli12" xml:space="preserve">
+    <value>Protocaeli-12</value>
+  </data>
+  <data name="ProtocaeliBoneflyer" xml:space="preserve">
+    <value>Protocaeli-Boneflyer</value>
+  </data>
+  <data name="ProtocaeliBubbles" xml:space="preserve">
+    <value>Protocaeli-Bubbles</value>
+  </data>
+  <data name="ProtocaeliElephloat" xml:space="preserve">
+    <value>Protocaeli-Elephloat</value>
+  </data>
+  <data name="ProtocaeliFloatingMushroom" xml:space="preserve">
+    <value>Protocaeli-Floating Mushroom</value>
+  </data>
+  <data name="ProtocaeliFloatingOrchid" xml:space="preserve">
+    <value>Protocaeli-Floating Orchid</value>
+  </data>
+  <data name="ProtocaeliGhostflyer" xml:space="preserve">
+    <value>Protocaeli-Ghostflyer</value>
+  </data>
+  <data name="ProtocaeliGuppieflyer" xml:space="preserve">
+    <value>Protocaeli-Guppieflyer</value>
+  </data>
+  <data name="ProtocaeliPlainFlyer" xml:space="preserve">
+    <value>Protocaeli-Plain Flyer</value>
+  </data>
+  <data name="ProtocaeliPuffleflyer" xml:space="preserve">
+    <value>Protocaeli-Puffleflyer</value>
+  </data>
+  <data name="ProtocaeliSnailflyer" xml:space="preserve">
+    <value>Protocaeli-Snailflyer</value>
+  </data>
+  <data name="ProtosphaeridaeArmadillon" xml:space="preserve">
+    <value>Protosphaeridae-Armadillon</value>
+  </data>
+  <data name="ProtosphaeridaeBoneHoop" xml:space="preserve">
+    <value>Protosphaeridae-Bone Hoop</value>
+  </data>
+  <data name="ProtosphaeridaeCatsEyeSwarm" xml:space="preserve">
+    <value>Protosphaeridae-Cats Eye Swarm</value>
+  </data>
+  <data name="ProtosphaeridaeEyeballBubble" xml:space="preserve">
+    <value>Protosphaeridae-Eyeball Bubble</value>
+  </data>
+  <data name="ProtosphaeridaeFutball" xml:space="preserve">
+    <value>Protosphaeridae-Futball</value>
+  </data>
+  <data name="ProtosphaeridaeJellifiedBall" xml:space="preserve">
+    <value>Protosphaeridae-Jellified Ball</value>
+  </data>
+  <data name="ProtosphaeridaeJellifiedTendrilBall" xml:space="preserve">
+    <value>Protosphaeridae-Jellified Tendril Ball</value>
+  </data>
+  <data name="ProtosphaeridaeKugelpanzer" xml:space="preserve">
+    <value>Protosphaeridae-Kugelpanzer</value>
+  </data>
+  <data name="ProtosphaeridaePuffball" xml:space="preserve">
+    <value>Protosphaeridae-Puffball</value>
+  </data>
+  <data name="ProtosphaeridaeRainbowSphere" xml:space="preserve">
+    <value>Protosphaeridae-Rainbow Sphere</value>
+  </data>
+  <data name="ProtosphaeridaeSnakeBall" xml:space="preserve">
+    <value>Protosphaeridae-Snake Ball</value>
+  </data>
+  <data name="ProtosphaeridaeTendrilCluster" xml:space="preserve">
+    <value>Protosphaeridae-Tendril Cluster</value>
+  </data>
+  <data name="Prototerrae10" xml:space="preserve">
+    <value>Prototerrae-10</value>
+  </data>
+  <data name="Prototerrae11" xml:space="preserve">
+    <value>Prototerrae-11</value>
+  </data>
+  <data name="Prototerrae12" xml:space="preserve">
+    <value>Prototerrae-12</value>
+  </data>
+  <data name="Prototerrae6" xml:space="preserve">
+    <value>Prototerrae-6</value>
+  </data>
+  <data name="Prototerrae7" xml:space="preserve">
+    <value>Prototerrae-7</value>
+  </data>
+  <data name="Prototerrae8" xml:space="preserve">
+    <value>Prototerrae-8</value>
+  </data>
+  <data name="Prototerrae9" xml:space="preserve">
+    <value>Prototerrae-9</value>
+  </data>
+  <data name="PrototerraeEyestalkCluster" xml:space="preserve">
+    <value>Prototerrae-Eyestalk Cluster</value>
+  </data>
+  <data name="PrototerraeGeothermalVents" xml:space="preserve">
+    <value>Prototerrae-Geothermal Vents</value>
+  </data>
+  <data name="PrototerraeScrat" xml:space="preserve">
+    <value>Prototerrae-Scrat</value>
+  </data>
+  <data name="PrototerraeSporestalk" xml:space="preserve">
+    <value>Prototerrae-Sporestalk</value>
+  </data>
+  <data name="PrototerraeTentacleCluster" xml:space="preserve">
+    <value>Prototerrae-Tentacle Cluster</value>
+  </data>
+  <data name="RangifaeBeak" xml:space="preserve">
+    <value>Rangifae-Beak</value>
+  </data>
+  <data name="RangifaeCobra" xml:space="preserve">
+    <value>Rangifae-Cobra</value>
+  </data>
+  <data name="RangifaeDragon" xml:space="preserve">
+    <value>Rangifae-Dragon</value>
+  </data>
+  <data name="RangifaeFlathead" xml:space="preserve">
+    <value>Rangifae-Flathead</value>
+  </data>
+  <data name="RangifaeGiraffe" xml:space="preserve">
+    <value>Rangifae-Giraffe</value>
+  </data>
+  <data name="RangifaeHaloSword" xml:space="preserve">
+    <value>Rangifae-Halo Sword</value>
+  </data>
+  <data name="RangifaeHammerhead" xml:space="preserve">
+    <value>Rangifae-Hammerhead</value>
+  </data>
+  <data name="RangifaeHeadFrillDragon" xml:space="preserve">
+    <value>Rangifae-Head Frill Dragon</value>
+  </data>
+  <data name="RangifaeHorns" xml:space="preserve">
+    <value>Rangifae-Horns</value>
+  </data>
+  <data name="RangifaeSpadeFrillGiraffe" xml:space="preserve">
+    <value>Rangifae-Spade-Frill Giraffe</value>
+  </data>
+  <data name="RangifaeSpyro" xml:space="preserve">
+    <value>Rangifae-Spyro</value>
+  </data>
+  <data name="RangifaeTrojan" xml:space="preserve">
+    <value>Rangifae-Trojan</value>
+  </data>
+  <data name="Reococcyx10" xml:space="preserve">
+    <value>Reococcyx-10</value>
+  </data>
+  <data name="Reococcyx11" xml:space="preserve">
+    <value>Reococcyx-11</value>
+  </data>
+  <data name="Reococcyx12" xml:space="preserve">
+    <value>Reococcyx-12</value>
+  </data>
+  <data name="Reococcyx9" xml:space="preserve">
+    <value>Reococcyx-9</value>
+  </data>
+  <data name="ReococcyxAntlers" xml:space="preserve">
+    <value>Reococcyx-Antlers</value>
+  </data>
+  <data name="ReococcyxAntlerSpined" xml:space="preserve">
+    <value>Reococcyx-Antler Spined</value>
+  </data>
+  <data name="ReococcyxAntlerWinged" xml:space="preserve">
+    <value>Reococcyx-Antler Winged</value>
+  </data>
+  <data name="ReococcyxHornedSpined" xml:space="preserve">
+    <value>Reococcyx-Horned Spined</value>
+  </data>
+  <data name="ReococcyxHornedWinged" xml:space="preserve">
+    <value>Reococcyx-Horned Winged</value>
+  </data>
+  <data name="ReococcyxHorns" xml:space="preserve">
+    <value>Reococcyx-Horns</value>
+  </data>
+  <data name="ReococcyxPlain" xml:space="preserve">
+    <value>Reococcyx-Plain</value>
+  </data>
+  <data name="ReococcyxSpined" xml:space="preserve">
+    <value>Reococcyx-Spined</value>
+  </data>
+  <data name="Rhopalocera10" xml:space="preserve">
+    <value>Rhopalocera-10</value>
+  </data>
+  <data name="Rhopalocera11" xml:space="preserve">
+    <value>Rhopalocera-11</value>
+  </data>
+  <data name="Rhopalocera12" xml:space="preserve">
+    <value>Rhopalocera-12</value>
+  </data>
+  <data name="Rhopalocera5" xml:space="preserve">
+    <value>Rhopalocera-5</value>
+  </data>
+  <data name="Rhopalocera6" xml:space="preserve">
+    <value>Rhopalocera-6</value>
+  </data>
+  <data name="Rhopalocera7" xml:space="preserve">
+    <value>Rhopalocera-7</value>
+  </data>
+  <data name="Rhopalocera8" xml:space="preserve">
+    <value>Rhopalocera-8</value>
+  </data>
+  <data name="Rhopalocera9" xml:space="preserve">
+    <value>Rhopalocera-9</value>
+  </data>
+  <data name="RhopaloceraAnomalousButterflies" xml:space="preserve">
+    <value>Rhopalocera-Anomalous Butterflies</value>
+  </data>
+  <data name="RhopaloceraLargeButterflies" xml:space="preserve">
+    <value>Rhopalocera-Large Butterflies</value>
+  </data>
+  <data name="RhopaloceraPygmyButterflies" xml:space="preserve">
+    <value>Rhopalocera-Pygmy Butterflies</value>
+  </data>
+  <data name="RhopaloceraSporeflies" xml:space="preserve">
+    <value>Rhopalocera-Sporeflies</value>
+  </data>
+  <data name="Spiralis10" xml:space="preserve">
+    <value>Spiralis-10</value>
+  </data>
+  <data name="Spiralis11" xml:space="preserve">
+    <value>Spiralis-11</value>
+  </data>
+  <data name="Spiralis12" xml:space="preserve">
+    <value>Spiralis-12</value>
+  </data>
+  <data name="Spiralis6" xml:space="preserve">
+    <value>Spiralis-6</value>
+  </data>
+  <data name="Spiralis7" xml:space="preserve">
+    <value>Spiralis-7</value>
+  </data>
+  <data name="Spiralis8" xml:space="preserve">
+    <value>Spiralis-8</value>
+  </data>
+  <data name="Spiralis9" xml:space="preserve">
+    <value>Spiralis-9</value>
+  </data>
+  <data name="SpiralisBonedrill" xml:space="preserve">
+    <value>Spiralis-Bonedrill</value>
+  </data>
+  <data name="SpiralisCordrill" xml:space="preserve">
+    <value>Spiralis-Cordrill</value>
+  </data>
+  <data name="SpiralisGlowdrill" xml:space="preserve">
+    <value>Spiralis-Glowdrill</value>
+  </data>
+  <data name="SpiralisPlantdrill" xml:space="preserve">
+    <value>Spiralis-Plantdrill</value>
+  </data>
+  <data name="SpiralisSpiradrill" xml:space="preserve">
+    <value>Spiralis-Spiradrill</value>
+  </data>
+  <data name="Talpidae10" xml:space="preserve">
+    <value>Talpidae-10</value>
+  </data>
+  <data name="Talpidae11" xml:space="preserve">
+    <value>Talpidae-11</value>
+  </data>
+  <data name="Talpidae12" xml:space="preserve">
+    <value>Talpidae-12</value>
+  </data>
+  <data name="Talpidae4" xml:space="preserve">
+    <value>Talpidae-4</value>
+  </data>
+  <data name="Talpidae5" xml:space="preserve">
+    <value>Talpidae-5</value>
+  </data>
+  <data name="Talpidae6" xml:space="preserve">
+    <value>Talpidae-6</value>
+  </data>
+  <data name="Talpidae7" xml:space="preserve">
+    <value>Talpidae-7</value>
+  </data>
+  <data name="Talpidae8" xml:space="preserve">
+    <value>Talpidae-8</value>
+  </data>
+  <data name="Talpidae9" xml:space="preserve">
+    <value>Talpidae-9</value>
+  </data>
+  <data name="TalpidaeSpikey" xml:space="preserve">
+    <value>Talpidae-Spikey</value>
+  </data>
+  <data name="TalpidaeSquid" xml:space="preserve">
+    <value>Talpidae-Squid</value>
+  </data>
+  <data name="TalpidaeTurtle" xml:space="preserve">
+    <value>Talpidae-Turtle</value>
+  </data>
+  <data name="Tetraceris12" xml:space="preserve">
+    <value>Tetraceris-12</value>
+  </data>
+  <data name="TetracerisAnteater" xml:space="preserve">
+    <value>Tetraceris-Anteater</value>
+  </data>
+  <data name="TetracerisBedlington" xml:space="preserve">
+    <value>Tetraceris-Bedlington</value>
+  </data>
+  <data name="TetracerisDoghead" xml:space="preserve">
+    <value>Tetraceris-Doghead</value>
+  </data>
+  <data name="TetracerisFloralHead" xml:space="preserve">
+    <value>Tetraceris-Floral Head</value>
+  </data>
+  <data name="TetracerisFrilledDoghead" xml:space="preserve">
+    <value>Tetraceris-Frilled Doghead</value>
+  </data>
+  <data name="TetracerisLongflyHead" xml:space="preserve">
+    <value>Tetraceris-Longfly Head</value>
+  </data>
+  <data name="TetracerisRoo" xml:space="preserve">
+    <value>Tetraceris-Roo</value>
+  </data>
+  <data name="TetracerisShortflyHead" xml:space="preserve">
+    <value>Tetraceris-Shortfly Head</value>
+  </data>
+  <data name="TetracerisSlughead" xml:space="preserve">
+    <value>Tetraceris-Slughead</value>
+  </data>
+  <data name="TetracerisSnoot" xml:space="preserve">
+    <value>Tetraceris-Snoot</value>
+  </data>
+  <data name="TetracerisWormhead" xml:space="preserve">
+    <value>Tetraceris-Wormhead</value>
+  </data>
+  <data name="Theroma10" xml:space="preserve">
+    <value>Theroma-10</value>
+  </data>
+  <data name="Theroma11" xml:space="preserve">
+    <value>Theroma-11</value>
+  </data>
+  <data name="Theroma12" xml:space="preserve">
+    <value>Theroma-12</value>
+  </data>
+  <data name="Theroma6" xml:space="preserve">
+    <value>Theroma-6</value>
+  </data>
+  <data name="Theroma7" xml:space="preserve">
+    <value>Theroma-7</value>
+  </data>
+  <data name="Theroma8" xml:space="preserve">
+    <value>Theroma-8</value>
+  </data>
+  <data name="Theroma9" xml:space="preserve">
+    <value>Theroma-9</value>
+  </data>
+  <data name="TheromaExotic" xml:space="preserve">
+    <value>Theroma-Exotic</value>
+  </data>
+  <data name="TheromaHippo" xml:space="preserve">
+    <value>Theroma-Hippo</value>
+  </data>
+  <data name="TheromaReptoma" xml:space="preserve">
+    <value>Theroma-Reptoma</value>
+  </data>
+  <data name="TheromaRhino" xml:space="preserve">
+    <value>Theroma-Rhino</value>
+  </data>
+  <data name="TheromaTriceratops" xml:space="preserve">
+    <value>Theroma-Triceratops</value>
+  </data>
+  <data name="Tyranocae10" xml:space="preserve">
+    <value>Tyranocae-10</value>
+  </data>
+  <data name="Tyranocae11" xml:space="preserve">
+    <value>Tyranocae-11</value>
+  </data>
+  <data name="Tyranocae12" xml:space="preserve">
+    <value>Tyranocae-12</value>
+  </data>
+  <data name="TyranocaeDemon" xml:space="preserve">
+    <value>Tyranocae-Demon</value>
+  </data>
+  <data name="TyranocaeDodo" xml:space="preserve">
+    <value>Tyranocae-Dodo</value>
+  </data>
+  <data name="TyranocaeGreaterMushroomBack" xml:space="preserve">
+    <value>Tyranocae-Greater Mushroom Back</value>
+  </data>
+  <data name="TyranocaeLesserMushroomBack" xml:space="preserve">
+    <value>Tyranocae-Lesser Mushroom Back</value>
+  </data>
+  <data name="TyranocaeMousy" xml:space="preserve">
+    <value>Tyranocae-Mousy</value>
+  </data>
+  <data name="TyranocaeNoodles" xml:space="preserve">
+    <value>Tyranocae-Noodles</value>
+  </data>
+  <data name="TyranocaeTrex" xml:space="preserve">
+    <value>Tyranocae-Trex</value>
+  </data>
+  <data name="TyranocaeUnicorn" xml:space="preserve">
+    <value>Tyranocae-Unicorn</value>
+  </data>
+  <data name="TyranocaeXenoRex" xml:space="preserve">
+    <value>Tyranocae-Xeno Rex</value>
+  </data>
+  <data name="Ungulatis10" xml:space="preserve">
+    <value>Ungulatis-10</value>
+  </data>
+  <data name="Ungulatis11" xml:space="preserve">
+    <value>Ungulatis-11</value>
+  </data>
+  <data name="Ungulatis12" xml:space="preserve">
+    <value>Ungulatis-12</value>
+  </data>
+  <data name="Ungulatis3" xml:space="preserve">
+    <value>Ungulatis-3</value>
+  </data>
+  <data name="Ungulatis4" xml:space="preserve">
+    <value>Ungulatis-4</value>
+  </data>
+  <data name="Ungulatis5" xml:space="preserve">
+    <value>Ungulatis-5</value>
+  </data>
+  <data name="Ungulatis6" xml:space="preserve">
+    <value>Ungulatis-6</value>
+  </data>
+  <data name="Ungulatis7" xml:space="preserve">
+    <value>Ungulatis-7</value>
+  </data>
+  <data name="Ungulatis8" xml:space="preserve">
+    <value>Ungulatis-8</value>
+  </data>
+  <data name="Ungulatis9" xml:space="preserve">
+    <value>Ungulatis-9</value>
+  </data>
+  <data name="UngulatisBipedal" xml:space="preserve">
+    <value>Ungulatis-Bipedal</value>
+  </data>
+  <data name="UngulatisHovering" xml:space="preserve">
+    <value>Ungulatis-Hovering</value>
+  </data>
+</root>

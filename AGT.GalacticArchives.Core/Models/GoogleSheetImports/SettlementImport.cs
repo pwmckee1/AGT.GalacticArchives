@@ -1,0 +1,102 @@
+using AGT.GalacticArchives.Core.Constants.ImportFields;
+using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
+using CsvHelper.Configuration.Attributes;
+
+namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+
+public class SettlementImport : IImportFormFile
+{
+    [Name(SettlementSheetFields.SettlementId)]
+    public Guid? SettlementId { get; set; }
+
+    [Name(SettlementSheetFields.Buildings)]
+    public HashSet<SettlementBuildingTypes> Buildings { get; set; } = [];
+
+    [Name(SettlementSheetFields.Class)]
+    public ItemClassTypes? Class { get; set; }
+
+    [Name(SettlementSheetFields.Civilization)]
+    public string? Civilization { get; set; }
+
+    [Name(SettlementSheetFields.DiscoveryDate)]
+    public DateTimeOffset? DiscoveryDate { get; set; }
+
+    [Name(SettlementSheetFields.Economy)]
+    public EconomyTypes? Economy { get; set; }
+
+    [Name(SettlementSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
+
+    [Name(SettlementSheetFields.Happiness)]
+    public int? Happiness { get; set; }
+
+    [Name(SettlementSheetFields.Industry)]
+    public string? Industry { get; set; }
+
+    [Name(SettlementSheetFields.Maintenance)]
+    public int? Maintenance { get; set; }
+
+    [Name(SettlementSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
+
+    [Name(SettlementSheetFields.SettlementName)]
+    public string? SettlementName { get; set; }
+
+    [Name(SettlementSheetFields.OriginalName)]
+    public string? OriginalName { get; set; }
+
+    [Name(SettlementSheetFields.Overseer)]
+    public string? Overseer { get; set; }
+
+    [Name(SettlementSheetFields.OverseerLink)]
+    public string? OverseerLink { get; set; }
+
+    [Name(SettlementSheetFields.Planet)]
+    public string? PlanetName { get; set; }
+
+    [Name(SettlementSheetFields.Population)]
+    public int? Population { get; set; }
+
+    [Name(SettlementSheetFields.Production)]
+    public string? Production { get; set; }
+
+    [Name(SettlementSheetFields.Productivity)]
+    public int? Productivity { get; set; }
+
+    [Name(SettlementSheetFields.IsProfitable)]
+    public bool? IsProfitable { get; set; }
+
+    [Name(SettlementSheetFields.Sentinels)]
+    public int? Sentinels { get; set; }
+
+    [Name(SettlementSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
+
+    [Name(SettlementSheetFields.System)]
+    public string? StarSystemName { get; set; }
+
+    [Name(SettlementSheetFields.WikiLink)]
+    public string? WikiLink { get; set; }
+
+    [Name(SettlementSheetFields.XAxisPlanetCoordinate)]
+    public float? XAxisPlanetCoordinate { get; set; }
+
+    [Name(SettlementSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(SettlementSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
+
+    [Name(SettlementSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(SettlementSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(SettlementSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
+}

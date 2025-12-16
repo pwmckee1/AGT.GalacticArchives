@@ -1,0 +1,264 @@
+using AGT.GalacticArchives.Core.Constants.ImportFields;
+using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
+using CsvHelper.Configuration.Attributes;
+
+namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+
+public class StarSystemImport : IImportFormFile
+{
+    [Name(StarSystemSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(StarSystemSheetFields.GalaxyName)]
+    public GalaxyTypes? Galaxy { get; set; }
+
+    [Name(StarSystemSheetFields.RegionName)]
+    public string? RegionName { get; set; }
+
+    [Name(StarSystemSheetFields.StarSystemName)]
+    public string? StarSystemName { get; set; }
+
+    [Name(StarSystemSheetFields.SystemNameAllPlatforms)]
+    public string? StarSystemNameAllPlatforms { get; set; }
+
+    [Name(StarSystemSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
+
+    [Name(StarSystemSheetFields.AdminNotes)]
+    public string? AdminNotes { get; set; }
+
+    [Name(StarSystemSheetFields.DataQualityCheck)]
+    public string? DataQualityCheck { get; set; }
+
+    [Name(StarSystemSheetFields.OriginalSystemName)]
+    public string? OriginalSystemName { get; set; }
+
+    [Name(StarSystemSheetFields.GalacticCoordinates)]
+    public string? GalacticCoordinates { get; set; }
+
+    [Name(StarSystemSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
+
+    [Name(StarSystemSheetFields.PlanetOfInterestId)]
+    public string? PlanetOfInterestId { get; set; }
+
+    [Name(StarSystemSheetFields.SurveyorName)]
+    public string? SurveyedBy { get; set; }
+
+    [Name(StarSystemSheetFields.DiscoveredBy)]
+    public string? DiscoveredBy { get; set; }
+
+    [Name(StarSystemSheetFields.DiscoveredLinkOnWiki)]
+    public string? DiscoveredLinkOnWiki { get; set; }
+
+    [Name(StarSystemSheetFields.IsGiantSystem)]
+    public bool? IsGiantSystem { get; set; }
+
+    [Name(StarSystemSheetFields.DiscoveryDate)]
+    public DateTimeOffset? DiscoveryDate { get; set; }
+
+    [Name(StarSystemSheetFields.SurveyDate)]
+    public DateTimeOffset? SurveyDate { get; set; }
+
+    [Name(StarSystemSheetFields.SpecialInterest)]
+    public string? SpecialInterest { get; set; }
+
+    [Name(StarSystemSheetFields.IsDissonant)]
+    public bool? IsDissonant { get; set; }
+
+    [Name(StarSystemSheetFields.Civilization)]
+    public string? Civilization { get; set; }
+
+    [Name(StarSystemSheetFields.Bases)]
+    public int? Bases { get; set; }
+
+    [Name(StarSystemSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
+
+    [Name(StarSystemSheetFields.StarCount)]
+    public int? StarCount { get; set; }
+
+    [Name(StarSystemSheetFields.StarCategory)]
+    public string? StarCategory { get; set; }
+
+    [Name(StarSystemSheetFields.Color)]
+    public StarColorTypes? Color { get; set; }
+
+    [Name(StarSystemSheetFields.NumberOfPlanets)]
+    public int? NumberOfPlanets { get; set; }
+
+    [Name(StarSystemSheetFields.NumberOfMoons)]
+    public int? NumberOfMoons { get; set; }
+
+    [Name(StarSystemSheetFields.Faction)]
+    public FactionTypes? Faction { get; set; }
+
+    [Name(StarSystemSheetFields.LightYearsFromCenter)]
+    public int? LightYearsFromCenter { get; set; }
+
+    [Name(StarSystemSheetFields.LightYearsFromCenterAutoEstimate)]
+    public int? LightYearsFromCenterAutoEstimate { get; set; }
+
+    [Name(StarSystemSheetFields.HasWater)]
+    public bool? HasWater { get; set; }
+
+    [Name(StarSystemSheetFields.EconomyType)]
+    public EconomyTypes? EconomyType { get; set; }
+
+    [Name(StarSystemSheetFields.WealthType)]
+    public WealthTypes? WealthType { get; set; }
+
+    [Name(StarSystemSheetFields.Buy)]
+    public float? Buy { get; set; }
+
+    [Name(StarSystemSheetFields.Sell)]
+    public float? Sell { get; set; }
+
+    [Name(StarSystemSheetFields.ConflictType)]
+    public ConflictTypes? ConflictType { get; set; }
+
+    [Name(StarSystemSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
+
+    [Name(StarSystemSheetFields.KeySystemIndicator)]
+    public string? KeySystemIndicator { get; set; }
+
+    [Name(StarSystemSheetFields.SpaceStationTradeItems)]
+    public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
+
+    [Name(StarSystemSheetFields.ExosuitUpgradeModules)]
+    public HashSet<ExoSuitUpgradeModuleTypes> ExosuitUpgradeModules { get; set; } = [];
+
+    [Name(StarSystemSheetFields.ExocraftUpgradeModules)]
+    public HashSet<ExocraftUpgradeModuleTypes> ExocraftUpgradeModules { get; set; } = [];
+
+    [Name(StarSystemSheetFields.StarshipUpgradeModules)]
+    public HashSet<StarshipUpgradeTypes> StarshipUpgradeModules { get; set; } = [];
+
+    [Name(StarSystemSheetFields.MultiToolUpdateTypes)]
+    public HashSet<MultiToolUpdateModuleTypes> MultiToolUpdateTypes { get; set; } = [];
+
+    [Name(StarSystemSheetFields.XXDec)]
+    public int? XXDec { get; set; }
+
+    [Name(StarSystemSheetFields.YYDec)]
+    public int? YYDec { get; set; }
+
+    [Name(StarSystemSheetFields.ZZDec)]
+    public int? ZZDec { get; set; }
+
+    [Name(StarSystemSheetFields.Hex2DecSystemId)]
+    public int? SSDec { get; set; }
+
+    [Name(StarSystemSheetFields.PlanetsTextNotes)]
+    public string? PlanetsTextNotes { get; set; }
+
+    [Name(StarSystemSheetFields.DiscoveredNotes)]
+    public string? DiscoveredNotes { get; set; }
+
+    [Name(StarSystemSheetFields.SummaryAdditions)]
+    public string? SummaryAdditions { get; set; }
+
+    [Name(StarSystemSheetFields.StarshipsTextNotes)]
+    public string? StarshipsTextNotes { get; set; }
+
+    [Name(StarSystemSheetFields.MultiToolNotes)]
+    public string? MultiToolNotes { get; set; }
+
+    [Name(StarSystemSheetFields.LocInfoNotes)]
+    public string? LocInfoNotes { get; set; }
+
+    [Name(StarSystemSheetFields.SpaceStationNotes)]
+    public string? SpaceStationNotes { get; set; }
+
+    [Name(StarSystemSheetFields.AdditionalNotes)]
+    public string? AdditionalNotes { get; set; }
+
+    [Name(StarSystemSheetFields.GalleryTextNotes)]
+    public string? GalleryTextNotes { get; set; }
+
+    [Name(StarSystemSheetFields.IsPhantomSystem)]
+    public bool? IsPhantomSystem { get; set; }
+
+    [Name(StarSystemSheetFields.HasCenterAccess)]
+    public bool? HasCenterAccess { get; set; }
+
+    [Name(StarSystemSheetFields.BlackHoleDestination)]
+    public string? BlackHoleDestination { get; set; }
+
+    [Name(StarSystemSheetFields.NMSWikiLink)]
+    public string? WikiLink { get; set; }
+
+    [Name(StarSystemSheetFields.PortalRepository)]
+    public string? PortalRepository { get; set; }
+
+    [Name(StarSystemSheetFields.ExternalLink1)]
+    public string? ExternalLink1 { get; set; }
+
+    [Name(StarSystemSheetFields.ExternalLink2)]
+    public string? ExternalLink2 { get; set; }
+
+    [Name(StarSystemSheetFields.ExternalLink3)]
+    public string? ExternalLink3 { get; set; }
+
+    [Name(StarSystemSheetFields.VideoLink)]
+    public string? VideoLink { get; set; }
+
+    [Name(StarSystemSheetFields.LegacyPCSystemName)]
+    public string? LegacyPCSystemName { get; set; }
+
+    [Name(StarSystemSheetFields.LegacyPSSystemName)]
+    public string? LegacyPSSystemName { get; set; }
+
+    [Name(StarSystemSheetFields.LegacyXboxSystemName)]
+    public string? LegacyXboxSystemName { get; set; }
+
+    [Name(StarSystemSheetFields.LegacyPCDiscoverersGamerTagName)]
+    public string? LegacyPCDiscoverersGamerTagName { get; set; }
+
+    [Name(StarSystemSheetFields.LegacyPSDiscoverersGamerTagName)]
+    public string? LegacyPSDiscoverersGamerTagName { get; set; }
+
+    [Name(StarSystemSheetFields.LegacyXboxDiscoverersGamerTagName)]
+    public string? LegacyXboxDiscoverersGamerTagName { get; set; }
+
+    [Name(StarSystemSheetFields.Evolution)]
+    public string? Evolution { get; set; }
+
+    [Name(StarSystemSheetFields.StarSystemAge)]
+    public float? StarSystemAge { get; set; }
+
+    [Name(StarSystemSheetFields.ResearchTeam)]
+    public string? ResearchTeam { get; set; }
+
+    [Name(StarSystemSheetFields.SystemMisc)]
+    public string? SystemMisc { get; set; }
+
+    [Name(StarSystemSheetFields.GameReleaseVersionNumber)]
+    public string? GameReleaseVersionNumber { get; set; }
+
+    [Name(StarSystemSheetFields.GalaxySequence)]
+    public int? GalaxySequence { get; set; }
+
+    [Name(StarSystemSheetFields.SSHex)]
+    public string? SSHex { get; set; }
+
+    [Name(StarSystemSheetFields.XXHex)]
+    public string? XXHex { get; set; }
+
+    [Name(StarSystemSheetFields.YYHex)]
+    public string? YYHex { get; set; }
+
+    [Name(StarSystemSheetFields.ZZHex)]
+    public string? ZZHex { get; set; }
+
+    [Name(StarSystemSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
+
+    [Name(StarSystemSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+}

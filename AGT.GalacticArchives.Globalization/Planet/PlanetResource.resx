@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+    <data name="AdditionalNotes" xml:space="preserve">
+    <value>Additional Notes</value>
+  </data>
+    <data name="AdminNotes" xml:space="preserve">
+    <value>Editor and admin notes on data quality</value>
+  </data>
+    <data name="AgeOfPlanetInBillionsOfYears" xml:space="preserve">
+    <value>Age of Planet (Billions of years)</value>
+  </data>
+    <data name="ArchetypeOfLand" xml:space="preserve">
+    <value>Archetype of Land</value>
+  </data>
+    <data name="AssignedRawIngredient" xml:space="preserve">
+    <value>AssignedRawIngredient</value>
+  </data>
+    <data name="AtmosphereDaytimeColor" xml:space="preserve">
+    <value>Atmosphere Daytime Color</value>
+  </data>
+    <data name="AtmosphereGas1" xml:space="preserve">
+    <value>Atmosphere Gas 1</value>
+  </data>
+    <data name="AtmosphereGas2" xml:space="preserve">
+    <value>Atmosphere Gas 2</value>
+  </data>
+    <data name="AtmosphereGasPercentage1" xml:space="preserve">
+    <value>Atm. Gas 1 %</value>
+  </data>
+    <data name="AtmosphereGasPercentage2" xml:space="preserve">
+    <value>Atm. Gas 2 %</value>
+  </data>
+    <data name="AtmosphereResource" xml:space="preserve">
+    <value>Atmosphere resource</value>
+  </data>
+    <data name="BiomeDescription" xml:space="preserve">
+    <value>Biome Description</value>
+  </data>
+    <data name="BiomeResource" xml:space="preserve">
+    <value>Resource 4 (Automatic based on biome)</value>
+  </data>
+    <data name="BiomeType" xml:space="preserve">
+    <value>Biome Type</value>
+  </data>
+    <data name="Civilization" xml:space="preserve">
+    <value>Civilized</value>\
+  </data>
+    <data name="DataQualityCheck" xml:space="preserve">
+    <value>Data Quality Check</value>
+  </data>
+    <data name="DayRadiation" xml:space="preserve">
+    <value>Day Radiation</value>
+  </data>
+    <data name="DayStormRadiation" xml:space="preserve">
+    <value>Day Storm Radiation</value>
+  </data>
+    <data name="DayStormTemp" xml:space="preserve">
+    <value>Day Storm Temp (celsius)</value>
+  </data>
+    <data name="DayStormToxic" xml:space="preserve">
+    <value>Day Storm Toxic</value>
+  </data>
+    <data name="DayTemp" xml:space="preserve">
+    <value>Day Temp (celsius)</value>
+  </data>
+    <data name="DayToxic" xml:space="preserve">
+    <value>Day Toxic</value>
+  </data>
+    <data name="DiscoveredLinkOnWiki" xml:space="preserve">
+    <value>Discovered Link on Wiki</value>
+  </data>
+    <data name="DiscovererGamertag" xml:space="preserve">
+    <value>Discoverer Gamertag</value>
+  </data>
+    <data name="DiscoveryDate" xml:space="preserve">
+    <value>Discovery Date</value>
+  </data>
+    <data name="DiscoveryPlatform" xml:space="preserve">
+    <value>Discovery Platform</value>
+  </data>
+    <data name="ExternalLink1" xml:space="preserve">
+    <value>External Link 1</value>
+  </data>
+    <data name="ExternalLink2" xml:space="preserve">
+    <value>External Link 2</value>
+  </data>
+    <data name="ExtrasA" xml:space="preserve">
+    <value>Extras A</value>
+  </data>
+    <data name="ExtrasB" xml:space="preserve">
+    <value>Extras B</value>
+  </data>
+    <data name="ExtrasC" xml:space="preserve">
+    <value>Extras C</value>
+  </data>
+    <data name="ExtremeWeatherExcludingMegaExotic" xml:space="preserve">
+    <value>Extreme Weather (Excludes Mega Exotic)</value>
+  </data>
+    <data name="ExtremeWeatherInludingMegaExotic" xml:space="preserve">
+    <value>Extreme Weather for Mega-Exotic/ Waterworld Manual Entry</value>
+  </data>
+    <data name="FaunaCategory" xml:space="preserve">
+    <value>Fauna</value>
+  </data>
+    <data name="GameVersionNumberForPage" xml:space="preserve">
+    <value>Game Version Number for Page</value>
+  </data>
+    <data name="HasSandworms" xml:space="preserve">
+    <value>Sandworms?</value>
+  </data>
+    <data name="HistoricalPlanetDiscoverCreditBeforeReset" xml:space="preserve">
+    <value>Historical Planet Discover Credit Before Reset</value>
+  </data>
+    <data name="HistoricalPlanetNameLastKnownEra" xml:space="preserve">
+    <value>Historical Planet Name (Last Known Era)</value>
+  </data>
+    <data name="HistoricalPlanetNamePlatform" xml:space="preserve">
+    <value>Historical Planet Name (Platform)</value>
+  </data>
+    <data name="HistoricalPlanetNameReset" xml:space="preserve">
+    <value>Historical Planet Name (Reset)</value>
+  </data>
+    <data name="IsInfected" xml:space="preserve">
+    <value>Infected?
+ORIGINS+</value>
+  </data>
+    <data name="LegacyPCDiscoverersGamerTagName" xml:space="preserve">
+    <value>LEGACY PC Discoverers GamerTag Name</value>
+  </data>
+    <data name="LegacyPCDiscoveryDate" xml:space="preserve">
+    <value>LEGACY PC Discovery Date</value>
+  </data>
+    <data name="LegacyPCDiscoveryEra" xml:space="preserve">
+    <value>LEGACY PC Discovery Era</value>
+  </data>
+    <data name="LegacyPCPlanetName" xml:space="preserve">
+    <value>LEGACY PC planet name</value>
+  </data>
+    <data name="LegacyPSDiscoverersGamerTagName" xml:space="preserve">
+    <value>LEGACY PS Discoverers GamerTag Name</value>
+  </data>
+    <data name="LegacyPSDiscoveryDate" xml:space="preserve">
+    <value>LEGACY PS Discovery Date</value>
+  </data>
+    <data name="LegacyPSDiscoveryEra" xml:space="preserve">
+    <value>LEGACY PS Discovery Era</value>
+  </data>
+    <data name="LegacyPSPlanetName" xml:space="preserve">
+    <value>LEGACY PS planet name</value>
+  </data>
+    <data name="LegacyWikiLinkOther" xml:space="preserve">
+    <value>Legacy Wiki Link Other</value>
+  </data>
+    <data name="LegacyWikiLinkPC" xml:space="preserve">
+    <value>Legacy Wiki Link PC</value>
+  </data>
+    <data name="LegacyWikiLinkPS" xml:space="preserve">
+    <value>Legacy Wiki Link PS</value>
+  </data>
+    <data name="LegacyWikiLinkXbox" xml:space="preserve">
+    <value>Legacy Wiki Link Xbox</value>
+  </data>
+    <data name="LegacyXboxDiscoverersGamerTagName" xml:space="preserve">
+    <value>LEGACY Xbox Discoverers GamerTag Name</value>
+  </data>
+    <data name="LegacyXboxDiscoveryDate" xml:space="preserve">
+    <value>LEGACY Xbox Discovery Date</value>
+  </data>
+    <data name="LegacyXboxDiscoveryEra" xml:space="preserve">
+    <value>LEGACY Xbox Discovery Era</value>
+  </data>
+    <data name="LegacyXboxPlanetName" xml:space="preserve">
+    <value>LEGACY Xbox planet name</value>
+  </data>
+    <data name="Name" xml:space="preserve">
+    <value>Planet Name</value>
+  </data>
+    <data name="NightStormTemp" xml:space="preserve">
+    <value>Night Storm Temp (celsius)</value>
+  </data>
+    <data name="NightTemp" xml:space="preserve">
+    <value>Night Temp (celsius)</value>
+  </data>
+    <data name="NumberOfFauna" xml:space="preserve">
+    <value>Number of Fauna</value>
+  </data>
+    <data name="OriginalPlanetName" xml:space="preserve">
+    <value>Original Planet Name (Before renaming)</value>
+  </data>
+    <data name="OtherNotes" xml:space="preserve">
+    <value>Other Notes</value>
+  </data>
+    <data name="PlanetGlyphs" xml:space="preserve">
+    <value>Planet Glyphs</value>
+  </data>
+    <data name="PlanetIdInSystem" xml:space="preserve">
+    <value>Planet ID in system</value>
+  </data>
+    <data name="PlanetMoonMatch" xml:space="preserve">
+    <value>Planet- moon match</value>
+  </data>
+    <data name="PlanetNameAllPlatforms" xml:space="preserve">
+    <value>Planet Name (All platforms)</value>
+  </data>
+    <data name="PlanetOrMoon" xml:space="preserve">
+    <value>Planet or Moon?</value>
+  </data>
+    <data name="PlanetOrMoonAddedInOrigins" xml:space="preserve">
+    <value>Planet/moon Added in Origins?</value>
+  </data>
+    <data name="PortalRepository" xml:space="preserve">
+    <value>Portal Repository</value>
+  </data>
+    <data name="PrimaryCoreElement" xml:space="preserve">
+    <value>Primary Core Element</value>
+  </data>
+    <data name="PrimaryResource1" xml:space="preserve">
+    <value>Primary Resource 1</value>
+  </data>
+    <data name="PrimaryResource2" xml:space="preserve">
+    <value>Primary Resource 2</value>
+  </data>
+    <data name="PrimaryResource3" xml:space="preserve">
+    <value>Primary Resource 3</value>
+  </data>
+    <data name="RawIngredients" xml:space="preserve">
+    <value>Raw Ingredients</value>
+  </data>
+    <data name="ResearchTeam" xml:space="preserve">
+    <value>Research Team</value>
+  </data>
+    <data name="RingsOrGiant" xml:space="preserve">
+    <value>Rings or Giant?</value>
+  </data>
+    <data name="SpecialA" xml:space="preserve">
+    <value>Special A</value>
+  </data>
+    <data name="SummaryInfo" xml:space="preserve">
+    <value>Summary Info</value>
+  </data>
+    <data name="SurveyDate" xml:space="preserve">
+    <value>Survey Date</value>
+  </data>
+    <data name="SurveyorGamertag" xml:space="preserve">
+    <value>Surveyor Gamertag</value>
+  </data>
+    <data name="SurveyReleaseEra" xml:space="preserve">
+    <value>Survey Release Era</value>
+  </data>
+    <data name="TypeOfLand" xml:space="preserve">
+    <value>Type of Land</value>
+  </data>
+    <data name="UndergroundDayRadiation" xml:space="preserve">
+    <value>Underground Day Radiation</value>
+  </data>
+    <data name="UndergroundDayStormRadiation" xml:space="preserve">
+    <value>Underground Day Storm Radiation</value>
+  </data>
+    <data name="UndergroundDayStormTemp" xml:space="preserve">
+    <value>Underground Day Storm Temp (celsius)</value>
+  </data>
+    <data name="UndergroundDayStormToxic" xml:space="preserve">
+    <value>Underground Day Storm Toxic</value>
+  </data>
+    <data name="UndergroundDayTemp" xml:space="preserve">
+    <value>Underground Day Temp (celsius)</value>
+  </data>
+    <data name="UndergroundDayToxic" xml:space="preserve">
+    <value>Underground Day Toxic</value>
+  </data>
+    <data name="UndergroundNightStormTemp" xml:space="preserve">
+    <value>Underground Night Storm Temp (celsius)</value>
+  </data>
+    <data name="UndergroundNightTemp" xml:space="preserve">
+    <value>Underground Night Temp (celsius)</value>
+  </data>
+    <data name="UnderwaterDayRadiation" xml:space="preserve">
+    <value>Underwater Day Radiation</value>
+  </data>
+    <data name="UnderwaterDayStormRadiation" xml:space="preserve">
+    <value>Underwater Day Storm Radiation</value>
+  </data>
+    <data name="UnderwaterDayStormTemp" xml:space="preserve">
+    <value>Underwater Day Storm Temp (celsius)</value>
+  </data>
+    <data name="UnderwaterDayStormToxic" xml:space="preserve">
+    <value>Underwater Day Storm Toxic</value>
+  </data>
+    <data name="UnderwaterDayTemp" xml:space="preserve">
+    <value>Underwater Day Temp (celsius)</value>
+  </data>
+    <data name="UnderwaterDayToxic" xml:space="preserve">
+    <value>Underwater Day Toxic</value>
+  </data>
+    <data name="UnderwaterNightStormTemp" xml:space="preserve">
+    <value>Underwater Night Storm Temp (celsius)</value>
+  </data>
+    <data name="UnderwaterNightTemp" xml:space="preserve">
+    <value>Underwater Night Temp (celsius)</value>
+  </data>
+    <data name="WikiLink" xml:space="preserve">
+    <value>Wiki Link</value>
+  </data>
+</root>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--
+      Microsoft ResX Schema
+
+      Version 2.0
+
+      The primary goals of this format is to allow a simple XML format
+      that is mostly human readable. The generation and parsing of the
+      various data types are done through the TypeConverter classes
+      associated with the data types.
+
+      Example:
+
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+
+      There are any number of "resheader" rows that contain simple
+      name/value pairs.
+
+      Each data row contains a name, and value. The row also contains a
+      type or mimetype. Type corresponds to a .NET class that support
+      text/value conversion through the TypeConverter architecture.
+      Classes that don't support this are serialized and stored with the
+      mimetype set.
+
+      The mimetype is used for serialized objects, and tells the
+      ResXResourceReader how to depersist the object. This is currently not
+      extensible. For a given mimetype the value must be set accordingly:
+
+      Note - application/x-microsoft.net.object.binary.base64 is the format
+      that the ResXResourceWriter will generate, however the reader can
+      read any of the formats listed below.
+
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="CactusNectar" xml:space="preserve"><value>Cactus Nectar</value></data>
+    <data name="CrabApple" xml:space="preserve"><value>Crab 'Apple'</value></data>
+    <data name="CreatureEgg" xml:space="preserve"><value>Creature Egg</value></data>
+    <data name="DiploChunks" xml:space="preserve"><value>Diplo Chunks</value></data>
+    <data name="FelineLiver" xml:space="preserve"><value>Feline Liver</value></data>
+    <data name="FiendishRoe" xml:space="preserve"><value>Fiendish Roe</value></data>
+    <data name="FreshMilk" xml:space="preserve"><value>Fresh Milk</value></data>
+    <data name="GiantEgg" xml:space="preserve"><value>Giant Egg</value></data>
+    <data name="GlassGrains" xml:space="preserve"><value>Glass Grains</value></data>
+    <data name="HeptaploidWheat" xml:space="preserve"><value>Heptaploid Wheat</value></data>
+    <data name="KelpRice" xml:space="preserve"><value>Kelp Rice</value></data>
+    <data name="LegMeat" xml:space="preserve"><value>Leg Meat</value></data>
+    <data name="LeopardFruit" xml:space="preserve"><value>Leopard-Fruit</value></data>
+    <data name="MarrowFlesh" xml:space="preserve"><value>Marrow Flesh</value></data>
+    <data name="MeatFlakes" xml:space="preserve"><value>Meat Flakes</value></data>
+    <data name="MeatyChunks" xml:space="preserve"><value>Meaty Chunks</value></data>
+    <data name="MeatyWings" xml:space="preserve"><value>Meaty Wings</value></data>
+    <data name="NonToxicMushroom" xml:space="preserve"><value>Non-Toxic Mushroom</value></data>
+    <data name="OffalSac" xml:space="preserve"><value>Offal Sac</value></data>
+    <data name="PulpyRoots" xml:space="preserve"><value>Pulpy Roots</value></data>
+    <data name="RawSteak" xml:space="preserve"><value>Raw Steak</value></data>
+    <data name="RegisGrease" xml:space="preserve"><value>Regis Grease</value></data>
+    <data name="SaltyFingers" xml:space="preserve"><value>Salty Fingers</value></data>
+    <data name="ScalyMeat" xml:space="preserve"><value>Scaly Meat</value></data>
+    <data name="SievertBeans" xml:space="preserve"><value>Sievert Beans</value></data>
+    <data name="SiliconEgg" xml:space="preserve"><value>Silicon Egg</value></data>
+    <data name="SteamedVegetables" xml:space="preserve"><value>Steamed Vegetables</value></data>
+    <data name="StickyHoney" xml:space="preserve"><value>Sticky 'Honey'</value></data>
+    <data name="StriderSausage" xml:space="preserve"><value>Strider Sausage</value></data>
+    <data name="TallEggs" xml:space="preserve"><value>Tall Eggs</value></data>
+    <data name="WarmProtoMilk" xml:space="preserve"><value>Warm Proto-Milk</value></data>
+    <data name="WildMilk" xml:space="preserve"><value>Wild Milk</value></data>
+    <data name="WildYeast" xml:space="preserve"><value>Wild Yeast</value></data>
+</root>

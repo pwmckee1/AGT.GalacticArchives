@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true"></xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbandonedBarren" xml:space="preserve">
+    <value>Abandoned (Barren)</value>
+  </data>
+  <data name="AbandonedDead" xml:space="preserve">
+    <value>Abandoned (Dead)</value>
+  </data>
+  <data name="AcidicToxic" xml:space="preserve">
+    <value>Acidic (Toxic)</value>
+  </data>
+  <data name="AcridToxic" xml:space="preserve">
+    <value>Acrid (Toxic)</value>
+  </data>
+  <data name="AirlessDead" xml:space="preserve">
+    <value>Airless (Dead)</value>
+  </data>
+  <data name="AquaticWaterworld" xml:space="preserve">
+    <value>Aquatic (Waterworld)</value>
+  </data>
+  <data name="ArcticFrozen" xml:space="preserve">
+    <value>Arctic (Frozen)</value>
+  </data>
+  <data name="AridScorched" xml:space="preserve">
+    <value>Arid (Scorched)</value>
+  </data>
+  <data name="AshenVolcanic" xml:space="preserve">
+    <value>Ashen (Volcanic)</value>
+  </data>
+  <data name="AshShroudedVolcanic" xml:space="preserve">
+    <value>Ash-Shrouded (Volcanic)</value>
+  </data>
+  <data name="AzureMegaExotic" xml:space="preserve">
+    <value>Azure (Mega Exotic)</value>
+  </data>
+  <data name="BarrenBarren" xml:space="preserve">
+    <value>Barren (Barren)</value>
+  </data>
+  <data name="BasaltVolcanic" xml:space="preserve">
+    <value>Basalt (Volcanic)</value>
+  </data>
+  <data name="BladedExotic" xml:space="preserve">
+    <value>Bladed (Exotic)</value>
+  </data>
+  <data name="BleakBarren" xml:space="preserve">
+    <value>Bleak (Barren)</value>
+  </data>
+  <data name="BlightedToxic" xml:space="preserve">
+    <value>Blighted (Toxic)</value>
+  </data>
+  <data name="BloodMegaExotic" xml:space="preserve">
+    <value>Blood (Mega Exotic)</value>
+  </data>
+  <data name="BoggyMarsh" xml:space="preserve">
+    <value>Boggy (Marsh)</value>
+  </data>
+  <data name="BoilingDoomScorched" xml:space="preserve">
+    <value>Boiling Doom (Scorched)</value>
+  </data>
+  <data name="BoilingScorched" xml:space="preserve">
+    <value>Boiling (Scorched)</value>
+  </data>
+  <data name="BreachedExotic" xml:space="preserve">
+    <value>Breached (Exotic)</value>
+  </data>
+  <data name="BubblingExotic" xml:space="preserve">
+    <value>Bubbling (Exotic)</value>
+  </data>
+  <data name="CabledExotic" xml:space="preserve">
+    <value>Cabled (Exotic)</value>
+  </data>
+  <data name="CalcifiedExotic" xml:space="preserve">
+    <value>Calcified (Exotic)</value>
+  </data>
+  <data name="CappedExotic" xml:space="preserve">
+    <value>Capped (Exotic)</value>
+  </data>
+  <data name="CausticNightmareToxic" xml:space="preserve">
+    <value>Caustic Nightmare (Toxic)</value>
+  </data>
+  <data name="CausticToxic" xml:space="preserve">
+    <value>Caustic (Toxic)</value>
+  </data>
+  <data name="CeruleanMegaExotic" xml:space="preserve">
+    <value>Cerulean (Mega Exotic)</value>
+  </data>
+  <data name="CharredScorched" xml:space="preserve">
+    <value>Charred (Scorched)</value>
+  </data>
+  <data name="ChromaticFogMegaExotic" xml:space="preserve">
+    <value>Chromatic Fog (Mega Exotic)</value>
+  </data>
+  <data name="CloudsOfHauntedGreenExotic" xml:space="preserve">
+    <value>Clouds Of Haunted Green (Exotic)</value>
+  </data>
+  <data name="CloudyMarsh" xml:space="preserve">
+    <value>Cloudy (Marsh)</value>
+  </data>
+  <data name="ColumnedExotic" xml:space="preserve">
+    <value>Columned (Exotic)</value>
+  </data>
+  <data name="ContaminatedIrradiated" xml:space="preserve">
+    <value>Contaminated (Irradiated)</value>
+  </data>
+  <data name="ContouredExotic" xml:space="preserve">
+    <value>Contoured (Exotic)</value>
+  </data>
+  <data name="CorrosiveToxic" xml:space="preserve">
+    <value>Corrosive (Toxic)</value>
+  </data>
+  <data name="CorruptedExotic" xml:space="preserve">
+    <value>Corrupted (Exotic)</value>
+  </data>
+  <data name="CorruptedScorched" xml:space="preserve">
+    <value>Corrupted (Scorched)</value>
+  </data>
+  <data name="CrimsonExotic" xml:space="preserve">
+    <value>Crimson (Exotic)</value>
+  </data>
+  <data name="CrimsonMegaExotic" xml:space="preserve">
+    <value>Crimson (Mega Exotic)</value>
+  </data>
+  <data name="DampMarsh" xml:space="preserve">
+    <value>Damp (Marsh)</value>
+  </data>
+  <data name="DeadDead" xml:space="preserve">
+    <value>Dead (Dead)</value>
+  </data>
+  <data name="DeathlyGreenAnomalyMegaExotic" xml:space="preserve">
+    <value>Deathly Green Anomaly (Mega Exotic)</value>
+  </data>
+  <data name="DecayingNuclearIrradiated" xml:space="preserve">
+    <value>Decaying Nuclear (Irradiated)</value>
+  </data>
+  <data name="DecayingRuinToxic" xml:space="preserve">
+    <value>Decaying Ruin (Toxic)</value>
+  </data>
+  <data name="DesertBarren" xml:space="preserve">
+    <value>Desert (Barren)</value>
+  </data>
+  <data name="DesolateBarren" xml:space="preserve">
+    <value>Desolate (Barren)</value>
+  </data>
+  <data name="DesolateDead" xml:space="preserve">
+    <value>Desolate (Dead)</value>
+  </data>
+  <data name="DoomedExotic" xml:space="preserve">
+    <value>Doomed (Exotic)</value>
+  </data>
+  <data name="DoomedJadeMegaExotic" xml:space="preserve">
+    <value>Doomed Jade (Mega Exotic)</value>
+  </data>
+  <data name="DustyBarren" xml:space="preserve">
+    <value>Dusty (Barren)</value>
+  </data>
+  <data name="EmptyDead" xml:space="preserve">
+    <value>Empty (Dead)</value>
+  </data>
+  <data name="EndlessMorassMarsh" xml:space="preserve">
+    <value>Endless Morass (Marsh)</value>
+  </data>
+  <data name="EndlessSeasWaterworld" xml:space="preserve">
+    <value>Endless Seas (Waterworld)</value>
+  </data>
+  <data name="ErasedExotic" xml:space="preserve">
+    <value>Erased (Exotic)</value>
+  </data>
+  <data name="EruptingVolcanic" xml:space="preserve">
+    <value>Erupting (Volcanic)</value>
+  </data>
+  <data name="FieryDreadworldScorched" xml:space="preserve">
+    <value>Fiery Dreadworld (Scorched)</value>
+  </data>
+  <data name="FieryScorched" xml:space="preserve">
+    <value>Fiery (Scorched)</value>
+  </data>
+  <data name="FinnedExotic" xml:space="preserve">
+    <value>Finned (Exotic)</value>
+  </data>
+  <data name="FissuredExotic" xml:space="preserve">
+    <value>Fissured (Exotic)</value>
+  </data>
+  <data name="FlameRupturedVolcanic" xml:space="preserve">
+    <value>Flame-Ruptured (Volcanic)</value>
+  </data>
+  <data name="FoamingExotic" xml:space="preserve">
+    <value>Foaming (Exotic)</value>
+  </data>
+  <data name="FoggyMarsh" xml:space="preserve">
+    <value>Foggy (Marsh)</value>
+  </data>
+  <data name="ForsakenDead" xml:space="preserve">
+    <value>Forsaken (Dead)</value>
+  </data>
+  <data name="FracturedExotic" xml:space="preserve">
+    <value>Fractured (Exotic)</value>
+  </data>
+  <data name="FragmentedExotic" xml:space="preserve">
+    <value>Fragmented (Exotic)</value>
+  </data>
+  <data name="FreezingFrozen" xml:space="preserve">
+    <value>Freezing (Frozen)</value>
+  </data>
+  <data name="FrostboundFrozen" xml:space="preserve">
+    <value>Frostbound (Frozen)</value>
+  </data>
+  <data name="FrothingExotic" xml:space="preserve">
+    <value>Frothing (Exotic)</value>
+  </data>
+  <data name="FrozenAnomalyMegaExotic" xml:space="preserve">
+    <value>Frozen Anomaly (Mega Exotic)</value>
+  </data>
+  <data name="FrozenFrozen" xml:space="preserve">
+    <value>Frozen (Frozen)</value>
+  </data>
+  <data name="FrozenHellFrozen" xml:space="preserve">
+    <value>Frozen Hell (Frozen)</value>
+  </data>
+  <data name="FrozenRelicFrozen" xml:space="preserve">
+    <value>Frozen Relic (Frozen)</value>
+  </data>
+  <data name="FungalExotic" xml:space="preserve">
+    <value>Fungal (Exotic)</value>
+  </data>
+  <data name="GammaIntensiveIrradiated" xml:space="preserve">
+    <value>Gamma-Intensive (Irradiated)</value>
+  </data>
+  <data name="GlacialFrozen" xml:space="preserve">
+    <value>Glacial (Frozen)</value>
+  </data>
+  <data name="GlassyExotic" xml:space="preserve">
+    <value>Glassy (Exotic)</value>
+  </data>
+  <data name="HarshBlueGlobeMegaExotic" xml:space="preserve">
+    <value>Harsh Blue Globe (Mega Exotic)</value>
+  </data>
+  <data name="HauntedEmerilMegaExotic" xml:space="preserve">
+    <value>Haunted Emeril (Mega Exotic)</value>
+  </data>
+  <data name="HazyMarsh" xml:space="preserve">
+    <value>Hazy (Marsh)</value>
+  </data>
+  <data name="HexagonalExotic" xml:space="preserve">
+    <value>Hexagonal (Exotic)</value>
+  </data>
+  <data name="HiemalFrozen" xml:space="preserve">
+    <value>Hiemal (Frozen)</value>
+  </data>
+  <data name="HighEnergyIrradiated" xml:space="preserve">
+    <value>High Energy (Irradiated)</value>
+  </data>
+  <data name="HighRadioSourceIrradiated" xml:space="preserve">
+    <value>High Radio Source (Irradiated)</value>
+  </data>
+  <data name="HighTemperatureScorched" xml:space="preserve">
+    <value>High Temperature (Scorched)</value>
+  </data>
+  <data name="HotScorched" xml:space="preserve">
+    <value>Hot (Scorched)</value>
+  </data>
+  <data name="HyperboreanFrozen" xml:space="preserve">
+    <value>Hyperborean (Frozen)</value>
+  </data>
+  <data name="IceboundFrozen" xml:space="preserve">
+    <value>Icebound (Frozen)</value>
+  </data>
+  <data name="IcyAbhorrenceFrozen" xml:space="preserve">
+    <value>Icy Abhorrence (Frozen)</value>
+  </data>
+  <data name="IcyFrozen" xml:space="preserve">
+    <value>Icy (Frozen)</value>
+  </data>
+  <data name="ImminentCoreDetonationVolcanic" xml:space="preserve">
+    <value>Imminent Core Detonation (Volcanic)</value>
+  </data>
+  <data name="IncandescentScorched" xml:space="preserve">
+    <value>Incandescent (Scorched)</value>
+  </data>
+  <data name="InfectedDustbowlBarren" xml:space="preserve">
+    <value>Infected Dustbowl (Barren)</value>
+  </data>
+  <data name="InfectedExotic" xml:space="preserve">
+    <value>Infected (Exotic)</value>
+  </data>
+  <data name="InfestedBarren" xml:space="preserve">
+    <value>Infested (Barren)</value>
+  </data>
+  <data name="InfestedFrozen" xml:space="preserve">
+    <value>Infested (Frozen)</value>
+  </data>
+  <data name="InfestedIrradiated" xml:space="preserve">
+    <value>Infested (Irradiated)</value>
+  </data>
+  <data name="InfestedScorched" xml:space="preserve">
+    <value>Infested (Scorched)</value>
+  </data>
+  <data name="InfestedToxic" xml:space="preserve">
+    <value>Infested (Toxic)</value>
+  </data>
+  <data name="IrradiatedIrradiated" xml:space="preserve">
+    <value>Irradiated (Irradiated)</value>
+  </data>
+  <data name="IsotopicIrradiated" xml:space="preserve">
+    <value>Isotopic (Irradiated)</value>
+  </data>
+  <data name="LavaVolcanic" xml:space="preserve">
+    <value>Lava (Volcanic)</value>
+  </data>
+  <data name="LifeIncompatibleDead" xml:space="preserve">
+    <value>Life-Incompatible (Dead)</value>
+  </data>
+  <data name="LifelessDead" xml:space="preserve">
+    <value>Lifeless (Dead)</value>
+  </data>
+  <data name="LostBlueMegaExotic" xml:space="preserve">
+    <value>Lost Blue (Mega Exotic)</value>
+  </data>
+  <data name="LostGreenMegaExotic" xml:space="preserve">
+    <value>Lost Green (Mega Exotic)</value>
+  </data>
+  <data name="LostRedMegaExotic" xml:space="preserve">
+    <value>Lost Red (Mega Exotic)</value>
+  </data>
+  <data name="LowAtmosphereDead" xml:space="preserve">
+    <value>Low Atmosphere (Dead)</value>
+  </data>
+  <data name="MagmaVolcanic" xml:space="preserve">
+    <value>Magma (Volcanic)</value>
+  </data>
+  <data name="MalfunctioningExotic" xml:space="preserve">
+    <value>Malfunctioning (Exotic)</value>
+  </data>
+  <data name="MarineWaterworld" xml:space="preserve">
+    <value>Marine (Waterworld)</value>
+  </data>
+  <data name="MarshyMarsh" xml:space="preserve">
+    <value>Marshy (Marsh)</value>
+  </data>
+  <data name="MechanicalExotic" xml:space="preserve">
+    <value>Mechanical (Exotic)</value>
+  </data>
+  <data name="MemoryΒTitanGasGiant" xml:space="preserve">
+    <value>Memory Β - Titan (Gas Giant)</value>
+  </data>
+  <data name="MetallicExotic" xml:space="preserve">
+    <value>Metallic (Exotic)</value>
+  </data>
+  <data name="MetallurgicExotic" xml:space="preserve">
+    <value>Metallurgic (Exotic)</value>
+  </data>
+  <data name="MiasmaticToxic" xml:space="preserve">
+    <value>Miasmatic (Toxic)</value>
+  </data>
+  <data name="MistyMarsh" xml:space="preserve">
+    <value>Misty (Marsh)</value>
+  </data>
+  <data name="MoltenVolcanic" xml:space="preserve">
+    <value>Molten (Volcanic)</value>
+  </data>
+  <data name="MoonOfLightExotic" xml:space="preserve">
+    <value>Moon Of Light (Exotic)</value>
+  </data>
+  <data name="MurkyMarsh" xml:space="preserve">
+    <value>Murky (Marsh)</value>
+  </data>
+  <data name="MutatedIrradiated" xml:space="preserve">
+    <value>Mutated (Irradiated)</value>
+  </data>
+  <data name="NoxiousToxic" xml:space="preserve">
+    <value>Noxious (Toxic)</value>
+  </data>
+  <data name="NuclearIrradiated" xml:space="preserve">
+    <value>Nuclear (Irradiated)</value>
+  </data>
+  <data name="ObsidianBeadVolcanic" xml:space="preserve">
+    <value>Obsidian Bead (Volcanic)</value>
+  </data>
+  <data name="OssifiedExotic" xml:space="preserve">
+    <value>Ossified (Exotic)</value>
+  </data>
+  <data name="ParchedBarren" xml:space="preserve">
+    <value>Parched (Barren)</value>
+  </data>
+  <data name="PetrifiedExotic" xml:space="preserve">
+    <value>Petrified (Exotic)</value>
+  </data>
+  <data name="PetrifiedGiantGasGiant" xml:space="preserve">
+    <value>Petrified Giant (Gas Giant)</value>
+  </data>
+  <data name="PillaredExotic" xml:space="preserve">
+    <value>Pillared (Exotic)</value>
+  </data>
+  <data name="PlanetaryAnomalyExotic" xml:space="preserve">
+    <value>Planetary Anomaly (Exotic)</value>
+  </data>
+  <data name="PlanetaryAnomalyMegaExotic" xml:space="preserve">
+    <value>Planetary Anomaly (Mega Exotic)</value>
+  </data>
+  <data name="PlanetOfLightExotic" xml:space="preserve">
+    <value>Planet Of Light (Exotic)</value>
+  </data>
+  <data name="PlatedExotic" xml:space="preserve">
+    <value>Plated (Exotic)</value>
+  </data>
+  <data name="PoisonousToxic" xml:space="preserve">
+    <value>Poisonous (Toxic)</value>
+  </data>
+  <data name="QuagmireMarsh" xml:space="preserve">
+    <value>Quagmire (Marsh)</value>
+  </data>
+  <data name="RadioactiveAbominationIrradiated" xml:space="preserve">
+    <value>Radioactive Abomination (Irradiated)</value>
+  </data>
+  <data name="RadioactiveIrradiated" xml:space="preserve">
+    <value>Radioactive (Irradiated)</value>
+  </data>
+  <data name="RattlingExotic" xml:space="preserve">
+    <value>Rattling (Exotic)</value>
+  </data>
+  <data name="RedactedExotic" xml:space="preserve">
+    <value>[Redacted] (Exotic)</value>
+  </data>
+  <data name="RedactedMegaExotic" xml:space="preserve">
+    <value>[Redacted] (Mega Exotic)</value>
+  </data>
+  <data name="ReekingMarsh" xml:space="preserve">
+    <value>Reeking (Marsh)</value>
+  </data>
+  <data name="RockyBarren" xml:space="preserve">
+    <value>Rocky (Barren)</value>
+  </data>
+  <data name="RottingToxic" xml:space="preserve">
+    <value>Rotting (Toxic)</value>
+  </data>
+  <data name="RuinedDustbowlBarren" xml:space="preserve">
+    <value>Ruined Dustbowl (Barren)</value>
+  </data>
+  <data name="ScaldingScorched" xml:space="preserve">
+    <value>Scalding (Scorched)</value>
+  </data>
+  <data name="ScalyExotic" xml:space="preserve">
+    <value>Scaly (Exotic)</value>
+  </data>
+  <data name="ScarletMegaExotic" xml:space="preserve">
+    <value>Scarlet (Mega Exotic)</value>
+  </data>
+  <data name="ScorchedRelicScorched" xml:space="preserve">
+    <value>Scorched Relic (Scorched)</value>
+  </data>
+  <data name="ScorchedScorched" xml:space="preserve">
+    <value>Scorched (Scorched)</value>
+  </data>
+  <data name="ShardedExotic" xml:space="preserve">
+    <value>Sharded (Exotic)</value>
+  </data>
+  <data name="ShatteredExotic" xml:space="preserve">
+    <value>Shattered (Exotic)</value>
+  </data>
+  <data name="ShellStrewnExotic" xml:space="preserve">
+    <value>Shell-Strewn (Exotic)</value>
+  </data>
+  <data name="SkeletalExotic" xml:space="preserve">
+    <value>Skeletal (Exotic)</value>
+  </data>
+  <data name="SpinedExotic" xml:space="preserve">
+    <value>Spined (Exotic)</value>
+  </data>
+  <data name="SporalExotic" xml:space="preserve">
+    <value>Sporal (Exotic)</value>
+  </data>
+  <data name="StellarCorruptionDetectedMegaExotic" xml:space="preserve">
+    <value>Stellar Corruption Detected (Mega Exotic)</value>
+  </data>
+  <data name="SubZeroFrozen" xml:space="preserve">
+    <value>Sub-Zero (Frozen)</value>
+  </data>
+  <data name="SupercriticalIrradiated" xml:space="preserve">
+    <value>Supercritical (Irradiated)</value>
+  </data>
+  <data name="SwampMarsh" xml:space="preserve">
+    <value>Swamp (Marsh)</value>
+  </data>
+  <data name="TaintedBarren" xml:space="preserve">
+    <value>Tainted (Barren)</value>
+  </data>
+  <data name="Tbd3GasGiant" xml:space="preserve">
+    <value>Tbd3 (Gas Giant)</value>
+  </data>
+  <data name="Tbd4GasGiant" xml:space="preserve">
+    <value>Tbd4 (Gas Giant)</value>
+  </data>
+  <data name="TectonicVolcanic" xml:space="preserve">
+    <value>Tectonic (Volcanic)</value>
+  </data>
+  <data name="TemporaryExotic" xml:space="preserve">
+    <value>Temporary (Exotic)</value>
+  </data>
+  <data name="TerraformingCatastropheDead" xml:space="preserve">
+    <value>Terraforming Catastrophe (Dead)</value>
+  </data>
+  <data name="TerrorsphereBarren" xml:space="preserve">
+    <value>Terrorsphere (Barren)</value>
+  </data>
+  <data name="TheNest" xml:space="preserve">
+    <value>The Nest</value>
+  </data>
+  <data name="TheReliquary" xml:space="preserve">
+    <value>The Reliquary</value>
+  </data>
+  <data name="TheReliquaryLush" xml:space="preserve">
+    <value>The Reliquary (Lush)</value>
+  </data>
+  <data name="ThirstyExotic" xml:space="preserve">
+    <value>Thirsty (Exotic)</value>
+  </data>
+  <data name="TorridScorched" xml:space="preserve">
+    <value>Torrid (Scorched)</value>
+  </data>
+  <data name="ToxicAnomaly" xml:space="preserve">
+    <value>Toxic Anomaly</value>
+  </data>
+  <data name="ToxicAnomalyMegaExotic" xml:space="preserve">
+    <value>Toxic Anomaly (Mega Exotic)</value>
+  </data>
+  <data name="ToxicHorror" xml:space="preserve">
+    <value>Toxic Horror</value>
+  </data>
+  <data name="ToxicHorrorToxic" xml:space="preserve">
+    <value>Toxic Horror (Toxic)</value>
+  </data>
+  <data name="ToxicToxic" xml:space="preserve">
+    <value>Toxic (Toxic)</value>
+  </data>
+  <data name="TropicalLush" xml:space="preserve">
+    <value>Tropical (Lush)</value>
+  </data>
+  <data name="TropicalMarsh" xml:space="preserve">
+    <value>Tropical (Marsh)</value>
+  </data>
+  <data name="UltramarineGiant" xml:space="preserve">
+    <value>Ultramarine Giant</value>
+  </data>
+  <data name="UltramarineGiantWaterworld" xml:space="preserve">
+    <value>Ultramarine Giant (Waterworld)</value>
+  </data>
+  <data name="UltramarineMegaExotic" xml:space="preserve">
+    <value>Ultramarine (Mega Exotic)</value>
+  </data>
+  <data name="UnstableVolcanic" xml:space="preserve">
+    <value>Unstable (Volcanic)</value>
+  </data>
+  <data name="VapourMarsh" xml:space="preserve">
+    <value>Vapour (Marsh)</value>
+  </data>
+  <data name="VerdantLush" xml:space="preserve">
+    <value>Verdant (Lush)</value>
+  </data>
+  <data name="VermillionGlobe" xml:space="preserve">
+    <value>Vermillion Globe</value>
+  </data>
+  <data name="VermillionGlobeMegaExotic" xml:space="preserve">
+    <value>Vermillion Globe (Mega Exotic)</value>
+  </data>
+  <data name="VileAnomaly" xml:space="preserve">
+    <value>Vile Anomaly</value>
+  </data>
+  <data name="VileAnomalyMegaExotic" xml:space="preserve">
+    <value>Vile Anomaly (Mega Exotic)</value>
+  </data>
+  <data name="ViolentVolcanic" xml:space="preserve">
+    <value>Violent (Volcanic)</value>
+  </data>
+  <data name="ViridescentLush" xml:space="preserve">
+    <value>Viridescent (Lush)</value>
+  </data>
+  <data name="VolcanicVolcanic" xml:space="preserve">
+    <value>Volcanic (Volcanic)</value>
+  </data>
+  <data name="WaterlockedWaterworld" xml:space="preserve">
+    <value>Waterlocked (Waterworld)</value>
+  </data>
+  <data name="WaterworldWaterworld" xml:space="preserve">
+    <value>Waterworld (Waterworld)</value>
+  </data>
+  <data name="WebbedExotic" xml:space="preserve">
+    <value>Webbed (Exotic)</value>
+  </data>
+  <data name="WindSwept" xml:space="preserve">
+    <value>Wind-Swept</value>
+  </data>
+  <data name="WindSweptBarren" xml:space="preserve">
+    <value>Wind-Swept (Barren)</value>
+  </data>
+  <data name="WineDark" xml:space="preserve">
+    <value>Wine Dark</value>
+  </data>
+  <data name="WineDarkMegaExotic" xml:space="preserve">
+    <value>Wine Dark (Mega Exotic)</value>
+  </data>
+  <data name="WormRidden" xml:space="preserve">
+    <value>Worm-Ridden</value>
+  </data>
+  <data name="WormRiddenLush" xml:space="preserve">
+    <value>Worm-Ridden (Lush)</value>
+  </data>
+  <data name="XenoColony" xml:space="preserve">
+    <value>Xeno-Colony</value>
+  </data>
+  <data name="XenoColonyLush" xml:space="preserve">
+    <value>Xeno-Colony (Lush)</value>
+  </data>
+</root>

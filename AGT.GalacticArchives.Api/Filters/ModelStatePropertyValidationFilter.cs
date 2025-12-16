@@ -17,7 +17,7 @@ public class ModelStatePropertyValidationFilter : IActionFilter
                 }
             }
 
-            throw new Exception(string.Join(Environment.NewLine, errorMessages));
+            throw new ArgumentException(string.Join(Environment.NewLine, errorMessages));
         }
     }
 

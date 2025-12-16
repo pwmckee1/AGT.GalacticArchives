@@ -7,9 +7,9 @@ public static class HttpContextExtensions
     public static string GetRequestParameters(this HttpContext httpContext, string parameterName)
     {
         var parameter = httpContext.Request.Headers[parameterName];
-        if (!parameter.Any() && httpContext.Request.RouteValues.ContainsKey(parameterName))
+        if (parameter.Count == 0 && httpContext.Request.RouteValues.TryGetValue(parameterName, out object? value))
         {
-            parameter = httpContext.Request.RouteValues[parameterName]?.ToString();
+            parameter = value?.ToString();
         }
         else if (!parameter.Any() && httpContext.Request.QueryString.HasValue)
         {
