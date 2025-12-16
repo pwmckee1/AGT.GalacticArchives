@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.InGameLocations;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 
@@ -37,6 +36,19 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
         return result;
     }
 
+    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request, CancellationToken ct)
+    {
+        var result = await target.UpsertStarSystemAsync(request, ct);
+        var starSystemIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var starSystemId in starSystemIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(StarSystem)}:{starSystemId}");
+        }
+
+        return result;
+    }
+
     public async Task DeleteStarSystemAsync(Guid starSystemId)
     {
         await target.DeleteStarSystemAsync(starSystemId);
@@ -46,5 +58,6 @@ public class CachedStarSystemManager(ICacheManager cacheManager, IStarSystemMana
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(StarSystem)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

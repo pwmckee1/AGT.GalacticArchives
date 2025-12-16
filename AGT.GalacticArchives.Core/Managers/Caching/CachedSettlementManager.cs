@@ -36,6 +36,19 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
         return result;
     }
 
+    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request, CancellationToken ct)
+    {
+        var result = await target.UpsertSettlementAsync(request, ct);
+        var settlementIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var settlementId in settlementIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Settlement)}:{settlementId}");
+        }
+
+        return result;
+    }
+
     public async Task DeleteSettlementAsync(Guid settlementId)
     {
         await target.DeleteSettlementAsync(settlementId);
@@ -45,5 +58,6 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Settlement)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Settlement)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

@@ -1,27 +1,28 @@
-using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class RegionImportService(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<RegionImport>> importManagers)
-    : GoogleSheetImportService<RegionImport>(googleSheetValidationHandlers)
+    IMapper mapper,
+    IRegionManager regionManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
+    : ImportService<RegionImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<RegionImport> _importManager =
-        importManagers[NamedKeys.Managers.RegionManager];
-
-    protected override string SheetName => GoogleSheetResource.RegionSheetName;
+    protected override string SheetName => ImportResource.RegionSheetName;
 
     protected override Type CsvMapType => typeof(RegionCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<RegionImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<RegionImport> importData,
+        CancellationToken ct = default)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var regions = mapper.Map<HashSet<Region>>(importData);
+        await regionManager.UpsertRegionAsync(regions, ct);
     }
 }

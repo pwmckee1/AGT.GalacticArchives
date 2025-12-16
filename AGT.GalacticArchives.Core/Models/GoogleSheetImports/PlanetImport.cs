@@ -1,17 +1,20 @@
-using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
 using AGT.GalacticArchives.Core.Interfaces.Models;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class PlanetImport : IGoogleSheetImport
+public class PlanetImport : IImportFormFile
 {
+    [Name(PlanetSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
+
     [Name(PlanetSheetFields.AgeOfPlanetInBillionsOfYears)]
-    public string? AgeOfPlanetInBillionsOfYears { get; set; }
+    public int? AgeOfPlanetInBillionsOfYears { get; set; }
 
     [Name(PlanetSheetFields.AdminNotes)]
     public string? AdminNotes { get; set; }
@@ -23,73 +26,73 @@ public class PlanetImport : IGoogleSheetImport
     public LandArchetypes? ArchetypeOfLand { get; set; }
 
     [Name(PlanetSheetFields.AssignedRawIngredient)]
-    public string? AssignedRawIngredient { get; set; }
+    public EdibleMaterialTypes? AssignedRawIngredient { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas1)]
-    public ExoticMaterialTypes? AtmosphereGas1 { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas1 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGas2)]
-    public ExoticMaterialTypes? AtmosphereGas2 { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGasPercentage1)]
-    public string? AtmosphereGasPercentage1 { get; set; }
+    public float? AtmosphereGasPercentage1 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereGasPercentage2)]
-    public string? AtmosphereGasPercentage2 { get; set; }
+    public float? AtmosphereGasPercentage2 { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereDaytimeColor)]
     public AtmosphereColorTypes? AtmosphereDaytimeColor { get; set; }
 
     [Name(PlanetSheetFields.AtmosphereResource)]
-    public ExoticMaterialTypes? AtmosphereResource { get; set; }
+    public HarvestedMaterialTypes? AtmosphereResource { get; set; }
 
-    [Name(PlanetSheetFields.BiomeDescription)]
+    [Name(PlanetSheetFields.PlanetBiomeDescription)]
     public BiomeSubTypes? PlanetBiomeDescription { get; set; }
 
     [Name(PlanetSheetFields.BiomeResource)]
-    public ExoticMaterialTypes? BiomeResource { get; set; }
+    public HarvestedMaterialTypes? BiomeResource { get; set; }
 
-    [Name(PlanetSheetFields.BiomeType)]
+    [Name(PlanetSheetFields.PlanetBiomeType)]
     public BiomeTypes? PlanetBiomeType { get; set; }
 
-    [Name(PlanetSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(PlanetSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(PlanetSheetFields.DataQualityCheck)]
     public string? DataQualityCheck { get; set; }
 
     [Name(PlanetSheetFields.DayRadiation)]
-    public string? DayRadiation { get; set; }
+    public float? DayRadiation { get; set; }
 
     [Name(PlanetSheetFields.DayStormRadiation)]
-    public string? DayStormRadiation { get; set; }
+    public float? DayStormRadiation { get; set; }
 
     [Name(PlanetSheetFields.DayStormTemp)]
-    public string? DayStormTemp { get; set; }
+    public float? DayStormTemp { get; set; }
 
     [Name(PlanetSheetFields.DayStormToxic)]
-    public string? DayStormToxic { get; set; }
+    public float? DayStormToxic { get; set; }
 
     [Name(PlanetSheetFields.DayTemp)]
-    public string? DayTemp { get; set; }
+    public float? DayTemp { get; set; }
 
     [Name(PlanetSheetFields.DayToxic)]
-    public string? DayToxic { get; set; }
+    public float? DayToxic { get; set; }
 
     [Name(PlanetSheetFields.DiscoveredLinkOnWiki)]
     public string? DiscoveredLinkOnWiki { get; set; }
 
     [Name(PlanetSheetFields.DiscoveryDate)]
-    public string? DiscoveryDate { get; set; }
+    public DateTimeOffset? DiscoveryDate { get; set; }
 
-    [Name(PlanetSheetFields.DiscoveryPlatform)]
-    public string? DiscoveryPlatform { get; set; }
+    [Name(PlanetSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
-    [Name(PlanetSheetFields.DiscovererGamertag)]
-    public string? DiscovererGamertag { get; set; }
+    [Name(PlanetSheetFields.DiscoveredBy)]
+    public string? DiscoveredBy { get; set; }
 
     [Name(PlanetSheetFields.DocumentSequence)]
-    public string? DocumentSequence { get; set; }
+    public int? DocumentSequence { get; set; }
 
     [Name(PlanetSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }
@@ -101,43 +104,34 @@ public class PlanetImport : IGoogleSheetImport
     public PlanetExtremeWeatherTypes? ExtremeWeatherExcludingMegaExotic { get; set; }
 
     [Name(PlanetSheetFields.ExtremeWeatherIncludingMegaExotic)]
-    public string? ExtremeWeatherIncludingMegaExotic { get; set; }
+    public PlanetExtremeWeatherTypes? ExtremeWeatherIncludingMegaExotic { get; set; }
 
-    [Name(PlanetSheetFields.ExtrasA)]
-    public string? ExtrasA { get; set; }
+    [Name(PlanetSheetFields.Extras)]
+    public HashSet<UniqueMaterialTypes> Extras { get; set; } = [];
 
-    [Name(PlanetSheetFields.ExtrasB)]
-    public string? ExtrasB { get; set; }
+    [Name(PlanetSheetFields.FaunaLevelCategory)]
+    public PlanetBiotaLevelTypes? FaunaLevelCategory { get; set; }
 
-    [Name(PlanetSheetFields.ExtrasC)]
-    public string? ExtrasC { get; set; }
-
-    [Name(PlanetSheetFields.FaunaCategory)]
-    public string? FaunaCategory { get; set; }
-
-    [Name(PlanetSheetFields.Flora)]
-    public string? Flora { get; set; }
+    [Name(PlanetSheetFields.FloraLevelCategory)]
+    public PlanetBiotaLevelTypes? FloraLevelCategory { get; set; }
 
     [Name(PlanetSheetFields.Galaxy)]
-    public string? Galaxy { get; set; }
+    public GalaxyTypes? Galaxy { get; set; }
 
-    [Name(PlanetSheetFields.GalaxyName)]
-    public string? GalaxyName { get; set; }
+    [Name(PlanetSheetFields.HasGarden)]
+    public bool? HasGarden { get; set; }
 
-    [Name(PlanetSheetFields.Garden)]
-    public string? Garden { get; set; }
-
-    [Name(PlanetSheetFields.GameVersionNumberForPage)]
-    public string? GameVersionNumberForPage { get; set; }
+    [Name(PlanetSheetFields.GameReleaseVersionNumber)]
+    public float? GameReleaseVersionNumber { get; set; }
 
     [Name(PlanetSheetFields.Geology)]
-    public string? Geology { get; set; }
+    public GeologyTypes? Geology { get; set; }
 
     [Name(PlanetSheetFields.Glitches)]
-    public string? Glitches { get; set; }
+    public GlitchMaterialTypes? Glitches { get; set; }
 
     [Name(PlanetSheetFields.HasSandworms)]
-    public string? HasSandworms { get; set; }
+    public bool? HasSandworms { get; set; }
 
     [Name(PlanetSheetFields.HistoricalPlanetDiscoverCreditBeforeReset)]
     public string? HistoricalPlanetDiscoverCreditBeforeReset { get; set; }
@@ -152,22 +146,22 @@ public class PlanetImport : IGoogleSheetImport
     public string? HistoricalPlanetNameReset { get; set; }
 
     [Name(PlanetSheetFields.RingsOrGiant)]
-    public bool HasRings { get; set; }
+    public bool? HasRings { get; set; }
 
     [Name(PlanetSheetFields.RingsOrGiant)]
-    public bool IsGasGiant { get; set; }
+    public bool? IsGasGiant { get; set; }
 
     [Name(PlanetSheetFields.IsInfected)]
-    public bool IsInfected { get; set; }
+    public bool? IsInfected { get; set; }
 
     [Name(PlanetSheetFields.PlanetOrMoon)]
-    public bool IsPlanet { get; set; }
+    public bool? IsPlanet { get; set; }
 
     [Name(PlanetSheetFields.PlanetOrMoon)]
-    public bool IsMoon { get; set; }
+    public bool? IsMoon { get; set; }
 
     [Name(PlanetSheetFields.LegacyPCDiscoveryDate)]
-    public string? LegacyPCDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyPCDiscoveryDate { get; set; }
 
     [Name(PlanetSheetFields.LegacyPCDiscoveryEra)]
     public string? LegacyPCDiscoveryEra { get; set; }
@@ -179,7 +173,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? LegacyPCPlanetName { get; set; }
 
     [Name(PlanetSheetFields.LegacyPSDiscoveryDate)]
-    public string? LegacyPSDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyPSDiscoveryDate { get; set; }
 
     [Name(PlanetSheetFields.LegacyPSDiscoveryEra)]
     public string? LegacyPSDiscoveryEra { get; set; }
@@ -209,7 +203,7 @@ public class PlanetImport : IGoogleSheetImport
     public string? LegacyXboxDiscoverersGamerTagName { get; set; }
 
     [Name(PlanetSheetFields.LegacyXboxDiscoveryDate)]
-    public string? LegacyXboxDiscoveryDate { get; set; }
+    public DateTimeOffset? LegacyXboxDiscoveryDate { get; set; }
 
     [Name(PlanetSheetFields.LegacyXboxPlanetName)]
     public string? LegacyXboxPlanetName { get; set; }
@@ -217,8 +211,8 @@ public class PlanetImport : IGoogleSheetImport
     [Name(PlanetSheetFields.GameModeType)]
     public GameModeTypes? GameModeType { get; set; }
 
-    [Name(PlanetSheetFields.Name)]
-    public string? Name { get; set; }
+    [Name(PlanetSheetFields.PlanetName)]
+    public string? PlanetName { get; set; }
 
     [Name(PlanetSheetFields.NightStormTemp)]
     public float? NightStormTemp { get; set; }
@@ -227,7 +221,7 @@ public class PlanetImport : IGoogleSheetImport
     public float? NightTemp { get; set; }
 
     [Name(PlanetSheetFields.NumberOfFauna)]
-    public string? NumberOfFauna { get; set; }
+    public int? NumberOfFauna { get; set; }
 
     [Name(PlanetSheetFields.OriginalPlanetName)]
     public string? OriginalPlanetName { get; set; }
@@ -235,11 +229,11 @@ public class PlanetImport : IGoogleSheetImport
     [Name(PlanetSheetFields.OtherNotes)]
     public string? OtherNotes { get; set; }
 
-    [Name(PlanetSheetFields.PlanetGlyphs)]
-    public string? PlanetGlyphs { get; set; }
+    [Name(PlanetSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(PlanetSheetFields.PlanetIdInSystem)]
-    public string? PlanetIdInSystem { get; set; }
+    public int? PlanetIdInSystem { get; set; }
 
     [Name(PlanetSheetFields.PlanetMoonMatch)]
     public string? PlanetMoonMatch { get; set; }
@@ -247,32 +241,20 @@ public class PlanetImport : IGoogleSheetImport
     [Name(PlanetSheetFields.PlanetNameAllPlatforms)]
     public string? PlanetNameAllPlatforms { get; set; }
 
-    [Name(PlanetSheetFields.PlanetOrMoon)]
-    public string? PlanetOrMoon { get; set; }
-
     [Name(PlanetSheetFields.PlanetOrMoonAddedInOrigins)]
-    public string? PlanetOrMoonAddedInOrigins { get; set; }
+    public bool? PlanetOrMoonAddedInOrigins { get; set; }
 
     [Name(PlanetSheetFields.PortalRepository)]
     public string? PortalRepository { get; set; }
 
     [Name(PlanetSheetFields.PrimaryCoreElement)]
-    public string? PrimaryCoreElement { get; set; }
+    public PlanetaryCoreTypes? PrimaryCoreElement { get; set; }
 
-    [Name(PlanetSheetFields.PrimaryResource1)]
-    public ExoticMaterialTypes? PrimaryResource1 { get; set; }
-
-    [Name(PlanetSheetFields.PrimaryResource2)]
-    public ExoticMaterialTypes? PrimaryResource2 { get; set; }
-
-    [Name(PlanetSheetFields.PrimaryResource3)]
-    public ExoticMaterialTypes? PrimaryResource3 { get; set; }
+    [Name(PlanetSheetFields.PrimaryResources)]
+    public HashSet<HarvestedMaterialTypes> PrimaryResources { get; set; } = [];
 
     [Name(PlanetSheetFields.RawIngredients)]
-    public HashSet<string> RawIngredients { get; set; } = [];
-
-    [Name(PlanetSheetFields.Region)]
-    public string? Region { get; set; }
+    public HashSet<EdibleRawMaterialTypes> RawIngredients { get; set; } = [];
 
     [Name(PlanetSheetFields.RegionName)]
     public string? RegionName { get; set; }
@@ -280,14 +262,11 @@ public class PlanetImport : IGoogleSheetImport
     [Name(PlanetSheetFields.ResearchTeam)]
     public string? ResearchTeam { get; set; }
 
-    [Name(PlanetSheetFields.RingsOrGiant)]
-    public string? RingsOrGiant { get; set; }
+    [Name(PlanetSheetFields.SentinelActivity)]
+    public SentinelActivityTypes? SentinelActivity { get; set; }
 
-    [Name(PlanetSheetFields.Sentinel)]
-    public string? Sentinel { get; set; }
-
-    [Name(PlanetSheetFields.SpecialA)]
-    public string? SpecialA { get; set; }
+    [Name(PlanetSheetFields.SpecialResources)]
+    public HashSet<PlanetPropertyTypes> SpecialResources { get; set; } = [];
 
     [Name(PlanetSheetFields.StarSystemName)]
     public string? StarSystemName { get; set; }
@@ -296,74 +275,77 @@ public class PlanetImport : IGoogleSheetImport
     public string? SummaryInfo { get; set; }
 
     [Name(PlanetSheetFields.SurveyDate)]
-    public string? SurveyDate { get; set; }
+    public DateTimeOffset? SurveyDate { get; set; }
 
-    [Name(PlanetSheetFields.SurveyReleaseEra)]
-    public string? SurveyReleaseEra { get; set; }
+    [Name(PlanetSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
 
-    [Name(PlanetSheetFields.SurveyorGamertag)]
-    public string? SurveyorGamertag { get; set; }
+    [Name(PlanetSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
-    [Name(PlanetSheetFields.System)]
-    public string? System { get; set; }
-
-    [Name(PlanetSheetFields.Terrain)]
+    [Name(PlanetSheetFields.PlanetTerrain)]
     public TerrainTypes? PlanetTerrain { get; set; }
 
-    [Name(PlanetSheetFields.LandType)]
+    [Name(PlanetSheetFields.PlanetLandType)]
     public LandTypes? PlanetLandType { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayRadiation)]
-    public string? UndergroundDayRadiation { get; set; }
+    public float? UndergroundDayRadiation { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayStormRadiation)]
-    public string? UndergroundDayStormRadiation { get; set; }
+    public float? UndergroundDayStormRadiation { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayStormTemp)]
-    public string? UndergroundDayStormTemp { get; set; }
+    public float? UndergroundDayStormTemp { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayStormToxic)]
-    public string? UndergroundDayStormToxic { get; set; }
+    public float? UndergroundDayStormToxic { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayTemp)]
-    public string? UndergroundDayTemp { get; set; }
+    public float? UndergroundDayTemp { get; set; }
 
     [Name(PlanetSheetFields.UndergroundDayToxic)]
-    public string? UndergroundDayToxic { get; set; }
+    public float? UndergroundDayToxic { get; set; }
 
     [Name(PlanetSheetFields.UndergroundNightStormTemp)]
-    public string? UndergroundNightStormTemp { get; set; }
+    public float? UndergroundNightStormTemp { get; set; }
 
     [Name(PlanetSheetFields.UndergroundNightTemp)]
-    public string? UndergroundNightTemp { get; set; }
+    public float? UndergroundNightTemp { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterDayRadiation)]
-    public string? UnderwaterDayRadiation { get; set; }
+    public float? UnderwaterDayRadiation { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterDayStormRadiation)]
-    public string? UnderwaterDayStormRadiation { get; set; }
+    public float? UnderwaterDayStormRadiation { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterDayStormTemp)]
-    public string? UnderwaterDayStormTemp { get; set; }
+    public float? UnderwaterDayStormTemp { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterDayStormToxic)]
-    public string? UnderwaterDayStormToxic { get; set; }
+    public float? UnderwaterDayStormToxic { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterDayTemp)]
-    public string? UnderwaterDayTemp { get; set; }
+    public float? UnderwaterDayTemp { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterDayToxic)]
-    public string? UnderwaterDayToxic { get; set; }
+    public float? UnderwaterDayToxic { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterNightStormTemp)]
-    public string? UnderwaterNightStormTemp { get; set; }
+    public float? UnderwaterNightStormTemp { get; set; }
 
     [Name(PlanetSheetFields.UnderwaterNightTemp)]
-    public string? UnderwaterNightTemp { get; set; }
+    public float? UnderwaterNightTemp { get; set; }
 
-    [Name(PlanetSheetFields.Weather)]
+    [Name(PlanetSheetFields.PlanetWeather)]
     public WeatherTypes? PlanetWeather { get; set; }
 
     [Name(PlanetSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
+
+    [Name(PlanetSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(PlanetSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
 }

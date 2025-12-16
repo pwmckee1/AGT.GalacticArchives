@@ -1,76 +1,62 @@
-using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class PlayerBaseImport : IGoogleSheetImport
+public class PlayerBaseImport : IImportFormFile
 {
+    [Name(PlayerBaseSheetFields.PlayerBaseId)]
+    public Guid? PlayerBaseId { get; set; }
+
     [Name(PlayerBaseSheetFields.AccessOrTerrainSituation)]
-    public string? AccessOrTerrainSituation { get; set; }
+    public PlayerBaseTerrainTypes? AccessOrTerrainSituation { get; set; }
 
     [Name(PlayerBaseSheetFields.AdditionalNotes)]
     public string? AdditionalNotes { get; set; }
 
     [Name(PlayerBaseSheetFields.AllowsDeconstruction)]
-    public string? AllowsDeconstruction { get; set; }
+    public bool? AllowsDeconstruction { get; set; }
 
-    [Name(PlayerBaseSheetFields.Aesthetics)]
-    public string? Aesthetics { get; set; }
+    [Name(PlayerBaseSheetFields.AestheticsRating)]
+    public int? AestheticsRating { get; set; }
 
     [Name(PlayerBaseSheetFields.BaseComplexity)]
-    public string? BaseComplexity { get; set; }
+    public int? BaseComplexity { get; set; }
 
-    [Name(PlayerBaseSheetFields.BaseElements1)]
-    public string? BaseElements1 { get; set; }
+    [Name(PlayerBaseSheetFields.BaseElements)]
+    public HashSet<PlayerBaseElementTypes> BaseElements { get; set; } = [];
 
-    [Name(PlayerBaseSheetFields.BaseElements2)]
-    public string? BaseElements2 { get; set; }
+    [Name(PlayerBaseSheetFields.PlayerBaseClassification)]
+    public PlayerBaseClassificationTypes? PlayerBaseClassification { get; set; }
 
-    [Name(PlayerBaseSheetFields.BaseElements3)]
-    public string? BaseElements3 { get; set; }
-
-    [Name(PlayerBaseSheetFields.BaseElements4)]
-    public string? BaseElements4 { get; set; }
-
-    [Name(PlayerBaseSheetFields.BaseElements5)]
-    public string? BaseElements5 { get; set; }
-
-    [Name(PlayerBaseSheetFields.BaseElements6)]
-    public string? BaseElements6 { get; set; }
-
-    [Name(PlayerBaseSheetFields.BaseElements7)]
-    public string? BaseElements7 { get; set; }
-
-    [Name(PlayerBaseSheetFields.BaseElements8)]
-    public string? BaseElements8 { get; set; }
-
-    [Name(PlayerBaseSheetFields.BaseType)]
-    public string? BaseType { get; set; }
-
-    [Name(PlayerBaseSheetFields.Builder)]
-    public string? Builder { get; set; }
+    [Name(PlayerBaseSheetFields.BuilderName)]
+    public string? BuilderName { get; set; }
 
     [Name(PlayerBaseSheetFields.BuilderLinkOnWiki)]
     public string? BuilderLinkOnWiki { get; set; }
 
-    [Name(PlayerBaseSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(PlayerBaseSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
-    [Name(PlayerBaseSheetFields.Coordinates)]
-    public string? Coordinates { get; set; }
+    [Name(PlayerBaseSheetFields.GalacticCoordinates)]
+    public string? GalacticCoordinates { get; set; }
 
     [Name(PlayerBaseSheetFields.DateFinished)]
-    public string? DateFinished { get; set; }
+    public DateTimeOffset? DateFinished { get; set; }
 
-    [Name(PlayerBaseSheetFields.DateOfSurvey)]
-    public string? DateOfSurvey { get; set; }
+    [Name(PlayerBaseSheetFields.SurveyDate)]
+    public DateTimeOffset? SurveyDate { get; set; }
 
     [Name(PlayerBaseSheetFields.DateStarted)]
-    public string? DateStarted { get; set; }
+    public DateTimeOffset? DateStarted { get; set; }
 
-    [Name(PlayerBaseSheetFields.DocSequence)]
-    public string? DocSequence { get; set; }
+    [Name(PlayerBaseSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
 
     [Name(PlayerBaseSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }
@@ -79,100 +65,88 @@ public class PlayerBaseImport : IGoogleSheetImport
     public string? ExternalLink2 { get; set; }
 
     [Name(PlayerBaseSheetFields.Galaxy)]
-    public string? Galaxy { get; set; }
+    public GalaxyTypes? Galaxy { get; set; }
 
-    [Name(PlayerBaseSheetFields.GasExtractor)]
-    public string? GasExtractor { get; set; }
+    [Name(PlayerBaseSheetFields.GasExtractorContents)]
+    public HashSet<AtmosphereGasTypes> GasExtractorContents { get; set; } = [];
 
-    [Name(PlayerBaseSheetFields.GasStoreCapacity)]
-    public string? GasStoreCapacity { get; set; }
+    [Name(PlayerBaseSheetFields.GasExtractorCapacity)]
+    public int? GasExtractorCapacity { get; set; }
 
-    [Name(PlayerBaseSheetFields.Glyph)]
-    public string? Glyph { get; set; }
+    [Name(PlayerBaseSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(PlayerBaseSheetFields.HasArena)]
-    public string? HasArena { get; set; }
+    public bool? HasArena { get; set; }
 
     [Name(PlayerBaseSheetFields.HasFarm)]
-    public string? HasFarm { get; set; }
+    public bool? HasFarm { get; set; }
 
     [Name(PlayerBaseSheetFields.HasGeoBay)]
-    public string? HasGeoBay { get; set; }
+    public bool? HasGeoBay { get; set; }
 
     [Name(PlayerBaseSheetFields.HasLandingPad)]
-    public string? HasLandingPad { get; set; }
+    public bool? HasLandingPad { get; set; }
 
     [Name(PlayerBaseSheetFields.HasRacetrack)]
-    public string? HasRacetrack { get; set; }
+    public bool? HasRacetrack { get; set; }
 
     [Name(PlayerBaseSheetFields.HasTradeTerminal)]
-    public string? HasTradeTerminal { get; set; }
+    public bool? HasTradeTerminal { get; set; }
 
     [Name(PlayerBaseSheetFields.LayoutDescription)]
     public string? LayoutDescription { get; set; }
 
-    [Name(PlayerBaseSheetFields.MiningExtractor)]
-    public string? MiningExtractor { get; set; }
+    [Name(PlayerBaseSheetFields.MineralExtractorContents)]
+    public HashSet<HarvestedMaterialTypes> MineralExtractorContents { get; set; } = [];
 
-    [Name(PlayerBaseSheetFields.MiningStoreCapacity)]
-    public string? MiningStoreCapacity { get; set; }
+    [Name(PlayerBaseSheetFields.MineralExtractorCapacity)]
+    public int? MineralExtractorCapacity { get; set; }
 
-    [Name(PlayerBaseSheetFields.Mode)]
-    public string? Mode { get; set; }
+    [Name(PlayerBaseSheetFields.GameModeType)]
+    public GameModeTypes? GameModeType { get; set; }
 
     [Name(PlayerBaseSheetFields.Name)]
-    public string? Name { get; set; }
+    public string? PlayerBaseName { get; set; }
 
-    [Name(PlayerBaseSheetFields.NearbyPOI1)]
-    public string? NearbyPOI1 { get; set; }
-
-    [Name(PlayerBaseSheetFields.NearbyPOI2)]
-    public string? NearbyPOI2 { get; set; }
-
-    [Name(PlayerBaseSheetFields.NearbyPOI3)]
-    public string? NearbyPOI3 { get; set; }
-
-    [Name(PlayerBaseSheetFields.NearbyPOI4)]
-    public string? NearbyPOI4 { get; set; }
-
-    [Name(PlayerBaseSheetFields.NearbyPOI5)]
-    public string? NearbyPOI5 { get; set; }
+    [Name(PlayerBaseSheetFields.NearByPointsOfInterest)]
+    public HashSet<LocationTypes> NearByPointsOfInterest { get; set; } = [];
 
     [Name(PlayerBaseSheetFields.PersonalNotes)]
     public string? PersonalNotes { get; set; }
 
     [Name(PlayerBaseSheetFields.Planet)]
-    public string? Planet { get; set; }
+    public string? PlanetName { get; set; }
 
-    [Name(PlayerBaseSheetFields.Platform)]
-    public string? Platform { get; set; }
+    [Name(PlayerBaseSheetFields.GamePlatformType)]
+    public GamePlatformTypes? GamePlatformType { get; set; }
 
     [Name(PlayerBaseSheetFields.PortalRepositoryLink)]
     public string? PortalRepositoryLink { get; set; }
 
     [Name(PlayerBaseSheetFields.PowerSituation)]
-    public string? PowerSituation { get; set; }
+    public PlayerBasePowerTypes? PowerSituation { get; set; }
 
     [Name(PlayerBaseSheetFields.Region)]
-    public string? Region { get; set; }
+    public string? RegionName { get; set; }
 
-    [Name(PlayerBaseSheetFields.Release)]
-    public string? Release { get; set; }
+    [Name(PlayerBaseSheetFields.GameRelease)]
+    public string? GameRelease { get; set; }
 
-    [Name(PlayerBaseSheetFields.ReleaseVersion)]
-    public string? ReleaseVersion { get; set; }
+    [Name(PlayerBaseSheetFields.GameReleaseVersionNumber)]
+    public string? GameReleaseVersionNumber { get; set; }
 
     [Name(PlayerBaseSheetFields.SummaryText)]
     public string? SummaryText { get; set; }
 
-    [Name(PlayerBaseSheetFields.Surveyor)]
-    public string? Surveyor { get; set; }
+    [Name(PlayerBaseSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
-    [Name(PlayerBaseSheetFields.System)]
-    public string? System { get; set; }
+    [Name(PlayerBaseSheetFields.StarSystem)]
+    public string? StarSystemName { get; set; }
 
     [Name(PlayerBaseSheetFields.TypeOfBase)]
-    public string? TypeOfBase { get; set; }
+    public PlayerBaseTypes? TypeOfBase { get; set; }
 
     [Name(PlayerBaseSheetFields.Videos)]
     public string? Videos { get; set; }
@@ -181,8 +155,17 @@ public class PlayerBaseImport : IGoogleSheetImport
     public string? WikiLink { get; set; }
 
     [Name(PlayerBaseSheetFields.XXSecondCoordinate)]
-    public string? XXSecondCoordinate { get; set; }
+    public float? XAxisPlanetCoordinate { get; set; }
 
-    [Name(PlayerBaseSheetFields.YYFirstCoordinate)]
-    public string? YYFirstCoordinate { get; set; }
+    [Name(PlayerBaseSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(PlayerBaseSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(PlayerBaseSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(PlayerBaseSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

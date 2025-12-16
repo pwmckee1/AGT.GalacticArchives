@@ -9,3 +9,4 @@ firebase-credentials.json
 *.pfx
 *.log
 *.user
+firestore-commands.txt

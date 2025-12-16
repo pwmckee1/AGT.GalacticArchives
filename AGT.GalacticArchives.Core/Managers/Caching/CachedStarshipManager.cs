@@ -36,6 +36,19 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
         return result;
     }
 
+    public async Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request, CancellationToken ct)
+    {
+        var result = await target.UpsertStarshipAsync(request, ct);
+        var starshipIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var starshipId in starshipIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Starship)}:{starshipId}");
+        }
+
+        return result;
+    }
+
     public async Task DeleteStarshipAsync(Guid starshipId)
     {
         await target.DeleteStarshipAsync(starshipId);
@@ -45,5 +58,6 @@ public class CachedStarshipManager(ICacheManager cacheManager, IStarshipManager 
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Starship)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Starship)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

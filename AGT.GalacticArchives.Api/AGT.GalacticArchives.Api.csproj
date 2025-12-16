@@ -21,6 +21,7 @@
         <PackageReference Include="HtmlSanitizer" Version="9.1.891-beta"/>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.0"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0"/>
+        <PackageReference Include="MimeTypesMap" Version="1.0.9" />
         <PackageReference Include="NLog" Version="6.0.6"/>
         <PackageReference Include="NLog.Web.AspNetCore" Version="6.1.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.0.1"/>

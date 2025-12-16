@@ -1,5 +1,4 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
@@ -10,5 +9,5 @@ public class PointOfInterest : DatabaseGameEntity
 
     public override Guid EntityId => PointOfInterestId;
 
-    public LocationTypes? Type { get; set; }
+    public LocationTypes? LocationType { get; set; }
 }

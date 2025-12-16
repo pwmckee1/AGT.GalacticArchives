@@ -1,6 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -39,7 +38,12 @@ public class RegionManager(IFirestoreManager firestoreManager, IMapper mapper) :
 
     public async Task<Region> UpsertRegionAsync(Region request)
     {
-        return (Region)await firestoreManager.UpsertAsync(request, Collection);
+        return await firestoreManager.UpsertAsync(request, Collection);
+    }
+
+    public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteRegionAsync(Guid regionId)

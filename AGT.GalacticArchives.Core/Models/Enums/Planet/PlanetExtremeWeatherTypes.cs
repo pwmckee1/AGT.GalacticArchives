@@ -8,4 +8,5 @@ public enum PlanetExtremeWeatherTypes
     Green,
     Red,
     Blue,
+    Unknown,
 }

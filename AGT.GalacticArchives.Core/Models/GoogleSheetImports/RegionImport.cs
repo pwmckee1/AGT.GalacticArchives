@@ -1,36 +1,44 @@
-using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class RegionImport : IGoogleSheetImport
+public class RegionImport : IImportFormFile
 {
+    [Name(RegionSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
     [Name(RegionSheetFields.AdminNotes)]
     public string? AdminNotes { get; set; }
 
     [Name(RegionSheetFields.AdditionalNotes)]
     public string? AdditionalNotes { get; set; }
 
-    [Name(RegionSheetFields.AutoSurveyDate)]
-    public string? AutoSurveyDate { get; set; }
+    [Name(RegionSheetFields.SurveyDate)]
+    public DateTimeOffset? SurveyDate { get; set; }
 
-    [Name(RegionSheetFields.BaseCoord)]
+    [Name(RegionSheetFields.BaseCoordinates)]
     public string? BaseCoordinates { get; set; }
 
-    [Name(RegionSheetFields.CivilizedBy)]
-    public string? CivilizedBy { get; set; }
+    [Name(RegionSheetFields.Civilization)]
+    public string? Civilization { get; set; }
 
     [Name(RegionSheetFields.CivilizedSpaceNotes)]
     public string? CivilizedSpaceNotes { get; set; }
 
-    public string? Coordinates { get; set; }
+    [Name(RegionSheetFields.GalacticCoordinates)]
+    public string? GalacticCoordinates { get; set; }
 
-    [Name(RegionSheetFields.DocSequence)]
-    public string? DocSequence { get; set; }
+    [Name(RegionSheetFields.DocumentSequence)]
+    public int? DocumentSequence { get; set; }
 
     [Name(RegionSheetFields.EarliestKnownSurveyor)]
     public string? EarliestKnownSurveyor { get; set; }
+
+    [Name(RegionSheetFields.LatestKnownSurveyor)]
+    public string? LatestKnownSurveyor { get; set; }
 
     [Name(RegionSheetFields.EarliestSurveyorWikiUser)]
     public string? EarliestSurveyorWikiUser { get; set; }
@@ -41,19 +49,20 @@ public class RegionImport : IGoogleSheetImport
     [Name(RegionSheetFields.ExternalLink1)]
     public string? ExternalLink1 { get; set; }
 
-    [Name(RegionSheetFields.GalaxyId)]
-    public string? GalaxyId { get; set; }
+    [Name(RegionSheetFields.GalaxySequence)]
+    public int? GalaxySequence { get; set; }
 
-    [Name(RegionSheetFields.GalaxyName)]
-    public string? GalaxyName { get; set; }
+    [Name(RegionSheetFields.Galaxy)]
+    public GalaxyTypes? Galaxy { get; set; }
 
-    public string? Glyphs { get; set; }
+    [Name(RegionSheetFields.GlyphHexCode)]
+    public string? GlyphHexCode { get; set; }
 
     [Name(RegionSheetFields.GameRelease)]
     public string? GameRelease { get; set; }
 
-    [Name(RegionSheetFields.LatestKnownSurveyor)]
-    public string? LatestKnownSurveyor { get; set; }
+    [Name(RegionSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
     [Name(RegionSheetFields.LatestSurveyorWikiUser)]
     public string? LatestSurveyorWikiUser { get; set; }
@@ -65,7 +74,7 @@ public class RegionImport : IGoogleSheetImport
     public string? LegacyWikilink { get; set; }
 
     [Name(RegionSheetFields.LightYearsFromCenter)]
-    public string? LightYearsFromCenter { get; set; }
+    public int? LightYearsFromCenter { get; set; }
 
     [Name(RegionSheetFields.LocationNotes)]
     public string? LocationNotes { get; set; }
@@ -74,9 +83,10 @@ public class RegionImport : IGoogleSheetImport
     public string? LowestKnownPhantomSystem { get; set; }
 
     [Name(RegionSheetFields.RegionName)]
-    public string? Name { get; set; }
+    public string? RegionName { get; set; }
 
-    public string? Quadrant { get; set; }
+    [Name(RegionSheetFields.GalacticQuadrant)]
+    public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
 
     [Name(RegionSheetFields.RegionAge)]
     public float? RegionAge { get; set; }
@@ -90,21 +100,24 @@ public class RegionImport : IGoogleSheetImport
     [Name(RegionSheetFields.WikiLink)]
     public string? WikiLink { get; set; }
 
-    public string? XX { get; set; }
+    [Name(RegionSheetFields.XXHex)]
+    public string? XXHex { get; set; }
 
     [Name(RegionSheetFields.XXDec)]
-    public string? XXDec { get; set; }
+    public int? XXDec { get; set; }
 
     [Name(RegionSheetFields.YYAltitude)]
-    public string? YYAltitude { get; set; }
+    public string? YYHex { get; set; }
 
     [Name(RegionSheetFields.YYDec)]
-    public string? YYDec { get; set; }
+    public int? YYDec { get; set; }
 
-    public string? ZZ { get; set; }
+    [Name(RegionSheetFields.ZZHex)]
+    public string? ZZHex { get; set; }
 
     [Name(RegionSheetFields.ZZDec)]
-    public string? ZZDec { get; set; }
+    public int? ZZDec { get; set; }
 
-    public string? Version { get; set; }
+    [Name(RegionSheetFields.GameReleaseVersionNumber)]
+    public string? GameReleaseVersionNumber { get; set; }
 }

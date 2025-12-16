@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -24,7 +23,9 @@ public class SettlementManager(
             return null;
         }
 
-        settlement.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
+        settlement.Planet = settlement.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value)
+            : null;
 
         return settlement;
     }
@@ -41,15 +42,20 @@ public class SettlementManager(
         if (!string.IsNullOrEmpty(request.Name))
         {
             var settlementDocs = request.PlanetId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(Settlement.PlanetId), request.PlanetId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(
+                    request.Name,
+                    nameof(Settlement.PlanetId),
+                    request.PlanetId!.Value,
+                    Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var settlements = mapper.Map<HashSet<Settlement>>(settlementDocs);
 
             foreach (var settlement in settlements)
             {
-                settlement.Planet =
-                    await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value);
+                settlement.Planet = settlement.PlanetId.HasValue
+                    ? await galacticEntityManager.GetPlanetaryHierarchyAsync(settlement.PlanetId!.Value)
+                    : null;
             }
         }
 
@@ -63,6 +69,11 @@ public class SettlementManager(
         await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
         await firestoreManager.UpsertAsync(request, Collection);
         return request;
+    }
+
+    public async Task<HashSet<Settlement>> UpsertSettlementAsync(HashSet<Settlement> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteSettlementAsync(Guid settlementId)

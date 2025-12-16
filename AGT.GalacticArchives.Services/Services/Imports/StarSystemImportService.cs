@@ -1,27 +1,28 @@
-using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class StarSystemImportService(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<StarSystemImport>> importManagers)
-    : GoogleSheetImportService<StarSystemImport>(googleSheetValidationHandlers)
+    IMapper mapper,
+    IStarSystemManager starSystemManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
+    : ImportService<StarSystemImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<StarSystemImport> _importManager =
-        importManagers[NamedKeys.Managers.StarSystemManager];
-
-    protected override string SheetName => GoogleSheetResource.StarSystemSheetName;
+    protected override string SheetName => ImportResource.StarSystemSheetName;
 
     protected override Type CsvMapType => typeof(StarSystemCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<StarSystemImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<StarSystemImport> importData,
+        CancellationToken ct = default)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var starSystems = mapper.Map<HashSet<StarSystem>>(importData);
+        await starSystemManager.UpsertStarSystemAsync(starSystems, ct);
     }
 }

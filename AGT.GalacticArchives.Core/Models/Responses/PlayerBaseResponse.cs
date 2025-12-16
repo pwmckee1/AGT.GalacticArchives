@@ -1,28 +1,17 @@
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class PlayerBaseResponse
+public class PlayerBaseResponse : GameEntityResponse
 {
-    public Guid? PointOfInterestId { get; set; }
+    public Guid? PlayerBaseId { get; set; }
 
-    public string? Name { get; set; }
-
-    public string? CivilizedBy { get; set; }
-
-    public string? Builder { get; set; }
+    public string? BuilderName { get; set; }
 
     public string? BuilderLinkOnWiki { get; set; }
 
-    public string? YYFirstCoordinate { get; set; }
-
-    public string? XXSecondCoordinate { get; set; }
-
-    public string? Platform { get; set; }
-
-    public string? Mode { get; set; }
-
-    public string? Release { get; set; }
-
-    public string? TypeOfBase { get; set; }
+    public PlayerBaseTypes? TypeOfBase { get; set; }
 
     public bool? HasFarm { get; set; }
 
@@ -36,47 +25,37 @@ public class PlayerBaseResponse
 
     public bool? HasTradeTerminal { get; set; }
 
-    public HashSet<string?> NearByPOIs { get; set; } = [];
+    public HashSet<LocationTypes?> NearByPointsOfInterest { get; set; } = [];
 
-    public string? DateStarted { get; set; }
+    public DateTimeOffset? DateStarted { get; set; }
 
-    public string? DateFinished { get; set; }
-
-    public string? DateOfSurvey { get; set; }
-
-    public string? Surveyor { get; set; }
+    public DateTimeOffset? DateFinished { get; set; }
 
     public string? SummaryText { get; set; }
 
     public string? LayoutDescription { get; set; }
 
-    public string? AdditionalNotes { get; set; }
+    public PlayerBasePowerTypes? PowerSituation { get; set; }
 
-    public string? PowerSituation { get; set; }
+    public PlayerBaseTerrainTypes? AccessOrTerrainSituation { get; set; }
 
-    public string? AccessOrTerrainSituation { get; set; }
+    public HashSet<HarvestedMaterialTypes> MineralExtractorContents { get; set; } = [];
 
-    public string? MiningExtractor { get; set; }
+    public int? MineralExtractorCapacity { get; set; }
 
-    public string? MiningStoreCapacity { get; set; }
+    public HashSet<AtmosphereGasTypes> GasExtractorContents { get; set; } = [];
 
-    public string? GasExtractor { get; set; }
+    public int? GasExtractorCapacity { get; set; }
 
-    public string? GasStoreCapacity { get; set; }
+    public HashSet<PlayerBaseElementTypes> BaseElements { get; set; } = [];
 
-    public HashSet<string> BaseElements { get; set; } = [];
+    public int? AestheticsRating { get; set; }
 
-    public string? Aesthetics { get; set; }
-
-    public string? BaseComplexity { get; set; }
+    public int? BaseComplexity { get; set; }
 
     public string? PersonalNotes { get; set; }
 
-    public string? BaseType { get; set; }
-
-    public string? WikiLink { get; set; }
-
-    public int? DocSequence { get; set; }
+    public PlayerBaseClassificationTypes? PlayerBaseClassification { get; set; }
 
     public string? Videos { get; set; }
 
@@ -87,6 +66,4 @@ public class PlayerBaseResponse
     public string? PortalRepositoryLink { get; set; }
 
     public bool? AllowsDeconstruction { get; set; }
-
-    public string? ReleaseVersion { get; set; }
 }

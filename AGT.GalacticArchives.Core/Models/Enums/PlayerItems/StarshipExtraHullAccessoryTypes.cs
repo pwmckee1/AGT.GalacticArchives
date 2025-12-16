@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using AGT.GalacticArchives.Globalization;
+using AGT.GalacticArchives.Globalization.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 

@@ -46,7 +46,7 @@ public class StarshipRequest
 
     public int? Cost { get; set; }
 
-    public string? CivilizedBy { get; set; }
+    public string? Civilization { get; set; }
 
     public string? DiscoveredBy { get; set; }
 

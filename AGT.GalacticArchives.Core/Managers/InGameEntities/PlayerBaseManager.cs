@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -24,7 +23,9 @@ public class PlayerBaseManager(
             return null;
         }
 
-        playerBase.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
+        playerBase.Planet = playerBase.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value)
+            : null;
 
         return playerBase;
     }
@@ -52,8 +53,9 @@ public class PlayerBaseManager(
 
             foreach (var playerBase in playerBases)
             {
-                playerBase.Planet =
-                    await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value);
+                playerBase.Planet = playerBase.PlanetId.HasValue
+                    ? await galacticEntityManager.GetPlanetaryHierarchyAsync(playerBase.PlanetId!.Value)
+                    : null;
             }
         }
 
@@ -67,6 +69,11 @@ public class PlayerBaseManager(
         await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
         await firestoreManager.UpsertAsync(request, Collection);
         return request;
+    }
+
+    public async Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeletePlayerBaseAsync(Guid playerBaseId)

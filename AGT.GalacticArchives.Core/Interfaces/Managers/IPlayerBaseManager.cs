@@ -11,5 +11,7 @@ public interface IPlayerBaseManager
 
     Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase request);
 
+    Task<HashSet<PlayerBase>> UpsertPlayerBaseAsync(HashSet<PlayerBase> request, CancellationToken ct);
+
     Task DeletePlayerBaseAsync(Guid playerBaseId);
 }

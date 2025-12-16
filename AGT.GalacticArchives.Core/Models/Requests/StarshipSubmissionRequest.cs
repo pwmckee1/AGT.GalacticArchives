@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
@@ -19,7 +18,7 @@ public class StarshipSubmissionRequest : BaseSubmissionRequest
 
     public bool? IsLivingShip { get; set; }
 
-    public QualityClassTypes? ItemClass { get; set; }
+    public ItemClassTypes? ItemClass { get; set; }
 
     public int? InventorySlots { get; set; }
 

@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -37,7 +36,11 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
         if (!string.IsNullOrEmpty(request.Name))
         {
             var planetDocs = request.StarSystemId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(Planet.StarSystemId), request.StarSystemId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(
+                    request.Name,
+                    nameof(Planet.StarSystemId),
+                    request.StarSystemId!.Value,
+                    Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var planets = mapper.Map<HashSet<Planet>>(planetDocs);
@@ -53,11 +56,16 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
 
     public async Task<Planet> UpsertPlanetAsync(Planet request)
     {
-        var updatedPlanet = (Planet)await firestoreManager.UpsertAsync(request, Collection);
+        var updatedPlanet = await firestoreManager.UpsertAsync(request, Collection);
 
         await SetPlanetHierarchyAsync(updatedPlanet);
 
         return updatedPlanet;
+    }
+
+    public async Task<HashSet<Planet>> UpsertPlanetAsync(HashSet<Planet> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeletePlanetAsync(Guid planetId)
@@ -67,15 +75,24 @@ public class PlanetManager(IFirestoreManager firestoreManager, IMapper mapper) :
 
     private async Task SetPlanetHierarchyAsync(Planet planet)
     {
-        var starSystemDoc = await firestoreManager.GetByIdAsync(
-            planet.StarSystemId!.Value,
-            DatabaseConstants.StarSystemCollection);
-        var starSystem = mapper.Map<StarSystem>(starSystemDoc);
+        if (planet.StarSystemId.HasValue)
+        {
+            var starSystemDoc = await firestoreManager.GetByIdAsync(
+                planet.StarSystemId!.Value,
+                DatabaseConstants.StarSystemCollection);
+            var starSystem = mapper.Map<StarSystem>(starSystemDoc);
 
-        var regionData = await firestoreManager.GetByIdAsync(
-            starSystem.RegionId!.Value,
-            DatabaseConstants.RegionCollection);
-        starSystem.Region = mapper.Map<Region>(regionData);
-        planet.StarSystem = starSystem;
+            if (starSystem != null)
+            {
+                planet.StarSystem = starSystem;
+                if (starSystem.RegionId.HasValue)
+                {
+                    var regionData = await firestoreManager.GetByIdAsync(
+                        starSystem.RegionId!.Value,
+                        DatabaseConstants.RegionCollection);
+                    planet.StarSystem.Region = mapper.Map<Region>(regionData);
+                }
+            }
+        }
     }
 }

@@ -1,22 +1,16 @@
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
+
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class SettlementResponse
+public class SettlementResponse : GameEntityResponse
 {
     public Guid? SettlementId { get; set; }
 
-    public string? Name { get; set; }
-
     public string? OriginalName { get; set; }
 
-    public string? YYFirstCoordinate { get; set; }
-
-    public string? XXSecondCoordinate { get; set; }
-
-    public string? Surveyor { get; set; }
-
-    public string? DateObserved { get; set; }
-
-    public string? Economy { get; set; }
+    public EconomyTypes? Economy { get; set; }
 
     public string? Overseer { get; set; }
 
@@ -24,29 +18,21 @@ public class SettlementResponse
 
     public string? Production { get; set; }
 
-    public string? Class { get; set; }
+    public ItemClassTypes? Class { get; set; }
 
-    public string? Population { get; set; }
+    public int? Population { get; set; }
 
-    public string? Happiness { get; set; }
+    public int? Happiness { get; set; }
 
-    public string? Productivity { get; set; }
+    public int? Productivity { get; set; }
 
-    public string? Maintenance { get; set; }
+    public int? Maintenance { get; set; }
 
-    public string? Sentinel { get; set; }
+    public int? Sentinels { get; set; }
 
     public string? Industry { get; set; }
 
-    public string? Profitable { get; set; }
+    public bool? IsProfitable { get; set; }
 
-    public string? Civilized { get; set; }
-
-    public HashSet<string> Buildings { get; set; } = [];
-
-    public string? Mode { get; set; }
-
-    public string? GameRelease { get; set; }
-
-    public string? WikiLink { get; set; }
+    public HashSet<SettlementBuildingTypes> Buildings { get; set; } = [];
 }

@@ -37,10 +37,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>BiomeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Planet\BiomeSubTypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>BiomeDescriptionResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="Planet\BiomeTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>BiomeTypeResource.Designer.cs</LastGenOutput>
@@ -93,10 +89,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>FaunaTaxonomyResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Application\FirestoreResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>FirebaseResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="StarSystem\GalaxyResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>GalaxyResource.Designer.cs</LastGenOutput>
@@ -113,9 +105,9 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>GeologyTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Metadata\GoogleSheetResource.resx">
+        <EmbeddedResource Update="Metadata\ImportResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>GoogleSheetResource.Designer.cs</LastGenOutput>
+          <LastGenOutput>ImportResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="Planet\LandArchetypesResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
@@ -157,10 +149,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>PlanetPropertyTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="Planet\PlanetResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>PlanetResrouce.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="PlayerItems\PlayerBaseElementTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>PlayerBaseElementTypeResource.Designer.cs</LastGenOutput>
@@ -197,14 +185,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>StarshipModelTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="PlayerItems\StarshipSubtypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>StarshipSubtypeResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="PlayerItems\StarshipThrusterTypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>StarshipThrusterTypeResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="StarSystem\StarSystemResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>StarSystemResource.Designer.cs</LastGenOutput>
@@ -220,6 +200,26 @@
         <EmbeddedResource Update="StarSystem\WealthTypeResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>WealthTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Application\FirestoreResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>FirestoreResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\BiomeSubTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>BiomeSubTypeResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\PlanetResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>PlanetResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="PlayerItems\StarshipResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>StarshipResource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Planet\EdibleRawMaterialTypeResource.resx">
+          <Generator>PublicResXFileCodeGenerator</Generator>
+          <LastGenOutput>EdibleRawMaterialTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
     </ItemGroup>
 
@@ -248,11 +248,6 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>BiomeResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Planet\BiomeSubTypeResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>BiomeSubTypeResource.resx</DependentUpon>
         </Compile>
         <Compile Update="Planet\BiomeTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
@@ -319,11 +314,6 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>FaunaTaxonomyResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="Application\FirestoreResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>FirestoreResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="StarSystem\GalaxyResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
@@ -344,10 +334,10 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>GeologyTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="Metadata\GoogleSheetResource.Designer.cs">
+        <Compile Update="Metadata\ImportResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
-          <DependentUpon>GoogleSheetResource.resx</DependentUpon>
+          <DependentUpon>ImportResource.resx</DependentUpon>
         </Compile>
         <Compile Update="Planet\LandArchetypesResource.Designer.cs">
           <DesignTime>True</DesignTime>
@@ -399,11 +389,6 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>PlanetPropertyTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="Planet\PlanetResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>PlanetResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="PlayerItems\PlayerBaseElementTypeResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
@@ -449,16 +434,6 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>StarshipModelTypeResource.resx</DependentUpon>
         </Compile>
-        <Compile Update="PlayerItems\StarshipSubtypeResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>StarshipSubtypeResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="PlayerItems\StarshipThrusterTypeResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>StarshipThrusterTypeResource.resx</DependentUpon>
-        </Compile>
         <Compile Update="StarSystem\StarSystemResource.Designer.cs">
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
@@ -478,6 +453,31 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>WealthTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Application\FirestoreResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>FirestoreResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\BiomeSubTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>BiomeSubTypeResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\PlanetResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>PlanetResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerItems\StarshipResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>StarshipResource.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Planet\EdibleRawMaterialTypeResource.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>EdibleRawMaterialTypeResource.resx</DependentUpon>
         </Compile>
     </ItemGroup>
 

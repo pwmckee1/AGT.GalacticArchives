@@ -1,13 +1,16 @@
 using System.ComponentModel.DataAnnotations;
 using AGT.GalacticArchives.Globalization;
 
-namespace AGT.GalacticArchives.Core.Models.Enums;
+namespace AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 public enum GalaxyTypes
 {
     Euclid = 1,
+
+    [Display(ResourceType = typeof(GalaxyResource), Description = nameof(GalaxyResource.HilbertDimension))]
     HilbertDimension = 2,
     Calypso = 3,
+    [Display(ResourceType = typeof(GalaxyResource), Description = nameof(GalaxyResource.HesperiusDimension))]
     HesperiusDimension = 4,
     Hyades = 5,
     Ickjamatew = 6,
@@ -263,4 +266,6 @@ public enum GalaxyTypes
     Iousongola = 255,
     Odyalutai = 256,
     Yilsrussimil = 257,
+    [Display(ResourceType = typeof(GalaxyResource), Description = nameof(GalaxyResource.NotSpecified))]
+    NotSpecified,
 }

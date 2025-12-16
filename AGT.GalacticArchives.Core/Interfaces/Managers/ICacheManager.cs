@@ -4,7 +4,7 @@ namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
 public interface ICacheManager
 {
-    HashSet<string> GetCacheKeys(string? key);
+    HashSet<string> GetCacheKeys(string? key = null);
 
     Task<T?> GetNoClassAsync<T>(string key, Func<Task<T>>? targetMethod, int? cacheDurationInMinutes = null);
 

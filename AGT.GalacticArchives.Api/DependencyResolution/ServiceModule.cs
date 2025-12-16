@@ -1,8 +1,12 @@
-﻿using AGT.GalacticArchives.Core.Constants;
+﻿using AGT.GalacticArchives.Core.Constants.Application;
+using AGT.GalacticArchives.Globalization;
 using AGT.GalacticArchives.Services.Decorators;
-using AGT.GalacticArchives.Services.Services.Entities;
-using AGT.GalacticArchives.Services.Services.Environments;
+using AGT.GalacticArchives.Services.Interfaces.Application;
+using AGT.GalacticArchives.Services.Interfaces.Services;
+using AGT.GalacticArchives.Services.Services.Application;
 using AGT.GalacticArchives.Services.Services.Imports;
+using AGT.GalacticArchives.Services.Services.InGameEntities;
+using AGT.GalacticArchives.Services.Services.InGameEnvironments;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;
@@ -47,6 +51,11 @@ public class ServiceModule : Module
         builder
             .RegisterType<FaunaService>()
             .Named<IFaunaService>(NamedKeys.Services.FaunaService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<CacheService>()
+            .Named<ICacheService>(NamedKeys.Services.CacheService)
             .InstancePerLifetimeScope();
 
         builder
@@ -112,47 +121,47 @@ public class ServiceModule : Module
 
         builder
             .RegisterType<FaunaImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.FaunaImportService)
+            .Named<IImportService>(ImportResource.FaunaSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<MultiToolImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.MultiToolImportService)
+            .Named<IImportService>(ImportResource.MultiToolSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<PlanetImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.PlanetImportService)
+            .Named<IImportService>(ImportResource.PlanetSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<PlayerBaseImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.PlayerBaseImportService)
+            .Named<IImportService>(ImportResource.PlayerBaseSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<PointOfInterestImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.PointOfInterestImportService)
+            .Named<IImportService>(ImportResource.PointOfInterestSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<RegionImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.RegionImportService)
+            .Named<IImportService>(ImportResource.RegionSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<SettlementImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.SettlementImportService)
+            .Named<IImportService>(ImportResource.SettlementSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<StarSystemImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.StarshipImportService)
+            .Named<IImportService>(ImportResource.StarSystemSheetName)
             .InstancePerLifetimeScope();
 
         builder
             .RegisterType<StarshipImportService>()
-            .Named<IGoogleSheetImportService>(NamedKeys.Services.StarSystemImportService)
+            .Named<IImportService>(ImportResource.StarshipSheetName)
             .InstancePerLifetimeScope();
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
-using AGT.GalacticArchives.Services.Services.Environments;
+using AGT.GalacticArchives.Services.Services.InGameEnvironments;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 

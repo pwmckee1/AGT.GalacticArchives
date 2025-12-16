@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -24,8 +23,9 @@ public class PointOfInterestManager(
             return null;
         }
 
-        pointOfInterest.Planet =
-            await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value);
+        pointOfInterest.Planet = pointOfInterest.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value)
+            : null;
 
         return pointOfInterest;
     }
@@ -53,8 +53,9 @@ public class PointOfInterestManager(
 
             foreach (var pointOfInterest in pointOfInterests)
             {
-                pointOfInterest.Planet =
-                    await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value);
+                pointOfInterest.Planet = pointOfInterest.PlanetId.HasValue
+                    ? await galacticEntityManager.GetPlanetaryHierarchyAsync(pointOfInterest.PlanetId!.Value)
+                    : null;
             }
         }
 
@@ -68,6 +69,13 @@ public class PointOfInterestManager(
         await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
         await firestoreManager.UpsertAsync(request, Collection);
         return request;
+    }
+
+    public async Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(
+        HashSet<PointOfInterest> request,
+        CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeletePointOfInterestAsync(Guid pointOfInterestId)

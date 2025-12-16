@@ -1,27 +1,28 @@
-using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class StarshipImportService(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<StarshipImport>> importManagers)
-    : GoogleSheetImportService<StarshipImport>(googleSheetValidationHandlers)
+    IMapper mapper,
+    IStarshipManager starshipManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
+    : ImportService<StarshipImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<StarshipImport> _importManager =
-        importManagers[NamedKeys.Managers.StarshipManager];
-
-    protected override string SheetName => GoogleSheetResource.StarshipSheetName;
+    protected override string SheetName => ImportResource.StarshipSheetName;
 
     protected override Type CsvMapType => typeof(StarshipCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<StarshipImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<StarshipImport> importData,
+        CancellationToken ct = default)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var starships = mapper.Map<HashSet<Starship>>(importData);
+        await starshipManager.UpsertStarshipAsync(starships, ct);
     }
 }

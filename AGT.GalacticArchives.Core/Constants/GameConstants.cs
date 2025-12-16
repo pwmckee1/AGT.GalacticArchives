@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 
 namespace AGT.GalacticArchives.Core.Constants;

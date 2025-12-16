@@ -1,182 +1,121 @@
 using System.Globalization;
-using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
+using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
-using AGT.GalacticArchives.Globalization;
+using CsvHelper.Configuration;
 
 namespace AGT.GalacticArchives.Core.Mapping.CsvMaps;
 
-public sealed class StarSystemCsvMap : BaseCsvMap<StarSystemImport>
+public sealed class StarSystemCsvMap : ClassMap<StarSystemImport>
 {
     public StarSystemCsvMap()
     {
         AutoMap(CultureInfo.InvariantCulture);
 
-        Map(m => m.Bases)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.Bases);
-                return !string.IsNullOrEmpty(value) && int.TryParse(value, out int result) ? result : null;
-            });
+        Map(m => m.StarSystemId).Convert(m => m.Row.ReadGuidFieldOrNull(StarSystemSheetFields.StarSystemId));
 
-        Map(m => m.Buy)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.Buy);
-                return float.TryParse(value, out float result) ? result : 0;
-            });
+        Map(m => m.RegionId).Convert(m => m.Row.ReadGuidFieldOrNull(StarSystemSheetFields.RegionId));
+
+        Map(m => m.Galaxy).Convert(m => m.Row.ReadNullableEnumField<GalaxyTypes>(StarSystemSheetFields.GalaxyName));
+
+        Map(m => m.Bases).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Bases));
+
+        Map(m => m.DocumentSequence).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.DocumentSequence));
+
+        Map(m => m.Buy).Convert(m => m.Row.ReadFloatFieldOrNull(StarSystemSheetFields.Buy));
 
         Map(m => m.ConflictType)
-            .Convert(m => GetEnumValueFromCsvField<ConflictTypes>(
-                m.Row.GetField(StarSystemSheetFields.ConflictType),
-                m));
+            .Convert(m => m.Row.ReadNullableEnumField<ConflictTypes>(StarSystemSheetFields.ConflictType));
 
         Map(m => m.EconomyType)
-            .Convert(m => GetEnumValueFromCsvField<EconomyTypes>(
-                m.Row.GetField(StarSystemSheetFields.EconomyType),
-                m));
+            .Convert(m => m.Row.ReadNullableEnumField<EconomyTypes>(StarSystemSheetFields.EconomyType));
 
-        Map(m => m.SuitUpgradeModules)
-            .Convert(m =>
-                GetEnumValuesFromCsvColumns<ExoSuitUpgradeTypes>(StarSystemResource.SuitUpgradeModules, m));
+        Map(m => m.ExosuitUpgradeModules)
+            .Convert(m => m.Row.ReadEnumFields<ExoSuitUpgradeModuleTypes>(StarSystemSheetFields.ExosuitUpgradeModules));
 
-        Map(m => m.Faction)
-            .Convert(m => GetEnumValueFromCsvField<FactionTypes>(StarSystemSheetFields.Faction, m));
+        Map(m => m.ExocraftUpgradeModules)
+            .Convert(m => m.Row.ReadEnumFields<ExocraftUpgradeModuleTypes>(StarSystemSheetFields.ExocraftUpgradeModules));
 
-        Map(m => m.GalaxySequence)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.GalaxySequence);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.Faction).Convert(m => m.Row.ReadNullableEnumField<FactionTypes>(StarSystemSheetFields.Faction));
+
+        Map(m => m.GalaxySequence).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.GalaxySequence));
 
         Map(m => m.GameModeType)
-            .Convert(m => GetEnumValueFromCsvField<GameModeTypes>(StarSystemSheetFields.GameModeType, m));
-
-        Map(m => m.GameReleaseVersionNumber)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.GameReleaseVersionNumber);
-                return float.TryParse(value, out float result) ? result : 0;
-            });
+            .Convert(m => m.Row.ReadNullableEnumField<GameModeTypes>(StarSystemSheetFields.GameModeType));
 
         Map(m => m.HasWater)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.HasWater);
-                return value?.Equals("Y", StringComparison.OrdinalIgnoreCase) ?? false;
-            });
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                StarSystemSheetFields.HasWater,
+                StarSystemSheetFields.HasWaterIdentifier));
 
-        Map(m => m.Hex2DecSystemId)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.Hex2DecSystemId);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.HasCenterAccess)
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                StarSystemSheetFields.HasCenterAccess,
+                StarSystemSheetFields.HasCenterAccessIdentifier));
+
+        Map(m => m.SSDec).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Hex2DecSystemId));
 
         Map(m => m.IsDissonant)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.IsDissonant);
-                return value?.Equals("Y", StringComparison.OrdinalIgnoreCase) ?? false;
-            });
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                StarSystemSheetFields.IsDissonant,
+                StarSystemSheetFields.IsDissonantIdentifier));
 
         Map(m => m.IsGiantSystem)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.IsGiantSystem);
-                return value?.Equals("Y", StringComparison.OrdinalIgnoreCase) ?? false;
-            });
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                StarSystemSheetFields.IsGiantSystem,
+                StarSystemSheetFields.IsGiantSystemIdentifier));
 
         Map(m => m.IsPhantomSystem)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.IsPhantomSystem);
-                return value?.Equals("Y", StringComparison.OrdinalIgnoreCase) ?? false;
-            });
+            .Convert(m => m.Row.ReadBoolFieldOrNull(
+                StarSystemSheetFields.IsPhantomSystem,
+                StarSystemSheetFields.IsPhantomSystemIdentifier));
+
+        Map(m => m.DiscoveryDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(StarSystemSheetFields.DiscoveryDate));
+
+        Map(m => m.SurveyDate).Convert(m => m.Row.ReadDateTimeOffsetFieldOrNull(StarSystemSheetFields.SurveyDate));
 
         Map(m => m.LightYearsFromCenter)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.LightYearsFromCenter);
-                return !string.IsNullOrEmpty(value) && int.TryParse(value, out int result) ? result : null;
-            });
+            .Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.LightYearsFromCenter));
 
         Map(m => m.LightYearsFromCenterAutoEstimate)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.LightYearsFromCenterAutoEstimate);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+            .Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.LightYearsFromCenterAutoEstimate));
 
-        Map(m => m.MultiToolSClassUpgradeModules)
-            .Convert(m => GetEnumValuesFromCsvColumns<MultiToolUpdateTypes>(
-                StarSystemResource.MultiToolSClassUpgradeModules,
-                m));
+        Map(m => m.MultiToolUpdateTypes)
+            .Convert(m => m.Row.ReadEnumFields<MultiToolUpdateModuleTypes>(StarSystemSheetFields.MultiToolUpdateTypes));
 
-        Map(m => m.NumberOfMoons)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.NumberOfMoons);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.Bases).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.Bases));
 
-        Map(m => m.NumberOfPlanets)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.NumberOfPlanets);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.NumberOfMoons).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.NumberOfMoons));
 
-        Map(m => m.Sell)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.Sell);
-                return float.TryParse(value, out float result) ? result : 0;
-            });
+        Map(m => m.NumberOfPlanets).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.NumberOfPlanets));
 
-        Map(m => m.StarSystemShipUpgradeModules)
-            .Convert(m => GetEnumValuesFromCsvColumns<StarshipUpgradeTypes>(
-                StarSystemResource.StarSystemShipUpgradeModules,
-                m));
+        Map(m => m.Sell).Convert(m => m.Row.ReadFloatFieldOrNull(StarSystemSheetFields.Sell));
+
+        Map(m => m.StarshipUpgradeModules)
+            .Convert(m => m.Row.ReadEnumFields<StarshipUpgradeTypes>(StarSystemSheetFields.StarshipUpgradeModules));
 
         Map(m => m.SpaceStationTradeItems)
             .Convert(m =>
-                GetEnumValuesFromCsvColumns<SpaceStationTradeItemTypes>(
-                    StarSystemResource.SpaceStationTradeItems,
-                    m));
+                m.Row.ReadEnumFields<SpaceStationTradeItemTypes>(StarSystemSheetFields.SpaceStationTradeItems));
 
-        Map(m => m.StarCount)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.StarCount);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.StarCount).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.StarCount));
 
-        Map(m => m.WealthType)
-            .Convert(m => GetEnumValueFromCsvField<WealthTypes>(StarSystemSheetFields.WealthType, m));
+        Map(m => m.StarSystemAge).Convert(m => m.Row.ReadFloatFieldOrNull(StarSystemSheetFields.StarSystemAge));
 
-        Map(m => m.XCoordDec)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.XCoordDec);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.WealthType).Convert(m => m.Row.ReadNullableEnumField<WealthTypes>(StarSystemSheetFields.WealthType));
 
-        Map(m => m.YCoordDec)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.YCoordDec);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.XXDec).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.XXDec));
 
-        Map(m => m.ZCoordDec)
-            .Convert(m =>
-            {
-                string? value = m.Row.GetField(StarSystemSheetFields.ZCoordDec);
-                return int.TryParse(value, out int result) ? result : 0;
-            });
+        Map(m => m.YYDec).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.YYDec));
+
+        Map(m => m.ZZDec).Convert(m => m.Row.ReadIntFieldOrNull(StarSystemSheetFields.ZZDec));
+
+        Map(m => m.GamePlatformType).Convert(m => m.Row.ReadEnumFieldOrNull<GamePlatformTypes>(StarSystemSheetFields.GamePlatformType));
+
+        Map(m => m.Color).Convert(m => m.Row.ReadEnumFieldOrNull<StarColorTypes>(StarSystemSheetFields.Color));
     }
 }

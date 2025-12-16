@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGT.GalacticArchives.Globalization {
+namespace AGT.GalacticArchives.Globalization.Planet {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.BiomeSubTypeResource", typeof(BiomeSubTypeResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Planet.BiomeSubTypeResource", typeof(BiomeSubTypeResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -56,6 +56,1509 @@ namespace AGT.GalacticArchives.Globalization {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abandoned (Barren).
+        /// </summary>
+        public static string AbandonedBarren {
+            get {
+                return ResourceManager.GetString("AbandonedBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abandoned (Dead).
+        /// </summary>
+        public static string AbandonedDead {
+            get {
+                return ResourceManager.GetString("AbandonedDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acidic (Toxic).
+        /// </summary>
+        public static string AcidicToxic {
+            get {
+                return ResourceManager.GetString("AcidicToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acrid (Toxic).
+        /// </summary>
+        public static string AcridToxic {
+            get {
+                return ResourceManager.GetString("AcridToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airless (Dead).
+        /// </summary>
+        public static string AirlessDead {
+            get {
+                return ResourceManager.GetString("AirlessDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aquatic (Waterworld).
+        /// </summary>
+        public static string AquaticWaterworld {
+            get {
+                return ResourceManager.GetString("AquaticWaterworld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arctic (Frozen).
+        /// </summary>
+        public static string ArcticFrozen {
+            get {
+                return ResourceManager.GetString("ArcticFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arid (Scorched).
+        /// </summary>
+        public static string AridScorched {
+            get {
+                return ResourceManager.GetString("AridScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ashen (Volcanic).
+        /// </summary>
+        public static string AshenVolcanic {
+            get {
+                return ResourceManager.GetString("AshenVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ash-Shrouded (Volcanic).
+        /// </summary>
+        public static string AshShroudedVolcanic {
+            get {
+                return ResourceManager.GetString("AshShroudedVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Azure (Mega Exotic).
+        /// </summary>
+        public static string AzureMegaExotic {
+            get {
+                return ResourceManager.GetString("AzureMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barren (Barren).
+        /// </summary>
+        public static string BarrenBarren {
+            get {
+                return ResourceManager.GetString("BarrenBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Basalt (Volcanic).
+        /// </summary>
+        public static string BasaltVolcanic {
+            get {
+                return ResourceManager.GetString("BasaltVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bladed (Exotic).
+        /// </summary>
+        public static string BladedExotic {
+            get {
+                return ResourceManager.GetString("BladedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bleak (Barren).
+        /// </summary>
+        public static string BleakBarren {
+            get {
+                return ResourceManager.GetString("BleakBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blighted (Toxic).
+        /// </summary>
+        public static string BlightedToxic {
+            get {
+                return ResourceManager.GetString("BlightedToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blood (Mega Exotic).
+        /// </summary>
+        public static string BloodMegaExotic {
+            get {
+                return ResourceManager.GetString("BloodMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boggy (Marsh).
+        /// </summary>
+        public static string BoggyMarsh {
+            get {
+                return ResourceManager.GetString("BoggyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boiling Doom (Scorched).
+        /// </summary>
+        public static string BoilingDoomScorched {
+            get {
+                return ResourceManager.GetString("BoilingDoomScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boiling (Scorched).
+        /// </summary>
+        public static string BoilingScorched {
+            get {
+                return ResourceManager.GetString("BoilingScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Breached (Exotic).
+        /// </summary>
+        public static string BreachedExotic {
+            get {
+                return ResourceManager.GetString("BreachedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bubbling (Exotic).
+        /// </summary>
+        public static string BubblingExotic {
+            get {
+                return ResourceManager.GetString("BubblingExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cabled (Exotic).
+        /// </summary>
+        public static string CabledExotic {
+            get {
+                return ResourceManager.GetString("CabledExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calcified (Exotic).
+        /// </summary>
+        public static string CalcifiedExotic {
+            get {
+                return ResourceManager.GetString("CalcifiedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capped (Exotic).
+        /// </summary>
+        public static string CappedExotic {
+            get {
+                return ResourceManager.GetString("CappedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caustic Nightmare (Toxic).
+        /// </summary>
+        public static string CausticNightmareToxic {
+            get {
+                return ResourceManager.GetString("CausticNightmareToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caustic (Toxic).
+        /// </summary>
+        public static string CausticToxic {
+            get {
+                return ResourceManager.GetString("CausticToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cerulean (Mega Exotic).
+        /// </summary>
+        public static string CeruleanMegaExotic {
+            get {
+                return ResourceManager.GetString("CeruleanMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charred (Scorched).
+        /// </summary>
+        public static string CharredScorched {
+            get {
+                return ResourceManager.GetString("CharredScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chromatic Fog (Mega Exotic).
+        /// </summary>
+        public static string ChromaticFogMegaExotic {
+            get {
+                return ResourceManager.GetString("ChromaticFogMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clouds Of Haunted Green (Exotic).
+        /// </summary>
+        public static string CloudsOfHauntedGreenExotic {
+            get {
+                return ResourceManager.GetString("CloudsOfHauntedGreenExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloudy (Marsh).
+        /// </summary>
+        public static string CloudyMarsh {
+            get {
+                return ResourceManager.GetString("CloudyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Columned (Exotic).
+        /// </summary>
+        public static string ColumnedExotic {
+            get {
+                return ResourceManager.GetString("ColumnedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contaminated (Irradiated).
+        /// </summary>
+        public static string ContaminatedIrradiated {
+            get {
+                return ResourceManager.GetString("ContaminatedIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contoured (Exotic).
+        /// </summary>
+        public static string ContouredExotic {
+            get {
+                return ResourceManager.GetString("ContouredExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrosive (Toxic).
+        /// </summary>
+        public static string CorrosiveToxic {
+            get {
+                return ResourceManager.GetString("CorrosiveToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted (Exotic).
+        /// </summary>
+        public static string CorruptedExotic {
+            get {
+                return ResourceManager.GetString("CorruptedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted (Scorched).
+        /// </summary>
+        public static string CorruptedScorched {
+            get {
+                return ResourceManager.GetString("CorruptedScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crimson (Exotic).
+        /// </summary>
+        public static string CrimsonExotic {
+            get {
+                return ResourceManager.GetString("CrimsonExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crimson (Mega Exotic).
+        /// </summary>
+        public static string CrimsonMegaExotic {
+            get {
+                return ResourceManager.GetString("CrimsonMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damp (Marsh).
+        /// </summary>
+        public static string DampMarsh {
+            get {
+                return ResourceManager.GetString("DampMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dead (Dead).
+        /// </summary>
+        public static string DeadDead {
+            get {
+                return ResourceManager.GetString("DeadDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deathly Green Anomaly (Mega Exotic).
+        /// </summary>
+        public static string DeathlyGreenAnomalyMegaExotic {
+            get {
+                return ResourceManager.GetString("DeathlyGreenAnomalyMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decaying Nuclear (Irradiated).
+        /// </summary>
+        public static string DecayingNuclearIrradiated {
+            get {
+                return ResourceManager.GetString("DecayingNuclearIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decaying Ruin (Toxic).
+        /// </summary>
+        public static string DecayingRuinToxic {
+            get {
+                return ResourceManager.GetString("DecayingRuinToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desert (Barren).
+        /// </summary>
+        public static string DesertBarren {
+            get {
+                return ResourceManager.GetString("DesertBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desolate (Barren).
+        /// </summary>
+        public static string DesolateBarren {
+            get {
+                return ResourceManager.GetString("DesolateBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desolate (Dead).
+        /// </summary>
+        public static string DesolateDead {
+            get {
+                return ResourceManager.GetString("DesolateDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doomed (Exotic).
+        /// </summary>
+        public static string DoomedExotic {
+            get {
+                return ResourceManager.GetString("DoomedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doomed Jade (Mega Exotic).
+        /// </summary>
+        public static string DoomedJadeMegaExotic {
+            get {
+                return ResourceManager.GetString("DoomedJadeMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dusty (Barren).
+        /// </summary>
+        public static string DustyBarren {
+            get {
+                return ResourceManager.GetString("DustyBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Empty (Dead).
+        /// </summary>
+        public static string EmptyDead {
+            get {
+                return ResourceManager.GetString("EmptyDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Endless Morass (Marsh).
+        /// </summary>
+        public static string EndlessMorassMarsh {
+            get {
+                return ResourceManager.GetString("EndlessMorassMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Endless Seas (Waterworld).
+        /// </summary>
+        public static string EndlessSeasWaterworld {
+            get {
+                return ResourceManager.GetString("EndlessSeasWaterworld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erased (Exotic).
+        /// </summary>
+        public static string ErasedExotic {
+            get {
+                return ResourceManager.GetString("ErasedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erupting (Volcanic).
+        /// </summary>
+        public static string EruptingVolcanic {
+            get {
+                return ResourceManager.GetString("EruptingVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fiery Dreadworld (Scorched).
+        /// </summary>
+        public static string FieryDreadworldScorched {
+            get {
+                return ResourceManager.GetString("FieryDreadworldScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fiery (Scorched).
+        /// </summary>
+        public static string FieryScorched {
+            get {
+                return ResourceManager.GetString("FieryScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finned (Exotic).
+        /// </summary>
+        public static string FinnedExotic {
+            get {
+                return ResourceManager.GetString("FinnedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fissured (Exotic).
+        /// </summary>
+        public static string FissuredExotic {
+            get {
+                return ResourceManager.GetString("FissuredExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flame-Ruptured (Volcanic).
+        /// </summary>
+        public static string FlameRupturedVolcanic {
+            get {
+                return ResourceManager.GetString("FlameRupturedVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foaming (Exotic).
+        /// </summary>
+        public static string FoamingExotic {
+            get {
+                return ResourceManager.GetString("FoamingExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foggy (Marsh).
+        /// </summary>
+        public static string FoggyMarsh {
+            get {
+                return ResourceManager.GetString("FoggyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forsaken (Dead).
+        /// </summary>
+        public static string ForsakenDead {
+            get {
+                return ResourceManager.GetString("ForsakenDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fractured (Exotic).
+        /// </summary>
+        public static string FracturedExotic {
+            get {
+                return ResourceManager.GetString("FracturedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fragmented (Exotic).
+        /// </summary>
+        public static string FragmentedExotic {
+            get {
+                return ResourceManager.GetString("FragmentedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Freezing (Frozen).
+        /// </summary>
+        public static string FreezingFrozen {
+            get {
+                return ResourceManager.GetString("FreezingFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frostbound (Frozen).
+        /// </summary>
+        public static string FrostboundFrozen {
+            get {
+                return ResourceManager.GetString("FrostboundFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frothing (Exotic).
+        /// </summary>
+        public static string FrothingExotic {
+            get {
+                return ResourceManager.GetString("FrothingExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frozen Anomaly (Mega Exotic).
+        /// </summary>
+        public static string FrozenAnomalyMegaExotic {
+            get {
+                return ResourceManager.GetString("FrozenAnomalyMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frozen (Frozen).
+        /// </summary>
+        public static string FrozenFrozen {
+            get {
+                return ResourceManager.GetString("FrozenFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frozen Hell (Frozen).
+        /// </summary>
+        public static string FrozenHellFrozen {
+            get {
+                return ResourceManager.GetString("FrozenHellFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frozen Relic (Frozen).
+        /// </summary>
+        public static string FrozenRelicFrozen {
+            get {
+                return ResourceManager.GetString("FrozenRelicFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fungal (Exotic).
+        /// </summary>
+        public static string FungalExotic {
+            get {
+                return ResourceManager.GetString("FungalExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gamma-Intensive (Irradiated).
+        /// </summary>
+        public static string GammaIntensiveIrradiated {
+            get {
+                return ResourceManager.GetString("GammaIntensiveIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Glacial (Frozen).
+        /// </summary>
+        public static string GlacialFrozen {
+            get {
+                return ResourceManager.GetString("GlacialFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Glassy (Exotic).
+        /// </summary>
+        public static string GlassyExotic {
+            get {
+                return ResourceManager.GetString("GlassyExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Harsh Blue Globe (Mega Exotic).
+        /// </summary>
+        public static string HarshBlueGlobeMegaExotic {
+            get {
+                return ResourceManager.GetString("HarshBlueGlobeMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Haunted Emeril (Mega Exotic).
+        /// </summary>
+        public static string HauntedEmerilMegaExotic {
+            get {
+                return ResourceManager.GetString("HauntedEmerilMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hazy (Marsh).
+        /// </summary>
+        public static string HazyMarsh {
+            get {
+                return ResourceManager.GetString("HazyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hexagonal (Exotic).
+        /// </summary>
+        public static string HexagonalExotic {
+            get {
+                return ResourceManager.GetString("HexagonalExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hiemal (Frozen).
+        /// </summary>
+        public static string HiemalFrozen {
+            get {
+                return ResourceManager.GetString("HiemalFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Energy (Irradiated).
+        /// </summary>
+        public static string HighEnergyIrradiated {
+            get {
+                return ResourceManager.GetString("HighEnergyIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Radio Source (Irradiated).
+        /// </summary>
+        public static string HighRadioSourceIrradiated {
+            get {
+                return ResourceManager.GetString("HighRadioSourceIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Temperature (Scorched).
+        /// </summary>
+        public static string HighTemperatureScorched {
+            get {
+                return ResourceManager.GetString("HighTemperatureScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hot (Scorched).
+        /// </summary>
+        public static string HotScorched {
+            get {
+                return ResourceManager.GetString("HotScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hyperborean (Frozen).
+        /// </summary>
+        public static string HyperboreanFrozen {
+            get {
+                return ResourceManager.GetString("HyperboreanFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icebound (Frozen).
+        /// </summary>
+        public static string IceboundFrozen {
+            get {
+                return ResourceManager.GetString("IceboundFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icy Abhorrence (Frozen).
+        /// </summary>
+        public static string IcyAbhorrenceFrozen {
+            get {
+                return ResourceManager.GetString("IcyAbhorrenceFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icy (Frozen).
+        /// </summary>
+        public static string IcyFrozen {
+            get {
+                return ResourceManager.GetString("IcyFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imminent Core Detonation (Volcanic).
+        /// </summary>
+        public static string ImminentCoreDetonationVolcanic {
+            get {
+                return ResourceManager.GetString("ImminentCoreDetonationVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incandescent (Scorched).
+        /// </summary>
+        public static string IncandescentScorched {
+            get {
+                return ResourceManager.GetString("IncandescentScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infected Dustbowl (Barren).
+        /// </summary>
+        public static string InfectedDustbowlBarren {
+            get {
+                return ResourceManager.GetString("InfectedDustbowlBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infected (Exotic).
+        /// </summary>
+        public static string InfectedExotic {
+            get {
+                return ResourceManager.GetString("InfectedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infested (Barren).
+        /// </summary>
+        public static string InfestedBarren {
+            get {
+                return ResourceManager.GetString("InfestedBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infested (Frozen).
+        /// </summary>
+        public static string InfestedFrozen {
+            get {
+                return ResourceManager.GetString("InfestedFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infested (Irradiated).
+        /// </summary>
+        public static string InfestedIrradiated {
+            get {
+                return ResourceManager.GetString("InfestedIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infested (Scorched).
+        /// </summary>
+        public static string InfestedScorched {
+            get {
+                return ResourceManager.GetString("InfestedScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infested (Toxic).
+        /// </summary>
+        public static string InfestedToxic {
+            get {
+                return ResourceManager.GetString("InfestedToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Irradiated (Irradiated).
+        /// </summary>
+        public static string IrradiatedIrradiated {
+            get {
+                return ResourceManager.GetString("IrradiatedIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Isotopic (Irradiated).
+        /// </summary>
+        public static string IsotopicIrradiated {
+            get {
+                return ResourceManager.GetString("IsotopicIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lava (Volcanic).
+        /// </summary>
+        public static string LavaVolcanic {
+            get {
+                return ResourceManager.GetString("LavaVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Life-Incompatible (Dead).
+        /// </summary>
+        public static string LifeIncompatibleDead {
+            get {
+                return ResourceManager.GetString("LifeIncompatibleDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lifeless (Dead).
+        /// </summary>
+        public static string LifelessDead {
+            get {
+                return ResourceManager.GetString("LifelessDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost Blue (Mega Exotic).
+        /// </summary>
+        public static string LostBlueMegaExotic {
+            get {
+                return ResourceManager.GetString("LostBlueMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost Green (Mega Exotic).
+        /// </summary>
+        public static string LostGreenMegaExotic {
+            get {
+                return ResourceManager.GetString("LostGreenMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost Red (Mega Exotic).
+        /// </summary>
+        public static string LostRedMegaExotic {
+            get {
+                return ResourceManager.GetString("LostRedMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Atmosphere (Dead).
+        /// </summary>
+        public static string LowAtmosphereDead {
+            get {
+                return ResourceManager.GetString("LowAtmosphereDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magma (Volcanic).
+        /// </summary>
+        public static string MagmaVolcanic {
+            get {
+                return ResourceManager.GetString("MagmaVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Malfunctioning (Exotic).
+        /// </summary>
+        public static string MalfunctioningExotic {
+            get {
+                return ResourceManager.GetString("MalfunctioningExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marine (Waterworld).
+        /// </summary>
+        public static string MarineWaterworld {
+            get {
+                return ResourceManager.GetString("MarineWaterworld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marshy (Marsh).
+        /// </summary>
+        public static string MarshyMarsh {
+            get {
+                return ResourceManager.GetString("MarshyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mechanical (Exotic).
+        /// </summary>
+        public static string MechanicalExotic {
+            get {
+                return ResourceManager.GetString("MechanicalExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Memory Β - Titan (Gas Giant).
+        /// </summary>
+        public static string MemoryΒTitanGasGiant {
+            get {
+                return ResourceManager.GetString("MemoryΒTitanGasGiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metallic (Exotic).
+        /// </summary>
+        public static string MetallicExotic {
+            get {
+                return ResourceManager.GetString("MetallicExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metallurgic (Exotic).
+        /// </summary>
+        public static string MetallurgicExotic {
+            get {
+                return ResourceManager.GetString("MetallurgicExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miasmatic (Toxic).
+        /// </summary>
+        public static string MiasmaticToxic {
+            get {
+                return ResourceManager.GetString("MiasmaticToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Misty (Marsh).
+        /// </summary>
+        public static string MistyMarsh {
+            get {
+                return ResourceManager.GetString("MistyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Molten (Volcanic).
+        /// </summary>
+        public static string MoltenVolcanic {
+            get {
+                return ResourceManager.GetString("MoltenVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moon Of Light (Exotic).
+        /// </summary>
+        public static string MoonOfLightExotic {
+            get {
+                return ResourceManager.GetString("MoonOfLightExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Murky (Marsh).
+        /// </summary>
+        public static string MurkyMarsh {
+            get {
+                return ResourceManager.GetString("MurkyMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mutated (Irradiated).
+        /// </summary>
+        public static string MutatedIrradiated {
+            get {
+                return ResourceManager.GetString("MutatedIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Noxious (Toxic).
+        /// </summary>
+        public static string NoxiousToxic {
+            get {
+                return ResourceManager.GetString("NoxiousToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nuclear (Irradiated).
+        /// </summary>
+        public static string NuclearIrradiated {
+            get {
+                return ResourceManager.GetString("NuclearIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obsidian Bead (Volcanic).
+        /// </summary>
+        public static string ObsidianBeadVolcanic {
+            get {
+                return ResourceManager.GetString("ObsidianBeadVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ossified (Exotic).
+        /// </summary>
+        public static string OssifiedExotic {
+            get {
+                return ResourceManager.GetString("OssifiedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parched (Barren).
+        /// </summary>
+        public static string ParchedBarren {
+            get {
+                return ResourceManager.GetString("ParchedBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Petrified (Exotic).
+        /// </summary>
+        public static string PetrifiedExotic {
+            get {
+                return ResourceManager.GetString("PetrifiedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Petrified Giant (Gas Giant).
+        /// </summary>
+        public static string PetrifiedGiantGasGiant {
+            get {
+                return ResourceManager.GetString("PetrifiedGiantGasGiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pillared (Exotic).
+        /// </summary>
+        public static string PillaredExotic {
+            get {
+                return ResourceManager.GetString("PillaredExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planetary Anomaly (Exotic).
+        /// </summary>
+        public static string PlanetaryAnomalyExotic {
+            get {
+                return ResourceManager.GetString("PlanetaryAnomalyExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planetary Anomaly (Mega Exotic).
+        /// </summary>
+        public static string PlanetaryAnomalyMegaExotic {
+            get {
+                return ResourceManager.GetString("PlanetaryAnomalyMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planet Of Light (Exotic).
+        /// </summary>
+        public static string PlanetOfLightExotic {
+            get {
+                return ResourceManager.GetString("PlanetOfLightExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plated (Exotic).
+        /// </summary>
+        public static string PlatedExotic {
+            get {
+                return ResourceManager.GetString("PlatedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poisonous (Toxic).
+        /// </summary>
+        public static string PoisonousToxic {
+            get {
+                return ResourceManager.GetString("PoisonousToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quagmire (Marsh).
+        /// </summary>
+        public static string QuagmireMarsh {
+            get {
+                return ResourceManager.GetString("QuagmireMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radioactive Abomination (Irradiated).
+        /// </summary>
+        public static string RadioactiveAbominationIrradiated {
+            get {
+                return ResourceManager.GetString("RadioactiveAbominationIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radioactive (Irradiated).
+        /// </summary>
+        public static string RadioactiveIrradiated {
+            get {
+                return ResourceManager.GetString("RadioactiveIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rattling (Exotic).
+        /// </summary>
+        public static string RattlingExotic {
+            get {
+                return ResourceManager.GetString("RattlingExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Redacted] (Exotic).
+        /// </summary>
+        public static string RedactedExotic {
+            get {
+                return ResourceManager.GetString("RedactedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Redacted] (Mega Exotic).
+        /// </summary>
+        public static string RedactedMegaExotic {
+            get {
+                return ResourceManager.GetString("RedactedMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reeking (Marsh).
+        /// </summary>
+        public static string ReekingMarsh {
+            get {
+                return ResourceManager.GetString("ReekingMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rocky (Barren).
+        /// </summary>
+        public static string RockyBarren {
+            get {
+                return ResourceManager.GetString("RockyBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotting (Toxic).
+        /// </summary>
+        public static string RottingToxic {
+            get {
+                return ResourceManager.GetString("RottingToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ruined Dustbowl (Barren).
+        /// </summary>
+        public static string RuinedDustbowlBarren {
+            get {
+                return ResourceManager.GetString("RuinedDustbowlBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scalding (Scorched).
+        /// </summary>
+        public static string ScaldingScorched {
+            get {
+                return ResourceManager.GetString("ScaldingScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scaly (Exotic).
+        /// </summary>
+        public static string ScalyExotic {
+            get {
+                return ResourceManager.GetString("ScalyExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scarlet (Mega Exotic).
+        /// </summary>
+        public static string ScarletMegaExotic {
+            get {
+                return ResourceManager.GetString("ScarletMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scorched Relic (Scorched).
+        /// </summary>
+        public static string ScorchedRelicScorched {
+            get {
+                return ResourceManager.GetString("ScorchedRelicScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scorched (Scorched).
+        /// </summary>
+        public static string ScorchedScorched {
+            get {
+                return ResourceManager.GetString("ScorchedScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharded (Exotic).
+        /// </summary>
+        public static string ShardedExotic {
+            get {
+                return ResourceManager.GetString("ShardedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shattered (Exotic).
+        /// </summary>
+        public static string ShatteredExotic {
+            get {
+                return ResourceManager.GetString("ShatteredExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shell-Strewn (Exotic).
+        /// </summary>
+        public static string ShellStrewnExotic {
+            get {
+                return ResourceManager.GetString("ShellStrewnExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skeletal (Exotic).
+        /// </summary>
+        public static string SkeletalExotic {
+            get {
+                return ResourceManager.GetString("SkeletalExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spined (Exotic).
+        /// </summary>
+        public static string SpinedExotic {
+            get {
+                return ResourceManager.GetString("SpinedExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sporal (Exotic).
+        /// </summary>
+        public static string SporalExotic {
+            get {
+                return ResourceManager.GetString("SporalExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stellar Corruption Detected (Mega Exotic).
+        /// </summary>
+        public static string StellarCorruptionDetectedMegaExotic {
+            get {
+                return ResourceManager.GetString("StellarCorruptionDetectedMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sub-Zero (Frozen).
+        /// </summary>
+        public static string SubZeroFrozen {
+            get {
+                return ResourceManager.GetString("SubZeroFrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supercritical (Irradiated).
+        /// </summary>
+        public static string SupercriticalIrradiated {
+            get {
+                return ResourceManager.GetString("SupercriticalIrradiated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swamp (Marsh).
+        /// </summary>
+        public static string SwampMarsh {
+            get {
+                return ResourceManager.GetString("SwampMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tainted (Barren).
+        /// </summary>
+        public static string TaintedBarren {
+            get {
+                return ResourceManager.GetString("TaintedBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tbd3 (Gas Giant).
+        /// </summary>
+        public static string Tbd3GasGiant {
+            get {
+                return ResourceManager.GetString("Tbd3GasGiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tbd4 (Gas Giant).
+        /// </summary>
+        public static string Tbd4GasGiant {
+            get {
+                return ResourceManager.GetString("Tbd4GasGiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tectonic (Volcanic).
+        /// </summary>
+        public static string TectonicVolcanic {
+            get {
+                return ResourceManager.GetString("TectonicVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temporary (Exotic).
+        /// </summary>
+        public static string TemporaryExotic {
+            get {
+                return ResourceManager.GetString("TemporaryExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terraforming Catastrophe (Dead).
+        /// </summary>
+        public static string TerraformingCatastropheDead {
+            get {
+                return ResourceManager.GetString("TerraformingCatastropheDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terrorsphere (Barren).
+        /// </summary>
+        public static string TerrorsphereBarren {
+            get {
+                return ResourceManager.GetString("TerrorsphereBarren", resourceCulture);
             }
         }
         
@@ -78,11 +1581,47 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Reliquary (Lush).
+        /// </summary>
+        public static string TheReliquaryLush {
+            get {
+                return ResourceManager.GetString("TheReliquaryLush", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thirsty (Exotic).
+        /// </summary>
+        public static string ThirstyExotic {
+            get {
+                return ResourceManager.GetString("ThirstyExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Torrid (Scorched).
+        /// </summary>
+        public static string TorridScorched {
+            get {
+                return ResourceManager.GetString("TorridScorched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toxic Anomaly.
         /// </summary>
         public static string ToxicAnomaly {
             get {
                 return ResourceManager.GetString("ToxicAnomaly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toxic Anomaly (Mega Exotic).
+        /// </summary>
+        public static string ToxicAnomalyMegaExotic {
+            get {
+                return ResourceManager.GetString("ToxicAnomalyMegaExotic", resourceCulture);
             }
         }
         
@@ -96,11 +1635,92 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toxic Horror (Toxic).
+        /// </summary>
+        public static string ToxicHorrorToxic {
+            get {
+                return ResourceManager.GetString("ToxicHorrorToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toxic (Toxic).
+        /// </summary>
+        public static string ToxicToxic {
+            get {
+                return ResourceManager.GetString("ToxicToxic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tropical (Lush).
+        /// </summary>
+        public static string TropicalLush {
+            get {
+                return ResourceManager.GetString("TropicalLush", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tropical (Marsh).
+        /// </summary>
+        public static string TropicalMarsh {
+            get {
+                return ResourceManager.GetString("TropicalMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ultramarine Giant.
         /// </summary>
         public static string UltramarineGiant {
             get {
                 return ResourceManager.GetString("UltramarineGiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ultramarine Giant (Waterworld).
+        /// </summary>
+        public static string UltramarineGiantWaterworld {
+            get {
+                return ResourceManager.GetString("UltramarineGiantWaterworld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ultramarine (Mega Exotic).
+        /// </summary>
+        public static string UltramarineMegaExotic {
+            get {
+                return ResourceManager.GetString("UltramarineMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unstable (Volcanic).
+        /// </summary>
+        public static string UnstableVolcanic {
+            get {
+                return ResourceManager.GetString("UnstableVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vapour (Marsh).
+        /// </summary>
+        public static string VapourMarsh {
+            get {
+                return ResourceManager.GetString("VapourMarsh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verdant (Lush).
+        /// </summary>
+        public static string VerdantLush {
+            get {
+                return ResourceManager.GetString("VerdantLush", resourceCulture);
             }
         }
         
@@ -114,11 +1734,83 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vermillion Globe (Mega Exotic).
+        /// </summary>
+        public static string VermillionGlobeMegaExotic {
+            get {
+                return ResourceManager.GetString("VermillionGlobeMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vile Anomaly.
         /// </summary>
         public static string VileAnomaly {
             get {
                 return ResourceManager.GetString("VileAnomaly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vile Anomaly (Mega Exotic).
+        /// </summary>
+        public static string VileAnomalyMegaExotic {
+            get {
+                return ResourceManager.GetString("VileAnomalyMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Violent (Volcanic).
+        /// </summary>
+        public static string ViolentVolcanic {
+            get {
+                return ResourceManager.GetString("ViolentVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Viridescent (Lush).
+        /// </summary>
+        public static string ViridescentLush {
+            get {
+                return ResourceManager.GetString("ViridescentLush", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volcanic (Volcanic).
+        /// </summary>
+        public static string VolcanicVolcanic {
+            get {
+                return ResourceManager.GetString("VolcanicVolcanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waterlocked (Waterworld).
+        /// </summary>
+        public static string WaterlockedWaterworld {
+            get {
+                return ResourceManager.GetString("WaterlockedWaterworld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waterworld (Waterworld).
+        /// </summary>
+        public static string WaterworldWaterworld {
+            get {
+                return ResourceManager.GetString("WaterworldWaterworld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Webbed (Exotic).
+        /// </summary>
+        public static string WebbedExotic {
+            get {
+                return ResourceManager.GetString("WebbedExotic", resourceCulture);
             }
         }
         
@@ -132,11 +1824,29 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wind-Swept (Barren).
+        /// </summary>
+        public static string WindSweptBarren {
+            get {
+                return ResourceManager.GetString("WindSweptBarren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wine Dark.
         /// </summary>
         public static string WineDark {
             get {
                 return ResourceManager.GetString("WineDark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wine Dark (Mega Exotic).
+        /// </summary>
+        public static string WineDarkMegaExotic {
+            get {
+                return ResourceManager.GetString("WineDarkMegaExotic", resourceCulture);
             }
         }
         
@@ -150,11 +1860,29 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Worm-Ridden (Lush).
+        /// </summary>
+        public static string WormRiddenLush {
+            get {
+                return ResourceManager.GetString("WormRiddenLush", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Xeno-Colony.
         /// </summary>
         public static string XenoColony {
             get {
                 return ResourceManager.GetString("XenoColony", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xeno-Colony (Lush).
+        /// </summary>
+        public static string XenoColonyLush {
+            get {
+                return ResourceManager.GetString("XenoColonyLush", resourceCulture);
             }
         }
     }

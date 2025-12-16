@@ -1,27 +1,28 @@
-using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Handlers;
-using AGT.GalacticArchives.Core.Managers.Imports;
+using AGT.GalacticArchives.Core.Interfaces.Handlers;
+using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Mapping.CsvMaps;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
+using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Globalization;
-using Autofac.Features.Indexed;
+using AutoMapper;
 
 namespace AGT.GalacticArchives.Services.Services.Imports;
 
 public class PointOfInterestImportService(
-    IEnumerable<IGoogleSheetValidationHandler> googleSheetValidationHandlers,
-    IIndex<string, IGoogleSheetImportManager<PointOfInterestImport>> importManagers)
-    : GoogleSheetImportService<PointOfInterestImport>(googleSheetValidationHandlers)
+    IMapper mapper,
+    IPointOfInterestManager pointOfInterestManager,
+    IEnumerable<IImportValidationHandler> importValidationHandlers)
+    : ImportService<PointOfInterestImport>(importValidationHandlers)
 {
-    private readonly IGoogleSheetImportManager<PointOfInterestImport> _importManager =
-        importManagers[NamedKeys.Managers.PointOfInterestManager];
-
-    protected override string SheetName => GoogleSheetResource.PointOfInterestSheetName;
+    protected override string SheetName => ImportResource.PointOfInterestSheetName;
 
     protected override Type CsvMapType => typeof(PointOfInterestCsvMap);
 
-    protected override async Task ProcessValidatedDataAsync(HashSet<PointOfInterestImport> importData)
+    protected override async Task ProcessValidatedDataAsync(
+        HashSet<PointOfInterestImport> importData,
+        CancellationToken ct = default)
     {
-        await _importManager.ImportSheetDataAsync(importData);
+        var pointOfInterests = mapper.Map<HashSet<PointOfInterest>>(importData);
+        await pointOfInterestManager.UpsertPointOfInterestAsync(pointOfInterests, ct);
     }
 }

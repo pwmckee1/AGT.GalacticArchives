@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
@@ -74,6 +73,11 @@ public class MultiToolManager(
         return request;
     }
 
+    public async Task<HashSet<MultiTool>> UpsertMultiToolAsync(HashSet<MultiTool> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
+    }
+
     public async Task DeleteMultiToolAsync(Guid multiToolId)
     {
         await firestoreManager.DeleteAsync(multiToolId, Collection);
@@ -83,11 +87,15 @@ public class MultiToolManager(
     {
         if (multiTool.PlanetId.HasValue)
         {
-            multiTool.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId);
+            multiTool.Planet = multiTool.PlanetId.HasValue
+                ? await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId)
+                : null;
         }
         else
         {
-            multiTool.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
+            multiTool.StarSystem = multiTool.StarSystemId.HasValue
+                ? await galacticEntityManager.GetStarSystemHierarchyAsync(parentId)
+                : null;
         }
     }
 

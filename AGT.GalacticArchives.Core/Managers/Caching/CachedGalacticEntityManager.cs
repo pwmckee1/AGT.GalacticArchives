@@ -7,7 +7,7 @@ namespace AGT.GalacticArchives.Core.Managers.Caching;
 public class CachedGalacticEntityManager(ICacheManager cacheManager, IGalacticEntityManager target)
     : IGalacticEntityManager, ICachedGameDataManager
 {
-    public async Task<Planet> GetPlanetaryHierarchyAsync(Guid planetId)
+    public async Task<Planet?> GetPlanetaryHierarchyAsync(Guid planetId)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(Planet)}:{planetId}",
@@ -16,7 +16,7 @@ public class CachedGalacticEntityManager(ICacheManager cacheManager, IGalacticEn
         return result!;
     }
 
-    public async Task<StarSystem> GetStarSystemHierarchyAsync(Guid starSystemId)
+    public async Task<StarSystem?> GetStarSystemHierarchyAsync(Guid starSystemId)
     {
         var result = await cacheManager.GetAsync(
             $"{nameof(StarSystem)}:{starSystemId}",
@@ -25,22 +25,35 @@ public class CachedGalacticEntityManager(ICacheManager cacheManager, IGalacticEn
         return result!;
     }
 
-    public async Task UpsertPlanetAsync(Planet? planet)
+    public async Task<Planet?> UpsertPlanetAsync(Planet? planet)
     {
-        await target.UpsertPlanetAsync(planet);
-        await cacheManager.SetAsync($"{nameof(Planet)}:{planet!.PlanetId}", planet, BusinessRuleConstants.DayInMinutes);
+        var updatedPlanet = await target.UpsertPlanetAsync(planet);
+        await cacheManager.SetAsync(
+            $"{nameof(Planet)}:{updatedPlanet!.PlanetId}",
+            updatedPlanet,
+            BusinessRuleConstants.DayInMinutes);
+        return updatedPlanet;
     }
 
-    public async Task UpsertStarSystemAsync(StarSystem? starSystem)
+    public async Task<StarSystem?> UpsertStarSystemAsync(StarSystem? starSystem)
     {
-        await target.UpsertStarSystemAsync(starSystem);
-        await cacheManager.SetAsync($"{nameof(StarSystem)}:{starSystem!.StarSystemId}", starSystem, BusinessRuleConstants.DayInMinutes);
+        await cacheManager.ClearCacheByKeyAsync($"{nameof(StarSystem)}:{starSystem?.StarSystemId}");
+        var updatedStarSystem = await target.UpsertStarSystemAsync(starSystem);
+        await cacheManager.SetAsync(
+            $"{nameof(StarSystem)}:{updatedStarSystem!.StarSystemId}",
+            updatedStarSystem,
+            BusinessRuleConstants.DayInMinutes);
+        return updatedStarSystem;
     }
 
-    public async Task UpsertRegionAsync(Region? region)
+    public async Task<Region?> UpsertRegionAsync(Region? region)
     {
-        await target.UpsertRegionAsync(region);
-        await cacheManager.SetAsync($"{nameof(Region)}:{region!.RegionId}", region, BusinessRuleConstants.DayInMinutes);
+        var updatedRegion = await target.UpsertRegionAsync(region);
+        await cacheManager.SetAsync(
+            $"{nameof(Region)}:{updatedRegion!.RegionId}",
+            updatedRegion,
+            BusinessRuleConstants.DayInMinutes);
+        return updatedRegion;
     }
 
     public async Task ClearCacheAsync(Guid entityId)

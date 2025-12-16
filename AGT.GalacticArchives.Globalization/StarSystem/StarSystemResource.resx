@@ -163,7 +163,7 @@
   <data name="CarbonNanotubes" xml:space="preserve">
     <value>Carbon Nanotubes</value>
   </data>
-  <data name="CivilizedBy" xml:space="preserve">
+  <data name="Civilization" xml:space="preserve">
     <value>Civilized?</value>
   </data>
   <data name="CometDroplets" xml:space="preserve">
@@ -223,6 +223,18 @@
   <data name="EnormousMetalCog" xml:space="preserve">
     <value>Enormous Metal Cog</value>
   </data>
+  <data name="ExocraftAccelerationModuleUpgrade" xml:space="preserve">
+    <value>Exocraft Acceleration Module Upgrade</value>
+  </data>
+  <data name="ExocraftEngineModule" xml:space="preserve">
+    <value>Exocraft Engine Module</value>
+  </data>
+  <data name="ExocraftMiningLaserUpgrade" xml:space="preserve">
+    <value>Exocraft Mining Laser Upgrade</value>
+  </data>
+  <data name="ExocraftMountedCannonUpgrade" xml:space="preserve">
+    <value>Exocraft Mounted Cannon Upgrade</value>
+  </data>
   <data name="ExperimentalPowerFluid" xml:space="preserve">
     <value>Experimental Power Fluid</value>
   </data>
@@ -246,6 +258,9 @@
   </data>
   <data name="FusionCore" xml:space="preserve">
     <value>Fusion Core</value>
+  </data>
+  <data name="FusionEngineUpgrade" xml:space="preserve">
+    <value>Fusion Engine Upgrade</value>
   </data>
   <data name="GalacticCoordinates" xml:space="preserve">
     <value>Galactic Coordinates</value>
@@ -282,6 +297,9 @@
   </data>
   <data name="HolographicCrankshaft" xml:space="preserve">
     <value>Holographic Crankshaft</value>
+  </data>
+  <data name="HumboldtDriveUpgrade" xml:space="preserve">
+    <value>Humboldt Drive Upgrade</value>
   </data>
   <data name="HyperdriveUpgrade" xml:space="preserve">
     <value>Hyperdrive Upgrade</value>
@@ -352,6 +370,18 @@
   <data name="MiningBeamUpgrade" xml:space="preserve">
     <value>Mining Beam Upgrade</value>
   </data>
+  <data name="MinotaurCannonUpgrade" xml:space="preserve">
+    <value>Minotaur Cannon Upgrade</value>
+  </data>
+  <data name="MinotaurEngineUpgrade" xml:space="preserve">
+    <value>Minotaur Engine Upgrade</value>
+  </data>
+  <data name="MinotaurFlamethrowerUpgrade" xml:space="preserve">
+    <value>Minotaur Flamethrower Upgrade</value>
+  </data>
+  <data name="MinotaurLaserUpgrade" xml:space="preserve">
+    <value>Minotaur Laser Upgrade</value>
+  </data>
   <data name="MissingEnumerationValueForType" xml:space="preserve">
       <value />
   </data>
@@ -375,6 +405,9 @@
   </data>
   <data name="NanotubeCrate" xml:space="preserve">
     <value>Nanotube Crate</value>
+  </data>
+  <data name="NautilonCannonUpgrade" xml:space="preserve">
+    <value>Nautilon Cannon Upgrade</value>
   </data>
   <data name="NeuralDuct" xml:space="preserve">
     <value>Neural Duct</value>
@@ -472,9 +505,6 @@
   <data name="SpaceStationNotes" xml:space="preserve">
     <value>Space Station Notes</value>
   </data>
-  <data name="SpaceStationTradeItems" xml:space="preserve">
-    <value>Space Station Trade Item</value>
-  </data>
   <data name="SparkCanister" xml:space="preserve">
     <value>Spark Canister</value>
   </data>
@@ -492,9 +522,6 @@
   </data>
   <data name="StarSilk" xml:space="preserve">
     <value>Star Silk</value>
-  </data>
-  <data name="StarSystemShipUpgradeModules" xml:space="preserve">
-    <value>SpaceShip S-Class Upgrade Modules</value>
   </data>
   <data name="StolenDNASamples" xml:space="preserve">
     <value>Stolen DNA Samples</value>

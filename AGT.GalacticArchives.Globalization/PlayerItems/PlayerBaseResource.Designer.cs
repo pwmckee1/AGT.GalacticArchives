@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlayerBaseResource", typeof(PlayerBaseResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlayerItems.PlayerBaseResource", typeof(PlayerBaseResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -170,9 +170,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Civilized.
         /// </summary>
-        public static string CivilizedBy {
+        public static string Civilization {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("Civilization", resourceCulture);
             }
         }
         
@@ -260,9 +260,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Doc Sequence.
         /// </summary>
-        public static string DocSequence {
+        public static string DocumentSequence {
             get {
-                return ResourceManager.GetString("DocSequence", resourceCulture);
+                return ResourceManager.GetString("DocumentSequence", resourceCulture);
             }
         }
         
@@ -906,7 +906,7 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sufficiently Powered.
+        ///   Looks up a localized string similar to sufficiently powered.
         /// </summary>
         public static string SufficientlyPowered {
             get {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGT.GalacticArchives.Globalization {
+namespace AGT.GalacticArchives.Globalization.PlayerItems {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarshipResource", typeof(StarshipResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlayerItems.StarshipResource", typeof(StarshipResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -98,9 +98,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Civilized.
         /// </summary>
-        public static string CivilizedBy {
+        public static string Civilization {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("Civilization", resourceCulture);
             }
         }
         
@@ -1520,9 +1520,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Mono-leviathan (Frigate).
         /// </summary>
-        public static string FrigateMonoleviathan {
+        public static string FrigateMonoLeviathan {
             get {
-                return ResourceManager.GetString("FrigateMonoleviathan", resourceCulture);
+                return ResourceManager.GetString("FrigateMonoLeviathan", resourceCulture);
             }
         }
         

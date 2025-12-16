@@ -1,4 +1,3 @@
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 
@@ -51,7 +50,7 @@ public class PlanetSubmissionRequest : BaseSubmissionRequest
 
     public float? PlanetAge { get; set; }
 
-    public AtmosphereMaterialTypes? AtmosphereGas { get; set; }
+    public AtmosphereGasTypes? AtmosphereGas { get; set; }
 
     public float? AtmosphereGasComposition { get; set; }
 

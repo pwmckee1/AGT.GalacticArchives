@@ -1,4 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Constants;
+﻿using AGT.GalacticArchives.Core.Constants.Application;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Database;

@@ -1,0 +1,58 @@
+namespace AGT.GalacticArchives.Core.Constants.ImportFields;
+
+public static class StarshipSheetFields
+{
+    public const string AccentColor = "Accent Color";
+    public const string AdditionalNotes = "Additional notes";
+    public const string CargoSlots = "Cargo Slots (Pre-Waypoint)";
+    public const string Class = "Class";
+    public const string Civilization = "Civilized";
+    public const string Coordinates = "GalacticAddressCoordinates";
+    public const string Cost = "Cost";
+    public const string Damage = "Damage";
+    public const string DescriptionNotes = "Description Notes";
+    public const string DiscoveredBy = "Discovered";
+    public const string DiscoveryDate = "Discovered Date";
+    public const string DiscoveredLinkOnWiki = "Discovered Link on Wiki";
+    public const string DocumentSequence = "Document Sequence";
+    public const string FreighterCostEvaluation = "Research Team";
+    public const string Galaxy = "Galaxy";
+    public const string HasWings = "Wings?";
+    public const string HullAccessories = "Hull Accessories";
+    public const string InventorySize = "Inventory Size";
+    public const string Location = "Location";
+    public const string LocationNotes = "Location Notes";
+    public const string Maneuver = "Maneuver";
+    public const string GameModeType = "Mode";
+    public const string ExtraHullAccessories = "More Hull Accessories";
+    public const string StarshipName = "Starship Name";
+    public const string Pilot = "Pilot";
+    public const string PlanetName = "Planet";
+    public const string GamePlatformType = "Platform";
+    public const string GlyphHexCode = "Portal Glyphs";
+    public const string PrimaryColor = "Primary Color";
+    public const string RegionName = "Region";
+    public const string GameRelease = "Release";
+    public const string ResearchTeam = "Wiki Link";
+    public const string SecondaryColor = "Secondary Color";
+    public const string Shield = "Shield";
+    public const string StarshipModelType = "Type";
+    public const string StarshipSubtype = "Ship Subtype";
+    public const string InventorySlots = "Slots";
+    public const string SummaryNotes = "Summary Notes";
+    public const string StarSystemName = "System";
+    public const string TechSlots = "Techslots";
+    public const string Thruster = "Thruster/Engine";
+    public const string Warp = "Warp";
+    public const string WikiLink = "Lock Record";
+    public const string XAxisPlanetCoordinate = "XX (second coord)";
+    public const string YAxisPlanetCoordinate = "YY (first coord)";
+    public const string WingType = "Wings?";
+    public const string UpgradeModules = "Upgrade Modules";
+    public const string GameReleaseVersionNumber = "Release Number";
+    public const string GameReleaseDate = "Release Date";
+    public const string StarshipId = "StarshipId";
+    public const string RegionId = "RegionId";
+    public const string StarSystemId = "StarSystemId";
+    public const string PlanetId = "PlanetId";
+}

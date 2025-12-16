@@ -12,7 +12,7 @@ public class BaseCoordinateStrategy(string? fieldValue, int lineNumber, string p
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidBaseCoordinate,
+                    ImportResource.InvalidBaseCoordinate,
                     SheetName,
                     LineNumber));
         }

@@ -163,7 +163,7 @@
     <data name="CivHq" xml:space="preserve">
     <value>Civ Hq</value>
   </data>
-    <data name="CivilizedBy" xml:space="preserve">
+    <data name="Civilization" xml:space="preserve">
     <value>Civilized</value>
   </data>
     <data name="ColossalArchive" xml:space="preserve">
@@ -193,7 +193,7 @@
     <data name="DateStarted" xml:space="preserve">
     <value>Date Started</value>
   </data>
-    <data name="DocSequence" xml:space="preserve">
+    <data name="DocumentSequence" xml:space="preserve">
     <value>Doc Sequence</value>
   </data>
     <data name="DoesNotRequirePower" xml:space="preserve">
@@ -410,8 +410,8 @@
     <value>Subterranean Relic</value>
   </data>
     <data name="SufficientlyPowered" xml:space="preserve">
-    <value>Sufficiently Powered</value>
-  </data>
+        <value>sufficiently powered</value>
+    </data>
     <data name="SummaryText" xml:space="preserve">
     <value>Summary Text</value>
   </data>

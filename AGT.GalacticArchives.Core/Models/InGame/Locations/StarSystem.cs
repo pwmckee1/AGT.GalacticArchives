@@ -1,6 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Locations;
 
@@ -12,7 +13,7 @@ public class StarSystem : DatabaseGameEntity
 
     public string? OriginalSystemName { get; set; }
 
-    public string? NameAllPlatforms { get; set; }
+    public string? StarSystemNameAllPlatforms { get; set; }
 
     public string? AdminNotes { get; set; }
 
@@ -20,15 +21,11 @@ public class StarSystem : DatabaseGameEntity
 
     public string? PlanetOfInterestId { get; set; }
 
-    public string? DiscoveredLinkOnWiki { get; set; }
-
     public bool? IsGiantSystem { get; set; }
 
     public string? SpecialInterest { get; set; }
 
     public bool? IsDissonant { get; set; }
-
-    public int? BaseQty { get; set; }
 
     public int? StarCount { get; set; }
 
@@ -60,19 +57,17 @@ public class StarSystem : DatabaseGameEntity
 
     public string? KeySystemIndicator { get; set; }
 
-    public HashSet<SpaceStationTradeItemTypes?> SpaceStationTradeItems { get; set; } = [];
+    public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
-    public HashSet<ExoSuitUpgradeTypes?> ExoSuitSClassUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeModuleTypes> ExosuitUpgradeModules { get; set; } = [];
 
-    public HashSet<StarshipUpgradeModuleTypes?> StarshipUpgradeModules { get; set; } = [];
+    public HashSet<StarshipUpgradeTypes> StarshipUpgradeModules { get; set; } = [];
 
-    public HashSet<MultiToolUpdateTypes?> MultiToolUpdateTypes { get; set; } = [];
+    public HashSet<MultiToolUpdateModuleTypes> MultiToolUpdateTypes { get; set; } = [];
 
     public string? SummaryAdditions { get; set; }
 
     public string? DiscoveredNotes { get; set; }
-
-    public string? PlanetsNotes { get; set; }
 
     public string? StarshipsNotes { get; set; }
 
@@ -115,4 +110,14 @@ public class StarSystem : DatabaseGameEntity
     public string? Evolution { get; set; }
 
     public string? SystemMisc { get; set; }
+
+    public float? StarSystemAge { get; set; }
+
+    public string? ResearchTeam { get; set; }
+
+    public int? Bases { get; set; }
+
+    public string? PlanetsTextNotes { get; set; }
+
+    public string? StarshipsTextNotes { get; set; }
 }

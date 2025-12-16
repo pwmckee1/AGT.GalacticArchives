@@ -1,5 +1,4 @@
-using AGT.GalacticArchives.Core.Constants;
-using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Constants.Application;
 using AGT.GalacticArchives.Core.Models.Enums.Application;
 
 namespace AGT.GalacticArchives.Core.Extensions;

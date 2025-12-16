@@ -11,5 +11,7 @@ public interface IMultiToolManager
 
     Task<MultiTool> UpsertMultiToolAsync(MultiTool request);
 
+    Task<HashSet<MultiTool>> UpsertMultiToolAsync(HashSet<MultiTool> request, CancellationToken ct);
+
     Task DeleteMultiToolAsync(Guid multiToolId);
 }

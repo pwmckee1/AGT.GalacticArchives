@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.InGameLocations;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 
@@ -20,8 +19,9 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
 
     public async Task<HashSet<Region>> GetRegionsAsync(RegionRequest request)
     {
+        string cacheKey = request.RegionId.HasValue ? $"{nameof(Region)}:{request.RegionId}" : $"{nameof(Region)}s";
         var result = await cacheManager.GetAsync(
-            $"{nameof(Region)}:{request.RegionId}",
+            cacheKey,
             async () => await target.GetRegionsAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
@@ -34,6 +34,19 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result;
     }
 
+    public async Task<HashSet<Region>> UpsertRegionAsync(HashSet<Region> request, CancellationToken ct)
+    {
+        var result = await target.UpsertRegionAsync(request, ct);
+        var regionIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var regionId in regionIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(Region)}:{regionId}");
+        }
+
+        return result;
+    }
+
     public async Task DeleteRegionAsync(Guid regionId)
     {
         await target.DeleteRegionAsync(regionId);
@@ -43,5 +56,6 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

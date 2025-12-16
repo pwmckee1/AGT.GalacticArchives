@@ -1,6 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.Enums;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
@@ -36,7 +37,7 @@ public class GameDataModelTests
                 dictionary[nameof(Region.RegionId)].ShouldEqual(_region.RegionId.ToString());
                 dictionary[nameof(Region.NormalizedName)].ShouldEqual(_region.NormalizedName);
                 dictionary[nameof(Region.Galaxy)].ShouldEqual(_region.Galaxy);
-                dictionary[nameof(Region.XGalaxyHex)].ShouldEqual(_region.XGalaxyHex);
+                dictionary[nameof(Region.XXHex)].ShouldEqual(_region.XXHex);
                 dictionary[nameof(Region.DocumentSequence)].ShouldEqual(_region.DocumentSequence);
                 dictionary[nameof(Region.RegionAge)].ShouldEqual(_region.RegionAge);
             }
@@ -86,7 +87,9 @@ public class GameDataModelTests
                     .For<Planet>()
                     .With(p => p.Name, "Planet Name")
                     .With(p => p.StarSystem, null)
-                    .With(p => p.RawIngredients, [EdibleMaterialTypes.AloeFlesh, EdibleMaterialTypes.Fireberry])
+                    .With(
+                        p => p.RawIngredients,
+                        [EdibleRawMaterialTypes.CactusNectar, EdibleRawMaterialTypes.CrabApple])
                     .Create();
             }
 
@@ -107,7 +110,7 @@ public class GameDataModelTests
 
     public class WhenConvertingToGameDataFromDictionary : GameDataModelTests
     {
-        private readonly Dictionary<string, object> _dictionary = [];
+        private readonly Dictionary<string, object?> _dictionary = [];
 
         public class WhenConvertingRegion : WhenConvertingToGameDataFromDictionary
         {
@@ -126,12 +129,12 @@ public class GameDataModelTests
             public void ThenRegionIsPopulated()
             {
                 var region = _dictionary.ConvertDictionaryToObject<Region>();
-                region.RegionId.ShouldEqual((Guid)_dictionary[nameof(Region.RegionId)]);
-                region.Name.ShouldEqual((string)_dictionary[nameof(Region.Name)]);
+                region.RegionId.ShouldEqual((Guid?)_dictionary[nameof(Region.RegionId)]);
+                region.Name.ShouldEqual((string?)_dictionary[nameof(Region.Name)]);
                 region.GalacticCoordinates.ShouldEqual(
-                    ((string)_dictionary[nameof(Region.GalacticCoordinates)]).ToUpperInvariant());
-                region.XGalaxyHex.ShouldEqual("123A");
-                region.DocumentSequence.ShouldEqual((int)_dictionary[nameof(Region.DocumentSequence)]);
+                    ((string)_dictionary[nameof(Region.GalacticCoordinates)]!).ToUpperInvariant());
+                region.XXHex.ShouldEqual("123A");
+                region.DocumentSequence.ShouldEqual((int?)_dictionary[nameof(Region.DocumentSequence)]);
                 region.RegionAge.ShouldEqual((float?)_dictionary[nameof(Region.RegionAge)]);
             }
         }
@@ -159,12 +162,12 @@ public class GameDataModelTests
             public void ThenStarSystemIsPopulated()
             {
                 var starSystem = _dictionary.ConvertDictionaryToObject<StarSystem>();
-                starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]);
-                starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]);
-                starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]);
+                starSystem.StarSystemId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.StarSystemId)]!);
+                starSystem.RegionId.ShouldEqual((Guid)_dictionary[nameof(StarSystem.RegionId)]!);
+                starSystem.Name.ShouldEqual((string)_dictionary[nameof(StarSystem.Name)]!);
                 starSystem.GalacticCoordinates.ShouldEqual(
-                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]).ToUpperInvariant());
-                starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]);
+                    ((string)_dictionary[nameof(StarSystem.GalacticCoordinates)]!).ToUpperInvariant());
+                starSystem.IsGiantSystem.ShouldEqual((bool)_dictionary[nameof(StarSystem.IsGiantSystem)]!);
                 starSystem.Buy.ShouldEqual((float?)_dictionary[nameof(StarSystem.Buy)]);
                 starSystem.HasCenterAccess.ShouldEqual((bool?)_dictionary[nameof(StarSystem.HasCenterAccess)]);
             }
@@ -189,11 +192,10 @@ public class GameDataModelTests
             public void ThenPlanetIsPopulated()
             {
                 var planet = _dictionary.ConvertDictionaryToObject<Planet>();
-                planet.PlanetId.ShouldEqual((Guid)_dictionary[nameof(Planet.PlanetId)]);
-                planet.Name.ShouldEqual((string)_dictionary[nameof(Planet.Name)]);
+                planet.PlanetId.ShouldEqual((Guid)_dictionary[nameof(Planet.PlanetId)]!);
+                planet.Name.ShouldEqual((string)_dictionary[nameof(Planet.Name)]!);
                 planet.PlanetNameAllPlatforms.ShouldEqual((string?)_dictionary[nameof(Planet.PlanetNameAllPlatforms)]);
                 planet.PlanetIdInSystem.ShouldEqual((int?)_dictionary[nameof(Planet.PlanetIdInSystem)]);
-                planet.RawIngredients.ShouldEqual((HashSet<EdibleMaterialTypes?>)_dictionary[nameof(Planet.RawIngredients)]);
                 planet.NumberOfFauna.ShouldEqual((int?)_dictionary[nameof(Planet.NumberOfFauna)]);
                 planet.HasSandworms.ShouldEqual((bool?)_dictionary[nameof(Planet.HasSandworms)]);
             }

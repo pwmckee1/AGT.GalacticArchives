@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGT.GalacticArchives.Globalization {
+namespace AGT.GalacticArchives.Globalization.Application {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.FirestoreResource", typeof(FirestoreResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Application.FirestoreResource", typeof(FirestoreResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

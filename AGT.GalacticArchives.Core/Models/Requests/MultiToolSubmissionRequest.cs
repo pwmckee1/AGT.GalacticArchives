@@ -11,7 +11,7 @@ public class MultiToolSubmissionRequest : BaseSubmissionRequest
 
     public MultiToolTypes MultiToolType { get; set; }
 
-    public QualityClassTypes Class { get; set; }
+    public ItemClassTypes Class { get; set; }
 
     // Between 8 and 60
     public int InventorySlots { get; set; }

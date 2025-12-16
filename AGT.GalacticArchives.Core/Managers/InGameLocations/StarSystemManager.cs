@@ -1,6 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -35,7 +34,11 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         if (!string.IsNullOrEmpty(request.Name))
         {
             var starSystemDocs = request.RegionId.HasValue
-                ? await firestoreManager.GetByNameAsync(request.Name, nameof(StarSystem.RegionId), request.RegionId!.Value, Collection)
+                ? await firestoreManager.GetByNameAsync(
+                    request.Name,
+                    nameof(StarSystem.RegionId),
+                    request.RegionId!.Value,
+                    Collection)
                 : await firestoreManager.GetByNameAsync(request.Name, Collection);
 
             var starSystems = mapper.Map<HashSet<StarSystem>>(starSystemDocs);
@@ -54,7 +57,7 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
 
     public async Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem)
     {
-        var updatedStarSystem = (StarSystem)await firestoreManager.UpsertAsync(starSystem, Collection);
+        var updatedStarSystem = await firestoreManager.UpsertAsync(starSystem, Collection);
 
         var regionData = await firestoreManager.GetByIdAsync(
             updatedStarSystem.RegionId!.Value,
@@ -62,6 +65,11 @@ public class StarSystemManager(IFirestoreManager firestoreManager, IMapper mappe
         starSystem.Region = mapper.Map<Region>(regionData);
 
         return starSystem;
+    }
+
+    public async Task<HashSet<StarSystem>> UpsertStarSystemAsync(HashSet<StarSystem> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteStarSystemAsync(Guid starSystemId)

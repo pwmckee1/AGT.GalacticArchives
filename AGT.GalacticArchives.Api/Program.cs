@@ -2,7 +2,7 @@ using AGT.GalacticArchives.Configuration;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Extensions;
-using AGT.GalacticArchives.Globalization;
+using AGT.GalacticArchives.Globalization.Application;
 using AGT.GalacticArchives.Middleware;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;

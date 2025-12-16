@@ -19,7 +19,7 @@ public class DateTimeStrategy(string? fieldValue, int lineNumber, string propert
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidDateTime,
+                    ImportResource.InvalidDateTime,
                     SheetName,
                     LineNumber,
                     PropertyName));

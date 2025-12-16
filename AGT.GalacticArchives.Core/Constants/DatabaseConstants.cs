@@ -2,6 +2,7 @@
 
 public static class DatabaseConstants
 {
+    public const int FirestoreInLimit = 10;
     public const string RegionCollection = "Regions";
     public const string StarSystemCollection = "Systems";
     public const string PlanetCollection = "Planets";

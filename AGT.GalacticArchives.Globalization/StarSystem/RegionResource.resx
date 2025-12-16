@@ -136,13 +136,13 @@
   <data name="BaseCoord" xml:space="preserve">
     <value>Base Coord</value>
   </data>
-  <data name="CivilizedBy" xml:space="preserve">
+  <data name="Civilization" xml:space="preserve">
         <value>Civilized</value>
     </data>
   <data name="CivilizedSpaceNotes" xml:space="preserve">
     <value>Civilized Space Notes</value>
   </data>
-  <data name="DocSequence" xml:space="preserve">
+  <data name="DocumentSequence" xml:space="preserve">
     <value>Doc Sequence</value>
   </data>
   <data name="EarliestKnownSurveyor" xml:space="preserve">
@@ -157,12 +157,12 @@
   <data name="ExternalLink1" xml:space="preserve">
     <value>External Link 1</value>
   </data>
-  <data name="GalaxyId" xml:space="preserve">
-        <value>Galaxy ID</value>
-    </data>
   <data name="GalaxyName" xml:space="preserve">
       <value>Galaxy</value>
   </data>
+  <data name="GalaxySequence" xml:space="preserve">
+        <value>Galaxy ID</value>
+    </data>
   <data name="GameRelease" xml:space="preserve">
     <value>Game Release</value>
   </data>

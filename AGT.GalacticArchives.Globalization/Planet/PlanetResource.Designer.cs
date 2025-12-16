@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AGT.GalacticArchives.Globalization {
+namespace AGT.GalacticArchives.Globalization.Planet {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.PlanetResource", typeof(PlanetResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.Planet.PlanetResource", typeof(PlanetResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -186,11 +186,11 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Civilized.
+        ///   Looks up a localized string similar to \.
         /// </summary>
-        public static string CivilizedBy {
+        public static string Civilization {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("Civilization", resourceCulture);
             }
         }
         
@@ -353,6 +353,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string ExtremeWeatherInludingMegaExotic {
             get {
                 return ResourceManager.GetString("ExtremeWeatherInludingMegaExotic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fauna.
+        /// </summary>
+        public static string FaunaCategory {
+            get {
+                return ResourceManager.GetString("FaunaCategory", resourceCulture);
             }
         }
         

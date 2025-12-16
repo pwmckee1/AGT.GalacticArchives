@@ -1,44 +1,61 @@
-using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Constants.ImportFields;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using CsvHelper.Configuration.Attributes;
 
 namespace AGT.GalacticArchives.Core.Models.GoogleSheetImports;
 
-public class PointOfInterestImport : IGoogleSheetImport
+public class PointOfInterestImport : IImportFormFile
 {
-    [Name(PointOfInterestSheetFields.DateOfSurvey)]
-    public string? DateOfSurvey { get; set; }
+    [Name(PointOfInterestSheetFields.PointOfInterestId)]
+    public Guid? PointOfInterestId { get; set; }
+
+    [Name(PointOfInterestSheetFields.SurveyDate)]
+    public DateTimeOffset? SurveyDate { get; set; }
 
     [Name(PointOfInterestSheetFields.Galaxy)]
-    public string? Galaxy { get; set; }
+    public GalaxyTypes? Galaxy { get; set; }
 
-    [Name(PointOfInterestSheetFields.Name)]
-    public string? Name { get; set; }
+    [Name(PointOfInterestSheetFields.PointOfInterestName)]
+    public string? PointOfInterestName { get; set; }
 
     [Name(PointOfInterestSheetFields.NotesOrDescription)]
     public string? NotesOrDescription { get; set; }
 
     [Name(PointOfInterestSheetFields.Planet)]
-    public string? Planet { get; set; }
+    public string? PlanetName { get; set; }
 
     [Name(PointOfInterestSheetFields.Region)]
-    public string? Region { get; set; }
+    public string? RegionName { get; set; }
 
     [Name(PointOfInterestSheetFields.Release)]
     public string? Release { get; set; }
 
-    [Name(PointOfInterestSheetFields.Surveyor)]
-    public string? Surveyor { get; set; }
+    [Name(PointOfInterestSheetFields.SurveyedBy)]
+    public string? SurveyedBy { get; set; }
 
-    [Name(PointOfInterestSheetFields.System)]
-    public string? System { get; set; }
+    [Name(PointOfInterestSheetFields.StarSystemName)]
+    public string? StarSystemName { get; set; }
 
-    [Name(PointOfInterestSheetFields.Type)]
-    public string? Type { get; set; }
+    [Name(PointOfInterestSheetFields.LocationType)]
+    public LocationTypes? LocationType { get; set; }
 
-    [Name(PointOfInterestSheetFields.XXSecondCoordinate)]
-    public string? XXSecondCoordinate { get; set; }
+    [Name(PointOfInterestSheetFields.XAxisPlanetCoordinate)]
+    public float? XAxisPlanetCoordinate { get; set; }
 
-    [Name(PointOfInterestSheetFields.YYFirstCoordinate)]
-    public string? YYFirstCoordinate { get; set; }
+    [Name(PointOfInterestSheetFields.YAxisPlanetCoordinate)]
+    public float? YAxisPlanetCoordinate { get; set; }
+
+    [Name(PointOfInterestSheetFields.DocumentSequence)]
+    public float? DocumentSequence { get; set; }
+
+    [Name(PointOfInterestSheetFields.RegionId)]
+    public Guid? RegionId { get; set; }
+
+    [Name(PointOfInterestSheetFields.StarSystemId)]
+    public Guid? StarSystemId { get; set; }
+
+    [Name(PointOfInterestSheetFields.PlanetId)]
+    public Guid? PlanetId { get; set; }
 }

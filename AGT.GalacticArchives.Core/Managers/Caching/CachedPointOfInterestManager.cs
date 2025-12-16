@@ -36,6 +36,21 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
         return result;
     }
 
+    public async Task<HashSet<PointOfInterest>> UpsertPointOfInterestAsync(
+        HashSet<PointOfInterest> request,
+        CancellationToken ct)
+    {
+        var result = await target.UpsertPointOfInterestAsync(request, ct);
+        var pointOfInterestIds = result.Select(r => r.EntityId).ToHashSet();
+
+        foreach (var pointOfInterestId in pointOfInterestIds)
+        {
+            await cacheManager.ClearCacheByKeyAsync($"{nameof(PointOfInterest)}:{pointOfInterestId}");
+        }
+
+        return result;
+    }
+
     public async Task DeletePointOfInterestAsync(Guid pointOfInterestId)
     {
         await target.DeletePointOfInterestAsync(pointOfInterestId);
@@ -45,5 +60,6 @@ public class CachedPointOfInterestManager(ICacheManager cacheManager, IPointOfIn
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(PointOfInterest)}:{entityId}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(PointOfInterest)}:{BusinessRuleConstants.AllCacheKey}");
     }
 }

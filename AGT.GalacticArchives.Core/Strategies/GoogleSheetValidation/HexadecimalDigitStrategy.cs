@@ -8,11 +8,11 @@ public class HexadecimalDigitStrategy(string? fieldValue, int lineNumber, string
 {
     public void Execute(IExecutionContext context)
     {
-        if (FieldValue!.Length != 4 || !RegexConstants.HexadecimalDigitRegexPattern().IsMatch(FieldValue!))
+        if (FieldValue!.Length != 4 || !RegexConstants.AxisHexRegexPattern().IsMatch(FieldValue!))
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.InvalidQuadrant,
+                    ImportResource.InvalidQuadrant,
                     SheetName,
                     LineNumber,
                     PropertyName));

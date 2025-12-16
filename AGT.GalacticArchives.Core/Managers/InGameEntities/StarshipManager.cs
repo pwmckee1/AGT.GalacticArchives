@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
@@ -74,6 +73,11 @@ public class StarshipManager(
         return request!;
     }
 
+    public async Task<HashSet<Starship>> UpsertStarshipAsync(HashSet<Starship> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
+    }
+
     public async Task DeleteStarshipAsync(Guid starshipId)
     {
         await firestoreManager.DeleteAsync(starshipId, Collection);
@@ -83,11 +87,15 @@ public class StarshipManager(
     {
         if (starship.PlanetId.HasValue)
         {
-            starship.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId);
+            starship.Planet = starship.PlanetId.HasValue
+                ? await galacticEntityManager.GetPlanetaryHierarchyAsync(parentId)
+                : null;
         }
         else
         {
-            starship.StarSystem = await galacticEntityManager.GetStarSystemHierarchyAsync(parentId);
+            starship.StarSystem = starship.StarSystemId.HasValue
+                ? await galacticEntityManager.GetStarSystemHierarchyAsync(parentId)
+                : null;
         }
     }
 

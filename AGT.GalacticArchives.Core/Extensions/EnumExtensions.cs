@@ -5,11 +5,10 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class EnumExtensions
 {
-    public static T GetValueFromDescription<T>(this string? description)
-        where T : Enum
+    public static T GetValueFromDescription<T>(this string? description) where T : Enum
     {
         description ??= string.Empty;
-        var values = GetValues<T>()
+        var values = GetValues<T>().ToHashSet()
             .Where(v => string.Equals(v.GetDescription(), description, StringComparison.InvariantCultureIgnoreCase))
             .ToHashSet();
         if (values.Count == 0)
@@ -25,8 +24,7 @@ public static class EnumExtensions
         return values.FirstOrDefault()!;
     }
 
-    public static void ValidateEnum<T>(this T value)
-        where T : Enum
+    public static void ValidateEnum<T>(this T value) where T : Enum
     {
         if ((byte)(object)value == 0)
         {
@@ -37,20 +35,17 @@ public static class EnumExtensions
         }
     }
 
-    public static bool HasValidValue<T>(this T? value)
-        where T : struct, Enum
+    public static bool HasValidValue<T>(this T? value) where T : struct, Enum
     {
         return value.HasValue && value.Value.HasValidValue();
     }
 
-    public static bool HasValidValue<T>(this T value)
-        where T : struct, Enum
+    public static bool HasValidValue<T>(this T value) where T : struct, Enum
     {
         return (byte)(object)value > 0;
     }
 
-    public static T? GetValueFromString<T>(this string enumStringValue)
-        where T : struct, Enum
+    public static T? GetValueFromString<T>(this string enumStringValue) where T : struct, Enum
     {
         var gameType = GetValues<T>()
             .FirstOrDefault(v => v.ToString().ToLowerInvariant().Equals(enumStringValue.ToLowerInvariant()));
@@ -58,14 +53,12 @@ public static class EnumExtensions
         return gameType.HasValidValue() ? gameType : null;
     }
 
-    public static HashSet<T> GetValues<T>()
-        where T : Enum
+    public static HashSet<T> GetValues<T>() where T : Enum
     {
         return [.. Enum.GetValues(typeof(T)).Cast<T>()];
     }
 
-    public static HashSet<string> GetDescriptions<T>()
-        where T : Enum
+    public static HashSet<string> GetDescriptions<T>() where T : Enum
     {
         return typeof(T)
             .GetFields()

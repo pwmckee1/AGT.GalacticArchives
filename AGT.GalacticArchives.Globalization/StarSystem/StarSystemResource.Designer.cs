@@ -38,7 +38,7 @@ namespace AGT.GalacticArchives.Globalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarSystemResource", typeof(StarSystemResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AGT.GalacticArchives.Globalization.StarSystem.StarSystemResource", typeof(StarSystemResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -179,9 +179,9 @@ namespace AGT.GalacticArchives.Globalization {
         /// <summary>
         ///   Looks up a localized string similar to Civilized?.
         /// </summary>
-        public static string CivilizedBy {
+        public static string Civilization {
             get {
-                return ResourceManager.GetString("CivilizedBy", resourceCulture);
+                return ResourceManager.GetString("Civilization", resourceCulture);
             }
         }
         
@@ -357,6 +357,42 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exocraft Acceleration Module Upgrade.
+        /// </summary>
+        public static string ExocraftAccelerationModuleUpgrade {
+            get {
+                return ResourceManager.GetString("ExocraftAccelerationModuleUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exocraft Engine Module.
+        /// </summary>
+        public static string ExocraftEngineModule {
+            get {
+                return ResourceManager.GetString("ExocraftEngineModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exocraft Mining Laser Upgrade.
+        /// </summary>
+        public static string ExocraftMiningLaserUpgrade {
+            get {
+                return ResourceManager.GetString("ExocraftMiningLaserUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exocraft Mounted Cannon Upgrade.
+        /// </summary>
+        public static string ExocraftMountedCannonUpgrade {
+            get {
+                return ResourceManager.GetString("ExocraftMountedCannonUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Experimental Power Fluid.
         /// </summary>
         public static string ExperimentalPowerFluid {
@@ -425,6 +461,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string FusionCore {
             get {
                 return ResourceManager.GetString("FusionCore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fusion Engine Upgrade.
+        /// </summary>
+        public static string FusionEngineUpgrade {
+            get {
+                return ResourceManager.GetString("FusionEngineUpgrade", resourceCulture);
             }
         }
         
@@ -533,6 +578,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string HolographicCrankshaft {
             get {
                 return ResourceManager.GetString("HolographicCrankshaft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humboldt Drive Upgrade.
+        /// </summary>
+        public static string HumboldtDriveUpgrade {
+            get {
+                return ResourceManager.GetString("HumboldtDriveUpgrade", resourceCulture);
             }
         }
         
@@ -744,6 +798,42 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minotaur Cannon Upgrade.
+        /// </summary>
+        public static string MinotaurCannonUpgrade {
+            get {
+                return ResourceManager.GetString("MinotaurCannonUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minotaur Engine Upgrade.
+        /// </summary>
+        public static string MinotaurEngineUpgrade {
+            get {
+                return ResourceManager.GetString("MinotaurEngineUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minotaur Flamethrower Upgrade.
+        /// </summary>
+        public static string MinotaurFlamethrowerUpgrade {
+            get {
+                return ResourceManager.GetString("MinotaurFlamethrowerUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minotaur Laser Upgrade.
+        /// </summary>
+        public static string MinotaurLaserUpgrade {
+            get {
+                return ResourceManager.GetString("MinotaurLaserUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string MissingEnumerationValueForType {
@@ -812,6 +902,15 @@ namespace AGT.GalacticArchives.Globalization {
         public static string NanotubeCrate {
             get {
                 return ResourceManager.GetString("NanotubeCrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nautilon Cannon Upgrade.
+        /// </summary>
+        public static string NautilonCannonUpgrade {
+            get {
+                return ResourceManager.GetString("NautilonCannonUpgrade", resourceCulture);
             }
         }
         
@@ -1104,15 +1203,6 @@ namespace AGT.GalacticArchives.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Space Station Trade Item.
-        /// </summary>
-        public static string SpaceStationTradeItems {
-            get {
-                return ResourceManager.GetString("SpaceStationTradeItems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Spark Canister.
         /// </summary>
         public static string SparkCanister {
@@ -1163,15 +1253,6 @@ namespace AGT.GalacticArchives.Globalization {
         public static string StarSilk {
             get {
                 return ResourceManager.GetString("StarSilk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SpaceShip S-Class Upgrade Modules.
-        /// </summary>
-        public static string StarSystemShipUpgradeModules {
-            get {
-                return ResourceManager.GetString("StarSystemShipUpgradeModules", resourceCulture);
             }
         }
         

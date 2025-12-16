@@ -4,8 +4,8 @@ namespace AGT.GalacticArchives.Core.Constants;
 
 public static partial class RegexConstants
 {
-    [GeneratedRegex(@"^[0-9A-F]{4}$", RegexOptions.IgnoreCase)]
-    public static partial Regex HexadecimalDigitRegexPattern();
+    [GeneratedRegex(@"^[0-9A-F]{1,4}$", RegexOptions.IgnoreCase)]
+    public static partial Regex AxisHexRegexPattern();
 
     [GeneratedRegex(@"^[0-9A-F]{4}:[0-9A-F]{4}:[0-9A-F]{4}$", RegexOptions.IgnoreCase)]
     public static partial Regex BaseCoordinateRegexPattern();

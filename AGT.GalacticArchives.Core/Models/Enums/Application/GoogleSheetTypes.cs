@@ -5,32 +5,32 @@ namespace AGT.GalacticArchives.Core.Models.Enums.Application;
 
 public enum GoogleSheetTypes
 {
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.RegionSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.RegionSheetName))]
     Region = 1,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarSystemSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.StarSystemSheetName))]
     StarSystem,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PlanetSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PlanetSheetName))]
     Planet,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.FaunaSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.FaunaSheetName))]
     Fauna,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.MultiToolSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.MultiToolSheetName))]
     MultiTool,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.PlayerBaseSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PlayerBaseSheetName))]
     PlayerBase,
 
     [Display(
-        ResourceType = typeof(GoogleSheetResource),
-        Description = nameof(GoogleSheetResource.PointOfInterestSheetName))]
+        ResourceType = typeof(ImportResource),
+        Description = nameof(ImportResource.PointOfInterestSheetName))]
     POI,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.SettlementSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.SettlementSheetName))]
     Settlement,
 
-    [Display(ResourceType = typeof(GoogleSheetResource), Description = nameof(GoogleSheetResource.StarshipSheetName))]
+    [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.StarshipSheetName))]
     Starship,
 }

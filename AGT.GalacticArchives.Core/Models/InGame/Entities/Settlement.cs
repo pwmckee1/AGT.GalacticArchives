@@ -1,7 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums;
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.InGame.Entities;
 
@@ -21,7 +21,7 @@ public class Settlement : DatabaseGameEntity
 
     public string? Production { get; set; }
 
-    public QualityClassTypes? Class { get; set; }
+    public ItemClassTypes? Class { get; set; }
 
     public int? Population { get; set; }
 
@@ -31,7 +31,7 @@ public class Settlement : DatabaseGameEntity
 
     public int? Maintenance { get; set; }
 
-    public int? Sentinel { get; set; }
+    public int? Sentinels { get; set; }
 
     public string? Industry { get; set; }
 

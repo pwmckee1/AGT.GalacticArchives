@@ -11,7 +11,7 @@ public class NullableBoolFieldStrategy(string? fieldValue, int lineNumber, strin
         {
             context.Errors.Add(
                 string.Format(
-                    GoogleSheetResource.RequiredFieldMissingError,
+                    ImportResource.RequiredFieldMissingError,
                     SheetName,
                     LineNumber,
                     PropertyName));

@@ -1,6 +1,5 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Managers.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -24,7 +23,9 @@ public class FaunaManager(
             return null;
         }
 
-        fauna.Planet = await galacticEntityManager.GetPlanetaryHierarchyAsync(fauna.PlanetId!.Value);
+        fauna.Planet = fauna.PlanetId.HasValue
+            ? await galacticEntityManager.GetPlanetaryHierarchyAsync(fauna.PlanetId!.Value)
+            : null;
 
         return fauna;
     }
@@ -66,6 +67,11 @@ public class FaunaManager(
         await galacticEntityManager.UpsertRegionAsync(request.Planet?.StarSystem?.Region);
         await firestoreManager.UpsertAsync(request, Collection);
         return request;
+    }
+
+    public async Task<HashSet<Fauna>> UpsertFaunaAsync(HashSet<Fauna> request, CancellationToken ct)
+    {
+        return await firestoreManager.UpsertAsync(request, Collection, ct);
     }
 
     public async Task DeleteFaunaAsync(Guid faunaId)
