@@ -1520,9 +1520,9 @@ namespace AGT.GalacticArchives.Globalization.PlayerItems {
         /// <summary>
         ///   Looks up a localized string similar to Mono-leviathan (Frigate).
         /// </summary>
-        public static string FrigateMonoleviathan {
+        public static string FrigateMonoLeviathan {
             get {
-                return ResourceManager.GetString("FrigateMonoleviathan", resourceCulture);
+                return ResourceManager.GetString("FrigateMonoLeviathan", resourceCulture);
             }
         }
         

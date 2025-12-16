@@ -185,14 +185,6 @@
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>StarshipModelTypeResource.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-        <EmbeddedResource Update="PlayerItems\StarshipSubtypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>StarshipSubtypeResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="PlayerItems\StarshipThrusterTypeResource.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>StarshipThrusterTypeResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
         <EmbeddedResource Update="StarSystem\StarSystemResource.resx">
           <Generator>PublicResXFileCodeGenerator</Generator>
           <LastGenOutput>StarSystemResource.Designer.cs</LastGenOutput>
@@ -441,16 +433,6 @@
           <DesignTime>True</DesignTime>
           <AutoGen>True</AutoGen>
           <DependentUpon>StarshipModelTypeResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="PlayerItems\StarshipSubtypeResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>StarshipSubtypeResource.resx</DependentUpon>
-        </Compile>
-        <Compile Update="PlayerItems\StarshipThrusterTypeResource.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>StarshipThrusterTypeResource.resx</DependentUpon>
         </Compile>
         <Compile Update="StarSystem\StarSystemResource.Designer.cs">
           <DesignTime>True</DesignTime>

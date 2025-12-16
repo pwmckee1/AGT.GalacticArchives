@@ -9,8 +9,6 @@ public class Starship : DatabaseGameEntity
 
     public override Guid EntityId => StarshipId;
 
-    public string? StarshipName { get; set; }
-
     public StarshipLocationTypes? Location { get; set; }
 
     public string? Pilot { get; set; }

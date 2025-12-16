@@ -6,8 +6,6 @@ public class FaunaResponse : GameEntityResponse
 {
     public Guid? FaunaId { get; set; }
 
-    public string? FaunaName { get; set; }
-
     public string? NameAfterExpeditions { get; set; }
 
     public string? OriginalName { get; set; }

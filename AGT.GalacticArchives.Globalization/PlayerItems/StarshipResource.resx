@@ -606,7 +606,7 @@
   <data name="FrigateLeviathan" xml:space="preserve">
     <value>Leviathan (Frigate)</value>
   </data>
-  <data name="FrigateMonoleviathan" xml:space="preserve">
+  <data name="FrigateMonoLeviathan" xml:space="preserve">
     <value>Mono-leviathan (Frigate)</value>
   </data>
   <data name="FrigateRunt" xml:space="preserve">

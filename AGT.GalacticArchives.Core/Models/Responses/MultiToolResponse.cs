@@ -7,8 +7,6 @@ public class MultiToolResponse : GameEntityResponse
 {
     public Guid? MultiToolId { get; set; }
 
-    public string? MultiToolName { get; set; }
-
     public LocationTypes? Location { get; set; }
 
     public MultiToolTypes? MultiToolType { get; set; }

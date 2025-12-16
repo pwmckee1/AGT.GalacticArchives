@@ -6,8 +6,6 @@ public class StarshipResponse : GameEntityResponse
 {
     public Guid? StarshipId { get; set; }
 
-    public string? StarshipName { get; set; }
-
     public StarshipLocationTypes? Location { get; set; }
 
     public string? Pilot { get; set; }
