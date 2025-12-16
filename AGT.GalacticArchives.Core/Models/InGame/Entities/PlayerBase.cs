@@ -14,7 +14,7 @@ public class PlayerBase : DatabaseGameEntity
 
     public string? BuilderLinkOnWiki { get; set; }
 
-    public PlayerBaseTypes? BaseType { get; set; }
+    public PlayerBaseTypes? TypeOfBase { get; set; }
 
     public bool? HasFarm { get; set; }
 

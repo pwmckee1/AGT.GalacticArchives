@@ -101,7 +101,7 @@ public sealed class PlayerBaseCsvMap : ClassMap<PlayerBaseImport>
             .Convert(m => m.Row.ReadEnumFieldOrNull<PlayerBasePowerTypes>(PlayerBaseSheetFields.PowerSituation));
 
         Map(m => m.TypeOfBase)
-            .Convert(m => m.Row.ReadEnumFieldOrNull<PlayerBaseTypes>(PlayerBaseSheetFields.PowerSituation));
+            .Convert(m => m.Row.ReadEnumFieldOrNull<PlayerBaseTypes>(PlayerBaseSheetFields.TypeOfBase));
 
         Map(m => m.MineralExtractorCapacity)
             .Convert(m => m.Row.ReadIntFieldOrNull(PlayerBaseSheetFields.MineralExtractorCapacity));

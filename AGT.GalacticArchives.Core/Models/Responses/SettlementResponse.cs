@@ -8,8 +8,6 @@ public class SettlementResponse : GameEntityResponse
 {
     public Guid? SettlementId { get; set; }
 
-    public string? SettlementName { get; set; }
-
     public string? OriginalName { get; set; }
 
     public EconomyTypes? Economy { get; set; }
@@ -30,7 +28,7 @@ public class SettlementResponse : GameEntityResponse
 
     public int? Maintenance { get; set; }
 
-    public int? Sentinel { get; set; }
+    public int? Sentinels { get; set; }
 
     public string? Industry { get; set; }
 

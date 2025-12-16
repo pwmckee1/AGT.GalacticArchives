@@ -87,7 +87,7 @@ public static class CsvMappingExtensions
                     if (!string.IsNullOrEmpty(value))
                     {
                         var enumValue = value.GetValueFromDescription<TEnum>();
-                        if (enumValue != null)
+                        if (enumValue != null && (int)(object)enumValue > 0)
                         {
                             results.Add(enumValue);
                         }

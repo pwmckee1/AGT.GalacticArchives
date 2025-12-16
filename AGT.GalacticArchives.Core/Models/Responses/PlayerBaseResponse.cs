@@ -7,13 +7,11 @@ public class PlayerBaseResponse : GameEntityResponse
 {
     public Guid? PlayerBaseId { get; set; }
 
-    public string? PlayBaseName { get; set; }
-
     public string? BuilderName { get; set; }
 
     public string? BuilderLinkOnWiki { get; set; }
 
-    public PlayerBaseTypes? BaseType { get; set; }
+    public PlayerBaseTypes? TypeOfBase { get; set; }
 
     public bool? HasFarm { get; set; }
 

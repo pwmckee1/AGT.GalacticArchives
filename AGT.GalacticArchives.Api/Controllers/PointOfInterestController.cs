@@ -20,7 +20,7 @@ public class PointOfInterestController(IPointOfInterestService pointOfInterestSe
         return Ok(galaxies);
     }
 
-    [HttpGet("{poi:guid}")]
+    [HttpGet("{pointOfInterestId:guid}")]
     [ProducesResponseType(typeof(MessageResponse<PointOfInterestResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["PointOfInterest/PointOfInterest"])]
     public async Task<IActionResult> GetAsync(Guid pointOfInterestId)
@@ -38,7 +38,7 @@ public class PointOfInterestController(IPointOfInterestService pointOfInterestSe
         return Ok(response);
     }
 
-    [HttpDelete("{poi:guid}")]
+    [HttpDelete("{pointOfInterestId:guid}")]
     [SwaggerOperation(Tags = ["PointOfInterest/PointOfInterest"])]
     public async Task<IActionResult> DeleteAsync(Guid pointOfInterestId)
     {

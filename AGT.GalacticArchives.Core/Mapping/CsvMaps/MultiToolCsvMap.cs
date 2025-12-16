@@ -29,7 +29,7 @@ public sealed class MultiToolCsvMap : ClassMap<MultiToolImport>
 
         Map(m => m.ItemClass).Convert(m => m.Row.ReadEnumFieldOrNull<ItemClassTypes>(MultiToolSheetFields.ItemClass));
 
-        Map(m => m.Cost).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.ItemClass));
+        Map(m => m.Cost).Convert(m => m.Row.ReadIntFieldOrNull(MultiToolSheetFields.Cost));
 
         Map(m => m.Damage).Convert(m => m.Row.ReadFloatFieldOrNull(MultiToolSheetFields.Damage));
 

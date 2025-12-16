@@ -14,7 +14,9 @@ public class PointOfInterestMaps : Profile
         CreateMap<Dictionary<string, object?>, PointOfInterest>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<PointOfInterestImport, PointOfInterest>()
-            .ForMember(d => d.Name, o => o.MapFrom(s => s.PointOfInterestName))
+            .ForMember(
+                d => d.Name,
+                o => o.MapFrom(s => string.IsNullOrEmpty(s.PointOfInterestName) ? string.Empty : s.PointOfInterestName))
             .ForMember(d => d.Region, o => o.Ignore())
             .ForMember(d => d.StarSystem, o => o.Ignore())
             .ForMember(d => d.Planet, o => o.Ignore());
