@@ -1,5 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -18,22 +20,22 @@ public class RegionManager(IFirestoreManager firestoreManager, IMapper mapper) :
         return region ?? null;
     }
 
-    public async Task<HashSet<Region>> GetRegionsAsync(RegionRequest request)
+    public async Task<PagedDatabaseResponse> GetRegionsAsync(RegionSearchRequest request)
     {
-        if (request.RegionId.HasValue)
+        var requestQuery = request.ToDictionary();
+        if (requestQuery.Count > 0)
         {
-            var region = await GetRegionByIdAsync(request.RegionId!.Value);
-            return region != null ? [region] : [];
+            var regionDocs = await firestoreManager.GetAsync(
+                Collection,
+                requestQuery,
+                request.PageNumber,
+                request.PageSize,
+                request.OrderBy);
+
+            return regionDocs;
         }
 
-        if (!string.IsNullOrEmpty(request.Name))
-        {
-            var regionDocs = await firestoreManager.GetByNameAsync(request.Name, Collection);
-
-            return mapper.Map<HashSet<Region>>(regionDocs);
-        }
-
-        return [];
+        return new PagedDatabaseResponse();
     }
 
     public async Task<Region> UpsertRegionAsync(Region request)

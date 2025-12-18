@@ -1,20 +1,18 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;
 
-public class DatabaseEntityTypeConverter :
-    ITypeConverter<Dictionary<string, object?>, Region>,
-    ITypeConverter<Dictionary<string, object?>, StarSystem>,
-    ITypeConverter<Dictionary<string, object?>, Planet>,
-    ITypeConverter<Dictionary<string, object?>, Starship>,
-    ITypeConverter<Dictionary<string, object?>, PlayerBase>,
-    ITypeConverter<Dictionary<string, object?>, Fauna>,
-    ITypeConverter<Dictionary<string, object?>, MultiTool>,
+public class DatabaseEntityTypeConverter : ITypeConverter<Dictionary<string, object?>, Region>,
+    ITypeConverter<Dictionary<string, object?>, StarSystem>, ITypeConverter<Dictionary<string, object?>, Planet>,
+    ITypeConverter<Dictionary<string, object?>, Starship>, ITypeConverter<Dictionary<string, object?>, PlayerBase>,
+    ITypeConverter<Dictionary<string, object?>, Fauna>, ITypeConverter<Dictionary<string, object?>, MultiTool>,
     ITypeConverter<Dictionary<string, object?>, PointOfInterest>,
-    ITypeConverter<Dictionary<string, object?>, Settlement>
+    ITypeConverter<Dictionary<string, object?>, Settlement>,
+    ITypeConverter<Dictionary<string, object?>, RegionResponse>
 {
     public Region Convert(Dictionary<string, object?> source, Region destination, ResolutionContext context)
     {
@@ -62,5 +60,13 @@ public class DatabaseEntityTypeConverter :
     public Settlement Convert(Dictionary<string, object?> source, Settlement destination, ResolutionContext context)
     {
         return source.ConvertDictionaryToObject<Settlement>();
+    }
+
+    public RegionResponse Convert(
+        Dictionary<string, object?> source,
+        RegionResponse destination,
+        ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<RegionResponse>();
     }
 }

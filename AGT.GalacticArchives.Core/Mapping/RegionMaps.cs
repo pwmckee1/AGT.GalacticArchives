@@ -14,6 +14,8 @@ public class RegionMaps : Profile
     {
         CreateMap<Dictionary<string, object?>, Region>().ConvertUsing<DatabaseEntityTypeConverter>();
 
+        CreateMap<Dictionary<string, object?>, RegionResponse>().ConvertUsing<DatabaseEntityTypeConverter>();
+
         CreateMap<RegionImport, Region>()
             .ForMember(d => d.Name, o => o.MapFrom(s => s.RegionName))
             .ForMember(d => d.GalacticQuadrant, o => o.MapFrom(s => s.GalacticQuadrant))

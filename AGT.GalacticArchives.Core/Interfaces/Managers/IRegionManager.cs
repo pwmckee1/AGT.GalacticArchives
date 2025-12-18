@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 
@@ -7,7 +8,7 @@ public interface IRegionManager
 {
     Task<Region?> GetRegionByIdAsync(Guid regionId);
 
-    Task<HashSet<Region>> GetRegionsAsync(RegionRequest request);
+    Task<PagedDatabaseResponse> GetRegionsAsync(RegionSearchRequest request);
 
     Task<Region> UpsertRegionAsync(Region request);
 

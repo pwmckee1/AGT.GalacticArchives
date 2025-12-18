@@ -1,5 +1,6 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 
@@ -17,7 +18,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result!;
     }
 
-    public async Task<HashSet<Region>> GetRegionsAsync(RegionRequest request)
+    public async Task<PagedDatabaseResponse> GetRegionsAsync(RegionSearchRequest request)
     {
         string cacheKey = request.RegionId.HasValue ? $"{nameof(Region)}:{request.RegionId}" : $"{nameof(Region)}s";
         var result = await cacheManager.GetAsync(

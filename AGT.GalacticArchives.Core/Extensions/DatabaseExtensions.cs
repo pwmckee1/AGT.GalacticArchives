@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Reflection;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Extensions;
 
@@ -52,6 +54,58 @@ public static class DatabaseExtensions
         }
 
         return result;
+    }
+
+    public static Dictionary<string, string> ToDictionary(this ISearchRequest request)
+    {
+        if (request == null)
+        {
+            return new Dictionary<string, string>();
+        }
+
+        return request
+            .GetType()
+            .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Select(prop => new
+            {
+                prop.Name,
+                Value = prop.GetValue(request),
+            })
+            .Where(p => p.Value != null)
+            .ToDictionary(p => p.Name, p => p.Value!.ToString() ?? string.Empty);
+    }
+
+    public static async Task<PagedDatabaseResponse> ToPaginatedDatabaseQueryAsync(
+        this Query? query,
+        int pageNumber,
+        int pageSize,
+        CancellationToken ct)
+    {
+        if (query == null)
+        {
+            return new PagedDatabaseResponse();
+        }
+
+        var countQuery = await query.Count().GetSnapshotAsync(ct);
+        long totalRecords = countQuery.Count ?? 0;
+        long totalPages = (long)Math.Ceiling((decimal)totalRecords / pageSize);
+        if (totalRecords > 0)
+        {
+            int skip = (pageNumber - 1) * pageSize;
+            query = query.Offset(skip).Limit(pageSize);
+        }
+
+        var snapshot = await query.GetSnapshotAsync(ct);
+
+        var pagedResponse = new PagedDatabaseResponse
+        {
+            PageNumber = pageNumber,
+            PageSize = pageSize,
+            TotalRecords = totalRecords,
+            TotalPages = totalPages,
+            Response = snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())],
+        };
+        return pagedResponse;
     }
 
     private static object? ConvertToFirestoreValue(object? value)

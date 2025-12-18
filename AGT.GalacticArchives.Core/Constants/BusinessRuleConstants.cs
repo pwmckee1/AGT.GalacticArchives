@@ -9,6 +9,9 @@ public static class BusinessRuleConstants
     public const string ObfuscationStringSequence = "********";
     public const string ValueFieldName = "value__";
     public const string AllCacheKey = "All";
+    public const int DefaultPageNumber = 1;
+    public const int DefaultPageSize = 25;
+    public const int MaxPageSize = 100;
 
     public static readonly string[] ValidDateTimeFormats =
     [

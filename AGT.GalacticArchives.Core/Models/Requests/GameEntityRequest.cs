@@ -1,9 +1,9 @@
 ﻿using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
-namespace AGT.GalacticArchives.Core.Models.Responses;
+namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class GameEntityResponse : IGameEntityResponse
+public class GameEntityRequest
 {
     public Guid? EntityId { get; set; }
 
@@ -21,19 +21,13 @@ public class GameEntityResponse : IGameEntityResponse
 
     public string? RegionName { get; set; }
 
-    public RegionResponse? Region { get; set; }
-
     public Guid? StarSystemId { get; set; }
 
     public string? StarSystemName { get; set; }
 
-    public StarSystemResponse? StarSystem { get; set; }
-
     public Guid? PlanetId { get; set; }
 
     public string? PlanetName { get; set; }
-
-    public PlanetResponse? Planet { get; set; }
 
     public string? GalacticCoordinates { get; set; }
 

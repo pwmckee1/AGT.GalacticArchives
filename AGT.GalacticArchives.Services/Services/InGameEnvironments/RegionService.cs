@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
@@ -15,10 +16,10 @@ public class RegionService(IRegionManager regionManager, IMapper mapper) : IRegi
         return region != null ? mapper.Map<RegionResponse>(region) : null;
     }
 
-    public async Task<HashSet<RegionResponse>> GetRegionsAsync(RegionRequest request)
+    public async Task<PagedResponse<RegionResponse>> GetRegionsAsync(RegionSearchRequest request)
     {
-        var region = await regionManager.GetRegionsAsync(request);
-        return mapper.Map<HashSet<RegionResponse>>(region);
+        var regions = await regionManager.GetRegionsAsync(request);
+        return mapper.Map<PagedResponse<RegionResponse>>(regions);
     }
 
     public async Task<RegionResponse> UpsertRegionAsync(RegionRequest request)
