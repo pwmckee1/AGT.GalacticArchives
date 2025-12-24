@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
@@ -16,10 +17,10 @@ public class GameReleaseService(IGameReleaseManager gameReleaseManager, IMapper 
         return gameRelease != null ? mapper.Map<GameReleaseResponse>(gameRelease) : null;
     }
 
-    public async Task<HashSet<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request)
     {
         var gameRelease = await gameReleaseManager.GetGameReleasesAsync(request);
-        return mapper.Map<HashSet<GameReleaseResponse>>(gameRelease);
+        return mapper.Map<PagedResponse<GameReleaseResponse>>(gameRelease);
     }
 
     public async Task<HashSet<GameReleaseResponse>> UpsertGameReleaseAsync(HashSet<GameReleaseRequest> requests)
@@ -31,7 +32,7 @@ public class GameReleaseService(IGameReleaseManager gameReleaseManager, IMapper 
             if (gameReleaseRequest.ReleaseId.HasValue)
             {
                 var existingGameRelease = await gameReleaseManager.GetGameReleaseByIdAsync(gameReleaseRequest.ReleaseId.Value);
-                if (!existingGameRelease!.ToDictionary().Matches(gameReleaseRequest.ToDictionary()))
+                if (!existingGameRelease!.ToDictionary().MatchesDictionary(gameRelease.ToDictionary()))
                 {
                     var updatedGameRelease = await gameReleaseManager.UpsertGameReleaseAsync(gameRelease);
                     gameReleases.Add(updatedGameRelease);

@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -7,7 +8,7 @@ public interface IMultiToolService
 {
     Task<MultiToolResponse?> GetMultiToolByIdAsync(Guid multiToolId);
 
-    Task<HashSet<MultiToolResponse>> GetMultiToolsAsync(MultiToolRequest request);
+    Task<PagedResponse<MultiToolResponse>> GetMultiToolsAsync(MultiToolSearchRequest request);
 
     Task<MultiToolResponse> UpsertMultiToolAsync(MultiToolRequest request);
 

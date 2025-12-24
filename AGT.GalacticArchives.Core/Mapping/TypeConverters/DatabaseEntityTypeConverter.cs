@@ -1,22 +1,21 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Metadata;
+using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping.TypeConverters;
 
-public class DatabaseEntityTypeConverter :
-    ITypeConverter<Dictionary<string, object?>, Region>,
-    ITypeConverter<Dictionary<string, object?>, StarSystem>,
-    ITypeConverter<Dictionary<string, object?>, Planet>,
-    ITypeConverter<Dictionary<string, object?>, Starship>,
-    ITypeConverter<Dictionary<string, object?>, PlayerBase>,
-    ITypeConverter<Dictionary<string, object?>, Fauna>,
-    ITypeConverter<Dictionary<string, object?>, MultiTool>,
+public class DatabaseEntityTypeConverter : ITypeConverter<Dictionary<string, object?>, Region>,
+    ITypeConverter<Dictionary<string, object?>, StarSystem>, ITypeConverter<Dictionary<string, object?>, Planet>,
+    ITypeConverter<Dictionary<string, object?>, Starship>, ITypeConverter<Dictionary<string, object?>, PlayerBase>,
+    ITypeConverter<Dictionary<string, object?>, Fauna>, ITypeConverter<Dictionary<string, object?>, MultiTool>,
     ITypeConverter<Dictionary<string, object?>, PointOfInterest>,
     ITypeConverter<Dictionary<string, object?>, Settlement>,
-    ITypeConverter<Dictionary<string, object?>, GameRelease>
+    ITypeConverter<Dictionary<string, object?>, RegionResponse>,
+    ITypeConverter<Dictionary<string, object?>, GameRelease>,
+    ITypeConverter<Dictionary<string, object?>, GameReleaseResponse>,
+    ITypeConverter<Dictionary<string, object?>, StarSystemResponse>
 {
     public Region Convert(Dictionary<string, object?> source, Region destination, ResolutionContext context)
     {
@@ -69,5 +68,29 @@ public class DatabaseEntityTypeConverter :
     public GameRelease Convert(Dictionary<string, object?> source, GameRelease destination, ResolutionContext context)
     {
         return source.ConvertDictionaryToObject<GameRelease>();
+    }
+
+    public RegionResponse Convert(
+        Dictionary<string, object?> source,
+        RegionResponse destination,
+        ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<RegionResponse>();
+    }
+
+    public GameReleaseResponse Convert(
+        Dictionary<string, object?> source,
+        GameReleaseResponse destination,
+        ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<GameReleaseResponse>();
+    }
+
+    public StarSystemResponse Convert(
+        Dictionary<string, object?> source,
+        StarSystemResponse destination,
+        ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<StarSystemResponse>();
     }
 }

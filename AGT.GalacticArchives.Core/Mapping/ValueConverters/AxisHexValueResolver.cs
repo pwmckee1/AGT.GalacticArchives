@@ -1,12 +1,14 @@
 using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
 
 namespace AGT.GalacticArchives.Core.Mapping.ValueConverters;
 
 public class AxisHexValueResolver : IMemberValueResolver<RegionImport, Region, string, string?>,
-    IMemberValueResolver<StarSystemImport, StarSystem, string, string?>
+    IMemberValueResolver<StarSystemImport, StarSystem, string, string?>,
+    IMemberValueResolver<RegionRequest, Region, string, string?>
 {
     public string? Resolve(
         RegionImport source,
@@ -51,6 +53,28 @@ public class AxisHexValueResolver : IMemberValueResolver<RegionImport, Region, s
             nameof(StarSystemImport.SSHex) => source.SSHex.HasValidAxisCoordinates()
                 ? source.SSHex!.Trim().ToUpperInvariant()
                 : source.GalacticCoordinates.ToStarSystemHexValue(),
+            _ => null,
+        };
+    }
+
+    public string? Resolve(
+        RegionRequest source,
+        Region destination,
+        string sourceMember,
+        string? destMember,
+        ResolutionContext context)
+    {
+        return sourceMember switch
+        {
+            nameof(RegionRequest.XXHex) => source.XXHex.HasValidAxisCoordinates()
+                ? source.XXHex!.Trim().ToUpperInvariant()
+                : source.GalacticCoordinates.ToXAxisHexValue(),
+            nameof(RegionRequest.YYHex) => source.YYHex.HasValidAxisCoordinates()
+                ? source.YYHex!.Trim().ToUpperInvariant()
+                : source.GalacticCoordinates.ToYAxisHexValue(),
+            nameof(RegionRequest.ZZHex) => source.ZZHex.HasValidAxisCoordinates()
+                ? source.ZZHex!.Trim().ToUpperInvariant()
+                : source.GalacticCoordinates.ToZAxisHexValue(),
             _ => null,
         };
     }

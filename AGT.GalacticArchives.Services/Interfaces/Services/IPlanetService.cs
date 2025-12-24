@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -7,7 +8,7 @@ public interface IPlanetService
 {
     Task<PlanetResponse?> GetPlanetByIdAsync(Guid planetId);
 
-    Task<HashSet<PlanetResponse>> GetPlanetsAsync(PlanetRequest request);
+    Task<PagedResponse<PlanetResponse>> GetPlanetsAsync(PlanetSearchRequest request);
 
     Task<PlanetResponse> UpsertPlanetAsync(PlanetRequest request);
 

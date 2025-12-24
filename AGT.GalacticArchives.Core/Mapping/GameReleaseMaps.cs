@@ -12,6 +12,8 @@ public class GameReleaseMaps : Profile
     {
         CreateMap<Dictionary<string, object?>, GameRelease>().ConvertUsing<DatabaseEntityTypeConverter>();
 
+        CreateMap<Dictionary<string, object?>, GameReleaseResponse>().ConvertUsing<DatabaseEntityTypeConverter>();
+
         CreateMap<GameRelease, GameReleaseRequest>()
             .ForMember(d => d.ReleaseId, o => o.MapFrom(s => s.EntityId))
             .ForMember(d => d.ReleaseName, o => o.MapFrom(s => s.Name));

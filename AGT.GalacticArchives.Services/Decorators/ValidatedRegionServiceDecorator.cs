@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.InGame.Locations;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Globalization;
@@ -14,7 +15,7 @@ public class ValidatedRegionServiceDecorator(IRegionService regionService)
         return await regionService.GetRegionByIdAsync(regionId);
     }
 
-    public async Task<HashSet<RegionResponse>> GetRegionsAsync(RegionRequest request)
+    public async Task<PagedResponse<RegionResponse>> GetRegionsAsync(RegionSearchRequest request)
     {
         return await regionService.GetRegionsAsync(request);
     }
@@ -32,7 +33,7 @@ public class ValidatedRegionServiceDecorator(IRegionService regionService)
                 string.Format(GeneralErrorResource.PropertyMissing, $"{nameof(Region)} => {nameof(Region.Name)}"));
         }
 
-        if (string.IsNullOrEmpty(request.Coordinates))
+        if (string.IsNullOrEmpty(request.GalacticCoordinates))
         {
             throw new ArgumentNullException(
                 string.Format(
@@ -40,7 +41,7 @@ public class ValidatedRegionServiceDecorator(IRegionService regionService)
                     $"{nameof(Region)} => {nameof(Region.GalacticCoordinates)}"));
         }
 
-        if (string.IsNullOrEmpty(request.SurveyDate))
+        if (request.SurveyDate == null)
         {
             throw new ArgumentNullException(
                 string.Format(

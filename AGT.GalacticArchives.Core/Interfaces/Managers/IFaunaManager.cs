@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IFaunaManager
+public interface IFaunaManager : IGameEntityManager
 {
     Task<Fauna?> GetFaunaByIdAsync(Guid faunaId);
-
-    Task<HashSet<Fauna>> GetFaunaAsync(FaunaRequest request);
 
     Task<Fauna> UpsertFaunaAsync(Fauna request);
 

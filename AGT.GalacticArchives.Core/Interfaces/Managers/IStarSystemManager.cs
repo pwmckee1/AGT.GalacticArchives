@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IStarSystemManager
+public interface IStarSystemManager : IGameEntityManager
 {
     Task<StarSystem?> GetStarSystemByIdAsync(Guid starSystemId);
-
-    Task<HashSet<StarSystem>> GetStarSystemsAsync(StarSystemRequest request);
 
     Task<StarSystem> UpsertStarSystemAsync(StarSystem starSystem);
 

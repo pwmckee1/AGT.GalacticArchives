@@ -12,9 +12,9 @@ namespace AGT.GalacticArchives.Controllers;
 public class RegionController(IRegionService regionService) : ControllerBase
 {
     [HttpGet]
-    [ProducesResponseType(typeof(MessageResponse<HashSet<RegionResponse>>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PagedResponse<RegionResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Region/Region"])]
-    public async Task<IActionResult> GetAsync([FromBody] RegionRequest request)
+    public async Task<IActionResult> GetAsync(RegionSearchRequest request)
     {
         var galaxies = await regionService.GetRegionsAsync(request);
         return Ok(galaxies);

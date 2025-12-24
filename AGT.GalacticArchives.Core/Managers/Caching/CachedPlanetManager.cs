@@ -1,7 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -17,11 +19,13 @@ public class CachedPlanetManager(ICacheManager cacheManager, IPlanetManager targ
         return result!;
     }
 
-    public async Task<HashSet<Planet>> GetPlanetsAsync(PlanetRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
+        string serializedRequest = JsonConvert.SerializeObject(request as PlanetSearchRequest);
+        string cacheKey = $"{nameof(Planet)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
-            $"{nameof(Planet)}:{request.PlanetId}",
-            async () => await target.GetPlanetsAsync(request),
+            cacheKey,
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

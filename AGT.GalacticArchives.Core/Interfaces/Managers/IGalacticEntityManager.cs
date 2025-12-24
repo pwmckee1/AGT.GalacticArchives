@@ -1,4 +1,4 @@
-﻿using AGT.GalacticArchives.Core.Models.InGame.Locations;
+﻿using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 

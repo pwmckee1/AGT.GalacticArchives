@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -11,7 +12,7 @@ public class ValidatedPlayerBaseServiceDecorator(IPlayerBaseService playerBaseSe
         return await playerBaseService.GetPlayerBaseByIdAsync(playerBaseId);
     }
 
-    public async Task<HashSet<PlayerBaseResponse>> GetPlayerBasesAsync(PlayerBaseRequest request)
+    public async Task<PagedResponse<PlayerBaseResponse>> GetPlayerBasesAsync(PlayerBaseSearchRequest request)
     {
         return await playerBaseService.GetPlayerBasesAsync(request);
     }

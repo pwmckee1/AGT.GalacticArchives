@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IPointOfInterestManager
+public interface IPointOfInterestManager : IGameEntityManager
 {
     Task<PointOfInterest?> GetPointOfInterestByIdAsync(Guid pointOfInterestId);
-
-    Task<HashSet<PointOfInterest>> GetPointOfInterestsAsync(PointOfInterestRequest request);
 
     Task<PointOfInterest> UpsertPointOfInterestAsync(PointOfInterest request);
 

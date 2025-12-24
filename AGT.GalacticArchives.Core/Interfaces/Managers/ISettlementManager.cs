@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface ISettlementManager
+public interface ISettlementManager : IGameEntityManager
 {
     Task<Settlement?> GetSettlementByIdAsync(Guid settlementId);
-
-    Task<HashSet<Settlement>> GetSettlementsAsync(SettlementRequest request);
 
     Task<Settlement> UpsertSettlementAsync(Settlement request);
 

@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -11,7 +12,7 @@ public class ValidatedGameReleaseServiceDecorator(IGameReleaseService gameReleas
         return await gameReleaseService.GetGameReleaseByIdAsync(gameReleaseId);
     }
 
-    public async Task<HashSet<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request)
     {
         return await gameReleaseService.GetGameReleasesAsync(request);
     }

@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -12,7 +13,7 @@ public class ValidatedPointOfInterestServiceDecorator(IPointOfInterestService po
         return await pointOfInterestService.GetPointOfInterestByIdAsync(pointOfInterestId);
     }
 
-    public async Task<HashSet<PointOfInterestResponse>> GetPointOfInterestsAsync(PointOfInterestRequest request)
+    public async Task<PagedResponse<PointOfInterestResponse>> GetPointOfInterestsAsync(PointOfInterestSearchRequest request)
     {
         return await pointOfInterestService.GetPointOfInterestsAsync(request);
     }

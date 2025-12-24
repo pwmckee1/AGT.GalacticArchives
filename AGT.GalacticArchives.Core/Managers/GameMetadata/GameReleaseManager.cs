@@ -1,5 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
@@ -18,22 +20,23 @@ public class GameReleaseManager(IFirestoreManager firestoreManager, IMapper mapp
         return gameRelease ?? null;
     }
 
-    public async Task<HashSet<GameRelease>> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseRequest request)
     {
-        if (request.ReleaseId.HasValue)
+        var requestQuery = request.ToDictionary();
+
+        if (requestQuery.Count > 0)
         {
-            var gameRelease = await GetGameReleaseByIdAsync(request.ReleaseId!.Value);
-            return gameRelease != null ? [gameRelease] : [];
+            var responseDocs = await firestoreManager.GetAsync(
+                Collection,
+                requestQuery,
+                request.PageNumber,
+                request.PageSize,
+                request.OrderBy);
+
+            return responseDocs;
         }
 
-        if (!string.IsNullOrEmpty(request.ReleaseName))
-        {
-            var gameReleaseDocs = await firestoreManager.GetByNameAsync(request.ReleaseName, Collection);
-
-            return mapper.Map<HashSet<GameRelease>>(gameReleaseDocs);
-        }
-
-        return [];
+        return new PagedDatabaseResponse();
     }
 
     public async Task<GameRelease> UpsertGameReleaseAsync(GameRelease request)

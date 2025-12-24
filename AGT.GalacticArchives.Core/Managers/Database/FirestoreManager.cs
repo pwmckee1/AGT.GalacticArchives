@@ -1,6 +1,8 @@
-﻿using AGT.GalacticArchives.Core.Extensions;
+﻿using AGT.GalacticArchives.Core.Constants;
+using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Interfaces.Models;
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Globalization;
 using Google.Cloud.Firestore;
 
@@ -8,13 +10,36 @@ namespace AGT.GalacticArchives.Core.Managers.Database;
 
 public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
 {
-    public async Task<HashSet<Dictionary<string, object>>> GetAllAsync(
+    /// <summary>
+    /// Retrieves paginated data from a Firestore collection based on search parameters.
+    /// Automatically filters by Galaxy (defaults to Euclid if not specified).
+    /// </summary>
+    /// <param name="collectionName">The name of the Firestore collection to query</param>
+    /// <param name="searchParameters">Dictionary of field-value pairs to filter the results</param>
+    /// <param name="pageNumber">The page number to retrieve (1-based)</param>
+    /// <param name="pageSize">Number of items per page</param>
+    /// <param name="orderBy">The field name to sort the results by</param>
+    /// <param name="ct">Cancellation token to cancel the operation</param>
+    /// <returns>A PagedDatabaseResponse containing the query results and pagination information</returns>
+    public async Task<PagedDatabaseResponse> GetAsync(
         string collectionName,
+        Dictionary<string, string> searchParameters,
+        int pageNumber,
+        int pageSize,
+        string? orderBy,
         CancellationToken ct = default)
     {
-        var snapshot = await firestoreDb.Collection(collectionName).GetSnapshotAsync(ct);
+        var collection = firestoreDb.Collection(collectionName);
+        var query = string.IsNullOrEmpty(orderBy) ? collection : collection.OrderBy(orderBy);
 
-        return snapshot.Documents.Count == 0 ? [] : [.. snapshot.Documents.Select(s => s.ToDictionary())];
+        // Apply the other search parameters
+        foreach (var searchParameter in searchParameters.Where(p =>
+                     !DatabaseConstants.ExcludedQueryParameters.Contains(p.Key)))
+        {
+            query = query.WhereEqualTo(searchParameter.Key, searchParameter.Value);
+        }
+
+        return await query.ToPaginatedDatabaseQueryAsync(pageNumber, pageSize, ct);
     }
 
     public async Task<Dictionary<string, object>> GetByIdAsync(
@@ -72,8 +97,10 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         return entity;
     }
 
-    public async Task<HashSet<T>> UpsertAsync<T>(HashSet<T> entities, string collectionName, CancellationToken ct = default)
-        where T : class, IDatabaseEntity
+    public async Task<HashSet<T>> UpsertAsync<T>(
+        HashSet<T> entities,
+        string collectionName,
+        CancellationToken ct = default) where T : class, IDatabaseEntity
     {
         // Firestore batch limit is 500 writes, but gRPC message size can be hit earlier.
         const int maxWritesPerBatch = 250;

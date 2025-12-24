@@ -14,7 +14,7 @@ public class MultiToolController(IMultiToolService multiToolService) : Controlle
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<MultiToolResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["MultiTool/MultiTool"])]
-    public async Task<IActionResult> GetAsync(MultiToolRequest request)
+    public async Task<IActionResult> GetAsync(MultiToolSearchRequest request)
     {
         var galaxies = await multiToolService.GetMultiToolsAsync(request);
         return Ok(galaxies);

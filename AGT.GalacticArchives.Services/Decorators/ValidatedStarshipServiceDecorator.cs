@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -11,7 +12,7 @@ public class ValidatedStarshipServiceDecorator(IStarshipService starshipService)
         return await starshipService.GetStarshipByIdAsync(starshipId);
     }
 
-    public async Task<HashSet<StarshipResponse>> GetStarshipsAsync(StarshipRequest request)
+    public async Task<PagedResponse<StarshipResponse>> GetStarshipsAsync(StarshipSearchRequest request)
     {
         return await starshipService.GetStarshipsAsync(request);
     }

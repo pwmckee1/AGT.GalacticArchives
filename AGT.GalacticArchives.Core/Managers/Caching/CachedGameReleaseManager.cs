@@ -1,5 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
+using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Requests;
 
@@ -17,7 +18,7 @@ public class CachedGameReleaseManager(ICacheManager cacheManager, IGameReleaseMa
         return result!;
     }
 
-    public async Task<HashSet<GameRelease>> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseRequest request)
     {
         string cacheKey = request.ReleaseId.HasValue ? $"{nameof(GameRelease)}:{request.ReleaseId}" : $"{nameof(GameRelease)}s";
         var result = await cacheManager.GetAsync(

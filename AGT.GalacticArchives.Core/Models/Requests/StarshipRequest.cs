@@ -1,64 +1,38 @@
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class StarshipRequest
+public class StarshipRequest : GameEntityRequest
 {
     public Guid? StarshipId { get; set; }
 
-    public string? Name { get; set; }
-
-    public Guid? StarSystemId { get; set; }
-
-    public StarSystemRequest? StarSystem { get; set; }
-
-    public Guid? PlanetId { get; set; }
-
-    public PlanetRequest? Planet { get; set; }
-
-    public string? Location { get; set; }
-
-    public string? YYFirstCoordinate { get; set; }
-
-    public string? XXSecondCoordinate { get; set; }
-
     public string? Pilot { get; set; }
 
-    public string? Type { get; set; }
+    public StarshipLocationTypes? Location { get; set; }
 
-    public string? ShipSubtype { get; set; }
+    public StarshipModelTypes? StarshipModelType { get; set; }
 
-    public bool? HasWings { get; set; }
+    public StarshipSubModelTypes? StarshipSubtype { get; set; }
 
-    public string? HullAccessories { get; set; }
+    public StarshipWingTypes? WingType { get; set; }
 
-    public string? Thruster { get; set; }
+    public StarshipHullAccessoryTypes? HullAccessories { get; set; }
 
-    public string? MoreHullAccessories { get; set; }
+    public StarshipThrusterTypes? Thruster { get; set; }
 
-    public string? Class { get; set; }
+    public StarshipExtraHullAccessoryTypes? ExtraHullAccessories { get; set; }
 
-    public string? InventorySize { get; set; }
+    public ItemClassTypes? Class { get; set; }
 
-    public int? Slots { get; set; }
+    public InventorySizeTypes? InventorySize { get; set; }
 
-    public int? Techslots { get; set; }
+    public int? InventorySlots { get; set; }
+
+    public int? TechSlots { get; set; }
 
     public int? CargoSlots { get; set; }
 
     public int? Cost { get; set; }
-
-    public string? Civilization { get; set; }
-
-    public string? DiscoveredBy { get; set; }
-
-    public string? DiscoveredLinkOnWiki { get; set; }
-
-    public string? DiscoveredDate { get; set; }
-
-    public string? Mode { get; set; }
-
-    public string? Platform { get; set; }
-
-    public string? Release { get; set; }
 
     public float? Damage { get; set; }
 
@@ -74,19 +48,13 @@ public class StarshipRequest
 
     public string? DescriptionNotes { get; set; }
 
-    public string? AdditionalNotes { get; set; }
+    public ItemColorTypes? PrimaryColor { get; set; }
 
-    public string? PrimaryColor { get; set; }
+    public ItemColorTypes? SecondaryColor { get; set; }
 
-    public string? SecondaryColor { get; set; }
+    public ItemColorTypes? AccentColor { get; set; }
 
-    public string? AccentColor { get; set; }
-
-    public HashSet<string?> UpgradeModules { get; set; } = [];
-
-    public int? DocumentSequence { get; set; }
-
-    public string? WikiLink { get; set; }
+    public HashSet<StarshipUpgradeTypes> UpgradeModules { get; set; } = [];
 
     public string? ResearchTeam { get; set; }
 

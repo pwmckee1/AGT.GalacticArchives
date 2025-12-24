@@ -14,7 +14,7 @@ public class PlanetController(IPlanetService planetService) : ControllerBase
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<PlanetResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Planet/Planet"])]
-    public async Task<IActionResult> GetAsync(PlanetRequest request)
+    public async Task<IActionResult> GetAsync(PlanetSearchRequest request)
     {
         var galaxies = await planetService.GetPlanetsAsync(request);
         return Ok(galaxies);

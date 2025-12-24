@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Metadata;
+﻿using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Requests;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
@@ -7,7 +8,7 @@ public interface IGameReleaseManager
 {
     Task<GameRelease?> GetGameReleaseByIdAsync(Guid gameReleaseId);
 
-    Task<HashSet<GameRelease>> GetGameReleasesAsync(GameReleaseRequest request);
+    Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseRequest request);
 
     Task<GameRelease> UpsertGameReleaseAsync(GameRelease request);
 

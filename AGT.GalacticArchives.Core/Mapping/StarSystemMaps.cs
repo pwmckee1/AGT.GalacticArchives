@@ -1,7 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Mapping.TypeConverters;
 using AGT.GalacticArchives.Core.Mapping.ValueConverters;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
@@ -13,6 +13,8 @@ public class StarSystemMaps : Profile
     public StarSystemMaps()
     {
         CreateMap<Dictionary<string, object?>, StarSystem>().ConvertUsing<DatabaseEntityTypeConverter>();
+
+        CreateMap<Dictionary<string, object?>, StarSystemResponse>().ConvertUsing<DatabaseEntityTypeConverter>();
 
         CreateMap<StarSystemImport, StarSystem>()
             .ForMember(d => d.Name, o => o.MapFrom(s => s.StarSystemName))

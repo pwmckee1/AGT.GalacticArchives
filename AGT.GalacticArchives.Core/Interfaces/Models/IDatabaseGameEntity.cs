@@ -1,6 +1,6 @@
 ﻿using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Models;
 

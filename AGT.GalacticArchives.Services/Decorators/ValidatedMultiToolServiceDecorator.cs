@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -11,7 +12,7 @@ public class ValidatedMultiToolServiceDecorator(IMultiToolService multiToolServi
         return await multiToolService.GetMultiToolByIdAsync(multiToolId);
     }
 
-    public async Task<HashSet<MultiToolResponse>> GetMultiToolsAsync(MultiToolRequest request)
+    public async Task<PagedResponse<MultiToolResponse>> GetMultiToolsAsync(MultiToolSearchRequest request)
     {
         return await multiToolService.GetMultiToolsAsync(request);
     }

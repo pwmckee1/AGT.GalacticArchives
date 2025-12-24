@@ -2,49 +2,23 @@ using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class RegionRequest
+public class RegionRequest : GameEntityRequest
 {
-    public Guid? RegionId { get; set; }
-
-    public string? Name { get; set; }
-
-    public GalaxyTypes? Galaxy { get; set; }
-
-    public string? Civilization { get; set; }
-
-    public string? Coordinates { get; set; }
-
-    public string? Quadrant { get; set; }
-
-    public string? XX { get; set; }
-
-    public string? YY { get; set; }
-
-    public string? ZZ { get; set; }
-
-    public int? DocumentSequence { get; set; }
-
-    public string? GameRelease { get; set; }
+    public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
 
     public string? EarliestKnownSurveyor { get; set; }
 
     public string? LatestKnownSurveyor { get; set; }
 
-    public string? SurveyDate { get; set; }
-
     public string? SummaryNotes { get; set; }
 
     public string? LocationNotes { get; set; }
-
-    public string? AdditionalNotes { get; set; }
 
     public string? CivilizedSpaceNotes { get; set; }
 
     public float? RegionAge { get; set; }
 
     public string? LowestKnownPhantomSystem { get; set; }
-
-    public string? WikiLink { get; set; }
 
     public string? ExternalLink1 { get; set; }
 
@@ -54,7 +28,7 @@ public class RegionRequest
 
     public string? EarliestSystemDiscovery { get; set; }
 
-    public string? BaseCoord { get; set; }
+    public string? BaseCoordinates { get; set; }
 
     public string? EarliestSurveyorWikiUser { get; set; }
 
@@ -65,16 +39,4 @@ public class RegionRequest
     public string? LegacyName { get; set; }
 
     public string? LegacyWikilink { get; set; }
-
-    public float? XXdec { get; set; }
-
-    public float? YYdec { get; set; }
-
-    public float? ZZdec { get; set; }
-
-    public string? Glylphs { get; set; }
-
-    public string? Version { get; set; }
-
-    public HashSet<StarSystemRequest> Systems { get; set; } = [];
 }

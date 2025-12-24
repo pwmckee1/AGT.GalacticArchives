@@ -2,7 +2,7 @@
 using AGT.GalacticArchives.Core.Models.Enums.Planet;
 using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Tests.AutoFixture;
 using AutoFixture;
 using Should;

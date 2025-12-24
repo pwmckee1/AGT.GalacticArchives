@@ -1,7 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
+using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -17,11 +19,13 @@ public class CachedMultiToolManager(ICacheManager cacheManager, IMultiToolManage
         return result!;
     }
 
-    public async Task<HashSet<MultiTool>> GetMultiToolsAsync(MultiToolRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
+        string serializedRequest = JsonConvert.SerializeObject(request as MultiToolSearchRequest);
+        string cacheKey = $"{nameof(MultiTool)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
-            $"{nameof(MultiTool)}:{request.MultiToolId}",
-            async () => await target.GetMultiToolsAsync(request),
+            cacheKey,
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }
