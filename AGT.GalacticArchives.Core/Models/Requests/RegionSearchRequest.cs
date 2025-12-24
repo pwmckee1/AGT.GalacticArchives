@@ -1,33 +1,42 @@
-using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class RegionSearchRequest : BaseSearchRequest
+public class RegionSearchRequest : GameEntitySearchRequest
 {
-    public Guid? RegionId { get; set; }
+    public GalacticQuadrantTypes? GalacticQuadrant { get; set; }
 
-    public string? RegionName { get; set; }
+    public string? EarliestKnownSurveyor { get; set; }
 
-    public GalaxyTypes? Galaxy { get; set; }
+    public string? LatestKnownSurveyor { get; set; }
 
-    public string? SurveyedBy { get; set; }
+    public string? SummaryNotes { get; set; }
 
-    public DateTimeOffset? SurveyDate { get; set; }
+    public string? LocationNotes { get; set; }
 
-    public string? DiscoveredBy { get; set; }
+    public string? CivilizedSpaceNotes { get; set; }
 
-    public DateTimeOffset? DiscoveryDate { get; set; }
+    public float? RegionAge { get; set; }
 
-    public GameModeTypes? GameModeType { get; set; }
+    public string? LowestKnownPhantomSystem { get; set; }
 
-    public GamePlatformTypes? GamePlatformType { get; set; }
+    public string? ExternalLink1 { get; set; }
 
-    public string? Civilization { get; set; }
+    public string? VideoLink1 { get; set; }
 
-    public string? GameRelease { get; set; }
+    public int? LightYearsFromCenter { get; set; }
 
-    public string? GameReleaseVersionNumber { get; set; }
+    public string? EarliestSystemDiscovery { get; set; }
 
-    public DateTimeOffset? GameReleaseDate { get; set; }
+    public string? BaseCoordinates { get; set; }
+
+    public string? EarliestSurveyorWikiUser { get; set; }
+
+    public string? LatestSurveyorWikiUser { get; set; }
+
+    public string? AdminNotes { get; set; }
+
+    public string? LegacyName { get; set; }
+
+    public string? LegacyWikilink { get; set; }
 }

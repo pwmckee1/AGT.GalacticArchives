@@ -1,16 +1,12 @@
+using AGT.GalacticArchives.Core.Models.Enums.Planet;
+using AGT.GalacticArchives.Core.Models.Enums.PlayerItems;
+using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
+
 namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class StarSystemRequest
+public class StarSystemRequest : GameEntityRequest
 {
-    public Guid? StarSystemId { get; set; }
-
-    public string? Name { get; set; }
-
-    public Guid? RegionId { get; set; }
-
-    public RegionRequest? Region { get; set; }
-
-    public HashSet<PlanetRequest> Planets { get; set; } = [];
+    public string? OriginalSystemName { get; set; }
 
     public string? StarSystemNameAllPlatforms { get; set; }
 
@@ -18,49 +14,25 @@ public class StarSystemRequest
 
     public string? DataQualityCheck { get; set; }
 
-    public string? OriginalSystemName { get; set; }
-
-    public string? GalacticCoordinates { get; set; }
-
-    public string? GlyphCode { get; set; }
-
     public string? PlanetOfInterestId { get; set; }
 
-    public string? SurveyorName { get; set; }
-
-    public string? DiscoveredBy { get; set; }
-
-    public string? DiscoveredLinkOnWiki { get; set; }
-
     public bool? IsGiantSystem { get; set; }
-
-    public string? DiscoveryDate { get; set; }
-
-    public string? SurveyDate { get; set; }
 
     public string? SpecialInterest { get; set; }
 
     public bool? IsDissonant { get; set; }
 
-    public string? Civilization { get; set; }
-
-    public string? Bases { get; set; }
-
-    public string? PlatformType { get; set; }
-
-    public string? GameModeType { get; set; }
-
     public int? StarCount { get; set; }
 
     public string? StarCategory { get; set; }
 
-    public string? Color { get; set; }
+    public StarColorTypes? Color { get; set; }
 
     public int? NumberOfPlanets { get; set; }
 
     public int? NumberOfMoons { get; set; }
 
-    public string? Faction { get; set; }
+    public FactionTypes? Faction { get; set; }
 
     public int? LightYearsFromCenter { get; set; }
 
@@ -68,51 +40,37 @@ public class StarSystemRequest
 
     public bool? HasWater { get; set; }
 
-    public string? EconomyType { get; set; }
+    public EconomyTypes? EconomyType { get; set; }
 
-    public string? WealthType { get; set; }
+    public WealthTypes? WealthType { get; set; }
 
     public float? Buy { get; set; }
 
     public float? Sell { get; set; }
 
-    public string? ConflictType { get; set; }
-
-    public string? GameRelease { get; set; }
+    public ConflictTypes? ConflictType { get; set; }
 
     public string? KeySystemIndicator { get; set; }
 
-    public HashSet<string?> SpaceStationTradeItems { get; set; } = [];
+    public HashSet<SpaceStationTradeItemTypes> SpaceStationTradeItems { get; set; } = [];
 
-    public HashSet<string?> ExoSuitSClassUpgradeModules { get; set; } = [];
+    public HashSet<ExoSuitUpgradeModuleTypes> ExosuitUpgradeModules { get; set; } = [];
 
-    public HashSet<string?> SpaceShipSClassUpgradeModules { get; set; } = [];
+    public HashSet<StarshipUpgradeTypes> StarshipUpgradeModules { get; set; } = [];
 
-    public HashSet<string?> MultiToolSClassUpgradeModules { get; set; } = [];
-
-    public int? XCoordDec { get; set; }
-
-    public int? YCoordDec { get; set; }
-
-    public int? ZCoordDec { get; set; }
-
-    public int? Hex2DecSystemId { get; set; }
+    public HashSet<MultiToolUpdateModuleTypes> MultiToolUpdateTypes { get; set; } = [];
 
     public string? SummaryAdditions { get; set; }
 
     public string? DiscoveredNotes { get; set; }
 
-    public string? PlanetsTextNotes { get; set; }
+    public string? StarshipsNotes { get; set; }
 
-    public string? StarshipsTextNotes { get; set; }
-
-    public string? MTTextNotes { get; set; }
+    public string? MultiToolNotes { get; set; }
 
     public string? LocInfoNotes { get; set; }
 
     public string? SpaceStationNotes { get; set; }
-
-    public string? AdditionalNotes { get; set; }
 
     public string? GalleryTextNotes { get; set; }
 
@@ -121,8 +79,6 @@ public class StarSystemRequest
     public bool? HasCenterAccess { get; set; }
 
     public string? BlackHoleDestination { get; set; }
-
-    public string? NMSWikiLink { get; set; }
 
     public string? PortalRepository { get; set; }
 
@@ -149,4 +105,14 @@ public class StarSystemRequest
     public string? Evolution { get; set; }
 
     public string? SystemMisc { get; set; }
+
+    public float? StarSystemAge { get; set; }
+
+    public string? ResearchTeam { get; set; }
+
+    public int? Bases { get; set; }
+
+    public string? PlanetsTextNotes { get; set; }
+
+    public string? StarshipsTextNotes { get; set; }
 }

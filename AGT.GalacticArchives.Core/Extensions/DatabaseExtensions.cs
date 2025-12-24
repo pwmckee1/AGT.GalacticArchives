@@ -2,8 +2,7 @@
 using System.Reflection;
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using Google.Cloud.Firestore;
 
 namespace AGT.GalacticArchives.Core.Extensions;

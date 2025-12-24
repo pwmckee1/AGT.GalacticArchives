@@ -39,6 +39,4 @@ public class RegionRequest : GameEntityRequest
     public string? LegacyName { get; set; }
 
     public string? LegacyWikilink { get; set; }
-
-    public string? Version { get; set; }
 }

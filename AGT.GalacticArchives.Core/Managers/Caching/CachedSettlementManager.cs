@@ -1,7 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
+using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -17,11 +19,13 @@ public class CachedSettlementManager(ICacheManager cacheManager, ISettlementMana
         return result!;
     }
 
-    public async Task<HashSet<Settlement>> GetSettlementsAsync(SettlementRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
+        string serializedRequest = JsonConvert.SerializeObject(request as SettlementSearchRequest);
+        string cacheKey = $"{nameof(Settlement)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
-            $"{nameof(Settlement)}:{request.SettlementId}",
-            async () => await target.GetSettlementsAsync(request),
+            cacheKey,
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

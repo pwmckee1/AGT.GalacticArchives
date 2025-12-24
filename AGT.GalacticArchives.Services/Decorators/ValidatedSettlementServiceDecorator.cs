@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -11,7 +12,7 @@ public class ValidatedSettlementServiceDecorator(ISettlementService settlementSe
         return await settlementService.GetSettlementByIdAsync(settlementId);
     }
 
-    public async Task<HashSet<SettlementResponse>> GetSettlementsAsync(SettlementRequest request)
+    public async Task<PagedResponse<SettlementResponse>> GetSettlementsAsync(SettlementSearchRequest request)
     {
         return await settlementService.GetSettlementsAsync(request);
     }

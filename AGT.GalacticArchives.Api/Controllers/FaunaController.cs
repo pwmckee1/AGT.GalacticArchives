@@ -14,7 +14,7 @@ public class FaunaController(IFaunaService faunaService) : ControllerBase
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<FaunaResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Fauna/Fauna"])]
-    public async Task<IActionResult> GetAsync(FaunaRequest request)
+    public async Task<IActionResult> GetAsync(FaunaSearchRequest request)
     {
         var galaxies = await faunaService.GetFaunaAsync(request);
         return Ok(galaxies);

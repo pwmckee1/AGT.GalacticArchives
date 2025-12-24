@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -7,7 +8,7 @@ public interface IStarshipService
 {
     Task<StarshipResponse?> GetStarshipByIdAsync(Guid starshipId);
 
-    Task<HashSet<StarshipResponse>> GetStarshipsAsync(StarshipRequest request);
+    Task<PagedResponse<StarshipResponse>> GetStarshipsAsync(StarshipSearchRequest request);
 
     Task<StarshipResponse> UpsertStarshipAsync(StarshipRequest request);
 

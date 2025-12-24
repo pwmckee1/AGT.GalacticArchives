@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -7,7 +8,7 @@ public interface IPointOfInterestService
 {
     Task<PointOfInterestResponse?> GetPointOfInterestByIdAsync(Guid pointOfInterestId);
 
-    Task<HashSet<PointOfInterestResponse>> GetPointOfInterestsAsync(PointOfInterestRequest request);
+    Task<PagedResponse<PointOfInterestResponse>> GetPointOfInterestsAsync(PointOfInterestSearchRequest request);
 
     Task<PointOfInterestResponse> UpsertPointOfInterestAsync(PointOfInterestRequest request);
 

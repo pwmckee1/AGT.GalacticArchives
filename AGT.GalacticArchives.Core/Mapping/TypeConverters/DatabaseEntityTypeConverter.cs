@@ -1,6 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
@@ -14,7 +13,9 @@ public class DatabaseEntityTypeConverter : ITypeConverter<Dictionary<string, obj
     ITypeConverter<Dictionary<string, object?>, PointOfInterest>,
     ITypeConverter<Dictionary<string, object?>, Settlement>,
     ITypeConverter<Dictionary<string, object?>, RegionResponse>,
-    ITypeConverter<Dictionary<string, object?>, GameRelease>
+    ITypeConverter<Dictionary<string, object?>, GameRelease>,
+    ITypeConverter<Dictionary<string, object?>, GameReleaseResponse>,
+    ITypeConverter<Dictionary<string, object?>, StarSystemResponse>
 {
     public Region Convert(Dictionary<string, object?> source, Region destination, ResolutionContext context)
     {
@@ -75,5 +76,21 @@ public class DatabaseEntityTypeConverter : ITypeConverter<Dictionary<string, obj
         ResolutionContext context)
     {
         return source.ConvertDictionaryToObject<RegionResponse>();
+    }
+
+    public GameReleaseResponse Convert(
+        Dictionary<string, object?> source,
+        GameReleaseResponse destination,
+        ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<GameReleaseResponse>();
+    }
+
+    public StarSystemResponse Convert(
+        Dictionary<string, object?> source,
+        StarSystemResponse destination,
+        ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<StarSystemResponse>();
     }
 }

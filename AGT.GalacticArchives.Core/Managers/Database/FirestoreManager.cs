@@ -3,7 +3,6 @@ using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 using AGT.GalacticArchives.Globalization;
 using Google.Cloud.Firestore;
 
@@ -30,14 +29,6 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
         string? orderBy,
         CancellationToken ct = default)
     {
-        // For "Get All" requests we want to, at minimum, restrict the query to a specific Galaxy.
-        // Euclid by default.
-        if (!searchParameters.ContainsKey(nameof(IDatabaseGameEntity.Galaxy)) &&
-            searchParameters[nameof(IDatabaseGameEntity.Galaxy)] != GalaxyTypes.Euclid.GetDescription())
-        {
-            searchParameters.Add(nameof(IDatabaseGameEntity.Galaxy), GalaxyTypes.Euclid.GetDescription());
-        }
-
         var collection = firestoreDb.Collection(collectionName);
         var query = string.IsNullOrEmpty(orderBy) ? collection : collection.OrderBy(orderBy);
 

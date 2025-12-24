@@ -1,6 +1,6 @@
 ﻿namespace AGT.GalacticArchives.Core.Models.Requests;
 
-public class GameReleaseRequest
+public class GameReleaseRequest : BaseSearchRequest
 {
     public Guid? ReleaseId { get; set; }
 

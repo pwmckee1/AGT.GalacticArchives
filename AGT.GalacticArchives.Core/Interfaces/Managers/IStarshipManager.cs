@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IStarshipManager
+public interface IStarshipManager : IGameEntityManager
 {
     Task<Starship?> GetStarshipByIdAsync(Guid starshipId);
-
-    Task<HashSet<Starship>> GetStarshipsAsync(StarshipRequest request);
 
     Task<Starship> UpsertStarshipAsync(Starship request);
 

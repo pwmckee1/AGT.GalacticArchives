@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -7,7 +8,7 @@ public interface IPlayerBaseService
 {
     Task<PlayerBaseResponse?> GetPlayerBaseByIdAsync(Guid playerBaseId);
 
-    Task<HashSet<PlayerBaseResponse>> GetPlayerBasesAsync(PlayerBaseRequest request);
+    Task<PagedResponse<PlayerBaseResponse>> GetPlayerBasesAsync(PlayerBaseSearchRequest request);
 
     Task<PlayerBaseResponse> UpsertPlayerBaseAsync(PlayerBaseRequest request);
 

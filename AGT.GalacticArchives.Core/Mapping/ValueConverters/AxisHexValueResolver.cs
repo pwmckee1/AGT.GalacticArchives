@@ -1,6 +1,6 @@
 using AGT.GalacticArchives.Core.Extensions;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.GoogleSheetImports;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AutoMapper;
 

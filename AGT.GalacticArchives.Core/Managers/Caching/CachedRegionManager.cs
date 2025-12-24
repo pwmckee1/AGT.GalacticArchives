@@ -1,8 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Models.Database;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -18,18 +19,13 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result!;
     }
 
-    public async Task<PagedDatabaseResponse> GetRegionsAsync(RegionSearchRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
-        string cacheKey =
-            $"{nameof(Region)}s:{request.RegionId}:{request.RegionName}:{request.Galaxy}:{request.SurveyedBy}:" +
-            $"{request.SurveyDate?.Ticks}:{request.DiscoveredBy}:{request.DiscoveryDate?.Ticks}:" +
-            $"{request.GameModeType}:{request.GamePlatformType}:{request.Civilization}:" +
-            $"{request.GameRelease}:{request.GameReleaseVersionNumber}:{request.GameReleaseDate?.Ticks}:" +
-            $"{request.PageNumber}:{request.PageSize}";
-
+        string serializedRequest = JsonConvert.SerializeObject(request as RegionSearchRequest);
+        string cacheKey = $"{nameof(Region)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
             cacheKey,
-            async () => await target.GetRegionsAsync(request),
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

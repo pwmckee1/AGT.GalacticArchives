@@ -1,3 +1,4 @@
+using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 
@@ -7,7 +8,7 @@ public interface ISettlementService
 {
     Task<SettlementResponse?> GetSettlementByIdAsync(Guid settlementId);
 
-    Task<HashSet<SettlementResponse>> GetSettlementsAsync(SettlementRequest request);
+    Task<PagedResponse<SettlementResponse>> GetSettlementsAsync(SettlementSearchRequest request);
 
     Task<SettlementResponse> UpsertSettlementAsync(SettlementRequest request);
 

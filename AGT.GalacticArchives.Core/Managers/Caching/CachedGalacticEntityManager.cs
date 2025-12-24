@@ -1,6 +1,6 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 

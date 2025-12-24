@@ -1,5 +1,5 @@
 ﻿using AGT.GalacticArchives.Core.Models.Application;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Globalization;

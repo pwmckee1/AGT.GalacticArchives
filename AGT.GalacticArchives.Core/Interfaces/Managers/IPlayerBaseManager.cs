@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IPlayerBaseManager
+public interface IPlayerBaseManager : IGameEntityManager
 {
     Task<PlayerBase?> GetPlayerBaseByIdAsync(Guid playerBaseId);
-
-    Task<HashSet<PlayerBase>> GetPlayerBasesAsync(PlayerBaseRequest request);
 
     Task<PlayerBase> UpsertPlayerBaseAsync(PlayerBase request);
 

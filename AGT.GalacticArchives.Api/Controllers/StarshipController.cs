@@ -14,7 +14,7 @@ public class StarshipController(IStarshipService starshipService) : ControllerBa
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<StarshipResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Starship/Starship"])]
-    public async Task<IActionResult> GetAsync(StarshipRequest request)
+    public async Task<IActionResult> GetAsync(StarshipSearchRequest request)
     {
         var galaxies = await starshipService.GetStarshipsAsync(request);
         return Ok(galaxies);

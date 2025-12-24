@@ -12,9 +12,9 @@ namespace AGT.GalacticArchives.Controllers;
 public class GameReleaseController(IGameReleaseService gameReleaseService) : ControllerBase
 {
     [HttpGet]
-    [ProducesResponseType(typeof(MessageResponse<HashSet<GameReleaseResponse>>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PagedResponse<GameReleaseResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["GameRelease/GameRelease"])]
-    public async Task<IActionResult> GetAsync([FromBody] GameReleaseRequest request)
+    public async Task<IActionResult> GetAsync(GameReleaseRequest request)
     {
         var galaxies = await gameReleaseService.GetGameReleasesAsync(request);
         return Ok(galaxies);

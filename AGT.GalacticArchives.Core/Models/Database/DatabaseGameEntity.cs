@@ -1,7 +1,7 @@
 using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Core.Models.Enums.Metadata;
 using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Models.Database;
 
@@ -13,25 +13,25 @@ public abstract class DatabaseGameEntity : DatabaseEntity, IDatabaseGameEntity
 
     public virtual Guid? RegionId { get; set; }
 
+    public virtual string? RegionName { get; set; }
+
     public Region? Region { get; set; }
 
     public virtual Guid? StarSystemId { get; set; }
 
+    public virtual string? StarSystemName { get; set; }
+
     public StarSystem? StarSystem { get; set; }
 
     public virtual Guid? PlanetId { get; set; }
+
+    public virtual string? PlanetName { get; set; }
 
     public Planet? Planet { get; set; }
 
     public string? GalacticCoordinates { get; set; }
 
     public string? GlyphHexCode { get; set; }
-
-    public virtual string? RegionName { get; set; }
-
-    public virtual string? StarSystemName { get; set; }
-
-    public virtual string? PlanetName { get; set; }
 
     /// <summary>
     /// First coordinate number when viewed in game Y.Y/X.X format

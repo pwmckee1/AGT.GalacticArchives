@@ -14,7 +14,7 @@ public class StarSystemController(IStarSystemService starSystemService) : Contro
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<StarSystemResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
-    public async Task<IActionResult> GetAsync(StarSystemRequest request)
+    public async Task<IActionResult> GetAsync(StarSystemSearchRequest request)
     {
         var galaxies = await starSystemService.GetStarSystemsAsync(request);
         return Ok(galaxies);

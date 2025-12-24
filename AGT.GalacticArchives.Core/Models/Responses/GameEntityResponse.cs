@@ -3,16 +3,8 @@ using AGT.GalacticArchives.Core.Models.Enums.StarSystem;
 
 namespace AGT.GalacticArchives.Core.Models.Responses;
 
-public class GameEntityResponse : IGameEntityResponse
+public class GameEntityResponse : DatabaseEntityResponse
 {
-    public Guid? EntityId { get; set; }
-
-    public string? Name { get; set; }
-
-    public string? NormalizedName { get; set; }
-
-    public int? DocumentSequence { get; set; }
-
     public GalaxyTypes? Galaxy { get; set; }
 
     public int? GalaxySequence { get; set; }
