@@ -1,6 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Extensions;
 using AGT.GalacticArchives.Core.Models.InGame.Entities;
 using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AutoMapper;
 
@@ -12,7 +13,8 @@ public class DatabaseEntityTypeConverter : ITypeConverter<Dictionary<string, obj
     ITypeConverter<Dictionary<string, object?>, Fauna>, ITypeConverter<Dictionary<string, object?>, MultiTool>,
     ITypeConverter<Dictionary<string, object?>, PointOfInterest>,
     ITypeConverter<Dictionary<string, object?>, Settlement>,
-    ITypeConverter<Dictionary<string, object?>, RegionResponse>
+    ITypeConverter<Dictionary<string, object?>, RegionResponse>,
+    ITypeConverter<Dictionary<string, object?>, GameRelease>
 {
     public Region Convert(Dictionary<string, object?> source, Region destination, ResolutionContext context)
     {
@@ -60,6 +62,11 @@ public class DatabaseEntityTypeConverter : ITypeConverter<Dictionary<string, obj
     public Settlement Convert(Dictionary<string, object?> source, Settlement destination, ResolutionContext context)
     {
         return source.ConvertDictionaryToObject<Settlement>();
+    }
+
+    public GameRelease Convert(Dictionary<string, object?> source, GameRelease destination, ResolutionContext context)
+    {
+        return source.ConvertDictionaryToObject<GameRelease>();
     }
 
     public RegionResponse Convert(

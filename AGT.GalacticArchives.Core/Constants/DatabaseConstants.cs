@@ -14,6 +14,7 @@ public static class DatabaseConstants
     public const string PointOfInterestCollection = "PointsOfInterest";
     public const string SettlementCollection = "Settlements";
     public const string StarshipCollection = "Starships";
+    public const string GameReleaseCollection = "GameReleases";
 
     public static readonly string[] ExcludedQueryParameters =
     [

@@ -32,8 +32,14 @@ public static class DatabaseExtensions
         return databaseGameEntity.ToDictionary(properties, excludedProperties);
     }
 
+    public static Dictionary<string, object> ToDictionary(this object entity)
+    {
+        var properties = entity.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        return entity.ToDictionary(properties, []);
+    }
+
     public static Dictionary<string, object> ToDictionary(
-        this IDatabaseEntity databaseGameEntity,
+        this object entity,
         PropertyInfo[] properties,
         HashSet<string> excludedProperties)
     {
@@ -41,7 +47,7 @@ public static class DatabaseExtensions
 
         foreach (var property in properties.Where(p => !excludedProperties.Contains(p.Name)))
         {
-            object? value = property.GetValue(databaseGameEntity);
+            object? value = property.GetValue(entity);
 
             if (property.PropertyType == typeof(Guid) || property.PropertyType == typeof(Guid?))
             {
