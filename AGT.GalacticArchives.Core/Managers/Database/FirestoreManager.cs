@@ -32,15 +32,14 @@ public class FirestoreManager(FirestoreDb firestoreDb) : IFirestoreManager
     {
         // For "Get All" requests we want to, at minimum, restrict the query to a specific Galaxy.
         // Euclid by default.
-        var query = firestoreDb
-            .Collection(collectionName)
-            .WhereEqualTo(
-                nameof(IDatabaseGameEntity.Galaxy),
-                searchParameters.ContainsKey(nameof(IDatabaseGameEntity.Galaxy))
-                    ? nameof(IDatabaseGameEntity.Galaxy)
-                    : GalaxyTypes.Euclid.GetDescription());
+        if (!searchParameters.ContainsKey(nameof(IDatabaseGameEntity.Galaxy)) &&
+            searchParameters[nameof(IDatabaseGameEntity.Galaxy)] != GalaxyTypes.Euclid.GetDescription())
+        {
+            searchParameters.Add(nameof(IDatabaseGameEntity.Galaxy), GalaxyTypes.Euclid.GetDescription());
+        }
 
-        query = !string.IsNullOrEmpty(orderBy) ? query.OrderBy(orderBy) : query;
+        var collection = firestoreDb.Collection(collectionName);
+        var query = string.IsNullOrEmpty(orderBy) ? collection : collection.OrderBy(orderBy);
 
         // Apply the other search parameters
         foreach (var searchParameter in searchParameters.Where(p =>

@@ -91,6 +91,11 @@ public static class DictionaryExtensions
         // Normalize common Firestore SDK return types (arrays, maps, Timestamp, etc.)
         value = NormalizeFirestoreValue(value);
 
+        if (value == null)
+        {
+            return null;
+        }
+
         // If types match, return it
         if (targetType.IsInstanceOfType(value))
         {
@@ -203,10 +208,25 @@ public static class DictionaryExtensions
     /// - Converts Firestore Timestamp to DateTime
     /// - Returns other values unchanged
     /// </returns>
-    private static object NormalizeFirestoreValue(object value)
+    private static object? NormalizeFirestoreValue(object value)
     {
         switch (value)
         {
+            // Handle Newtonsoft.Json types if they leaked into the dictionary
+            case Newtonsoft.Json.Linq.JValue jValue:
+                return jValue.Value;
+
+            case Newtonsoft.Json.Linq.JObject jObject:
+            {
+                // If it's an empty JObject {}, treat it as null for primitive targets
+                if (!jObject.HasValues)
+                {
+                    return null;
+                }
+
+                return jObject.ToObject<Dictionary<string, object?>>();
+            }
+
             // Firestore "map" often comes back as Dictionary<string, object>
             case IDictionary<string, object> map:
             {
@@ -285,7 +305,7 @@ public static class DictionaryExtensions
                 {
                     convertedItem = Enum.Parse(elementUnderlying, s, true);
                 }
-                else
+                else if (convertedItem != null)
                 {
                     var enumUnderlying = Enum.GetUnderlyingType(elementUnderlying);
                     object numeric = Convert.ChangeType(convertedItem, enumUnderlying);

@@ -20,7 +20,13 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
 
     public async Task<PagedDatabaseResponse> GetRegionsAsync(RegionSearchRequest request)
     {
-        string cacheKey = request.RegionId.HasValue ? $"{nameof(Region)}:{request.RegionId}" : $"{nameof(Region)}s";
+        string cacheKey =
+            $"{nameof(Region)}s:{request.RegionId}:{request.RegionName}:{request.Galaxy}:{request.SurveyedBy}:" +
+            $"{request.SurveyDate?.Ticks}:{request.DiscoveredBy}:{request.DiscoveryDate?.Ticks}:" +
+            $"{request.GameModeType}:{request.GamePlatformType}:{request.Civilization}:" +
+            $"{request.GameRelease}:{request.GameReleaseVersionNumber}:{request.GameReleaseDate?.Ticks}:" +
+            $"{request.PageNumber}:{request.PageSize}";
+
         var result = await cacheManager.GetAsync(
             cacheKey,
             async () => await target.GetRegionsAsync(request),
@@ -31,6 +37,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task<Region> UpsertRegionAsync(Region request)
     {
         var result = await target.UpsertRegionAsync(request);
+        await ClearCacheAsync(result.RegionId!.Value);
         await cacheManager.SetAsync($"{nameof(Region)}:{request.RegionId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
@@ -45,6 +52,8 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
             await cacheManager.ClearCacheByKeyAsync($"{nameof(Region)}:{regionId}");
         }
 
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}s:");
+
         return result;
     }
 
@@ -57,6 +66,6 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{BusinessRuleConstants.AllCacheKey}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}s:");
     }
 }
