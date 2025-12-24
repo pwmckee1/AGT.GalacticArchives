@@ -1,4 +1,5 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 
@@ -11,7 +12,7 @@ public class ValidatedFaunaServiceDecorator(IFaunaService faunaService) : IFauna
         return await faunaService.GetFaunaByIdAsync(faunaId);
     }
 
-    public async Task<HashSet<FaunaResponse>> GetFaunaAsync(FaunaRequest request)
+    public async Task<PagedResponse<FaunaResponse>> GetFaunaAsync(FaunaSearchRequest request)
     {
         return await faunaService.GetFaunaAsync(request);
     }

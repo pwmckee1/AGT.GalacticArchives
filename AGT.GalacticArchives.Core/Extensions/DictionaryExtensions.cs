@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
-using AGT.GalacticArchives.Core.Interfaces.Models;
 using AGT.GalacticArchives.Globalization;
 using Newtonsoft.Json;
 
@@ -9,7 +7,7 @@ namespace AGT.GalacticArchives.Core.Extensions;
 
 public static class DictionaryExtensions
 {
-    public static bool Matches(
+    public static bool MatchesDictionary(
         this Dictionary<string, object>? originalData,
         Dictionary<string, object>? comparisonData)
     {
@@ -43,7 +41,7 @@ public static class DictionaryExtensions
     }
 
     public static T ConvertDictionaryToObject<T>(this Dictionary<string, object?>? originalData)
-        where T : IDatabaseGameEntity
+        where T : class
     {
         var instance = (T)RuntimeHelpers.GetUninitializedObject(typeof(T));
         var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
@@ -62,7 +60,7 @@ public static class DictionaryExtensions
 
             try
             {
-                object? convertedValue = ConvertValue(value, property.PropertyType);
+                object? convertedValue = ConvertValueToPropertyType(value, property.PropertyType);
                 property.SetValue(instance, convertedValue);
             }
             catch (Exception ex)
@@ -82,7 +80,7 @@ public static class DictionaryExtensions
         return instance;
     }
 
-    private static object? ConvertValue(object? value, Type targetType)
+    private static object? ConvertValueToPropertyType(object? value, Type targetType)
     {
         if (value == null)
         {
@@ -90,7 +88,12 @@ public static class DictionaryExtensions
         }
 
         // Normalize common Firestore SDK return types (arrays, maps, Timestamp, etc.)
-        value = NormalizeFirestoreValue(value);
+        value = value.NormalizeFirestoreValue();
+
+        if (value == null)
+        {
+            return null;
+        }
 
         // If types match, return it
         if (targetType.IsInstanceOfType(value))
@@ -180,7 +183,7 @@ public static class DictionaryExtensions
         // Convert Firestore arrays (List<object>) to HashSet<T>
         if (underlyingType.IsGenericType && underlyingType.GetGenericTypeDefinition() == typeof(HashSet<>))
         {
-            return ConvertEnumerableToHashSet(value, underlyingType);
+            return value.ConvertEnumerableToHashSet(underlyingType);
         }
 
         // Convert.ChangeType for primitives
@@ -191,130 +194,5 @@ public static class DictionaryExtensions
 
         throw new InvalidCastException(
             string.Format(GeneralErrorResource.CannotConvertValue, value.GetType().Name, targetType.Name));
-    }
-
-    /// <summary>
-    /// Normalizes values retrieved from Firestore into their corresponding .NET types.
-    /// </summary>
-    /// <param name="value">The value to normalize from Firestore.</param>
-    /// <returns>
-    /// A normalized object that can be used in .NET:
-    /// - Converts Firestore maps to case-insensitive Dictionary&lt;string, object&gt;
-    /// - Converts Firestore arrays to List&lt;object&gt;
-    /// - Converts Firestore Timestamp to DateTime
-    /// - Returns other values unchanged
-    /// </returns>
-    private static object NormalizeFirestoreValue(object value)
-    {
-        switch (value)
-        {
-            // Firestore "map" often comes back as Dictionary<string, object>
-            case IDictionary<string, object> map:
-            {
-                var normalized = new Dictionary<string, object?>(StringComparer.OrdinalIgnoreCase);
-                foreach (var kvp in map)
-                {
-                    normalized[kvp.Key] = kvp.Value == null ? null : NormalizeFirestoreValue(kvp.Value);
-                }
-
-                return normalized;
-            }
-
-            // Firestore "array" often comes back as List<object>
-            case IList list when value is not string:
-            {
-                var normalizedList = new List<object?>(list.Count);
-                foreach (object? item in list)
-                {
-                    normalizedList.Add(item == null ? null : NormalizeFirestoreValue(item));
-                }
-
-                return normalizedList;
-            }
-        }
-
-        // Google.Cloud.Firestore.Timestamp -> DateTime (via reflection to avoid hard dependency here)
-        var type = value.GetType();
-        if (string.Equals(type.FullName, "Google.Cloud.Firestore.Timestamp", StringComparison.Ordinal))
-        {
-            var toDateTime = type.GetMethod("ToDateTime", BindingFlags.Public | BindingFlags.Instance);
-            if (toDateTime != null)
-            {
-                return toDateTime.Invoke(value, null)!;
-            }
-        }
-
-        return value;
-    }
-
-    private static object? ConvertEnumerableToHashSet(object value, Type hashSetType)
-    {
-        if (value is not IEnumerable enumerable)
-        {
-            return null;
-        }
-
-        var elementType = hashSetType.GetGenericArguments()[0];
-        var elementUnderlying = Nullable.GetUnderlyingType(elementType) ?? elementType;
-
-        var closedHashSetType = typeof(HashSet<>).MakeGenericType(elementType);
-        object hashSetInstance = Activator.CreateInstance(closedHashSetType)!;
-
-        var addMethod = closedHashSetType.GetMethod(nameof(HashSet<int>.Add), [elementType])!;
-        foreach (object? item in enumerable)
-        {
-            object? convertedItem = item;
-
-            if (convertedItem == null)
-            {
-                // Skip nulls for non-nullable value types
-                if (elementUnderlying.IsValueType && Nullable.GetUnderlyingType(elementType) == null)
-                {
-                    continue;
-                }
-
-                addMethod.Invoke(hashSetInstance, [null]);
-                continue;
-            }
-
-            convertedItem = NormalizeFirestoreValue(convertedItem);
-
-            // Enum elements stored as strings (preferred) or numeric (legacy)
-            if (elementUnderlying.IsEnum)
-            {
-                if (convertedItem is string s)
-                {
-                    convertedItem = Enum.Parse(elementUnderlying, s, true);
-                }
-                else
-                {
-                    var enumUnderlying = Enum.GetUnderlyingType(elementUnderlying);
-                    object numeric = Convert.ChangeType(convertedItem, enumUnderlying);
-                    convertedItem = Enum.ToObject(elementUnderlying, numeric);
-                }
-            }
-
-            // Guid elements stored as strings
-            else if (elementUnderlying == typeof(Guid) && convertedItem is string guidString)
-            {
-                convertedItem = Guid.Parse(guidString);
-            }
-
-            // int elements coming back as long
-            else if (elementUnderlying == typeof(int) && convertedItem is long l)
-            {
-                convertedItem = (int)l;
-            }
-
-            // float elements coming back as double
-            else if (elementUnderlying == typeof(float) && convertedItem is double d)
-            {
-                convertedItem = (float)d;
-            }
-
-            addMethod.Invoke(hashSetInstance, [convertedItem]);
-        }
-
-        return hashSetInstance;
     }
 }

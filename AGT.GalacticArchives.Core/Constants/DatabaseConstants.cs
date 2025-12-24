@@ -1,4 +1,6 @@
-﻿namespace AGT.GalacticArchives.Core.Constants;
+﻿using AGT.GalacticArchives.Core.Models.Requests;
+
+namespace AGT.GalacticArchives.Core.Constants;
 
 public static class DatabaseConstants
 {
@@ -12,4 +14,10 @@ public static class DatabaseConstants
     public const string PointOfInterestCollection = "PointsOfInterest";
     public const string SettlementCollection = "Settlements";
     public const string StarshipCollection = "Starships";
+    public const string GameReleaseCollection = "GameReleases";
+
+    public static readonly string[] ExcludedQueryParameters =
+    [
+        nameof(BaseSearchRequest.PageNumber), nameof(BaseSearchRequest.PageSize), nameof(BaseSearchRequest.OrderBy),
+    ];
 }

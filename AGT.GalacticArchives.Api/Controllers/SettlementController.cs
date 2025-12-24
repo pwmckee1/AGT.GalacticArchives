@@ -14,7 +14,7 @@ public class SettlementController(ISettlementService settlementService) : Contro
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<SettlementResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["Settlement/Settlement"])]
-    public async Task<IActionResult> GetAsync(SettlementRequest request)
+    public async Task<IActionResult> GetAsync(SettlementSearchRequest request)
     {
         var galaxies = await settlementService.GetSettlementsAsync(request);
         return Ok(galaxies);

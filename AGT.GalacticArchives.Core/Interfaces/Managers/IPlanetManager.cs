@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IPlanetManager
+public interface IPlanetManager : IGameEntityManager
 {
     Task<Planet?> GetPlanetByIdAsync(Guid planetId);
-
-    Task<HashSet<Planet>> GetPlanetsAsync(PlanetRequest request);
 
     Task<Planet> UpsertPlanetAsync(Planet request);
 

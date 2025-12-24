@@ -1,7 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
+using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -17,11 +19,13 @@ public class CachedFaunaManager(ICacheManager cacheManager, IFaunaManager target
         return result!;
     }
 
-    public async Task<HashSet<Fauna>> GetFaunaAsync(FaunaRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
+        string serializedRequest = JsonConvert.SerializeObject(request as FaunaSearchRequest);
+        string cacheKey = $"{nameof(Fauna)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
-            $"{nameof(Fauna)}:{request.FaunaId}",
-            async () => await target.GetFaunaAsync(request),
+            cacheKey,
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

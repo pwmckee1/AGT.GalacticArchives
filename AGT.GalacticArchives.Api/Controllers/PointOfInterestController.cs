@@ -14,7 +14,7 @@ public class PointOfInterestController(IPointOfInterestService pointOfInterestSe
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<PointOfInterestResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["PointOfInterest/PointOfInterest"])]
-    public async Task<IActionResult> GetAsync(PointOfInterestRequest request)
+    public async Task<IActionResult> GetAsync(PointOfInterestSearchRequest request)
     {
         var galaxies = await pointOfInterestService.GetPointOfInterestsAsync(request);
         return Ok(galaxies);

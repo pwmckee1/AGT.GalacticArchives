@@ -1,7 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Entities;
+using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -17,11 +19,13 @@ public class CachedPlayerBaseManager(ICacheManager cacheManager, IPlayerBaseMana
         return result!;
     }
 
-    public async Task<HashSet<PlayerBase>> GetPlayerBasesAsync(PlayerBaseRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
+        string serializedRequest = JsonConvert.SerializeObject(request as PlayerBaseSearchRequest);
+        string cacheKey = $"{nameof(PlayerBase)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
-            $"{nameof(PlayerBase)}:{request.PlayerBaseId}",
-            async () => await target.GetPlayerBasesAsync(request),
+            cacheKey,
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }

@@ -1,7 +1,7 @@
 ﻿using AGT.GalacticArchives.Core.Models.Application;
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
-using AGT.GalacticArchives.Services.Services.InGameEnvironments;
+using AGT.GalacticArchives.Services.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -14,7 +14,7 @@ public class StarSystemController(IStarSystemService starSystemService) : Contro
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<StarSystemResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["StarSystem/StarSystem"])]
-    public async Task<IActionResult> GetAsync(StarSystemRequest request)
+    public async Task<IActionResult> GetAsync(StarSystemSearchRequest request)
     {
         var galaxies = await starSystemService.GetStarSystemsAsync(request);
         return Ok(galaxies);

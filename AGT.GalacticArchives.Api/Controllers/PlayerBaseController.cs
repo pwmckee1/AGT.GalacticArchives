@@ -14,7 +14,7 @@ public class PlayerBaseController(IPlayerBaseService playerBaseService) : Contro
     [HttpGet]
     [ProducesResponseType(typeof(MessageResponse<HashSet<PlayerBaseResponse>>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["PlayerBase/PlayerBase"])]
-    public async Task<IActionResult> GetAsync(PlayerBaseRequest request)
+    public async Task<IActionResult> GetAsync(PlayerBaseSearchRequest request)
     {
         var galaxies = await playerBaseService.GetPlayerBasesAsync(request);
         return Ok(galaxies);

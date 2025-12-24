@@ -1,7 +1,9 @@
 using AGT.GalacticArchives.Core.Constants;
 using AGT.GalacticArchives.Core.Interfaces.Managers;
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
+using AGT.GalacticArchives.Core.Models.Database;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -17,12 +19,13 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
         return result!;
     }
 
-    public async Task<HashSet<Region>> GetRegionsAsync(RegionRequest request)
+    public async Task<PagedDatabaseResponse> GetAsync(BaseSearchRequest request)
     {
-        string cacheKey = request.RegionId.HasValue ? $"{nameof(Region)}:{request.RegionId}" : $"{nameof(Region)}s";
+        string serializedRequest = JsonConvert.SerializeObject(request as RegionSearchRequest);
+        string cacheKey = $"{nameof(Region)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
             cacheKey,
-            async () => await target.GetRegionsAsync(request),
+            async () => await target.GetAsync(request),
             BusinessRuleConstants.DayInMinutes);
         return result!;
     }
@@ -30,6 +33,7 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task<Region> UpsertRegionAsync(Region request)
     {
         var result = await target.UpsertRegionAsync(request);
+        await ClearCacheAsync(result.RegionId!.Value);
         await cacheManager.SetAsync($"{nameof(Region)}:{request.RegionId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
@@ -44,6 +48,8 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
             await cacheManager.ClearCacheByKeyAsync($"{nameof(Region)}:{regionId}");
         }
 
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}s:");
+
         return result;
     }
 
@@ -56,6 +62,6 @@ public class CachedRegionManager(ICacheManager cacheManager, IRegionManager targ
     public async Task ClearCacheAsync(Guid entityId)
     {
         await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{entityId}");
-        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}:{BusinessRuleConstants.AllCacheKey}");
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(Region)}s:");
     }
 }

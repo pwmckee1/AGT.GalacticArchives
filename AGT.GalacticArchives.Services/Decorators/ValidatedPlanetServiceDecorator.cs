@@ -1,6 +1,7 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
-using AGT.GalacticArchives.Services.Services.InGameEnvironments;
+using AGT.GalacticArchives.Services.Interfaces.Services;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 
@@ -11,7 +12,7 @@ public class ValidatedPlanetServiceDecorator(IPlanetService planetService) : IPl
         return await planetService.GetPlanetByIdAsync(planetId);
     }
 
-    public async Task<HashSet<PlanetResponse>> GetPlanetsAsync(PlanetRequest request)
+    public async Task<PagedResponse<PlanetResponse>> GetPlanetsAsync(PlanetSearchRequest request)
     {
         return await planetService.GetPlanetsAsync(request);
     }

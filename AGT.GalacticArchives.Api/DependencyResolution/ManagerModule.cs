@@ -2,8 +2,8 @@
 using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Managers.Caching;
 using AGT.GalacticArchives.Core.Managers.Database;
-using AGT.GalacticArchives.Core.Managers.InGameEntities;
-using AGT.GalacticArchives.Core.Managers.InGameLocations;
+using AGT.GalacticArchives.Core.Managers.GameEntities;
+using AGT.GalacticArchives.Core.Managers.GameMetadata;
 using Autofac;
 
 namespace AGT.GalacticArchives.DependencyResolution;
@@ -135,6 +135,18 @@ public class ManagerModule : Module
                 c.Resolve<ICacheManager>(),
                 c.ResolveNamed<IStarshipManager>(NamedKeys.Managers.StarshipManager)))
             .As<IStarshipManager>()
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<GameReleaseManager>()
+            .Named<IGameReleaseManager>(NamedKeys.Managers.GameReleaseManager)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new CachedGameReleaseManager(
+                c.Resolve<ICacheManager>(),
+                c.ResolveNamed<IGameReleaseManager>(NamedKeys.Managers.GameReleaseManager)))
+            .As<IGameReleaseManager>()
             .InstancePerLifetimeScope();
     }
 }

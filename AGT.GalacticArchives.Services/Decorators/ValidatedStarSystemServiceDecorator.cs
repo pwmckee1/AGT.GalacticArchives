@@ -1,6 +1,7 @@
-﻿using AGT.GalacticArchives.Core.Models.Requests;
+﻿using AGT.GalacticArchives.Core.Models.Application;
+using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
-using AGT.GalacticArchives.Services.Services.InGameEnvironments;
+using AGT.GalacticArchives.Services.Interfaces.Services;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 
@@ -11,7 +12,7 @@ public class ValidatedStarSystemServiceDecorator(IStarSystemService starSystemSe
         return await starSystemService.GetStarSystemByIdAsync(starSystemId);
     }
 
-    public async Task<HashSet<StarSystemResponse>> GetStarSystemsAsync(StarSystemRequest request)
+    public async Task<PagedResponse<StarSystemResponse>> GetStarSystemsAsync(StarSystemSearchRequest request)
     {
         return await starSystemService.GetStarSystemsAsync(request);
     }

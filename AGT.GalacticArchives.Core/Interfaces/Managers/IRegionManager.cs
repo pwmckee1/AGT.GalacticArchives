@@ -1,13 +1,10 @@
-using AGT.GalacticArchives.Core.Models.InGame.Locations;
-using AGT.GalacticArchives.Core.Models.Requests;
+using AGT.GalacticArchives.Core.Models.GameEntities;
 
 namespace AGT.GalacticArchives.Core.Interfaces.Managers;
 
-public interface IRegionManager
+public interface IRegionManager : IGameEntityManager
 {
     Task<Region?> GetRegionByIdAsync(Guid regionId);
-
-    Task<HashSet<Region>> GetRegionsAsync(RegionRequest request);
 
     Task<Region> UpsertRegionAsync(Region request);
 
