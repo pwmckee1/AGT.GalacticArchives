@@ -4,6 +4,7 @@ using AGT.GalacticArchives.Services.Decorators;
 using AGT.GalacticArchives.Services.Interfaces.Application;
 using AGT.GalacticArchives.Services.Interfaces.Services;
 using AGT.GalacticArchives.Services.Services.Application;
+using AGT.GalacticArchives.Services.Services.GameMetadata;
 using AGT.GalacticArchives.Services.Services.Imports;
 using AGT.GalacticArchives.Services.Services.InGameEntities;
 using AGT.GalacticArchives.Services.Services.InGameEnvironments;
@@ -162,6 +163,17 @@ public class ServiceModule : Module
         builder
             .RegisterType<StarshipImportService>()
             .Named<IImportService>(ImportResource.StarshipSheetName)
+            .InstancePerLifetimeScope();
+
+        builder
+            .RegisterType<GameReleaseService>()
+            .Named<IGameReleaseService>(NamedKeys.Services.GameReleaseService)
+            .InstancePerLifetimeScope();
+
+        builder
+            .Register((c, _) => new ValidatedGameReleaseServiceDecorator(
+                c.ResolveNamed<IGameReleaseService>(NamedKeys.Services.GameReleaseService)))
+            .As<IGameReleaseService>()
             .InstancePerLifetimeScope();
     }
 }
