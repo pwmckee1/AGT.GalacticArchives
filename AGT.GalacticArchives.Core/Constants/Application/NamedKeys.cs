@@ -20,6 +20,7 @@ public static class NamedKeys
         public const string MultiToolImportService = nameof(MultiToolImportService);
         public const string PlanetImportService = nameof(PlanetImportService);
         public const string CacheService = nameof(CacheService);
+        public const string GameReleaseService = nameof(GameReleaseService);
 
         public const string PlayerBaseImportService = nameof(PlayerBaseImportService);
         [Display(ResourceType = typeof(ImportResource), Description = nameof(ImportResource.PointOfInterestSheetName))]
@@ -48,6 +49,7 @@ public static class NamedKeys
         public const string PointOfInterestManager = nameof(PointOfInterestManager);
         public const string SettlementManager = nameof(SettlementManager);
         public const string StarshipManager = nameof(StarshipManager);
+        public const string GameReleaseManager = nameof(GameReleaseManager);
     }
 
     public static class Handlers

@@ -2,7 +2,7 @@
 using AGT.GalacticArchives.Core.Models.Requests;
 using AGT.GalacticArchives.Core.Models.Responses;
 using AGT.GalacticArchives.Globalization;
-using AGT.GalacticArchives.Services.Services.InGameEnvironments;
+using AGT.GalacticArchives.Services.Interfaces.Services;
 
 namespace AGT.GalacticArchives.Services.Decorators;
 
