@@ -21,6 +21,7 @@ public class FaunaMaps : Profile
 
         CreateMap<Fauna, FaunaRequest>();
         CreateMap<FaunaRequest, Fauna>()
+            .ForMember(d => d.FaunaId, o => o.MapFrom(s => s.FaunaId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

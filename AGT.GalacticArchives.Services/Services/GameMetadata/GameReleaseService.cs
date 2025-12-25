@@ -17,7 +17,7 @@ public class GameReleaseService(IGameReleaseManager gameReleaseManager, IMapper 
         return gameRelease != null ? mapper.Map<GameReleaseResponse>(gameRelease) : null;
     }
 
-    public async Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseSearchRequest request)
     {
         var gameRelease = await gameReleaseManager.GetGameReleasesAsync(request);
         return mapper.Map<PagedResponse<GameReleaseResponse>>(gameRelease);
@@ -29,9 +29,9 @@ public class GameReleaseService(IGameReleaseManager gameReleaseManager, IMapper 
         foreach (var gameReleaseRequest in requests)
         {
             var gameRelease = mapper.Map<GameRelease>(gameReleaseRequest);
-            if (gameReleaseRequest.ReleaseId.HasValue)
+            if (gameReleaseRequest.GameReleaseId.HasValue)
             {
-                var existingGameRelease = await gameReleaseManager.GetGameReleaseByIdAsync(gameReleaseRequest.ReleaseId.Value);
+                var existingGameRelease = await gameReleaseManager.GetGameReleaseByIdAsync(gameReleaseRequest.GameReleaseId.Value);
                 if (!existingGameRelease!.ToDictionary().MatchesDictionary(gameRelease.ToDictionary()))
                 {
                     var updatedGameRelease = await gameReleaseManager.UpsertGameReleaseAsync(gameRelease);

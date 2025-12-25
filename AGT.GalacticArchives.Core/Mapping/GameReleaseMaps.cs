@@ -14,22 +14,15 @@ public class GameReleaseMaps : Profile
 
         CreateMap<Dictionary<string, object?>, GameReleaseResponse>().ConvertUsing<DatabaseEntityTypeConverter>();
 
-        CreateMap<GameRelease, GameReleaseRequest>()
-            .ForMember(d => d.ReleaseId, o => o.MapFrom(s => s.EntityId))
-            .ForMember(d => d.ReleaseName, o => o.MapFrom(s => s.Name));
+        CreateMap<GameRelease, GameReleaseRequest>();
 
         CreateMap<GameReleaseRequest, GameRelease>()
-            .ForMember(d => d.EntityId, o => o.MapFrom(s => s.ReleaseId))
-            .ForMember(d => d.Name, o => o.MapFrom(s => s.ReleaseName))
+            .ForMember(d => d.GameReleaseId, o => o.MapFrom(s => s.GameReleaseId ?? Guid.NewGuid()))
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 
-        CreateMap<GameRelease, GameReleaseResponse>()
-            .ForMember(d => d.ReleaseId, o => o.MapFrom(s => s.EntityId))
-            .ForMember(d => d.ReleaseName, o => o.MapFrom(s => s.Name));
+        CreateMap<GameRelease, GameReleaseResponse>();
 
         CreateMap<GameReleaseResponse, GameRelease>()
-            .ForMember(d => d.EntityId, o => o.MapFrom(s => s.ReleaseId))
-            .ForMember(d => d.Name, o => o.MapFrom(s => s.ReleaseName))
             .ForMember(d => d.NormalizedName, o => o.Ignore());
     }
 }

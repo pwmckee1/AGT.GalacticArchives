@@ -8,7 +8,7 @@ public interface IGameReleaseService
 {
     Task<GameReleaseResponse?> GetGameReleaseByIdAsync(Guid gameReleaseId);
 
-    Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request);
+    Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseSearchRequest request);
 
     Task<HashSet<GameReleaseResponse>> UpsertGameReleaseAsync(HashSet<GameReleaseRequest> requests);
 

@@ -21,6 +21,7 @@ public class StarshipMaps : Profile
 
         CreateMap<Starship, StarshipRequest>();
         CreateMap<StarshipRequest, Starship>()
+            .ForMember(d => d.StarshipId, o => o.MapFrom(s => s.StarshipId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

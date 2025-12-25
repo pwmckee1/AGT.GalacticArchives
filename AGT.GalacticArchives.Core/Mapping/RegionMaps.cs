@@ -57,6 +57,7 @@ public class RegionMaps : Profile
 
         CreateMap<Region, RegionRequest>();
         CreateMap<RegionRequest, Region>()
+            .ForMember(d => d.RegionId, o => o.MapFrom(s => s.RegionId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

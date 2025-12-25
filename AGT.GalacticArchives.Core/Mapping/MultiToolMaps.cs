@@ -21,6 +21,7 @@ public class MultiToolMaps : Profile
 
         CreateMap<MultiTool, MultiToolRequest>();
         CreateMap<MultiToolRequest, MultiTool>()
+            .ForMember(d => d.MultiToolId, o => o.MapFrom(s => s.MultiToolId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

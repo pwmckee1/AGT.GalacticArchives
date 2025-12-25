@@ -23,6 +23,7 @@ public class PointOfInterestMaps : Profile
 
         CreateMap<PointOfInterest, PointOfInterestRequest>();
         CreateMap<PointOfInterestRequest, PointOfInterest>()
+            .ForMember(d => d.PointOfInterestId, o => o.MapFrom(s => s.PointOfInterestId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 
