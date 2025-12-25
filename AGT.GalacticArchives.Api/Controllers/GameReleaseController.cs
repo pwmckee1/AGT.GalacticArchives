@@ -14,7 +14,7 @@ public class GameReleaseController(IGameReleaseService gameReleaseService) : Con
     [HttpGet]
     [ProducesResponseType(typeof(PagedResponse<GameReleaseResponse>), StatusCodes.Status200OK)]
     [SwaggerOperation(Tags = ["GameRelease/GameRelease"])]
-    public async Task<IActionResult> GetAsync(GameReleaseRequest request)
+    public async Task<IActionResult> GetAsync(GameReleaseSearchRequest request)
     {
         var galaxies = await gameReleaseService.GetGameReleasesAsync(request);
         return Ok(galaxies);

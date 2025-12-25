@@ -24,6 +24,7 @@ public class PlanetMaps : Profile
 
         CreateMap<Planet, PlanetRequest>();
         CreateMap<PlanetRequest, Planet>()
+            .ForMember(d => d.PlanetId, o => o.MapFrom(s => s.PlanetId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

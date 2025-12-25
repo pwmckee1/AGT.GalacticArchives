@@ -21,6 +21,7 @@ public class PlayerBaseMaps : Profile
 
         CreateMap<PlayerBase, PlayerBaseRequest>();
         CreateMap<PlayerBaseRequest, PlayerBase>()
+            .ForMember(d => d.PlayerBaseId, o => o.MapFrom(s => s.PlayerBaseId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

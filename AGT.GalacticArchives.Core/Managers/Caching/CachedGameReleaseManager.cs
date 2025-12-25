@@ -3,6 +3,7 @@ using AGT.GalacticArchives.Core.Interfaces.Managers;
 using AGT.GalacticArchives.Core.Models.Database;
 using AGT.GalacticArchives.Core.Models.Metadata;
 using AGT.GalacticArchives.Core.Models.Requests;
+using Newtonsoft.Json;
 
 namespace AGT.GalacticArchives.Core.Managers.Caching;
 
@@ -18,9 +19,10 @@ public class CachedGameReleaseManager(ICacheManager cacheManager, IGameReleaseMa
         return result!;
     }
 
-    public async Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseSearchRequest request)
     {
-        string cacheKey = request.ReleaseId.HasValue ? $"{nameof(GameRelease)}:{request.ReleaseId}" : $"{nameof(GameRelease)}s";
+        string serializedRequest = JsonConvert.SerializeObject(request);
+        string cacheKey = $"{nameof(GameRelease)}s:{serializedRequest}";
         var result = await cacheManager.GetAsync(
             cacheKey,
             async () => await target.GetGameReleasesAsync(request),
@@ -31,6 +33,7 @@ public class CachedGameReleaseManager(ICacheManager cacheManager, IGameReleaseMa
     public async Task<GameRelease> UpsertGameReleaseAsync(GameRelease request)
     {
         var result = await target.UpsertGameReleaseAsync(request);
+        await ClearCacheAsync(request.EntityId);
         await cacheManager.SetAsync($"{nameof(GameRelease)}:{request.EntityId}", result, BusinessRuleConstants.DayInMinutes);
         return result;
     }
@@ -38,12 +41,7 @@ public class CachedGameReleaseManager(ICacheManager cacheManager, IGameReleaseMa
     public async Task<HashSet<GameRelease>> UpsertGameReleaseAsync(HashSet<GameRelease> request, CancellationToken ct)
     {
         var result = await target.UpsertGameReleaseAsync(request, ct);
-        var gameReleaseIds = result.Select(r => r.EntityId).ToHashSet();
-
-        foreach (var gameReleaseId in gameReleaseIds)
-        {
-            await cacheManager.ClearCacheByKeyAsync($"{nameof(GameRelease)}:{gameReleaseId}");
-        }
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(GameRelease)}s");
 
         return result;
     }
@@ -56,6 +54,7 @@ public class CachedGameReleaseManager(ICacheManager cacheManager, IGameReleaseMa
 
     public async Task ClearCacheAsync(Guid entityId)
     {
+        await cacheManager.ClearCacheByPartialAsync($"{nameof(GameRelease)}s");
         await cacheManager.ClearCacheByPartialAsync($"{nameof(GameRelease)}:{entityId}");
         await cacheManager.ClearCacheByPartialAsync($"{nameof(GameRelease)}:{BusinessRuleConstants.AllCacheKey}");
     }

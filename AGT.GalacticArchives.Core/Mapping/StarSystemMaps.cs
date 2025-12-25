@@ -52,6 +52,7 @@ public class StarSystemMaps : Profile
         CreateMap<StarSystem, StarSystemRequest>();
 
         CreateMap<StarSystemRequest, StarSystem>()
+            .ForMember(d => d.StarSystemId, o => o.MapFrom(s => s.StarSystemId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

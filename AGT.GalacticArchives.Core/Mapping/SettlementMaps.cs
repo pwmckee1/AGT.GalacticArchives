@@ -21,6 +21,7 @@ public class SettlementMaps : Profile
 
         CreateMap<Settlement, SettlementRequest>();
         CreateMap<SettlementRequest, Settlement>()
+            .ForMember(d => d.SettlementId, o => o.MapFrom(s => s.SettlementId ?? Guid.NewGuid()))
             .ForMember(d => d.EntityId, o => o.Ignore())
             .ForMember(d => d.NormalizedName, o => o.Ignore());
 

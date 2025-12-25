@@ -20,7 +20,7 @@ public class GameReleaseManager(IFirestoreManager firestoreManager, IMapper mapp
         return gameRelease ?? null;
     }
 
-    public async Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedDatabaseResponse> GetGameReleasesAsync(GameReleaseSearchRequest request)
     {
         var requestQuery = request.ToDictionary();
 

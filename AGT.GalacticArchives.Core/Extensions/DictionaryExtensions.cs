@@ -37,7 +37,7 @@ public static class DictionaryExtensions
                 NullValueHandling = NullValueHandling.Ignore,
             });
 
-        return serializedOriginalData != serializedComparisonData;
+        return serializedOriginalData == serializedComparisonData;
     }
 
     public static T ConvertDictionaryToObject<T>(this Dictionary<string, object?>? originalData)

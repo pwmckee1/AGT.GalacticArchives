@@ -12,7 +12,7 @@ public class ValidatedGameReleaseServiceDecorator(IGameReleaseService gameReleas
         return await gameReleaseService.GetGameReleaseByIdAsync(gameReleaseId);
     }
 
-    public async Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseRequest request)
+    public async Task<PagedResponse<GameReleaseResponse>> GetGameReleasesAsync(GameReleaseSearchRequest request)
     {
         return await gameReleaseService.GetGameReleasesAsync(request);
     }
